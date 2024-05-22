@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+{% block main %}
+<header class="page-header">
+    <h1>Tags</h1>
+</header>
+
+<!-- __tera_context -->
+
+<p>
+    <img src="/images/2024/tags.png" alt="tags">
+</p>
+<p>&nbsp;</p>
+
+<ul class="terms-tags">
+    {% for term in terms %}
+    <li>
+        <a href="{{ term.permalink }}">{{ term.name }} <sup><strong><sup>{{ term.page_count }}</sup></strong></sup> </a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

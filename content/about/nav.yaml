@@ -1,0 +1,11 @@
+- name: "Every Saga Has a Beginning"
+  url: "/about/a-new-hope/"
+- name: "Volkan Özçelik"
+  url: "/about/volkan/"
+- name: "Volkan Uses"
+  url: "/about/volkan-uses/"
+- name: "Contact"
+  url: "/about/contact/"
+- name: "Privacy Policy"
+  url: "/about/privacy/"
+

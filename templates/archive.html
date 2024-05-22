@@ -1,0 +1,81 @@
+{% extends "index.html" %}
+{% block main %}
+<header class="page-header">
+  <h1>
+    Archive
+    <a href="{{ '$BASE_URL/atom.xml' | replace(from='$BASE_URL', to=config.base_url) }}" title="RSS" aria-label="RSS">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" height="23">
+        <path d="M4 11a9 9 0 0 1 9 9"></path>
+        <path d="M4 4a16 16 0 0 1 16 16"></path>
+        <circle cx="5" cy="19" r="1"></circle>
+      </svg>
+    </a>
+  </h1>
+</header>
+
+<p>
+  <img src="/images/2024/the-vault.png" alt="vault">
+</p>
+
+{% set posts_1 = get_section(path="_index.md") %}
+{% set posts_2 = get_section(path="zero-to-prod/_index.md") %}
+{% set posts_3 = get_section(path="about/_index.md") %}
+{% set posts_4 = get_section(path="highlights/_index.md") %}
+{% set posts_8 = get_section(path="roadmap/_index.md") %}
+{% set posts_10 = get_section(path="spire/mtls/_index.md") %}
+{% set posts_12 = get_section(path="tips/_index.md") %}
+{% set posts_13 = get_section(path="top-of-mind/_index.md") %}
+{% set posts_14 = get_section(path="vadideki-geyik/geyik-academy/go101/_index.md") %}
+{% set posts_15 = get_section(path="vadideki-geyik/geyik-academy/k8s101/_index.md") %}
+{% set posts_16 = get_section(path="vadideki-geyik/geyik-academy/lead101/_index.md") %}
+{% set posts_17 = get_section(path="vadideki-geyik/geyik-academy/rust101/_index.md") %}
+{% set posts_18 = get_section(path="vadideki-geyik/geyik-academy/rust101/_index.md") %}
+{% set posts_19 = get_section(path="vadideki-geyik/_index.md") %}
+{% set posts_21 = get_section(path="zero-to-prod/_index.md") %}
+
+{% set combined_posts = posts_1.pages
+| concat(with=posts_2.pages)
+| concat(with=posts_3.pages)
+| concat(with=posts_4.pages)
+| concat(with=posts_8.pages)
+| concat(with=posts_10.pages)
+| concat(with=posts_12.pages)
+| concat(with=posts_13.pages)
+| concat(with=posts_14.pages)
+| concat(with=posts_15.pages)
+| concat(with=posts_16.pages)
+| concat(with=posts_17.pages)
+| concat(with=posts_18.pages)
+| concat(with=posts_19.pages)
+| concat(with=posts_21.pages)
+%}
+
+{% set yearly_posts = combined_posts | group_by(attribute="year") %}
+
+
+
+
+{% for year, posts in yearly_posts %}
+<div class="archive-year">
+    <h2 class="archive-year-header">{{ year }}<sup class="archive-count">&nbsp;&nbsp;{{ posts | length }}</sup></h2>
+    {% set monthly_posts = posts | group_by(attribute="month") %}
+    {% for month, posts in monthly_posts %}
+    {% set month_name = posts[0].date | date(format="%B") %}
+    <div class="archive-month">
+        <h3 class="archive-month-header">{{ month_name }}<sup class="archive-count">&nbsp;&nbsp;{{ posts | length }}</sup></h3>
+        <div class="archive-posts">
+            {% for post in posts %}
+            {% set formatted_date_long = post.date | date(format="%Y-%m-%d %H:%M:%S %z") %}
+            {% set formatted_date_short = post.date | date(format=config.extra.papermod.date_format) %}
+            <div class="archive-entry">
+                <h3 class="archive-entry-title">{{ post.title }}</h3>
+                <div class="archive-meta"><span title="{{ formatted_date_long }}">{{ formatted_date_short }}</span>&nbsp;·&nbsp;{{ post.reading_time }} min&nbsp;·&nbsp;{{ post.author | default(value=config.author) }}</div>
+                <a class="entry-link" aria-label="post link to {{ post.title }}" href="{{ post.permalink }}"></a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endfor %}
+{% endblock %}

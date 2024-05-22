@@ -1,0 +1,28 @@
++++
+title = "mTLS With SPIRE: Part 5: Containerizing the Client App"
+date = "2022-08-19"
+
+[taxonomies]
+tags = ["mtls", "spiffe", "spire"]
++++
+
+![mTLS With SPIRE: Part 5: Containerizing the Client App](/images/size/w1200/2024/03/severcloud.png)
+
+We'll continue creating creating container images and deploying the client app
+to the cluster too, then observe how the client and server communicate with each
+other within the pods.
+
+{{ 
+  vimeo(
+    id="760885401", 
+    title="mTLS With SPIRE: Part 5: Containerizing the Client"
+  ) 
+}}
+
+## Playlist
+
+{{ spire_mtls_nav(selected=5) }}
+
+## Read the Source
+
+* [Access the source code and other related assets from **Zero to Hero** GitHub](https://github.com/zerotohero-dev/spire-mtls).

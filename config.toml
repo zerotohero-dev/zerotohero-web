@@ -1,0 +1,70 @@
+author = "Volkan Özçelik"
+title = "Zero to Hero"
+base_url = "https://zerotohero.dev"
+compile_sass = true
+build_search_index = false
+generate_feed = true
+minify_html = true
+
+taxonomies = [
+    { name = "tags", feed = true }
+]
+
+[markdown]
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+smart_punctuation = true
+highlight_theme = "dracula"
+
+[extra]
+
+[extra.geyik]
+navigation = [
+    { url = "$BASE_URL/vadideki-geyik/bol-mazemos", title = "Bol Mazemos" },
+    { url = "$BASE_URL/vadideki-geyik/team", title = "Biz Kimiz" },
+    { url = "$BASE_URL/", title = "Zero to Hero"},
+    { url = "https://discord.gg/kampus", title = "kamp.us", is_external = true },
+    { url = "https://vsecm.com/", title = "VSecM", is_external = true }
+]
+
+[extra.papermod]
+title = "Zero to Hero"
+default_theme = "auto"
+theme = "light"
+language_direction = "auto"
+keywords = ["keyword1", "keyword2", "keyword3"]
+show_toc = true
+show_theme_toggle = true
+show_scroll_to_top = true
+show_code_copy_buttons = true
+show_reading_time = true
+show_word_count = false
+show_post_nav_links = true
+show_post_meta = true
+default_toc_open = false
+show_post_edit_button = false
+edit_post_url = "https://github.com/cydave/zola-theme-papermod/tree/master"
+#copyright = ""
+date_format = "%Y-%m-%d"
+navigation = [
+    { url = "$BASE_URL/about", title = "About" },
+    { url = "$BASE_URL/archive", title = "Archive" },
+    { url = "$BASE_URL/tags", title = "Tags" },
+    { url = "$BASE_URL/vadideki-geyik", title = "Vadideki Geyik" },
+    { url = "https://discord.gg/kampus", title = "kamp.us", is_external = true },
+    { url = "https://vsecm.com/", title = "VSecM", is_external = true },
+]
+
+
+
+home_title = "🐢⚡️🦌🦄"
+home_content = "<p>Welcome to <strong>Zero to Hero</strong>.<br>You will find your answers here…</p><p style='text-align:right'>…<strong>if</strong> you don't forget your questions.</p>"
+
+social_icons = [
+    { url = "https://github.com/zerotohero-dev", title = "GitHub", icon = "github" },
+    { url = "https://x.com/vadidekivolkan", title = "Twitter", icon = "twitter" },
+    { url = "https://twitch.tv/vadidekivolkan", title = "Twitch", icon = "twitch" },
+    { url = "https://discord.gg/kampus", title = "Discord", icon = "discord" },
+    { url = "$BASE_URL/atom.xml", title = "RSS", icon = "rss" },
+]

@@ -1,0 +1,38 @@
+{% import "macros/social_icon.svg.html" as macro_social -%}
+<!DOCTYPE html>
+<html lang="{{ lang }}" dir="{{ config.extra.papermod.language_direction }}">
+<head>
+  {% block head %}
+  {% include "partials/head.html" %}
+  {% endblock %}
+</head>
+<body class="{% if section or term or taxonomy %}list {% endif %}{% if config.extra.papermod.theme == 'dark' %} dark{% endif %}" id="top">
+{% block header %}
+{% include "partials/geyik-header.html" %}
+{% endblock %}
+<main class="main">
+  {% block main %}
+
+  {% if section.content %}
+  <div class="post-content">
+    {{ section.content | safe }}
+  </div>
+  {% else %}
+  <!-- no section content -->
+  {% endif %}
+
+  {% if page.content %}
+  <div class="post-content">
+    {{ page.content | safe }}
+  </div>
+  {% else %}
+  <!-- no page content -->
+  {% endif %}
+
+  {% endblock %}
+</main>
+{% block footer %}
+{% include "partials/geyik-footer.html" %}
+{% endblock %}
+</body>
+</html>
