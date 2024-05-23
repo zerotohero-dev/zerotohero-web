@@ -18,3 +18,5 @@
   url: "@/tips/talkspiffe-stream-setup.md"
 - name: ".zprofile, .zshrc, .zenv, OMG! What Do I Put Where?!"
   url: "@/tips/zshell-startup-files.md"
+- name: "Redirecting a Static Web Page"
+  url: "@/tips/redirect-index-page.md"

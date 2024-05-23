@@ -1,13 +1,5 @@
 #!/usr/bin/env bash
 
-# ( Vadideki Geyik )
-#   `--(_   _)--'
-#        Y-Y
-#       /@@ \   don’t miss the deer,
-#      /     \    go kiss the deer.
-#      `--'.  \             ,
-#          |   `.__________/)
-
 if ! command -v zola &> /dev/null; then
   echo "Can; git zola kur!"
   exit 1
