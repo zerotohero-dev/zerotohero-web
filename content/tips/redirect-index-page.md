@@ -1,6 +1,6 @@
 +++
 title = "Redirecting a Static Web Page"
-date = "2021-06-06"
+date = "2024-05-23"
 
 [taxonomies]
 tags = ["tips", "html", "redirect"]
@@ -88,8 +88,12 @@ For search engines:
 The only thing I am not doing for the search engines is to set the `301` status
 code in the HTTP response. 
 
-That is doable with some CloudFront and AWS Lambda at Edge trickery, but I feel 
+That is doable with some [CloudFront][cloudfront] 
+and [AWS Lambda at Edge][lambda-at-edge] trickery, but I feel 
 it's an overkill. 
+
+[cloudfront]: https://aws.amazon.com/cloudfront/
+[lambda-at-edge]: https://aws.amazon.com/lambda/edge/
 
 Why? 
 

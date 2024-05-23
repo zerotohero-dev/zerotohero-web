@@ -59,7 +59,7 @@ navigation = [
 
 
 home_title = "🐢⚡️🦌🦄"
-home_content = "<p>Welcome to <strong>Zero to Hero</strong>.<br>You will find your answers here…</p><p style='text-align:right'>…<strong>if</strong> you don't forget your questions.</p>"
+home_content = "<p>Welcome to <strong>Zero to Hero</strong>.<br>You will find your answers here…</p><p style='text-align:right'>…<strong style='font-weight:900'>IF</strong> you don't forget the questions.</p>"
 
 social_icons = [
     { url = "https://github.com/zerotohero-dev", title = "GitHub", icon = "github" },
