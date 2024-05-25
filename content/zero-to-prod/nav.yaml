@@ -1,3 +1,12 @@
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 - name: "Part 1: An Overview of FizzBuzz Pro"
   url: "@/zero-to-prod/an-overview-of-fizzbuzz-pro.md"
 - name: "Part 2: Generating Static HTML"

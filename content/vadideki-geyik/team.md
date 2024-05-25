@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Biz Kimiz"
 date = "2024-05-18"
 template = "geyik.html"
@@ -14,7 +23,8 @@ Alfabetik sırayla:
 
 ## Can Şirin
 
-Gariban junior yazılım mühendisi. Umut’a o kadar benziyor ki bazen “*ikiz*”
+Gariban <s>junior</s> yazılım mühendisi. Umut’a o kadar benziyor ki bazen 
+“*ikiz*”
 diyorlar. Can, “*az tecrübeli*” olmanın “*az yetenekli*” olmak anlamına 
 gelmediğinin canlı kanıtı. Mesela, Can, nefesini tam 12 saniye tutabilir! 
 Yazılım Mühendisliği okyanusunda büyük dalgalar yapmasa, da en azından küçük 

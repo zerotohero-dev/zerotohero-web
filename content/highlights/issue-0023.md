@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Unleash Your Curiosity: Unlock Your Potential as a Leader"
 date = "2023-11-25"
 
@@ -8,7 +17,7 @@ tags = ["highlights"]
 
 ![Unleash Your Curiosity: Unlock Your Potential as a Leader](/images/size/w1200/2024/03/leader.png)
 
-Welcome to the 23rd issue of**Zero to Hero Highlights**. A lot has happened
+Welcome to the 23rd issue of**Zero to Hero Highlights**. A lot has happened 
 since the last issue. Let's check them out, shall we?
 
 ## It's the Wonderful Time of the Year

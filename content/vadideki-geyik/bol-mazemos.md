@@ -11,7 +11,6 @@ Sonraki yayında konuşulabilir şeyler:
 
 ## Önceki Yayında Yarım Kalanlar
 
-* “Uyku” onemli mi?
 * Jose Capablanca’ya Silikon Vadisi’nde nasil is teklifi nasil gelir?
   <https://www.chess.com/players/jose-raul-capablanca>
 * Geyik: broadcomda sabah kahvaltisi
@@ -19,7 +18,6 @@ Sonraki yayında konuşulabilir şeyler:
 * HR: biz size guveniyoruz, ofise gelin de, ne zaman geldiginiz onemli degil.
 * VSecM maintainer access removal olayi
 * 30K kredi karti borcu, developer maasiyla nasil hizlica kapatilir?
-* Boncuk ve boru.
 * “Mert var; sinif arkadasim; o olur mu?”
 * quote: “Yaya yaya okumayacaksin; odakli olarak giriseceksin;
   stratejin olacak, icerige gore stratejin dogrultusunda ilerleyeceksin.”
@@ -94,8 +92,6 @@ Sonraki yayında konuşulabilir şeyler:
 * tekne partisi ve tekne mafyasi
 * politika ve “biz ne yapiyoruz burada lan?” sorusu
 * Kantinde scorpicor gormek.
-* hashicorp vault ve business software license.
-* Mountain View school police lockdown.
 * acquisition nasil bir sey.
 * I don’t fit in… if anything, I fit out.
 * Yaş 12, yazdığım ilk program.

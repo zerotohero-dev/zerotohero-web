@@ -1,3 +1,12 @@
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 - name: "mTLS With SPIRE: Part 1: Introduction"
   url: "@/spire/mtls/intro.md"
 - name: "mTLS With SPIRE: Part 2: Creating the Server App"

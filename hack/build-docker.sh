@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 #   (`-')           (`-').->
 #   ( OO).->        (OO )__
 # ,(_/----. .----. ,--. ,'-' doubt everything,

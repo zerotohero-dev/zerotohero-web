@@ -1,17 +1,12 @@
 ```text
-    ___(  Zero to Hero          )
-   (   stay up-to-date,       _)
-  (_      be curious:      __))
-    ((      learn.    _____)
-      (_________)----'
-         _/  /
-        /  _/
-      _/  /
-     / __/
-   _/ /
-  /__/
- //
-/'
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
 ```
 
 This is the public website for <https://zerotohero.dev>.
