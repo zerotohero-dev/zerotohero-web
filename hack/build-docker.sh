@@ -1,4 +1,3 @@
-+++
 #   (`-')           (`-').->
 #   ( OO).->        (OO )__
 # ,(_/----. .----. ,--. ,'-' doubt everything,
@@ -8,6 +7,6 @@
 # |       ||      ||  | |  | learn.
 # `-------'`------'`--' `--'
 
-date = "2023-05-11T00:00:00"
-template = "archive.html"
-+++
+docker build -t z2h:latest .
+
+docker run --rm -p 8000:80 z2h:latest

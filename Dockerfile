@@ -1,4 +1,3 @@
-+++
 #   (`-')           (`-').->
 #   ( OO).->        (OO )__
 # ,(_/----. .----. ,--. ,'-' doubt everything,
@@ -8,6 +7,12 @@
 # |       ||      ||  | |  | learn.
 # `-------'`------'`--' `--'
 
-date = "2023-05-11T00:00:00"
-template = "archive.html"
-+++
+FROM ghcr.io/getzola/zola:v0.17.1 as zola
+
+COPY . /project
+WORKDIR /project
+RUN ["zola", "build"]
+
+FROM ghcr.io/static-web-server/static-web-server:2
+WORKDIR /
+COPY --from=zola /project/public /public
