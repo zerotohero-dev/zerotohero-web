@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Overcome the Awkward Feeling of Networking"
 date = "2022-07-17"
 
