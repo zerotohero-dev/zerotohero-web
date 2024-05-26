@@ -30,6 +30,8 @@ sample middleware to see it in action.
   ) 
 }}
 
+--------
+
 ## Playlist
 
 {{ zero_to_prod_nav(selected = 7) }}
@@ -40,11 +42,9 @@ Here are the tools and technologies that were mentioned in the video, along
 with related articles and other helpful links.
 
 * [What is a Middleware][middleware]
-* [Choosing Between www and non-www URLs][non-www]
 * [cURL][curl]
 
 [middleware]: https://developer.mozilla.org/en-US/docs/Glossary/Middleware
-[non-www]: https://www.zerotohero.dev/zero-to-prod-in-30/non-www-urls/
 [curl]: https://curl.se/
 
 Read The Source

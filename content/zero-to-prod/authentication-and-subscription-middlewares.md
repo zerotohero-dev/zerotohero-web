@@ -26,6 +26,8 @@ Lecture
 Zero to Prod in Half an Hour: Part 10 --- Authentication and Subscription
 Middlewares
 
+--------
+
 Playlist
 --------
 

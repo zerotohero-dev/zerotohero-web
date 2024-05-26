@@ -162,7 +162,7 @@ I'm running an Ubuntu server (_which_ [_Mastodon official
 docs_](https://docs.joinmastodon.org/admin/install/) _recommend, too_) with the
 following version:
 
-```text
+```txt
 Distributor ID:	Ubuntu
 Description:    Ubuntu 22.10
 Release:        22.10
@@ -550,7 +550,7 @@ SMTP_FROM_ADDRESS='Mastodon <notifications@z2h.dev>'
 
 Once the installer finishes successfully, you'll get a prompt similar to this:
 
-```text
+```txt
 All done! You can now power on the Mastodon server 🐘
 
 Do you want to create an admin user straight away? Yes
@@ -587,7 +587,7 @@ Also, ensure that certbot timer is enabled via `systemctl status certbot.timer`.
 If the timer is not enabled, make sure to enable it
 using `systemctl enable certbot.timer`.
 
-```text
+```txt
 volkan@z2h-dev:~$ systemctl status certbot.timer
 ● certbot.timer - Run certbot twice daily
      Loaded: loaded (/lib/systemd/system/certbot.timer; 
@@ -624,7 +624,7 @@ Now that we have our certificates in place, we can configure **NGINX**.
 
 Here's my `/etc/nginx/sites-available/z2h.dev.conf`
 
-```text
+```txt
 map $http_upgrade $connection_upgrade {
   default upgrade;
   ''      close;
@@ -821,7 +821,7 @@ that for me.
 
 Here's the entire file for reference:
 
-```text
+```txt
 user mastodon;
 #user www-data;
 worker_processes auto;
@@ -874,7 +874,7 @@ sudo systemctl restart nginx
 
 Then check the status of the `nginx` service:
 
-```text
+```txt
 volkan@z2h-dev:~$ sudo systemctl status nginx
 ● nginx.service - 
 A high performance web server and a reverse proxy server
@@ -892,7 +892,7 @@ them [from the official Mastodon repository](https://github.com/mastodon/mastodo
 
 ### /etc/systemd/system/mastodon-sideqik.service
 
-```text
+```txt
 [Unit]
 Description=mastodon-sidekiq
 After=network.target
@@ -951,7 +951,7 @@ WantedBy=multi-user.target
 
 ### /etc/systemd/system/mastodon-streaming.service
 
-```text
+```txt
 [Unit]
 Description=mastodon-streaming
 After=network.target
@@ -1009,7 +1009,7 @@ WantedBy=multi-user.target
 
 ### /etc/systemd/system/mastodon-web.service
 
-```text
+```txt
 [Unit]
 Description=mastodon-web
 After=network.target
@@ -1189,6 +1189,8 @@ patience and to tap into your analytical debugging skills a bit more than usual.
 Which also has been a fun learning experience that led to this article.
 
 Hope you find it informative... And may the source be with you 🦄.
+
+--------
 
 ## Section Contents
 

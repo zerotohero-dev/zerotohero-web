@@ -58,23 +58,4 @@ Read The Source
 * [Download the source code (_114kb zip
   archive_)](https://assets.zerotohero.dev/zero-to-prod-in-30/zero-to-prod-in-30.zip)
 
-Next Up
--------
-
-* [**Part 7
-  **: A Mild Introduction to Middlewares](https://www.zerotohero.dev/a-mild-introduction-to-middlewares)
-
-Previous
---------
-
-* [**Part 5
-  **: Implementing an OIDC Authenticator](https://www.zerotohero.dev/implementing-an-oidc-authenticator/)
-
-Index
------
-
-* [Here is an ordered list of all the lectures in this series](https://www.zerotohero.dev/zero-to-prod-in-half-an-hour/).
-
-------------
-
 Until the next lecture... May the source be with you 🦄.

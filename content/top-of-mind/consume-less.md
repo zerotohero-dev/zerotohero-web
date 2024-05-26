@@ -15,9 +15,11 @@ date = "2024-03-10"
 tags = ["top-of-mind", "creativity"]
 +++
 
-![Consume Less](https://www.zerotohero.dev/content/images/size/w1200/2024/03/consume.png)
+![Consume Less](/images/size/w1200/2024/03/consume.png)
 
 Create more.
+
+--------
 
 ## Section Contents
 

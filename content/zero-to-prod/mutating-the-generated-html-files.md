@@ -40,10 +40,9 @@ related articles and other helpful links.
 * [**Pygments**](https://pygments.org/)
 * [**Go** Programming Language](https://go.dev/)
 * [Setting Up Your **Go
-  ** Development Environment](https://www.zerotohero.dev/go-setup/)
-* [Places to Learn **Go**](https://www.zerotohero.dev/learn-go/)
-* [**Zero to Hero** Articles Tagged With "**_Go_
-  **"](https://www.zerotohero.dev/tag/go/)
+  ** Development Environment](@/vadideki-geyik/geyik-academy/go101/go-setup.md)
+* [Places to Learn **Go**](@/vadideki-geyik/geyik-academy/go101/learn-go.md)
+* [**Zero to Hero** Articles Tagged With "**_Go_**"](/tags/go/)
 * [filepath.Walk()](https://pkg.go.dev/path/filepath#Walk)
 * [filepath.WalkFunc](https://pkg.go.dev/path/filepath#WalkFunc)
 * [Go By Example: egular Expressions](https://gobyexample.com/regular-expressions)

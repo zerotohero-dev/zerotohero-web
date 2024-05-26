@@ -15,9 +15,11 @@ date = "2021-05-22"
 tags = ["go"]
 +++
 
-![Gopher](https://www.zerotohero.dev/content/images/size/w1200/2024/03/macgoher.png)
+![Gopher](/images/size/w1200/2024/03/macgoher.png)
 
-> Here, you'll find the instructions to install [**Go**](https://golang.org/ "Go Programming Language") on a **Mac OS** computer.
+> Here, you'll find the instructions to install 
+> [**Go**](https://golang.org/ "Go Programming Language") on 
+> a **Mac OS** computer.
 
 Open [the package file you downloaded](https://golang.org/dl/) and follow the prompts to install **Go**.
 

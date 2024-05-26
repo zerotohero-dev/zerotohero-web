@@ -134,6 +134,8 @@ functions resulting in more effective and long-lasting memory retention.
 * [Reading Information Aloud to Yourself Improves Memory](https://neurosciencenews.com/memory-reading-aloud-8084/)
 * [Reading information aloud to yourself improves memory of materials](https://www.sciencedaily.com/releases/2017/12/171201090940.htm)
 
+--------
+
 ## Section Contents
 
 {{ roadmap_nav(selected=4) }}

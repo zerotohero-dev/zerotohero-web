@@ -15,7 +15,7 @@ date = "2021-05-22"
 tags = ["go", "roadmap"]
 +++
 
-![Roadmap](https://www.zerotohero.dev/content/images/size/w1200/2024/03/roadmap.png)
+![Roadmap](/images/size/w1200/2024/03/roadmap.png)
 
 ## Introduction
 
@@ -47,7 +47,11 @@ In [**Go** Frequently Asked Questions](https://golang.org/doc/faq), you'll find 
 
 ### Set Up Your **Go** Development Environment
 
-After this initial exploration, now it's time for [Setting Up Your **Go** Development Environment](https://www.zerotohero.dev/go-setup/). Once you set up your development environment, have fun playing with **Go** locally to explore the language a bit further, and then proceed to the following sections for a deeper dive.
+After this initial exploration, now it's time for [Setting Up Your **Go** 
+Development Environment](@/vadideki-geyik/geyik-academy/go-setup.md). Once you 
+set up your development environment, have fun playing with **Go** locally to 
+explore the language a bit further, and then proceed to the following sections 
+for a deeper dive.
 
 ## Writing Canonical **Go** Code
 

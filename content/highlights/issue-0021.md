@@ -170,6 +170,8 @@ That's all for this week. Next week, I'll gather more unique content and resourc
 
 So, until next time... May the source be with you 🦄.
 
+--------
+
 ## Issues
 
 {{ issues_nav(selected=21) }}

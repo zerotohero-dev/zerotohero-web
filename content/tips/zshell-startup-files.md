@@ -26,7 +26,7 @@ operations to define in which of those files.
 
 Here is the complete list of files:
 
-```text
+```txt
 $ZDOTDIR/.zshenv
 $ZDOTDIR/.zprofile
 $ZDOTDIR/.zshrc
@@ -55,7 +55,7 @@ A **login shell** is a shell where you log in. You can recognize a login shell
 from a `ps -f` listing. For example, when I call `ps -f` after opening a Mac
 terminal, I get the following:
 
-```text
+```txt
 volkan@iMac ~ % ps -f
   UID   PID  PPID   C STIME   TTY           TIME CMD
   501 22250 22249   0  6:47PM ttys000    0:00.18 -zsh
@@ -166,6 +166,8 @@ I hope this article clarifies what all these **Z-Shell** startup files are, and
 how to use them in the most canonical way.
 
 Until the next article... may the source be with you 🦄.
+
+--------
 
 ## Section Contents
 

@@ -47,7 +47,7 @@ follow a similar theme.
 As a Thanksgiving (*and a post-acquisition---see below*) present,[**I got a
 beefy Mac Studio**](https://www.apple.com/mac-studio/).
 
-![This thing is a monster!](https://www.zerotohero.dev/content/images/2023/11/Screenshot-2023-11-24-at-10.52.44-PM.png)
+![This thing is a monster!](/images/2023/11/Screenshot-2023-11-24-at-10.52.44-PM.png)
 
 I can achieve a lot with **24 CPUs and 128 gigabytes of RAM**; I can do a lot 
 with this beast of a machine. For example, it enables me to simulcast to multiple
@@ -299,6 +299,8 @@ ultimately contributing to professional development.
 That's all for this week.
 
 Until next time... May the source be with you 🦄.
+
+--------
 
 ## Issues
 

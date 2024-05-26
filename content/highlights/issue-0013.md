@@ -24,8 +24,7 @@ track, but I did many cool things in the meantime.
 
 Without further ado, here are the last two weeks' highlights.
 
-All Your Ops Belong to Us
-------------------------------
+## All Your Ops Belong to Us
 
 **This is a biggie**.
 
@@ -62,7 +61,6 @@ AI-generated images based on the music that's being played.
 
 ![Experience Synesthesia on Radio Zero to Hero](/images/2021/09/Screen-Shot-2021-09-01-at-12.56.00-PM.png)
 
-
 It's a **mesmerizing** experience. 
 [Come check it out](https://twitch.tv/VadidekiVolkan).
 
@@ -91,7 +89,8 @@ Here are the first few priorities that I have.
 For example, if I want to be live stream what I'm doing right now, it should not
 take. No more than a few clicks. Which, apparently, I can do it right now 😄.
 
-![Zero to Hero live stream as I'm typing these lines.](https://www.zerotohero.dev/content/images/2021/09/Screen-Shot-2021-09-01-at-1.01.56-PM.png)
+![Zero to Hero live stream as I'm typing these 
+lines.](/images/2021/09/Screen-Shot-2021-09-01-at-1.01.56-PM.png)
 
 I have a second "*streamer*" machine connected to my work computer. I can switch
 from the "**_synesthetic radio_**" mode, to "**_live stream my desktop_**" in
@@ -119,8 +118,7 @@ And I'm fully supporting the team.
 
 But yeah, these are my top three focuses in the short term.
 
-Random Thought of the Week
--------------------------------
+## Random Thought of the Week
 
 ### Nine-to-Five? I Don't Think So
 
@@ -184,13 +182,14 @@ Exclusively hand-picked for you 👌. Enjoy.
 * [An oldie but still valid point of view: **Fighting LinkRot**](https://www.nngroup.com/articles/fighting-linkrot/).
 * [**Fluid Typography** is a technique to make the text scale based on the viewport size](Fluid%20typography).
 
-Thanks a Lot ❤️
----------------
+## Thanks a Lot ❤️
 
 That's all for this week. Next week, I'll gather more unique content and
 resources.
 
 So, until next time... May the source be with you 🦄.
+
+--------
 
 ## Issues
 

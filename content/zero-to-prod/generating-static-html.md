@@ -40,10 +40,9 @@ related articles and other helpful links.
 
 * [Python Pygments Syntax Highlighter](https://pygments.org/)
 * [Pygments Command Line Interface](https://pygments.org/docs/cmdline/)
-* [One Does Not Simply "Terminal" 👌](https://www.zerotohero.dev/one-does-not-simply-terminal/)
+* [One Does Not Simply "Terminal" 👌](@/roadmap/one-does-not-simply-terminal.md)
 
-Read The Source
----------------
+## Read The Source
 
 * [Download the source code (_114kb zip
   archive_)](https://assets.zerotohero.dev/zero-to-prod-in-30/zero-to-prod-in-30.zip)

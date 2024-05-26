@@ -29,6 +29,8 @@ following video, we'll move the client to a different cluster and federate the
   ) 
 }}
 
+--------
+
 ## Playlist
 
 {{ spire_mtls_nav(selected=9) }}

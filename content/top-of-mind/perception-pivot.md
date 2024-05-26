@@ -83,6 +83,8 @@ your actions and fostering an environment of mutual respect and continuous
 development. Embrace this, and you'll pave the way for a more fulfilling and
 impactful career.
 
+--------
+
 ## Section Contents
 
 {{ top_of_mind_nav(selected=6) }}

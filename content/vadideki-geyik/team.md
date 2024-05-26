@@ -113,4 +113,4 @@ birikimi, ve yaratıcı çözüm arayışlarıyla, teknoloji dünyasının karma
 sorunlarına akılcı çözümler getirmeyi sürdürüyor.
 
 Daha fazlası için [volkan.io](https://volkan.io/) ve
-[zerotohero.dev](https://zerotohero.dev/) adreslerini ziyaret edebilirsin.
+[zerotohero.dev](@/_index.md) adreslerini ziyaret edebilirsin.

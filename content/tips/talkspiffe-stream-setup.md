@@ -178,7 +178,7 @@ into three parts:
 * And the bottom one is a separate track that will be streamed to my and my
   guest Eli's headphones.
 
-![To the output device.](https://www.zerotohero.dev/content/images/2023/06/Screenshot-2023-06-13-at-1.39.55-PM.png)
+![To the output device.](/images/2023/06/Screenshot-2023-06-13-at-1.39.55-PM.png)
 
 Then, there is an A/B switch (_see the image above_) where the top two rows meet
 for me to toggle between two different volume levels and send the virtual output
@@ -688,7 +688,7 @@ Let me unpack the mess for you:
 To put things into more perspective, here's a schematic of the stream-related
 hardware that I use:
 
-![Streaming setup.](https://www.zerotohero.dev/content/images/2023/06/hardware-setup.jpg)
+![Streaming setup.](/images/2023/06/hardware-setup.jpg)
 
 The demo machine and the camera are connected to the streaming machine as video
 input sources through capture cards. I use [**Elgato HD60S+**](https://help.elgato.com/hc/en-us/articles/360034170131-Elgato-Game-Capture-HD60-S-Technical-Specifications)
@@ -829,7 +829,7 @@ Then, I can use it as an audio source, instead of the guest start audio that
 comes from Twitch, and disable the "_guest star_" Chrome audio input entirely as
 shown below:
 
-![From capture card to "guest in".](https://www.zerotohero.dev/content/images/2023/06/Screenshot-2023-06-17-at-9.32.26-AM.png)
+![From capture card to "guest in".](/images/2023/06/Screenshot-2023-06-17-at-9.32.26-AM.png)
 
 That would mean running one less application on the stream machine, which would
 ensure an even smoother streaming experience.
@@ -837,7 +837,7 @@ ensure an even smoother streaming experience.
 Finally, here is how the game looks on OBS, the game audio streaming from the
 Vocals track is seen below:
 
-![Game streamed in OBS with audio coming from the virtual device.](https://www.zerotohero.dev/content/images/2023/06/Screenshot-2023-06-16-at-8.08.04-PM.png)
+![Game streamed in OBS with audio coming from the virtual device.](/images/2023/06/Screenshot-2023-06-16-at-8.08.04-PM.png)
 
 ## Conclusion
 
@@ -867,6 +867,8 @@ is an opportunity to learn, grow, and create unforgettable experiences for your
 viewers.
 
 Keep pushing the boundaries, and may the source be with you 🦄.
+
+--------
 
 ## Section Contents
 

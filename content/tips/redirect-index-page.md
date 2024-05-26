@@ -19,7 +19,7 @@ tags = ["tips", "html", "redirect"]
 
 ## Introduction
 
-While migrating [zerotohero.dev](https://zerotohero.dev) to its new design, 
+While migrating [zerotohero.dev](@/_index.md) to its new design, 
 I needed to find a quick and dirty way to redirect incoming requests to 
 certain websites to their corresponding pages on **Zero to Hero**.
 
@@ -116,6 +116,8 @@ Hope you liked this little nugget. It's the fastest to way to achieve the task
 without having to worry about the underlying infrastructure.
 
 Until next time… May the source be with you 🦄.
+
+--------
 
 ## Section Contents
 

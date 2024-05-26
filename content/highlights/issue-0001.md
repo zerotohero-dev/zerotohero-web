@@ -84,15 +84,11 @@ useful too.
 
 Here's a selection from the recent **Zero to Hero** articles:
 
-* [Setting Up Your Go Development Environment](https://www.zerotohero.dev/go-setup/) 
+* [Setting Up Your Go Development Environment](@/vadideki-geyik/geyik-academy/go-setup.md) 
   (*4min read*): In this mini-article, we'll see how we can set up our Go
   development environment. Installing and configuring Go on your system is
   pretty streamlined.
-* [Let's Create a Node](https://www.zerotohero.dev/lets-create-a-node/): (*1min
-  read*): This is still a work in progress. We are creating a `Node` object that
-  we'll later use in fancy data structures like LFU Caches, and Doubly-Linked
-  Lists.
-* [Every Saga Has a Beginning](https://www.zerotohero.dev/a-new-hope/): This is
+* [Every Saga Has a Beginning](@/about/a-new-hope.md): This is
   the initial article outlining how this all started. It's a bit personal,
   reflecting on myself, my life, and what my plans are for "*Zero to Hero*"s
   future.
@@ -125,6 +121,8 @@ Exclusively hand-picked for you 👌. Enjoy.
 That's all for this week--hope you liked it.
 
 And until next time... May the source be with you 🦄.
+
+--------
 
 ## Issues
 

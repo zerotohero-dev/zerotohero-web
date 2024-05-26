@@ -57,10 +57,10 @@ edit_post_url = "https://github.com/cydave/zola-theme-papermod/tree/master"
 #copyright = ""
 date_format = "%Y-%m-%d"
 navigation = [
-    { url = "$BASE_URL/about", title = "About" },
-    { url = "$BASE_URL/archive", title = "Archive" },
-    { url = "$BASE_URL/tags", title = "Tags" },
-    { url = "$BASE_URL/vadideki-geyik", title = "Vadideki Geyik" },
+    { url = "/about", title = "About" },
+    { url = "/archive", title = "Archive" },
+    { url = "/tags", title = "Tags" },
+    { url = "/vadideki-geyik", title = "Vadideki Geyik" },
     { url = "https://discord.gg/kampus", title = "kamp.us", is_external = true },
     { url = "https://vsecm.com/", title = "VSecM", is_external = true },
 ]

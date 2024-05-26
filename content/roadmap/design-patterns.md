@@ -130,6 +130,8 @@ That being said, that's all there is about common software design patterns.
 
 Until next time... May the source be with you 🦄.
 
+--------
+
 ## Section Contents
 
 {{ roadmap_nav(selected=14) }}

@@ -38,8 +38,7 @@ that you might like, though.
 
 So, stay tuned. Lots of quality content is on its way.
 
-**Zero to Hero** on Twitch
--------------------------------
+## **Zero to Hero** on Twitch
 
 I started sharing my development environment, live coding, and chatting with
 whoever bumps into [**Zero to Hero
@@ -55,7 +54,8 @@ containers to Kubernetes, to UI/UX design.
 > and the programs that I might have with family and friends.
 >
 > The best way to get notified as soon as I'm online is
-> to [hop on the channel and follow me on **Twitch**](https://twitch.tv/VadidekiVolkan "Follow me on Twitch.").
+> to [hop on the channel and follow me on 
+> **Twitch**](https://twitch.tv/VadidekiVolkan "Follow me on Twitch.").
 
 ## Random Thought of the Week
 
@@ -111,8 +111,8 @@ review meeting with your boss.
 > Actually **doing them**.
 >
 > Agreeing that they are great tips will not get you that promotion:  
-> **Getting your hands dirty** and **working on** your promotion will "
-_eventually_" get you that promotion.
+> **Getting your hands dirty** and **working on** your promotion will 
+> "_eventually_" get you that promotion.
 
 So grab that pen and start scribbling in your work journal, and good luck with
 your next performance review talk: If you start now, you'll be well equipped
@@ -129,6 +129,8 @@ Exclusively hand-picked for you 👌. Enjoy.
 * [**Open Search** is an open-source alternative to ElasticSearch and Kibana](https://opensearch.org/).
 * [Here's how you can use **Istio** for failover for external services](https://istio.io/latest/blog/2021/external-locality-failover/).
 * [**Alcor** is a hyperscale cloud native SDN platform](https://github.com/futurewei-cloud/alcor).
+
+--------
 
 ## Issues
 

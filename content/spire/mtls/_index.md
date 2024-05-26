@@ -32,6 +32,8 @@ and SPIRE. [If you are new to **SPIFFE** and
 That said, let's get started with the first video in the series in the playlist
 below.
 
+--------
+
 ## Playlist
 
 {{ spire_mtls_nav(selected=0) }}
@@ -39,6 +41,8 @@ below.
 ## Read the Source
 
 * [Access the source code and other related assets from **Zero to Hero** GitHub](https://github.com/zerotohero-dev/spire-mtls).
+
+--------
 
 ## Parent Section
 

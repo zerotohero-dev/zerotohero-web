@@ -82,8 +82,8 @@ about, you can better articulate your proposal. This way, people can have a
 sense of understanding of what you are suggesting before you get to the details.
 
 Also, make sure to emphasize why your idea is essential. People in the room
-should know **why** they should care to prioritize this idea right now (_among
-many other things that seem to be equally important_).
+should know **why** they should care to prioritize this idea right now (*among
+many other things that seem to be equally important*).
 
 Finally, don't stay in the spotlight forever. Invite contribution and feedback
 by asking probing questions like
@@ -114,6 +114,8 @@ That's all for this week. Next week, I'll gather more unique content and
 resources.
 
 So, until next time... May the source be with you 🦄.
+
+--------
 
 ## Issues
 

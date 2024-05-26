@@ -15,16 +15,15 @@ date = "2021-06-05"
 tags = ["zero-to-prod"]
 +++
 
-![Here Are the Repositories, Tools, and Services We'll Use for FizzBuzz Pro](/content/images/size/w1200/2024/03/shopping.png)
+![Here Are the Repositories, Tools, and Services We'll Use for FizzBuzz Pro](/images/size/w1200/2024/03/shopping.png)
 
 Introduction
 ------------
 
-As I've written in [this week's **Zero to Hero Weekly
-**](https://www.zerotohero.dev/weekly-digest-jun-03-2021/), I will create **use
+In this series, we will create **use
 case** articles about **FizzBuzz Pro**. Those articles will outline the entire
 architecture design, proof of concepts, and development of [**FizzBuzz Pro
-**](https://www.zerotohero.dev/fizz-that-buzz/) and **Zero to Hero**.
+**](@/zero-to-prod/fizz-that-buzz.md) and **Zero to Hero**.
 
 > While we are working hard creating stuff, you'll feel right in the kitchen
 > 👩‍🍳.
@@ -37,9 +36,7 @@ Repositories
 
 Here is how I've organized the current repositories in [Tower](Git%20Tower):
 
-![Current Zero to Hero and FizzBuzz Pro repositories.](https://www.zerotohero.dev/content/images/2021/06/Screen-Shot-2021-06-04-at-8.44.36-PM.png)
-
-Current Zero to Hero and FizzBuzz Pro repositories.
+![Current Zero to Hero and FizzBuzz Pro repositories.](/images/2021/06/Screen-Shot-2021-06-04-at-8.44.36-PM.png)
 
 Most of the repositories are _empty_ right now; however, the picture above _at
 least_ gives some structure about which services we will initially design.

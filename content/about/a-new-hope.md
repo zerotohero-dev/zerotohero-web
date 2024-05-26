@@ -21,9 +21,11 @@ tags = ["about", "backstory"]
 > 
 > This is---I believe---the **fourth** incarnation of **Zero to Hero**.
 > 
+> Since I wrote this article **a lot** have changed, which I can summarize as  
+> "life got in the way even further."
+> 
 > The text below is the original article that I wrote on **May the Fourth, 
-> 2021**.
-> Since then, a lot have changed in my personal and professional life. So,
+> 2021**.Since then, a lot have changed in my personal and professional life. So,
 > keep in mind that the text below is a snapshot of the past, and things have
 > evolved since then.
 > 
@@ -36,16 +38,6 @@ tags = ["about", "backstory"]
 
 ## Hello World, Hello Stars, Hello Universe
 
-> **Update 2024-03-04**
->
-> Since I wrote this article **a lot** have changed, which I can summarize as  
-> "life got in the way even further."
->
-> **Zero to Hero** is now [my personal blog that I write freely about what I
-> think, when I think][new-design].
-
-[new-design]: @/top-of-mind/new-z2h-design.md "New Zero to Hero Design"
-
 Hi there 👋,
 
 As you can see, this is the new **Zero to Hero**.
@@ -54,7 +46,7 @@ As you can see, this is the new **Zero to Hero**.
 >
 > Just 🐻 with me, I'll get to it shortly. But, in a nutshell: Around **2018**,
 > I created a video course titled "*JavaScript from Zero to Hero*". I gradually
-> added more content, videos, lesson notes... Yet, "_life_" got in the way and 
+> added more content, videos, lesson notes... Yet, "*life*" got in the way and 
 > I was never able to finalize the course.
 >
 > So, as of May the fourth 2021, I decided to make a radical change and start 
@@ -135,7 +127,7 @@ There are several reasons for that:
 
 > "Success isn't always about greatness. It's about consistency. Consistent hard
 > work leads to success. Greatness will come." 
-> -- **Dwayne (_the Rock_) Johnson**
+> -- **Dwayne (*the Rock*) Johnson**
 
 It will take a while to think about the **content strategy**.
 
@@ -151,7 +143,7 @@ I have a plan... several plans in fact. And I'll gradually get there.
 
 ## A Change in the Process
 
-I began working on "_JavaScript: from Zero to Hero_" around **2018**. The course 
+I began working on "*JavaScript: from Zero to Hero*" around **2018**. The course 
 was a video course about creating and maintaining your **JavaScript** stack in a 
 real-life production environment, paying special attention to things like 
 **scalability**, **fault-tolerance**, **high availability**, 
@@ -194,7 +186,7 @@ There is a multitude of reasons, why the course took more than an average
 * Firstly, my responsibilities grew as I gained more clout within the company.
   This resulted in a more **demanding job**.
 * In addition, as the kids got older, my responsibilities as a **parent**, 
-  guardian, and a **spouse** grew. -- Not everyone knows this, but we are a 
+  guardian, and a **spouse** grew---Not everyone knows this, but we are a 
   **non-neurotypical** family of four. And that multiplies the **attention**, 
   care, and **communication** needs orders of magnitude compared with an 
   equivalent "*typical*" (*if that's a thing*) household.
@@ -353,9 +345,9 @@ and using right now.
 
 Tangentially: Everything in life is based on three main forces:
 
-*   Rotation
-*   Oscillation
-*   And Transformation
+* Rotation
+* Oscillation
+* And Transformation
 
 **Zero to Hero** is no exception to that.
 
@@ -377,6 +369,8 @@ Stay tuned: More will come.
 May the source be with you 🦄,
 
 Volkan.
+
+--------
 
 ## Explore More
 

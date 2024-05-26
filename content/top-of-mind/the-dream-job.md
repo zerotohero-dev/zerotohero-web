@@ -131,6 +131,8 @@ significant. Your career will flourish as a result.
 
 Now, go get that job! And, may the source be with you 🦄.
 
+--------
+
 ## Section Contents
 
 {{ top_of_mind_nav(selected=11) }}

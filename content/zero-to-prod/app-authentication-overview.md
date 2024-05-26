@@ -27,6 +27,8 @@ Lecture
 
 Zero to Prod in Half an Hour: Part 4 --- App Authentication Overview
 
+--------
+
 Playlist
 --------
 
@@ -51,9 +53,7 @@ OAuth2 Authentication Sequence Diagram
 
 Here's the sequence diagram that the video talked about:
 
-![](https://www.zerotohero.dev/content/images/2022/01/Screen-Shot-2022-01-10-at-5.00.04-PM.png)
-
-OAuth2 Authentication Sequence Diagram
+![OAuth2 Authentication Sequence Diagram](/images/2022/01/Screen-Shot-2022-01-10-at-5.00.04-PM.png)
 
 Read The Source
 ---------------

@@ -97,6 +97,8 @@ resources.
 
 So, until next time... May the source be with you 🦄.
 
+--------
+
 ## Issues
 
 {{ issues_nav(selected=5) }}

@@ -21,7 +21,7 @@ tags = ["highlights"]
 > 
 > I have archived **FizzBuzz Pro** project for a while. I still have plans
 > to repurpose it, but it's not a priority right now. I'll keep you posted
-> when I start working on it again, or when I reuse some of its comntent
+> when I start working on it again, or when I reuse some of its content
 > and components in other projects.
 
 Welcome to the fourth issue of **Zero to Hero** Highlights.
@@ -181,6 +181,8 @@ That's all for this week. Next week, I'll gather more unique content and
 resources.
 
 So, until next time... May the source be with you 🦄.
+
+--------
 
 ## Issues
 

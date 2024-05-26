@@ -59,7 +59,8 @@ So nothing has been broken for days! Everything is healthy as a horse. Progress!
 ## Deploying a Microservice to Kubernetes
 
 While on the topic of videos, [I published a video about how you can deploy a 
-microservice to an AWS EKS Kubernetes cluster](https://twitter.com/vadidekivolkan/status/1421552455871995904).
+microservice to an AWS EKS 
+Kubernetes cluster](https://twitter.com/vadidekivolkan/status/1421552455871995904).
 
 In the video, I start from the source code:
 
@@ -72,7 +73,7 @@ In the video, I start from the source code:
 It's an excellent overview of how everything ties together.
 
 Note that this is just the **video** part of the content. There will be an
-accompanying article on [**Zero to Hero**](https://zerotohero.dev/) that will
+accompanying article on [**Zero to Hero**](@/_index.md) that will
 dive deeper and provide you with additional *bedtime reading material* to dig
 in.
 
@@ -105,10 +106,10 @@ Don't take the phrase "*you must have a mentor*" too literally. The reality is
 **you need more than a single mentor**; you need your **personal board of
 advisors** if you will. But how do you find all these people? Let's see.
 
-I don't want to sound cheesy, but the first step is to [**know yourself
-**](@/highlights/issue-0003.md). Finding what you
+I don't want to sound cheesy, but the first step is to 
+[**know yourself**](@/highlights/issue-0003.md). Finding what you
 want requires knowing what you want. Then, reflect deeply and write down a *
-*personal vision statement**. Make sure that your _personal vision statement_
+*personal vision statement**. Make sure that your *personal vision statement*
 resonates with what **you** want to aspire to be. **Not** what society, your
 teammates, your managers, or your family expects from you.
 
@@ -139,7 +140,7 @@ second-degree network; or do you need to look even further?
 Based on that assessment, you can develop new relationships or strengthen the
 existing ones.
 
-You'll also find that a prospective mentor or a coach will be **much** inclinded
+You'll also find that a prospective mentor or a coach will be **much** inclined
 to help you on a particular topic rather than the generic "*would you be my
 mentor?*" questions.
 
@@ -163,6 +164,8 @@ Exclusively hand-picked for you 👌. Enjoy.
 That's all for this week. Next week, I'll gather more unique content and resources.
 
 So, until next time... May the source be with you 🦄.
+
+--------
 
 ## Issues
 

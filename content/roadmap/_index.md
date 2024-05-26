@@ -21,6 +21,8 @@ through the vast world of software development. The articles contain resources,
 ideas, life lessons, and best practices that will help you become the next
 version of yourself.
 
+--------
+
 ## Section Contents
 
 {{ roadmap_nav(selected=0) }}

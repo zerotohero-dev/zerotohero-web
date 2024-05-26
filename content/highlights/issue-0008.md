@@ -22,8 +22,7 @@ Welcome to the eighth issue of **Zero to Hero** Highlights.
 I'm still focusing on creating an **MVP** for the [**FizzBuzz Pro**](https://fizzbuzz.pro/) 
 microservice and thus there's a lot of code, yet not as many articles.
 
-What's New on **Zero to Hero** 👩‍🍳
-------------------------------------
+## What's New on **Zero to Hero** 👩‍🍳
 
 I've been working on several microservices, including the following:
 
@@ -59,8 +58,6 @@ While I'm not live screencasting my development environment, I'm streaming *
 
 ![Unearthly Beats --- The music is on forever!](/images/2021/07/Screen-Shot-2021-07-02-at-5.22.59-PM.png)
 
-Unearthly Beats --- The music is on forever!
-
 If you want to **get in the zone** while coding, designing, developing,
 hacking... [Tune in to Radio Zero to Hero on Twitch](https://twitch.tv/VadidekiVolkan).
 
@@ -92,17 +89,17 @@ around you. Define your true self.
 * **Add value** to the community towards your actions and deeds.
 
 Don't rely on the reputation of something external to define who you are. Be
-self-aware: [You are more than that](https://www.zerotohero.dev/weekly-digest-may-29-2021/).
+self-aware: [You are more than that](@/highlights/issue-0003.md).
 
 Think about what you uniquely, **unequivocally**, contribute to the world.
 
-Tangential to that is the _stigma_ that comes with rejection: Being rejected
+Tangential to that is the *stigma* that comes with rejection: Being rejected
 by (pick your top company or college of your choice) can suck. Yet, neither
 rejection nor acceptance defines you: **You** define you---If they don't get
 you, it's their loss, not yours.
 
 Trust me, by investing in yourself through personal and professional
-development, you can achieve so much than any big fat brand can "_ever_" offer
+development, you can achieve so much than any big fat brand can "*ever*" offer
 you.
 
 **Trust** in yourself. **Define** yourself.
@@ -120,6 +117,8 @@ Exclusively hand-picked for you 👌. Enjoy.
 * [**AWS Infinidash**: Finally an AWS Product that You'll Completely Understand](https://news.ycombinator.com/item?id=27695975).
 * [So meta, very turtle: A Deep Dive on Kubernetes Cluster API](https://www.youtube.com/watch?v=3OsP9TiEGZE).
 * [Execute Docker containers as QEMU micro VMs](https://mergeboard.com/blog/2-qemu-microvm-docker/)
+
+--------
 
 ## Issues
 

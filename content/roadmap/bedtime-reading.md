@@ -137,6 +137,8 @@ That's all for now. Enjoy your bedtime reading list.
 
 And until next time... May the source be with you 🦄.
 
+--------
+
 ## Section Contents
 
 {{ roadmap_nav(selected=6) }}

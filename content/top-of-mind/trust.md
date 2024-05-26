@@ -82,6 +82,8 @@ Henceforth, every team member must prioritize these approaches to cultivate an
 atmosphere where trust flourishes naturally, and collaboration thrives
 effortlessly. This will help everyone feel **empowered** to contribute.
 
+--------
+
 ## Section Contents
 
 {{ top_of_mind_nav(selected=12) }}

@@ -27,7 +27,7 @@ Recently, we had to implement such a solution for **FizzBuzz Pro**
 In our case, we needed to make sure that the `fizz-crypto` microservice did not
 start unless the following variables were defined in the system.
 
-```text
+```txt
 FIZZ_PORT_SVC_CRYPTO
 FIZZ_JWT_KEY
 FIZZ_RANDOM_BYTE_LENGTH
@@ -61,7 +61,7 @@ go mod init github.com/zerotohero-dev/fizz-env
 
 This will result in the following `go.mod` file that defines our module:
 
-```text
+```txt
 module github.com/zerotohero-dev/fizz-env
 
 go 1.16
@@ -214,7 +214,7 @@ go mod init github.com/zerotohero-dev/fizz-crypto
 
 This will result in the following `go.mod` file that defines our module:
 
-```text
+```txt
 module github.com/zerotohero-dev/fizz-env
 
 go 1.16
@@ -255,7 +255,7 @@ func main() {
 Since we haven't defined any environment variables yet, running the above code
 on my system results in the following **panic** as expected:
 
-```text
+```txt
 panic: The environment variable that corresponds to 'PortSvcCrypto' 
 is not defined.
 
@@ -288,6 +288,8 @@ Enjoy... And may the source be with you 🦄.
 
 * [`fizz-crypto` (**3KB** zip archive)](https://assets.zerotohero.dev/heres-a-technique-to-ensure-environment-variables-are-set-before-starting-a-microservice/0174edce-3b6b-419e-83c2-f4995b317935/fizz-crypto.zip)
 * [`fizz-env` (**2KB** zip archive)](https://assets.zerotohero.dev/heres-a-technique-to-ensure-environment-variables-are-set-before-starting-a-microservice/0174edce-3b6b-419e-83c2-f4995b317935/fizz-env.zip)
+
+--------
 
 ## Section Contents
 

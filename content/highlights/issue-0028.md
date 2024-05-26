@@ -21,5 +21,8 @@ Welcome to the **28th** issue of **Zero to Hero** Highlights.
 I don't know if you realized, but there has been massive changes in
 **Zero to Hero**.
 
+TBD.
+
+--------
 
 

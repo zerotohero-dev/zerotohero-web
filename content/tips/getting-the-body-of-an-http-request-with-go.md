@@ -85,6 +85,8 @@ That was your nugget 😄.
 
 Until the next one... May the source be with you 🦄.
 
+--------
+
 ## Section Contents
 
 {{ tips_nav(selected=3) }}

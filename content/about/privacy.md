@@ -36,6 +36,8 @@ sell, or lose. You can rest assured that your privacy is safe with us.
 
 Have an ad-free, safe, and wonderful **Zero to Hero** learning experience 🎉.
 
+--------
+
 ## Explore More
 
 {{ about_nav(selected=5) }}

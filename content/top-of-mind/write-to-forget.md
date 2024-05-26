@@ -64,6 +64,8 @@ In summary, writing to forget does not indicate a lack of importance.
 So grab a pen, express your thoughts freely, and let go. Through forgetting, we
 allow our minds to focus on what matters.
 
+--------
+
 ## Section Contents
 
 {{ top_of_mind_nav(selected=14) }}

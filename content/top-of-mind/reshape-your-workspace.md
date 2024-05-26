@@ -72,6 +72,8 @@ And that was your "_top of mind_."
 
 Until next time... May the source be with you 🦄.
 
+--------
+
 ## Section Contents
 
 {{ top_of_mind_nav(selected=9) }}

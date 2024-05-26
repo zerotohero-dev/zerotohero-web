@@ -19,7 +19,6 @@ tags = ["about", "volkan", "contact"]
 
 If you want to contact me, my personal website [**volkan.io**][web] 
 lists social platforms I'm actively contributing to.
-
 You can also email me at [**me@volkan.io**][email]; 
 however, don't expect an immediate reply (*or a reply at all*).
 
@@ -31,6 +30,8 @@ Volkan.
 
 [web]: https://volkan.io/
 [email]: mailto:me@volkan.io
+
+--------
 
 ## Explore More
 

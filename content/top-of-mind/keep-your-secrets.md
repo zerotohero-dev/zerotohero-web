@@ -114,6 +114,8 @@ excited about the journey ahead and invite you to be a part of it.
 [**Start your journey with VMware Secrets Manager today**](https://vsecm.com/)
 and unlock the potential of cloud-native secrets management.
 
+--------
+
 ## Section Contents
 
 {{ top_of_mind_nav(selected=4) }}

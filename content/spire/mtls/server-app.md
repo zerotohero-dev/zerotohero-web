@@ -30,6 +30,8 @@ continue with the client application on the next video.
   ) 
 }}
 
+--------
+
 ## Playlist
 
 {{ spire_mtls_nav(selected=2) }}

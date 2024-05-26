@@ -95,13 +95,13 @@ After installing AWS CLI, you need to configure it to authenticate you with AWS 
 
 If you don't have an access key yet, navigate to the IAM console of the user that you are going to use, create an access key, and **download** a csv export of the access key.
 
-![Creating an access key on the AWS IAM console.](https://www.zerotohero.dev/content/images/2021/07/Screen-Shot-2021-07-28-at-12.57.01-PM.png)
+![Creating an access key on the AWS IAM console.](/images/2021/07/Screen-Shot-2021-07-28-at-12.57.01-PM.png)
 
 Creating an access key on the AWS IAM console.
 
 Also, for my user, I **at least** provide `AdministratorAccess` as a permission, because _at the very least,_ when provisioning Kubernetes resources, the user will have to touch **a lot** of AWS infrastructure from CloudFormation Templates to Network ACLs, Subnet mappings, Security groups, to actually provisioning and configuring EC2 instances.
 
-![IAM Policies.](https://www.zerotohero.dev/content/images/2021/07/Screen-Shot-2021-07-28-at-1.03.41-PM.png)
+![IAM Policies.](/images/2021/07/Screen-Shot-2021-07-28-at-1.03.41-PM.png)
 
 IAM Policies.
 
@@ -228,15 +228,15 @@ After all this prep work, creating the Kubernetes cluster is a one-liner:
 
 This process will take up to half an hour, and in the end, you'll have a new shiny EKS cluster with all its glory.
 
-![EKS cluster overview.](https://www.zerotohero.dev/content/images/2021/07/Screen-Shot-2021-07-28-at-1.48.20-PM.png)
+![EKS cluster overview.](/images/2021/07/Screen-Shot-2021-07-28-at-1.48.20-PM.png)
 
 EKS cluster overview.
 
-![EKS cluster workloads.](https://www.zerotohero.dev/content/images/2021/07/Screen-Shot-2021-07-28-at-1.48.38-PM.png)
+![EKS cluster workloads.](/images/2021/07/Screen-Shot-2021-07-28-at-1.48.38-PM.png)
 
 EKS cluster workloads.
 
-![EKS cluster addons.](https://www.zerotohero.dev/content/images/2021/07/Screen-Shot-2021-07-28-at-1.49.03-PM.png)
+![EKS cluster addons.](/images/2021/07/Screen-Shot-2021-07-28-at-1.49.03-PM.png)
 
 EKS cluster addons.
 

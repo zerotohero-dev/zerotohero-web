@@ -26,6 +26,8 @@ Lecture
 
 Zero to Prod in Half an Hour: Part 1 --- An Overview of FizzBuzz Pro
 
+--------
+
 Playlist
 --------
 

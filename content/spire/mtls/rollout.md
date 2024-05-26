@@ -27,6 +27,8 @@ deploy **SPIRE** to the clusters.
   ) 
 }}
 
+--------
+
 ## Playlist
 
 {{ spire_mtls_nav(selected=6) }}

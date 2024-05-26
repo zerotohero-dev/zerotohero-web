@@ -27,6 +27,8 @@ planning to achieve by the end of the video series.
   ) 
 }}
 
+--------
+
 ## Playlist
 
 {{ spire_mtls_nav(selected=1) }}
@@ -36,7 +38,8 @@ planning to achieve by the end of the video series.
 Here are the tools and technologies that were mentioned in the video, along with
 related articles and other helpful links.
 
-* [Setting Up **SPIRE** on EKS in Less Than Ten Minutes](https://www.zerotohero.dev/spire-rocks/) (_read this first_)
+* [Setting Up **SPIRE** on EKS in Less 
+  Than Ten Minutes](@/spire/spire-rocks.md) (_read this first_)
 * [Public Key Infrastructure (**_PKI_**)](https://en.wikipedia.org/wiki/Public_key_infrastructure)
 * [Transport Layer Security (**_TLS_**)](https://en.wikipedia.org/wiki/Transport_Layer_Security)
 * [Mutual Transport Layer Security (**_mTLS_**)](https://en.wikipedia.org/wiki/Mutual_authentication)

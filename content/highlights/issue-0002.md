@@ -42,7 +42,7 @@ done.
 Humans are Optimist Primes: We underestimate how hard a transformative change
 can be. So make sure to set **realistic** expectations. Make sure to put enough
 time buffer around your expectations. Double that buffer time, then double it
-once more: Yes, we are "_that bad_" at estimating things.
+once more: Yes, we are "*that bad*" at estimating things.
 
 The second hurdle you'll face is the sheer amount of work that you realize needs
 to be done. The good thing is, you don't have to do that all at once.
@@ -59,7 +59,7 @@ contribute to your transformational idea. Make sure that they **clearly**
 understand how the change will affect them.
 
 One more thing: **Be transparent**. Don't hide the reason behind the importance
-of this change (_to you and to everyone else_). **Share** what you can.
+of this change (*to you and to everyone else*). **Share** what you can.
 
 > **Sharing** means exposing yourself; exposing yourself will---high
 > likely---inspire the people around you. They will support you even more.
@@ -97,6 +97,8 @@ That's all for this week. Next week, I'll gather more unique content and
 resources.
 
 So, until next time... May the source be with you 🦄.
+
+--------
 
 ## Issues
 

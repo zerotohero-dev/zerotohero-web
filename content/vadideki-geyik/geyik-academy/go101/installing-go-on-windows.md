@@ -15,7 +15,7 @@ date = "2021-05-22"
 tags = ["go"]
 +++
 
-[Gopher](https://www.zerotohero.dev/content/images/size/w1200/2024/03/gopher-win.png)
+[Gopher](/images/size/w1200/2024/03/gopher-win.png)
 
 > Here, you'll find the instructions to install [**Go**](https://golang.org/ "Go Programming Language") on a **Windows** computer.
 

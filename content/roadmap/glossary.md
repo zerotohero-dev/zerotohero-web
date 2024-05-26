@@ -208,6 +208,8 @@ terms and acronyms with links to further explanations about them.
 
 Until next time... May the source be with you 🦄.
 
+--------
+
 ## Section Contents
 
 {{ roadmap_nav(selected=10) }}

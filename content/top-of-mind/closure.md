@@ -44,8 +44,8 @@ not necessarily meant to be---which, by definition, makes me a hacker.
 But, this braindump you are reading at the moment---while I'm letting my ideas
 flow without interruption---is **not** about the hacker's mindset---I've have
 written about
-that [in other places](https://www.zerotohero.dev/hack-the-system/)
-in [depth](https://www.zerotohero.dev/chisel/), a lot---This is more
+that [in other places](@/roadmap/hack-the-system.md)
+in [depth](@/roadmap/chisel.md), a lot---This is more
 fundamental, more to the **core**.
 
 See, I often contemplate: Is finding purpose in any task possible, regardless of
@@ -102,6 +102,8 @@ a **balance** between _realism_ and _joy_ and a glimmer of the _sense_ of
 purpose in my existence: 
 
 I have found **closure**.
+
+--------
 
 ## Section Contents
 

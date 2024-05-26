@@ -30,8 +30,8 @@ beneficial to you no matter what part of "_the stack_" you are interested in.
 > **What Stack?!**  
 > I also honestly believe that there is no such thing called "the stack", and
 > the boundaries between the layers of "the stack" have vanished long time ago, so
-> it is a "**mesh**"---_if anything---_rather than a stack, but that's the topic
-> of another article 🙂.
+> it is a "**mesh**"---*if anything*---rather than a stack, but that's the 
+> topic of another article 🙂.
 
 ## How To Read This Article
 
@@ -52,17 +52,16 @@ With that said, let us begin, shall we?
 People continuously ask me variations of the following questions at least a
 couple of times a week:
 
-_"I am a self-educated-developer/programming-enthusiast/you-name-it.  
-I can write code; however, when I dive into complex codebases, I get lost."_
+"*I am a self-educated-developer/programming-enthusiast/you-name-it.  
+I can write code; however, when I dive into complex codebases, I get lost.*"
 
 Or, something like that:
 
-_"People assume that I know JavaScript, and I confess: I am a JavaScript
-developer who doesn't know how to develop."_
-
+"*People assume that I know JavaScript, and I confess: I am a JavaScript
+developer who doesn't know how to develop.*" 
 I even got this one 😄:
 
-_"Help me Obi-Wan Kenobi; you're my only hope."_
+"*Help me Obi-Wan Kenobi; you're my only hope.*"
 
 Since answering the same question over and over again is not the best use of
 the [opportunity cost of my time](https://en.wikipedia.org/wiki/Opportunity_cost),
@@ -77,17 +76,17 @@ addressed.
 
 All of these questions translate to the following:
 
-* "_How do I leap to the next level in my field of expertise?_"
-* "_How do I become the next possible version of myself?_"
+* "*How do I leap to the next level in my field of expertise?*"
+* "*How do I become the next possible version of myself?*"
 
-These questions require a much well-thought-out answer than a _"It's easy; you
-see: Learn React and MongoDB, and you are good to go."_ answer.
+These questions require a much well-thought-out answer than a "*It's easy; you
+see: Learn React and MongoDB, and you are good to go.*" answer.
 
 So here it goes.
 
 ## Ask Questions, Doubt Everything, Trust in Evidence
 
-If you forget everything else you read here, take this "_red pill_", and you'll
+If you forget everything else you read here, take this "*red pill*", and you'll
 be fine:
 
 > **Ask** Questions. **Doubt** everything. **Trust** in evidence.
@@ -112,8 +111,8 @@ don't know: Ask them out.
 > put after inadequate self-criticism. However, every question is a cry to
 > understand the world. There is no such thing as a dumb question.
 >
-> **Carl Sagan
-**---[The Demon-Haunted World: Science as a Candle in the Dark](https://www.goodreads.com/book/show/17349.The_Demon_Haunted_World)
+> **Carl Sagan**---[The Demon-Haunted World: Science as a Candle in the 
+> Dark](https://www.goodreads.com/book/show/17349.The_Demon_Haunted_World)
 
 * Ask dumb questions.
 * Ask scary questions.
@@ -149,11 +148,11 @@ The more you program, the more issues you'll find that...
 * You don't know.
 * Your colleagues don't know.
 * Google doesn't know.
-* And you'll **have to** figure out (_as if your job depends on it---'cuz it
-  does 😉_).
+* And you'll **have to** figure out (*as if your job depends on it---'cuz it
+  does 😉*).
 
-Try to challenge yourself to 
-[**move out of your comfort zone**](https://www.lifehack.org/articles/communication/this-what-happens-when-you-move-out-your-comfort-zone.html).
+Try to challenge yourself to [**move out of your comfort 
+zone**](https://www.lifehack.org/articles/communication/this-what-happens-when-you-move-out-your-comfort-zone.html).
 
 Screw everything. Get your pieces together. 
 [**Focus**](https://www.heysigmund.com/why-what-you-focus-on-is-what-becomes-powerful-why-your-thoughts-and-feelings-matter/)
@@ -168,7 +167,7 @@ I'm not kidding. And it's not **that** hard.
 Share your knowledge: Help others.
 
 **Software engineering is not a path that you walk alone**. Learning to share
-your knowledge with the community is as important (_if not more_) than learning
+your knowledge with the community is as important (*if not more*) than learning
 something new.
 
 There's a vast community of developers who are willing to help each other: Be
@@ -180,14 +179,14 @@ way.
 
 ## You Are not Your Code
 
-"_You_" and "_your code_" are 
+"*You*" and "*your code*" are 
 [**orthogonal**](https://en.wikipedia.org/wiki/Orthogonality) to each other.
 
 There is no shame in sharing your code.
 
 Share every semicolon you type on your IDE in 
-[**GitHub**](https://github.com/) (_or a similar open source code repository of your
-choice_).
+[**GitHub**](https://github.com/) (*or a similar open source code repository of your
+choice*).
 
 * Whenever you discover something new: **share it**.
 * Whenever you have a problem: **yelp for help**.
@@ -220,7 +219,7 @@ Trust me; it took a hell lot of years to digest that fact. And it is true:
 >
 > **Christopher Paolini**---[The Inheritance Cycle](https://www.goodreads.com/book/show/7664041-inheritance)
 
-Code, in itself, is **nothing**. It is just a _tool_.
+Code, in itself, is **nothing**. It is just a *tool*.
 
 Code is just a tool: Sharing your code, and asking other's feedback about your
 code will improve you **a lot** as a developer.
@@ -229,13 +228,14 @@ With that kept in mind, here are a few developer communities that you might want
 to join and share your code.
 
 * [Stack Exchange](https://stackexchange.com/sites)
-* [Mozilla Developer Network (_MDN_)](https://developer.mozilla.org/en-US/)
+* [Mozilla Developer Network (*MDN*)](https://developer.mozilla.org/en-US/)
 * [FEDs on Slack](http://fedsonslack.com/)
 * [Reddit/Programming](https://www.reddit.com/r/programming)
 * [dev.to](https://dev.to/)
 * [Hashnode](https://hashnode.com/explore)
 
-> **This List is Just a Starting Point**  
+> **This List is Just a Starting Point**
+> 
 > The list of communities I shared here is, by no means, a definitive or
 > conclusive list: A google search around your favorite programming language, or
 > your favorite framework, or your favorite toolchain will reveal at least a dozen
@@ -282,8 +282,8 @@ Though reddit is its own universe, don't get lost in it 😉.
 
 This one is so obvious; it almost hurts that there are people who don't know it:
 
-[**dev.to** is a **capable**, **friendly**, and **vibrant** 
-community of coders](https://dev.to/).
+[**dev.to** is a **capable**, **friendly**, and **vibrant** community of 
+coders](https://dev.to/).
 
 If you haven't joined yet, what are you waiting for?
 
@@ -306,12 +306,13 @@ If you are planning to become a developer, you are going to be really **intimate
 
 ![Read the source, Luke.](/images/2021/10/read-the-source.jpeg)
 
-Related to _sharing your code openly_:
+Related to *sharing your code openly*:
 
 **Indulge in open source** and **read** as much code as you can.
 
-> **Explore Without Fear**  
-> Make "_looking 'under the hood' of the open source project you like_" a habit.
+> **Explore Without Fear**
+> 
+> Make "*looking 'under the hood' of the open source project you like*" a habit.
 
 **Do. Or do not. There's no try**.
 
@@ -324,7 +325,8 @@ they chose that particular approach instead of a different one.
 Reading others' code takes time, dedication, and practice: And blimey---it's a
 time well spent.
 
-> **Reading Others' Code**  
+> **Reading Others' Code**
+> 
 > Reading others' code is just like reading finance: It will feel weird. At
 > first, it'll feel difficult. And the more you do it, the more comfortable you'll
 > get at it.
@@ -333,13 +335,14 @@ The more you read, the better you'll get the hang of the **logical constructs**,
 the **terminology**, the **concepts**, and the overall **program flow**.
 
 In addition to all these, reading open source code **teaches** you how to
-write [by using the conventions and idioms of the language](http://wiki.c2.com/?CodingConvention=).
+write [by using the conventions and idioms of the 
+language](http://wiki.c2.com/?CodingConvention).
 
 ## Add Value to The Community
 
-As a follow-up to the above "_Share Your Knowledge with the Community_
-guideline, **the more you add value to the community, the more value you receive
-**.
+As a follow-up to the above "*Share Your Knowledge with the Community*"
+guideline, **the more you add value to the community, the more value you 
+receive**.
 
 The least you can do to add value is to [contribute to the 
 **open source** community](https://opensource.guide/how-to-contribute/).
@@ -650,7 +653,7 @@ here is practically impossible. So, I'll provide a list of **bedtime reading**
 material instead.
 
 I recommend you read the following the resources that I've listed here
-in [Resources Every Developer Must Read---No Exceptions](https://www.zerotohero.dev/bedtime-reading/)
+in [Resources Every Developer Must Read---No Exceptions](@/roadmap/bedtime-reading.md)
 **cover to cover**, twice.
 
 * **Once**: Before you begin your programming journey.
@@ -661,7 +664,7 @@ A heads up: It's a relatively long list, and it might take a while: Take your
 time.
 
 What's common
-in [all of those resources](https://www.zerotohero.dev/bedtime-reading/) is that
+in [all of those resources](@/roadmap/bedtime-reading.md) is that
 they don't talk about how to use a specific programming language, they talk
 about things that are bigger than code.
 
@@ -883,50 +886,17 @@ Here is a short list of skills that you'll likely need for starters:
 [There are a handful of articles that I keep on writing to augment 
 this roadmap](/tags/roadmap).
 
-Here are some of those that you might find interesting:
+Here, you can find the list below, for your convenience. The list will 
+update itself automatically as I add more resources and articles later:
 
-### On Innovation and Creativity
-
-* [Grab Your Chisel and Start Pounding](https://www.zerotohero.dev/chisel/)
-* [Who Else is Ready to Hack?](https://www.zerotohero.dev/hack-the-system/)
-* [A Startup Founder's Bedtime Reading List](https://www.zerotohero.dev/a-startup-founders-bedtime-reading-list/)
-
-### On Software Craftsmanship
-
-* [Resources Every Developer Must Read---No Exceptions](https://www.zerotohero.dev/bedtime-reading/)
-* [A Glossary of Mostly Developer-Related Things](https://www.zerotohero.dev/glossary/)
-* [Paint Me Like One of Your French Design Patterns](https://www.zerotohero.dev/paint-me-like-one-of-your-french-design-patterns/)
-* [You Need Testing](https://www.zerotohero.dev/you-need-testing/)
-* [Security Is Not Optional](https://www.zerotohero.dev/security/)
-* [Tame Your Regular Expressions](https://www.zerotohero.dev/regexp/)
-* [One Does Not Simply "Terminal" 👌](https://www.zerotohero.dev/one-does-not-simply-terminal/)
-* [Git Comfortable](https://www.zerotohero.dev/git/)
-* [Master Your vim](https://www.zerotohero.dev/vim/)
-
-### On JavaScript and Friends
-
-* [Learn Your JavaScript the Unconventional Way](https://www.zerotohero.dev/learn-javascript-the-unconventional-way/)
-* [Knowing JavaScript Is Not Good Enough](https://www.zerotohero.dev/knowing-javascript-is-not-good-enough/)
-* [Want to Learn JavaScript? Learn Haskell First](https://www.zerotohero.dev/learn-haskell/)
-
-### On Go Programming
-
-* [Places to Learn Go](https://www.zerotohero.dev/learn-go/)
-
-### On Design and Typography
-
-* [Orange Is the New Purple](https://www.zerotohero.dev/color-theory/)
-* [Get Better at Typography](https://www.zerotohero.dev/typography/)
-
-### On User Experience and Usability
-
-* [Don't Make the User Think](https://www.zerotohero.dev/ramp-up-in-user-experience-design/)
+{{ roadmap_nav(selected=1) }}
 
 ## Conclusion
 
 If you have been patient enough to read to the end of this article without
 skipping
-anything, [you are better than 75% the world already](https://www.nngroup.com/articles/how-little-do-users-read/).
+anything, [you are better than 75% the world 
+already](https://www.nngroup.com/articles/how-little-do-users-read/).
 Congratulations.
 
 Learning is a never-ending journey. And learning is also a way to **find
@@ -940,7 +910,3 @@ I'll write a follow-up article, focusing on a more technical roadmap, especially
 focusing on the path of becoming a developer.
 
 Until next time... May the source be with you 🦄.
-
-## Section Contents
-
-{{ roadmap_nav(selected=1) }}

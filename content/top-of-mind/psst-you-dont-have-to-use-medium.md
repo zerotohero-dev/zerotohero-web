@@ -147,6 +147,8 @@ creating **valuable** and **meaningful** content.
 
 **Own your content**.
 
+--------
+
 ## Section Contents
 
 {{ top_of_mind_nav(selected=8) }}

@@ -106,6 +106,8 @@ have is to **be selective** and **do less**.
 
 Later 👋.
 
+--------
+
 ## Section Contents
 
 {{ top_of_mind_nav(selected=5) }}

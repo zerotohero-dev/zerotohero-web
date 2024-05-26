@@ -69,7 +69,9 @@ In this mini video, you've learned how to work with private **Go** modules and i
 
 > **Note**  
 >   
-> You can check out this **Zero to Hero** article about [Z-Shell Startup Files](https://www.zerotohero.dev/zshell-startup-files/) for more information about the subject.
+> You can check out this **Zero to Hero** article about 
+> [Z-Shell Startup Files](@/tips/zshell-startup-files.md) for more information 
+> about the subject.
 
 We'll have more fun with **Go** in the upcoming videos and articles.
 

@@ -124,8 +124,8 @@ For instance phrases like "*obviously*", "*clearly*", "*certainly*", "*no
 doubt*" will likely trigger defensiveness and negative emotions in your
 counterpart.
 
-Additionally, don't exaggerate things. Avoid sentences like "*We always...*", "
-*We never...*". And needless to say, don't challenge anyone's character or
+Additionally, don't exaggerate things. Avoid sentences like "*We always...*", 
+"*We never...*". And needless to say, don't challenge anyone's character or
 integrity.
 
 > Focus on the issue, not on the person solving the issue.
@@ -147,17 +147,19 @@ I typically don't share these anywhere else.
 
 Exclusively hand-picked for you 👌. Enjoy.
 
-* [**DevOps Helper Bot** is used for helping in administration and moderation DevOps groups in telegram](https://github.com/Asgoret/devopshelper_bot).
+* [**DevOps Helper Bot** is used for helping in administration and 
+  moderation DevOps groups in telegram](https://github.com/Asgoret/devopshelper_bot).
 * [**AnyStatus** is a remote control for your CI/CD Pipeline](https://github.com/AnyStatus/AnyStatus).
 * [**Popeye** is a Kubernetes cluster resource sanitizer](https://github.com/derailed/popeye).
 
-Thanks a Lot ❤️
----------------
+## Thanks a Lot ❤️
 
 That's all for this week. Next week, I'll gather more unique content and
 resources.
 
 So, until next time... May the source be with you 🦄.
+
+--------
 
 ## Issues
 

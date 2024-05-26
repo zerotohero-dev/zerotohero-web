@@ -125,6 +125,8 @@ Embracing these strategies will transform how you learn and approach learning
 itself, laying the groundwork for continuous progress and growth across all
 aspects of life.
 
+--------
+
 ## Section Contents
 
 {{ roadmap_nav(selected=5) }}

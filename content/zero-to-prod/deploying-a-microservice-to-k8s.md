@@ -82,7 +82,7 @@ Here's the login script I used in the video:
 > **Note**
 >
 > To use the above script, you need
-> to [install and configure AWS CLI](https://www.zerotohero.dev/creating-ecr-repositories/)
+> to [install and configure AWS CLI](@/zero-to-prod/creating-ecr-repositories.md)
 > first.
 
 Resources and Additional Reading
@@ -144,8 +144,8 @@ Resources and Additional Reading
 
 ### Linux
 
-* [.zprofile, .zshrc, .zenv, OMG! What Do I Put Where?! (_a **Zero to Hero**
-  article_)](https://www.zerotohero.dev/zshell-startup-files/)
+* [.zprofile, .zshrc, .zenv, OMG! What Do I Put Where?! (*a **Zero to Hero**
+  article*)](@/tips/zshell-startup-files.md)
 * [`curl`](https://curl.se/)
 * [`telnet`](https://en.wikipedia.org/wiki/Telnet)
 

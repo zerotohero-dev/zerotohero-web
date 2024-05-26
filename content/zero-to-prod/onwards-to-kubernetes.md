@@ -58,9 +58,7 @@ High-Level Deployment Diagram
 
 Here's a high-level diagram for the entire Kubernetes deployment.
 
-![](https://www.zerotohero.dev/content/images/2022/02/fizz-cluster-high-level-diagram.png)
-
-Fizz Cluster High-Level Deployment Diagram
+![Fizz Cluster High-Level Deployment Diagram](/images/2022/02/fizz-cluster-high-level-diagram.png)
 
 Read The Source
 ---------------

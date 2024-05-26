@@ -44,6 +44,8 @@ Since the book was released, the phrase "Catch 22" has become part of English,
 describing a situation in which one is stuck and can't find a way out due to
 conflicting rules or circumstances.
 
+--------
+
 ## Section Contents
 
 {{ top_of_mind_nav(selected=1) }}

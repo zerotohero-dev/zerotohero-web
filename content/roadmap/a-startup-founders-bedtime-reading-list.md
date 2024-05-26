@@ -49,6 +49,8 @@ That's all for now. Good luck with your startup.
 
 And, until next time... May the source be with you 🦄.
 
+--------
+
 ## Section Contents
 
 {{ roadmap_nav(selected=18) }}

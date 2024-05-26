@@ -347,7 +347,7 @@ overlays you use change all the time.
 
 Okay, that was **SPIFFE**. But, what is [**SPIRE**](https://spiffe.io/docs/latest/spire-about/spire-concepts/)?
 
-![SPIFFE defines how to make keys; SPIRE is the key maker.](https://www.zerotohero.dev/content/images/2021/10/keymaker.png)
+![SPIFFE defines how to make keys; SPIRE is the key maker.](/images/2021/10/keymaker.png)
 
 > **About SPIRE**
 > 
@@ -362,7 +362,7 @@ This way, it reliably and securely identifies workloads and issues them **SVID**
 s (_SPIFFE Verfifiables IDs_), which are nothing but specialized _X.509
 Certificates_. The workloads, then, can use them to prove their identity.
 
-![Workload attestation.](https://www.zerotohero.dev/content/images/2021/10/attestation.png)
+![Workload attestation.](/images/2021/10/attestation.png)
 
 You'll see an example of how this attestation flow works in the video I've added
 to the beginning of this article.
@@ -881,6 +881,8 @@ Using the foundation that we created in this article, we'll create a service to
 service **mTLS** communication channel in the follow-up articles.
 
 Until then... May the source be with you 🦄.
+
+--------
 
 ## Section Contents
 

@@ -28,7 +28,7 @@ which consumed **a lot** of my time and energy.
 **The good part**: I learned a heck lot of [**_Spring Cloud_**](https://spring.io/projects/spring-cloud) 
 and [**_Spring Security_**](https://spring.io/projects/spring-security) internals, 
 more than I'd like to know, actually. My verdict is: Although Java has moved a 
-long way since _J2EE,_ and with the [**Spring Framework**](https://spring.io/)**,
+long way since *J2EE*, and with the [**Spring Framework**](https://spring.io/)**,
 **it's on the right path; yet I still do think it is **heavy** and **verbose**.
 
 > [**The Spring Framework**](https://spring.io/) is still worth learning **_if_
@@ -40,7 +40,7 @@ long way since _J2EE,_ and with the [**Spring Framework**](https://spring.io/)**
 
 This week, I mainly did infrastructure and plumbing work, such as creating
 container images and ensuring that **FizzBuzz Pro** microservices are at least
-answering to _health_ and _liveness_ endpoints.
+answering to *health* and *liveness* endpoints.
 
 ![Creating a go Docker image.](/images/2021/06/Screen-Shot-2021-06-26-at-2.11.45-PM.png)
 
@@ -128,7 +128,10 @@ Exclusively hand-picked for you 👌. Enjoy.
 * [Run any code on any client with **WebAssembly** and **Wasmer**](https://wasmer.io/).
 * [**IEEE754** anyone](https://0.30000000000000004.com/)?
 * [Fed up from the React/Vue/Angular madness?---**Alpine** is a rugged, minimal 
-  framework for composing **JavaScript** behavior in your markup](https://github.com/alpinejs/alpine).
+  framework for composing **JavaScript** behavior in your 
+  markup](https://github.com/alpinejs/alpine).
+
+--------
 
 ## Issues
 

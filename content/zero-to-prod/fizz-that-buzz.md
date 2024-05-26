@@ -49,9 +49,7 @@ Here's the high-level authentication and identity management architecture that
 I'll be talking about (_you can open the image in another tab for a
 higher-resolution version_):
 
-![](https://www.zerotohero.dev/content/images/2021/05/fizzbuzz-pro-verification-flow-2.png)
-
-FizzBuzz Pro authentication high-level overview.
+![FizzBuzz Pro authentication high-level overview.](/images/2021/05/fizzbuzz-pro-verification-flow-2.png)
 
 Video Discussion
 ----------------

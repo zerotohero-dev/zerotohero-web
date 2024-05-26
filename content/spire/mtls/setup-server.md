@@ -27,6 +27,8 @@ Now that we have **SPIRE**, our server application can use it to establish an
   ) 
 }}
 
+--------
+
 ## Playlist
 
 {{ spire_mtls_nav(selected=8) }}

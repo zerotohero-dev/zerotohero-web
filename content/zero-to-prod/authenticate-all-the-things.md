@@ -26,6 +26,8 @@ Lecture
 
 Zero to Prod in Half an Hour: Part 8 --- Authenticate All the Things
 
+--------
+
 Playlist
 --------
 

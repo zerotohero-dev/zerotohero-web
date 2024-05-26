@@ -42,6 +42,8 @@ Here is the second part:
 
 Enjoy... And until next time... May the source be with you 🦄.
 
+--------
+
 ## Section Contents
 
 {{ tips_nav(selected=8) }}

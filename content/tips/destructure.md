@@ -44,6 +44,8 @@ That was your little nugget.
 
 Until next time... May the source be with you 🦄.
 
+--------
+
 ## Section Contents
 
 {{ tips_nav(selected=2) }}

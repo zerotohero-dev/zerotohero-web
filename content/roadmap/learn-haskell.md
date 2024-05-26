@@ -97,7 +97,7 @@ read [K&R's C Programming Language](https://www.goodreads.com/book/show/515601.T
 ## Conclusion
 
 After learning **Haskell**, I'd recommend you 
-[give **Go** a go](https://www.zerotohero.dev/learn-go/) too.
+[give **Go** a go](@/vadideki-geyik/geyik-academy/go101/learn-go.md) too.
 
 > **Don't Forget Your HTML and CSS**  
 > It would even be better if you dig into
@@ -113,10 +113,12 @@ languages, just to learn a third language?_".
 If you ever watched [The Karate Kid](https://www.imdb.com/title/tt0087538/),
 then you know the reason: Even if you have studied a couple of weeks of [*
 *Haskell**](https://www.haskell.org/) and [**Go
-**](https://www.zerotohero.dev/learn-go/), you'll be "_miles ahead_" when you
+**](@/vadideki-geyik/geyik-academy/go101/learn-go.md), you'll be "_miles 
+ahead_" 
+when you
 begin your **JavaScript** journey.
 
-Your mind will be _wired_ to think in **JavaScript** without you even realize.
+Your mind will be *wired* to think in **JavaScript** without you even realize.
 
 There are countless articles, books, videos, and tutorials to cover your *
 *JavaScript** bases. I'll write about it later. Yet a quick web search will
@@ -125,6 +127,8 @@ provide you with more resources than you need 🙂.
 So off you go, learn some cool $#!%.
 
 And until next time... May the source be with you 🦄.
+
+--------
 
 ## Section Contents
 

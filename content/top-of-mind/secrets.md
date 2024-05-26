@@ -39,6 +39,8 @@ To break it down:
   *accountable**, and **do not shy away from** making decisions or **taking
   actions**.
 
+--------
+
 ## Section Contents
 
 {{ top_of_mind_nav(selected=10) }}

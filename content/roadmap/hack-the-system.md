@@ -346,6 +346,8 @@ _Are you ready to hack_?
 
 Then, may the source be with you 🦄.
 
+--------
+
 ## Section Contents
 
 {{ roadmap_nav(selected=2) }}

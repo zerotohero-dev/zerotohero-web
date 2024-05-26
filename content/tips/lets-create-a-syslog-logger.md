@@ -195,6 +195,8 @@ Enjoy... And may the source be with you 🦄.
 
 * [`fizz-logging` (**3KB** zip archive)](https://assets.zerotohero.dev/lets-create-a-syslog-logger/5f7a69db-658d-482c-bac1-9f036bb01edd/fizz-logging.zip)
 
+--------
+
 ## Section Contents
 
 {{ tips_nav(selected=4) }}

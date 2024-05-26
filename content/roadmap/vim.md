@@ -71,6 +71,8 @@ I hope you find the resources here useful in you `vim` learning journey.
 
 Until next time... May the source be with you 🦄.
 
+--------
+
 ## Section Contents
 
 {{ roadmap_nav(selected=12) }}

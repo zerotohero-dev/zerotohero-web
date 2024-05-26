@@ -27,6 +27,8 @@ create deployment manifests, and deploy it into the cluster.
   ) 
 }}
 
+--------
+
 ## Playlist
 
 {{ spire_mtls_nav(selected=4) }}

@@ -200,6 +200,8 @@ I hope the resources you find here will help you jumpstart your UI/UX journey.
 
 And until next time... May the source be with you 🦄.
 
+--------
+
 ## Section Contents
 
 {{ roadmap_nav(selected=20) }}
