@@ -38,7 +38,7 @@ Tools and Technologies Mentioned
 Here are the tools and technologies that were mentioned in the video, along with
 related articles and other helpful links.
 
-* [Kubernetes](@/zero-to-prod/containerizing-our-application/)
+* [Kubernetes](https://kubernetes.io/)
 * [Dockerfile Reference](https://docs.docker.com/engine/reference/builder/)
 * [Use Multi Stage Builds](https://docs.docker.com/develop/develop-images/multistage-build/)
 * [Container Security](https://www.goodreads.com/book/show/48816583-container-security)

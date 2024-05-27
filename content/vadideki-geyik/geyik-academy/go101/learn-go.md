@@ -48,7 +48,8 @@ In [**Go** Frequently Asked Questions](https://golang.org/doc/faq), you'll find 
 ### Set Up Your **Go** Development Environment
 
 After this initial exploration, now it's time for [Setting Up Your **Go** 
-Development Environment](@/vadideki-geyik/geyik-academy/go-setup.md). Once you 
+Development Environment](@/vadideki-geyik/geyik-academy/go101/go-setup.md). 
+Once you 
 set up your development environment, have fun playing with **Go** locally to 
 explore the language a bit further, and then proceed to the following sections 
 for a deeper dive.

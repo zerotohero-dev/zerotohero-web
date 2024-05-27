@@ -65,7 +65,8 @@
   <div class="entry-content">
     <p>{{ z2ps.description }}</p>
   </div>
-  <a class="entry-link" aria-label="post link to {{ z2ps.title }}" href="{{ z2ps.permalink }}"></a>
+  <a class="entry-link" aria-label="post link to {{ z2ps.title }}"
+     href="{{ z2ps.permalink }}"></a>
 </article>
 
 {% set z2ps = get_section(path="highlights/_index.md") %}
@@ -82,10 +83,9 @@
   <div class="entry-content">
     <p>{{ z2ps.description }}</p>
   </div>
-  <a class="entry-link" aria-label="post link to {{ z2ps.title }}" href="{{ z2ps.permalink }}"></a>
+  <a class="entry-link" aria-label="post link to {{ z2ps.title }}"
+     href="{{ z2ps.permalink }}"></a>
 </article>
-
-
 
 <p>&nbsp;</p>
 <p>&nbsp;</p>
@@ -111,7 +111,8 @@
     <p>{{ z2ps.description }}</p>
   </div>
 
-  <a class="entry-link" aria-label="post link to {{ z2ps.title }}" href="{{ z2ps.permalink }}"></a>
+  <a class="entry-link" aria-label="post link to {{ z2ps.title }}"
+     href="{{ z2ps.permalink }}"></a>
 </article>
 
 {% set z2ps = get_section(path="zero-to-prod/_index.md") %}
@@ -129,7 +130,8 @@
     <p>{{ z2ps.description }}</p>
   </div>
 
-  <a class="entry-link" aria-label="post link to {{ z2ps.title }}" href="{{ z2ps.permalink }}"></a>
+  <a class="entry-link" aria-label="post link to {{ z2ps.title }}"
+     href="{{ z2ps.permalink }}"></a>
 </article>
 
 {% set z2ps = get_section(path="tips/_index.md") %}
@@ -146,7 +148,8 @@
   <div class="entry-content">
     <p>{{ z2ps.description }}</p>
   </div>
-  <a class="entry-link" aria-label="post link to {{ z2ps.title }}" href="{{ z2ps.permalink }}"></a>
+  <a class="entry-link" aria-label="post link to {{ z2ps.title }}"
+     href="{{ z2ps.permalink }}"></a>
 </article>
 
 <p>&nbsp;</p>
@@ -267,7 +270,8 @@
   <div class="entry-content">
     <p>{{ z2ps.description }}</p>
   </div>
-  <a class="entry-link" aria-label="post link to {{ z2ps.title }}" href="{{ z2ps.permalink }}"></a>
+  <a class="entry-link" aria-label="post link to {{ z2ps.title }}"
+     href="{{ z2ps.permalink }}"></a>
 </article>
 
 <p>&nbsp;</p>
@@ -332,14 +336,17 @@
   <footer class="entry-footer">
       {% include "partials/post_meta.html" %}
   </footer>
-  <a class="entry-link" aria-label="post link to {{ page.title }}" href="{{ page.permalink }}"></a>
+
+  <a class="entry-link" aria-label="post link to {{ page.title }}"
+     href="{{ page.permalink }}"></a>
 </article>
 {% endfor %}
 
 {% if combined_posts | length > max %}
 <footer class="page-footer">
     <nav class="pagination">
-        <a class="next" href="{{ combined_posts[max].permalink }}">Next »</a>
+        <a class="next"
+           href="{{ combined_posts[max].permalink }}">Next »</a>
     </nav>
 </footer>
 {% endif %}

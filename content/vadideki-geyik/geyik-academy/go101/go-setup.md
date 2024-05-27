@@ -39,9 +39,9 @@ First, head over to the [official **Go** downloads page](https://golang.org/dl/)
 
 Once you have the binary, follow the **installation instructions** below that are relevant to your operating system:
 
-*   [Installing **Go** on a **Mac**](@/vadideki-geyik/geyik-academy/go101/installing-go-on-a-mac.md)
-*   [Installing **Go** on **Linux**](@/vadideki-geyik/geyik-academy/go101/installing-go-on-linux.md)
-*   [Installing **Go** on **Windows**](@/vadideki-geyik/geyik-academy/go101/installing-go-on-windows/)
+* [Installing **Go** on a **Mac**](@/vadideki-geyik/geyik-academy/go101/installing-go-on-a-mac.md)
+* [Installing **Go** on **Linux**](@/vadideki-geyik/geyik-academy/go101/installing-go-on-linux.md)
+* [Installing **Go** on **Windows**](@/vadideki-geyik/geyik-academy/go101/installing-go-on-windows.md)
 
 ## Set Your `GOPATH` Environment Variable
 

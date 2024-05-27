@@ -12,3 +12,4 @@
 docker build -t z2h:latest .
 
 docker run --rm -p 8000:80 z2h:latest
+
