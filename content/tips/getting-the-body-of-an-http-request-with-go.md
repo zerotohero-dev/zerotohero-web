@@ -15,7 +15,10 @@ date = "2023-03-01"
 tags = ["tips", "go", "http", "request"]
 +++
 
-![Getting the Body of an HTTP Request With Go](/images/size/w1200/2024/03/http.png)
+{{img(
+  src="/images/size/w1200/2024/03/http.png",
+  alt="Request and responses."
+)}}
 
 You can use the io to get the request body from an **HTTP**request
 in `io.ReadAll()` function to read the`r.Body` object representing the incoming

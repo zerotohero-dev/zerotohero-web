@@ -15,7 +15,10 @@ date = "2024-03-01"
 tags = ["tips", "go", "base64", "encoding", "decoding"]
 +++
 
-![Base64 Decoding a String in Go](/images/size/w1200/2024/03/strings.png)
+{{img(
+  src="/images/size/w1200/2024/03/strings.png",
+  alt="Strings."
+)}}
 
 To base64-decode a string in Go, you can use the
 `decoding.DecodeString` function from the `encoding/base64` package. 

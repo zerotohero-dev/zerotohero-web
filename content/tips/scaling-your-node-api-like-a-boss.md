@@ -15,7 +15,10 @@ date = "2021-09-27"
 tags = ["tips", "nodejs", "performance", "scalability"]
 +++
 
-![Scaling Your Node.js API Like a Boss](/images/size/w1200/2024/03/scalability.png)
+{{img(
+  src="/images/size/w1200/2024/03/scalability.png",
+  alt="Scaling Your Node.js API Like a Boss."
+)}}
 
 > This is a 90-minute tech talk that I've given several years ago.
 >

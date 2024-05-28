@@ -15,7 +15,10 @@ date = "2023-03-07"
 tags = ["tips", "javascript", "destructuring"]
 +++
 
-![Use Destructuring to Remove Attributes](/images/size/w1200/2024/03/destructure.png)
+{{img(
+  src="/images/size/w1200/2024/03/destructure.png",
+  alt="Destructure."
+)}}
 
 Here's a neat little trick:
 

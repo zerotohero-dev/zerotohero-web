@@ -15,7 +15,10 @@ date = "2021-06-06"
 tags = ["tips", "go", "refactoring", "method-extraction"]
 +++
 
-![Make Your Code Leaner By Extracting Methods](/images/size/w1200/2024/03/extract.png)
+{{img(
+  src="/images/size/w1200/2024/03/extract.png",
+  alt="Extracting methods."
+)}}
 
 ## Introduction
 
@@ -140,7 +143,8 @@ Do this refactoring **only** when it makes sense. Do it only when the **benefits
 doing it (_i.e., an additional level of indirection, making code harder to
 follow_).
 
-[Sometimes a little copying is better than a little dependency](https://www.youtube.com/watch?v=PAAkCSZUG1c).
+[Sometimes a little copying is better than a little 
+dependency](https://www.youtube.com/watch?v=PAAkCSZUG1c).
 
 ## Read the Source
 
