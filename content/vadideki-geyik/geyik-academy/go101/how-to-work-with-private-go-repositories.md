@@ -15,7 +15,7 @@ date = "2021-11-26"
 tags = ["go"]
 +++
 
-![How To Work With Private Go Repositories](/zerotohero-dev/content/images/size/w1200/2024/03/private.png)
+![How To Work With Private Go Repositories](/images/size/w1200/2024/03/private.png)
 
 Introduction
 ------------

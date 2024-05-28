@@ -15,7 +15,7 @@ date = "2021-07-23"
 tags = ["zero-to-prod"]
 +++
 
-![FizzBuzz Pro High Level Design](/zerotohero-dev/content/images/size/w1200/2024/03/blueprint.png)
+![FizzBuzz Pro High Level Design](/images/size/w1200/2024/03/blueprint.png)
 
 In this quick video, we'll overview a high-level overview of **FizzBuzz Pro**
 APIs.
@@ -25,6 +25,8 @@ however we have to start designing somewhere. So, without further ado, here
 comes the video that explains the initial design:
 
 FizzBuzz.Pro High-Level System Architecture
+578676419
+
 
 As I said in the video, I'll create additional content in the form of **articles
 **, **source code**, and more **videos** as I continue implementing **FizzBuzz

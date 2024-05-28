@@ -15,7 +15,10 @@ date = "2024-03-05"
 tags = ["zero-to-prod"]
 +++  
 
-![Bob Ross](/images/size/w1200/2024/03/bob.png)
+{{img(
+  src="/images/size/w1200/2024/03/bob.png",
+  alt="Let us put a happy little middleware here."
+)}}
 
 This section will introduce a middleware layer to our project and we'll write a 
 sample middleware to see it in action.
@@ -47,8 +50,7 @@ with related articles and other helpful links.
 [middleware]: https://developer.mozilla.org/en-US/docs/Glossary/Middleware
 [curl]: https://curl.se/
 
-Read The Source
----------------
+## Read The Source
 
 * [Download the source code (*114kb zip archive*)][souce]
 

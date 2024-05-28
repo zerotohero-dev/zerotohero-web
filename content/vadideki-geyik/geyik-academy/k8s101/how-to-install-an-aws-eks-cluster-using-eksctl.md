@@ -15,19 +15,30 @@ date = "2021-06-02"
 tags = ["kubernetes"]
 +++
 
-![How to Install an AWS EKS Cluster Using eksctl](/zerotohero-dev/content/images/size/w1200/2024/03/pipeline.png)
+{{img(
+  src="/images/size/w1200/2024/03/pipeline.png",
+  alt="A cluster."
+)}}
 
-Introduction
-------------
+## Introduction
 
-In this article, we'll provision a managed **Kubernetes** cluster on an **AWS** cloud, and we'll also look into some of the alternatives.
+In this article, we'll provision a managed **Kubernetes** cluster on an **AWS** 
+cloud, and we'll also look into some of the alternatives.
 
-Why Managed Kubernetes?
------------------------
+## Why Managed Kubernetes?
 
-But why do we use managed **Kubernetes** in the first place? I mean, is it that hard to create a [Control Plane](https://kubernetes.io/docs/reference/glossary/?all=true#term-control-plane) using something like [`kubeadm`](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/)?
+But why do we use managed **Kubernetes** in the first place? I mean, is it that 
+hard to create a [Control Plane][control-plane] using something like 
+[`kubeadm`][kubeadm]?
 
-Well, yes, and no. Provisioning a cluster with `kubeadm` is relatively easy; however, it's still a lot of work to **maintain**, **secure**, **update**, and **upgrade** that cluster. By using a _managed_ Kubernetes solution, you push that maintenance and security burden to your cloud provider, and you can focus on your worker nodes instead.
+Well, yes, and no. Provisioning a cluster with `kubeadm` is relatively easy; 
+however, it's still a lot of work to **maintain**, **secure**, **update**, and 
+**upgrade** that cluster. By using a *managed* Kubernetes solution, you push 
+that maintenance and security burden to your cloud provider, and you can focus 
+on your worker nodes instead.
+
+[control-plane]: https://kubernetes.io/docs/reference/glossary/?all=true#term-control-plane
+[kubeadm]: https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
 
 Managed Kubernetes Service in the Cloud
 ---------------------------------------

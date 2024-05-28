@@ -15,7 +15,7 @@ date = "2021-08-09"
 tags = ["zero-to-prod"]
 +++
 
-![The Journey of a Microservice: From Source Code to a Full-Blown Kubernetes Deployment](/zerotohero-dev/content/images/size/w1200/2024/03/harmony.png)
+![The Journey of a Microservice: From Source Code to a Full-Blown Kubernetes Deployment](/images/size/w1200/2024/03/harmony.png)
 
 Introduction
 ------------

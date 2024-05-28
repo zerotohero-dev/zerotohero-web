@@ -15,7 +15,7 @@ date = "2021-01-12"
 tags = ["zero-to-prod"]
 +++
 
-![Zero to Prod in Half an Hour: Part 5 --- Implementing an OIDC Authenticator](/zerotohero-dev/content/images/size/w1200/2024/03/oidc.png)
+![Zero to Prod in Half an Hour: Part 5 --- Implementing an OIDC Authenticator](/images/size/w1200/2024/03/oidc.png)
 
 This lecture will implement the **Authenticator** that we outlined in the
 previous lecture. Our authenticator will extend an OIDC provider, and and oauth2
@@ -26,6 +26,7 @@ Lecture
 -------
 
 Zero to Prod in Half an Hour: Part 5 --- Implementing an OIDC Authenticator
+661765992
 
 Playlist
 --------

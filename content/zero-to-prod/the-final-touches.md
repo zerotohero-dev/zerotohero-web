@@ -15,7 +15,7 @@ date = "2022-02-09"
 tags = ["zero-to-prod"]
 +++
 
-![Zero to Prod in Half an Hour: Part 12 --- The Final Touches](/zerotohero-dev/content/images/size/w1200/2024/03/artwork.png)
+![Zero to Prod in Half an Hour: Part 12 --- The Final Touches](/images/size/w1200/2024/03/artwork.png)
 
 We are done with the authentication part. We are almost near the end of our
 application's initial implementation. We just need a questions handlers, which,
@@ -26,6 +26,7 @@ Lecture
 -------
 
 Zero to Prod in Half an Hour: Part 12 --- The Final Touches
+662405388
 
 Playlist
 --------

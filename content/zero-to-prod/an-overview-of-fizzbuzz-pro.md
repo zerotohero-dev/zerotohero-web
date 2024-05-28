@@ -15,16 +15,22 @@ date = "2022-10-15"
 tags = ["zero-to-prod"]
 +++
 
-![Zero to Prod in Half an Hour: Part 1 --- An Overview of FizzBuzz Pro](/zerotohero-dev/content/images/size/w1200/2024/03/app.png)
+{{img(
+  src="/images/size/w1200/2024/03/app.png",
+  alt="Zero to Prod in Half an Hour: Part 1 --- An Overview of FizzBuzz Pro"
+)}}
 
 This series will show how you can deploy a full-blown production-ready web
 application in half an hour. Let's look into what kind of an application we'll
 build and what technologies we'll use.
 
-Lecture
--------
+## Lecture
 
 Zero to Prod in Half an Hour: Part 1 --- An Overview of FizzBuzz Pro
+661262113
+
+
+
 
 --------
 

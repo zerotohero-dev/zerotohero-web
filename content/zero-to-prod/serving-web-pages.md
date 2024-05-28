@@ -15,7 +15,7 @@ date = "2022-01-15"
 tags = ["zero-to-prod"]
 +++
 
-![Zero to Prod in Half an Hour: Part 6 --- Serving Web Pages](/zerotohero-dev/content/images/size/w1200/2024/03/recurse.png)
+![Zero to Prod in Half an Hour: Part 6 --- Serving Web Pages](/images/size/w1200/2024/03/recurse.png)
 
 This section will add a bunch of static web page templates into our application
 and serve them in several routes. We will also use a Gumroad embed form and a
@@ -25,6 +25,7 @@ Lecture
 -------
 
 Zero to Prod in Half an Hour: Part 6 --- Serving Web Pages
+661883975
 
 Playlist
 --------

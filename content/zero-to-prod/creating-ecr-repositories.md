@@ -15,12 +15,14 @@ date = "2021-06-18"
 tags = ["zero-to-prod"]
 +++
 
-![Creating ECR Repositories](/zerotohero-dev/content/images/size/w1200/2024/03/elastic.png)
+![Creating ECR Repositories](/images/size/w1200/2024/03/elastic.png)
 
 This quick video will create an [**AWS ECR**](https://aws.amazon.com/ecr/) repo
 and set up our development environment to interact with it.
 
 Creating ECR Repositories
+564406841
+
 
 Resources and Additional Reading
 --------------------------------

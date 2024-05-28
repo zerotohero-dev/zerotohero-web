@@ -15,7 +15,7 @@ date = "2022-02-09"
 tags = ["zero-to-prod"]
 +++
 
-![Zero to Prod in Half an Hour: Part 9 --- Thinking in Middlewares](/zerotohero-dev/content/images/size/w1200/2024/03/mw.png)
+![Zero to Prod in Half an Hour: Part 9 --- Thinking in Middlewares](/images/size/w1200/2024/03/mw.png)
 
 This section will discuss various middlewares that we need in our application.
 We'll register the middlewares in our routes as if they have already been
@@ -25,6 +25,7 @@ Lecture
 -------
 
 Zero to Prod in Half an Hour: Part 9 --- Thinking in Middlewares
+662112549
 
 Playlist
 --------

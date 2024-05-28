@@ -15,7 +15,7 @@ date = "2022-02-10"
 tags = ["zero-to-prod"]
 +++
 
-![Zero to Prod in Half an Hour: Part 11 --- Implementing Authentication Handlers](/zerotohero-dev/content/images/size/w1200/2024/03/authz.png)
+![Zero to Prod in Half an Hour: Part 11 --- Implementing Authentication Handlers](/images/size/w1200/2024/03/authz.png)
 
 Having implemented our middlewares, now it's time to implement the missing
 OAuth0 callback, login, and logout handlers.
@@ -24,6 +24,7 @@ Lecture
 -------
 
 Zero to Prod in Half an Hour: Part 11 --- Implementing Authentication Handlers
+662357647
 
 Playlist
 --------

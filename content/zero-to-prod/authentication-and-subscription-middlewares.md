@@ -15,7 +15,7 @@ date = "2022-02-10"
 tags = ["zero-to-prod"]
 +++
 
-![Zero to Prod in Half an Hour: Part 10 --- Authentication and Subscription Middlewares](/zerotohero-dev/content/images/size/w1200/2024/03/through.png)
+![Zero to Prod in Half an Hour: Part 10 --- Authentication and Subscription Middlewares](/images/size/w1200/2024/03/through.png)
 
 This section will implement middlewares that we need for authentication,
 authorization, and service subscription.
@@ -25,6 +25,7 @@ Lecture
 
 Zero to Prod in Half an Hour: Part 10 --- Authentication and Subscription
 Middlewares
+662146491
 
 --------
 

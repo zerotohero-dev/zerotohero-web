@@ -15,7 +15,7 @@ date = "2022-02-09"
 tags = ["zero-to-prod"]
 +++
 
-![Zero to Prod in Half an Hour: Part 8 --- Authenticate All the Things](/zerotohero-dev/content/images/size/w1200/2024/03/locket.png)
+![Zero to Prod in Half an Hour: Part 8 --- Authenticate All the Things](/images/size/w1200/2024/03/locket.png)
 
 We'll define placeholders for the routes we want to implement later. And then
 we'll implement a MongoDB-backed session store to be used in our Auth0 identity
@@ -25,6 +25,7 @@ Lecture
 -------
 
 Zero to Prod in Half an Hour: Part 8 --- Authenticate All the Things
+662068994
 
 --------
 

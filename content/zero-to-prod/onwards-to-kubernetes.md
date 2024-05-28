@@ -18,7 +18,7 @@ tags = ["zero-to-prod"]
 Onwards to Kubernetes
 =====================
 
-![Onwards to Kubernetes](/zerotohero-dev/content/images/size/w1200/2024/03/eks.png)
+![Onwards to Kubernetes](/images/size/w1200/2024/03/eks.png)
 
 As a final step, we'll deploy our application to an AWS EKS Kubernetes cluster
 and make sure that it's healthy, up, and running.
@@ -27,6 +27,7 @@ Lecture
 -------
 
 Zero to Prod in Half an Hour: Part 14 --- Onwards to Kubernetes
+662457596
 
 Playlist
 --------

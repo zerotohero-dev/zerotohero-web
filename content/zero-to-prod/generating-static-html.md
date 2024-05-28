@@ -15,7 +15,7 @@ date = "2022-01-06"
 tags = ["zero-to-prod"]
 +++
 
-![Zero to Prod in Half an Hour: Part 2 --- Generating Static HTML](/zerotohero-dev/content/images/size/w1200/2024/03/structure.png)
+![Zero to Prod in Half an Hour: Part 2 --- Generating Static HTML](/images/size/w1200/2024/03/structure.png)
 
 In this part of the series, we'll create a generator that reads a repository
 full of Go source code files, and create syntax-highlighted HTML versions of
@@ -26,6 +26,7 @@ Lecture
 -------
 
 Zero to Prod in Half an Hour: Part 2 --- Generating Static HTML
+661262162
 
 Playlist
 --------

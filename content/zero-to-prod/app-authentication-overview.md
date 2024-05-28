@@ -15,7 +15,7 @@ date = "2022-01-11"
 tags = ["zero-to-prod"]
 +++
 
-![Zero to Prod in Half an Hour: Part 4 --- App Authentication Overview](/zerotohero-dev/content/images/size/w1200/2024/03/papers.png)
+![Zero to Prod in Half an Hour: Part 4 --- App Authentication Overview](/images/size/w1200/2024/03/papers.png)
 
 In this section, we'll create a blank project for your web application, then
 overview how we can implement an **Auth0** Authenticator for our application to
@@ -26,6 +26,7 @@ Lecture
 -------
 
 Zero to Prod in Half an Hour: Part 4 --- App Authentication Overview
+661702567
 
 --------
 

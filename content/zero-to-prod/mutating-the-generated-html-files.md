@@ -15,7 +15,7 @@ date = "2022-01-09"
 tags = ["zero-to-prod"]
 +++
 
-![Zero to Prod in Half an Hour: Part 3 --- Mutating the Generated HTML Files](/zerotohero-dev/content/images/size/w1200/2024/03/mutation.png)
+![Zero to Prod in Half an Hour: Part 3 --- Mutating the Generated HTML Files](/images/size/w1200/2024/03/mutation.png)
 
 As it turns out, using pygmentize can only do so much for us and we'll need to
 extend the generated HTML files. This section will update the generated HTML
@@ -25,6 +25,7 @@ Lecture
 -------
 
 Zero to Prod in Half an Hour: Part 3 --- Generating Static HTML
+661642565
 
 Playlist
 --------

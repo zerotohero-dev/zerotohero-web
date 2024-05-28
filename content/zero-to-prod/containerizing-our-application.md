@@ -15,7 +15,7 @@ date = "2022-02-10"
 tags = ["zero-to-prod"]
 +++
 
-![Zero to Prod in Half an Hour: Part 13 --- Containerizing Our Application](/zerotohero-dev/content/images/size/w1200/2024/03/containerize.png)
+![Zero to Prod in Half an Hour: Part 13 --- Containerizing Our Application](/images/size/w1200/2024/03/containerize.png)
 
 We have an app that works locally. Now it's time to put it into a container and
 yeet it out to a cluster. And that's what we'll do.
@@ -24,6 +24,7 @@ Lecture
 -------
 
 Zero to Prod in Half an Hour: Part 13 --- Containerizing Our Application
+662428552
 
 --------
 
