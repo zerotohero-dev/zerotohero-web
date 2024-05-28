@@ -15,7 +15,10 @@ date = "2022-08-19"
 tags = ["mtls", "spiffe", "spire"]
 +++
 
-![mTLS With SPIRE: Part 3: Creating the Client App](/images/size/w1200/2024/03/client-server.png)
+{{img(
+  src="/images/size/w1200/2024/03/client-server.png",
+  alt="mTLS With SPIRE: Part 3: Creating the Client App"
+)}}
 
 This section will create the client app and establish connectivity between the
 client and the server. The connectivity is insecure: There is no **mTLS**

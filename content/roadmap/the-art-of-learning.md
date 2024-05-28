@@ -17,6 +17,11 @@ tags = ["roadmap", "learning"]
 
 ![Master Your Mind: Unleash the Power of Learning](/images/size/w1200/2024/03/rivers.png)
 
+{{img(
+  src="/images/size/w1200/2024/03/rivers.png",
+  alt="The art of learning."
+)}}
+
 > **Read Me First**
 >
 > This is a follow-up to the article
@@ -69,8 +74,8 @@ and discern which principles to draw upon from your experiences.
 ## Elaboration
 
 Try elaborating on concepts by providing explanations and multiple illustrations
-to understand a subject. Breaking down concepts you are studying into *
-*analogies**, **components**, or fundamental **principles** can facilitate
+to understand a subject. Breaking down concepts you are studying into 
+**analogies**, **components**, or fundamental **principles** can facilitate
 comprehension.
 
 ## Reflection

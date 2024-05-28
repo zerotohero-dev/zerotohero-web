@@ -14,6 +14,8 @@ date = "2024-05-21"
 [taxonomies]
 tags = ["highlights"]
 
+draft = true
+
 +++
 
 Welcome to the **28th** issue of **Zero to Hero** Highlights.

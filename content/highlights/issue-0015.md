@@ -15,7 +15,10 @@ date = "2021-10-02"
 tags = ["highlights"]
 +++
 
-![Pivoting Your Career?](/images/size/w1200/2024/03/pivot.png)
+{{img(
+  src="/images/size/w1200/2024/03/pivot.png"
+  alt="Pivoting is a big decision. Make sure you are ready for it."
+)}}
 
 Welcome to the fifteenth issue of **Zero to Hero** Highlights.
 
@@ -31,7 +34,10 @@ a Cloud-Native Security DevRel's survival guide 🥑.
 
 ## Cloud-Native Security Developer Relations Engineer's Survival Guide
 
-![Don't Panic](/images/2021/10/Screen-Shot-2021-09-30-at-8.38.49-PM.png)
+{{img(
+  src="/images/2021/10/Screen-Shot-2021-09-30-at-8.38.49-PM.png"
+  alt="Don't Panic"
+)}}
 
 I've even outlined the blueprint of a book. Not sure if I'll create a book; or
 come off with a series of articles or both. We'll see 😀.
@@ -59,10 +65,12 @@ for the larger community to benefit.
 
 I also looked into **Trust** and **Identity Federation** in the cloud.
 
-![SPIRE Tutorial Audio Recording](/images/2021/10/Screen-Shot-2021-09-30-at-8.51.13-PM.png)
+{{img(
+  src="/images/2021/10/Screen-Shot-2021-09-30-at-8.51.13-PM.png"
+  alt="SPIRE Tutorial Audio Recording"
+)}}
 
-I have **18 minutes** of screencast where I deploy a 
-[**SPIRE**](https://spiffe.io/docs/latest/spire-about/spire-concepts/) server on 
+I have **18 minutes** of screencast where I deploy a [**SPIRE**][spire] server on 
 an **AWS EKS** cluster and then fetch **x.509** SVID's from a workload. If it does
 not mean much to you, I promise it'll make sense after watching the video.
 
@@ -70,11 +78,14 @@ The content is almost ready. It just has some post-production and annotation
 work to do before it'll be ready for your viewing pleasure.
 
 Along with the video, there will be an accompanying article that has been tech
-reviewed by not one but two [**SPIRE**](https://spiffe.io/docs/latest/spire-about/spire-concepts/) 
-core contributors: [**Daniel Feldman**](https://twitter.com/d_feldman) and [**Evan
-Gilman**](https://twitter.com/evan2645).
+reviewed by not one but two [**SPIRE**][spire] core contributors: 
+[**Daniel Feldman**][daniel] and [**Evan Gilman**][evan].
 
 So it'll be **awesome**. Wait for it.
+
+[spire]: https://spiffe.io/docs/latest/spire-about/spire-concepts/
+[daniel]: https://twitter.com/d_feldman
+[evan]: https://twitter.com/evan2645
 
 ## Random Thought of the Week
 
@@ -101,7 +112,7 @@ thoughts.
 **What's behind that screensaver**? You want to make the right choice for the
 right reason. Be objective. The grass will always look greener from the outside.
 Though, are you considering facts and data, or are you considering your hopes
-and assumptions? If you make your decision solely based on your _gut_ feeling,
+and assumptions? If you make your decision solely based on your *gut* feeling,
 be aware that you are taking the risk of disappointment in the long run. Gather
 as much evidence as you can.
 
@@ -116,9 +127,14 @@ I typically don't share these anywhere else.
 
 Exclusively hand-picked for you 👌. Enjoy.
 
-* [**skruv** is no-dependency, no-build, small JS framework](https://skruv.io/).
-* [**Opossum** is a Node.js circuit breaker that executes asynchronous functions and monitors their execution status](https://nodeshift.dev/opossum/).
-* [**globby** is a user-friendly glob matcher](https://github.com/sindresorhus/globby).
+* [**skruv** is no-dependency, no-build, small JS framework][skruv].
+* [**Opossum** is a Node.js circuit breaker that executes asynchronous 
+  functions and monitors their execution status][opossum].
+* [**globby** is a user-friendly glob matcher][globby].
+
+[skruv]: https://skruv.io/
+[opossum]: https://nodeshift.dev/opossum/
+[globby]: https://github.com/sindresorhus/globby
 
 ## Thanks a Lot ❤️
 

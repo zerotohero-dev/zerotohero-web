@@ -9,10 +9,12 @@
 # |       ||      ||  | |  | learn.
 # `-------'`------'`--' `--'
 
+rm -rf public
+
 container_id=$(docker ps --filter "ancestor=z2h:latest" --format "{{.ID}}")
 
 if [ -n "$container_id" ]; then
-  docker cp "$container_id":/public "$(pwd)/public"
+  docker cp "$container_id":/public "$(pwd)"
 
   echo "Files copied from container ID $container_id to $(pwd)/public"
 else

@@ -15,9 +15,10 @@ date = "2024-05-18"
 tags = ["about", "volkan"]
 +++
 
-![About Me](/images/size/w1200/2024/03/deerz.webp)
-
-Don't miss the deer, go kiss the deer 🦌💋.
+{{img(
+  src="/images/size/w1200/2024/03/deerz.webp"
+  alt="Don't miss the deer, go kiss the deer 🦌💋.
+)}}
 
 ## Hey There 👋
 

@@ -11,6 +11,7 @@ Sonraki yayında konuşulabilir şeyler:
 
 ## Önceki Yayında Yarım Kalanlar
 
+* Sinyal isleme dersini niye iki kez aldim.
 * Jose Capablanca’ya Silikon Vadisi’nde nasil is teklifi nasil gelir?
   <https://www.chess.com/players/jose-raul-capablanca>
 * Geyik: broadcomda sabah kahvaltisi

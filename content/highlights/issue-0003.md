@@ -15,7 +15,10 @@ date = "2021-05-29"
 tags = ["highlights"]
 +++
 
-![Know Thyself](/images/size/w1200/2024/03/Volkan_zelik_introspection_fff39537-a2d6-468a-95c1-b1c1994c7c59.png)
+{{img(
+  src="/images/size/w1200/2024/03/Volkan_zelik_introspection_fff39537-a2d6-468a-95c1-b1c1994c7c59.png"
+  alt="Know thyself."
+)}}
 
 ## Lots of New Things Cooking in the Kitchen 👩‍🍳,
 
@@ -160,8 +163,8 @@ Here are the recent articles for the week:
 > tuned.
 >
 > One thing that I constantly emphasize is the fact that _languages are tools_.
-> And you **use tools, not rules**: You pick the right tool for the job. And **Go
-** is the right tool for certain topics that we are going to cover.
+> And you **use tools, not rules**: You pick the right tool for the job. And 
+> **Go** is the right tool for certain topics that we are going to cover.
 
 ## Look What I've Found
 

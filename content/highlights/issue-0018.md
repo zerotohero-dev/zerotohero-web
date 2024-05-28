@@ -15,7 +15,10 @@ date = "2021-11-04"
 tags = ["highlights"]
 +++
 
-![Keep Calm and Carry On](/images/size/w1200/2024/03/calm.png)
+{{img(
+  src="/images/size/w1200/2024/03/calm.png"
+  alt="Keep calm."
+)}}
 
 Welcome to the eighteenth issue of **Zero to Hero** Highlights.
 
@@ -52,7 +55,8 @@ innovative, you should read [Grab Your Chisel and Start Pounding][chisel].
 ## GopherCon is Coming
 
 I was planning to prep for my **GopherCon** talk but life got in the way and
-I have a draft to complete. It's on _Dec, 18th_, so I have around two weeks.
+I have a draft to complete. It's on *Dec, 18th, 2021*, so I have around two 
+weeks.
 
 So, if you don't see much content from me, it's because I'm researching in the
 rabbit hole of Cloud Native Identity Federation, preparing for the upcoming
@@ -71,7 +75,10 @@ work.
 However, thinking about work "*all the time*" can also mean stressing about
 work, which keeps you up at night or creates a constant feeling of anxiety.
 
-![work](/images/2021/12/8e5f0182b47d2dfa911bc1821f462afa689b60dc7d33f11e7e22c7e4c3b26ccc_1.jpg)
+{{img(
+  src="/images/2021/12/8e5f0182b47d2dfa911bc1821f462afa689b60dc7d33f11e7e22c7e4c3b26ccc_1.jpg"
+  alt="Work."
+)}}
 
 Here are some strategies you can try to avoid thinking about work in the middle
 of the night.
@@ -102,8 +109,7 @@ judgment. That will reduce your anxiety.
 ### Be Compassionate to Yourself
 
 Self-compassion is showing yourself the same kindness, care, and concern you
-would
-offer to a good friend. You are your best friend, after all.
+would offer to a good friend. You are your best friend, after all.
 
 Practicing self-compassion beats the shit out of the impostor in you: You'll
 break the cycle of negative thoughts and self-judgment.
@@ -123,10 +129,9 @@ you deserve.
 ### Meditation
 
 Like self-compassion, practicing mindfulness, being fully present, focusing, and
-observing yourself without judgment will calm you down. When you are "at the
-moment," fully present, you don't mull over the past events, neither do you
-worry
-about the future events.
+observing yourself without judgment will calm you down. When you are "*at the
+moment*," fully present, you don't mull over the past events, neither do you
+worry about the future events.
 
 Calm down your racing mind. It helps a lot.
 
@@ -145,9 +150,15 @@ I typically don't share these anywhere else.
 
 Exclusively hand-picked for you 👌. Enjoy.
 
-* [Do you have a designer's eye? Let's see](https://www.supremo.co.uk/designers-eye/).
-* [Tired of `vim`? **micro** is a modern and intuitive terminal-based editor](https://micro-editor.github.io/).
-* [**Openbase** helps you choose the right open-source package for your task](https://openbase.com/).
+* [Do you have a designer's eye? Let's see][designers].
+* [Tired of `vim`? **micro** is a modern and intuitive terminal-based 
+  editor][micro].
+* [**Openbase** helps you choose the right open-source package for your 
+  task][openbase].
+
+[designers]: https://www.supremo.co.uk/designers-eye/
+[micro]: https://micro-editor.github.io/
+[openbase]: https://openbase.com/
 
 ## Thanks a Lot ❤️
 

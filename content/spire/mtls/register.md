@@ -15,7 +15,10 @@ date = "2022-10-19"
 tags = ["mtls", "spiffe", "spire"]
 +++
 
-![mTLS With SPIRE: Part 7: Registering Nodes and Workloads to SPIRE](/images/size/w1200/2024/03/mutual-1.png)
+{{img(
+  src="/images/size/w1200/2024/03/mutual-1.png",
+  alt="mTLS With SPIRE: Part 7: Registering Nodes and Workloads to SPIRE"
+)}}
 
 For SPIRE to be able to attest workloads and distribute **SVID**s to them, we'll
 have to register the nodes and the workloads to **SPIRE**. That's what this

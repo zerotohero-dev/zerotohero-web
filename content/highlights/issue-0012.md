@@ -15,7 +15,10 @@ date = "2021-04-13"
 tags = ["highlights"]
 +++
 
-![What's Your Plan?](/images/size/w1200/2024/03/Volkan_zelik_Doctor_reviewing_a_chart_henna_on_hand_with_fine_d_cb0ccbf1-36a7-40fd-a6db-fc5a2d2047a5.png)
+{{img(
+  src="/images/size/w1200/2024/03/Volkan_zelik_Doctor_reviewing_a_chart_henna_on_hand_with_fine_d_cb0ccbf1-36a7-40fd-a6db-fc5a2d2047a5.png"
+  alt="Your plan is your roadmap to success."
+)}}
 
 Welcome to the twelfth issue of **Zero to Hero** Highlights.
 
@@ -90,9 +93,15 @@ I typically don't share these anywhere else.
 
 Exclusively hand-picked for you 👌. Enjoy.
 
-* [**PathFinder** is a nice app to visualize path-finding algorithms](https://josephprichard.github.io/Pathfinder/).
-* [**Viewer.js** is **JavaScript** image viewer with a hell lot of functionality baked in](https://fengyuanchen.github.io/viewerjs/).
-* [**Pure.css** is a robust, minimalist CSS framework that hit 2.0 recently](https://purecss.io/).
+* [**PathFinder** is a nice app to visualize path-finding algorithms][pathfinder].
+* [**Viewer.js** is **JavaScript** image viewer with a hell lot of 
+  functionality baked in][viewer].
+* [**Pure.css** is a robust, minimalist CSS framework that hit 2.0 
+  recently][pure].
+
+[pathfinder]: https://josephprichard.github.io/Pathfinder/
+[viewer]: https://fengyuanchen.github.io/viewerjs/
+[pure]: https://purecss.io/
 
 ## Thanks a Lot ❤️
 

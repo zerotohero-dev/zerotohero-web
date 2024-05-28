@@ -15,10 +15,12 @@ date = "2021-10-19"
 tags = ["mtls", "spiffe", "spire"]
 +++
 
-mTLS With SPIRE: Part 2 --- Creating the Server App
-===========================================================================
+## mTLS With SPIRE: Part 2 --- Creating the Server App
 
-![mTLS With SPIRE: Part 2: Creating the Server App](/images/size/w1200/2024/03/server-app.png)
+{{img(
+  src="/images/size/w1200/2024/03/server-app.png",
+  alt="mTLS With SPIRE: Part 2: Creating the Server App"
+)}}
 
 We'll start by creating a server application. Once the server is ready, we'll
 continue with the client application on the next video.

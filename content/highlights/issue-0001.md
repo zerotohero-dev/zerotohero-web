@@ -15,7 +15,10 @@ date = "2024-05-21"
 tags = ["highlights"]
 +++
 
-![Welcome to the jungle!](/images/size/w1200/2024/03/jungle.png)
+{{img(
+  src="/images/size/w1200/2024/03/jungle.png)"
+  alt="Welcome to the jungle!."
+)}}
 
 > **Update 2024-05-21**
 >
@@ -102,20 +105,24 @@ I typically don't share these anywhere else.
 
 Exclusively hand-picked for you 👌. Enjoy.
 
-* [Trisha Gee: Code Review Best Practices - SCLConf 2018](https://www.youtube.com/watch?v=jXi8h44cbQA):
+* [Trisha Gee: Code Review Best Practices - SCLConf 2018][trisha]:
   In this talk, Trisha will identify some best practices to follow. She'll talk
   about what's really important in a code review, and set out some guidelines to
   follow in order to maximize the value of the code review and minimize the
   pain.
-* [Vulture: Find Dead Python Code](https://github.com/jendrikseipp/vulture):
+* [Vulture: Find Dead Python Code][vulture]:
   Vulture finds unused code in Python programs. This is useful for cleaning up
   and finding errors in large code bases. If you run Vulture on both your
   library and test suite you can find untested code.
-* [Mentee Missteps](https://jamanetwork.com/journals/jama/fullarticle/2600471):
+* [Mentee Missteps][mentee]:
   Given the importance of the mentor-mentee relationship, it is imperative that
   mentees put their "*best foot forward*". The article outlines what kind of 
   "*behavior smells*" mentees might manifest that can make the mentor-mentee
   relationship unsustainable.
+
+[trisha]: https://www.youtube.com/watch?v=jXi8h44cbQA
+[vulture]: https://github.com/jendrikseipp/vulture
+[mentee]: https://jamanetwork.com/journals/jama/fullarticle/2600471
 
 ## Thanks a Lot ❤️
 

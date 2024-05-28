@@ -15,7 +15,11 @@ date = "2024-05-18"
 tags = ["about", "backstory"]
 +++
 
-![Pivot, change, and ignite.](/images/size/w1200/2024/03/beginning.png)
+{{img(
+  src="/images/size/w1200/2024/03/beginning.png"
+  alt="Pivot, change, and ignite."
+)}}
+
 
 > **Update 2024-05-18**
 > 
@@ -31,10 +35,12 @@ tags = ["about", "backstory"]
 > 
 > Currently, **Zero to Hero** serves as my personal blog where I write about
 > what I think, when I think. You can find the latest articles on the 
-> [home page](@/_index.md).
+> [home page][home].
 > 
 > In addition, I have removed the subscription-based content strategy, and I'm
 > publishing everything on this platform for free.
+
+[home]: @/_index.md
 
 ## Hello World, Hello Stars, Hello Universe
 
@@ -93,9 +99,10 @@ valuable content, freely, without any constraints.
 
 ## The Pivot
 
-![Pivot, change, and ignite.](/images/2021/05/saga-15.png)
-
-Pivot, change, and ignite.
+{{img(
+  src="/images/2021/05/saga-15.png)"
+  alt="Every saga has a beginning."
+)}}
 
 So what's the plan?
 
@@ -217,13 +224,15 @@ solution.
 
 Let me add a few screenshots to show you how the course looked like.
 
-![The landing page](/images/2021/05/Screen-Shot-2021-05-04-at-2.21.04-PM-11.png)
+{{img(
+  src="/images/2021/05/Screen-Shot-2021-05-04-at-2.21.04-PM-11.png"
+  alt="The landing page."
+)}}
 
-The landing page.
-
-![The learning management system](/images/2021/05/Screen-Shot-2021-05-04-at-2.29.18-PM-11.png)
-
-The learning management system.
+{{img(
+  src="/images/2021/05/Screen-Shot-2021-05-04-at-2.29.18-PM-11.png)"
+  alt="The learning management system."
+)}}
 
 The application was truly slick, micro-services-based, learning management 
 system. I'm planning to **rework** on it too, and share my progress here with 
@@ -269,7 +278,7 @@ Eventually---and took **many** months of debilitation---I've decided to put a
 * I've moved my Twitter to private.
 * I've jumped off all other social media.
 * The only medium that I've been sharing stuff for the last couple of months 
-  is [LinkedIn][linkedin]
+  is [LinkedIn][linkedin].
 
 [linkedin]: https://linkedin.com/in/volkanozcelik "Volkan Özçelik on LinkedIn"
 
@@ -285,12 +294,12 @@ After thinking about this **a lot** and weighing all my options: I've decided to
 pivot my idea into a knowledge-sharing system that I can populate faster, 
 easier, without friction---almost naturally.
 
-![Sometimes you need a shift in your perspective. sometimes you need a splash of 
-water in your face. And sometimes you need 
-both.](/images/2021/05/CXYEte2UwAAdugK-10.jpg)
-
-Sometimes you need a shift in your perspective. sometimes you need a splash of 
-water in your face. And sometimes you need both.
+{{img(
+  src="/images/2021/05/CXYEte2UwAAdugK-10.jpg"
+  alt="Sometimes you need a shift in your perspective. 
+    Sometimes you need a splash of water in your face. 
+    Almost always, you need both."
+)}}
 
 What will the new **Zero to Hero** be like?
 

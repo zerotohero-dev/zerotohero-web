@@ -15,7 +15,10 @@ date = "2021-11-07"
 tags = ["roadmap", "terminal", "command-line", "shell"]
 +++
 
-![One Does Not Simply "Terminal" 👌](/images/size/w1200/2024/03/one-does-not.png)
+{{img(
+  src="/images/size/w1200/2024/03/one-does-not.png",
+  alt="One does not simply..."
+)}}
 
 ## Getting Comfortable With the Linux Terminal
 
@@ -26,8 +29,7 @@ Here are some articles you can read to get more intimate with the command line:
 * [tldr Pages](https://tldr.sh/) (_easier to scan than_ [_man pages_](https://www.kernel.org/doc/man-pages/)_, more practical_)
 * [Explain Shell](https://explainshell.com/) (_paste your command, and let explain shell... well... explain it_)
 
-Commands That You'll Use Frequently
------------------------------------
+## Commands That You'll Use Frequently
 
 The more terminal you know, the more power you'll have. Yet, here is a list of
 common commands that you might want to start familiarizing yourself with:
@@ -89,7 +91,8 @@ Here are a few guides on the topic:
 **SSH**](https://www.digitalocean.com/community/tutorials/how-to-use-ssh-to-connect-to-a-remote-server-in-ubuntu)
 is something you'll have to do sooner or later.
 
-> **Explore Community Docs**  
+> **Explore Community Docs** 
+> 
 > If you need more than connecting to a server. Like, for example, if you need
 > to install and configure applications, services, proxies, firewalls,
 > databases,
@@ -227,11 +230,11 @@ of years.
 
 ### Find; Search; Filter Files, Folders and Streams
 
-* [**ack**](https://beyondgrep.com/) (_this is a must-learn, especially if you
-  search source code a lot_)
-* [**fzf**](https://github.com/junegunn/fzf) (_Fuzzy Finder: Another finder
-  utility that you'd question how you lived without it_)
-* [**grep**](https://ss64.com/bash/grep.html) (_must be in your toolbox_)
+* [**ack**](https://beyondgrep.com/) (*this is a must-learn, especially if you
+  search source code a lot*)
+* [**fzf**](https://github.com/junegunn/fzf) (*Fuzzy Finder: Another finder
+  utility that you'd question how you lived without it*)
+* [**grep**](https://ss64.com/bash/grep.html) (*must be in your toolbox*)
 * [**peco**](https://github.com/peco/peco) (**peco** is a simplistic,
   interactive filtering tool)
 * **ripgrep** (_**ripgrep** recursively searches your directories_)

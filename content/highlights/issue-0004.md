@@ -15,9 +15,12 @@ date = "2021-06-03"
 tags = ["highlights"]
 +++
 
-![Have You Fizzed that Buzz?](/images/size/w1200/2024/03/data-structure.png)
+{{img(
+  src="/images/size/w1200/2024/03/data-structure.png)"
+  alt="Have you fizzed that buzz."
+)}}
 
-> **Update 2024-05-21**:
+> **Update 2024-05-21**
 > 
 > I have archived **FizzBuzz Pro** project for a while. I still have plans
 > to repurpose it, but it's not a priority right now. I'll keep you posted
@@ -27,7 +30,7 @@ tags = ["highlights"]
 Welcome to the fourth issue of **Zero to Hero** Highlights.
 
 I've done **a lot** of stuff this week, some of which you can find as new
-articles on [Zero to Hero](https://www.zerotoherro.dev/), and some are still
+articles on [Zero to Hero](@/_index.md), and some are still
 brewing and cooking in **Zero to Hero Kitchens** that will reach you in time.
 
 ## Hello from the **Zero to Hero** Kitchens 👩‍🍳
@@ -37,7 +40,10 @@ what's in the immediate production pipeline. The range varies from setting up a
 development environment to exporting DynamoDB tables... **a lot** of quality
 material is coming your way.
 
-![List of video content in the pipeline.](/images/2021/06/Screen-Shot-2021-06-03-at-7.30.56-PM.png)
+{{img(
+  src="/images/2021/06/Screen-Shot-2021-06-03-at-7.30.56-PM.png"
+  alt="List of video content in the pipeline."
+)}}
 
 The items that have green indicators next to them are the videos that have
 already been published. The blue row is the one that I'm currently working on.
@@ -61,12 +67,14 @@ It's no secret that companies are asking **competitive programming questions**
 in technical interviews. That's the current **norm**, rather than the exception.
 
 While I still don't understand the efficacy of asking algorithmic puzzles in
-choosing the best candidate (*here's a [short 3min
-video](https://vimeo.com/557079474/7810c8a850) and a [longer 30min "uncut"
-version of it](https://vimeo.com/556452479/94cdf5a8f1) that I'm ranting about
+choosing the best candidate (*here's a [short 3min video][puzzles-mins] 
+and a [longer 30min "uncut" version of it][puzzles-long] that I'm ranting about
 the subject matter, in case you are interested*), apparently the rest of the
 industry does not think like me. From startups to big corporations, everyone is
 drinking the same kool-aid.
+
+[puzzles-min]: https://vimeo.com/557079474/7810c8a850
+[puzzles-long]: https://vimeo.com/556452479/94cdf5a8f1
 
 Even worse, these algorithmic puzzles do not measure your aptitude as a software
 engineer, they do not measure your technical acumen. They are **robotic**
@@ -98,6 +106,8 @@ Right now, there's only an ascii-art placeholder on the website, but things will
 change real fast real soon.
 
 ![FizzBuzz Pro as of Early June 2021](/images/2021/06/Screen-Shot-2021-06-03-at-8.13.38-AM.png)
+
+
 
 The thing is, you don't have to be an algorithm wizard; you don't have to be a
 data structures genius to nail a technical interview. You just need to *

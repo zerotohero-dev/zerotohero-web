@@ -15,7 +15,10 @@ date = "2021-10-19"
 tags = ["mtls", "spiffe", "spire"]
 +++
 
-![mTLS With SPIRE: Part 9: Configuring the Client to User SPIRE mTLS](/images/size/w1200/2024/03/almost-there.png)
+{{img(
+  src="/images/size/w1200/2024/03/almost-there.png",
+  alt="mTLS With SPIRE: Part 9: Configuring the Client to User SPIRE mTLS"
+)}}
 
 We are almost there! Once we configure the client to use **SPIRE** mTLS, the
 client and the server can talk securely within a single cluster. In the

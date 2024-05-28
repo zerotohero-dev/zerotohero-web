@@ -15,6 +15,11 @@ date = "2024-05-18"
 tags = ["about", "privacy"]
 +++
 
+{{img(
+  src="/images/2024/privacy.png"
+  alt="Privacy Policy"
+)}}
+
 > This is the shortest privacy policy you'll possibly read.  
 > I hate writing boring copyright stuff, so please don't make me write more.
 

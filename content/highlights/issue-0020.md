@@ -15,7 +15,10 @@ date = "2022-02-26"
 tags = ["highlights"]
 +++
 
-![Words Matter](/images/size/w1200/2024/03/framing.png)
+{{img(
+  src="/images/size/w1200/2024/03/framing.png"
+  alt="Words make a difference."
+)}}
 
 Welcome to the 20th issue of **Zero to Hero** Highlights.
 
@@ -28,8 +31,6 @@ If you've been following **Zero to Hero** since the beginning, then case, you'll
 remember that [with a group of fellow engineers, we'd started **OpsBeacon** to
 help operations and level-1 responders **#sleepmore**][opsbeacon-highlight].
 
-[opsbeacon-highlight]: @/highlights/issue-0027.md
-
 That was around **September 2021**. Then life got in the way, and we had to
 pause the development of **OpsBeacon** for a while.
 
@@ -40,8 +41,8 @@ That means you'll hear me talking more about [**OpsBeacon**][opsbeacon], and
 mentioning more **OpsBeacon** use cases [in the **Zero to Hero** live
 streams][twitch].
 
+[opsbeacon-highlight]: @/highlights/issue-0027.md
 [opsbeacon]: https://ob2.ai
-
 [twitch]: https://www.twitch.tv/VadidekiVolkan
 
 ## Life is Better at the Slopes
@@ -52,14 +53,20 @@ extend our stay for a few more days.
 
 [tahoe]: https://en.wikipedia.org/wiki/Lake_Tahoe
 
-![View of the lake from the summit of the mountain.](/images/2022/02/IMG_2807.jpeg)
+{{img(
+  src="/images/2022/02/IMG_2807.jpeg"
+  alt="View of the lake from the summit of the mountain."
+)}}
 
 View of the lake from the summit of the mountain.
 
 We've had a lot of fun, and suffice it to say, the kiddos had enough snow for a
 year 🙂.
 
-![Snow everywhere. Freezing cold.](/images/2022/02/IMG_2824.jpeg)
+{{img(
+  src="/images/2022/02/IMG_2824.jpeg"
+  alt="Snow everywhere. Freezing cold."
+)}}
 
 Snow everywhere. Freezing cold.
 
@@ -69,14 +76,16 @@ It was snow everywhere. Ice-cold weather. And since this is America, they still
 serve iced water ❄️ when the temperature is -20 degrees Celcius outside. Or, in
 this case, it is "**_watered ice_**" instead 🙂.
 
-!["America".](/images/2022/02/IMG_2853.jpeg)
+{{img(
+  src="/images/2022/02/IMG_2853.jpeg"
+  alt="'America'."
+)}}
+
 
 ## Bye Bye EKS 👋
 
 I terminated the EKS cluster that I was experimenting with on other news.
 [You can watch the VOD about the entire process here on **Twitch**][eks-vod].
-
-[eks-vod]: https://www.twitch.tv/videos/1408100867
 
 But, why so? Because I only have a handful of microservices, and paying Amazon
 around $90 every month just for a Kubernetes control plane is not worth it.
@@ -84,14 +93,13 @@ around $90 every month just for a Kubernetes control plane is not worth it.
 From this point on, I'll go old school and use an [**Application Load
 Balancer**][alb] and some good old [**EC2** instances][ec2] fronted by
 [**NGINX**][nginx] reverse proxies and tie everything together with scripts.
-It will be a "_poor man's orchestration solution_" that won't tear a hole in
+It will be a "*poor man's orchestration solution*" that won't tear a hole in
 your pocket if you will. And I'll, of course, write and
 [live stream about it][twitch] on the go.
 
+[eks-vod]: https://www.twitch.tv/videos/1408100867
 [alb]: https://aws.amazon.com/elasticloadbalancing/
-
 [ec2]: https://aws.amazon.com/ec2/
-
 [nginx]: https://www.nginx.com/
 
 ## More Live Streams Are Coming Up
@@ -105,14 +113,17 @@ I'm online][twitch].
 I've updated the navigation a little on the Zero to Hero front, highlighting
 essential parts that could have been harder to search otherwise.
 
-![The new navigation.](/images/2022/02/Screen-Shot-2022-02-26-at-8.31.09-AM.png)
+{{img(
+  src="/images/2022/02/Screen-Shot-2022-02-26-at-8.31.09-AM.png"
+  alt="The new navigation."
+)}}
 
 Here are the links for the interested:
 
-* [**The Roadmap**](@/roadmap/_index.md) is where you can find resources to
-  become a better version of yourself.
-* [**Z2H Highlights**](@/highlights/_index.md) is an ordered list of these
-  weekly updates that you are reading right now.
+* [**The Roadmap**][roadmap] is where you can find resources to become a better 
+  version of yourself.
+* [**Z2H Highlights**][highlights] is an ordered list of these weekly updates 
+  that you are reading right now.
 * [**Live Streams**][twitch] take you directly to **Twitch**, where I'll be more
   active, mostly around nighttime pacific time. Join me, and let's **break
   production** together.
@@ -122,12 +133,15 @@ I decided to archive that page, as maintaining it was consuming a
 disproportionate amount of my time. I'd instead create content than do
 bookkeeping to utilize the opportunity cost of the limited time.
 
+[roadmap]: @/roadmap/_index.md
+[highlights]: @/highlights/_index.md
+
 ## Zero to Prod in Half an Hour
 
 I have been working on this for the last few weeks, and finally, it is ready for
 your viewing pleasure.
 
-[**Zero to Prod in Half an Hour**](@/zero-to-prod/_index.md) is 14-part video
+[**Zero to Prod in Half an Hour**][zero-to-prod] is 14-part video
 series that I have been creating for a while. The lectures show how to create a
 full-blown app with **identity** **management**, **payment gateway**
 integration, business logic, and all and deploy it to a production **Kubernetes
@@ -138,7 +152,9 @@ The videos are free. If you are a premium member, you can also get **learning
 resources**, links, and additional **study material** to dig in, along with the
 **source code**.
 
-At any rate, [have fun, and enjoy the content](@/zero-to-prod/_index.md).
+At any rate, [have fun, and enjoy the content][zero-to-prod].
+
+[zero-to-prod]: @/zero-to-prod/_index.md
 
 ## Random Thought of the Week
 
@@ -184,9 +200,14 @@ I typically don't share these anywhere else.
 
 Exclusively hand-picked for you 👌. Enjoy.
 
-* [**`soft-serve`** is a tiny self-hostable Git server](https://github.com/charmbracelet/soft-serve).
-* [**Pika** is an open source color picker app for Mac OS](https://superhighfives.com/pika).
-* [**`trunk`** is a static analyzer to make your code better, faster, stronger](https://trunk.io/products/check).
+* [**`soft-serve`** is a tiny self-hostable Git server][soft-serve].
+* [**Pika** is an open source color picker app for Mac OS][pika].
+* [**`trunk`** is a static analyzer to make your code better, faster, 
+  stronger][trunk].
+
+[soft-serve]: https://github.com/charmbracelet/soft-serve
+[pika]: https://superhighfives.com/pika
+[trunk]: https://trunk.io/products/check
 
 ## Thanks a Lot ❤️
 

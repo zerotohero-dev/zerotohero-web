@@ -15,17 +15,22 @@ date = "2021-05-19"
 tags = ["highlights"]
 +++
 
-![Find the Balance in Change](/images/size/w1200/2024/03/change.png)
+{{img(
+  src="/images/size/w1199/2024/03/change.png"
+  alt="Find the balance in the change."
+)}}
 
 ## Hey 👋,
 
 Welcome to the second issue of **Zero to Hero** Highlights.
 
 For those who are
-new, [there has been a lot of flux recently](@/about/a-new-hope.md),
+new, [there has been a lot of flux recently][a-new-hope],
 and things are slowly settling down. I've set a personal goal to create one of
 these newsletters every week regardless of whether there's new content on the
 platform.
+
+[a-new-hope]: @/about/a-new-hope.md
 
 Let's begin with this week's random thought: **Change**, and **Change Management
 **, which is something that deeply resonates with me recently.
@@ -84,12 +89,16 @@ I typically don't share these anywhere else.
 
 Exclusively hand-picked for you 👌. Enjoy.
 
-* [iconic.app](https://iconic.app/): Free, high-quality icons for your next
-  project, from arrows to buildings, to devices.
-* [RedKetchup](https://redketchup.io/): Free online tools to work on images,
-  videos, and icons.
-* [Replay](https://github.com/vimond/replay): A React video player facilitating
-  adaptive stream playback with custom UI and a React-friendly API.
+* [iconic.app][iconic]: Free, high-quality icons for your next project, from 
+  arrows to buildings, to devices.
+* [RedKetchup][redketchup]: Free online tools to work on images, videos, and 
+  icons.
+* [Replay][replay]: A React video player facilitating adaptive stream playback 
+  with custom UI and a React-friendly API.
+
+[iconic]: https://iconic.app/
+[redketchup]: https://redketchup.io/
+[replay]: https://github.com/vimond/replay
 
 ## Thanks a Lot ❤️
 

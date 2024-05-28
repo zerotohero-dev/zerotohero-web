@@ -17,8 +17,13 @@ tags = ["roadmap", "typography", "design"]
 
 ![Get Better at Typography](/images/size/w1200/2024/03/typo.png)
 
+{{img(
+  src="/images/size/w1200/2024/03/typo.png",
+  alt="Types are beautiful."
+)}}
+
 Content matters a lot, but so does the medium the content is conveyed withing.
-Understanding how type, rhythm, line hieght, case, capitalization, character,
+Understanding how type, rhythm, line height, case, capitalization, character,
 etc. come together will help communicate your message much effectively.
 
 In a sense, typography is one of the best hidden skills that you can have.

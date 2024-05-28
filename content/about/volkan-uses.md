@@ -15,7 +15,10 @@ date = "2024-03-04"
 tags = ["about", "volkan", "setups"]
 +++
 
-![Volkan Uses](/images/size/w1200/2024/03/trinkets.png)
+{{img(
+  src="/images/size/w1200/2024/03/trinkets.png"
+  alt="Tools and trinkets."
+)}}
 
 This is a list of tools, gadgets, software, and hardware I currently use, have 
 liked, and find worth mentioning.
@@ -29,7 +32,7 @@ liked, and find worth mentioning.
 
 * [Vadideki Geyik](@/vadideki-geyik/_index.md): Hands down, the best Turkish
   tech podcast.
-* [zerotohero.dev](/): My blog (_that you are reading right now_).
+* [zerotohero.dev](/): My blog (*that you are reading right now*).
 * [My Twitter](https://twitter.com/vadidekivolkan)
 * [My GitHub](https://github.com/v0lkan)
 * [My Twitch](https://twitch.tv/VadidekiVolkan)

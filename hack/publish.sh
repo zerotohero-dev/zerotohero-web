@@ -17,7 +17,7 @@ fi
 zola build
 
 if [[ -z "$VG_S3_BUCKET" || -z "$VG_DISTRIBUTION_ID" ]]; then
-  echo "Error: $VG_S3_BUCKET and $VG_DISTRIBUTION_ID must be set."
+  echo "Error: VG_S3_BUCKET and VG_DISTRIBUTION_ID must be set."
   exit 1
 fi
 

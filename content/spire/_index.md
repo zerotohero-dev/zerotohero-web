@@ -14,7 +14,10 @@ date = "2021-11-26"
 template = "series-index.html"
 +++
 
-![Solving for the Bottom Turtle](/images/2024/turtle.png)
+{{img(
+  src="/images/2024/turtle.png",
+  alt="Solving for the Bottom Turtle"
+)}}
 
 This section contains articles and tutorials on SPIFFE and SPIRE.
 

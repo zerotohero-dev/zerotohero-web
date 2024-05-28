@@ -17,6 +17,11 @@ tags = ["roadmap", "haskell", "javascript"]
 
 ![Want to Learn JavaScript? Learn Haskell First](/images/size/w1200/2024/03/functinal.png)
 
+{{img(
+  src="/images/size/w1200/2024/03/functinal.png",
+  alt="Be functional."
+)}}
+
 ## Srsly?
 
 _I_'m serious about this.
@@ -28,8 +33,8 @@ This article explains the "_why_"s and "_how_"s of it.
 
 ## Why Do I Need Haskell?
 
-Modern **JavaScript** has become and more **functional**. Also, the modern *
-*JavaScript** frameworks and libraries strongly encourage (_sometimes, to the
+Modern **JavaScript** has become and more **functional**. Also, the modern 
+**JavaScript** frameworks and libraries strongly encourage (_sometimes, to the
 point of **enforcing**_) you
 to [think functionally](https://www.goodreads.com/book/show/29627874-functional-thinking).
 
@@ -59,13 +64,13 @@ about the complexity of
 it: [JavaScript is an easy-to-understand language](https://tc39.github.io/ecma262/).
 You can learn the basics of it in a couple of days to a few months tops.
 
-The problem is not the rules, or semantics of the language: Learning to "_think
-in JavaScript_" is what takes time, effort, and energy.
+The problem is not the rules, or semantics of the language: Learning to "*think
+in JavaScript*" is what takes time, effort, and energy.
 
 When you learn a [_purely functional
 language_](https://en.wikipedia.org/wiki/Purely_functional_programming), 
-and [**Haskell**](https://www.haskell.org/) is the best "_pure_" functional language
-out there, thinking in **JavaScript** will be a **cakewalk** for you.
+and [**Haskell**](https://www.haskell.org/) is the best "*pure*" functional 
+language out there, thinking in **JavaScript** will be a **cakewalk** for you.
 
 ## Where Do I Learn Haskell?
 

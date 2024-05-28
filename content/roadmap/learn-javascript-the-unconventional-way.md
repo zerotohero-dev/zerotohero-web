@@ -15,7 +15,10 @@ date = "2021-11-27"
 tags = ["roadmap", "javascript"]
 +++
 
-![Learn Your JavaScript the Unconventional Way](/images/size/w1200/2024/03/comfortable.png)
+{{img(
+  src="/images/size/w1200/2024/03/comfortable.png",
+  alt="Leave your comfort zone."
+)}}
 
 ## Getting Your Feet Wet
 
@@ -121,7 +124,7 @@ libraries get merged into the language standards soon.
 > For example, first [Bluebird](http://bluebirdjs.com/docs/getting-started.html)
 > and other libraries came up with a [**Promise**](https://promisesaplus.com/)
 > implementation, and after its widespread
-> adoption, [the native \`Promise\` constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+> adoption, [the native `Promise` constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 > got itself merged into the language.
 
 Here are some resources to get you started you with **Functional JavaScript**:
@@ -208,9 +211,9 @@ that can help you with that:
 
 > **Historical**?  
 > 
-> In this section, the techniques marked "historical_"_ in this section are
-> --indeed--- **historical**. **Never** resort to them unless there is no other
-> option because you are dealing with some legacy system.
+> In this section, the techniques marked "*historical*" in this section
+> are---indeed--- **historical**. **Never** resort to them unless there is no 
+> other option because you are dealing with some legacy system.
 
 ## Know Your Local Stores
 
@@ -262,8 +265,8 @@ and **reflection is never clear**.
 
 * [JavaScript Reflection API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect)
 * [JavaScript Proxy](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy)
-* [`Function.prototype.bind` (_MDN_)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind)
-* [`Function.prototype.apply` (_MDN_)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/apply)
+* [`Function.prototype.bind` (*MDN*)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind)
+* [`Function.prototype.apply` (*MDN*)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/apply)
 
 ## Dialects and Runtimes
 
@@ -288,7 +291,10 @@ stable, and production-ready JavaScript runtime.
 Especially when you are new to **JavaScript** and Front-End development you have
 this dilemma: "_shall I learn React, or Vue, or Ember, or Alpine, or jQuery..._"
 
-![Choosing a JavaScript framework can be confusing at times.](/images/2021/11/confused.jpeg)
+{{img(
+  src="/images/size/w1200/2024/03/confused.jpeg",
+  alt="Choosing a JavaScript framework can be confusing at times."
+)}}
 
 Well, there is a very simple solution to this:
 
@@ -470,8 +476,8 @@ in that area.
 
 ### CSS Frameworks, Tools, and Paradigms
 
-* [Scalable and Modern Architecture for CSS](https://smacss.com/) (_an oldie,
-  but still the best conceptual framework_)
+* [Scalable and Modern Architecture for CSS](https://smacss.com/) (*an oldie,
+  but still the best conceptual framework*)
 * [Sass: Syntactically Awesome Stylesheets](https://sass-lang.com/)
 * [Styled Components](https://www.styled-components.com/)
 * [BEM](http://getbem.com/)

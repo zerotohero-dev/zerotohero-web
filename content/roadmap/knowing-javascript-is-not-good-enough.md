@@ -15,7 +15,11 @@ date = "2021-11-21"
 tags = ["roadmap", "javascript"]
 +++
 
-![Knowing JavaScript Is Not Good Enough](/images/size/w1200/2024/03/Volkan_zelik_the_most_buoyant_girl_in_the_known_universe_c92b2c3b-d6d5-4142-8b1b-7dcafcf07e14.png)
+
+{{img(
+  src="/images/size/w1200/2024/03/Volkan_zelik_the_most_buoyant_girl_in_the_known_universe_c92b2c3b-d6d5-4142-8b1b-7dcafcf07e14.png"
+  alt="Elevate yourself beyond."
+)}}
 
 ## Expand Your Vision
 
@@ -46,8 +50,8 @@ to be for the time being.
 
 However, if someone claims that only knowing **JavaScript** is good enough for
 you because you can get whatever you need out of it. Or, worse, they tell you
-that you'll be a (quote/unquote) "_full stack developer_" once you master
-JavaScript, then approach that person's "_thought leadership_" with a grain of
+that you'll be a (quote/unquote) "*full stack developer*" once you master
+JavaScript, then approach that person's "*thought leadership*" with a grain of
 salt.
 
 ## There is No Spoon
@@ -74,9 +78,11 @@ Clustering, Distributed system design...?
 stack of things.
 
 If one considers
-understanding [the MERN Stack](https://blog.logrocket.com/mern-stack-tutorial/)
-inside out as a sufficient prerequisite to adding the term "full-stack engineer"
-to their résumé, they likely don't know how much they don't know yet.
+understanding [the MERN Stack][mern] inside out as a sufficient prerequisite 
+to adding the term "full-stack engineer" to their résumé, they likely don't 
+know how much they don't know yet.
+
+[mern]: https://blog.logrocket.com/mern-stack-tutorial/
 
 ## Is There Such Thing as a "Half-Stack" Anyway?
 
@@ -93,8 +99,8 @@ are deceiving yourself.
 > in the other parts either.
 
 Ergo, any qualified developer has no other choice to work across the stack.
-Calling a developer a "_full-stack_" developer is akin to calling a car a "
-_horseless carriage_"---It is **redundant**, outdated, and a **tautology**.
+Calling a developer a "*full-stack*" developer is akin to calling a car a 
+"*horseless carriage*"---It is **redundant**, outdated, and a **tautology**.
 
 ## Conclusion
 

@@ -9,13 +9,16 @@
 # `-------'`------'`--' `--'
 
 title = "Tough Conversation"
-date = "2021-07-24"
+date = "2024-05-27"
 
 [taxonomies]
 tags = ["highlights"]
 +++
 
-![Tough Conversations](/images/size/w1200/2024/03/overwhelmed.png)
+{{img(
+  src="/images/size/w1200/2024/03/overwhelmed.png"
+  alt="Some conversations are tough."
+)}}
 
 Welcome to the tenth issue of **Zero to Hero** Highlights.
 
@@ -24,25 +27,39 @@ overview of what has happened.
 
 ## Radio Zero to Hero is Growing 🤘
 
-I did several optimizations for the [**Radio Zero to Hero**](https://twitch.tv/VadidekiVolkan) 
+> **Update 2024-05-27**
+> 
+> Nowadays, I'm now using [**Loopback**][loopback] as the audio plugin / 
+> virtual audio interface.
+> 
+> It is much stable with a richer feature set. I'm happy with it.
+
+I did several optimizations for the [**Radio Zero to Hero**][twitch]
 stream. Here are the essential highlights.
 
-I figured out that [**Wirecast**](https://www.telestream.net/wirecast/) already
-has an audio plugin that can stream the system audio. It works **much** better
-than the [**Shiny White Box**](https://shinywhitebox.com/) audio capture plugin
-that I have. As a result, I don't have audio quality problems anymore. I can
-stream music forever without restarting my machine (*which was not the case
-before*).
+I figured out that [**Wirecast**][wirecast] already has an audio plugin that 
+can stream the system audio. It works **much** better than the [**Shiny White 
+Box**][swb] audio capture plugin that I have. As a result, I don't have audio 
+quality problems anymore. I can stream music forever without restarting 
+my machine (*which was not the case before*).
 
 So yeah, overall better audio quality.
 
 Additionally, I reduced the frame rate from *60fps* to *25fps*, which is still 
-**more than enough** if you are just streaming live coding sessions on an IDE. I
-also figured out **4500Kbps** for *bitrate* was optimal for me.
+**more than enough** if you are just streaming live coding sessions on an IDE. 
+I also figured out **4500Kbps** for *bitrate* was optimal for me.
+
+[twitch]: https://twitch.tv/VadidekiVolkan
+[wirecast]: https://www.telestream.net/wirecast/
+[swb]: https://shinywhitebox.com/
+[loopback]: https://rogueamoeba.com/loopback/
 
 Here are my entire settings for the interested.
 
-![Zero to Hero Twitch stream settings.](/images/2021/07/Screen-Shot-2021-07-24-at-10.30.26-AM.png)
+{{img(
+  src="/images/2021/07/Screen-Shot-2021-07-24-at-10.30.26-AM.png"
+  alt="Zero to Hero Twitch stream settings."
+)}}
 
 Zero to Hero Twitch stream settings.
 
@@ -57,8 +74,7 @@ Ah, also, as of now, Radio Zero to Hero has...
 
 ✨ non-stop, 24/7, beyond-this-world beats 🎶.
 
-Want to see how it
-looks? [Come join the fun on Twitch](https://twitch.tv/VadidekiVolkan).
+Want to see how it looks? [Come join the fun on Twitch][twitch].
 
 It's my primary music source when I'm coding and developing right now (*sorry,
 Spotify, my old friend*).
@@ -68,9 +84,10 @@ Spotify, my old friend*).
 I finally finished configuring a TLS-terminated Kubernetes AWS ALB Ingress for
 FizzBuzz Pro (*try saying that five times fast, huh? 😃*)
 
-![FizzBuzz Pro Kubernetes settings.](/images/2021/07/Screen-Shot-2021-07-24-at-10.41.58-AM-1.png)
-
-FizzBuzz Pro Kubernetes settings.
+{{img(
+  src="/images/2021/07/Screen-Shot-2021-07-24-at-10.41.58-AM-1.png"
+  alt="FizzBuzz Pro Kubernetes settings."
+)}}
 
 Anyhoo, I learned **a lot** during the process, which means more articles and
 videos are on their way, so that you won't have to suffer what I've suffered 🙂.
@@ -79,7 +96,9 @@ Other than that I'm working on the IDM Service, which is all about
 user-management things like login, logout, password reset, and all.
 
 [I have also created a video going through the high-level system design 
-of **FizzBuzz Pro**](@/zero-to-prod/fizzbuzz-pro-hla.md); you'll like it.
+of **FizzBuzz Pro**][hla]; you'll like it.
+
+[hla]: @/zero-to-prod/fizzbuzz-pro-hla.md
 
 ## Random Thought of the Week
 
@@ -148,9 +167,13 @@ I typically don't share these anywhere else.
 Exclusively hand-picked for you 👌. Enjoy.
 
 * [**DevOps Helper Bot** is used for helping in administration and 
-  moderation DevOps groups in telegram](https://github.com/Asgoret/devopshelper_bot).
-* [**AnyStatus** is a remote control for your CI/CD Pipeline](https://github.com/AnyStatus/AnyStatus).
-* [**Popeye** is a Kubernetes cluster resource sanitizer](https://github.com/derailed/popeye).
+  moderation DevOps groups in telegram][devops-bot].
+* [**AnyStatus** is a remote control for your CI/CD Pipeline][any-status].
+* [**Popeye** is a Kubernetes cluster resource sanitizer][popeye].
+
+[devops-bot]: https://github.com/Asgoret/devopshelper_bot
+[any-status]:https://github.com/AnyStatus/AnyStatus
+[popeye]:https://github.com/derailed/popeye
 
 ## Thanks a Lot ❤️
 

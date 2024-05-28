@@ -17,6 +17,11 @@ tags = ["roadmap", "security"]
 
 ![Security Is Not Optional](/images/size/w1200/2024/03/securu.png)
 
+{{img(
+  src="/images/size/w1200/2024/03/securu.png",
+  alt="All your base are belong to us."
+)}}
+
 ## Introduction
 
 No matter what you develop, application security, infrastructure security, and

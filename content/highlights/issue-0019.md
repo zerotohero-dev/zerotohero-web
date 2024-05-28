@@ -15,7 +15,10 @@ date = "2022-01-07"
 tags = ["highlights"]
 +++
 
-![Attention, Intention: Compassion](/images/size/w1200/2024/03/comms.png)
+{{img(
+  src="/images/size/w1200/2024/03/comms.png"
+  alt="Compassion is the key to effective communication."
+)}}
 
 Welcome to the nineteenth issue of **Zero to Hero** Highlights.
 
@@ -25,19 +28,24 @@ whatever comes to mind. It's the first issue of the year after all 🙂.
 
 ## Zero to Prod in Half an Hour
 
-I started the year with a video lecture series
-about [how you can deploy a production-ready web application 
-in half an hour](@/zero-to-prod/_index.md).
+I started the year with a video lecture series about [how you can 
+deploy a production-ready web application in half an hour][zero-to-prod].
 
 > I have ~15 lectures. I've published two of them already. And I'm planning to
 > publish 2-3 lessons every week depending on my workload.
 
-[![Zero to Prod](/images/2022/01/Screen-Shot-2022-01-07-at-6.42.33-PM.png)](@/zero-to-prod/_index.md)
+{{imglink(
+  href="@/zero-to-prod/_index.md"
+  src="/images/2022/01/Screen-Shot-2022-01-07-at-6.42.33-PM.png"
+  alt="Zero to prod."
+)}}
+
+[zero-to-prod]: @/zero-to-prod/_index.md
 
 ## FizzBuzz Pro
 
 While, on the topic of **FizzBuzz Pro**, there is a lot planned for **FizzBuzz
-Pro**
+Pro**.
 
 In the next few weeks, I want to focus on the infrastructure. Then, once the web
 app has a minimally-viable feature set, I'll circle back to adding more
@@ -46,15 +54,17 @@ competitive programming questions and learning resources there.
 Stay tuned.
 
 ## GopherCon Was Awesome 🎉
-------------------------
 
 Here are the slides and an the source code of [my recent GopherCon talk on 
 **Cloud Native Identity Federation**](@/spire/spire-rocks.md).
 
 * [GopherCon TR, Dec 2021 ("*Friends Don't Let Friends Hard-Code Their
-  Secrets*") Slides](https://assets.zerotohero.dev/gophercon-tr-dec-2021/SPIRE-gophercon-TR-Dec-2021.pdf)
+  Secrets*") Slides][gopher-pdf]
 * [GopherCon TR, Dec 2021 ("*Friends Don't Let Friends Hard-Code Their
-  Secrets*") Source Code](https://assets.zerotohero.dev/gophercon-tr-dec-2021/SPIRE-gophercon-TR-Dec-2021-src.zip)
+  Secrets*") Source Code][gopher-zip]
+
+[gopher-pdf]: https://assets.zerotohero.dev/gophercon-tr-dec-2021/SPIRE-gophercon-TR-Dec-2021.pdf
+[gopher-zip]: https://assets.zerotohero.dev/gophercon-tr-dec-2021/SPIRE-gophercon-TR-Dec-2021-src.zip
 
 Here is a video recording of the demo I made there too:
 
@@ -117,13 +127,12 @@ compassion.
 Motivate people to become a better version of themselves:
 
 When you see that someone is doing good enough, you might feel that pushing them
-to learn more or to do more can be discouraging. Instead, reframe that thought
-as an indication that you care about them and want them to be better. When you
-think that way, challenging people to grow (*within reason*) is consequentially
-an act of kindness.
+to learn more or to do more can be discouraging. Instead, **reframe** that 
+thought as an indication that you care about them and want them to be better. 
+When you think that way, challenging people to grow (*within reason*) is 
+consequentially an act of kindness.
 
-Look What I've Found
---------------------
+## Look What I've Found
 
 Here are the things that grabbed my attention this week.
 
@@ -131,13 +140,18 @@ I typically don't share these anywhere else.
 
 Exclusively hand-picked for you 👌. Enjoy.
 
-* [**SVG Globber** helps you download icons, logos and vectors SVG from any site](https://www.svggobbler.com/).
-* [**Gradient Art** is an Advanced CSS Gradient Editor](https://gra.dient.art/).
+* [**SVG Globber** helps you download icons, logos and vectors SVG from any 
+  site][globber].
+* [**Gradient Art** is an Advanced CSS Gradient Editor][gradient].
 * [**Dura** is a background process that watches your Git repositories and 
-  commits your uncommitted changes without impacting `HEAD`](https://github.com/tkellogg/dura).
+  commits your uncommitted changes without impacting `HEAD`][dura].
 
-Thanks a Lot ❤️
----------------
+[globber]: https://www.svggobbler.com/
+[gradient]: https://gra.dient.art/
+[dura]: https://github.com/tkellogg/dura
+
+
+## Thanks a Lot ❤️
 
 That's all for this week. Next week, I'll gather more unique content and
 resources.

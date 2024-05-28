@@ -15,7 +15,12 @@ date = "2021-11-26"
 tags = ["roadmap", "design-patterns"]
 +++
 
-![Paint Me Like One of Your French Design Patterns](/images/size/w1200/2024/03/design-pattern.png)
+![Paint Me Like One of Your French Design Patterns](
+
+{{img(
+  src="/images/size/w1200/2024/03/design-pattern.png"
+  alt="Using design patterns are half science, half art."
+)}}
 
 ## Introduction
 
@@ -118,7 +123,10 @@ In addition, not every problem has an exactly matching design pattern.
 Similarly, not every situation needs to be solved with a design pattern. When in
 doubt, keep things simple.
 
-![Design patterns are what you'd call "guidelines" than actual "rules."](/images/2021/11/guidelines.jpeg)
+{{img(
+  src="/images/2021/11/guidelines.jpeg"
+  alt="Design patterns are what you'd call 'guidelines' than actual 'rules.'"
+)}}
 
 One last thing: People, especially when learning design patterns for the first
 time, don't consider the tradeoffs of using a certain pattern. Each design

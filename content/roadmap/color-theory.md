@@ -15,7 +15,12 @@ date = "2021-11-26"
 tags = ["roadmap", "color-theory", "design"]
 +++
 
-![Orange Is the New Purple](/images/size/w1200/2024/03/colors.png)
+![Orange Is the New Purple](
+
+{{img(
+  src="/images/size/w1200/2024/03/colors.png"
+  alt="Colors."
+)}}
 
 Here is a list of resources on **color theory** to help you reason about what
 shade of purple goes well with what shade of orange 🙂---Enjoy.

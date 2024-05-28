@@ -15,7 +15,10 @@ date = "2022-08-19"
 tags = ["mtls", "spiffe", "spire"]
 +++
 
-![mTLS With SPIRE: Part 5: Containerizing the Client App](/images/size/w1200/2024/03/severcloud.png)
+{{img(
+  src="/images/size/w1200/2024/03/severcloud.png",
+  alt="mTLS With SPIRE: Part 5: Containerizing the Client App"
+)}}
 
 We'll continue creating creating container images and deploying the client app
 to the cluster too, then observe how the client and server communicate with each

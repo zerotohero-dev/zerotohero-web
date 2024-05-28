@@ -15,7 +15,10 @@ date = "2021-10-15"
 tags = ["highlights"]
 +++
 
-![Ghosted?](/images/size/w1200/2024/03/vortex-1.png)
+{{img(
+  src="/images/size/w1200/2024/03/vortex-1.png"
+  alt="Ghosted in a vortex?"
+)}}
 
 Welcome to the sixteenth issue of **Zero to Hero** Highlights.
 
@@ -27,7 +30,10 @@ Let me share some of the highlights.
 First, some personal updates. We went to a **Big Sur** retreat as a family. It
 was something that we needed badly for so long.
 
-![Big Sur coastline.](/images/2021/10/FBdzoRKVQAA3jbR.jpeg)
+{{img(
+  src="/images/2021/10/FBdzoRKVQAA3jbR.jpeg"
+  alt="Big Sur coastline."
+)}}
 
 There was zero technology, full of nature; no Internet, no 5G, even mobile phone
 was useless since there was zero reception mostly.
@@ -39,26 +45,33 @@ It's definitely one of the most beautiful places in the world.
 I've replaced anything redundant and came up with a clean paper white reading
 experience:
 
-![new design](/images/2021/10/Screen-Shot-2021-10-15-at-2.15.16-PM.png)
+{{img(
+  src="/images/2021/10/Screen-Shot-2021-10-15-at-2.15.16-PM.png"
+  alt="The new design."
+)}}
 
 ## New Articles 👩‍🍳
 
 I don't know how, but I managed to develop three valuable articles in the last
 two weeks.
 
-[**Setting Up SPIRE on EKS in Less Than Ten Minutes**](@/spire/spire-rocks.md) 
+[**Setting Up SPIRE on EKS in Less Than Ten Minutes**][spire-rocks]
 talks about things like **Zero Trust** and **Identity Federation** in detail, 
 explains how **SPIRE** solves these problems at scale. There is also an 18-minute 
 lecture that shows you how you can set up **SPIRE** on your Kubernetes cluster.
 
-[**One Does Not Simply "Terminal" 👌**](@/roadmap/one-does-not-simply-terminal.md) 
+[**One Does Not Simply "Terminal" 👌**][terminal] 
 provides you a list of tools and utilities for those command-line aficionados 
 out there. I'll add more to the list when I find new cool stuff.
 
-Last but not least, [**Be the Next Version of Yourself**](@/roadmap/roadmap.md) 
+Last but not least, [**Be the Next Version of Yourself**][roadmap] 
 tells you how to be... well, the next version of yourself 🙂.
 
 I have more articles and videos down the line, so stay tuned.
+
+[spire-rocks]: @/spire/spire-rocks.md
+[terminal]: @/roadmap/one-does-not-simply-terminal.md
+[roadmap]: @/roadmap/roadmap.md
 
 ## Random Thought of the Week
 
@@ -105,9 +118,15 @@ I typically don't share these anywhere else.
 
 Exclusively hand-picked for you 👌. Enjoy.
 
-* [**LANDrop** is an application that you can drop and share any file on you LAN, no need to use Instant Messaging anymore](https://landrop.app/).
-* [**flv.js** is an HTML5 FLV Player](https://github.com/bilibili/flv.js).
-* [**Hyper** is an HTML-based. highly customizable terminal emulator that hit v3.1.4 recently](https://hyper.is/).
+* [**LANDrop** is an application that you can drop and share any file on you 
+  LAN, no need to use Instant Messaging anymore][landrop].
+* [**flv.js** is an HTML5 FLV Player][flv].
+* [**Hyper** is an HTML-based. highly customizable terminal emulator that hit 
+  v3.1.4 recently][hyper].
+
+[landrop]: https://landrop.app/
+[flv]: https://github.com/bilibili/flv.js
+[hyper]: https://hyper.is/
 
 ## Thanks a Lot ❤️
 

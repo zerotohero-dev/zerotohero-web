@@ -15,7 +15,10 @@ date = "2021-06-18"
 tags = ["highlights"]
 +++
 
-![Earn the Promotion You Deserve](/images/size/w1200/2024/03/happy.png)
+{{img(
+  src="/images/size/w1200/2024/03/happy.png"
+  alt="You deserve it; you will earn it."
+)}}
 
 Welcome to the sixth issue of **Zero to Hero** Highlights.
 
@@ -26,23 +29,25 @@ we go.
 ## What's New on **Zero to Hero** 👩‍🍳
 
 This week, I was primarily focused
-on [restarting the Zero to Hero live streams](https://www.twitch.tv/VadidekiVolkan)
-and creating the initial API architecture of **FizzBuzz Pro**. Thus, there are
-no new articles so far. And there's a lot in the pipeline. For instance, I want
-to create a **learning roadmap** for the interested, which will be about how you
-can keep up with everything without getting overwhelmed (_hint: give yourself
-the time you need---but there's more to it_)
+on [restarting the Zero to Hero live streams][twitch] and creating the initial 
+API architecture of **FizzBuzz Pro**. Thus, there are no new articles so far. 
+And there's a lot in the pipeline. For instance, I want to create a 
+**learning roadmap** for the interested, which will be about how you can keep 
+up with everything without getting overwhelmed (*hint: give yourself
+the time you need---but there's more to it*)
 
-There's one video about [Creating AWS ECR Repositories](@/zero-to-prod/creating-ecr-repositories.md)
-that you might like, though.
+There's one video about [Creating AWS ECR Repositories][ecr] that you might 
+like, though.
 
 So, stay tuned. Lots of quality content is on its way.
+
+[twitch]: https://www.twitch.tv/VadidekiVolkan
+[ecr]: @/zero-to-prod/creating-ecr-repositories.md
 
 ## **Zero to Hero** on Twitch
 
 I started sharing my development environment, live coding, and chatting with
-whoever bumps into [**Zero to Hero
-** Twitch Channel](https://www.twitch.tv/VadidekiVolkan).
+whoever bumps into [**Zero to Hero** Twitch Channel][twitch].
 
 Nowadays, I'm mostly coding **Go**; yet I'll be all over the stack, from
 containers to Kubernetes, to UI/UX design.
@@ -54,8 +59,7 @@ containers to Kubernetes, to UI/UX design.
 > and the programs that I might have with family and friends.
 >
 > The best way to get notified as soon as I'm online is
-> to [hop on the channel and follow me on 
-> **Twitch**](https://twitch.tv/VadidekiVolkan "Follow me on Twitch.").
+> to [hop on the channel and follow me on **Twitch**][twitch].
 
 ## Random Thought of the Week
 
@@ -112,7 +116,7 @@ review meeting with your boss.
 >
 > Agreeing that they are great tips will not get you that promotion:  
 > **Getting your hands dirty** and **working on** your promotion will 
-> "_eventually_" get you that promotion.
+> "*eventually*" get you that promotion.
 
 So grab that pen and start scribbling in your work journal, and good luck with
 your next performance review talk: If you start now, you'll be well equipped
@@ -126,9 +130,13 @@ I typically don't share these anywhere else.
 
 Exclusively hand-picked for you 👌. Enjoy.
 
-* [**Open Search** is an open-source alternative to ElasticSearch and Kibana](https://opensearch.org/).
-* [Here's how you can use **Istio** for failover for external services](https://istio.io/latest/blog/2021/external-locality-failover/).
-* [**Alcor** is a hyperscale cloud native SDN platform](https://github.com/futurewei-cloud/alcor).
+* [**Open Search** is an open-source alternative to ElasticSearch and Kibana][open-search].
+* [Here's how you can use **Istio** for failover for external services][istio].
+* [**Alcor** is a hyperscale cloud native SDN platform][alcor].
+
+[open-search]: https://opensearch.org/
+[istio]: https://istio.io/latest/blog/2021/external-locality-failover/
+[alcor]: https://github.com/futurewei-cloud/alcor
 
 --------
 

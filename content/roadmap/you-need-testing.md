@@ -15,7 +15,10 @@ date = "2021-11-26"
 tags = ["roadmap", "testing"]
 +++
 
-![You Need Testing](/images/size/w1200/2024/03/testing.png)
+{{img(
+  src="/images/size/w1200/2024/03/testing.png",
+  alt="Test all the thingz!"
+)}}
 
 ## Testing is **not** About the Tools
 
@@ -37,7 +40,7 @@ and more important than that, you'll have to figure out **why** _you need
 testing ("unit testing"---see what I did there?_) and **how** to implement
 various testing strategies.
 
-There are several different testing types and strategies that youneed to be
+There are several different testing types and strategies that you need to be
 aware of as well. For starters, you might want to learn
 about [unit tests](https://en.wikipedia.org/wiki/Unit_testing), 
 [integration tests](https://en.wikipedia.org/wiki/Integration_testing), 
@@ -58,7 +61,7 @@ writing tests may (_"**may**" is the keyword here_) be counter-productive.
 
 Per contra, if you are a well-established organization with remotely
 collaborating teams and business units, or if you are open-sourcing a library,
-then _not_ writing tests will be equivalent to being back-kicked by a donkey in
+then *not* writing tests will be equivalent to being back-kicked by a donkey in
 the guts---not fun!
 
 ## Learning Resources

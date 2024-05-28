@@ -12,10 +12,13 @@ title = "mTLS With SPIRE: Part 1: Introduction"
 date = "2021-10-19"
 
 [taxonomies]
-tags = ["mtls", "spiffe", "spire"]
+tags = ["mtls", "spiffe", "spire", "zero-trust", "security"]
 +++
 
-![mTLS With SPIRE: Part 1: Introduction](/images/size/w1200/2024/03/cluster-arch.png)
+{{img(
+  src="/images/size/w1200/2024/03/cluster-arch.png",
+  alt="mTLS With SPIRE: Part 1: Introduction"
+)}}
 
 This video will introduce the cluster architecture and talk about what we are
 planning to achieve by the end of the video series.

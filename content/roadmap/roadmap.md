@@ -15,11 +15,15 @@ date = "2024-05-21"
 tags = ["roadmap", "guide", "learning", "career"]
 +++
 
-![Be the Next Version of Yourself](/images/size/w1200/2024/03/journey.png)
+{{img(
+  src="/images/size/w1200/2024/03/journey.png",
+  alt="It's a journey, not a destination."
+)}}
 
 ## About This Article
 
-> **This is a Living Document**  
+> **This is a Living Document**
+> 
 > What you are reading is a **living document**.  
 > I'll update this article whenever I get a similar question that has not
 > entirely been addressed by what I have here.
@@ -28,6 +32,7 @@ I tried to keep the suggestions here as much field-agnostic as I can to make it
 beneficial to you no matter what part of "_the stack_" you are interested in.
 
 > **What Stack?!**  
+> 
 > I also honestly believe that there is no such thing called "the stack", and
 > the boundaries between the layers of "the stack" have vanished long time ago, so
 > it is a "**mesh**"---*if anything*---rather than a stack, but that's the 
@@ -41,11 +46,12 @@ years and years of experience. So, give it the **time** and **concentration** it
 deserves.
 
 While you are reading, you'll
-find [links to other useful materials, such as this 
-one](https://www.cs.jhu.edu/~jason/advice/how-to-read-a-paper.html).
+find [links to other useful materials, such as this one][how-to-read].
 **Do not skip them**: They are as important as the article itself.
 
 With that said, let us begin, shall we?
+
+[how-to-read]: https://www.cs.jhu.edu/~jason/advice/how-to-read-a-paper.html
 
 ## Introduction
 
@@ -59,18 +65,21 @@ Or, something like that:
 
 "*People assume that I know JavaScript, and I confess: I am a JavaScript
 developer who doesn't know how to develop.*" 
+
 I even got this one 😄:
 
 "*Help me Obi-Wan Kenobi; you're my only hope.*"
 
 Since answering the same question over and over again is not the best use of
-the [opportunity cost of my time](https://en.wikipedia.org/wiki/Opportunity_cost),
+the [opportunity cost of my time][opportunity-cost],
 I wanted to answer them here, once and for all.
+
+[opportunity-cost]: https://en.wikipedia.org/wiki/Opportunity_cost
 
 ## Is It the "Impostor's Syndrome"?
 
 Although there's a hint
-of [impostor's syndrome](https://www.fastcompany.com/40421352/the-five-types-of-impostor-syndrome-and-how-to-beat-them)
+of [impostor's syndrome][impostor-syndrome]
 in those questions, there also exists a **deep concern** that waits to be
 addressed.
 
@@ -83,6 +92,8 @@ These questions require a much well-thought-out answer than a "*It's easy; you
 see: Learn React and MongoDB, and you are good to go.*" answer.
 
 So here it goes.
+
+[impostor-syndrome]: https://www.fastcompany.com/40421352/the-five-types-of-impostor-syndrome-and-how-to-beat-them
 
 ## Ask Questions, Doubt Everything, Trust in Evidence
 
@@ -304,7 +315,10 @@ If you are planning to become a developer, you are going to be really **intimate
 
 ## Read the Source, Luke
 
-![Read the source, Luke.](/images/2021/10/read-the-source.jpeg)
+{{img(
+  src="/images/2021/10/read-the-source.jpeg",
+  alt="Read the source, Luke."
+)}}
 
 Related to *sharing your code openly*:
 
@@ -359,7 +373,7 @@ By adding value to the **open source** community you'll...
 More importantly, You'll feel **empowered 💪**:
 
 You'll gain self-confidence, which will help beat the inner impostor out of
-you (_more on that later_).
+you (*more on that later*).
 
 ## Being a **Full StackOverflow Developer** is Okay
 
@@ -443,7 +457,7 @@ You'll see more about "_learning to learn_" down below: Just 🐻 with me.
 
 ## Know How Your Wetware 🧠 Works
 
-Your "_wetware_" is not good at memorizing: So, don't memorize those software
+Your "*wetware*" is not good at memorizing: So, don't memorize those software
 design patterns, or those interview questions and algorithmic puzzles.
 
 > **Don't Memorize What You Can Look Up**  
@@ -458,7 +472,8 @@ your subconscious do the rest of the job.
 That's why one of the best ways to learn something is to **copy** what others
 have done before you:
 
-> **Imitation Is Learning**  
+> **Imitation Is Learning**
+> 
 > Imitate people you admire to be, to be like them.
 
 ## You Learn by Imitation
@@ -470,7 +485,8 @@ Learning how to name variables, or how to create a folder structure, or how to
 couple different modules of your code together, how to document your code... is
 much easier when you **imitate** how others have done the same thing before you.
 
-> **Stand on the Shoulders of the Giants**  
+> **Stand on the Shoulders of the Giants**
+> 
 > Learn from the cumulative experience of developers before you.
 
 Even if you want to reinvent the wheel first look at what others have done
@@ -491,7 +507,7 @@ The same applies when learning how to code, too:
 
 In time, you'll understand how different patterns tie together:
 
-You'll see the "_why_"s behind those "_what_"s.
+You'll see the "*why*"s behind those "*what*"s.
 
 And the way to reach there is to...
 
@@ -528,7 +544,7 @@ other.
 Do this exercise regularly, **every single day**, and one day you'll wake up and
 utter:
 
-"_I know kung-fu._"
+"*I know kung-fu.*"
 
 ## Don't Hang onto a Single Paradigm
 
@@ -554,10 +570,10 @@ approach problems **differently**. And that is **good**.
 
 When you expand your horizon, and when you get out of your comfort zone, you
 will be able to combine seemingly unrelated facts with each other to come up
-with a solution---That is the _very_ definition of **creativity**.
+with a solution---That is the *very* definition of **creativity**.
 
 With enough accumulated **creativity** and **artistry**, you will _eventually_
-be the one to find a solution to "_that_" problem even Google has no answer to.
+be the one to find a solution to "*that*" problem even Google has no answer to.
 
 ## There Are No Shortcuts
 
@@ -574,12 +590,12 @@ Give the time your brain deserves to internalize what you have learned.
 
 Learning requires:
 
-* **Repetition**
-* Routines
-* [Habitualization](https://blogsociology.wordpress.com/tag/habitualization/) \*
-* Dedication
-* A hell lot of perspiration
-* And **repetition**
+* **Repetition**,
+* Routines,
+* [Habitualization](https://blogsociology.wordpress.com/tag/habitualization/) \*,
+* Dedication,
+* A hell lot of perspiration,
+* And **repetition**.
 
 > \* "[Habitualization](https://blogsociology.wordpress.com/tag/habitualization/)"
 > is just a big fancy word for creating habits based on stimulation in your
@@ -617,14 +633,16 @@ Here's why:
 You are **priceless** in what you bring to your environment, and nobody can add
 the values you specifically add.
 
-> **Important**  
+> **Important**
+>
 > It is the **union** of the individual skills of the people that make the team
 > more prominent than the sum of its contributors.
 
 Most people experience moments of doubt, and that's normal. The important part
 is not to let your uncertainty control your actions.
 
-> **Yeet the Impostor Out of You**  
+> **Yeet the Impostor Out of You**
+> 
 > Here's a stupid trick that works: If you tell yourself you'll never feel like
 > an impostor, guess what? You'll never feel like an impostor.
 
@@ -725,15 +743,15 @@ Yes, there are specific sets of problems that fit well with certain software
 architecture patterns. One the other hand, forcing patterns into every single
 problem set will be counterproductive, at the very least.
 
-## How About Those "_Interview Prep_" Books and Code Banks?
+## How About Those "*Interview Prep*" Books and Code Banks?
 
-For books like "_Cracking the Coding Interview_", and for websites like 
-"_Leetcode_", well, I have mixed feelings.
+For books like "*Cracking the Coding Interview*", and for websites like 
+"*Leetcode*", well, I have mixed feelings.
 
 If you want to pass an interview, sure thing, go ahead and read them.
 
-If you are prepping for an interview, not studying those resources is *
-*illogical**: If that's how the game is played, you should play it by the rules
+If you are prepping for an interview, not studying those resources is
+**illogical**: If that's how the game is played, you should play it by the rules
 unless you are confident that you can set your own rules.
 
 > **About Competitive Programming Challenges**
@@ -748,15 +766,15 @@ unless you are confident that you can set your own rules.
 > And from the looks of it, it's not about to change anytime soon.
 
 Though, I have a sliver of hope that, if you have read this article thus far,
-you have a strong belief that you are **meant to be** more than just a _walking
-scientific calculator_ that can backtrack a maze, or reverse a binary tree 🙂.
+you have a strong belief that you are **meant to be** more than just a *walking
+scientific calculator* that can backtrack a maze, or reverse a binary tree.
 
 For mastering of your craftsmanship, interview prep books and websites are **not
 ** worth your time.
 
 I mean, **do** buy those interview prep books, and **do** solve the question in
 those "_programming interview questions code bank_" websites; however, treat
-them as "_side dishes_", not as the main course.
+them as "*side dishes*", not as the main course.
 
 Don't let a stupid recursive array manipulation interview question dictate how
 good a software craftsman you are.
@@ -772,8 +790,8 @@ Don't learn **data structures** and **algorithms** for the sake of studying for
 interviews. Learn them **because** it makes you a **better** programmer.
 
 Regardless, studying [*competitive programming questions*](https://projecteuler.net/)
-will help you in your programming interviews. There are even shortcuts (_like
-websites like leetcode_) that help you practice your algorithmic chops.
+will help you in your programming interviews. There are even shortcuts (*like
+websites like leetcode*) that help you practice your algorithmic chops.
 
 Yet, that's not the point. **Do not take shortcuts**.
 
@@ -785,7 +803,7 @@ Learn what the **benefits** of a particular type of algorithm are.
 
 Learn what the **liabilities** of using specific data structures are.
 
-Here are two excellent (_and free_) resources to learn your algorithms:
+Here are two excellent (*and free*) resources to learn your algorithms:
 
 * [Competitive Programmer's Handbook](https://cses.fi/book/index.html)
 * [Teach Yourself CS](https://teachyourselfcs.com/)
@@ -806,27 +824,30 @@ Before even beginning your learning adventure, you need to know two things:
 * You should **know** how you learn: What type of learner you are.
 * You need to "**learn to learn**".
 
-That might sound "_too meta_", so let me elaborate:
+That might sound "*too meta*", so let me elaborate:
 
 **Learning to learn** is easier said than done because to "_learn to learn_",
 you have to [**know yourself**](https://en.wikipedia.org/wiki/Know_thyself)
 first---you have to have an idea of what type of a learner you are: There is
-no "_one size fits all_" solution in learning.
+no "*one size fits all*" solution in learning.
 
-> "Every fighter has a different way of eating yogurt."  
+> "Every fighter has a different way of eating yogurt."
+> 
 > --- Turkish proverb
 
-Are you an [**inductive learner**](https://en.wikipedia.org/wiki/Inductive_reasoning) who starts with the
-foundation and understands the bigger picture by connecting pieces together.
+Are you an [**inductive learner**](https://en.wikipedia.org/wiki/Inductive_reasoning) 
+who starts with the foundation and understands the bigger picture by 
+connecting pieces together.
 
-Alternatively, are you a [**deductive learner**](https://en.wikipedia.org/wiki/Deductive_reasoning) who likes to see a
-working system as a whole, only to split it into is building blocks recursively,
-and understand each piece until there is nothing left to split apart.
+Alternatively, are you a [**deductive learner**](https://en.wikipedia.org/wiki/Deductive_reasoning) 
+who likes to see a working system as a whole, only to split it into is building 
+blocks recursively, and understand each piece until there is nothing left to 
+split apart.
 
-Are you a [**visual learner**](https://www.thestudygurus.com/visual-study-tips/)? Do you use flashcards? Do
-you want to draw things on a whiteboard? Do you want to look at things "_from a
-different perspective_" to "_get the hang of it_". Do you understand things best
-when you have a "_clear picture_" in your mind?
+Are you a [**visual learner**](https://www.thestudygurus.com/visual-study-tips/)? 
+Do you use flashcards? Do you want to draw things on a whiteboard? Do you want to 
+look at things "*from a different perspective*" to "*get the hang of it*." Do 
+you understand things best when you have a "*clear picture*" in your mind?
 
 ## Learn How You Learn
 
@@ -838,7 +859,7 @@ Do you learn by playing toy projects?
 
 Do you learn by reading others' code?
 
-There's no exact answer to the "_how do I learn?_" question.
+There's no exact answer to the "*how do I learn?*" question.
 
 If you're not sure, I'd suggest you try a variety of different approaches and
 see which ones fit the best for you.
@@ -894,8 +915,7 @@ update itself automatically as I add more resources and articles later:
 ## Conclusion
 
 If you have been patient enough to read to the end of this article without
-skipping
-anything, [you are better than 75% the world 
+skipping anything, [you are better than 75% the world 
 already](https://www.nngroup.com/articles/how-little-do-users-read/).
 Congratulations.
 
