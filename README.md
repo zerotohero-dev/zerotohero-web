@@ -9,6 +9,8 @@
 # `-------'`------'`--' `--'
 ```
 
+.
+
 This is the public website for <https://zerotohero.dev>.
 
 The code is [MIT-licensed](LICENSE) and the content is licensed under
