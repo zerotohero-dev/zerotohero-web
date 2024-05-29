@@ -33,10 +33,8 @@ Daha iyi eğitim platformu yok.
 
 {{ geyik_academy_nav(selected=0) }}
 
-## VSecM Onboarding
+## VMware Secrets Manager (*VSecM*)
 
-* [VMware Secrets Manager Onboarding (*Vimeo Showcase*)](https://vimeo.com/showcase/10981999)
-* [VMware Secrets Manager Bug Bash (*Vimeo Showcase*)](https://vimeo.com/showcase/10981732)
 * [Geyik Akademi VSecM (*YouTube Playlist*)](https://www.youtube.com/playlist?list=PL9Ms961L-BDvu1k0zzy8HzSY7DTdwmfzp)
 
 ## Impromptu Dersler
