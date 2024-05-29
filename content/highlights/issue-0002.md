@@ -15,17 +15,22 @@ date = "2021-05-19"
 tags = ["highlights"]
 +++
 
-![Find the Balance in Change](/images/size/w1200/2024/03/change.png)
+{{img(
+  src="/images/size/w1199/2024/03/change.png"
+  alt="Find the balance in the change."
+)}}
 
 ## Hey 👋,
 
 Welcome to the second issue of **Zero to Hero** Highlights.
 
 For those who are
-new, [there has been a lot of flux recently](@/about/a-new-hope.md),
+new, [there has been a lot of flux recently][a-new-hope],
 and things are slowly settling down. I've set a personal goal to create one of
 these newsletters every week regardless of whether there's new content on the
 platform.
+
+[a-new-hope]: @/about/a-new-hope.md
 
 Let's begin with this week's random thought: **Change**, and **Change Management
 **, which is something that deeply resonates with me recently.
@@ -42,7 +47,7 @@ done.
 Humans are Optimist Primes: We underestimate how hard a transformative change
 can be. So make sure to set **realistic** expectations. Make sure to put enough
 time buffer around your expectations. Double that buffer time, then double it
-once more: Yes, we are "_that bad_" at estimating things.
+once more: Yes, we are "*that bad*" at estimating things.
 
 The second hurdle you'll face is the sheer amount of work that you realize needs
 to be done. The good thing is, you don't have to do that all at once.
@@ -59,7 +64,7 @@ contribute to your transformational idea. Make sure that they **clearly**
 understand how the change will affect them.
 
 One more thing: **Be transparent**. Don't hide the reason behind the importance
-of this change (_to you and to everyone else_). **Share** what you can.
+of this change (*to you and to everyone else*). **Share** what you can.
 
 > **Sharing** means exposing yourself; exposing yourself will---high
 > likely---inspire the people around you. They will support you even more.
@@ -84,12 +89,16 @@ I typically don't share these anywhere else.
 
 Exclusively hand-picked for you 👌. Enjoy.
 
-* [iconic.app](https://iconic.app/): Free, high-quality icons for your next
-  project, from arrows to buildings, to devices.
-* [RedKetchup](https://redketchup.io/): Free online tools to work on images,
-  videos, and icons.
-* [Replay](https://github.com/vimond/replay): A React video player facilitating
-  adaptive stream playback with custom UI and a React-friendly API.
+* [iconic.app][iconic]: Free, high-quality icons for your next project, from 
+  arrows to buildings, to devices.
+* [RedKetchup][redketchup]: Free online tools to work on images, videos, and 
+  icons.
+* [Replay][replay]: A React video player facilitating adaptive stream playback 
+  with custom UI and a React-friendly API.
+
+[iconic]: https://iconic.app/
+[redketchup]: https://redketchup.io/
+[replay]: https://github.com/vimond/replay
 
 ## Thanks a Lot ❤️
 
@@ -97,6 +106,8 @@ That's all for this week. Next week, I'll gather more unique content and
 resources.
 
 So, until next time... May the source be with you 🦄.
+
+--------
 
 ## Issues
 

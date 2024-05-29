@@ -15,7 +15,12 @@ date = "2022-04-03"
 tags = ["highlights"]
 +++
 
-![Change Is the Only Constant](/images/size/w1200/2024/03/fire2.png)
+![Change Is the Only Constant]()
+
+{{img(
+  src="/images/size/w1200/2024/03/fire2.png"
+  alt="Change makes the fire burn."
+)}}
 
 Welcome to the 21st issue of **Zero to Hero** Highlights.
 
@@ -24,9 +29,11 @@ Welcome to the 21st issue of **Zero to Hero** Highlights.
 > fuel, or sinking downwards after having nourished the flame. It follows that 
 > the whole of reality is like an ever-flowing stream, and that nothing is ever 
 > at rest for a moment. 
-> --- [**Heraclitus**](https://en.wikipedia.org/wiki/Heraclitus)
+> --- [**Heraclitus**][heraclitus]
 
 Yes, everything flows; everything changes and nothing is stationary.
+
+[heraclitus]: https://en.wikipedia.org/wiki/Heraclitus
 
 ## Personal... News?
 
@@ -45,10 +52,12 @@ I have been interviewing for the last few months, and my main focus and energy
 were on the interview preparation. Since that process has ended, now I can 
 share my "**_personal news_**" with you.
 
-Farewell Cisco 🐬; Hello VMware 👋
-----------------------------------
+## Farewell Cisco 🐬; Hello VMware 👋
 
-![VMware](/images/2022/04/vmware-logo.png)
+{{img(
+  src="/images/2022/04/vmware-logo.png"
+  alt="VMware."
+)}}
 
 Hello world. Hello stars. Hello universe.
 
@@ -160,15 +169,25 @@ I typically don't share these anywhere else.
 
 Exclusively hand-picked for you 👌. Enjoy.
 
-* [Welcome to your **stellar neighborhood** (_best viewed with a Chromium Browser_)](https://stars.chromeexperiments.com/).
-* [**Pipedream** helps you write less boilerplate code while connecting APIs together](https://pipedream.com/).
-* [You have text examples, but you don't know what **RegExp** to write that matches them all? Say no more fam---Leave the job to **`grex`**](https://regex.help/).
+* [Welcome to your **stellar neighborhood** (*best viewed with a Chromium 
+  Browser*)][chrome-experiments].
+* [**Pipedream** helps you write less boilerplate code while connecting 
+  APIs together][pipedream]j.
+* [You have text examples, but you don't know what **RegExp** to write 
+  that matches them all? Say no more fam---Leave the job 
+  to **`grex`**][regexp].
+
+[chrome-experiments]: https://stars.chromeexperiments.com/
+[pipedream]: https://pipedream.com/
+[regexp]: https://regex.help/
 
 ## Thanks a Lot ❤️
 
 That's all for this week. Next week, I'll gather more unique content and resources.
 
 So, until next time... May the source be with you 🦄.
+
+--------
 
 ## Issues
 

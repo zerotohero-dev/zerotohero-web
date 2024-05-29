@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Embracing Daily Reflection"
 date = "2021-06-04"
 
@@ -144,6 +153,8 @@ self-discovery and fulfillment.
 And that way, today's " **_top of mind_** ."
 
 Until next time... May the source be with you 🦄.
+
+--------
 
 ## Section Contents
 

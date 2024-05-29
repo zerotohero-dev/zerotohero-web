@@ -15,36 +15,34 @@ date = "2024-05-18"
 tags = ["about", "backstory"]
 +++
 
-![Pivot, change, and ignite.](/images/size/w1200/2024/03/beginning.png)
+{{img(
+  src="/images/size/w1200/2024/03/beginning.png"
+  alt="Pivot, change, and ignite."
+)}}
+
 
 > **Update 2024-05-18**
 > 
 > This is---I believe---the **fourth** incarnation of **Zero to Hero**.
 > 
+> Since I wrote this article **a lot** have changed, which I can summarize as  
+> "life got in the way even further."
+> 
 > The text below is the original article that I wrote on **May the Fourth, 
-> 2021**.
-> Since then, a lot have changed in my personal and professional life. So,
+> 2021**.Since then, a lot have changed in my personal and professional life. So,
 > keep in mind that the text below is a snapshot of the past, and things have
 > evolved since then.
 > 
 > Currently, **Zero to Hero** serves as my personal blog where I write about
 > what I think, when I think. You can find the latest articles on the 
-> [home page](@/_index.md).
+> [home page][home].
 > 
 > In addition, I have removed the subscription-based content strategy, and I'm
 > publishing everything on this platform for free.
 
+[home]: @/_index.md
+
 ## Hello World, Hello Stars, Hello Universe
-
-> **Update 2024-03-04**
->
-> Since I wrote this article **a lot** have changed, which I can summarize as  
-> "life got in the way even further."
->
-> **Zero to Hero** is now [my personal blog that I write freely about what I
-> think, when I think][new-design].
-
-[new-design]: @/top-of-mind/new-z2h-design.md "New Zero to Hero Design"
 
 Hi there 👋,
 
@@ -54,7 +52,7 @@ As you can see, this is the new **Zero to Hero**.
 >
 > Just 🐻 with me, I'll get to it shortly. But, in a nutshell: Around **2018**,
 > I created a video course titled "*JavaScript from Zero to Hero*". I gradually
-> added more content, videos, lesson notes... Yet, "_life_" got in the way and 
+> added more content, videos, lesson notes... Yet, "*life*" got in the way and 
 > I was never able to finalize the course.
 >
 > So, as of May the fourth 2021, I decided to make a radical change and start 
@@ -101,9 +99,10 @@ valuable content, freely, without any constraints.
 
 ## The Pivot
 
-![Pivot, change, and ignite.](/images/2021/05/saga-15.png)
-
-Pivot, change, and ignite.
+{{img(
+  src="/images/2021/05/saga-15.png)"
+  alt="Every saga has a beginning."
+)}}
 
 So what's the plan?
 
@@ -135,7 +134,7 @@ There are several reasons for that:
 
 > "Success isn't always about greatness. It's about consistency. Consistent hard
 > work leads to success. Greatness will come." 
-> -- **Dwayne (_the Rock_) Johnson**
+> -- **Dwayne (*the Rock*) Johnson**
 
 It will take a while to think about the **content strategy**.
 
@@ -151,7 +150,7 @@ I have a plan... several plans in fact. And I'll gradually get there.
 
 ## A Change in the Process
 
-I began working on "_JavaScript: from Zero to Hero_" around **2018**. The course 
+I began working on "*JavaScript: from Zero to Hero*" around **2018**. The course 
 was a video course about creating and maintaining your **JavaScript** stack in a 
 real-life production environment, paying special attention to things like 
 **scalability**, **fault-tolerance**, **high availability**, 
@@ -194,7 +193,7 @@ There is a multitude of reasons, why the course took more than an average
 * Firstly, my responsibilities grew as I gained more clout within the company.
   This resulted in a more **demanding job**.
 * In addition, as the kids got older, my responsibilities as a **parent**, 
-  guardian, and a **spouse** grew. -- Not everyone knows this, but we are a 
+  guardian, and a **spouse** grew---Not everyone knows this, but we are a 
   **non-neurotypical** family of four. And that multiplies the **attention**, 
   care, and **communication** needs orders of magnitude compared with an 
   equivalent "*typical*" (*if that's a thing*) household.
@@ -225,13 +224,15 @@ solution.
 
 Let me add a few screenshots to show you how the course looked like.
 
-![The landing page](/images/2021/05/Screen-Shot-2021-05-04-at-2.21.04-PM-11.png)
+{{img(
+  src="/images/2021/05/Screen-Shot-2021-05-04-at-2.21.04-PM-11.png"
+  alt="The landing page."
+)}}
 
-The landing page.
-
-![The learning management system](/images/2021/05/Screen-Shot-2021-05-04-at-2.29.18-PM-11.png)
-
-The learning management system.
+{{img(
+  src="/images/2021/05/Screen-Shot-2021-05-04-at-2.29.18-PM-11.png)"
+  alt="The learning management system."
+)}}
 
 The application was truly slick, micro-services-based, learning management 
 system. I'm planning to **rework** on it too, and share my progress here with 
@@ -277,7 +278,7 @@ Eventually---and took **many** months of debilitation---I've decided to put a
 * I've moved my Twitter to private.
 * I've jumped off all other social media.
 * The only medium that I've been sharing stuff for the last couple of months 
-  is [LinkedIn][linkedin]
+  is [LinkedIn][linkedin].
 
 [linkedin]: https://linkedin.com/in/volkanozcelik "Volkan Özçelik on LinkedIn"
 
@@ -293,12 +294,12 @@ After thinking about this **a lot** and weighing all my options: I've decided to
 pivot my idea into a knowledge-sharing system that I can populate faster, 
 easier, without friction---almost naturally.
 
-![Sometimes you need a shift in your perspective. sometimes you need a splash of 
-water in your face. And sometimes you need 
-both.](/images/2021/05/CXYEte2UwAAdugK-10.jpg)
-
-Sometimes you need a shift in your perspective. sometimes you need a splash of 
-water in your face. And sometimes you need both.
+{{img(
+  src="/images/2021/05/CXYEte2UwAAdugK-10.jpg"
+  alt="Sometimes you need a shift in your perspective. 
+    Sometimes you need a splash of water in your face. 
+    Almost always, you need both."
+)}}
 
 What will the new **Zero to Hero** be like?
 
@@ -353,9 +354,9 @@ and using right now.
 
 Tangentially: Everything in life is based on three main forces:
 
-*   Rotation
-*   Oscillation
-*   And Transformation
+* Rotation
+* Oscillation
+* And Transformation
 
 **Zero to Hero** is no exception to that.
 
@@ -377,6 +378,8 @@ Stay tuned: More will come.
 May the source be with you 🦄,
 
 Volkan.
+
+--------
 
 ## Explore More
 

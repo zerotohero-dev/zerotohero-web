@@ -1,3 +1,12 @@
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 - name: "Part 1: An Overview of FizzBuzz Pro"
   url: "@/zero-to-prod/an-overview-of-fizzbuzz-pro.md"
 - name: "Part 2: Generating Static HTML"
@@ -26,5 +35,14 @@
   url: "@/zero-to-prod/containerizing-our-application.md"
 - name: "Part 14: Onwards to Kubernetes"
   url: "@/zero-to-prod/onwards-to-kubernetes.md"
-
+- name: "Creating ECR Repositories"
+  url: "@/zero-to-prod/creating-ecr-repositories.md"
+- name: "Deploying a Microservice to Kubernetes"
+  url: "@/zero-to-prod/deploying-a-microservice-to-k8s.md"
+- name: "Fizz that Buzz"
+  url: "@/zero-to-prod/fizz-that-buzz.md"
+- name: "FizzBuzz Pro High-Level Design"
+  url: "@/zero-to-prod/fizzbuzz-pro-hla.md"
+- name: "FizzBuzz Pro Repositories"
+  url: "@/zero-to-prod/fizzbuzz-pro-repos.md"
 

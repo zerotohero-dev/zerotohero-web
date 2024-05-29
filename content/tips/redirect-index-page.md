@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Redirecting a Static Web Page"
 date = "2024-05-23"
 
@@ -6,16 +15,21 @@ date = "2024-05-23"
 tags = ["tips", "html", "redirect"]
 +++
 
-![Redirect](/images/2024/redirect.png)
+{{img(
+  src="/images/2024/redirect.png",
+  alt="Hadooken."
+)}}
 
 ## Introduction
 
-While migrating [zerotohero.dev](https://zerotohero.dev) to its new design, 
+While migrating [zerotohero.dev][home] to its new design, 
 I needed to find a quick and dirty way to redirect incoming requests to 
 certain websites to their corresponding pages on **Zero to Hero**.
 
 This nugget gives a neat trick to achieve this with the least amount of
 effort.
+
+[home]: @/_index.md
 
 ## `<meta>` Refresh to the Rescue
 
@@ -107,6 +121,8 @@ Hope you liked this little nugget. It's the fastest to way to achieve the task
 without having to worry about the underlying infrastructure.
 
 Until next time… May the source be with you 🦄.
+
+--------
 
 ## Section Contents
 

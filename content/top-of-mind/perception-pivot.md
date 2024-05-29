@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Transform Feedback into Professional Mastery"
 date = "2024-03-08"
 
@@ -73,6 +82,8 @@ The journey towards understanding and managing perceptions is about adjusting
 your actions and fostering an environment of mutual respect and continuous
 development. Embrace this, and you'll pave the way for a more fulfilling and
 impactful career.
+
+--------
 
 ## Section Contents
 

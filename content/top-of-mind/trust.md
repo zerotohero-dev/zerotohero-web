@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Trust Cultivates a Cohesive Team"
 date = "2024-03-07"
 
@@ -72,6 +81,8 @@ rooted in mutual regard and confidence.
 Henceforth, every team member must prioritize these approaches to cultivate an
 atmosphere where trust flourishes naturally, and collaboration thrives
 effortlessly. This will help everyone feel **empowered** to contribute.
+
+--------
 
 ## Section Contents
 

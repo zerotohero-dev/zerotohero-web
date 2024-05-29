@@ -1,12 +1,27 @@
 +++
-title = "TBD"
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
+title = "How to Work With Private Go Repositories"
 date = "2021-11-26"
+template = "geyik.html"
 
 [taxonomies]
 tags = ["go"]
 +++
 
-![How To Work With Private Go Repositories](/zerotohero-dev/content/images/size/w1200/2024/03/private.png)
+# How to Work With Private Go Repositories
+
+{{img(
+  src="/images/size/w1200/2024/03/private.png",
+  alt="Private repositories, being private."
+)}}
 
 Introduction
 ------------
@@ -60,7 +75,9 @@ In this mini video, you've learned how to work with private **Go** modules and i
 
 > **Note**  
 >   
-> You can check out this **Zero to Hero** article about [Z-Shell Startup Files](https://www.zerotohero.dev/zshell-startup-files/) for more information about the subject.
+> You can check out this **Zero to Hero** article about 
+> [Z-Shell Startup Files](@/tips/zshell-startup-files.md) for more information 
+> about the subject.
 
 We'll have more fun with **Go** in the upcoming videos and articles.
 

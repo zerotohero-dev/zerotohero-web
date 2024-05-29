@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = 'The New "Zero to Hero" Design'
 date = "2024-03-04"
 
@@ -49,6 +58,8 @@ posts, but that's okay. After all, I like what it looks like. And I'll create
 more content faster, thanks to this new mindset, and that's all that matters.
 
 Until the next one... May the source be with you 🦄.
+
+--------
 
 ## Section Contents
 

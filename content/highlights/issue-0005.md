@@ -15,7 +15,10 @@ date = "2021-06-11"
 tags = ["highlights"]
 +++
 
-![Be Kind](/images/size/w1200/2024/03/kind.png)
+{{img(
+  src="/images/size/w1200/2024/03/kind.png"
+  alt="Be kind."
+)}}
 
 Welcome to the fifth issue of **Zero to Hero** Highlights.
 
@@ -27,28 +30,36 @@ Let's jump right in.
 
 Here is a list of articles that I've published this week:
 
-* In [The Repositories, Tools, and Services We'll Use for FizzBuzz Pro](@/zero-to-prod/fizzbuzz-pro-repos.md)
-  use case, we looked into the repositories and services that we will use in 
-  **FizzBuzz Pro**.
-* In [A Technique to Ensure Environment Variables Are Set Before Starting a Microservice](@/tips/microservice-env-vars.md)
-  article, we saw a technique to ensure that our microservice does not start if
-  any of the environment variables it depends on is missing.
-* In [Make Your Code Leaner By Extracting Methods](@/tips/make-your-code-leaner.md)
-  article, we saw an example of the **method extraction** refactoring technique.
-* In [Let's Create a Syslog Logger](@/tips/lets-create-a-syslog-logger.md)
+* In [The Repositories, Tools, and Services We'll Use for FizzBuzz 
+  Pro][fizzbuzz-pro] use case, we looked into the repositories and services that
+  we will use in **FizzBuzz Pro**.
+* In [A Technique to Ensure Environment Variables Are Set Before Starting a 
+  Microservice][microservices] article, we saw a technique to ensure that our 
+  microservice does not start if any of the environment variables it depends on 
+  is missing.
+* In [Make Your Code Leaner By Extracting Methods][lean] article, we saw an 
+  example of the **method extraction** refactoring technique.
+* In [Let's Create a Syslog Logger][syslog]
   use case, we created a **logging wrapper** module that logs messages to 
   **Syslog**: a standard network-based logging protocol that works on a wide 
   variety of different types of devices and applications.
-* In [How to Work With Private Go Repositories](@/vadideki-geyik/geyik-academy/go101/how-to-work-with-private-go-repositories.md),
-  I have a video setting up my development environment to work with private go
-  modules and repositories. At the end of the article, there's a lot of extra
-  resources and learning material to dig in, for the interested, too.
+* In [How to Work With Private Go Repositories][repos], I have a video setting 
+  up my development environment to work with private go modules and repositories. 
+  At the end of the article, there's a lot of extra resources and learning 
+  material to dig in, for the interested, too.
+
+[fizzbuzz-pro]: @/zero-to-prod/fizzbuzz-pro-repos.md
+[microservices]: @/tips/microservice-env-vars.md
+[lean]: @/tips/make-your-code-leaner.md
+[syslog]: @/tips/lets-create-a-syslog-logger.md
+[repos]: @/vadideki-geyik/geyik-academy/go101/how-to-work-with-private-go-repositories.md
 
 ## Volkan Uses ⌨️
 
-Ah, I've [created an extensive inventory of hardware, software, and tooling that I *
-*prefer** using](@/about/volkan-uses.md)---I thought you might
-like it.
+Ah, I've [created an extensive inventory of hardware, software, and tooling that
+I **prefer** using][volkan-uses]---I thought you might like it.
+
+[volkan-uses]: @/about/volkan-uses.md
 
 ## Random Thought of the Week
 
@@ -85,10 +96,15 @@ I typically don't share these anywhere else.
 
 Exclusively hand-picked for you 👌. Enjoy.
 
-* [**AWS Budget Limiter** 
-  is Terraform script for capping monthly AWS spend](https://github.com/dpritchett/aws-budget-limiter)
-* [**GitUI** provides the comfort of a Git UI right in your terminal](https://github.com/extrawurst/gitui)
-* [An oldie but goldie for your bedtime reading: **What's Worse Than Crashing?**](https://blog.codinghorror.com/whats-worse-than-crashing/)
+* [**AWS Budget Limiter** is Terraform script for capping monthly AWS 
+  spend][aws-limiter].
+* [**GitUI** provides the comfort of a Git UI right in your terminal][git-ui].
+* [An oldie but goldie for your bedtime reading: **What's Worse Than 
+  Crashing?**][crash].
+
+[aws-limiter]: https://github.com/dpritchett/aws-budget-limiter
+[git-ui]: https://github.com/extrawurst/gitui
+[crash]: https://blog.codinghorror.com/whats-worse-than-crashing/
 
 ## Thanks a Lot ❤️
 
@@ -96,6 +112,8 @@ That's all for this week. Next week, I'll gather more unique content and
 resources.
 
 So, until next time... May the source be with you 🦄.
+
+--------
 
 ## Issues
 

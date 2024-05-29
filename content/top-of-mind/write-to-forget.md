@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Write to Forget"
 date = "2023-07-25"
 
@@ -54,6 +63,8 @@ In summary, writing to forget does not indicate a lack of importance.
 
 So grab a pen, express your thoughts freely, and let go. Through forgetting, we
 allow our minds to focus on what matters.
+
+--------
 
 ## Section Contents
 

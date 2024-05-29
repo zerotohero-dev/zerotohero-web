@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "mTLS With SPIRE: Part 6: Rolling out SPIRE to the Cluster"
 date = "2022-10-19"
 
@@ -6,17 +15,20 @@ date = "2022-10-19"
 tags = ["mtls", "spiffe", "spire"]
 +++
 
-![mTLS With SPIRE: Part 6: Rolling out SPIRE to the Clusters](/images/size/w1200/2024/03/secure.png)
+{{img(
+  src="/images/size/w1200/2024/03/secure.png",
+  alt="mTLS With SPIRE: Part 6: Rolling out SPIRE to the Clusters"
+)}}
 
 To establish an identity control plane, we'll need **SPIRE**. This section will
 deploy **SPIRE** to the clusters.
 
-{{ 
-  vimeo(
-    id="760885427", 
-    title="mTLS With SPIRE: Part 6: Rolling out SPIRE to the Clusters"
-  ) 
-}}
+{{vimeo(
+  id="760885427", 
+  title="mTLS With SPIRE: Part 6: Rolling out SPIRE to the Clusters"
+)}}
+
+--------
 
 ## Playlist
 

@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Base64 Decoding a String in Go"
 date = "2024-03-01"
 
@@ -6,7 +15,10 @@ date = "2024-03-01"
 tags = ["tips", "go", "base64", "encoding", "decoding"]
 +++
 
-![Base64 Decoding a String in Go](/images/size/w1200/2024/03/strings.png)
+{{img(
+  src="/images/size/w1200/2024/03/strings.png",
+  alt="Strings."
+)}}
 
 To base64-decode a string in Go, you can use the
 `decoding.DecodeString` function from the `encoding/base64` package. 
@@ -51,6 +63,8 @@ func main() {
 That was your nugget 😄.
 
 Until the next one... May the source be with you 🦄.
+
+--------
 
 ## Section Contents
 

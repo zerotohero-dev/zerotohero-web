@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Want to Learn JavaScript? Learn Haskell First"
 date = "2021-11-09"
 
@@ -7,6 +16,11 @@ tags = ["roadmap", "haskell", "javascript"]
 +++
 
 ![Want to Learn JavaScript? Learn Haskell First](/images/size/w1200/2024/03/functinal.png)
+
+{{img(
+  src="/images/size/w1200/2024/03/functinal.png",
+  alt="Be functional."
+)}}
 
 ## Srsly?
 
@@ -19,8 +33,8 @@ This article explains the "_why_"s and "_how_"s of it.
 
 ## Why Do I Need Haskell?
 
-Modern **JavaScript** has become and more **functional**. Also, the modern *
-*JavaScript** frameworks and libraries strongly encourage (_sometimes, to the
+Modern **JavaScript** has become and more **functional**. Also, the modern 
+**JavaScript** frameworks and libraries strongly encourage (_sometimes, to the
 point of **enforcing**_) you
 to [think functionally](https://www.goodreads.com/book/show/29627874-functional-thinking).
 
@@ -50,13 +64,13 @@ about the complexity of
 it: [JavaScript is an easy-to-understand language](https://tc39.github.io/ecma262/).
 You can learn the basics of it in a couple of days to a few months tops.
 
-The problem is not the rules, or semantics of the language: Learning to "_think
-in JavaScript_" is what takes time, effort, and energy.
+The problem is not the rules, or semantics of the language: Learning to "*think
+in JavaScript*" is what takes time, effort, and energy.
 
 When you learn a [_purely functional
 language_](https://en.wikipedia.org/wiki/Purely_functional_programming), 
-and [**Haskell**](https://www.haskell.org/) is the best "_pure_" functional language
-out there, thinking in **JavaScript** will be a **cakewalk** for you.
+and [**Haskell**](https://www.haskell.org/) is the best "*pure*" functional 
+language out there, thinking in **JavaScript** will be a **cakewalk** for you.
 
 ## Where Do I Learn Haskell?
 
@@ -88,7 +102,7 @@ read [K&R's C Programming Language](https://www.goodreads.com/book/show/515601.T
 ## Conclusion
 
 After learning **Haskell**, I'd recommend you 
-[give **Go** a go](https://www.zerotohero.dev/learn-go/) too.
+[give **Go** a go](@/vadideki-geyik/geyik-academy/go101/learn-go.md) too.
 
 > **Don't Forget Your HTML and CSS**  
 > It would even be better if you dig into
@@ -104,10 +118,12 @@ languages, just to learn a third language?_".
 If you ever watched [The Karate Kid](https://www.imdb.com/title/tt0087538/),
 then you know the reason: Even if you have studied a couple of weeks of [*
 *Haskell**](https://www.haskell.org/) and [**Go
-**](https://www.zerotohero.dev/learn-go/), you'll be "_miles ahead_" when you
+**](@/vadideki-geyik/geyik-academy/go101/learn-go.md), you'll be "_miles 
+ahead_" 
+when you
 begin your **JavaScript** journey.
 
-Your mind will be _wired_ to think in **JavaScript** without you even realize.
+Your mind will be *wired* to think in **JavaScript** without you even realize.
 
 There are countless articles, books, videos, and tutorials to cover your *
 *JavaScript** bases. I'll write about it later. Yet a quick web search will
@@ -116,6 +132,8 @@ provide you with more resources than you need 🙂.
 So off you go, learn some cool $#!%.
 
 And until next time... May the source be with you 🦄.
+
+--------
 
 ## Section Contents
 

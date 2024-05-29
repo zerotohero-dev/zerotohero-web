@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "mTLS With SPIRE: Part 4: Containerizing the Server Appp"
 date = "2022-08-19"
 
@@ -6,17 +15,20 @@ date = "2022-08-19"
 tags = ["mtls", "spiffe", "spire"]
 +++
 
-![mTLS With SPIRE: Part 4: Containerizing the Server App](/images/size/w1200/2024/03/containers.png)
+{{img(
+  src="/images/size/w1200/2024/03/containers.png",
+  alt="mTLS With SPIRE: Part 4: Containerizing the Server App"
+)}}
 
 This section will bundle the server application, create and image out of it,
 create deployment manifests, and deploy it into the cluster.
 
-{{ 
-  vimeo(
-    id="760885363", 
-    title="mTLS With SPIRE: Part 4: Containerizing the Server App"
-  ) 
-}}
+{{vimeo(
+  id="760885363", 
+  title="mTLS With SPIRE: Part 4: Containerizing the Server App"
+)}}
+
+--------
 
 ## Playlist
 

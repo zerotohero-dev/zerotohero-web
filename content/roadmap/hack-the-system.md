@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Who Else is Ready to Hack?"
 date = "2021-11-12"
 
@@ -6,7 +15,10 @@ date = "2021-11-12"
 tags = ["roadmap", "hacking", "hackers", "hacker-ethic", "hacker-culture"]
 +++
 
-![Who Else is Ready to Hack?](/images/size/w1200/2024/03/hackers-in-action.png)
+{{img(
+  src="/images/size/w1200/2024/03/hackers-in-action.png"
+  alt="Hack the Planet"
+)}}
 
 ## Movies Versus Reality
 
@@ -15,9 +27,9 @@ I'm sick of the mainstream media, movies, and everyone else depicting the term "
 records.
 
 This biased representation in the media leads many people to think of the word "
-**hacker**" disparagingly. Instead, the hacker is pictured as "_a fringe-type
+**hacker**" disparagingly. Instead, the hacker is pictured as "*a fringe-type
 individual with highly-specialized programming skills---who do what they do out
-of greed, malice, and ill intentions_."
+of greed, malice, and ill intentions*."
 
 To many people around the world, the concept of "**hacking for good**" may seem
 like an oxymoron. The dark image of hackers shadows the fact that people can *
@@ -30,9 +42,9 @@ friends and colleagues consider I'm damn good at it.
 Yet, I have not done anything illegal so far. I sure can exploit quite a few
 security holes to gather information. But why would I?
 
-## But... Isn't "_Hacking_" an Illegal Crime?
+## But... Isn't "*Hacking*" an Illegal Crime?
 
-Saying "_hackers are evil because they can screw your online identity_" is as
+Saying "*hackers are evil because they can screw your online identity*" is as
 equally ridiculous as saying "_car mechanics are lunatics because they can
 install a time bomb in your engine_".
 
@@ -55,7 +67,7 @@ of the ordinary, creativity can be used for good purposes and evil purposes.
 A **hacker** is a person who makes things work beyond perceived limits or beyond
 their everyday use. Hackers enjoy **exploring** the details of systems and are
 **curious** about how they can **stretch** the system's capabilities, unlike many
-who merely prefer to learn the _minimum_ necessary skill set to get the stuff
+who merely prefer to learn the *minimum* necessary skill set to get the stuff
 done.
 
 **Hacking** is all about **learning**, **empowerment**, and **sharing knowledge**.
@@ -64,19 +76,19 @@ done.
 
 > **Hacking is a Path**
 >
-> **Hacking** is an "_attitude_". There's a **community**, a shared **culture**,
+> **Hacking** is an "*attitude*". There's a **community**, a shared **culture**,
 > and the accumulated **wisdom** behind it.
 >
-> And you don't necessarily have to confine yourself to hacking software: The "
-_hacker nature_" is independent of the particular medium the hacker works in.
+> And you don't necessarily have to confine yourself to hacking software: The
+> "*hacker nature*" is independent of the particular medium the hacker works in.
 
 No matter what you do, and no matter where you are if you have the hacker
 spirit, you will reflect it on every action you take. And that's something to be
 proud of.
 
-As hackers, we **solve** problems; we **build** things and believe in *
-*collaboration**, **meritocracy**, and **mutual help**. That's the core essence
-of being a hacker.
+As hackers, we **solve** problems; we **build** things and believe in 
+**collaboration**, **meritocracy**, and **mutual help**. That's the core 
+essence of being a hacker.
 
 ## Curiosity Kills the Cat
 
@@ -84,24 +96,27 @@ If we do something really, really well, then it is **discovering**:
 
 We are **motivated**, **curious**, and **creative.** We get so deep into how
 things work that we acquire the knowledge to control them and change them to
-_something else_; most-of-the-time something they are **not**, or something that
-they are not "_meant to be_."
+*something else*; most-of-the-time something they are **not**, or something that
+they are not "*meant to be*."
 
 From the eyes of a hacker, **failure is not a mistake**. It is something to be
 taken a lesson from. Every failure means something new has got to be learned.
-Moreover, making the same mistake twice is not that bad because, out of *
-*scientific curiosity**, that same mistake might lead to different results to *
-*explore**.
+Moreover, making the same mistake twice is not that bad because, out of
+**scientific curiosity**, that same mistake might lead to different results to
+**explore**.
 
 ## Teach Hacking at Schools
 
-A hacker's exploratory mindset is what society needs to progress. That's why *
-*hacking must be taught in schools**.
+A hacker's exploratory mindset is what society needs to progress. That's why
+**hacking must be taught in schools**.
 
 After a hard day at work, I would love
-to [how a strand of virus can be entirely deleted from human cells for the first time](http://www.eurekalert.org/pub_releases/2014-07/tuhs-tur071614.php),
-or [what the best way of learning a new language is](http://time.com/3013439/language-trying-hurts-learning/),
-or [how nanoflakes provide greater solar efficiency and may solve the energy needs of the next generations](http://www.renewableenergyworld.com/rea/blog/post/2014/02/nano-flake-technology-a-cheaper-way-to-produce-solar-cells).
+to [how a strand of virus can be entirely deleted from human cells for the 
+first time](http://www.eurekalert.org/pub_releases/2014-07/tuhs-tur071614.php),
+or [what the best way of learning a new 
+language is](http://time.com/3013439/language-trying-hurts-learning/),
+or [how nanoflakes provide greater solar efficiency and may solve the energy 
+needs of the next generations](http://www.renewableenergyworld.com/rea/blog/post/2014/02/nano-flake-technology-a-cheaper-way-to-produce-solar-cells).
 
 This constant and ever-growing thirst for knowledge is a significant personality
 trait/disorder of a hacker:
@@ -110,7 +125,7 @@ trait/disorder of a hacker:
 > Hackers have an irrecoverable malfunction in their brains called "**curiosity**."
 
 We want to learn **anything** and **everything** regardless of whether it will
-be useful at work or in our daily life. It's this "_curiosity_" that makes us
+be useful at work or in our daily life. It's this "*curiosity*" that makes us
 look at things from diagonally different angles. It's this **curiosity** that
 makes a hacker figure out unconventional solutions to seemingly-hard problems in
 ways that no one else can imagine.
@@ -123,7 +138,7 @@ And I bet you, if there were a way to inject this mentality to the rest of the
 world, then the world would become an exponentially better place.
 
 Yet still, people want to see us as skinny nerds with their $100,000 computer
-set-up, using nicknames like "_M4fi4-B0i_" as an alias to talk to other fellow
+set-up, using nicknames like "*M4fi4-B0i*" as an alias to talk to other fellow
 hackers, plotting on how to take down the government.
 
 > Hey, wake up Trinity... Wake... Up!
@@ -164,8 +179,8 @@ to make it do what you wanted?
 
 Haven't you ever disassembled a toy to see how it works while you were a child?
 
-Haven't you ever ended your almost finished jar of Nutella with ice cream? (_if
-not, try it; seriously_)
+Haven't you ever ended your almost finished jar of Nutella with ice cream? (*if
+not, try it; seriously*)
 
 That **exactly** is what hacking is. You **hack** stuff when you deeply examine
 how things work and change it **creatively** into doing what you want.
@@ -191,7 +206,7 @@ Every child is a natural hacker; ergo, **you are born to be a hacker**.
 It's time, society, the system, whatever you name it... makes you grind this
 innate ability to a halt.
 
-## Pardon Me, So What Is a "_Hack_" Again?
+## Pardon Me, So What Is a "*Hack*" Again?
 
 A "**_hack_**" is trying to do something differently.
 
@@ -292,7 +307,7 @@ can be done to fix it.
 And the thing to fix it need not be a computer program:
 
 * It can be the day-long waiting lines in government agencies;
-* It can be _discrimination_ or _racism_ that we constantly see around;
+* It can be *discrimination* or *racism* that we constantly see around;
 * It can be a preventing disease from killing millions;
 * It can be preventing child abuse;
 * Or it can be gender inequality...
@@ -316,14 +331,14 @@ You have to translate an **idea** into something tangible that can **blend**
 into the everyday lives of people. And this **leap** can only be done with a *
 *hacker's mindset**.
 
-You do have this mindset; it's just "_maybe_" you haven't taken the red pill "
-_yet_".
+You do have this mindset; it's just "*maybe*" you haven't taken the red pill "
+*yet*".
 
 ## JFDI
 
 This is not about thinking about who we are or what hacking is.
 
-This is about "_getting your hands dirty and getting $#!% done"_ because once
+This is about "*getting your hands dirty and getting $#!% done*" because once
 your hands are dirty, miracles can happen.
 
 So, if you are unhappy with the status quo, instead of putting a black ribbon on
@@ -333,9 +348,11 @@ your social media profile, **go and make a flocking change**.
 
 There's only one question that remains...
 
-_Are you ready to hack_?
+*Are you ready to hack*?
 
 Then, may the source be with you 🦄.
+
+--------
 
 ## Section Contents
 

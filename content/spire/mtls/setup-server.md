@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "mTLS With SPIRE: Part 8 --- Configuring the Server to Use SPIRE mTLS"
 date = "2021-10-19"
 
@@ -6,17 +15,20 @@ date = "2021-10-19"
 tags = ["mtls", "spiffe", "spire"]
 +++
 
-![mTLS With SPIRE: Part 8 --- Configuring the Server to Use SPIRE mTLS](/images/size/w1200/2024/03/server.png)
+{{img(
+  src="/images/size/w1200/2024/03/server.png",
+  alt="mTLS With SPIRE: Part 8: Configuring the Server to User SPIRE mTLS"
+)}}
 
 Now that we have **SPIRE**, our server application can use it to establish an
 **mTLS** connectivity.
 
-{{ 
-  vimeo(
-    id="760885555", 
-    title="mTLS With SPIRE: Part 8: Configuring the Server to User SPIRE mTLS"
-  ) 
-}}
+{{vimeo(
+  id="760885555", 
+  title="mTLS With SPIRE: Part 8: Configuring the Server to User SPIRE mTLS"
+)}}
+
+--------
 
 ## Playlist
 

@@ -1,20 +1,39 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Installing Go on Windows"
 date = "2021-05-22"
+template = "geyik.html"
 
 [taxonomies]
-tags = ["go"]
+tags = ["go", "geyik-academy", "go101"]
 +++
 
-[Gopher](https://www.zerotohero.dev/content/images/size/w1200/2024/03/gopher-win.png)
+# Installing Go on Windows
 
-> Here, you'll find the instructions to install [**Go**](https://golang.org/ "Go Programming Language") on a **Windows** computer.
+{{img(
+  src="/images/size/w1200/2024/03/gopher-win.png",
+  alt="Gopher"
+)}}
 
-Open [the MSI file you downloaded](https://golang.org/dl/) and follow the prompts to install **Go**.
+> Here, you'll find the instructions to install [**Go**](https://golang.org/ 
+> "Go Programming Language") on a **Windows** computer.
 
-After installing, you will need to close and reopen any open command prompts so that changes to the environment made by the installer are reflected at the command prompt.
+Open [the MSI file you downloaded](https://golang.org/dl/) and follow the 
+prompts to install **Go**.
 
-To verify that you've installed **Go**, type `"cmd"` in the Start Menu's search bar and then press the **Enter** key. Then execute the following command:
+After installing, you will need to close and reopen any open command prompts so 
+that changes to the environment made by the installer are reflected at the 
+command prompt.
+
+To verify that you've installed **Go**, execute this in your Terminal:
 
 ```bash
 go version

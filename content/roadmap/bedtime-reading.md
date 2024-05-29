@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Resources Every Developer Must Read: No Exceptions"
 date = "2021-10-25"
 
@@ -6,18 +15,26 @@ date = "2021-10-25"
 tags = ["roadmap", "reading-list", "design", "development"]
 +++
 
-![Resources Every Developer Must Read---No Exceptions](/images/size/w1200/2024/03/books.png)
+![Resources Every Developer Must Read---No Exceptions]()
 
-This is an extension to [**Be the Next Version of Yourself**](@/roadmap/_index.md)
-I wrote a while ago. Here, you'll find mainly language and platform-agnostic 
+{{img(
+  src="/images/size/w1200/2024/03/books.png"
+  alt="Resources."
+)}}
+
+This is an extension to [**Be the Next Version of Yourself**][roadmap] I wrote 
+a while ago. Here, you'll find mainly language and platform-agnostic
 learning resources to help you become a better software craftsman.
 
 I have roughly categorized the links in this document into sections, but they
 are in no particular order.
 
-All of those links below point to the books' [**Goodreads
-**](https://www.goodreads.com/) profile so that you can read what others have to
-say about them and decide whether to read them yourself.
+All of those links below point to the books'
+[**Goodreads**][goodreads] profile so that you can read what
+others have to say about them and decide whether to read them yourself.
+
+[roadmap]:  @/roadmap/_index.md
+[goodreads]: https://www.goodreads.com/
 
 ## User Experience
 
@@ -25,8 +42,8 @@ say about them and decide whether to read them yourself.
 * [Designing Interfaces: Patterns for Effective Interaction Design](https://www.goodreads.com/book/show/344724.Designing_Interfaces)
 * [Designing Web Usability](https://www.goodreads.com/book/show/22149.Designing_Web_Usability)
 * [Don't Make Me Think, Revisited: A Common Sense Approach to Web Usability](https://www.goodreads.com/book/show/18197267-don-t-make-me-think-revisited)
-* [Emotional Design: Why We Love (_or
-  Hate_) Everyday Things](https://www.goodreads.com/book/show/841.Emotional_Design)
+* [Emotional Design: Why We Love (*or
+  Hate*) Everyday Things](https://www.goodreads.com/book/show/841.Emotional_Design)
 * [The Design of Everyday Things](https://www.goodreads.com/book/show/840.The_Design_of_Everyday_Things)
 * [The Design of Future Things](https://www.goodreads.com/book/show/263287.The_Design_of_Future_Things)
 * [The Humane Interface: New Directions for Designing Interactive Systems](https://www.goodreads.com/book/show/344726.The_Humane_Interface)
@@ -48,14 +65,15 @@ say about them and decide whether to read them yourself.
 
 ## High Scalability
 
-* [High Scalability (*All-Time Favorites*)](http://highscalability.com/all-time-favorites/)
+* [High Scalability (*All-Time
+  Favorites*)](http://highscalability.com/all-time-favorites/)
 
 ## Data Structures and Algorithms
 
 * [Cormen, Introduction to Algorithms](https://www.goodreads.com/book/show/108986.Introduction_to_Algorithms)
 * [Skiena, Algorithm Design Manual](https://www.goodreads.com/book/show/425208.The_Algorithm_Design_Manual)
-* [Structure and Interpretation of Computer Programs (_MIT Electrical
-  Engineering and Computer Science_](https://www.goodreads.com/book/show/43713.Structure_and_Interpretation_of_Computer_Programs)
+* [Structure and Interpretation of Computer Programs (*MIT Electrical
+  Engineering and Computer Science*](https://www.goodreads.com/book/show/43713.Structure_and_Interpretation_of_Computer_Programs)
 * [Knuth, The Art of Computer Programming](https://www.goodreads.com/book/show/112247.The_Art_of_Computer_Programming_Volume_1)
 
 ## Testing
@@ -63,8 +81,7 @@ say about them and decide whether to read them yourself.
 * [Test Driven Development: By Example](https://www.goodreads.com/book/show/387190.Test_Driven_Development)
 * [The Art of Application Performance Testing: Help for Programmers and Quality Assurance](https://www.goodreads.com/book/show/4843320-the-art-of-application-performance-testing)
 
-Software Craftsmanship
-----------------------
+## Software Craftsmanship
 
 * [Clean Code: A Handbook of Agile Software Craftsmanship](https://www.goodreads.com/book/show/3735293-clean-code)
 * [Code Complete](https://www.goodreads.com/book/show/4845.Code_Complete)
@@ -121,12 +138,13 @@ Software Craftsmanship
 * [Code Tells You How, Comments Tell You Why](https://blog.codinghorror.com/code-tells-you-how-comments-tell-you-why/)
 * [We Make Shitty Software With Bugs](https://blog.codinghorror.com/we-make-shitty-software-with-bugs/)
 
-Have Fun 📖
-----------------
+## Have Fun 📖
 
 That's all for now. Enjoy your bedtime reading list.
 
 And until next time... May the source be with you 🦄.
+
+--------
 
 ## Section Contents
 

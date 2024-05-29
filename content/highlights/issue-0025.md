@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Unlock Your True Potential: Make Your Hard Work Visible"
 date = "2023-01-16"
 
@@ -6,12 +15,17 @@ date = "2023-01-16"
 tags = ["highlights"]
 +++
 
-![Unlock Your True Potential: Make Your Hard Work Visible](/images/size/w1200/2024/03/stand.png)
+![]()
+
+{{img(
+  src="/images/size/w1200/2024/03/stand.png"
+  alt="Show yourself."
+)}}
 
 > **Update 2024-05-21**
 > 
 > **Aegis** is now maintained by **VMware Tanzu** GitHub Organization 
-> with a new name: **[VMware Secrets Manager](https://vsecm.com/)**.
+> with a new name: **[VMware Secrets Manager][aegis]**.
 > 
 > It is ready for production use, and as the time of this writing we
 > are already using it in production clusters.
@@ -19,35 +33,41 @@ tags = ["highlights"]
 Welcome to the 25th issue of **Zero to Hero** Highlights.
 
 Several things have been going on, yet I think this week's highlight was 
-[**Aegis**](https://vsecm.com/). It has been very well received by people who
+[**Aegis**][aegis]. It has been very well received by people who
 are well-known in the Cloud Native security community, and I have a feeling it
 is growing to become a bit more than a side project, but we'll see.
+
+[aegis]: https://vsecm.com/
+[aegis-github]: https://github.com/vmware-tanzu/secrets-manager
 
 ## Aegis: Keep Your Secrets... Secret
 
 As I said, last week was mainly about **Aegis**, but what is **Aegis**?
 
-[**Aegis**](https://github.com/vmware-tanzu/secrets-manager) is a Kubernetes-native,
-lightweight secrets management solution that keeps your secrets secret. And last
-week, I made significant progress with
-it. 
+[**Aegis**][aegis-github] is a Kubernetes-native, lightweight secrets management 
+solution that keeps your secrets secret. And last week, I made significant 
+progress with it. 
 
 Some key highlights of the current version are:
 
-* Upgraded **Aegis** to the latest and greatest [**SPIRE**](https://spiffe.io/)
+* Upgraded **Aegis** to the latest and greatest [**SPIRE**][spire]
   version as the identity control plane. That gave a bunch of stability
   improvements and reduced memory usage significantly.
 * A lot of documentation updates to make **Aegis** easier to use and deploy.
 * Making everything configurable via environment variables.
 * Added **liveness** and **readiness** probes to critical components for
   Kubernetes-native lifecycle management.
-* Started using [**distroless images**](https://github.com/GoogleContainerTools/distroless) 
+* Started using [**distroless images**][distroless]
   for an additional layer of security.
-* Using [**SPIFFE CSI driver**](https://github.com/spiffe/spiffe-csi) instead of
-  volume mounts (_for security again_).
+* Using [**SPIFFE CSI driver**][spiffe-csi] instead of
+  volume mounts (*for security again*).
 
 Although **Aegis** is still an alpha product and has yet to be battle-tested, 
 I am confident it can be used in a production cluster.
+
+[spire]: https://spiffe.io/
+[distroless]: https://github.com/GoogleContainerTools/distroless
+[spiffe-csi]: https://github.com/spiffe/spiffe-csi
 
 ## Random Thought of the Week
 
@@ -97,17 +117,24 @@ I typically don't share these anywhere else.
 
 Exclusively hand-picked for you 👌. Enjoy.
 
-* [Sampler is a tool for shell commands execution, visualization and alerting](https://sampler.dev/).
-* [Airplane is a developer infrastructure for internal tooling](https://www.airplane.dev/).
-* [In case you wonder how a unix kernel runs a program, here is a nice article about it](https://0xax.gitbooks.io/linux-insides/content/SysCall/linux-syscall-4.htm).
+* [Sampler is a tool for shell commands execution, visualization and 
+  alerting][sampler].
+* [Airplane is a developer infrastructure for internal tooling][airplane].
+* [In case you wonder how a unix kernel runs a program, here is a nice 
+  article about it][syscalls].
 
-Thanks a Lot ❤️
----------------
+[sampler]: https://sampler.dev/
+[airplane]: https://www.airplane.dev/
+[syscalls]: https://0xax.gitbooks.io/linux-insides/content/SysCall/linux-syscall-4.htm
+
+## Thanks a Lot ❤️
 
 That's all for this week. Next week, I'll gather more unique content and
 resources.
 
 So, until next time... May the source be with you 🦄.
+
+--------
 
 ## Issues
 

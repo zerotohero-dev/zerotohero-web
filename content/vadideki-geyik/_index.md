@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 sort_by = "date"
 paginate_by = 5
 template = "geyik.html"
@@ -20,6 +29,15 @@ hakkında kaliteli geyik çevirdiğimiz bir podcast.
 
 <div style="clear:both;"></div>
 
+## Onu Seven, Bunu Da Sevdi
+
+- {{ icon_sub() }} [Abone Ol](@/vadideki-geyik/subscribe.md)
+- {{ deer_ico() }} [Geyik Akademi](@/vadideki-geyik/geyik-academy/_index.md)
+- {{ icon_team() }} [Biz Kimiz](@/vadideki-geyik/team.md)
+- {{ icon_merch() }} [Geyik Merch](@/vadideki-geyik/merch.md)
+- {{ icon_mazemos() }} [Bol Mazemos](@/vadideki-geyik/bol-mazemos.md)
+- {{ icon_kampus() }} [Kampus (*Discord*)](https://discord.gg/kampus)
+
 ## Yayınlar
 
 <style>
@@ -29,16 +47,14 @@ li {list-style-type: none;}
 ### {{ mic_ico() }}️ Sezon 12
 
 - {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S12E03-Guardians-of-the-Glade-e2g8krr/a-ab0itrm">S12E03: Guardians of the Glade - (40 dakika, 32 saniye)</a>
-- {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S12E02-The-Veiled-Path-e2g8kmd/a-ab0ite4">
-  S12E02: The Veiled Path - (40 dakika, 12 saniye)</a>
+- {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S12E02-The-Veiled-Path-e2g8kmd/a-ab0ite4">S12E02: The Veiled Path - (40 dakika, 12 saniye)</a>
 - {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S12E01-Dawn-of-the-New-Geyik-e2g8ki1/a-ab0it2h">S12E01: Dawn of the New Geyik - (40 dakika, 33 saniye)</a>
 
 ### {{ mic_ico() }}️️ Sezon 11
 
 - {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S11E04-Harmonious-Edge-e2fopst/a-aavht92">S11E04: Harmonious Edge - (23 dakika, 1 saniye)</a>
 - {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S11E03-The-Geyiks-Quest-e2fopq2/a-aavhsuq">S11E03: The Geyik’s Quest - (39 dakika, 57 saniye)</a>
-- {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S11E02-Whispers-of-the-Ancients-e2fopb8/a-aavhsof">
-  S11E02: Whispers of the Ancients - (40 dakika, 52 saniye)</a>
+- {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S11E02-Whispers-of-the-Ancients-e2fopb8/a-aavhsof">S11E02: Whispers of the Ancients - (40 dakika, 52 saniye)</a>
 - {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S11E01-The-Geyik-Reckoning-e2fop7r">S11E01: The Geyik Reckoning - (41 dakika, 17 saniye)</a>
 
 ### {{ mic_ico() }}️ Sezon 10

@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Keep Your Secrets... Secret: Introducing VMware Secrets Manager"
 date = "2023-08-16"
 
@@ -104,6 +113,8 @@ excited about the journey ahead and invite you to be a part of it.
 
 [**Start your journey with VMware Secrets Manager today**](https://vsecm.com/)
 and unlock the potential of cloud-native secrets management.
+
+--------
 
 ## Section Contents
 

@@ -1,12 +1,24 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Setting Up Your Go Development Environment"
 date = "2021-05-11"
+template = "geyik.html"
 
 [taxonomies]
-tags = ["go"]
+tags = ["go", "geyik-academy", "go101"]
 +++
 
-![Gopher](https://www.zerotohero.dev/content/images/size/w1200/2024/03/gopher.png)
+# Setting Up Your Go Development Environment
+
+![Gopher](/images/size/w1200/2024/03/gopher.png)
 
 ## Hi Gopher 👋
 
@@ -15,7 +27,8 @@ In this mini-article, we'll see how we can set up our Go development environment
 Installing and configuring [**Go**](https://golang.org/) on your system is pretty streamlined. Once you follow the instructions here, you'll be up and running in no time.
 
 > **See It in Action**  
-> Here's [a video about setting up **Go** development environment a Mac](https://www.zerotohero.dev/installing-go-on-mac-os/).
+> Here's [a video about setting up **Go** development 
+> environment a Mac](@/vadideki-geyik/geyik-academy/go101/installing-go-on-mac-os.md).
 
 ## Download the `go` Binary
 
@@ -29,9 +42,9 @@ First, head over to the [official **Go** downloads page](https://golang.org/dl/)
 
 Once you have the binary, follow the **installation instructions** below that are relevant to your operating system:
 
-*   [Installing **Go** on a **Mac**](https://www.zerotohero.dev/installing-go-on-a-mac/)
-*   [Installing **Go** on **Linux**](https://www.zerotohero.dev/installing-go-on-linux/)
-*   [Installing **Go** on **Windows**]([https://www.zerotohero.dev/installing-go-on-windows/)
+* [Installing **Go** on a **Mac**](@/vadideki-geyik/geyik-academy/go101/installing-go-on-a-mac.md)
+* [Installing **Go** on **Linux**](@/vadideki-geyik/geyik-academy/go101/installing-go-on-linux.md)
+* [Installing **Go** on **Windows**](@/vadideki-geyik/geyik-academy/go101/installing-go-on-windows.md)
 
 ## Set Your `GOPATH` Environment Variable
 

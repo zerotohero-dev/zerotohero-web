@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Zero to Prod in Half an Hour: Part 1 --- An Overview of FizzBuzz Pro"
 date = "2022-10-15"
 
@@ -6,24 +15,29 @@ date = "2022-10-15"
 tags = ["zero-to-prod"]
 +++
 
-![Zero to Prod in Half an Hour: Part 1 --- An Overview of FizzBuzz Pro](/zerotohero-dev/content/images/size/w1200/2024/03/app.png)
+{{img(
+  src="/images/size/w1200/2024/03/app.png",
+  alt="Zero to Prod in Half an Hour: Part 1 --- An Overview of FizzBuzz Pro"
+)}}
 
 This series will show how you can deploy a full-blown production-ready web
 application in half an hour. Let's look into what kind of an application we'll
 build and what technologies we'll use.
 
-Lecture
--------
+## Lecture
 
-Zero to Prod in Half an Hour: Part 1 --- An Overview of FizzBuzz Pro
+{{vimeo(
+  id="661262113",
+  title="Zero to Prod in Half an Hour: Part 1 --- An Overview of FizzBuzz Pro"
+)}}
 
-Playlist
 --------
+
+## Playlist
 
 {{ zero_to_prod_nav(selected = 1) }}
 
-Tools and Technologies Mentioned
---------------------------------
+## Tools and Technologies Mentioned
 
 Here are the tools and technologies that were mentioned in the video, along with
 related articles and other helpful links.
@@ -48,11 +62,10 @@ related articles and other helpful links.
 * [Elastic Load Balancing](https://aws.amazon.com/elasticloadbalancing/)
 * [Amazon Cloudfront](https://aws.amazon.com/cloudfront/)
 
-Read The Source
----------------
+## Read The Source
 
-* [Download the source code (_114kb zip
-  archive_)](https://assets.zerotohero.dev/zero-to-prod-in-30/zero-to-prod-in-30.zip)
+* [Download the source code (*114kb zip
+  archive*)](https://assets.zerotohero.dev/zero-to-prod-in-30/zero-to-prod-in-30.zip)
 
 ------------
 

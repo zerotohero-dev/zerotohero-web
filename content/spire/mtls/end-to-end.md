@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "mTLS With SPIRE: Part 10: Establishing Cross-Cluster mTLS"
 date = "2022-08-19"
 
@@ -6,18 +15,21 @@ date = "2022-08-19"
 tags = ["mtls", "spiffe", "spire"]
 +++
 
-![mTLS With SPIRE: Part 10: Establishing Cross-Cluster mTLS](/images/size/w1200/2024/03/connectivity.png)
+{{img(
+  src="/images/size/w1200/2024/03/connectivity.png",
+  alt="mTLS With SPIRE: Part 10: Establishing Cross-Cluster mTLS"
+)}}
 
 In this final video of this series, we'll exchance trust bundles between two *
 *SPIRE** servers to enable cross-cluster **mTLS** connectivity between workloads
 that reside in different clusters.
 
-{{ 
-  vimeo(
-    id="760885671", 
-    title="mTLS With SPIRE: Part 8: Configuring the Server to User SPIRE mTLS"
-  ) 
-}}
+{{vimeo(
+  id="760885671", 
+  title="mTLS With SPIRE: Part 8: Configuring the Server to User SPIRE mTLS"
+)}}
+
+--------
 
 ## Playlist
 

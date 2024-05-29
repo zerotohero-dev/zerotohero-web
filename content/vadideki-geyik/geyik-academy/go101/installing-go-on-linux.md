@@ -1,14 +1,28 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Installing Go on Linux"
 date = "2021-05-22"
+template = "geyik.html"
 
 [taxonomies]
-tags = ["go"]
+tags = ["go", "geyik-academy", "go101"]
 +++
 
-![Gopher](https://www.zerotohero.dev/content/images/size/w1200/2024/03/gopher-linux.png)
+# Installing Go on Linux
 
-> Here, you'll find the instructions to install [**Go**](https://golang.org/ "Go Programming Language") on a **Linux** computer.
+![Gopher](/images/size/w1200/2024/03/gopher-linux.png)
+
+> Here, you'll find the instructions to install 
+> [**Go**](https://golang.org/ "Go Programming Language") on a 
+> **Linux** computer.
 
 Extract [the archive you downloaded](https://golang.org/dl/) into `/usr/local`, creating a **Go** tree in `/usr/local/go`.
 

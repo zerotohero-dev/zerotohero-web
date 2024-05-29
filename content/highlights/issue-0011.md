@@ -15,7 +15,10 @@ date = "2021-07-31"
 tags = ["highlights"]
 +++
 
-![Assemble Your Personal Board of Advisors](/images/size/w1200/2024/03/board.png)
+{{img(
+  src="/images/size/w1200/2024/03/board.png"
+  alt="Your personal board of advisors will help you navigate the tough times."
+)}}
 
 Welcome to the eleventh issue of **Zero to Hero** Highlights.
 
@@ -59,7 +62,9 @@ So nothing has been broken for days! Everything is healthy as a horse. Progress!
 ## Deploying a Microservice to Kubernetes
 
 While on the topic of videos, [I published a video about how you can deploy a 
-microservice to an AWS EKS Kubernetes cluster](https://twitter.com/vadidekivolkan/status/1421552455871995904).
+microservice to an AWS EKS Kubernetes cluster][spire].
+
+[spire]: @/spire/_index.md
 
 In the video, I start from the source code:
 
@@ -72,9 +77,10 @@ In the video, I start from the source code:
 It's an excellent overview of how everything ties together.
 
 Note that this is just the **video** part of the content. There will be an
-accompanying article on [**Zero to Hero**](https://zerotohero.dev/) that will
-dive deeper and provide you with additional *bedtime reading material* to dig
-in.
+accompanying article on [**Zero to Hero**][home] that will dive deeper and 
+provide you with additional *bedtime reading material* to dig in.
+
+[home]: @/_index.md
 
 ## Installing an AWS EKS Kubernetes Cluster Using `eksctl`
 
@@ -83,17 +89,19 @@ The above video talks about deploying to **Kubernetes,** but how do we create a
 
 There are many ways.
 In [this article, I'm writing about how you can provision an AWS EKS 
-Kubernetes cluster using `eksctl`](@/vadideki-geyik/geyik-academy/k8s101/how-to-install-an-aws-eks-cluster-using-eksctl.md).
+Kubernetes cluster using `eksctl`][eksctl].
 As always, there's more than mere instructions; I discuss the pros and cons of
 things, and there are further reference material for the interested to do a
 deeper dive.
 
 That's more or less this week in a nutshell. So what's coming up next?
 
+[eksctl]: @/vadideki-geyik/geyik-academy/k8s101/how-to-install-an-aws-eks-cluster-using-eksctl.md
+
 ## What's on the Horizon 👩‍🍳
 
-I have a couple of [**Zero to Hero Twitch Screencasts
-**](https://twitch.tv/VadidekiVolkan) that I haven't published yet.
+I have a couple of [**Zero to Hero Twitch Screencasts**][twitch] that I 
+haven't published yet.
 
 On the **FizzBuzz Pro** end, I, at least, want to finish the **IDM** µService 
 endpoints (*which is almost done*), but we'll see how it goes. 
@@ -105,19 +113,21 @@ Don't take the phrase "*you must have a mentor*" too literally. The reality is
 **you need more than a single mentor**; you need your **personal board of
 advisors** if you will. But how do you find all these people? Let's see.
 
-I don't want to sound cheesy, but the first step is to [**know yourself
-**](@/highlights/issue-0003.md). Finding what you
+I don't want to sound cheesy, but the first step is to 
+[**know yourself**][issue-0003]. Finding what you
 want requires knowing what you want. Then, reflect deeply and write down a *
-*personal vision statement**. Make sure that your _personal vision statement_
+*personal vision statement**. Make sure that your *personal vision statement*
 resonates with what **you** want to aspire to be. **Not** what society, your
 teammates, your managers, or your family expects from you.
+
+[issue-0003]: @/highlights/issue-0003.md
 
 > Think about how your career **aligns** with your personal vision down the
 > road. How does your ideal life look like fifteen years ahead?  
 > How will it be different from your present-day?
 
-Then create a list of different kinds of support that you will need to *
-*actualize** that aspiration. For example, what types of support do you need to
+Then create a list of different kinds of support that you will need to 
+**actualize** that aspiration. For example, what types of support do you need to
 take yourself from where you are to where you want to be?
 
 Then consider which areas are already fulfilled by mentors and helpers and which
@@ -139,7 +149,7 @@ second-degree network; or do you need to look even further?
 Based on that assessment, you can develop new relationships or strengthen the
 existing ones.
 
-You'll also find that a prospective mentor or a coach will be **much** inclinded
+You'll also find that a prospective mentor or a coach will be **much** inclined
 to help you on a particular topic rather than the generic "*would you be my
 mentor?*" questions.
 
@@ -154,15 +164,23 @@ I typically don't share these anywhere else.
 
 Exclusively hand-picked for you 👌. Enjoy.
 
-* [**Middy** is the stylish Node.js middleware engine for AWS Lambda](https://github.com/middyjs/middy).
-* [Here's how **GitHub** found and fixed a rare race condition in their session handling](https://github.blog/2021-03-18-how-we-found-and-fixed-a-rare-race-condition-in-our-session-handling/).
-* [**Flash News**: You can manage your complexity bias by... keeping things simple, who knew](https://nesslabs.com/power-of-simplicity-complexity-bias)!
+* [**Middy** is the stylish Node.js middleware engine for AWS Lambda][middy].
+* [Here's how **GitHub** found and fixed a rare race condition in their 
+  session handling][race].
+* [**Flash News**: You can manage your complexity bias by... keeping things 
+  simple, who knew][nesslabs]!
+
+[middy]: https://github.com/middyjs/middy
+[race]: https://github.blog/2021-03-18-how-we-found-and-fixed-a-rare-race-condition-in-our-session-handling/
+[nesslabs]: https://nesslabs.com/power-of-simplicity-complexity-bias
 
 ## Thanks a Lot ❤️
 
 That's all for this week. Next week, I'll gather more unique content and resources.
 
 So, until next time... May the source be with you 🦄.
+
+--------
 
 ## Issues
 

@@ -1,14 +1,26 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Unleash Your Curiosity: Unlock Your Potential as a Leader"
-date = "2023-11-25"
+date = "2024-05-27"
 
 [taxonomies]
 tags = ["highlights"]
 +++
 
-![Unleash Your Curiosity: Unlock Your Potential as a Leader](/images/size/w1200/2024/03/leader.png)
+{{img(
+  src="/images/size/w1200/2024/03/leader.png"
+  alt="Everyone has a leader within."
+)}}
 
-Welcome to the 23rd issue of**Zero to Hero Highlights**. A lot has happened
+Welcome to the 23rd issue of**Zero to Hero Highlights**. A lot has happened 
 since the last issue. Let's check them out, shall we?
 
 ## It's the Wonderful Time of the Year
@@ -36,31 +48,44 @@ follow a similar theme.
 ## Got My Mac Burger
 
 As a Thanksgiving (*and a post-acquisition---see below*) present,[**I got a
-beefy Mac Studio**](https://www.apple.com/mac-studio/).
+beefy Mac Studio**][mac-burger].
 
-![This thing is a monster!](https://www.zerotohero.dev/content/images/2023/11/Screenshot-2023-11-24-at-10.52.44-PM.png)
+{{img(
+  src="/images/2023/11/Screenshot-2023-11-24-at-10.52.44-PM.png"
+  alt="This thing is a monster!"
+)}}
 
 I can achieve a lot with **24 CPUs and 128 gigabytes of RAM**; I can do a lot 
 with this beast of a machine. For example, it enables me to simulcast to multiple
 platforms without requiring a separate streaming machine.
 
+[mac-burger]: https://www.apple.com/mac-studio/
+
 ## Volkan Uses
 
 [I created a website containing a list of tools, gadgets, 
-software, and hardware](@/about/volkan-uses.md) that I currently use, have used, 
+software, and hardware][volkan-uses] that I currently use, have used, 
 liked, and find worth mentioning.
+
+[volkan-uses]: @/about/volkan-uses.md
 
 ## Deer in the Valley
 
-Along with[**TalkSPIFFE**](https://www.twitch.tv/collections/m1nN8r4LZxc-bw)
-and [**VMware Secrets Manager Contributor Hours**](https://vsecm.com/docs/contributor-sync/), 
-I've also started hosting a new tech podcast,
-[**Deer in the Valley (*Vadideki Geyik*)**](@/vadideki-geyik/_index.md).
+> **Update 2024-05-27**
+> 
+> We paused **TalkSPIFFE** for a while. We might resume it in the future.
+> SPIFFE already has its official community snyc-ups, and duplicating the
+> effort didn't make sense. We might revisit the idea in the future, but for now,
+> it's on hold.
 
-_By this writing,**Deer in the Valley**is among Turkey's**top 10**in
+Along with[**TalkSPIFFE**][talkspiffe] and [**VMware Secrets Manager Contributor 
+Hours**][vsecm-sync], I've also started hosting a new tech podcast,
+[**Deer in the Valley (*Vadideki Geyik*)**][vadideki-geyik].
+
+*By this writing,**Deer in the Valley**is among Turkey's**top 10**in
 the **Technology**category and**top 16**in Azerbaijan in the same category
 again. We are having**so much fun**while recording the sessions, also reflected
-in these stats._
+in these stats.*
 
 With[**four folks from the Silly Cone Valley**](@/vadideki-geyik/team.md), 
 we started a podcast about our experiences before and after working there and our 
@@ -74,10 +99,16 @@ language to expand your horizons---and get lost in translation a little.
 **I see the entire thing as therapy**. We talk freely and candidly about the
 good, bad, and ugly of the Tech Valley, our lives, and everything in between.
 
-We do live talks on the[**Kampus Discord**](https://discord.gg/kampus)and
-simulcast it over [**Twitch**](https://twitch.tv/VadidekiVolkan) and [**YouTube
-**](https://youtube.com/@vadideki-geyik). We typically livestream the session*
-*every other Saturday at 10 am Pacific time**.
+We do live talks on the[**Kampus Discord**][kampus] and simulcast it over 
+[**Twitch**][twitch] and [**YouTube**][geyik-youtube]. We typically livestream 
+the session **every other Saturday at 10 am Pacific time**.
+
+[talkspiffe]: https://www.twitch.tv/collections/m1nN8r4LZxc-bw
+[vsecm-sync]: https://vsecm.com/docs/contributor-sync/
+[vadideki-geyik]: @/vadideki-geyik/_index.md
+[kampus]: https://discord.gg/kampus
+[geyik-youtube]: https://youtube.com/@vadideki-geyik
+[twitch]: https://twitch.tv/VadidekiVolkan
 
 ## Radio Geyik 🦌 📻
 
@@ -87,37 +118,37 @@ simulcast it over [**Twitch**](https://twitch.tv/VadidekiVolkan) and [**YouTube
 > station. I might revisit the idea in the future. 
 > 
 > The YouTube channel still continues to simultcast streams, though.
-
-[**Deer in the Valley also has a YouTube channel**](https://youtube.com/@vadideki-geyik). 
-We simultcast the _Deer in the Valley_live shows on[**ZeroToHero Twitch**](https://twitch.tv/VadidekiVolkan), 
-[**Kampus Discord**](https://discord.gg/kampus), and
-[**Deer in the Valley YouTube**](https://youtube.com/@vadideki-geyik).
+ 
+We simultcast the *Deer in the Valley* live shows on
+[**ZeroToHero Twitch**][twitch], [**Kampus Discord**][kampus], and
+[**Deer in the Valley YouTube**][geyik-youtube].
 
 In addition to all of the above, I'm experimenting with something new. Whenever
 the channel is idle, I stream otherworldly beats there. So, if you want
 something to listen to while getting stuff done,[**head down to the Dear in the
-Valley YouTube channel**](https://youtube.com/@vadideki-geyik).
+Valley YouTube channel**][geyik-youtube].
 
 ## `npm install deers`
------------------------
 
-We also have an NPM package called[**deers**](https://npmjs.com/package/deers),
+We also have an NPM package called[**deers**][deers],
 which is a helper to provide random deer ASCII art images.
 
-It's a fun little project; [**check it out**](https://npmjs.com/package/deers).
+It's a fun little project; [**check it out**][deers].
 
 Contributions are---as always---welcome.
 
-## Hey, What Is This "_Kampus_" Thing Anyway
+[deers]: https://npmjs.com/package/deers
 
-[**Kampus is a Discord community**](https://discord.gg/kampus)where anyone
-interested in learning about tech can join. The closest way to visualize it is
-to imagine an actual College Campus with lectures, student clubs, co-working
-sessions, libraries, etc.
+## Hey, What Is This "*Kampus*" Thing Anyway
+
+[**Kampus is a Discord community**][kampus] where anyone interested in learning 
+about tech can join. The closest way to visualize it is to imagine an actual 
+College Campus with lectures, student clubs, co-working sessions, libraries, 
+etc.
 
 > **So, Is Kampus Like a Study Group? Or...**
 >
-> We intentionally keep the definition of "_Kampus_" vague so that it will
+> We intentionally keep the definition of "*Kampus*" vague so that it will
 > evolve and define itself.
 >
 > I see Kampus as a community of like-minded individuals who want to grow and
@@ -125,28 +156,30 @@ sessions, libraries, etc.
 
 ## Hello Broadcom
 
-[**Broadcom has acquired 
-VMware**](https://www.reuters.com/markets/deals/broadcom-closes-69-bln-vmware-deal-after-china-approval-2023-11-22/)
-after dragging for around one and a half years.
+[**Broadcom has acquired VMware**][broadcom-news] after dragging for around 
+one and a half years.
 
 That has been one and a half years of waiting in relative stress and anxiety.
 So, I'm**glad**that the deal has been sealed. This means I will be working at a
 new company, doing the same thing: doing epic innovations around Radio Access
-Networks, leveraging[**O-RAN**](https://www.o-ran.org/).
+Networks, leveraging[**O-RAN**][o-ran].
 
-This was a**$69B**acquisition, one of the largest (_if not "the" largest_) of
+This was a**$69B**acquisition, one of the largest (*if not "the" largest*) of
 its kind. So, it will take some time for things to settle down. As things settle
 down, I'm sure I'll have more to share in the next highlight. But overall, it's
 pretty darn good news, and I'm confident things will be epic!
 
+[broadcom-news]: https://www.reuters.com/markets/deals/broadcom-closes-69-bln-vmware-deal-after-china-approval-2023-11-22/
+[o-ran]: https://www.o-ran.org/
+
 ## Wait, How About VSecM?
 
 One immediate question I've received from various channels is whether this
-merger will impact[**VMware Secrets Manager**](https://vsecm.com/)in any way. As
+merger will impact[**VMware Secrets Manager**][vsecm] in any way. As
 far as I can tell, there are no immediate changes in the project's status and
 governance. We'll continue to secure the cloud-native world one secret at a
-time. The[**VMware Secrets Manager**](https://vsecm.com/)will remain
-open-source [under VMware's GitHub organization](https://github.com/vmware-tanzu/secrets-manager).
+time. The[**VMware Secrets Manager**][vsecm] will remain open-source 
+[under VMware's GitHub organization][vsecm-github].
 
 That said, things are new. I will inform everyone in various channels, including
 VSecM Slack workspace, Twitter, and other communities if I receive any specific
@@ -154,15 +187,20 @@ guidance related to**VMware Secrets Manager**. However, I don't expect any
 significant changes. From the vantage point of VSecM, things will continue to
 be "_business as usual_."
 
+[vsecm]: https://vsecm.com/
+[vsecm-github]: https://github.com/vmware-tanzu/secrets-manager
+
 ## VMware Secrets Manager Is Growing
 
-On that topic, [**VSecM has a team of core maintainers right now
-**](https://vsecm.com/docs/maintainers/). And we are getting external
-contributions, too. To contribute to the project, contact me or[**any of the
-core contributors**](https://vsecm.com/docs/maintainers/), and we'll do our best
-to help you hit the ground running.
+On that topic, [**VSecM has a team of core maintainers right 
+now**][vsecm-maintainers]. And we are getting external contributions, too. 
+To contribute to the project, contact me or[**any of the core 
+contributors**][vsecm-maintainers], and we'll do our best to help you hit 
+the ground running.
 
-To learn more about VSecM,[**check out its website**](https://vsecm.com/).
+To learn more about VSecM,[**check out its website**][vsecm].
+
+[vsecm-maintainers]: https://vsecm.com/docs/maintainers/
 
 ## Federating Secrets Across Clusters
 
@@ -170,16 +208,20 @@ For the**VMware Secrets Manager**enthusiasts who have been following the
 project's development for a while, I've experimented with cross-cluster
 federated secrets sharing using**VSecM**, which went well.
 
-[**I also created a quick demo**](https://vimeo.com/manage/videos/876814597)
-and [**talked about it in SIG SPIRE**](https://vimeo.com/manage/videos/878578526). 
+[**I also created a quick demo**][vsecm-demo]
+and [**talked about it in SIG SPIRE**][vsecm-sig-spire].
+
 In addition, I am working on a tutorial to show step-by-step how to establish
 cross-cluster secrets federation; I'll share it in various channels when it's
 done.
 
+[vsecm-demo]: https://vimeo.com/876814597
+[vsecm-sig-spire]: https://vimeo.com/878578526
+
 ## Moved VMware Secrets Manager's Build Server to Linode
 
 Another**VSecM**news is since I don't need anything specific to AWS for VSecM's
-build needs, I moved it to[**Linode**](https://linode.com/): fanatical support
+build needs, I moved it to[**Linode**][linode]: fanatical support
 and excellent price/performance ratio. I am delighted with them so far.
 
 Besides, you can get almost twice the performance from Linode with the same
@@ -188,10 +230,9 @@ have never let me down.
 
 ## VMware Secrets Manager Onboarding Session
 
-Within the context of[**Kampus**](https://discord.gg/kampus), I've also
-delivered a 3-hour onboarding session for[**VMware Secrets Manager
-**](https://vsecm.com/)to a group of interested developers who want to
-contribute but don't know where to start.
+Within the context of[**Kampus**][kampus], I've also delivered a 3-hour 
+onboarding session for[**VMware Secrets Manager**][vsecm] to a group of 
+interested developers who want to contribute but don't know where to start.
 
 The training was very well received.
 
@@ -208,24 +249,28 @@ Next, I plan to do a follow-up session about setting up a**VSecM**development
 environment.
 
 I record these training sessions and share them[**exclusively with the Kampus
-members**](https://discord.gg/kampus). So, to watch the videos, you'll need to[*
-*join Kampus**](https://discord.gg/kampus).
+members**][kampus]. So, to watch the videos, you'll need to[**join 
+Kampus**][kampus].
+
+[linode]: https://linode.com/
 
 ## Zero to Hero Live Streams are Back
 
 Another piece of news is that I've started streaming on the[**Zero to Hero
-Twitch channel**](https://twitch.tv/VadidekiVolkan)more frequently.
+Twitch channel**][twitch] more frequently.
 
 Whenever I work on something unrelated to my work at VMware that I can share
-with you folks,[**I stream it**](https://twitch.tv/VadidekiVolkan).
+with you folks,[**I stream it**][twitch].
 
 As mentioned, I also simultcast the stream on[**Deer in the Valley (Vadideki
-Geyik) YouTube Channel**](https://youtube.com/@vadideki-geyik)and the[**Ada
-Lovelace Stage on the Kampus Discord Server**](https://discord.gg/kampus).
+Geyik) YouTube Channel**][youtube] and the[**Ada Lovelace Stage on the 
+Kampus Discord Server**][kampus].
+
+[youtube]: https://youtube.com/@vadideki-geyik
 
 ## OpsBeacon Has Shown Much Progress
 
-Another project that has shown much progress is [**OpsBeacon**](https://ob2.ai/).
+Another project that has shown much progress is [**OpsBeacon**][ob2].
 
 Although I don't directly contribute to the code, I'm one of its advisors, so I
 constantly communicate with the team, exchanging ideas and discussing
@@ -234,6 +279,8 @@ architecture. And they have done a tremendous job in the last couple of months.
 I have used**OpsBeacon**in my workflows and automation, and I can honestly say
 that it's incredible. It's a tool that you don't know how much you need
 OpsBeacon badly until you use it. And after you begin using it, you are hooked.
+
+[ob2]: https://ob2.ai/
 
 ## Random Thought of the Week
 
@@ -277,19 +324,26 @@ with you or pan out.
 By following these guidelines, you can actively nurture your curiosity,
 ultimately contributing to professional development.
 
-**Look What I've Found**
-------------------------
+## Look What I've Found
 
-* [`inspektor-gadget` is an eBPF tool and systems inspection framework for Kubernetes, containers, and Linux hosts](https://github.com/inspektor-gadget/inspektor-gadget).
-* [`kubeshark` is an API traffic analyzer for Kubernetes providing real-time K8s protocol-level visibility](https://github.com/kubeshark/kubeshark).
-* [`esm.sh` is a modern CDN that allows you to import es6 modules from a URL](https://esm.sh/)
+* [`inspektor-gadget` is an eBPF tool and systems inspection framework for 
+  Kubernetes, containers, and Linux hosts][inspektor-gadget].
+* [`kubeshark` is an API traffic analyzer for Kubernetes providing real-time 
+  K8s protocol-level visibility][kubeshark].
+* [`esm.sh` is a modern CDN that allows you to import es6 modules from a 
+  URL][esmsh].
 
-**Thanks a Lot ❤️**
--------------------
+[inspektor-gadget]: https://github.com/inspektor-gadget/inspektor-gadget
+[kubeshark]: https://github.com/kubeshark/kubeshark
+[esmsh]: https://esm.sh/
+
+## Thanks a Lot ❤️
 
 That's all for this week.
 
 Until next time... May the source be with you 🦄.
+
+--------
 
 ## Issues
 

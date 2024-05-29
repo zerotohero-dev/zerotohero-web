@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Embracing Simplicity: Why I've Given Up on Smart Quotes and Other Typographic Niceties"
 date = "2024-03-08"
 
@@ -124,11 +133,8 @@ significant... However, I needed to get that off my chest.
 
 Until next time (dot dot dot)... May the source be with you 🦄.
 
-### Written by:
+--------
 
-![Volkan Özçelik](/content/images/size/w150/2021/06/IMG-0274.JPG)
+## Section Contents
 
-#### [Volkan Özçelik](/author/volkan/)
-
-Mountain View, CA
-
+{{ top_of_mind_nav(selected=3) }

@@ -14,7 +14,10 @@ date = "2021-11-26"
 template = "series-index.html"
 +++
 
-![Welcome](/images/2024/the-archive.png)
+{{img(
+  src="/images/2024/the-archive.png"
+  alt="The meaning of life, the universe, and everything."
+)}}
 
 ## Welcome
 

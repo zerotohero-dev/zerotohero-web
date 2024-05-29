@@ -1,19 +1,38 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Installing Go on a Mac"
 date = "2021-05-22"
+template = "geyik.html"
 
 [taxonomies]
-tags = ["go"]
+tags = ["go", "geyik-academy", "go101"]
 +++
 
-![Gopher](https://www.zerotohero.dev/content/images/size/w1200/2024/03/macgoher.png)
+# Installing Go on a Mac
 
-> Here, you'll find the instructions to install [**Go**](https://golang.org/ "Go Programming Language") on a **Mac OS** computer.
+{{img(
+  src="/images/size/w1200/2024/03/macgopher.png",
+  alt="Installing Go on Mac."
+)}}
 
-Open [the package file you downloaded](https://golang.org/dl/) and follow the prompts to install **Go**.
+> Here, you'll find the instructions to install 
+> [**Go**](https://golang.org/ "Go Programming Language") on 
+> a **Mac** computer.
 
-*   The package installs the Go distribution to `/usr/local/go`.
-*   The package should put the `/usr/local/go/bin` directory in your `PATH` environment variable.
+Open [the package file you downloaded](https://golang.org/dl/) and follow the 
+prompts to install **Go**.
+
+* The package installs the Go distribution to `/usr/local/go`.
+* The package should put the `/usr/local/go/bin` directory in your 
+  `PATH` environment variable.
 
 Restart your terminal and verify the settings by entering the following commands.
 

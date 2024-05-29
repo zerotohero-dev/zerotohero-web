@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Secrets"
 date = "2023-07-11"
 
@@ -29,6 +38,8 @@ To break it down:
   that responsibility seriously and not leave it to others. Be **proactive**, *
   *accountable**, and **do not shy away from** making decisions or **taking
   actions**.
+
+--------
 
 ## Section Contents
 

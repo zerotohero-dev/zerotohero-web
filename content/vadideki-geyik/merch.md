@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Merch"
 date = "2024-05-18"
 template = "geyik.html"
@@ -6,7 +15,6 @@ template = "geyik.html"
 [taxonomies]
 tags = ["geyik", "merch", "store"]
 +++
-
 
 Merch al; geyiğin bir parçası ol.
 

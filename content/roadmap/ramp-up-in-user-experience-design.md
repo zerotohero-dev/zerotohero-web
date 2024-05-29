@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Don't Make the User Think"
 date = "2021-08-28"
 
@@ -6,10 +15,12 @@ date = "2021-08-28"
 tags = ["roadmap", "ux", "user-experience", "design"]
 +++
 
-![Don't Make the User Think](/images/size/w1200/2024/03/ux.png)
+{{img(
+  src="/images/size/w1200/2024/03/ux.png"
+  alt="Don't see UX as a liability."
+)}}
 
-UX Design Matters a Lot
------------------------
+## UX Design Matters a Lot
 
 Knowing **how** and **why** the user **thinks** is essential. Knowing **what**
 makes the user "_**not think**_" and act _instinctively_ can differentiate
@@ -190,6 +201,8 @@ sociology, psychology, and even sales and marketing.
 I hope the resources you find here will help you jumpstart your UI/UX journey.
 
 And until next time... May the source be with you 🦄.
+
+--------
 
 ## Section Contents
 

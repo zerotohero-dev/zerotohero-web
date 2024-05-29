@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Security Is Not Optional"
 date = "2021-11-26"
 
@@ -7,6 +16,11 @@ tags = ["roadmap", "security"]
 +++
 
 ![Security Is Not Optional](/images/size/w1200/2024/03/securu.png)
+
+{{img(
+  src="/images/size/w1200/2024/03/securu.png",
+  alt="All your base are belong to us."
+)}}
 
 ## Introduction
 
@@ -72,6 +86,8 @@ That's all for now. I'll update this page and add more to the list as I see more
 tools, resources, and techniques.
 
 Until next time... May the source be with you 🦄.
+
+--------
 
 ## Section Contents
 

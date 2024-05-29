@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Here's a Technique to Ensure Environment Variables Are Set Before Starting a Microservice"
 date = "2021-06-06"
 
@@ -7,6 +16,11 @@ tags = ["tips", "go", "environment-variables", "microservices"]
 +++
 
 ![Environment Variables](/content/images/size/w1200/2024/03/pipes.png)
+
+{{img(
+  src="/images/size/w1200/2024/03/pipes.png",
+  alt="Configuration and Pipes."
+)}}
 
 ## Introduction
 
@@ -18,7 +32,7 @@ Recently, we had to implement such a solution for **FizzBuzz Pro**
 In our case, we needed to make sure that the `fizz-crypto` microservice did not
 start unless the following variables were defined in the system.
 
-```text
+```txt
 FIZZ_PORT_SVC_CRYPTO
 FIZZ_JWT_KEY
 FIZZ_RANDOM_BYTE_LENGTH
@@ -30,8 +44,7 @@ How do we make sure that the service does not start if any of these environment
 variables are missing? And how can we do this with the minimal amount of
 maintenance overhead?
 
-Introducing the `fizz-env` Module
----------------------------------
+## Introducing the `fizz-env` Module
 
 To begin, let's create a module for our purposes. We'll publish our module
 to `github.com/zerotohero-dev/fizz-env` private git repository:
@@ -52,7 +65,7 @@ go mod init github.com/zerotohero-dev/fizz-env
 
 This will result in the following `go.mod` file that defines our module:
 
-```text
+```txt
 module github.com/zerotohero-dev/fizz-env
 
 go 1.16
@@ -108,9 +121,11 @@ value of `$FIZZ_JWT_KEY` environment variable.
 
 ## The Factory Function
 
-Let's also create a [**factory function**](https://en.wikipedia.org/wiki/Factory_(object-oriented_programming))
+Let's also create a [**factory function**][factory-function]
 to create an instance of `FizzEnv` and populate the related field values from
 the system's environment:
+
+[factory-function]: https://en.wikipedia.org/wiki/Factory_(object-oriented_programming)
 
 ```go
 // $WORKSPACE/fizz-env/pkg/env/fizz.go
@@ -133,9 +148,10 @@ func New() *FizzEnv {
 
 ## Sanitizing the Environment Variables
 
-Finally, let's create a [receiver function](https://tour.golang.org/methods/1) that
-traverses and makes sure that all of the environment variables that we need have
-been set:
+Finally, let's create a [receiver function][receiver] that traverses and makes 
+sure that all of the environment variables that we need have been set:
+
+[receiver]: https://tour.golang.org/methods/1
 
 ```go
 // $WORKSPACE/fizz-env/pkg/env/fizz.go
@@ -159,9 +175,11 @@ func (e FizzEnv) SanitizeCrypto()  {
 ```
 
 Since there could be any number of fields in our struct, we had to
-use [reflection](https://blog.golang.org/laws-of-reflection)
-to iterate across the struct fields to keep our code maintainable by following
-the [open-closed principle](https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle).
+use [reflection][reflection] to iterate across the struct fields to keep 
+our code maintainable by following the [open-closed principle][open-closed].
+
+[reflection]: https://blog.golang.org/laws-of-reflection
+[open-closed]: https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle
 
 And that's pretty much it.
 
@@ -174,8 +192,8 @@ being missing.
 > **Aside**
 >
 > Failing early, and failing loudly is also known as
-> the [fail-fast principle](https://en.wikipedia.org/wiki/Fail-fast "Fail-fast")
-> in software engineering. The **fail-fast principle** means that you should stop
+> the [fail-fast principle][fail-fast] in software engineering. The 
+> **fail-fast principle** means that you should stop
 > the current operation as soon as any unexpected error occurs.
 >
 > Surprisingly, this approach results in a **more stable** solution in the long
@@ -184,6 +202,8 @@ loop**: Instead of suppressing errors and sweeping things under the rug, you
 > quickly reveal the defects and fix the failures as early as possible.
 >
 > In the end, you'll benefit from this approach greatly.
+
+[fail-fast]: https://en.wikipedia.org/wiki/Fail-fast
 
 ## Our Solution in Action
 
@@ -205,7 +225,7 @@ go mod init github.com/zerotohero-dev/fizz-crypto
 
 This will result in the following `go.mod` file that defines our module:
 
-```text
+```txt
 module github.com/zerotohero-dev/fizz-env
 
 go 1.16
@@ -246,7 +266,7 @@ func main() {
 Since we haven't defined any environment variables yet, running the above code
 on my system results in the following **panic** as expected:
 
-```text
+```txt
 panic: The environment variable that corresponds to 'PortSvcCrypto' 
 is not defined.
 
@@ -279,6 +299,8 @@ Enjoy... And may the source be with you 🦄.
 
 * [`fizz-crypto` (**3KB** zip archive)](https://assets.zerotohero.dev/heres-a-technique-to-ensure-environment-variables-are-set-before-starting-a-microservice/0174edce-3b6b-419e-83c2-f4995b317935/fizz-crypto.zip)
 * [`fizz-env` (**2KB** zip archive)](https://assets.zerotohero.dev/heres-a-technique-to-ensure-environment-variables-are-set-before-starting-a-microservice/0174edce-3b6b-419e-83c2-f4995b317935/fizz-env.zip)
+
+--------
 
 ## Section Contents
 

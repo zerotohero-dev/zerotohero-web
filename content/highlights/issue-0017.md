@@ -15,7 +15,10 @@ date = "2024-05-10"
 tags = ["highlights"]
 +++
 
-!["Following Your Passion" Is Hardly Enough](/images/size/w1200/2024/03/pass.png)
+{{img(
+  src="/images/size/w1200/2024/03/pass.png"
+  alt="Follow your passion."
+)}}
 
 Welcome to the 17th issue of **Zero to Hero** Highlights.
 
@@ -37,20 +40,21 @@ a video of. I call him Jerry, say "hi" to him 🙂:
 
 ## Jerry the Lizard
 
-{{ 
-  vimeo(
-    id="787450561", 
-    title="Jerry the Lizard"
-  ) 
-}}
+{{vimeo(
+  id="787450561", 
+  title="Jerry the Lizard"
+)}}
 
 ## Keep Your Secrets Secret With Aegis
 
-I am excited to have released [Aegis](https://vsecm.com/) this weekend.
+I am excited to have released [Aegis][aegis] this weekend.
 
-![Aegis: keep your secrets](/images/2023/01/aegis-banner.png)
+{{img(
+  src="/images/2022/01/aegis-banner.png"
+  alt="Aegis: keep your secrets"
+)}}
 
-[**Aegis**](https://vsecm.com/) is an open source **Secrets Store** that
+[**Aegis**][aegis] is an open source **Secrets Store** that
 provides secrets to workloads securely at runtime without requiring a pod
 restart.
 
@@ -62,24 +66,24 @@ Essential features that make **Aegis** unique are:
 * And overall, a **delightful** user experience.
 
 With **Aegis**, you can rest assured that your sensitive data is always **secure
-** and **protected**. [Check out **Aegis
-** on GitHub](https://github.com/vmware-tanzu/secrets-manager) for details.
+** and **protected**. [Check out **Aegis** on GitHub][vsecm-github] for details.
 
 With a caveat that **Aegis** is still a work in progress. I am improving its
-feature set; however, it is still technically an alpha product. Therefore any
+feature set; however, it is still technically an alpha product. Therefore, any
 part of it can change at any time. **Use it at your own risk**.
 
-But while
-there, [if you share your stars on GitHub](https://github.com/vmware-tanzu/secrets-manager),
+But while there, [if you share your stars on GitHub][vsecm-github],
 I'd be delighted ❤️.
 
-Mastodon Anyone?
-----------------
+[aegis]: https://vsecm.com/
+[vsecm-github]: https://github.com/vmware-tanzu/secrets-manager
 
-[I also put together a guide](@/tips/mastodon-101.md) for
-those looking to create and manage their Mastodon instances.
+## Mastodon Anyone?
 
-I [have been a part of Hachyderm Mastodon instance](https://hachyderm.io/@volkan)
+[I also put together a guide][mastodon] for those looking to create and manage 
+their Mastodon instances.
+
+I [have been a part of Hachyderm Mastodon instance][hachyderm]
 for a couple of months so far, and I can confidently say that it's a breeze of
 fresh air after all the birdsite madness. I am **never** going back to Twitter!
 
@@ -88,12 +92,15 @@ I also have created my own single-user Mastodon instance z2h
 helpful for those interested. So if you like these newslettes, I'm sure you'll
 appreciate *the z2h.dev Mastodon instance* too.
 
+[mastodon]: @/tips/mastodon-101.md
+[hachyderm]: https://hachyderm.io/@volkan
+
 ## Random Thought of the Week
 
-I have wondered why the adage "follow your passion" does not always work and why
-it has this uncanny, misleading nature.
+I have wondered why the adage "*follow your passion*" does not always work 
+and why it has this uncanny, misleading nature.
 
-We've all heard the saying "follow your passion " when finding a career that
+We've all heard the saying "*follow your passion*" when finding a career that
 we'll love. But the truth is, it can be challenging.
 
 If I focused on what came naturally to us and what we enjoyed doing, I'm pretty
@@ -118,9 +125,15 @@ I typically don't share these anywhere else.
 
 Exclusively hand-picked for you 👌. Enjoy.
 
-* [A little known fact about the **Internet Archive** is, you can totally search it for scholarly articles](https://scholar.archive.org/search?q=AI+ML).
-* [**Box CLI Maker** creates boxes for your CLI apps](https://github.com/Delta456/box-cli-maker).
-* [So you want a tool to build internal tools really fast. Say no more fam, and meet **ReTool**](https://retool.com/).
+* [A little known fact about the **Internet Archive** is, you can totally 
+  search it for scholarly articles][archive].
+* [**Box CLI Maker** creates boxes for your CLI apps][box].
+* [So you want a tool to build internal tools really fast. Say no more fam, 
+  and meet **ReTool**][retool].
+
+[archive]: https://scholar.archive.org/search?q=AI+ML
+[box]: https://github.com/Delta456/box-cli-maker
+[retool]: https://retool.com/
 
 Thanks a Lot ❤️
 ---------------
@@ -129,6 +142,8 @@ That's all for this week. Next week, I'll gather more unique content and
 resources.
 
 So, until next time... May the source be with you 🦄.
+
+--------
 
 ## Issues
 

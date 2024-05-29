@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Reshape Your Workspace, Reshape Your Future"
 date = "2023-07-12"
 
@@ -62,6 +71,8 @@ caters to your work needs is an investment in your professional future.
 And that was your "_top of mind_."
 
 Until next time... May the source be with you 🦄.
+
+--------
 
 ## Section Contents
 

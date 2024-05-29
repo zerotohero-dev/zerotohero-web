@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "mTLS With SPIRE: Part 3: Creating the Client Appp"
 date = "2022-08-19"
 
@@ -6,18 +15,21 @@ date = "2022-08-19"
 tags = ["mtls", "spiffe", "spire"]
 +++
 
-![mTLS With SPIRE: Part 3: Creating the Client App](/images/size/w1200/2024/03/client-server.png)
+{{img(
+  src="/images/size/w1200/2024/03/client-server.png",
+  alt="mTLS With SPIRE: Part 3: Creating the Client App"
+)}}
 
 This section will create the client app and establish connectivity between the
 client and the server. The connectivity is insecure: There is no **mTLS**
 security yet---we'll come to that later.
 
-{{ 
-  vimeo(
-    id="760885310", 
-    title="mTLS With SPIRE: Part 3: Creating the Client App"
-  ) 
-}}
+{{vimeo(
+  id="760885310", 
+  title="mTLS With SPIRE: Part 3: Creating the Client App"
+)}}
+
+--------
 
 ## Playlist
 

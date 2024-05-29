@@ -1,9 +1,19 @@
+{#
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+#}
 {% import "macros/social_icon.svg.html" as macro_social -%}
 <!DOCTYPE html>
 <html lang="{{ lang }}" dir="{{ config.extra.papermod.language_direction }}">
 <head>
   {% block head %}
-  {% include "partials/head.html" %}
+  {% include "partials/geyik-head.html" %}
   {% endblock %}
 </head>
 <body class="{% if section or term or taxonomy %}list {% endif %}{% if config.extra.papermod.theme == 'dark' %} dark{% endif %}" id="top">

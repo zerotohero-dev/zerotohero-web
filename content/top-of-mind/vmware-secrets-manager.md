@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Long Live Aegis!"
 date = "2023-08-03"
 
@@ -55,6 +64,8 @@ Stay tuned for updates and developments as we continue on this journey.
 Thank you very much for your support!
 
 Turtle power 🐢⚡️.
+
+--------
 
 ## Section Contents
 

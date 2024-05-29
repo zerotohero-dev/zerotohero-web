@@ -8,13 +8,13 @@
 # `-------'`------'`--' `--'
 
 - name: "Every Saga Has a Beginning"
-  url: "/about/a-new-hope/"
+  url: "@/about/a-new-hope.md"
 - name: "Volkan Özçelik"
-  url: "/about/volkan/"
+  url: "@/about/volkan.md"
 - name: "Volkan Uses"
-  url: "/about/volkan-uses/"
+  url: "@/about/volkan-uses.md"
 - name: "Contact"
-  url: "/about/contact/"
+  url: "@/about/contact.md"
 - name: "Privacy Policy"
-  url: "/about/privacy/"
+  url: "@/about/privacy.md"
 

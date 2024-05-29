@@ -1,12 +1,24 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "The Live Stream Dream"
-date = "2023-01-16"
+date = "2024-05-27"
 
 [taxonomies]
 tags = ["tips", "setups", "streaming"]
 +++
 
-![The Live Stream Dream](/images/size/w1200/2024/03/stream.png)
+{{img(
+  src="/images/size/w1200/2024/03/stream.png",
+  alt="Streaming."
+)}}
 
 ## Introduction
 
@@ -28,22 +40,23 @@ insider look into the dynamic and complex world of multi-streaming, showing how
 technology, when used innovatively, can foster powerful and engaging digital
 experiences.
 
-![Eli (left) and I (right) enjoying the show.](/images/2023/06/Screenshot-2023-06-16-at-11.33.11-AM.png)
-
-
+{{img(
+  src="/images/size/w1200/2023/06/Screenshot-2023-06-16-at-11.33.11-AM.png",
+  alt="Eli (left) and I (right) enjoying the show."
+)}}
 
 ## TalkSPIFFE? Is That Something New? Can I Eat It?
 
-Before I continue, it's a perfect moment to delve deeper into what [**TalkSPIFFE
-**](https://twitch.tv/VadidekiVolkan) truly is.
+Before I continue, it's a perfect moment to delve deeper into what 
+[**TalkSPIFFE**](https://twitch.tv/VadidekiVolkan) truly is.
 
 **TalkSPIFFE** is more than just a live stream; it's a platform designed to
-demystify and elucidate the intricacies of the [**SPIFFE
-**](https://spiffe.io/) (_Secure Production Identity Framework for Everyone_)
-technology. It's an opportunity for **SPIFFE/SPIRE** enthusiasts, professionals,
-and those who want to learn more about **SPIFFE** and **SPIRE** to come together
-and engage in enlightening discussions, learn from each other, and help foster a
-community.
+demystify and elucidate the intricacies of the 
+[**SPIFFE**](https://spiffe.io/) (*Secure Production Identity Framework for 
+Everyone*) technology. It's an opportunity for **SPIFFE/SPIRE** enthusiasts, 
+professionals, and those who want to learn more about **SPIFFE** and **SPIRE** 
+to come together and engage in enlightening discussions, learn from each other, 
+and help foster a community.
 
 We've aimed for **TalkSPIFFE** to be a space that feels both welcoming and
 informative rather than being strictly academic or intimidatingly technical. We
@@ -54,8 +67,8 @@ In our weekly sessions every other Friday, we tackle various **SPIFFE**-related
 topics, discuss the latest updates, share best practices, and do live demos.
 
 Whether you're just dipping your toes into the **SPIFFE** waters or are a
-seasoned professional looking to stay updated and share your wisdom, *
-*TalkSPIFFE** offers you a place to do just that.
+seasoned professional looking to stay updated and share your wisdom,
+**TalkSPIFFE** offers you a place to do just that.
 
 So join us in our upcoming streams, and let's make **TalkSPIFFE** a thriving
 platform for learning, sharing, and collaborative growth in **SPIFFE** and *
@@ -112,12 +125,15 @@ So far, everything about **Guest Star** works like a charm.
 Here's how we typically initiate our stream:
 
 Before the event starts, there is a 15-minute interval where the stream will be
-live and a "_starting soon_" scene with a countdown timer is displayed life (
-_the \`63:46\` countdown timer in the image below is just for demonstration
+live and a "*starting soon*" scene with a countdown timer is displayed life
+(_the `63:46` countdown timer in the image below is just for demonstration
 purposes; consider it something like 11:25 or similar---starting from 15:00 and
 counting backward_).
 
-![The "waiting room" and the countdown timer.](/images/2023/06/Screenshot-2023-06-15-at-2.30.25-PM.png)
+{{img(
+  src="/images/size/w1200/2023/06/Screenshot-2023-06-15-at-2.30.25-PM.png",
+  alt="The 'waiting room' and the countdown timer."
+)}}
 
 During that time, I invite [**Eli**](https://www.linkedin.com/in/elinesterov/),
 **TalkSPIFFE**'s cohost, as a "[_guest star_](https://help.twitch.tv/s/article/guest-star?language=en_US)"
@@ -134,29 +150,37 @@ This step is significant because when you reboot your system or restart OBS,
 sometimes OBS fails to detect some of the input sources, and you'll need to
 update them manually.
 
-![OBS's Studio mode. Left: Upcoming scene; right: the scene streaming live.](/images/2023/06/Screenshot-2023-06-15-at-2.40.42-PM.png)
+{{img(
+  src="/images/size/w1200/2023/06/Screenshot-2023-06-15-at-2.40.42-PM.png",
+  alt="OBS's Studio mode. Left: Upcoming scene; right: the scene streaming live."
+)}}
 
 I use [**Audio Hijack**](https://rogueamoeba.com/audiohijack/) for chaining,
 filtering, and mixing various audio streams. And I use 
 [**Loopback**](https://rogueamoeba.com/loopback/) to create virtual audio interfaces that I
 can set as audio input sources for Zoom and Discord. As you'll see shortly, the
 loopback interfaces I make in Audio Hijack will find their respective places
-as "_sinks_" in Audio Hijack.
+as "*sinks*" in Audio Hijack.
 
-The **TalkSPIFFE** Audio Chain
-------------------------------
+## The **TalkSPIFFE** Audio Chain
 
 Here follows our **Audio Hijack** stream setup. You can tap on the image to see
 an enlarged version. I will zoom in and explain each box in this layout below:
 
-![The audio chain (click to enlarge).](/images/2023/06/audio-hijack.png)
+{{img(
+  src="/images/size/w1200/2023/06/audio-hijack.png",
+  alt="The audio chain."
+)}}
 
 It might look a bit involved, though fear not; we'll dissect the entire audio
 chain piece by piece.
 
 Let's zoom into the topmost browser source first:
 
-![Splitting the background music.](/images/2023/06/Screenshot-2023-06-13-at-1.39.25-PM.png)
+{{img(
+  src="/images/size/w1200/2023/06/Screenshot-2023-06-13-at-1.39.25-PM.png",
+  alt="Splitting the background music."
+)}}
 
 The input source named "**MUSIC IN**" is Safari playing a playlist of
 instrumental music as background music for **TalkSPIFFE**. I split the audio
@@ -169,7 +193,13 @@ into three parts:
 * And the bottom one is a separate track that will be streamed to my and my
   guest Eli's headphones.
 
-![To the output device.](https://www.zerotohero.dev/content/images/2023/06/Screenshot-2023-06-13-at-1.39.55-PM.png)
+Then, there is an A/B switch (*see the image below*) where the top two rows 
+meet:
+
+{{img(
+  src="/images/size/w1200/2023/06/Screenshot-2023-06-13-at-1.39.55-PM.png",
+  alt="To the output device."
+)}}
 
 Then, there is an A/B switch (_see the image above_) where the top two rows meet
 for me to toggle between two different volume levels and send the virtual output
@@ -192,7 +222,10 @@ lane to let the audience enjoy the music to its fullest.
 
 Then comes the third row. Follow the arrows in the image below:
 
-![We also enjoy the background music while streaming.](/images/2023/06/Screenshot-2023-06-13-at-1.40.25-PM.png)
+{{img(
+  src="/images/size/w1200/2023/06/Screenshot-2023-06-13-at-1.40.25-PM.png",
+  alt="We also enjoy the background music while streaming."
+)}}
 
 The third row is what Eli and I hear in our headphones as a piece of background
 music so that we can bob our heads to the same beats during the event 🙂.
@@ -205,26 +238,35 @@ aim to use the "Guest Star" feature as a backup audio source. So, if anything
 happens to Discord, I can disable Discord and swap it to Guest Star instead to
 capture Eli's audio.
 
-![Splitting the guest audio.](/images/2023/06/Screenshot-2023-06-13-at-1.40.58-PM.png)
+{{img(
+  src="/images/size/w1200/2023/06/Screenshot-2023-06-13-at-1.40.58-PM.png",
+  alt="Splitting the guest audio."
+)}}
 
 Or an alternative way is to use an A/B switch and keep both of the input sources
 enabled and switch between them using the A/B switch:
 
-![Using an A/B switch.](/images/2023/06/Screenshot-2023-06-15-at-10.04.25-PM.png)
+{{img(
+  src="/images/size/w1200/2023/06/Screenshot-2023-06-15-at-10.04.25-PM.png",
+  alt="Using an A/B switch."
+)}}
 
 Then, in the middle of the setup, I have two audio sources:
 
-* **ELI AUDIO IN** (_Discord_) is a Discord voice chat that Eli and I will use.
+* **ELI AUDIO IN** (*Discord*) is a Discord voice chat that Eli and I will use.
   I take Eli's audio from that source to push it into 
-  [OBS (_Open Broadcast Software_)](https://obsproject.com/) as a stream source. 
+  [OBS (*Open Broadcast Software*)](https://obsproject.com/) as a stream source. 
   While at that, I'll also clone it and send it to my headphones through a separate channel.
-* **GUEST STAR** (_Chrome_) is where
+* **GUEST STAR** (*Chrome*) is where
   Eli's [Twitch Guest Star](https://help.twitch.tv/s/article/guest-star?language=en_US)
   browser source is. I keep it as a backup source in case Discord's audio fails.
   Though I've had minor glitches while testing it as an audio source, I'm
   reluctant to use it. For now, it's just a backup for emergencies.
 
-![Mixing the vocals.](/images/2023/06/Screenshot-2023-06-13-at-1.42.00-PM.png)
+{{img(
+  src="/images/size/w1000/2023/06/Screenshot-2023-06-13-at-1.42.00-PM.png",
+  alt="Mixing the vocals."
+)}}
 
 The orange lines above pass through my microphone 
 ([**_Shure SM7B_**](https://www.shure.com/en-US/products/microphones/sm7b)), 
@@ -239,7 +281,10 @@ In the image below are my equalizer settings for the curious; this setup makes
 more voice subtly deeper. Overdo it, and you'll sound like Darth Vader or an
 accented version of Morgan Freeman. Be very careful.
 
-![Equalizer settings.](/images/2023/06/Screenshot-2023-06-13-at-1.28.53-PM.png)
+{{img(
+  src="/images/2023/06/Screenshot-2023-06-13-at-1.28.53-PM.png",
+  alt="Equalizer settings."
+)}}
 
 Since everyone's audio gear, vocal cords, room, and vocal modulation needs
 differ, your equalizer setting will likely vary significantly from mine. So, I'm
@@ -256,31 +301,47 @@ sounds odd, you have overshot some settings; try readjusting it.
 And below is my noise gate. Again, this is a representative snapshot and may not
 meet your needs. Adjust the configuration yourself, and always use your ears.
 
-![Noise gate settings.](/images/2023/06/Screenshot-2023-06-13-at-1.29.12-PM.png)
+{{img(
+  src="/images/2023/06/Screenshot-2023-06-13-at-1.29.12-PM.png",
+  alt="Noise gate settings."
+)}}
 
 The green line has the same setup except for the intermediate filtering. It's
 the sound coming from our dear guest, Eli. I'm sharing the image below again for
 your convenience:
 
-![Mixing the vocals.](/images/2023/06/Screenshot-2023-06-13-at-1.42.00-PM-1.png)
+{{img(
+src="/images/size/w1000/2023/06/Screenshot-2023-06-13-at-1.42.00-PM.png",
+alt="Mixing the vocals."
+)}}
 
 Then my voice and Eli's are combined, compressed, gain-adjusted, and set to 
 "_**SPIFFE Loopback Audio**_" as a sink (_see below_)---_SPIFFE Loopback Audio_
 is a virtual audio device.
 
-![Onwards to the virtual audio device.](/images/2023/06/Screenshot-2023-06-13-at-1.42.32-PM.png)
+{{img(
+  src="/images/2023/06/Screenshot-2023-06-13-at-1.42.32-PM.png",
+  alt="Onwards to the virtual audio device."
+)}}
 
 I created "**_SPIFFE Loopback Audio_**" using [**Loopback**](https://rogueamoeba.com/loopback/); 
 I use it in OBS as an audio source to send to the stream.
 
-![Combining with the background music.](/images/2023/06/Screenshot-2023-06-13-at-1.43.14-PM.png)
+{{img(
+  src="/images/2023/06/Screenshot-2023-06-13-at-1.43.14-PM.png",
+  alt="Combining with the background music."
+)}}
 
-Then the background music (_arrows coming from the top_) and our combined
-vocals (_arrows coming from the bottom_) are mixed into a single stream and sent
+Then the background music (*arrows coming from the top*) and our combined
+vocals (*arrows coming from the bottom*) are mixed into a single stream and sent
 to the "**Zoom Mic PassTru**" Loopback virtual device to be used as an audio
-source in Zoom (_see below_).
+source in Zoom (*see below*).
 
-![Mixing my vocals with the background music.](/images/2023/06/Screenshot-2023-06-13-at-1.44.40-PM.png)
+{{img(
+  src="/images/2023/06/Screenshot-2023-06-13-at-1.44.40-PM.png",
+  alt="Mixing my vocals with the background music."
+)}}
+
 
 This final image above shows how my vocals are combined with the background
 music and pushed toward the "**Volkan Just Mic**" virtual audio device. This is
@@ -292,7 +353,10 @@ One helpful feature of **Audio Hijack** is I can float and pin almost everything
 in the UI. Here are my most frequently used controls dragged to the top corner
 of my widescreen.
 
-![You can pin what you want, and ignore the rest.](/images/2023/06/Screenshot-2023-06-15-at-4.19.01-AM.png)
+{{img(
+  src="/images/2023/06/Screenshot-2023-06-15-at-4.19.01-AM.png",
+  alt="You can pin what you want, and ignore the rest."
+)}}
 
 This feature allows me to hide the convoluted chain of filters from my view
 during the stream and focus on the few essential elements that matter most.
@@ -307,9 +371,19 @@ and audio, we'll use Twitch's **Guest Star** feature.
 
 Considering this, here's our (_quote_) "simplified" audio pipeline:
 
-![Maybe not quite "as" simple, but it looks good 🙂.](/images/2023/06/Screenshot-2023-06-16-at-12.34.34-PM.png)
+{{img(
+  src="/images/2023/06/Screenshot-2023-06-16-at-12.34.34-PM.png",
+  alt="Maybe not quite 'as' simple, but it looks good 🙂."
+)}}
 
 ## A Dedicated Streaming Machine
+
+> **Update 2021-05-27**
+> 
+> With [my new Mac Studio](@/about/volkan-uses.md) I don't need a dedicated
+> streaming machine anymore. I can do everything on a single machine.
+> 
+> However, keeping a separate machine for streaming is still a good idea.
 
 To ensure a smooth streaming experience I use two machines:
 
@@ -422,18 +496,27 @@ I just applied some alpha filter and color correction to my camera.
 
 Here is the end result:
 
-![Me in in front of the green screen, chroma key and color correction applied.](/images/2023/06/Screenshot-2023-06-15-at-8.18.44-AM.png)
+{{img(
+  src="/images/2023/06/Screenshot-2023-06-15-at-8.18.44-AM.png",
+  alt="Me in front of the green screen, chroma key and color correction applied."
+)}}
 
-And here are the settings for the "_color correction_" and "_chroma-key_"
+And here are the settings for the "*color correction*" and "*chroma-key*"
 filters, respectively:
 
-![Color correction settings.](/images/2023/06/Screenshot-2023-06-15-at-8.20.27-AM.png)
+{{img(
+  src="/images/2023/06/Screenshot-2023-06-15-at-8.20.27-AM.png",
+  alt="Color correction settings."
+)}}
 
-![Chroma key settings.](/images/2023/06/Screenshot-2023-06-15-at-8.20.53-AM.png)
+{{img(
+  src="/images/2023/06/Screenshot-2023-06-15-at-8.20.53-AM.png",
+  alt="Chroma key settings."
+)}}
 
 ## Screen Annotations
 
-You remember the orange arrows in the "_Audio Device Chain_" section? I made
+You remember the orange arrows in the "*Audio Device Chain*" section? I made
 them using [**Presentify**](https://presentify.compzets.com/).
 
 The benefit of **Presentify** is it's not only for annotating static images like
@@ -469,21 +552,29 @@ That part clarified, let's begin with the camera scenes and go all the way up,
 building larger and larger scenes from sub-scenes.
 
 ## Camera Scenes
-------------------
 
 That's the source of my camera schene called "**my-camera**."
 
-![My camera.](/images/2023/06/Screenshot-2023-06-15-at-11.19.47-AM.png)
+{{img(
+  src="/images/2023/06/Screenshot-2023-06-15-at-11.19.47-AM.png",
+  alt="My camera."
+)}}
 
 And that's the source of Eli's camera view, which is a browser source from
 Twitch Guest Star. The view is very creatively named "**twitch-guest-slot-1**".
 
-![Twitch guest slot 1.](/images/2023/06/Screenshot-2023-06-15-at-11.22.38-AM.png)
+{{img(
+  src="/images/2023/06/Screenshot-2023-06-15-at-11.22.38-AM.png",
+  alt="Twitch guest slot 1."
+)}}
 
 The image source named **frame** is a blue image to give a distinct border
 around both of the camera feeds similar to the one below:
 
-![Teal border.](/images/2023/06/Screenshot-2023-06-15-at-11.20.41-AM.png)
+{{img(
+  src="/images/2023/06/Screenshot-2023-06-15-at-11.20.41-AM.png",
+  alt="Teal border."
+)}}
 
 ## Talking Heads
 
@@ -496,19 +587,26 @@ scenes mentioned before.
 Again, this "**_talking-head_**" scene is a **sub-scene** that will be composed
 into different scenes.
 
-![Talking head.](/images/2023/06/Screenshot-2023-06-15-at-11.20.09-AM.png)
-
-
+{{img(
+  src="/images/2023/06/Screenshot-2023-06-15-at-11.20.09-AM.png",
+  alt="Talking head."
+)}}
 
 Here's how the scene looks:
 
-![Talking heads on the lower third.](/images/2023/06/Screenshot-2023-06-15-at-11.20.56-AM.png)
+{{img(
+  src="/images/2023/06/Screenshot-2023-06-15-at-11.20.56-AM.png",
+  alt="Talking heads on the lower third."
+)}}
 
 ## Side by Side
 
 Here is the source layout of another scene named "**_talking-heads-lg_**."
 
-![Larger talking heads.](/images/2023/06/Screenshot-2023-06-15-at-11.20.18-AM.png)
+{{img(
+  src="/images/2023/06/Screenshot-2023-06-15-at-11.20.18-AM.png",
+  alt="Larger talking heads."
+)}}
 
 It creates a larger layout with our names and some turtle embellishments, again
 to be embedded into more concrete scenes.
@@ -517,7 +615,10 @@ Below you can see what the combined view looks like. Note that there are camera
 feeds inside the boxes. Right now, they are disabled, so the boxes look black
 and empty.
 
-![Talking heads (larger).](/images/2023/06/Screenshot-2023-06-15-at-11.21.02-AM-1.png)
+{{img(
+  src="/images/2023/06/Screenshot-2023-06-15-at-11.21.02-AM-1.png",
+  alt="Talking heads (larger)."
+)}}
 
 ## Demo Over Zoom
 
@@ -526,19 +627,28 @@ full-screen zoom session (_which, on my OBS Scenes panel, is very creatively
 named... ... ... "**Zoom**"_ 🙂) so that both of our camera feeds will be visible
 when either Eli, or I am demonstrating something over Zoom.
 
-![The zoom view.](/images/2023/06/Screenshot-2023-06-15-at-11.37.11-AM.png)
+{{img(
+  src="/images/2023/06/Screenshot-2023-06-15-at-11.37.11-AM.png",
+  alt="The zoom view."
+)}}
 
 Here is the list of sources in this scene:
 
-![The Zoom view's sources.](/images/2023/06/Screenshot-2023-06-15-at-11.38.00-AM.png)
+{{img(
+  src="/images/2023/06/Screenshot-2023-06-15-at-11.38.00-AM.png",
+  alt="The Zoom view's sources"
+)}}
 
 As you see, even the **Asus|Dummy(Zoom)** view (_highlighted above_) is a scene
 in itself. Here's its source layout.
 
-![Dummy capture device.](/images/2023/06/Screenshot-2023-06-15-at-11.40.03-AM.png)
+{{img(
+  src="/images/2023/06/Screenshot-2023-06-15-at-11.40.03-AM.png",
+  alt="Dummy capture device."
+)}}
 
-The naming suggests that the view reflects a dummy 1080p virtual monitor (
-_created using_ [**_BetterDisplay_**](https://github.com/waydabber/BetterDisplay#readme)), 
+The naming suggests that the view reflects a dummy 1080p virtual monitor 
+(*created using [**_BetterDisplay_**](https://github.com/waydabber/BetterDisplay#readme)*), 
 which a real 1080p Asus monitor mirrors.
 
 A virtual display is helpful; I can mirror one of my main displays to it and
@@ -553,22 +663,34 @@ different device or a browser window. Literally, I can easily show anything I
 can see on my streaming machine to the audience in 1080p resolution. Having a
 spare monitor to stream things gives **a lot** of flexibility.
 
-![Display capture.](/images/2023/06/Screenshot-2023-06-15-at-11.40.22-AM.png)
+{{img(
+  src="/images/2023/06/Screenshot-2023-06-15-at-11.40.22-AM.png",
+  alt="Display capture."
+)}}
 
 I also have a third 1080p monitor that I also pair with a dummy monitor
 and [Elgato Cam Link 4k](https://www.elgato.com/us/en/p/cam-link-4k) so that I
 can share my demo machine's desktop with ease:
 
-![Streaming my demo machine's desktop.](/images/2023/06/Screenshot-2023-06-15-at-1.32.54-PM.png)
+{{img(
+  src="/images/2023/06/Screenshot-2023-06-15-at-1.32.54-PM.png",
+  alt="Streaming my demo machine's desktop."
+)}}
 
 Here is how to compose my desktop into any view:
 
-![Adding the desktop view into another view.](/images/2023/06/Screenshot-2023-06-15-at-1.41.09-PM.png)
+{{img(
+  src="/images/2023/06/Screenshot-2023-06-15-at-1.41.09-PM.png",
+  alt="Adding the desktop view into another view."
+)}}
 
 And here are the details of the "**_(my desktop) cam link4k_**" view highlighted
 above:
 
-![Camlink video source view.](/images/2023/06/Screenshot-2023-06-15-at-1.41.21-PM.png)
+{{img(
+  src="/images/2023/06/Screenshot-2023-06-15-at-1.41.21-PM.png",
+  alt="Camlink video source view."
+)}}
 
 It has **Elgato Cam Link 4K** as the input source and nothing else. Having a
 view with a single source might look unnecessary; however, this setup gives the
@@ -581,15 +703,24 @@ Here's the "**_Fireside Chat_**" screen, where my and Eli's cameras are
 displayed side-by-side. Again, the cameras are off in this screenshot, but both
 of our camera feeds will be there in the live stream.
 
-![The fireside chat.](/images/2023/06/Screenshot-2023-06-15-at-11.21.02-AM.png)
+{{img(
+  src="/images/2023/06/Screenshot-2023-06-15-at-11.20.18-AM-1.png",
+  alt="Fireside chat."
+)}}
 
 Here is the source layout of the above scene.
 
-![Fireside chat sources.](/images/2023/06/Screenshot-2023-06-15-at-11.20.18-AM-1.png)
+{{img(
+  src="/images/2023/06/Screenshot-2023-06-15-at-11.20.18-AM-1.png",
+  alt="Fireside chat sources."
+)}}
 
 And here is what the **twitch-guest-slot-1** sub-scene looks like:
 
-![Twitch guest slot sub-scene](/images/2023/06/Screenshot-2023-06-15-at-11.22.38-AM-1.png)
+{{img(
+  src="/images/2023/06/Screenshot-2023-06-15-at-11.22.38-AM-1.png",
+  alt="Twitch guest slot sub-scene."
+)}}
 
 It has a teal frame and a browser source from [Twitch Guest Star](https://help.twitch.tv/s/article/guest-star).
 
@@ -600,15 +731,24 @@ is [**The Big Red Clock**](http://www.bigredclock.com/), and it does its job
 amazingly well. It's an app I use as a countdown timer before the show starts or
 whenever we need a break.
 
-![The big red clock.](/images/2023/06/Screenshot-2023-06-13-at-1.22.34-PM.png)
+{{img(
+  src="/images/2023/06/Screenshot-2023-06-13-at-1.22.34-PM.png",
+  alt="The big red clock."
+)}}
 
 To make it blend in better, I add the following color key filters:
 
-![Big red clock color filters.](/images/2023/06/Screenshot-2023-06-16-at-2.47.51-PM.png)
+{{img(
+  src="/images/2023/06/Screenshot-2023-06-16-at-2.47.51-PM.png",
+  alt="Big red clock color filters."
+)}}
 
 And for extra flexibility, I manage the big red clock in its own scene as well:
 
-![Big red clock alignment.](/images/2023/06/Screenshot-2023-06-15-at-1.48.42-PM.png)
+{{img(
+  src="/images/2023/06/Screenshot-2023-06-15-at-1.48.42-PM.png",
+  alt="Big red clock alignment."
+)}}
 
 ## The Interstitials
 
@@ -617,11 +757,20 @@ We use these "**_break screens_**" during the show whenever needed.
 Aside from positioning the **Big Red Clock**, not much configuration is needed.
 I'll share them here for the sake of completeness.
 
-![Starting soon.](/images/2023/06/Screenshot-2023-06-15-at-1.50.47-PM-1.png)
+{{img(
+  src="/images/2023/06/Screenshot-2023-06-15-at-1.50.47-PM-1.png",
+  alt="Starting soon."
+)}}
 
-![Be right back.](/images/2023/06/Screenshot-2023-06-15-at-1.50.54-PM-1.png)
+{{img(
+  src="/images/2023/06/Screenshot-2023-06-15-at-1.50.54-PM-1.png",
+  alt="Be right back."
+)}}
 
-![End of stream.](/images/2023/06/Screenshot-2023-06-15-at-1.51.04-PM.png)
+{{img(
+  src="/images/2023/06/Screenshot-2023-06-15-at-1.51.04-PM.png",
+  alt="End of stream."
+)}}
 
 ## Streaming from Twitch to Zoom
 
@@ -634,18 +783,27 @@ Luckily, there is a quick hack: **OBS Virtual Camera**.
 Press this big fat button, and you can send the entire stream as a camera source
 to any application that accepts virtual camera sources.
 
-![OBS virtual camera.](/images/2023/06/Screenshot-2023-06-15-at-2.19.38-PM.png)
+{{img(
+  src="/images/2023/06/Screenshot-2023-06-15-at-2.19.38-PM.png",
+  alt="OBS virtual camera."
+)}}
 
 Here's how the camera feed looks on a movie player that can display camera views
 too:
 
-![OBS virtual camera output.](/images/2023/06/Screenshot-2023-06-14-at-11.55.58-AM.png)
+{{img(
+  src="/images/2023/06/Screenshot-2023-06-14-at-11.55.58-AM.png",
+  alt="OBS virtual camera output."
+)}}
 
 ## My Mini Studio
 
 Here's how things look from the outside:
 
-![My workspace.](/images/2023/06/IMG-7330.jpg)
+{{img(
+  src="/images/size/w1000/2023/06/IMG-7330.jpg",
+  alt="My workspace."
+)}}
 
 Let me unpack the mess for you:
 
@@ -656,7 +814,9 @@ Let me unpack the mess for you:
   possible, bouncing light off of surfaces is always a better option than
   directly pointing it to the subjects (_the "subject" being me sitting on the
   chair in this case_).
-* There's a warm fill light below, and [you can get the fixture (**_ISJAKT led floor uplighter_**) from Ikea](https://www.ikea.com/us/en/p/isjakt-led-floor-uplighter-reading-lamp-dimmable-nickel-plated-70459716/).
+* There's a warm fill light below, and [you can get the fixture (**_ISJAKT led 
+  floor uplighter_**) from 
+  Ikea](https://www.ikea.com/us/en/p/isjakt-led-floor-uplighter-reading-lamp-dimmable-nickel-plated-70459716/).
 * There are two [**Neewer Key Lights**](https://www.amazon.com/gp/product/B07T8FBZC2) in front of me. They are
   dirt cheap and are as effective as their expensive counterparts. But of
   course, you get what you pay for: there are no remote controls, you cannot
@@ -679,10 +839,14 @@ Let me unpack the mess for you:
 To put things into more perspective, here's a schematic of the stream-related
 hardware that I use:
 
-![Streaming setup.](https://www.zerotohero.dev/content/images/2023/06/hardware-setup.jpg)
+{{img(
+  src="/images/2023/06/hardware-setup.jpg",
+  alt="Streaming setup."
+)}}
 
 The demo machine and the camera are connected to the streaming machine as video
-input sources through capture cards. I use [**Elgato HD60S+**](https://help.elgato.com/hc/en-us/articles/360034170131-Elgato-Game-Capture-HD60-S-Technical-Specifications)
+input sources through capture cards. I use 
+[**Elgato HD60S+**](https://help.elgato.com/hc/en-us/articles/360034170131-Elgato-Game-Capture-HD60-S-Technical-Specifications)
 and [**Elgato Cam Link 4K**](https://www.elgato.com/us/en/p/cam-link-4k) for
 capture cards.
 
@@ -715,11 +879,17 @@ Lighting is essential to any high-quality video setup, and ours is no exception.
 My [**Neewer Key Lights**](https://www.amazon.com/gp/product/B07T8FBZC2),
 positioned strategically behind the camera as you see below:
 
-![Camera and key lights.](/images/2023/06/IMG-7337.jpg)
+{{img(
+  src="/images/2023/06/IMG-7337.jpg",
+  alt="Camera and key lights."
+)}}
 
 But... but... but! There's something else. What's this little dude?
 
-![Perry?](/images/2023/06/Screenshot-2023-06-15-at-3.17.17-PM.png)
+{{img(
+  src="/images/2023/06/Screenshot-2023-06-15-at-3.17.17-PM.png",
+  alt="Perry?"
+)}}
 
 Well, meet Perry the Platypus!
 
@@ -740,7 +910,10 @@ into the camera itself.
 
 Just look at him; how can you say no to this little trouble maker 🙂:
 
-![Perry!](/images/2023/06/IMG-7338.jpg)
+{{img(
+  src="/images/2023/06/IMG-7338.jpg",
+  alt="Perry!"
+)}}
 
 Aside from the key lights, I use a white oval light source to achieve a more
 natural and even light spread with reduced shadows.
@@ -749,23 +922,33 @@ This light bounces off the ceiling, subtly illuminating me and the green screen.
 It allows greater flexibility when adjusting the camera's chroma key and color
 correction filters in OBS.
 
-![Bouncing light off of solid surfaces.](/images/2023/06/IMG-7336.jpg)
+{{img(
+  src="/images/2023/06/IMG-7336.jpg",
+  alt="Bouncing light off of solid surfaces."
+)}}
 
 And finally, to add depth and warmth to the video, I use a small fill light.
 Emitting a warm off-white yellow light, it delicately balances any shadows on my
 face and adds a touch of warmth to the overall video.
 
-![Fill light.](/images/2023/06/Screenshot-2023-06-15-at-3.20.05-PM.png)
+{{img(
+  src="/images/2023/06/IMG-7335.jpg",
+  alt="Fill light."
+)}}
 
 Of course, this is only possible with the final piece of our video setup: the
 green screen. Acting as a backdrop, it allows me to overlay any desired
 background during the streaming process, lending an additional layer of
 professionalism and versatility.
 
-![The green screen.](/images/2023/06/Screenshot-2023-06-16-at-10.45.42-PM.png)
+{{img(
+  src="/images/2023/06/Screenshot-2023-06-16-at-10.45.42-PM.png",
+  alt="The green screen."
+)}}
 
 For your needs, any green screen would do. I use 
-[**Instahibit Retractable Green Screen Backdrop**](https://www.amazon.com/Instahibit-Retractable-Backdrop-Chromakey-Mountable/dp/B087V2DHTW).
+[**Instahibit Retractable Green Screen 
+Backdrop**](https://www.amazon.com/Instahibit-Retractable-Backdrop-Chromakey-Mountable/dp/B087V2DHTW).
 
 ## Smoothing the Acoustics
 
@@ -784,7 +967,10 @@ lot of fun. For that, I use [**Farrago**](https://rogueamoeba.com/farrago/),
 which, to me, is the best rapid soundboard ever: Robust, easy to use, and
 integrates with almost everything, including your midi keyboard.
 
-![Farrago.](/images/2023/06/Screenshot-2023-06-16-at-11.23.47-AM.png)
+{{img(
+  src="/images/2023/06/Screenshot-2023-06-16-at-11.23.47-AM.png",
+  alt="Farrago."
+)}}
 
 After all, no stream is fun without a bleating goat in it!
 
@@ -804,7 +990,10 @@ that **OBS** is listening to.
 
 The audio chain below links my game audio onto the capture card:
 
-![Game audio to capture card.](/images/2023/06/Screenshot-2023-06-16-at-8.07.21-PM.png)
+{{img(
+  src="/images/2023/06/Screenshot-2023-06-16-at-8.07.21-PM.png",
+  alt="Game audio to capture card."
+)}} 
 
 And this chain links the sound from the capture card to the loopback audio that
 OBS takes as an input source.
@@ -814,13 +1003,19 @@ get clever with it. For example, I'm thinking of using the Discord audio in my
 demo machine instead of the streamer machine and shoving its audio through the
 capture card:
 
-![From discord to capture card.](/images/2023/06/Screenshot-2023-06-17-at-9.29.44-AM.png)
+{{img(
+  src="/images/2023/06/Screenshot-2023-06-17-at-9.29.44-AM.png",
+  alt="From discord to capture card."
+)}}
 
 Then, I can use it as an audio source, instead of the guest start audio that
 comes from Twitch, and disable the "_guest star_" Chrome audio input entirely as
 shown below:
 
-![From capture card to "guest in".](https://www.zerotohero.dev/content/images/2023/06/Screenshot-2023-06-17-at-9.32.26-AM.png)
+{{img(
+  src="/images/2023/06/Screenshot-2023-06-17-at-9.32.26-AM.png",
+  alt="From capture card to guest in."
+)}}
 
 That would mean running one less application on the stream machine, which would
 ensure an even smoother streaming experience.
@@ -828,7 +1023,10 @@ ensure an even smoother streaming experience.
 Finally, here is how the game looks on OBS, the game audio streaming from the
 Vocals track is seen below:
 
-![Game streamed in OBS with audio coming from the virtual device.](https://www.zerotohero.dev/content/images/2023/06/Screenshot-2023-06-16-at-8.08.04-PM.png)
+{{img(
+  src="/images/2023/06/Screenshot-2023-06-16-at-8.08.04-PM.png",
+  alt="Game streamed in OBS with audio coming from the virtual device."
+)}}
 
 ## Conclusion
 
@@ -858,6 +1056,8 @@ is an opportunity to learn, grow, and create unforgettable experiences for your
 viewers.
 
 Keep pushing the boundaries, and may the source be with you 🦄.
+
+--------
 
 ## Section Contents
 

@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Grab Your Chisel and Start Pounding"
 date = "2021-11-01"
 
@@ -6,15 +15,21 @@ date = "2021-11-01"
 tags = ["roadmap", "reinvent", "creativity"]
 +++
 
-![Grab Your Chisel and Start Pounding](/images/size/w1200/2024/03/creativity2.png)
+{{img(
+  src="/images/size/w1200/2024/03/creativity2.png)g"
+  alt="Creativity requires experimentation."
+)}}
 
 ## Encourage Reinvention
 
 Everyone discourages us from reinventing the wheel. And it's not just the people
-around: All the software architecture [books](https://www.goodreads.com/book/show/85039.Pattern_Oriented_Software_Architecture_Volume_1)
-👏 [we](https://www.goodreads.com/book/show/85009.Design_Patterns)
-👏 [read](https://www.goodreads.com/book/show/14788830-structured-parallel-programming)
-are **against** reinvention, too.
+around: All the software architecture [books][posa]
+👏 [we][design-patterns] 👏 [read][structured-parallel-programming] are 
+**against** reinvention, too.
+
+[posa]: https://www.goodreads.com/book/show/85039.Pattern_Oriented_Software_Architecture_Volume_1
+[design-patterns]: https://www.goodreads.com/book/show/85009.Design_Patterns
+[structured-parallel-programming]: https://www.goodreads.com/book/show/14788830-structured-parallel-programming
 
 > "Well, you're obviously being totally naïve, of course," said the girl, "When
 > you've been in marketing as long as I have, you'll know that before any new
@@ -30,8 +45,10 @@ are **against** reinvention, too.
 > "And the wheel," said the Captain, "What about this wheel thingy? It sounds a
 > terribly interesting project."
 >
-> **Douglas Adams
-**, [The Hitchhiker's Guide to the Galaxy, Chapter 32](https://www.goodreads.com/book/show/386162.The_Hitchhiker_s_Guide_to_the_Galaxy)
+> --- **Douglas Adams**, [The Hitchhiker's Guide to the Galaxy, 
+> Chapter 32][hhttg]
+
+[hhgttg]: https://en.wikipedia.org/wiki/The_Hitchhiker%27s_Guide_to_the_Galaxy
 
 The reasoning is simple: The problem you are trying to solve has already been
 solved by others. Instead of doing it yourself, you should learn from others'
@@ -48,8 +65,9 @@ solution exists, then there won't be any solutions, to begin with.
 * And nothing existing will ever be polished, either.
 
 To break the cliché even further, you might be surprised that 
-[the **wheel** has been the most reinvented 
-tool ever](https://www.amazon.com/exec/obidos/ASIN/1568985967).
+[the **wheel** has been the most reinvented tool ever][wheel].
+
+[wheel]: https://www.amazon.com/exec/obidos/ASIN/1568985967
 
 ## Reinvent to **Make It Better**
 
@@ -75,10 +93,11 @@ The bottom line is:
 
 This is not only true for software but also true for anything you can imagine.
 Anything can be made better, faster,
-stronger; [our work is never over](https://www.youtube.com/watch?v=gAjR4_CbPpQ).
+stronger; [our work is never over][daft].
 
-Reinvent to **Transform**
-------------------------------
+[daft]: https://www.youtube.com/watch?v=gAjR4_CbPpQ
+
+## Reinvent to **Transform**
 
 *Mapping*, *Reduction*, *Filtering*, and *Transformation*: Anything you imagine
 will fall into one of these categories (*that means life, as we know it, is
@@ -94,19 +113,21 @@ You take a bunch of crazy **$#!%** and transform them into even crazier **$#!%
 **.
 
 I don't know you what you'd think, and I wholeheartedly believe that
-transformation is **not** a waste of time. We need to be **more creative** and *
-*less dull**. That's the only way to **transform**.
+transformation is **not** a waste of time. We need to be **more creative** and
+**less dull**. That's the only way to **transform**.
 
 The hard truth is that we carve out the edges of square pegs to fit them into
-round holes, and call this "_code reuse_".
+round holes, and call this "*code reuse*".
 
 Nothing is a simple as it seems. Nothing fits right for the first time.
 
-> **About the NIH Syndrome**  
-> Now, to be clear, I am also against the "[_not invented
-here_](https://en.wikipedia.org/wiki/Not_invented_here)" (NIH) syndrome. Yet, in
-> the developer community, I see an increased aptitude to blindly use tools
-> without questioning their internals.
+> **About the NIH Syndrome**
+> 
+> Now, to be clear, I am also against the "[*not invented here*][nih]" 
+> (NIH) syndrome. Yet, in the developer community, I see an increased aptitude 
+> to blindly use tools without questioning their internals.
+
+[nih]: https://en.wikipedia.org/wiki/Not_invented_here
 
 It's okay to be outrageous. It's the acts of insanity that often lead the
 simplest of solutions: Try new things and have fun.
@@ -135,7 +156,7 @@ You know what? Occasionally you will come up with a better wheel, too.
 
 That's not the purpose, though.
 
-The _purpose_ is to go **through** a **transformation**.
+The *purpose* is to go **through** a **transformation**.
 
 **The world needs its crazy-makers**, and the world needs lots of them.
 
@@ -143,15 +164,17 @@ The _purpose_ is to go **through** a **transformation**.
 
 "What I cannot create, I do not understand."
 
-👆 those were [Richard Feynman](https://en.wikipedia.org/wiki/Richard_Feynman)'s
+👆 those were [Richard Feynman][feynman]'s
 last words on his blackboard at the time of his death.
 
 Why do children break their toys? Because the best way to learn about something
 is to tear it into pieces and then bring those pieces together.
 
-Understanding is what makes you grow. Without an **understanding** of your *
-*environment**, you won't have the power. And to survive in any ecosystem,
+Understanding is what makes you grow. Without an **understanding** of your
+**environment**, you won't have the power. And to survive in any ecosystem,
 knowing the system helps a lot.
+
+[feynman]: https://en.wikipedia.org/wiki/Richard_Feynman
 
 ## Be a Tinkerer
 
@@ -191,20 +214,24 @@ have done before you:
 
 While reinventing your wheel, you will see the size of the giants on whose
 shoulders you are standing. Also, don't shy away from some of those people. When
-you [ask smart questions](http://www.catb.org/esr/faqs/smart-questions.html),
+you [ask smart questions][questions],
 they are, indeed, quite receptive and welcoming.
+
+[questions]: http://www.catb.org/esr/faqs/smart-questions.html
 
 ## Reinvent to **Adapt**
 
-Let's talk about [**evolution**](https://en.wikipedia.org/wiki/Evolution):
+Let's talk about [**evolution**][evolution]:
 
 > Without **variation**, a population cannot evolve in response to changing
-> environmental variables. As a result, it may face an increased risk of *
-*extinction**.
+> environmental variables. As a result, it may face an increased risk of 
+> **extinction**.
 
-That's what [the theory of evolution](https://en.wikipedia.org/wiki/Evolution)
+That's what [the theory of evolution][evolution]
 tells us. That is true for anything: *economics*, *politics*, *finance*,
 *programming*, *open-source*, **_ideas_**...
+
+[evolution]: https://en.wikipedia.org/wiki/Evolution
 
 Without **variety**, you cannot be fruitful, let alone multiply.
 
@@ -239,8 +266,8 @@ Reusing the wheel **can** be inefficient at best, and just plain wrong at worst.
 
 I am not saying to reinvent all the things---that would be counter-productive.
 
-It's just that you should analyze the reusable pieces that you plan to use *
-*very well**:
+It's just that you should analyze the reusable pieces that you plan to use 
+**very well**:
 
 Don't just read the public documents; dive into developer communities, read the
 source code, check the open bugs and issues, see what common pitfalls they have
@@ -265,32 +292,36 @@ will be simpler, easier to integrate, more lightweight, easy-to-maintain, you
 name it...*), then suck your ego up and use a battle-tested solution that
 everyone trusts.
 
-And if you do want to come up with your solution anyway, then do it in your *
-*personal** time.
+And if you do want to come up with your solution anyway, then do it in your 
+**personal** time.
 
 ## Reinvent for a **Competitive Edge**
 
 Assume you are one of the rare individuals wanting to create something that has
 never been done before. The type who wants
-to [disrupt the status quo](https://thedobook.co/products/do-disrupt-change-the-status-quo-or-become-it),
+to [disrupt the status quo][status-quo],
 you know---if you are aware of the alternatives and are purposefully
 reinventing, it is actually an **advantage**.
 
-Here's how [Joel Spolsky](joel spolsky) states that:
+Here's how [Joel Spolsky][joel] states that:
 
-> For example, if you're writing a cool 3D shoot-em-up game (_like Quake, around
-the same period_) and your key number one differentiator is to have the coolest
-> 3D graphics, you do not use whatever 3D library you can find---you write your
-> own because it's fundamental to what you do.  
-> **Joel Spolsky---
-**[Up the tata without a tutu](https://www.joelonsoftware.com/2000/12/02/up-the-tata-without-a-tutu/)
+> For example, if you're writing a cool 3D shoot-em-up game (*like Quake, around
+> the same period*) and your key number one differentiator is to have the 
+> coolest 3D graphics, you do not use whatever 3D library you can find---you 
+> write your own because it's fundamental to what you do.  
+> 
+> **Joel Spolsky**---[Up the tata without a tutu][tutu]
+
+[joel]: https://joelonsoftware.com/
+[tutu]: https://www.joelonsoftware.com/2000/12/02/up-the-tata-without-a-tutu/
+[status-quo]: https://thedobook.co/products/do-disrupt-change-the-status-quo-or-become-it
 
 This is far more than a pedagogical benefit:
 
 Reinventing the wheel actually takes you **ahead of the competition** because
 you can fine-tune your wheel precisely to your needs. Thus, you will **opt in**
-to **differentiate**, and **perform better** (_while, possibly, compromising
-clarity and reusability---and that's okay_).
+to **differentiate**, and **perform better** (*while, possibly, compromising
+clarity and reusability---and that's okay*).
 
 ## Beware of the **Cost of Reinvention**
 
@@ -300,12 +331,12 @@ can:
 During your reinvention, you will start with a **simple** and **obvious**
 solution to your problem.
 
-That "_simple_" and "_obvious_" solution will, _99% of the time_, be *
-*inadequate**:
+That "*simple*" and "*obvious*" solution will, *99% of the time*, be 
+**inadequate**:
 
 You will have to **reiterate** your solution over and over again.
 
-And that's a **good thing.**
+And that's a **good thing**.
 
 Sometimes, you will think that you have taken a reasonable path, only to find
 that things are getting more and more difficult as you try to improve your
@@ -317,16 +348,13 @@ rewind to the beginning.
 Your implementation will "*probably*" stink, and people will discourage you a
 lot.
 
-That's [**the innovator's dilemma
-**](https://www.goodreads.com/book/show/2615.The_Innovator_s_Dilemma). Sometimes
-it is right to listen to others, and then continue doing what you believe to be
-the right thing.
+That's [**the innovator's dilemma**][dilemma]. Sometimes it is right to listen 
+to others, and then continue doing what you believe to be the right thing.
 
 Another thing:
 
-Don't try to reinvent everything at once. --- It will put you into a [_paralysis
-by analysis_](https://en.wikipedia.org/wiki/Analysis_paralysis) mode, and you
-will gain nothing.
+Don't try to reinvent everything at once. --- It will put you into a [*paralysis
+by analysis*][analysis] mode, and you will gain nothing.
 
 ## Choose Something that Adds Value to You
 
@@ -334,21 +362,26 @@ will gain nothing.
 > sleep, why you live alone, and why night after night, you sit by your
 > computer... It's the question that drives us, Neo. It's the question that
 > brought you here. You know the question."  
-> --- [**The Matrix**](https://en.wikipedia.org/wiki/The_Matrix) (_1999_)
+> --- [**The Matrix**][matrix] (*1999*)
 
 As long as reinventing is your intention, and it does not stem from your lack of
 knowledge of other options, it's perfectly fine to do so---having said that, I
 am pretty much sure I can live without programming another linked list in my
 lifetime.
 
+[dilemma]: https://www.goodreads.com/book/show/2615.The_Innovator_s_Dilemma
+[analysis]: https://en.wikipedia.org/wiki/Analysis_paralysis
+[matrix]: https://en.wikipedia.org/wiki/The_Matrix
+
 So the question is not whether to reinvent.
 
-The question is: "_Is_ [**_the opportunity cost of the time you spend_
-**](https://www.investopedia.com/terms/o/opportunitycost.asp) _reinventing worth
-your efforts?_"
+The question is: "*Is [**the opportunity cost of the time you spend**][cost] 
+reinventing worth your efforts?*"
 
-Or, in other words: "_Is there a more productive way to occupy \_\_**your**\_\_
-time?_"
+[cost]: https://www.investopedia.com/terms/o/opportunitycost.asp
+
+Or, in other words: "*Is there a more productive way to occupy **your**
+time*?"
 
 Answering this question---and other similar questions---is **personal**, and has
 never been easy, and it **has to be made**.
@@ -359,7 +392,7 @@ That answer will **irreversibly change you**.
 
 > "Every child is an artist, the problem is staying an artist when you grow
 > up."  
-> -- **Pablo Picasso**
+> --- **Pablo Picasso**
 
 My friends consider me a hacker---and as such--- I have been **different**,
 diverse, **divergent**, throughout my life.
@@ -381,8 +414,8 @@ Screw the naysayers, and do **reinvent** things.
 With one caveat though:
 
 Don't think you are a smart ass who does not need to learn from the existing
-wheels and wheel makers, as that approach would be **selfish**, and *
-*galactically stupid**.
+wheels and wheel makers, as that approach would be **selfish**, and
+**galactically stupid**.
 
 We are geeks for a reason:
 
@@ -401,6 +434,8 @@ is different than resulting in nothing. Those who are only looking forward
 cannot see the leap you make.
 
 Dream a better dream and **reinvent** to make it real 🦄.
+
+--------
 
 ## Section Contents
 

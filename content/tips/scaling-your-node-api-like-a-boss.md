@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Scaling Your Node.js API Like a Boss"
 date = "2021-09-27"
 
@@ -6,7 +15,10 @@ date = "2021-09-27"
 tags = ["tips", "nodejs", "performance", "scalability"]
 +++
 
-![Scaling Your Node.js API Like a Boss](/images/size/w1200/2024/03/scalability.png)
+{{img(
+  src="/images/size/w1200/2024/03/scalability.png",
+  alt="Scaling Your Node.js API Like a Boss."
+)}}
 
 > This is a 90-minute tech talk that I've given several years ago.
 >
@@ -32,6 +44,8 @@ Here is the second part:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/f5phsX4VUOU?si=C0oatuzskeT5eq5G" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Enjoy... And until next time... May the source be with you 🦄.
+
+--------
 
 ## Section Contents
 

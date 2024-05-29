@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Zero to Prod in Half an Hour: Part 14: Onwards to Kubernetes"
 date = "2022-02-09"
 
@@ -6,26 +15,26 @@ date = "2022-02-09"
 tags = ["zero-to-prod"]
 +++
 
-Onwards to Kubernetes
-=====================
-
-![Onwards to Kubernetes](/zerotohero-dev/content/images/size/w1200/2024/03/eks.png)
+{{img(
+  src="/images/size/w1200/2024/03/eks.png",
+  alt="Onwards to Kubernetes."
+)}}
 
 As a final step, we'll deploy our application to an AWS EKS Kubernetes cluster
 and make sure that it's healthy, up, and running.
 
-Lecture
--------
+## Lecture
 
-Zero to Prod in Half an Hour: Part 14 --- Onwards to Kubernetes
+{{vimeo(
+  id="662457596",
+  title="Zero to Prod in Half an Hour: Part 14 --- Onwards to Kubernetes"
+)}}
 
-Playlist
---------
+## Playlist
 
 {{ zero_to_prod_nav(selected = 14) }}
 
-Tools and Technologies Mentioned
---------------------------------
+## Tools and Technologies Mentioned
 
 Here are the tools and technologies that were mentioned in the video, along with
 related articles and other helpful links.
@@ -44,20 +53,19 @@ related articles and other helpful links.
 * [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/)
 * [Configure Liveness, Readiness, and Startup Probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/)
 
-High-Level Deployment Diagram
-----------------------------------
+## High-Level Deployment Diagram
 
 Here's a high-level diagram for the entire Kubernetes deployment.
 
-![](https://www.zerotohero.dev/content/images/2022/02/fizz-cluster-high-level-diagram.png)
+{{img(
+  src="/images/size/w1200/2022/02/fizz-cluster-high-level-diagram.png",
+  alt="Fizz Cluster High-Level Deployment Diagram"
+)}}
 
-Fizz Cluster High-Level Deployment Diagram
+## Read The Source
 
-Read The Source
----------------
-
-* [Download the source code (_114kb zip
-  archive_)](https://assets.zerotohero.dev/zero-to-prod-in-30/zero-to-prod-in-30.zip)
+* [Download the source code (*114kb zip
+  archive*)](https://assets.zerotohero.dev/zero-to-prod-in-30/zero-to-prod-in-30.zip)
 
 ------------
 

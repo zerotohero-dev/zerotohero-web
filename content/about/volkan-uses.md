@@ -15,7 +15,10 @@ date = "2024-03-04"
 tags = ["about", "volkan", "setups"]
 +++
 
-![Volkan Uses](/images/size/w1200/2024/03/trinkets.png)
+{{img(
+  src="/images/size/w1200/2024/03/trinkets.png"
+  alt="Tools and trinkets."
+)}}
 
 This is a list of tools, gadgets, software, and hardware I currently use, have 
 liked, and find worth mentioning.
@@ -29,7 +32,7 @@ liked, and find worth mentioning.
 
 * [Vadideki Geyik](@/vadideki-geyik/_index.md): Hands down, the best Turkish
   tech podcast.
-* [zerotohero.dev](/): My blog (_that you are reading right now_).
+* [zerotohero.dev](/): My blog (*that you are reading right now*).
 * [My Twitter](https://twitter.com/vadidekivolkan)
 * [My GitHub](https://github.com/v0lkan)
 * [My Twitch](https://twitch.tv/VadidekiVolkan)
@@ -750,8 +753,7 @@ arrows.
 * [Audible](https://www.audible.com/): I use this to listen to books.
 * [Kindle](https://read.amazon.com/kindle-library): I use this to read books.
 
-**"_the Cloud_"**
------------------
+## "_the Cloud_"
 
 * [AWS](https://aws.amazon.com/): Yes, it's expensive compared to the 
 * competition. Yes, it's complicated. Yet, it's a cloud that I can count on.
@@ -811,7 +813,7 @@ arrows.
 My "*go-to*" distro is **Ubuntu**: Stable, reliable, and easy to use. I switch 
 between distros from time to time, to see what's new, and to learn new things though.
 
-* [Ubuntu](https://ubuntu.com/): My "_go-to_" distro.
+* [Ubuntu](https://ubuntu.com/): My "*go-to*" distro.
 * [Fedora](https://getfedora.org/): I use this when I need to use a 
   RedHat-based distro.
 * [Arch Linux](https://archlinux.org/): I use this when I need to torture myself.
@@ -947,6 +949,8 @@ are even extinct (*and I provided web archive links for them instead*).
   "*free beer*".
 * [astalavista.box.sk](astalavista.box.sk): I used to visit this site to learn 
   about security.
+
+--------
 
 ## Explore More
 

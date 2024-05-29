@@ -15,7 +15,10 @@ date = "2021-05-29"
 tags = ["highlights"]
 +++
 
-![Know Thyself](/images/size/w1200/2024/03/Volkan_zelik_introspection_fff39537-a2d6-468a-95c1-b1c1994c7c59.png)
+{{img(
+  src="/images/size/w1200/2024/03/Volkan_zelik_introspection_fff39537-a2d6-468a-95c1-b1c1994c7c59.png"
+  alt="Know thyself."
+)}}
 
 ## Lots of New Things Cooking in the Kitchen 👩‍🍳,
 
@@ -24,14 +27,14 @@ Welcome to the third issue of **Zero to Hero** Highlights.
 This week has been a total rush with many articles and content and some
 functional and visual updates.
 
-Ah, I've [updated the about page too](https://www.zerotohero.dev/about/). The
+Ah, I've [updated the about page too](@/about/_index.md). The
 page describes what **Zero to Hero** is and where it is heading towards. You can
 also
 find [a video of me talking about it](https://vimeo.com/v0lkan/zero-to-hero).
 
-There is a new [**Tutorials**](@/_index.md) section where I'll write and talk about actual 
-production projects that real people use. It will **not** be a sandbox 
-"*restaurant rating React app*" or a yet 'nother "*to-do list*" clone. 
+There is a new [**Tutorials**](@/_index.md) section where I'll write and talk 
+about actual production projects that real people use. It will **not** be a 
+sandbox "*restaurant rating React app*" or a yet "'nother" *to-do list*" clone. 
 I'll develop and talk about **real**, **living **, **evolving** **production 
 apps** [in the **use cases** section](@/_index.md).
 
@@ -40,12 +43,11 @@ design, deploy, develop, secure, scale up, and maintain the application for
 real-life use. It'll be so much fun! I'm really excited about this.
 
 > Additionally, I will take my notes to create separate articles and videos
-> about any tool, technology, and foundational knowledge that I use in those **use
-cases**. I will provide enough learning material to deep dive for the
+> about any tool, technology, and foundational knowledge that I use in those 
+> **use cases**. I will provide enough learning material to deep dive for the
 > interested.
 
-Random Thought of the Week
--------------------------------
+## Random Thought of the Week
 
 Along with the rapid development of technology, it's getting harder and harder
 to do everything by yourself. You inevitably find yourself having to work with
@@ -61,9 +63,9 @@ work culture.
 To be a good leader, you'd need to **know how you lead**; and to understand how
 you lead, you'd need to **self-reflect**.
 
-It might sound coming from the mouth
-of [the oracle of Delphi](https://en.wikipedia.org/wiki/Pythia) (_and_ [_it
-actually is_](https://en.wikipedia.org/wiki/Know_thyself)) and a bit
+It might sound coming from the mouth of [the oracle of 
+Delphi](https://en.wikipedia.org/wiki/Pythia) (*and [it
+actually is](https://en.wikipedia.org/wiki/Know_thyself)*) and a bit
 wishy-washy, but knowing how you lead starts with **knowing yourself**.
 
 So how do you know yourself? Well, that's obviously personal, but there are
@@ -89,13 +91,13 @@ Let's look at these topics with a larger lens.
 It is also knowing how you are influenced by others and how you influence
 others.
 
-When you are self-aware, you are confident, you can realistically (_and often
-brutally_) self-assess your behaviors. You have an insatiable thirst for
+When you are self-aware, you are confident, you can realistically (*and often
+brutally*) self-assess your behaviors. You have an insatiable thirst for
 constructive criticism.
 
 ### Self-regulation
 
-Related to _self-awareness_, **self-regulation** is controlling disruptive
+Related to *self-awareness*, **self-regulation** is controlling disruptive
 impulsive and moods that may prevent you from actualizing your potential.
 
 When you self-regulate, you observe and understand how you feel, but you don't
@@ -127,7 +129,7 @@ That will help you become a better leader who can understand and develop others.
 You will become more **perceptive** to people's identities and understand the
 nuances in cross-cultural differences in how people act.
 
-**Empathy** (_not charisma, not power, not anything else but empathy_) is the
+**Empathy** (*not charisma, not power, not anything else but empathy*) is the
 force that attracts and retains people around you.
 
 ### Influence
@@ -145,28 +147,24 @@ naturally.
 
 Here are the recent articles for the week:
 
-* [**It's time to Fizz that Buzz**](https://www.zerotohero.dev/fizz-that-buzz/):
-  In this video, I'm talking about **FizzBuzz Pro**---a sister project of **Zero
-  to Hero**. I'm outlining a high-level architecture of the login flow of the
-  project, how it integrates with the Ghost content publishing platform as a
-  membership provider, and how I'm going to proceed.
-* [**Installing Go on a Mac
-  **](https://www.zerotohero.dev/installing-go-on-a-mac/): This is a
+* [**Installing Go on a 
+  Mac**](@/vadideki-geyik/geyik-academy/go101/installing-go-on-a-mac.md): 
+  This is a
   step-by-step set of instructions to install a **Go** development environment
   on a **Mac OS**. I've also created a video to show you how the process
   actually looks. Still, it's not ready yet---I'll publish the video sometime
   next week.
-* [**Places to learn Go**](https://www.zerotohero.dev/learn-go/): This article
-  covers tools and resources that can help you ramp up with **Go** programming
-  and make you learn enough Go to be dangerous, at least.
+* [**Places to learn Go**](@vadideki-geyik/geyik-academy/learn-go.md): This 
+  article covers tools and resources that can help you ramp up with **Go** 
+  programming and make you learn enough Go to be dangerous, at least.
 
 > Yes, there will be more **Go** content on the way; that said, we'll be
 > covering a hell lot of **JavaScript** and other related technologies too. Stay
 > tuned.
 >
 > One thing that I constantly emphasize is the fact that _languages are tools_.
-> And you **use tools, not rules**: You pick the right tool for the job. And **Go
-** is the right tool for certain topics that we are going to cover.
+> And you **use tools, not rules**: You pick the right tool for the job. And 
+> **Go** is the right tool for certain topics that we are going to cover.
 
 ## Look What I've Found
 
@@ -194,6 +192,8 @@ That's all for this week. Next week, I'll gather more unique content and
 resources.
 
 So, until next time... May the source be with you 🦄.
+
+--------
 
 ## Issues
 

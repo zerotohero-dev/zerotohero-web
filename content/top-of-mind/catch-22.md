@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Catch 22"
 date = "2024-03-08"
 
@@ -34,6 +43,8 @@ concurrently to avoid confusion.
 Since the book was released, the phrase "Catch 22" has become part of English,
 describing a situation in which one is stuck and can't find a way out due to
 conflicting rules or circumstances.
+
+--------
 
 ## Section Contents
 

@@ -1,22 +1,34 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "mTLS With SPIRE: Part 1: Introduction"
 date = "2021-10-19"
 
 [taxonomies]
-tags = ["mtls", "spiffe", "spire"]
+tags = ["mtls", "spiffe", "spire", "zero-trust", "security"]
 +++
 
-![mTLS With SPIRE: Part 1: Introduction](/images/size/w1200/2024/03/cluster-arch.png)
+{{img(
+  src="/images/size/w1200/2024/03/cluster-arch.png",
+  alt="mTLS With SPIRE: Part 1: Introduction"
+)}}
 
 This video will introduce the cluster architecture and talk about what we are
 planning to achieve by the end of the video series.
 
-{{ 
-  vimeo(
-    id="760885179", 
-    title="mTLS With SPIRE: Part 1: Introduction"
-  ) 
-}}
+{{vimeo(
+  id="760885179", 
+  title="mTLS With SPIRE: Part 1: Introduction"
+)}}
+
+--------
 
 ## Playlist
 
@@ -27,7 +39,8 @@ planning to achieve by the end of the video series.
 Here are the tools and technologies that were mentioned in the video, along with
 related articles and other helpful links.
 
-* [Setting Up **SPIRE** on EKS in Less Than Ten Minutes](https://www.zerotohero.dev/spire-rocks/) (_read this first_)
+* [Setting Up **SPIRE** on EKS in Less 
+  Than Ten Minutes](@/spire/spire-rocks.md) (_read this first_)
 * [Public Key Infrastructure (**_PKI_**)](https://en.wikipedia.org/wiki/Public_key_infrastructure)
 * [Transport Layer Security (**_TLS_**)](https://en.wikipedia.org/wiki/Transport_Layer_Security)
 * [Mutual Transport Layer Security (**_mTLS_**)](https://en.wikipedia.org/wiki/Mutual_authentication)

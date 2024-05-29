@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Zero to Prod in Half an Hour"
 description = "Develop and deploy an end-to-end production-ready system in less than half an hour."
 date = "2021-11-26"
@@ -25,9 +34,9 @@ Prequel
 
 For some background info on design decisions behind the project you might want to look into these articles below before watching the playlist in the next section:
 
-*   [It's Time to Fizz that Buzz](https://www.zerotohero.dev/fizz-that-buzz/)
-*   [FizzBuzz Pro High Level Design](https://www.zerotohero.dev/fizz-that-buzz/)
-*   [The Repositories, Tools, and Services We'll Use for FizzBuzz Pro](https://www.zerotohero.dev/here-are-the-repositories-tools-and-services-well-use-for-fizzbuzz-pro/)
+*   [It's Time to Fizz that Buzz](@/zero-to-prod/fizz-that-buzz.md)
+*   [FizzBuzz Pro High Level Design](@/zero-to-prod/fizzbuzz-pro-hla.md)
+*   [The Repositories, Tools, and Services We'll Use for FizzBuzz Pro](@/zero-to-prod/an-overview-of-fizzbuzz-pro.md)
 
 
 Read The Source
@@ -35,8 +44,7 @@ Read The Source
 
 Follow the link below to download the source code that we've developed in these lectures.
 
-* [Download the source code (_114kb zip archive_)](https://assets.zerotohero.dev/zero-to-prod-in-30/zero-to-prod-in-30-src.zip)
-
+* [Download the source code (*114kb zip archive*)](https://assets.zerotohero.dev/zero-to-prod-in-30/zero-to-prod-in-30-src.zip)
 
 ## Lectures
 

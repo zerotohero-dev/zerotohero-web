@@ -15,11 +15,13 @@ date = "2024-05-18"
 tags = ["about", "volkan", "contact"]
 +++
 
-![Contact 🤙](/images/size/w1200/2024/03/0_0.webp)
+{{img(
+  src="/images/size/w1200/2024/03/0_0.webp)
+  alt="Have your say."
+)}}
 
-If you want to contact me, my personal website [**volkan.io**][web] 
+If you want to contact me, [this contact page][web] 
 lists social platforms I'm actively contributing to.
-
 You can also email me at [**me@volkan.io**][email]; 
 however, don't expect an immediate reply (*or a reply at all*).
 
@@ -29,8 +31,10 @@ May the source be with you 🦄,
 
 Volkan.
 
-[web]: https://volkan.io/
+[web]: @/about/contact.md
 [email]: mailto:me@volkan.io
+
+--------
 
 ## Explore More
 

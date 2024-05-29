@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Build Strong Connections to Land Your Dream Job"
 date = "2023-08-18"
 
@@ -121,6 +130,8 @@ your networking endeavors with genuine empathy and respect. The rewards will be
 significant. Your career will flourish as a result.
 
 Now, go get that job! And, may the source be with you 🦄.
+
+--------
 
 ## Section Contents
 

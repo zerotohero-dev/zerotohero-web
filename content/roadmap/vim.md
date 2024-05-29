@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Master Your vim"
 date = "2021-11-27"
 
@@ -6,10 +15,12 @@ date = "2021-11-27"
 tags = ["roadmap", "vim", "productivity"]
 +++
 
-![Master Your vim](/images/size/w1200/2024/03/vim.png)
+{{img(
+  src="/images/size/w1200/2024/03/vim.png",
+  alt="vim is powerful."
+)}}
 
-Introduction
-------------
+## Introduction
 
 [`vim`](https://www.vim.org/) is a highly configurable text editor built to make
 creating and changing any kind of text very efficient. It is included as `vi`
@@ -23,19 +34,19 @@ well will certainly make you a more productive developer. Besides, if you are a
 developer, sooner or later, you'll have to use `vim` in your career at least at
 a bare minimum level. So the earlier you begin learning it, the better.
 
-How Do I Learn `vim`?
----------------------
+## How Do I Learn `vim`?
 
 Here are a few resources that can help you speed up your `vim` learning:
 
 * [Vim genius](http://www.vimgenius.com/)
 * [Open Vim](https://www.openvim.com/)
-* [Practical Vim: Edit Text at the Speed of Thought](https://www.goodreads.com/book/show/13607232-practical-vim) (
-  _this one is one of the best books I've read about `vim`; and it, indeed, is practical_)
-* [Learning \`vi\` and \`vim\` Editors](https://www.goodreads.com/book/show/2403747.Learning_the_vi_and_Vim_Editors)
+* [Practical Vim: Edit Text at the Speed of Thought](https://www.goodreads.com/book/show/13607232-practical-vim) 
+  (*this one is one of the best books I've read about `vim`; and it, indeed, 
+  is practical*)
+* [Learning `vi` and `vim` Editors](https://www.goodreads.com/book/show/2403747.Learning_the_vi_and_Vim_Editors)
 
-However, the only way to learn \`vim\` is to **actively** use it. Luckily
-enough, almost any code editor has a _vim emulation_ mode or a _vim plugin_ that
+However, the only way to learn `vim` is to **actively** use it. Luckily
+enough, almost any code editor has a *vim emulation* mode or a *vim plugin* that
 you can download and install.
 
 > **Most IDEs Have a `vim` Emulation Mode**  
@@ -44,7 +55,7 @@ you can download and install.
 > old `vim`---it's not exactly the same thing, but for most practical purposes
 > it'll be "close enough."
 
-If you use the "_vim mode_" in your editor of choice, then using `vim` on the
+If you use the "*vim mode*" in your editor of choice, then using `vim` on the
 terminal will be second-nature to you.
 
 ## Conclusion
@@ -53,14 +64,15 @@ When you master `vim`, you'll see that it will have a **positive** impact on
 your development productivity.
 
 Yes, `vim` is an editor that has one of the **steepest** learning curves; and
-it's **worth** your time to learn it. There are even people who claim "[_vim
-learning curve is a
-myth_](https://robots.thoughtbot.com/the-vim-learning-curve-is-a-myth)", so
+it's **worth** your time to learn it. There are even people who claim "[*vim 
+learning curve is a myth*](https://robots.thoughtbot.com/the-vim-learning-curve-is-a-myth)", so
 maybe it is not that hard after all 😉.
 
 I hope you find the resources here useful in you `vim` learning journey.
 
 Until next time... May the source be with you 🦄.
+
+--------
 
 ## Section Contents
 

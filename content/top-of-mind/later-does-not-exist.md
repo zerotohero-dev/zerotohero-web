@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "'Later' Does Not Exist"
 date = "2022-11-17"
 
@@ -96,6 +105,8 @@ have is to **be selective** and **do less**.
 ☝️ That's the only way to stay afloat.
 
 Later 👋.
+
+--------
 
 ## Section Contents
 

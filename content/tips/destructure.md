@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Use Destructuring to Remove Attributes "
 date = "2023-03-07"
 
@@ -6,7 +15,10 @@ date = "2023-03-07"
 tags = ["tips", "javascript", "destructuring"]
 +++
 
-![Use Destructuring to Remove Attributes](/images/size/w1200/2024/03/destructure.png)
+{{img(
+  src="/images/size/w1200/2024/03/destructure.png",
+  alt="Destructure."
+)}}
 
 Here's a neat little trick:
 
@@ -34,6 +46,8 @@ It's much cleaner than looping through all attributes, eh?
 That was your little nugget.
 
 Until next time... May the source be with you 🦄.
+
+--------
 
 ## Section Contents
 

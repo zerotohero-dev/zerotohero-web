@@ -15,9 +15,10 @@ date = "2024-05-18"
 tags = ["about", "volkan"]
 +++
 
-![About Me](/images/size/w1200/2024/03/deerz.webp)
-
-Don't miss the deer, go kiss the deer 🦌💋.
+{{img(
+  src="/images/size/w1200/2024/03/deerz.webp"
+  alt="Don't miss the deer, go kiss the deer 🦌💋.
+)}}
 
 ## Hey There 👋
 
@@ -30,27 +31,38 @@ I like tinkering with systems, and I’m not afraid to **break stuff**.
 
 ## Follow Me
 
-{{ bolt_ico() }} [I help people _level up_ at **Zero to Hero**](/).
+{{ bolt_ico() }} [I help people *level up* at **Zero to Hero**](@/_index.md).
 
-{{ twitch_ico() }} [I live-stream code on **Twitch**](https://twitch.tv/VadidekiVolkan).
+{{ twitch_ico() }} [I live-stream code on **Twitch**][twitch].
 
-{{ deer_ico() }} [I podcast at **the Deer in the Valley**](@/vadideki-geyik/_index.md).
+{{ deer_ico() }} [I podcast at **the Deer in the Valley**][geyik].
 
-{{ turtle_ico() }} [I mentor turtles at **Kampus**](https://discord.gg/kampus).
+{{ turtle_ico() }} [I mentor turtles at **Kampus**][kampus].
 
-{{ piano_ico() }} [I am an okayest **pianist**](https://www.youtube.com/@SeeTheMusic).
+{{ piano_ico() }} [I am an okayest **pianist**][music].
 
-{{ linkedin_ico() }} [I am **volkanozcelik** on the “**pro birdsite**”](https://linkedin.com/in/volkanozcelik).
+{{ linkedin_ico() }} [I am **volkanozcelik** on the 
+“**pro birdsite**”][linkedin].
 
-{{ twitter_ico() }} [I post technology rants on the **birdiste**](https://twitter.com/vadidekivolkan).
+{{ twitter_ico() }} [I post technology rants on the **birdiste**][twitter].
 
-{{ github_ico() }} [The source is strong at **zerotohero-dev**](https://github.com/zerotohero-dev/).
+{{ github_ico() }} [The source is strong at **zerotohero-dev**][github].
+
+[twitch]: https://twitch.tv/VadidekiVolkan
+[geyik]: @/vadideki-geyik/_index.md
+[kampus]: https://discord.gg/kampus
+[music]: https://www.youtube.com/@SeeTheMusic
+[linkedin]: https://linkedin.com/in/volkanozcelik
+[twitter]: https://twitter.com/vadidekivolkan
+[github]; https://github.com/zerotohero-dev/
 
 ## Broadcom
 
 Currently, I'm a **Senior Principal Engineer** (*Master*) at 
-[**Broadcom**](https://www.broadcom.com), reinventing Radio Access Networks as 
+[**Broadcom**][broadcom], reinventing Radio Access Networks as 
 you know it.
+
+[broadcom]: https://www.broadcom.com
 
 ## Zero Trust, SPIFFE, and SPIRE
 
@@ -94,6 +106,8 @@ I’m pretty sure there’s much more to add to the list that I don’t remember
 right now.
 
 Yet, that’s me in a nutshell: I’m a pragmatist nerd who gets _$#!%_ done.
+
+--------
 
 ## Explore More
 

@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Zero to Prod in Half an Hour: Part 7: A Mild Introduction to Middlewares"
 date = "2024-03-05"
 
@@ -6,20 +15,23 @@ date = "2024-03-05"
 tags = ["zero-to-prod"]
 +++  
 
-![Bob Ross](/images/size/w1200/2024/03/bob.png)
+{{img(
+  src="/images/size/w1200/2024/03/bob.png",
+  alt="Let us put a happy little middleware here."
+)}}
 
 This section will introduce a middleware layer to our project and we'll write a 
 sample middleware to see it in action.
 
 ## Lecture
 
-{{ 
-  vimeo(
-    id="661986834", 
-    title="Zero to Prod in Half an Hour: Part 7: 
-      A Mild Introduction to Middlewares"
-  ) 
-}}
+{{vimeo(
+  id="661986834", 
+  title="Zero to Prod in Half an Hour: Part 7: 
+    A Mild Introduction to Middlewares"
+)}}
+
+--------
 
 ## Playlist
 
@@ -31,15 +43,12 @@ Here are the tools and technologies that were mentioned in the video, along
 with related articles and other helpful links.
 
 * [What is a Middleware][middleware]
-* [Choosing Between www and non-www URLs][non-www]
 * [cURL][curl]
 
 [middleware]: https://developer.mozilla.org/en-US/docs/Glossary/Middleware
-[non-www]: https://www.zerotohero.dev/zero-to-prod-in-30/non-www-urls/
 [curl]: https://curl.se/
 
-Read The Source
----------------
+## Read The Source
 
 * [Download the source code (*114kb zip archive*)][souce]
 

@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Unlock Your Brain's Power: Learn Fast, Remember More"
 date = "2024-01-14"
 
@@ -6,14 +15,20 @@ date = "2024-01-14"
 tags = ["roadmap", "learning", "memory-retention", "memory"]
 +++
 
-![Unlock Your Brain's Power: Learn Fast, Remember More](/images/size/w1200/2024/03/retention.png)
+{{img(
+  src="/images/size/w1200/2024/03/retention.png",
+  alt="Be limitless."
+)}}
 
 **Memory retention**is a critical aspect of your**learning**
 process. [Research after research shows](https://uwaterloo.ca/campus-wellness/curve-forgetting)
 that, without active engagement,**about 50% of new information can be lost
 within an hour**, escalating to 70% after a day and up to 90% after a week.
 
-![The Curve of Forgetting](/images/2024/01/curve_0-500x231.gif)
+{{img(
+  src="/images/2024/01/curve_0-500x231.gif",
+  alt="The curve of forgetting."
+)}}
 
 To combat this, here are scientifically-backed strategies to enhance memory
 retention:
@@ -82,7 +97,7 @@ understanding and memory retention. This technique involves four key steps:
 
 [Establishing connections between information and what you know creates a 
 knowledge network that facilitates retrieval](https://www.frontiersin.org/articles/10.3389/fnbeh.2013.00139/full#B12).
-The more "**_unusual_**"these connections are, the better it will stick.
+The more "**_unusual_**" these connections are, the better it will stick.
 
 ## Actively Retrieve Information from Memory
 
@@ -124,6 +139,8 @@ functions resulting in more effective and long-lasting memory retention.
 * [Study shows stronger brain activity after writing on paper than on tablet or smartphone](https://www.sciencedaily.com/releases/2021/03/210319080820.htm)
 * [Reading Information Aloud to Yourself Improves Memory](https://neurosciencenews.com/memory-reading-aloud-8084/)
 * [Reading information aloud to yourself improves memory of materials](https://www.sciencedaily.com/releases/2017/12/171201090940.htm)
+
+--------
 
 ## Section Contents
 

@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Craft Captivating Documentation"
 date = "2023-07-21"
 
@@ -74,6 +83,8 @@ positioning your project for more outstanding achievements.
 Go ahead, put your docs 🦆🦆🦆 in a row. 
 
 And until next time... May the source be with you 🦄.
+
+--------
 
 ## Section Contents
 

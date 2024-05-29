@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Master Your Mind: Unleash the Power of Learning"
 date = "2024-03-06"
 
@@ -7,6 +16,11 @@ tags = ["roadmap", "learning"]
 +++
 
 ![Master Your Mind: Unleash the Power of Learning](/images/size/w1200/2024/03/rivers.png)
+
+{{img(
+  src="/images/size/w1200/2024/03/rivers.png",
+  alt="The art of learning."
+)}}
 
 > **Read Me First**
 >
@@ -60,8 +74,8 @@ and discern which principles to draw upon from your experiences.
 ## Elaboration
 
 Try elaborating on concepts by providing explanations and multiple illustrations
-to understand a subject. Breaking down concepts you are studying into *
-*analogies**, **components**, or fundamental **principles** can facilitate
+to understand a subject. Breaking down concepts you are studying into 
+**analogies**, **components**, or fundamental **principles** can facilitate
 comprehension.
 
 ## Reflection
@@ -115,6 +129,8 @@ goals.
 Embracing these strategies will transform how you learn and approach learning
 itself, laying the groundwork for continuous progress and growth across all
 aspects of life.
+
+--------
 
 ## Section Contents
 

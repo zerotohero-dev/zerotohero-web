@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Interview Done. Radio Silence 🎃 What Now?"
 date = "2021-10-22"
 
@@ -6,7 +15,12 @@ date = "2021-10-22"
 tags = ["highlights"]
 +++
 
-![Interview Done. Radio Silence 🎃 What Now?](/images/size/w1200/2024/03/radio.png)
+![Interview Done. Radio Silence 🎃 What Now?]()
+
+{{img(
+  src="/images/size/w1200/2024/03/radio.png"
+  alt="Radio silence?"
+)}}
 
 Welcome to the 24th issue of **Zero to Hero** Highlights.
 
@@ -30,54 +44,65 @@ If you are interested in federating identities across multiple clusters and
 using mutual transport layer security over **gRPC** to let workloads talk
 between those clusters. First of all, you have weird interests 🙂. And secondly,
 I have a series of ten videos over forty-five minutes that you can
-enjoy [mTLS With SPIRE](@/spire/mtls/_index.md).
+enjoy [mTLS With SPIRE][spire-mtls].
 
-![SPIFFE, SPIRE, Ninja Turtles 🐢🐢🐢](/images/2022/10/Fe0tEnHUcAAzJ45-2.jpeg)
+{{img(
+  src="/images/2022/10/Fe0tEnHUcAAzJ45-2.jpeg"
+  alt="SPIFFE, SPIRE, Ninja Turtles 🐢🐢🐢"
+)}}
 
-[In the series](@/spire/mtls/_index.md), as usual, I assume
+[In the series][spire-mtls], as usual, I assume
 nothing and begin with a blank slate, coding everything from scratch and
 creating a brand-new project. On the videos' web page, you can also get the
 source code and find many relevant links and articles to dive further.
+
+[spire-mtls]: @/spire/mtls/_index.md
 
 ## Distributed Systems Are Grinches
 
 Well, I thought of something else instead of a "*grinch*", but I'm so very
 polite, and I'm not going to say that thing.
 
-This is from [Evan Gilman](https://twitter.com/evan2645) on **SPIFFE** Slack
+This is from [Evan Gilman][evan] on **SPIFFE** Slack
 Channel. Evan is also the author
-of [Zero Trust Networks](https://www.goodreads.com/book/show/31805610-zero-trust-networks).
+of [Zero Trust Networks][zero-trust-networks].
 So, when he talks about **Distributed Systems**, you can assume he knows what
 he's talking about (*content edited for brevity and clarity*):
 
+[evan]: https://twitter.com/evan2645
+[zero-trust-networks]: https://goodreads.com/book/show/31805610-zero-trust-networks
+[spire]: https://spiffe.io/docs/latest/spire-about/
+
 > Here are a few things that come to mind when you want to use a remote database
 > such as Google Cloud Spanner as the backing store of a distributed system that
-> requires **strong consistency** (_such as_ [
-_SPIRE_](https://spiffe.io/docs/latest/spire-about/)):
+> requires **strong consistency** (*such as [SPIRE][spire]*):
 >
-> **Performance**  
+> **Performance**
+> 
 > Tight consistency will always require some number of round trips with some
 > quorum of nodes to commit changes and move forward. And, there will always be an
 > upper limit applied to how fast this system can progress: The latency or round
 > trip time between participants is a crucial factor.
 >
-> Given (_increased_) latency, the system will naturally hit a performance wall.
-> This can be (_sometimes disastrously_) exacerbated by the "_Internet weather_".
+> Given (*increased*) latency, the system will naturally hit a performance wall.
+> This can be (*sometimes disastrously*) exacerbated by the "*Internet weather*".
 >
-> **Operational Overhead**  
+> **Operational Overhead**
+> 
 > Some systems require synchronization periods when starting new or restarting
 > existing nodes. During these periods, bulk transfer of data occurs.
 >
-> Cross-region pipes or commodity Internet is usually (_comparatively_) lower
+> Cross-region pipes or commodity Internet is usually (*comparatively*) lower
 > throughput. So, depending on how much data you're talking about, it can induce
 > significant amounts of overhead on the wire and wait time during operations for
 > the cluster to stabilize following some event.
 >
-> There will be similar concerns about time-to-recover from a restore (_i.e.,
-make sure your restore data is close by_)
+> There will be similar concerns about time-to-recover from a restore 
+> (*i.e., make sure your restore data is close by*).
 >
 > **Exotic Failure Modes**  
-> Nost distributed systems aren't written, and don't get tested, for use across
+> 
+> Most distributed systems aren't written, and don't get tested, for use across
 > high latency lossy links. Lots of weird things can happen across these links,
 > which tend to have at least a couple middle boxes:
 >
@@ -91,13 +116,14 @@ make sure your restore data is close by_)
 >
 > And many times, bugs are uncovered because nobody ever tried it before.
 
-For the
-record, [here is an article that Evan wrote about exactly one of 
-these cases](https://arstechnica.com/information-technology/2015/05/the-discovery-of-apache-zookeepers-poison-packet/).
+For the record, [here is an article that Evan wrote about exactly one of 
+these cases][poison-packet].
 
 Why did I share it? Because I didn't want it to be lost in Slack archives. And
 dear Slack: **show some ❤️ to open source communities**. Not many of them have
 the funds to secure a paid plan.
+
+[poison-packet]: https://ars-technica.com/information-technology/2015/05/the-discovery-of-apache-zookeepers-poison-packet/
 
 ## Interview Done. Radio Silence. What Now?
 
@@ -125,8 +151,8 @@ And there is nothing wrong with that, either.And, there is nothing wrong with
 that either. Companies choose candidates for variety of reasons, and some of
 those reasons are not related to knowledge, skills, and abilities.
 
-Though if they say something like, "_We'll have some decision made in the next
-two weeks_," you are likely still in consideration.
+Though if they say something like, "*We'll have some decision made in the next
+two weeks*," you are likely still in consideration.
 
 Once the debriefing time passes, don't take the silence personally. Either the
 hiring manager has not been dedicated yet. Or, more likely, the recruiter has
@@ -138,7 +164,7 @@ attend, the higher your odds are.
 
 **Look from the bright side:** Your résumé demonstrated that your experience and
 interview skills were solid. You weren't the top candidate and maybe got a 
-"_silver medal_," so what? That's a-o-kay. Chin up, buckle up, and move on to the
+"*silver medal*," so what? That's a-o-kay. Chin up, buckle up, and move on to the
 next opportunity.
 
 ## Look What I've Found
@@ -149,9 +175,16 @@ I typically don't share these anywhere else.
 
 Exclusively hand-picked for you 👌. Enjoy.
 
-* [**Prisma** is an "all batteries included" **ORM** for **Node.js** and **TypeScript**](https://www.prisma.io/).
-* [**Goose** is a Database migration tool to migrate your databases. Goose---get it?](https://github.com/pressly/goose)
-* [Have you ever wanted to embed a calculator inside a text editor? Me neither. But **NumPad** has](https://numpad.io/).
+* [**Prisma** is an "all batteries included" **ORM** for **Node.js** and 
+  **TypeScript**][prisma].
+* [**Goose** is a Database migration tool to migrate your databases. 
+  Goose---get it?][goose].
+* [Have you ever wanted to embed a calculator inside a text editor? 
+  Me neither. But **NumPad** has][numpad].
+
+[prisma]: https://www.prisma.io/
+[goose]: https://github.com/pressly/goose
+[numpad]: https://numpad.io/
 
 Thanks a Lot ❤️
 ---------------
@@ -160,6 +193,8 @@ That's all for this week. Next week, I'll gather more unique content and
 resources.
 
 So, until next time... May the source be with you 🦄.
+
+--------
 
 ## Issues
 

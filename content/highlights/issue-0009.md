@@ -9,13 +9,16 @@
 # `-------'`------'`--' `--'
 
 title = "How to Make Yourself Heard"
-date = "2021-07-16"
+date = "2024-05-27"
 
 [taxonomies]
 tags = ["highlights"]
 +++
 
-![How to Make Yourself Heard](/images/size/w1200/2024/03/dj.png)
+{{img(
+  src="/images/size/w1200/2024/03/dj.png"
+  alt="How to Make Yourself Heard"
+)}}
 
 Welcome to the ninth issue of **Zero to Hero** Highlights.
 
@@ -25,21 +28,33 @@ progress.
 
 ## Radio Zero to Hero
 
-For starters, [we now have a music station that streams cool music for 
-you to get in the zone](https://twitch.tv/VadidekiVolkan) non-stop 24/7 😀.
+> **Update 2024-05-27**
+> 
+> Radio Zero to Hero is no longer active. I've archived the project 
+> a while ago because keeping a stream alive without actually hosting the
+> stream did not work well on Twitch. In addition, I was constantly using
+> a lot of system resources and it was effecting the device's life span.
 
-![Radio Zero to Hero](/images/2021/07/Screen-Shot-2021-07-16-at-9.25.33-AM.png)
+For starters, [we now have a music station that streams cool music for 
+you to get in the zone][twitch] non-stop 24/7 😀.
+
+{{img(
+  src="/images/2021/07/Screen-Shot-2021-07-16-at-9.25.33-AM.png"
+  alt="Radio Zero to Hero"
+)}}
 
 It even has a terminal aquarium 🐠 that you can watch all day---how nerd is that?
 🙂.
 
-Want to see it? [Come join the fun and **follow me** on Twitch](https://twitch.tv/VadidekiVolkan).
+Want to see it? [Come join the fun and **follow me** on Twitch][twitch].
 
 I listen to it instead of Spotify all day long. I have 1500+ (*and increasing*)
 tracks that I've curated and mixed personally. You'll like it.
 
 Aside from displaying ASCII fishes all day long, I also do real-time coding and
-screen casting there: It's fun.
+screencasting there: It's fun.
+
+[twitch]: https://twitch.tv/VadidekiVolkan
 
 ## What's on the Horizon 👩‍🍳
 
@@ -53,8 +68,8 @@ micro-services-driven app. I'd like that app to run in the cloud, on a *
 *Kubernetes** cluster, as a MVP.
 
 So there's **a lot** of progress; however, not all the progress is on this
-site. [If you follow me on **Twitch**](https://twitch.tv/VadidekiVolkan),
-you'll witness the progress closely.
+site. [If you follow me on **Twitch**][twitch], you'll witness the progress 
+closely.
 
 ## Random Thought of the Week
 
@@ -82,8 +97,8 @@ about, you can better articulate your proposal. This way, people can have a
 sense of understanding of what you are suggesting before you get to the details.
 
 Also, make sure to emphasize why your idea is essential. People in the room
-should know **why** they should care to prioritize this idea right now (_among
-many other things that seem to be equally important_).
+should know **why** they should care to prioritize this idea right now (*among
+many other things that seem to be equally important*).
 
 Finally, don't stay in the spotlight forever. Invite contribution and feedback
 by asking probing questions like
@@ -104,9 +119,17 @@ I typically don't share these anywhere else.
 
 Exclusively hand-picked for you 👌. Enjoy.
 
-* [**TreeSheets** is an open-source free-form data organizer---it's like excel worksheets, but in a tree-like structure---get it? tree... sheets 🙂](https://strlen.com/treesheets/) .
-* [**BlueMonday** is an HTML sanitized written in Go---in case you need that kind of a thing](https://github.com/microcosm-cc/bluemonday).
-* [Counting is harder than it seems. In his article, Bruno outlines ways to **safely** count in **Go**](https://brunocalza.me/there-are-many-ways-to-safely-count/).
+* [**TreeSheets** is an open-source free-form data organizer---it's like excel 
+  worksheets, but in a tree-like structure---get it? tree... 
+  sheets 🙂][treesheets].
+* [**BlueMonday** is an HTML sanitized written in Go---in case you need that 
+  kind of a thing][bluemonday].
+* [Counting is harder than it seems. In his article, Bruno outlines ways to 
+  **safely** count in **Go**][count].
+
+[treesheets] :https://strlen.com/treesheets/
+[bluemonday]: https://github.com/microcosm-cc/bluemonday
+[count]: https://brunocalza.me/there-are-many-ways-to-safely-count/
 
 ## Thanks a Lot ❤️
 
@@ -114,6 +137,8 @@ That's all for this week. Next week, I'll gather more unique content and
 resources.
 
 So, until next time... May the source be with you 🦄.
+
+--------
 
 ## Issues
 

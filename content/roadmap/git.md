@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Git Comfortable"
 date = "2021-10-27"
 
@@ -6,13 +15,16 @@ date = "2021-10-27"
 tags = ["roadmap", "git", "version-control"]
 +++
 
-![Git Comfortable](/images/size/w1200/2024/03/git.png)
+{{img(
+  src="/images/size/w1200/2024/03/git.png",
+  alt="Mastering git is one of the best investments you can make as a 
+  developer."
+)}
 
 As a developer, you'll spend a considerable amount of time
 with [`git`](https://git-scm.com/). So the more comfortable you get with it, the
 more productive you will be. This page lists learning resources to ramp up
 your [`git`](https://git-scm.com/) skills.
-
 
 For starters, [The Git Book](https://git-scm.com/book/) would be enough to learn
 about `git`. And, [**GitHub**'s Help Documentation](https://help.github.com/) is
@@ -40,11 +52,13 @@ them, here are a few additional resources that you can use:
 * [Learn Git](https://www.git-tower.com/learn/)
 * [The Git Parable](https://tom.preston-werner.com/2009/05/19/the-git-parable.html)
 * [Try Github](https://try.github.io/)
-* [Use \`gitk\` to Understand Git](https://lostechies.com/joshuaflanagan/2010/09/03/use-gitk-to-understand-git/)
+* [Use `gitk` to Understand Git](https://lostechies.com/joshuaflanagan/2010/09/03/use-gitk-to-understand-git/)
 
 I guess, that's more than enough to **git** you started 🙂.
 
 Until next time... May the source be with you 🦄.
+
+--------
 
 ## Section Contents
 

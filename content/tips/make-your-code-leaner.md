@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Make Your Code Leaner By Extracting Methods"
 date = "2021-06-06"
 
@@ -6,7 +15,10 @@ date = "2021-06-06"
 tags = ["tips", "go", "refactoring", "method-extraction"]
 +++
 
-![Make Your Code Leaner By Extracting Methods](/images/size/w1200/2024/03/extract.png)
+{{img(
+  src="/images/size/w1200/2024/03/extract.png",
+  alt="Extracting methods."
+)}}
 
 ## Introduction
 
@@ -131,7 +143,8 @@ Do this refactoring **only** when it makes sense. Do it only when the **benefits
 doing it (_i.e., an additional level of indirection, making code harder to
 follow_).
 
-[Sometimes a little copying is better than a little dependency](https://www.youtube.com/watch?v=PAAkCSZUG1c).
+[Sometimes a little copying is better than a little 
+dependency](https://www.youtube.com/watch?v=PAAkCSZUG1c).
 
 ## Read the Source
 
@@ -141,6 +154,8 @@ artifacts that we've covered in this article.
 Enjoy... And may the source be with you 🦄.
 
 * [`fizz-env` (**3KB ** zip archive)](https://assets.zerotohero.dev/lets-create-a-syslog-logger/5f7a69db-658d-482c-bac1-9f036bb01edd/fizz-logging.zip)
+
+--------
 
 ## Section Contents
 

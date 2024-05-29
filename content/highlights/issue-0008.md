@@ -15,15 +15,17 @@ date = "2023-07-03"
 tags = ["highlights"]
 +++
 
-![Who Are You?](/images/size/w1200/2024/03/reflective.png)
+{{img(
+  src="/images/size/w1200/2024/03/reflective.png"
+  alt="Who Are You?"
+)}}
 
 Welcome to the eighth issue of **Zero to Hero** Highlights.
 
-I'm still focusing on creating an **MVP** for the [**FizzBuzz Pro**](https://fizzbuzz.pro/) 
+I'm still focusing on creating an **MVP** for the **FizzBuzz Pro**
 microservice and thus there's a lot of code, yet not as many articles.
 
-What's New on **Zero to Hero** 👩‍🍳
-------------------------------------
+## What's New on **Zero to Hero** 👩‍🍳
 
 I've been working on several microservices, including the following:
 
@@ -40,8 +42,10 @@ state 😃.
 ## I'm Live Streaming the Development Process
 
 On the flip
-side, [I'm streaming while coding the entire app](https://twitch.tv/VadidekiVolkan).
+side, [I'm streaming while coding the entire app][twitch].
 Follow the channel, and you'll be notified as soon as I'm online.
+
+[twitch]: https://twitch.tv/VadidekiVolkan
 
 ## Radio Zero to Hero
 
@@ -57,12 +61,13 @@ totally fair game:
 While I'm not live screencasting my development environment, I'm streaming *
 *awesome beats** on the channel.
 
-![Unearthly Beats --- The music is on forever!](/images/2021/07/Screen-Shot-2021-07-02-at-5.22.59-PM.png)
-
-Unearthly Beats --- The music is on forever!
+{{img(
+  src="/images/2021/07/Screen-Shot-2021-07-02-at-5.22.59-PM.png"
+  alt="Unearthly Beats --- The music is on forever!"
+)}}
 
 If you want to **get in the zone** while coding, designing, developing,
-hacking... [Tune in to Radio Zero to Hero on Twitch](https://twitch.tv/VadidekiVolkan).
+hacking... [Tune in to Radio Zero to Hero on Twitch][twitch].
 
 > As I said, it's **experimental**, so I don't know if I'll continue it. Yet, as
 > the time of this writing, I've been streaming music non-stop for the last 15
@@ -92,17 +97,19 @@ around you. Define your true self.
 * **Add value** to the community towards your actions and deeds.
 
 Don't rely on the reputation of something external to define who you are. Be
-self-aware: [You are more than that](https://www.zerotohero.dev/weekly-digest-may-29-2021/).
+self-aware: [You are more than that][issue-0003].
+
+[issue-0003]: @/highlights/issue-0003.md
 
 Think about what you uniquely, **unequivocally**, contribute to the world.
 
-Tangential to that is the _stigma_ that comes with rejection: Being rejected
+Tangential to that is the *stigma* that comes with rejection: Being rejected
 by (pick your top company or college of your choice) can suck. Yet, neither
 rejection nor acceptance defines you: **You** define you---If they don't get
 you, it's their loss, not yours.
 
 Trust me, by investing in yourself through personal and professional
-development, you can achieve so much than any big fat brand can "_ever_" offer
+development, you can achieve so much than any big fat brand can "*ever*" offer
 you.
 
 **Trust** in yourself. **Define** yourself.
@@ -117,9 +124,15 @@ I typically don't share these anywhere else.
 
 Exclusively hand-picked for you 👌. Enjoy.
 
-* [**AWS Infinidash**: Finally an AWS Product that You'll Completely Understand](https://news.ycombinator.com/item?id=27695975).
-* [So meta, very turtle: A Deep Dive on Kubernetes Cluster API](https://www.youtube.com/watch?v=3OsP9TiEGZE).
-* [Execute Docker containers as QEMU micro VMs](https://mergeboard.com/blog/2-qemu-microvm-docker/)
+* [**AWS Infinidash**: Finally an AWS product that You'll completely understand][infinidash].
+* [So meta, very turtle: A Deep Dive on Kubernetes Cluster API][cluster-api].
+* [Execute Docker containers as QEMU micro VMs][microvm].
+
+[infinidash]: https://news.ycombinator.com/item?id=27695975
+[cluster-api]: https://www.youtube.com/watch?v=3OsP9TiEGZE
+[microvm]: https://mergeboard.com/blog/2-qemu-microvm-docker
+
+--------
 
 ## Issues
 

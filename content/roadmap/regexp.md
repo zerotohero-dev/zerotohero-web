@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Tame Your Regular Expressions"
 date = "2021-11-26"
 
@@ -7,6 +16,11 @@ tags = ["roadmap", "regexp"]
 +++
 
 ![Tame Your Regular Expressions](/images/size/w1200/2024/03/cat.png)
+
+{{img(
+  src="/images/size/w1200/2024/03/cat.png",
+  alt="The fastest way to create a regular expression is to find a cat first."
+)}}
 
 Here are some learning resources and tools that will untangle that nasty 
 regular expression for you.
@@ -20,8 +34,8 @@ regular expression for you.
 
 ## Regular Expression Toolbox
 
-* [RegexBuddy](https://www.regexbuddy.com/) (_my favorite RegExp tool on Windows_)
-* [Regexr](https://regexr.com/) (_my favorite web-based RegExp editor_)
+* [RegexBuddy](https://www.regexbuddy.com/) (*my favorite RegExp tool on Windows*)
+* [Regexr](https://regexr.com/) (*my favorite web-based RegExp editor*)
 * [Debuggex](https://www.debuggex.com/)
 * [I Hate Regex](https://ihateregex.io/)
 * [Regex Tester](https://extendsclass.com/regex-tester.html)
@@ -32,6 +46,8 @@ That's all for now. I'll update the list if I bump into new tools or learning
 resources.
 
 Until next time... May the source be with you 🦄.
+
+--------
 
 ## Section Contents
 

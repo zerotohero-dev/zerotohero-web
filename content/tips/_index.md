@@ -1,11 +1,23 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Tips"
 description = "Work it, make it. Do it, makes us. Harder, better. Faster, stronger."
 date = "2024-05-19"
 template = "series-index.html"
 +++
 
-![Tops](/images/2024/tips.png)
+{{img(
+  src="/images/2024/tips.png"
+  alt="Tips"
+)}}
 
 This is a collection of useful tips, tricks, techniques, code snippets,
 and other helpful information that can help you in your day-to-day work.

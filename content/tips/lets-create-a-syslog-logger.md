@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Let's Create a Syslog Logger"
 date = "2021-09-06"
 
@@ -6,7 +15,10 @@ date = "2021-09-06"
 tags = ["tips", "go", "syslog", "logging", "papertrail"]
 +++
 
-![Let's Create a Syslog Logger](/images/size/w1200/2024/03/papertrail.png)
+{{img(
+  src="/images/size/w1200/2024/03/papertrail.png",
+  alt="Papertrail."
+)}}
 
 ## Introduction
 
@@ -26,19 +38,25 @@ Before getting into code, I'll create a
 [**Papertrail**](https://papertrailapp.com/) log destination. Our logger will use 
 this destination as a sink to stream logs.
 
-> [Papertrail](https://papertrailapp.com/ "Papertrail") is a "_logging as a
-> service_" solution that aggregates logs from applications, devices, and platforms
+> [Papertrail](https://papertrailapp.com/ "Papertrail") is a "*logging as a
+> service*" solution that aggregates logs from applications, devices, and platforms
 > to a central location.
 
 For that, I'll go to my dashboard, find **Log Destinations**, and tap **Create
 Log Destination**:
 
-![Create a log destination.](/images/2021/06/Screen-Shot-2021-06-06-at-8.49.55-AM-2.png)
+{{img(
+  src="/images/size/w1200/2024/03/papertrail-destination.png",
+  alt="Create a log destination."
+)}}
 
 Then I'll give my log destination a description, tap **Create**, and I'll be all
 set:
 
-![Configuring the Papertrail log destination.](/images/2021/06/Screen-Shot-2021-06-06-at-8.51.35-AM-2.png)
+{{img(
+  src="/images/2021/06/Screen-Shot-2021-06-06-at-8.51.35-AM-2.png",
+  alt="Configuring the Papertrail log destination."
+)}}
 
 > **Note**
 >
@@ -103,7 +121,7 @@ func Init(appName string) *syslog.Writer {
 
 ## Wrapping Common Log Methods
 
-Then we'll create utility methods that call our _Syslog_ writer `writer`.
+Then we'll create utility methods that call our *Syslog* writer `writer`.
 
 Note that if `writer` hasn't been initialized, or if `writer` cannot be
 initialized, we fall back to the **Go** standard library's `log` module instead.
@@ -167,14 +185,17 @@ func main() {
 If you have set up everything correctly, running the above `main()` method will
 stream a log similar to the following to your **PaperTrail** console.
 
-![Papertrail log tail output.](/images/2021/06/Screen-Shot-2021-06-06-at-8.59.43-AM-2.png)
+{{img(
+  src="/images/2021/06/Screen-Shot-2021-06-06-at-8.59.43-AM-2.png",
+  alt="Papertrail log tail output."
+)}}
 
 ## Conclusion
 
 In this article, we've created a logger class that uses a **Syslog** writer to
 stream logs to Papertrail over **UDP**.
 
-We will use (_and improve_) this logger while developing our 
+We will use (*and improve*) this logger while developing our 
 [**FizzBuzz Pro**](https://fizzbuzz.pro/)API microservices.
 
 ## Read the Source
@@ -185,6 +206,8 @@ artifacts that we've covered in this article.
 Enjoy... And may the source be with you 🦄.
 
 * [`fizz-logging` (**3KB** zip archive)](https://assets.zerotohero.dev/lets-create-a-syslog-logger/5f7a69db-658d-482c-bac1-9f036bb01edd/fizz-logging.zip)
+
+--------
 
 ## Section Contents
 

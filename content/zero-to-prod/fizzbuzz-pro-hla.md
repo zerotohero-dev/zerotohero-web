@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "FizzBuzz Pro High Level Design"
 date = "2021-07-23"
 
@@ -6,7 +15,10 @@ date = "2021-07-23"
 tags = ["zero-to-prod"]
 +++
 
-![FizzBuzz Pro High Level Design](/zerotohero-dev/content/images/size/w1200/2024/03/blueprint.png)
+{{img(
+  src="/images/size/w1200/2024/03/blueprint.png",
+  alt="FizzBuzz Pro High Level Design"
+)}}
 
 In this quick video, we'll overview a high-level overview of **FizzBuzz Pro**
 APIs.
@@ -15,7 +27,10 @@ Since **FizzBuzz Pro** is a work in progress, anything can change anytime;
 however we have to start designing somewhere. So, without further ado, here
 comes the video that explains the initial design:
 
-FizzBuzz.Pro High-Level System Architecture
+{{vimeo(
+  id="578676419",
+  title="FizzBuzz Pro High Level Design"
+)}}
 
 As I said in the video, I'll create additional content in the form of **articles
 **, **source code**, and more **videos** as I continue implementing **FizzBuzz
@@ -23,8 +38,11 @@ Pro**.
 
 It'll be an awesome learning journey. Stay tuned 🎵.
 
-Resources and Additional Reading
---------------------------------
+## Playlist
+
+{{ zero_to_prod_nav(selected = 18) }}
+
+## Resources and Additional Reading
 
 Here are some of the concepts that we covered in the video that you might want
 to drill down further.
@@ -34,8 +52,7 @@ to drill down further.
 * [JSON Web Tokens](https://jwt.io/)
 * [Best Practices for Designing Pragmatic RESTful API](https://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api)
 
-Next Up
--------
+## Next Up
 
 Next on my video production queue are:
 

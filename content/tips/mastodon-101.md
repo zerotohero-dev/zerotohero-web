@@ -1,12 +1,24 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Who Else Wants to Have Their Own Mastodon Server?"
-date = "2023-01-01"
+date = "2023-05-27"
 
 [taxonomies]
 tags = ["tips", "setups", "mastodon"]
 +++
 
-![Who Else Wants to Have Their Own Mastodon Server?](/images/size/w1200/2024/03/eli.png)
+{{img(
+  src="/images/size/w1200/2024/03/eli.png",
+  alt="Uliphant."
+)}}
 
 ## Introduction
 
@@ -42,7 +54,8 @@ tags = ["tips", "setups", "mastodon"]
 > giving a flying clue to others.
 
 After [all](https://www.washingtonpost.com/business/2022/11/09/elon-musk-how-not-to-fire-employees/) 
-[the](https://www.wired.com/story/twitter-users-mastodon-meltdown/) [madness](https://variety.com/2022/digital/news/mark-cuban-slams-elon-musk-twitter-verification-plan-nightmare-1235429190/)
+[the](https://www.wired.com/story/twitter-users-mastodon-meltdown/) 
+[madness](https://variety.com/2022/digital/news/mark-cuban-slams-elon-musk-twitter-verification-plan-nightmare-1235429190/)
 that has been happening in the birdsite,
 I flipped the switch and [joined Mastodon (on Hachyderm, 
 where all the misfits hang out)](http://hachyderm.io/@volkan).
@@ -74,14 +87,19 @@ follow, like, comment, and otherwise interact with anyone else with thousands of
 other servers.
 
 It's like you have a passport tied to a single country. And with that passport,
-you can visit any country you like and interact with the people and culture
-there. So that's where the "_Fed_" of the **Fediverse** comes from: It is "
-_federated_."
+you can visit any country you like and interact with the people and culture.
+So that's where the "*Fed*" of the **Fediverse** comes from: It is 
+"*federated*."
 
 Though, if you are at a point to deploy your own Mastodon instance, you probably
 already know that 😀.
 
 ## Why Would You Want Your Own Instance?
+
+> **Update 2024-05-27**
+> 
+> I stopped using my personal mastodon instance on `z2h.dev`; 
+> I have other plans for the domain. I'm still on Hachyderm, though.
 
 So, why would anyone want to create their own **Mastodon** instance?
 
@@ -96,7 +114,7 @@ become an advertising opportunity for a billion-dollar corporation.
 Secondly, use it as a **microblog**, where you gather your thoughts and share
 one-off ideas. If they are not that interesting to others, who cares 🤷‍♂️? It's
 your instance, server, ideas, and rules. I use my instance 
-to write down random _to-do_ notes, share bookmarks to things I might not easily
+to write down random *to-do* notes, share bookmarks to things I might not easily
 find later, and so on. 
 
 Or you can do it out of **curiosity**: To have fun exploring new technology,
@@ -142,7 +160,10 @@ Here's my current setup:
 
 Here's what my current server utilization looks like:
 
-![Linode server utilization](/images/2022/11/Screenshot-2022-11-12-at-7.48.38-AM.png)
+{{img(
+  src="/images/2022/11/Screenshot-2022-11-12-at-7.48.38-AM.png",
+  alt="Linode server utilization."
+)}}
 
 It's not much because there is not much going on. Yet, it also shows that the
 above specs are more than adequate to run your own Mastodon instance.
@@ -153,7 +174,7 @@ I'm running an Ubuntu server (_which_ [_Mastodon official
 docs_](https://docs.joinmastodon.org/admin/install/) _recommend, too_) with the
 following version:
 
-```text
+```txt
 Distributor ID:	Ubuntu
 Description:    Ubuntu 22.10
 Release:        22.10
@@ -185,7 +206,10 @@ the excellent documentation that Linode has on those topics:
 
 I don't have that complicated of a firewall setup. Here is what it looks like:
 
-![Firewall rules](/images/2022/11/Screenshot-2022-11-12-at-8.00.11-AM.png)
+{{img(
+  src="/images/2022/11/Screenshot-2022-11-12-at-8.00.11-AM.png",
+  alt="Linode firewall rules."
+)}}
 
 * **Inbound**  
   * Allow inbound ssh to a single IP
@@ -202,9 +226,16 @@ Which is good enough for the purpose of this application.
 For the sake of completeness, I'll share the DNS settings too. Here's what it
 looks like:
 
-![SOA, NS, MX, A, AAAA](/images/2022/11/Screenshot-2022-11-12-at-8.03.45-AM.png)
+{{img(
+  src="/images/2022/11/Screenshot-2022-11-12-at-8.03.45-AM.png",
+  alt="SOA, NS, MX, A, AAAA"
+)}}
 
-![CNAME, TXT, SRV, CAA](/images/2022/11/Screenshot-2022-11-12-at-8.03.57-AM.png)
+{{img(
+  src="/images/2022/11/Screenshot-2022-11-12-at-8.03.57-AM.png",
+  alt="CNAME, TXT, SRV, CAA"
+)}}
+
 
 The **CNAME** records are there for [**Mailgun**](https://www.mailgun.com/) to
 be able to validate the domain; you can check its documentation for instructions
@@ -232,11 +263,20 @@ sort that out.
 Here are the **CloudFront** distribution settings for files.z2h.dev for
 reference:
 
-![CloundFront: Main Settings](/images/2022/11/Screenshot-2022-11-12-at-8.19.45-AM.png)
+{{img(
+  src="/images/2022/11/Screenshot-2022-11-12-at-8.19.45-AM.png",
+  alt="CloudFront: Main Settings"
+)}}
 
-![CloudFront: Origin Settings](/images/2022/11/Screenshot-2022-11-12-at-8.20.10-AM.png)
+{{img(
+  src="/images/2022/11/Screenshot-2022-11-12-at-8.20.10-AM.png",
+  alt="CloudFront: Origin Settings"
+)}}
 
-![CloudFront: Behaviors](/images/2022/11/Screenshot-2022-11-12-at-8.20.20-AM.png)
+{{img(
+  src="/images/2022/11/Screenshot-2022-11-12-at-8.20.20-AM.png",
+  alt="CloudFront: Behaviors"
+)}}
 
 ## S3 Bucket Settings
 
@@ -265,7 +305,10 @@ I also had to [**enable access control lists**](https://docs.aws.amazon.com/Amaz
 the bucket for my **Mastodon** instance to push stuff to it without raising
 errors. So here's how that part looks on the console:
 
-![Bucket ACL Rules](/images/2022/11/Screenshot-2022-11-12-at-8.44.55-AM.png)
+{{img(
+  src="/images/2022/11/Screenshot-2022-11-12-at-8.44.55-AM.png",
+  alt="Bucket ACL Rules"
+)}}
 
 Without these ACL rules, Mastodon could not upload files to the bucket.
 
@@ -343,8 +386,8 @@ npm -v
 
 ## Create an Unprivileged `mastodon` User
 
-The next thing is to create a dedicated user to run **Mastodon**. This is *
-*recommended** because Mastodon is a [ruby](https://www.ruby-lang.org/en/)
+The next thing is to create a dedicated user to run **Mastodon**. This is
+**recommended** because Mastodon is a [ruby](https://www.ruby-lang.org/en/)
 monolith, and switching to different user accounts is a hassle-free way to
 experiment with different Ruby versions.
 
@@ -358,7 +401,7 @@ sudo passwd mastodon
 # Switch to that user:
 sudo su - mastodon
 
-# Validate that we are on the correct user accout:
+# Validate that we are on the correct user account:
 whoami
 # mastodon
 ```
@@ -541,7 +584,7 @@ SMTP_FROM_ADDRESS='Mastodon <notifications@z2h.dev>'
 
 Once the installer finishes successfully, you'll get a prompt similar to this:
 
-```text
+```txt
 All done! You can now power on the Mastodon server 🐘
 
 Do you want to create an admin user straight away? Yes
@@ -578,7 +621,7 @@ Also, ensure that certbot timer is enabled via `systemctl status certbot.timer`.
 If the timer is not enabled, make sure to enable it
 using `systemctl enable certbot.timer`.
 
-```text
+```txt
 volkan@z2h-dev:~$ systemctl status certbot.timer
 ● certbot.timer - Run certbot twice daily
      Loaded: loaded (/lib/systemd/system/certbot.timer; 
@@ -615,7 +658,7 @@ Now that we have our certificates in place, we can configure **NGINX**.
 
 Here's my `/etc/nginx/sites-available/z2h.dev.conf`
 
-```text
+```txt
 map $http_upgrade $connection_upgrade {
   default upgrade;
   ''      close;
@@ -812,7 +855,7 @@ that for me.
 
 Here's the entire file for reference:
 
-```text
+```txt
 user mastodon;
 #user www-data;
 worker_processes auto;
@@ -854,8 +897,7 @@ sudo ln -s ../sites-available/z2h.dev.conf
 This will make **NGINX** import and use the rules that we've defined in the
 former section.
 
-Start NGINX
-----------------
+## Start NGINX
 
 Then we can start `nginx`:
 
@@ -865,7 +907,7 @@ sudo systemctl restart nginx
 
 Then check the status of the `nginx` service:
 
-```text
+```txt
 volkan@z2h-dev:~$ sudo systemctl status nginx
 ● nginx.service - 
 A high performance web server and a reverse proxy server
@@ -881,9 +923,9 @@ So far, all looking good 👌.
 Make sure you have these files under `/etc/systemd/system`. Again, I've copied
 them [from the official Mastodon repository](https://github.com/mastodon/mastodon/tree/main/dist).
 
-### /etc/systemd/system/mastodon-sideqik.service
+### `/etc/systemd/system/mastodon-sideqik.service`
 
-```text
+```txt
 [Unit]
 Description=mastodon-sidekiq
 After=network.target
@@ -940,9 +982,9 @@ ReadWritePaths=/home/mastodon/live
 WantedBy=multi-user.target
 ```
 
-### /etc/systemd/system/mastodon-streaming.service
+### `/etc/systemd/system/mastodon-streaming.service`
 
-```text
+```txt
 [Unit]
 Description=mastodon-streaming
 After=network.target
@@ -998,9 +1040,9 @@ ReadWritePaths=/home/mastodon/live
 WantedBy=multi-user.target
 ```
 
-### /etc/systemd/system/mastodon-web.service
+### `/etc/systemd/system/mastodon-web.service`
 
-```text
+```txt
 [Unit]
 Description=mastodon-web
 After=network.target
@@ -1060,8 +1102,7 @@ WantedBy=multi-user.target
 
 That handles the `systemd` part of things.
 
-Checking The Services
----------------------
+## Checking The Services
 
 Make sure you have all the services are up
 
@@ -1116,7 +1157,10 @@ Postgres and Redis, which will take care of scalability for a long time.
 
 Here's a high-level outline of how that might look like:
 
-![Scaling Up Mastodon](/images/2022/11/mastodon-lb.png)
+{{img(
+  src="/images/2022/11/mastodon-lb.png",
+  alt="Scaling Up Mastodon"
+)}}
 
 If things get even crazier, you'll have to come up with solutions to the
 bottleneck you are facing. Like tuning Redis, adding read replicas; doing the
@@ -1133,7 +1177,10 @@ problems with you 🙂. If not, then you don't have to worry about future issues
 [SideKiq](https://sidekiq.org/) is the Ruby-based job queue that Mastodon uses.
 If you log into the admin panel, you can find a link to monitor its state.
 
-![SideQik Dashboard](/images/2022/11/Screenshot-2022-11-12-at-1.33.19-PM.png)
+{{img(
+  src="/images/2022/11/Screenshot-2022-11-12-at-1.33.19-PM.png",
+  alt="Sidekiq Dashboard"
+)}}
 
 The **Sidekiq** dashboard is the first place you want to look when you feel
 things are slowing down.
@@ -1141,7 +1188,10 @@ things are slowing down.
 In addition, you can find on the admin console **PgHero** that can show you
 important stats about your database.
 
-![PgHero](/images/2022/11/Screenshot-2022-11-12-at-9.58.08-PM.png)
+{{img(
+  src="/images/2022/11/Screenshot-2022-11-12-at-9.58.08-PM.png",
+  alt="PgHero"
+)}}
 
 Also there is [**PgTune**](https://pgtune.leopard.in.ua/), which can help you
 tune optimize your database when you fill in some values in a web form.
@@ -1150,7 +1200,10 @@ Mastodon official documentation recommends you check out **PgTune** if you want
 to fine-tune your database further. That could be a low-hanging scalability
 fruit to use from day zero.
 
-![PgTune UI](/images/2022/11/Screenshot-2022-11-12-at-10.02.02-PM.png)
+{{img(
+  src="/images/2022/11/Screenshot-2022-11-12-at-10.02.02-PM.png",
+  alt="PgTune UI"
+)}}
 
 How you monitor **Mastodon** will vastly depend on where you run it. You might
 use your cloud provider's altering mechanism, install
@@ -1180,6 +1233,8 @@ patience and to tap into your analytical debugging skills a bit more than usual.
 Which also has been a fun learning experience that led to this article.
 
 Hope you find it informative... And may the source be with you 🦄.
+
+--------
 
 ## Section Contents
 

@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Get Better at Typography"
 date = "2021-11-26"
 
@@ -8,8 +17,13 @@ tags = ["roadmap", "typography", "design"]
 
 ![Get Better at Typography](/images/size/w1200/2024/03/typo.png)
 
+{{img(
+  src="/images/size/w1200/2024/03/typo.png",
+  alt="Types are beautiful."
+)}}
+
 Content matters a lot, but so does the medium the content is conveyed withing.
-Understanding how type, rhythm, line hieght, case, capitalization, character,
+Understanding how type, rhythm, line height, case, capitalization, character,
 etc. come together will help communicate your message much effectively.
 
 In a sense, typography is one of the best hidden skills that you can have.
@@ -60,6 +74,8 @@ wonderful world of typography. I'll add more to the list if I bump into new
 material.
 
 Until next time... May the source be with you 🦄.
+
+--------
 
 ## Section Contents
 

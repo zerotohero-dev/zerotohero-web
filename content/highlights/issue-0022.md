@@ -15,7 +15,10 @@ date = "2022-07-17"
 tags = ["highlights"]
 +++
 
-![Overcome the Awkward Feeling of Networking](/images/size/w1200/2024/03/networking.png)
+{{img(
+  src="/images/size/w1200/2024/03/networking.png"
+  alt="Navigate the awkwardness of networking."
+)}}
 
 Welcome to the 22nd issue of **Zero to Hero** Highlights.
 
@@ -44,7 +47,10 @@ U.S.---Unfortunately, the picture does not give the viewer what it deserves: It
 was mesmerizing to be there to witness the sunset by the seashore with a
 crescent moon hanging above.
 
-![Sunset in Dikili.](/images/2022/07/sunset.jpeg)
+{{img(
+  src="/images/size/w1200/2022/07/sunset.jpeg"
+  alt="Sunset in Dikili."
+)}}
 
 ## What's Cooking in the Kitchen 👩‍🍳
 
@@ -52,13 +58,16 @@ I just recorded a video about "**_Ghost theme development_**." I'm not sure if
 it will be premium content or if I will publish it accessible for all, yet it'll
 be there soon.
 
-![Ghost theme development --- Audio recording.](/images/2022/07/GhostRecording.png)
+{{img(
+  src="/images/2022/07/GhostRecording.png"
+  alt="Ghost theme development -- Audiio recording."
+)}}
 
 In addition, I've started drafting a few things about **Open Radio Access
-Network** (_or O-RAN_). **O-RAN** is a very technically involved topic with lots
-of subtopics. I'll try my best to make it easy to understand, and I'm sure it'll
-be so much fun to create the content. After all, I'm still learning it; I'm a
-big believer in learning by sharing.
+Network** (*or, O-RAN*). **O-RAN** is a very technically involved topic with 
+lots of subtopics. I'll try my best to make it easy to understand, and I'm sure 
+it'll be so much fun to create the content. After all, I'm still learning it; 
+I'm a big believer in learning by sharing.
 
 ## Random Thought of the Week
 
@@ -102,17 +111,23 @@ I typically don't share these anywhere else.
 Exclusively hand-picked for you 👌. Enjoy.
 
 * [In case you want your on premises Postman, **YAADE** is a self-hosted, open 
-  source, collaborative API development environment](https://github.com/EsperoTech/yaade).
-* [Here's a collection of generic data structures written in **Go**](https://github.com/zyedidia/generic).
-* [With `redo` you can create reusable functions from your shell history in an interactive way](https://github.com/barthr/redo).
+  source, collaborative API development environment][yaade].
+* [Here's a collection of generic data structures written in **Go**][zyedidia].
+* [With `redo` you can create reusable functions from your shell history in an 
+  interactive way][redo].
 
-Thanks a Lot ❤️
----------------
+[yaade]: https://github.com/EsperoTech/yaade
+[zyedidia]: https://github.com/zyedidia/generic
+[redo]: https://github.com/barthr/redo
+
+## Thanks a Lot ❤️
 
 That's all for this week. Next week, I'll gather more unique content and
 resources.
 
 So, until next time... May the source be with you 🦄.
+
+--------
 
 ## Issues
 

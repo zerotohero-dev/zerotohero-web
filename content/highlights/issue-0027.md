@@ -1,4 +1,13 @@
 +++
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
 title = "Promotions Don't Happen Overnight"
 date = "2024-05-20"
 
@@ -6,7 +15,10 @@ date = "2024-05-20"
 tags = ["highlights"]
 +++
 
-![Promotions Don't Happen Overnight](/images/size/w1200/2024/03/level-up.png)
+{{img(
+  src="/images/size/w1200/2024/03/level-up.png"
+  alt="Level up."
+)}}
 
 Welcome to the 27th issue of **Zero to Hero** Highlights.
 
@@ -18,31 +30,36 @@ like it. Here are some of the highlights.
 
 ## Be the Next Version of Yourself
 
-[**Be the Next Version of Yourself**](@/roadmap/_index.md) is
-what I'd call the **roadmap of all roadmaps**; I strongly suggest 
-you read this if you haven't already done so.
+[**Be the Next Version of Yourself**][roadmap] is what I'd call the **roadmap of 
+all roadmaps**; I strongly suggest you read this if you haven't already done so.
 
 In the article, I tried to summarize my personal perspective on a path you can
 follow to become a great software craftsman. While that's **not** the only path,
 it's a path that will indeed work and help you become the next version of
 yourself.
 
+[roadmap]: @/roadmap/_index.md
+
 ## Resources Every Developer Must Read---No Exceptions
 
 The title says it all 🙂. In [**Resources Every Developer Must Read---No
-Exceptions**](@/roadmap/bedtime-reading.md), I provide you with
+Exceptions**][bedtime-reading], I provide you with
 an **opinionated** bedtime reading list that will give you perspective. After
 completing the bedtime reading list, you'll look at software development
 differently.
 
+[bedtime-reading]: @/roadmap/bedtime-reading.md
+
 ## Grab Your Chisel and Start Pounding
 
-[**Grab Your Chisel and Start Pounding**](@/roadmap/chisel.md) is
-my take on why I believe "*reinventing the wheel*" is crucial for us to grow.
+[**Grab Your Chisel and Start Pounding**][chisel] is my take on why I believe 
+"*reinventing the wheel*" is crucial for us to grow.
 
 Assuming there is no true answer and continuously asking questions is better
 than sticking to a presumed solution. Instead, dream a better dream and reinvent
 to make it real.
+
+[chisel]: @/roadmap/chisel.md
 
 ## Don't Make the User Think
 
@@ -51,19 +68,23 @@ Knowing how and why the user thinks is essential. Knowing what makes the user
 product and a great product. Knowing how to design usable, consistent, coherent,
 and delightful interfaces is an essential skill.
 
-In [**Don't Make the User Think**](@/roadmap/ramp-up-in-user-experience-design.md), 
+In [**Don't Make the User Think**][ramp-up-ux], 
 I outline the importance of knowing enough user experience design to be dangerous 
 at least, no matter which part of the stack you work on. Then I provide helpful
 resources that can help you brush up on your UI/UX skills.
+
+[ramp-up-ux]: @/roadmap/ramp-up-in-user-experience-design.md
 
 ## You Liked Them? There's More Coming Up
 
 That's all for now, but there's **a lot** in my drafts that are coming up in the
 following weeks. Here's a small subsection of my drafts waiting to be published.
 
-![Drafts waiting to be published.](/images/2021/10/Screen-Shot-2021-10-29-at-4.08.33-PM.png)
+{{img(
+  src="/images/2021/10/Screen-Shot-2021-10-29-at-4.08.33-PM.png"
+  alt="Drafts waiting to be published."
+)}}
 
-Drafts waiting to be published.
 
 Next week, I'll prepare for my **GopherCon** talk, so probably I won't have many
 published articles, but we'll see 🙂.
@@ -183,10 +204,14 @@ I typically don't share these anywhere else.
 Exclusively hand-picked for you 👌. Enjoy.
 
 * [Here's a tutorial by **Josh Comeau** on building a magical 
-  3D button](https://www.joshwcomeau.com/animation/3d-button/).
-* [**Mockery** is a mock code autogenerator for Go](https://github.com/vektra/mockery).
+  3D button][3d-button].
+* [**Mockery** is a mock code autogenerator for Go][mockery].
 * [**Plotly** is an awesome open-source JavaScript plotting and charting 
-  library](https://github.com/plotly/plotly.js).
+  library][plotly].
+
+[3d-button]: https://www.joshwcomeau.com/animation/3d-button/
+[mockery]: https://github.com/vektra/mockery
+[plotly]: https://github.com/plotly/plotly.js
 
 ## Thanks a Lot ❤️
 
@@ -194,6 +219,8 @@ That's all for this week. Next week, I'll gather more unique content and
 resources.
 
 So, until next time... May the source be with you 🦄.
+
+--------
 
 ## Issues
 
