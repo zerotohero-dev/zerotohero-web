@@ -10,10 +10,13 @@
 
 title = "Setting Up Your Go Development Environment"
 date = "2021-05-11"
+template = "geyik.html"
 
 [taxonomies]
-tags = ["go"]
+tags = ["go", "geyik-academy", "go101"]
 +++
+
+# Setting Up Your Go Development Environment
 
 ![Gopher](/images/size/w1200/2024/03/gopher.png)
 

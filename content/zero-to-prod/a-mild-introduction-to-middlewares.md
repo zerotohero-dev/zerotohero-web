@@ -25,13 +25,11 @@ sample middleware to see it in action.
 
 ## Lecture
 
-{{ 
-  vimeo(
-    id="661986834", 
-    title="Zero to Prod in Half an Hour: Part 7: 
-      A Mild Introduction to Middlewares"
-  ) 
-}}
+{{vimeo(
+  id="661986834", 
+  title="Zero to Prod in Half an Hour: Part 7: 
+    A Mild Introduction to Middlewares"
+)}}
 
 --------
 

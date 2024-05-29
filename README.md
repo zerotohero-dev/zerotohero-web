@@ -33,3 +33,11 @@ To publish the website if you have `zola` installed on your system:
 ```bash
 ./hack/publish.sh
 ```
+
+This little script fetches images and saves them under the static files folder
+where you can refer to them in your markdown files. It is used to migrate
+old Zero to Hero assets to  this new structure:
+
+```bash
+./hack/wget.sh
+```

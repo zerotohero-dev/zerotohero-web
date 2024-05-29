@@ -25,12 +25,10 @@ client and the server can talk securely within a single cluster. In the
 following video, we'll move the client to a different cluster and federate the 
 **SPIRE** servers to establish cross-clsuter **mTLS** too.
 
-{{ 
-  vimeo(
-    id="760885615", 
-    title="mTLS With SPIRE: Part 9: Configuring the Client to User SPIRE mTLS"
-  ) 
-}}
+{{vimeo(
+  id="760885615", 
+  title="mTLS With SPIRE: Part 9: Configuring the Client to User SPIRE mTLS"
+)}}
 
 --------
 

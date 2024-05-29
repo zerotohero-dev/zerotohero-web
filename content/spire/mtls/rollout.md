@@ -23,12 +23,10 @@ tags = ["mtls", "spiffe", "spire"]
 To establish an identity control plane, we'll need **SPIRE**. This section will
 deploy **SPIRE** to the clusters.
 
-{{ 
-  vimeo(
-    id="760885427", 
-    title="mTLS With SPIRE: Part 6: Rolling out SPIRE to the Clusters"
-  ) 
-}}
+{{vimeo(
+  id="760885427", 
+  title="mTLS With SPIRE: Part 6: Rolling out SPIRE to the Clusters"
+)}}
 
 --------
 

@@ -15,24 +15,27 @@ date = "2022-02-10"
 tags = ["zero-to-prod"]
 +++
 
-![Zero to Prod in Half an Hour: Part 11 --- Implementing Authentication Handlers](/images/size/w1200/2024/03/authz.png)
+{{img(
+  src="/images/size/w1200/2024/03/authz.png",
+  alt="Zero to Prod in Half an Hour: Part 11 --- Implementing Authentication Handlers"
+)}}
 
 Having implemented our middlewares, now it's time to implement the missing
 OAuth0 callback, login, and logout handlers.
 
-Lecture
--------
+## Lecture
 
-Zero to Prod in Half an Hour: Part 11 --- Implementing Authentication Handlers
-662357647
+{{vimeo(
+  id="662357647",
+  title="Zero to Prod in Half an Hour: Part 11 --- Implementing Authentication Handlers"
+)}}
 
-Playlist
---------
+
+## Playlist
 
 {{ zero_to_prod_nav(selected = 11) }}
 
-Tools and Technologies Mentioned
---------------------------------
+## Tools and Technologies Mentioned
 
 Here are the tools and technologies that were mentioned in the video, along with
 related articles and other helpful links.
@@ -44,11 +47,10 @@ related articles and other helpful links.
 * [JSON Web Token Introduction](https://jwt.io/introduction)
 * [RFC 7519 --- JSON Web Token (JWT)](https://datatracker.ietf.org/doc/html/rfc7519)
 
-Read The Source
----------------
+## Read The Source
 
-* [Download the source code (_114kb zip
-  archive_)](https://assets.zerotohero.dev/zero-to-prod-in-30/zero-to-prod-in-30.zip)
+* [Download the source code (*114kb zip
+  archive*)](https://assets.zerotohero.dev/zero-to-prod-in-30/zero-to-prod-in-30.zip)
 
 ------------
 

@@ -65,8 +65,9 @@ solution exists, then there won't be any solutions, to begin with.
 * And nothing existing will ever be polished, either.
 
 To break the cliché even further, you might be surprised that 
-[the **wheel** has been the most reinvented 
-tool ever](https://www.amazon.com/exec/obidos/ASIN/1568985967).
+[the **wheel** has been the most reinvented tool ever][wheel].
+
+[wheel]: https://www.amazon.com/exec/obidos/ASIN/1568985967
 
 ## Reinvent to **Make It Better**
 
@@ -92,7 +93,9 @@ The bottom line is:
 
 This is not only true for software but also true for anything you can imagine.
 Anything can be made better, faster,
-stronger; [our work is never over](https://www.youtube.com/watch?v=gAjR4_CbPpQ).
+stronger; [our work is never over][daft].
+
+[daft]: https://www.youtube.com/watch?v=gAjR4_CbPpQ
 
 ## Reinvent to **Transform**
 
@@ -120,10 +123,11 @@ Nothing is a simple as it seems. Nothing fits right for the first time.
 
 > **About the NIH Syndrome**
 > 
-> Now, to be clear, I am also against the "[*not invented
-here*](https://en.wikipedia.org/wiki/Not_invented_here)" (NIH) syndrome. Yet, in
-> the developer community, I see an increased aptitude to blindly use tools
-> without questioning their internals.
+> Now, to be clear, I am also against the "[*not invented here*][nih]" 
+> (NIH) syndrome. Yet, in the developer community, I see an increased aptitude 
+> to blindly use tools without questioning their internals.
+
+[nih]: https://en.wikipedia.org/wiki/Not_invented_here
 
 It's okay to be outrageous. It's the acts of insanity that often lead the
 simplest of solutions: Try new things and have fun.
@@ -160,7 +164,7 @@ The *purpose* is to go **through** a **transformation**.
 
 "What I cannot create, I do not understand."
 
-👆 those were [Richard Feynman](https://en.wikipedia.org/wiki/Richard_Feynman)'s
+👆 those were [Richard Feynman][feynman]'s
 last words on his blackboard at the time of his death.
 
 Why do children break their toys? Because the best way to learn about something
@@ -169,6 +173,8 @@ is to tear it into pieces and then bring those pieces together.
 Understanding is what makes you grow. Without an **understanding** of your
 **environment**, you won't have the power. And to survive in any ecosystem,
 knowing the system helps a lot.
+
+[feynman]: https://en.wikipedia.org/wiki/Richard_Feynman
 
 ## Be a Tinkerer
 
@@ -208,20 +214,24 @@ have done before you:
 
 While reinventing your wheel, you will see the size of the giants on whose
 shoulders you are standing. Also, don't shy away from some of those people. When
-you [ask smart questions](http://www.catb.org/esr/faqs/smart-questions.html),
+you [ask smart questions][questions],
 they are, indeed, quite receptive and welcoming.
+
+[questions]: http://www.catb.org/esr/faqs/smart-questions.html
 
 ## Reinvent to **Adapt**
 
-Let's talk about [**evolution**](https://en.wikipedia.org/wiki/Evolution):
+Let's talk about [**evolution**][evolution]:
 
 > Without **variation**, a population cannot evolve in response to changing
 > environmental variables. As a result, it may face an increased risk of 
 > **extinction**.
 
-That's what [the theory of evolution](https://en.wikipedia.org/wiki/Evolution)
+That's what [the theory of evolution][evolution]
 tells us. That is true for anything: *economics*, *politics*, *finance*,
 *programming*, *open-source*, **_ideas_**...
+
+[evolution]: https://en.wikipedia.org/wiki/Evolution
 
 Without **variety**, you cannot be fruitful, let alone multiply.
 
@@ -289,8 +299,7 @@ And if you do want to come up with your solution anyway, then do it in your
 
 Assume you are one of the rare individuals wanting to create something that has
 never been done before. The type who wants
-to [disrupt the status 
-quo](https://thedobook.co/products/do-disrupt-change-the-status-quo-or-become-it),
+to [disrupt the status quo][status-quo],
 you know---if you are aware of the alternatives and are purposefully
 reinventing, it is actually an **advantage**.
 
@@ -305,6 +314,7 @@ Here's how [Joel Spolsky][joel] states that:
 
 [joel]: https://joelonsoftware.com/
 [tutu]: https://www.joelonsoftware.com/2000/12/02/up-the-tata-without-a-tutu/
+[status-quo]: https://thedobook.co/products/do-disrupt-change-the-status-quo-or-become-it
 
 This is far more than a pedagogical benefit:
 
@@ -338,16 +348,13 @@ rewind to the beginning.
 Your implementation will "*probably*" stink, and people will discourage you a
 lot.
 
-That's [**the innovator's dilemma
-**](https://www.goodreads.com/book/show/2615.The_Innovator_s_Dilemma). Sometimes
-it is right to listen to others, and then continue doing what you believe to be
-the right thing.
+That's [**the innovator's dilemma**][dilemma]. Sometimes it is right to listen 
+to others, and then continue doing what you believe to be the right thing.
 
 Another thing:
 
 Don't try to reinvent everything at once. --- It will put you into a [*paralysis
-by analysis*](https://en.wikipedia.org/wiki/Analysis_paralysis) mode, and you
-will gain nothing.
+by analysis*][analysis] mode, and you will gain nothing.
 
 ## Choose Something that Adds Value to You
 
@@ -355,18 +362,23 @@ will gain nothing.
 > sleep, why you live alone, and why night after night, you sit by your
 > computer... It's the question that drives us, Neo. It's the question that
 > brought you here. You know the question."  
-> --- [**The Matrix**](https://en.wikipedia.org/wiki/The_Matrix) (*1999*)
+> --- [**The Matrix**][matrix] (*1999*)
 
 As long as reinventing is your intention, and it does not stem from your lack of
 knowledge of other options, it's perfectly fine to do so---having said that, I
 am pretty much sure I can live without programming another linked list in my
 lifetime.
 
+[dilemma]: https://www.goodreads.com/book/show/2615.The_Innovator_s_Dilemma
+[analysis]: https://en.wikipedia.org/wiki/Analysis_paralysis
+[matrix]: https://en.wikipedia.org/wiki/The_Matrix
+
 So the question is not whether to reinvent.
 
-The question is: "*Is [**the opportunity cost of the time you 
-spend**](https://www.investopedia.com/terms/o/opportunitycost.asp) 
+The question is: "*Is [**the opportunity cost of the time you spend**][cost] 
 reinventing worth your efforts?*"
+
+[cost]: https://www.investopedia.com/terms/o/opportunitycost.asp
 
 Or, in other words: "*Is there a more productive way to occupy **your**
 time*?"

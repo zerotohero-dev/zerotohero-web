@@ -10,10 +10,13 @@
 
 title = "Installing Go on Linux"
 date = "2021-05-22"
+template = "geyik.html"
 
 [taxonomies]
-tags = ["go"]
+tags = ["go", "geyik-academy", "go101"]
 +++
+
+# Installing Go on Linux
 
 ![Gopher](/images/size/w1200/2024/03/gopher-linux.png)
 

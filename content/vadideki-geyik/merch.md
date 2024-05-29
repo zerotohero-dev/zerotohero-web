@@ -16,7 +16,6 @@ template = "geyik.html"
 tags = ["geyik", "merch", "store"]
 +++
 
-
 Merch al; geyiğin bir parçası ol.
 
 <hr>

@@ -47,16 +47,16 @@ experiences.
 
 ## TalkSPIFFE? Is That Something New? Can I Eat It?
 
-Before I continue, it's a perfect moment to delve deeper into what [**TalkSPIFFE
-**](https://twitch.tv/VadidekiVolkan) truly is.
+Before I continue, it's a perfect moment to delve deeper into what 
+[**TalkSPIFFE**](https://twitch.tv/VadidekiVolkan) truly is.
 
 **TalkSPIFFE** is more than just a live stream; it's a platform designed to
-demystify and elucidate the intricacies of the [**SPIFFE
-**](https://spiffe.io/) (_Secure Production Identity Framework for Everyone_)
-technology. It's an opportunity for **SPIFFE/SPIRE** enthusiasts, professionals,
-and those who want to learn more about **SPIFFE** and **SPIRE** to come together
-and engage in enlightening discussions, learn from each other, and help foster a
-community.
+demystify and elucidate the intricacies of the 
+[**SPIFFE**](https://spiffe.io/) (*Secure Production Identity Framework for 
+Everyone*) technology. It's an opportunity for **SPIFFE/SPIRE** enthusiasts, 
+professionals, and those who want to learn more about **SPIFFE** and **SPIRE** 
+to come together and engage in enlightening discussions, learn from each other, 
+and help foster a community.
 
 We've aimed for **TalkSPIFFE** to be a space that feels both welcoming and
 informative rather than being strictly academic or intimidatingly technical. We
@@ -253,18 +253,18 @@ enabled and switch between them using the A/B switch:
 
 Then, in the middle of the setup, I have two audio sources:
 
-* **ELI AUDIO IN** (_Discord_) is a Discord voice chat that Eli and I will use.
+* **ELI AUDIO IN** (*Discord*) is a Discord voice chat that Eli and I will use.
   I take Eli's audio from that source to push it into 
-  [OBS (_Open Broadcast Software_)](https://obsproject.com/) as a stream source. 
+  [OBS (*Open Broadcast Software*)](https://obsproject.com/) as a stream source. 
   While at that, I'll also clone it and send it to my headphones through a separate channel.
-* **GUEST STAR** (_Chrome_) is where
+* **GUEST STAR** (*Chrome*) is where
   Eli's [Twitch Guest Star](https://help.twitch.tv/s/article/guest-star?language=en_US)
   browser source is. I keep it as a backup source in case Discord's audio fails.
   Though I've had minor glitches while testing it as an audio source, I'm
   reluctant to use it. For now, it's just a backup for emergencies.
 
 {{img(
-  src="/images/size/w1200/2023/06/Screenshot-2023-06-13-at-1.41.30-PM.png",
+  src="/images/size/w1000/2023/06/Screenshot-2023-06-13-at-1.42.00-PM.png",
   alt="Mixing the vocals."
 )}}
 
@@ -282,7 +282,7 @@ more voice subtly deeper. Overdo it, and you'll sound like Darth Vader or an
 accented version of Morgan Freeman. Be very careful.
 
 {{img(
-  src="/images/size/w1200/2023/06/Screenshot-2023-06-13-at-1.28.53-PM.png",
+  src="/images/2023/06/Screenshot-2023-06-13-at-1.28.53-PM.png",
   alt="Equalizer settings."
 )}}
 
@@ -302,7 +302,7 @@ And below is my noise gate. Again, this is a representative snapshot and may not
 meet your needs. Adjust the configuration yourself, and always use your ears.
 
 {{img(
-  src="/images/size/w1200/2023/06/Screenshot-2023-06-13-at-1.29.12-PM.png",
+  src="/images/2023/06/Screenshot-2023-06-13-at-1.29.12-PM.png",
   alt="Noise gate settings."
 )}}
 
@@ -311,8 +311,8 @@ the sound coming from our dear guest, Eli. I'm sharing the image below again for
 your convenience:
 
 {{img(
-  src="/images/size/w1200/2023/06/Screenshot-2023-06-13-at-1.41.30-PM.png",
-  alt="Mixing the vocals."
+src="/images/size/w1000/2023/06/Screenshot-2023-06-13-at-1.42.00-PM.png",
+alt="Mixing the vocals."
 )}}
 
 Then my voice and Eli's are combined, compressed, gain-adjusted, and set to 
@@ -320,7 +320,7 @@ Then my voice and Eli's are combined, compressed, gain-adjusted, and set to
 is a virtual audio device.
 
 {{img(
-  src="/images/size/w1200/2023/06/Screenshot-2023-06-13-at-1.42.32-PM.png",
+  src="/images/2023/06/Screenshot-2023-06-13-at-1.42.32-PM.png",
   alt="Onwards to the virtual audio device."
 )}}
 
@@ -635,7 +635,7 @@ when either Eli, or I am demonstrating something over Zoom.
 Here is the list of sources in this scene:
 
 {{img(
-  src="/images/2023/06/Screenshot-2023-06-15-at-11.38.00-AM.png)",
+  src="/images/2023/06/Screenshot-2023-06-15-at-11.38.00-AM.png",
   alt="The Zoom view's sources"
 )}}
 
@@ -647,8 +647,8 @@ in itself. Here's its source layout.
   alt="Dummy capture device."
 )}}
 
-The naming suggests that the view reflects a dummy 1080p virtual monitor (
-_created using_ [**_BetterDisplay_**](https://github.com/waydabber/BetterDisplay#readme)), 
+The naming suggests that the view reflects a dummy 1080p virtual monitor 
+(*created using [**_BetterDisplay_**](https://github.com/waydabber/BetterDisplay#readme)*), 
 which a real 1080p Asus monitor mirrors.
 
 A virtual display is helpful; I can mirror one of my main displays to it and
@@ -801,7 +801,7 @@ too:
 Here's how things look from the outside:
 
 {{img(
-  src="/images/2023/06/IMG-7329.jpg",
+  src="/images/size/w1000/2023/06/IMG-7330.jpg",
   alt="My workspace."
 )}}
 
@@ -1025,7 +1025,7 @@ Vocals track is seen below:
 
 {{img(
   src="/images/2023/06/Screenshot-2023-06-16-at-8.08.04-PM.png",
-  alt="Game streamed in OBS with audio coming from the virtual device.
+  alt="Game streamed in OBS with audio coming from the virtual device."
 )}}
 
 ## Conclusion

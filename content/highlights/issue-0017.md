@@ -40,12 +40,10 @@ a video of. I call him Jerry, say "hi" to him 🙂:
 
 ## Jerry the Lizard
 
-{{ 
-  vimeo(
-    id="787450561", 
-    title="Jerry the Lizard"
-  ) 
-}}
+{{vimeo(
+  id="787450561", 
+  title="Jerry the Lizard"
+)}}
 
 ## Keep Your Secrets Secret With Aegis
 

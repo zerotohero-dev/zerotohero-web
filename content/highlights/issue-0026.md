@@ -64,7 +64,7 @@ you'll enjoy every step of this adventure with me.
 [spiffe]: https://spiffe.io/
 [ssc]: https://github.com/spiffe/spiffe/tree/main/ssc
 [ssc-charter]: https://github.com/spiffe/spiffe/blob/main/ssc/CHARTER.md
-[kubernetes-guide]: @/vadi-geyik/geyik-academy/k8s101/_index.md
+[kubernetes-guide]: @/vadideki-geyik/geyik-academy/k8s101/_index.md
 
 ## Talk SPIFFE to Me 💬
 

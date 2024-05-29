@@ -15,27 +15,29 @@ date = "2022-02-10"
 tags = ["zero-to-prod"]
 +++
 
-![Zero to Prod in Half an Hour: Part 10 --- Authentication and Subscription Middlewares](/images/size/w1200/2024/03/through.png)
+
+{{img(
+  src="/images/size/w1200/2024/03/through.png",
+  alt="Zero to Prod in Half an Hour: Part 10 --- Authentication and Subscription Middlewares"
+)}}
 
 This section will implement middlewares that we need for authentication,
 authorization, and service subscription.
 
-Lecture
--------
+## Lecture
 
-Zero to Prod in Half an Hour: Part 10 --- Authentication and Subscription
-Middlewares
-662146491
+{{vimeo(
+  id="662146491",
+  title="Zero to Prod in Half an Hour: Part 10 --- Authentication and Subscription Middlewares"
+)}}
 
 --------
 
-Playlist
---------
+## Playlist
 
 {{ zero_to_prod_nav(selected = 10) }}
 
-Tools and Technologies Mentioned
---------------------------------
+## Tools and Technologies Mentioned
 
 Here are the tools and technologies that were mentioned in the video, along with
 related articles and other helpful links.
@@ -45,11 +47,10 @@ related articles and other helpful links.
 * [Refactoring: Improving the Design of Existing Codc](https://martinfowler.com/books/refactoring.html)
 * [Extract Function](https://refactoring.com/catalog/extractFunction.html)
 
-Read The Source
----------------
+## Read The Source
 
-* [Download the source code (_114kb zip
-  archive_)](https://assets.zerotohero.dev/zero-to-prod-in-30/zero-to-prod-in-30.zip)
+* [Download the source code (*114kb zip
+  archive*)](https://assets.zerotohero.dev/zero-to-prod-in-30/zero-to-prod-in-30.zip)
 
 ------------
 

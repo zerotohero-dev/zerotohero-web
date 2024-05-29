@@ -15,26 +15,28 @@ date = "2022-01-06"
 tags = ["zero-to-prod"]
 +++
 
-![Zero to Prod in Half an Hour: Part 2 --- Generating Static HTML](/images/size/w1200/2024/03/structure.png)
+{{img(
+  src="/images/size/w1200/2024/03/structure.png",
+  alt="Zero to Prod in Half an Hour: Part 2 --- Generating Static HTML"
+)}}
 
 In this part of the series, we'll create a generator that reads a repository
 full of Go source code files, and create syntax-highlighted HTML versions of
 those files. In this process, Pygments Python Syntax Highlighter will do the
 heavy-lifting.
 
-Lecture
--------
+## Lecture
 
-Zero to Prod in Half an Hour: Part 2 --- Generating Static HTML
-661262162
+{{vimeo(
+  id="661262162",
+  title="Zero to Prod in Half an Hour: Part 2 --- Generating Static HTML"
+)}}
 
-Playlist
---------
+## Playlist
 
 {{ zero_to_prod_nav(selected = 2) }}
 
-Tools and Technologies Mentioned
---------------------------------
+## Tools and Technologies Mentioned
 
 Here are the tools and technologies that were mentioned in the video, along with
 related articles and other helpful links.
@@ -45,8 +47,8 @@ related articles and other helpful links.
 
 ## Read The Source
 
-* [Download the source code (_114kb zip
-  archive_)](https://assets.zerotohero.dev/zero-to-prod-in-30/zero-to-prod-in-30.zip)
+* [Download the source code (*114kb zip
+  archive*)](https://assets.zerotohero.dev/zero-to-prod-in-30/zero-to-prod-in-30.zip)
 
 ------------
 

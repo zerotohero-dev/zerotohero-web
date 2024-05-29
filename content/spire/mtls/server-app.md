@@ -25,12 +25,10 @@ tags = ["mtls", "spiffe", "spire"]
 We'll start by creating a server application. Once the server is ready, we'll
 continue with the client application on the next video.
 
-{{ 
-  vimeo(
-    id="760885276", 
-    title="mTLS With SPIRE: Part 2: Creating the Server App"
-  ) 
-}}
+{{vimeo(
+  id="760885276", 
+  title="mTLS With SPIRE: Part 2: Creating the Server App"
+)}}
 
 --------
 

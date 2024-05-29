@@ -26,21 +26,18 @@ build and what technologies we'll use.
 
 ## Lecture
 
-Zero to Prod in Half an Hour: Part 1 --- An Overview of FizzBuzz Pro
-661262113
-
-
-
+{{vimeo(
+  id="661262113",
+  title="Zero to Prod in Half an Hour: Part 1 --- An Overview of FizzBuzz Pro"
+)}}
 
 --------
 
-Playlist
---------
+## Playlist
 
 {{ zero_to_prod_nav(selected = 1) }}
 
-Tools and Technologies Mentioned
---------------------------------
+## Tools and Technologies Mentioned
 
 Here are the tools and technologies that were mentioned in the video, along with
 related articles and other helpful links.
@@ -65,11 +62,10 @@ related articles and other helpful links.
 * [Elastic Load Balancing](https://aws.amazon.com/elasticloadbalancing/)
 * [Amazon Cloudfront](https://aws.amazon.com/cloudfront/)
 
-Read The Source
----------------
+## Read The Source
 
-* [Download the source code (_114kb zip
-  archive_)](https://assets.zerotohero.dev/zero-to-prod-in-30/zero-to-prod-in-30.zip)
+* [Download the source code (*114kb zip
+  archive*)](https://assets.zerotohero.dev/zero-to-prod-in-30/zero-to-prod-in-30.zip)
 
 ------------
 

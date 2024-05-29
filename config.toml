@@ -30,8 +30,11 @@ highlight_theme = "dracula"
 
 [extra.geyik]
 navigation = [
-    { url = "$BASE_URL/vadideki-geyik/bol-mazemos", title = "Bol Mazemos" },
+    { url = "$BASE_URL/vadideki-geyik/subscribe", title = "Abone Ol" },
     { url = "$BASE_URL/vadideki-geyik/team", title = "Biz Kimiz" },
+    { url = "$BASE_URL/vadideki-geyik/merch", title = "Merch" },
+    { url = "$BASE_URL/vadideki-geyik/bol-mazemos", title = "Bol Mazemos" },
+    { url = "$BASE_URL/vadideki-geyik/geyik-academy", title = "Geyik Akademi" },
     { url = "$BASE_URL/", title = "Zero to Hero"},
     { url = "https://discord.gg/kampus", title = "kamp.us", is_external = true },
     { url = "https://vsecm.com/", title = "VSecM", is_external = true }

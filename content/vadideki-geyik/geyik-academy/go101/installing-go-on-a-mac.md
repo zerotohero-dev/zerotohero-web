@@ -10,21 +10,29 @@
 
 title = "Installing Go on a Mac"
 date = "2021-05-22"
+template = "geyik.html"
 
 [taxonomies]
-tags = ["go"]
+tags = ["go", "geyik-academy", "go101"]
 +++
 
-![Gopher](/images/size/w1200/2024/03/macgoher.png)
+# Installing Go on a Mac
+
+{{img(
+  src="/images/size/w1200/2024/03/macgopher.png",
+  alt="Installing Go on Mac."
+)}}
 
 > Here, you'll find the instructions to install 
 > [**Go**](https://golang.org/ "Go Programming Language") on 
-> a **Mac OS** computer.
+> a **Mac** computer.
 
-Open [the package file you downloaded](https://golang.org/dl/) and follow the prompts to install **Go**.
+Open [the package file you downloaded](https://golang.org/dl/) and follow the 
+prompts to install **Go**.
 
-*   The package installs the Go distribution to `/usr/local/go`.
-*   The package should put the `/usr/local/go/bin` directory in your `PATH` environment variable.
+* The package installs the Go distribution to `/usr/local/go`.
+* The package should put the `/usr/local/go/bin` directory in your 
+  `PATH` environment variable.
 
 Restart your terminal and verify the settings by entering the following commands.
 

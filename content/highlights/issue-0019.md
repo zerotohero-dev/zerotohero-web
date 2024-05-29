@@ -68,12 +68,10 @@ Here are the slides and an the source code of [my recent GopherCon talk on
 
 Here is a video recording of the demo I made there too:
 
-{{ 
-  vimeo(
-    id="623755802", 
-    title="🤘 SPIRE Rocks 🤘"
-  ) 
-}}
+{{vimeo(
+  id="623755802", 
+  title="🤘 SPIRE Rocks 🤘"
+)}}
 
 ## Random Thought of the Week
 

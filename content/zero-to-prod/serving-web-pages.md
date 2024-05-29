@@ -15,25 +15,27 @@ date = "2022-01-15"
 tags = ["zero-to-prod"]
 +++
 
-![Zero to Prod in Half an Hour: Part 6 --- Serving Web Pages](/images/size/w1200/2024/03/recurse.png)
+{{img(
+  src="/images/size/w1200/2024/03/recurse.png",
+  alt="Zero to Prod in Half an Hour: Part 6 --- Serving Web Pages"
+)}}
 
 This section will add a bunch of static web page templates into our application
 and serve them in several routes. We will also use a Gumroad embed form and a
 very minimal dynamic templating in our subscription form.
 
-Lecture
--------
+## Lecture
 
-Zero to Prod in Half an Hour: Part 6 --- Serving Web Pages
-661883975
+{{vimeo(
+  id="661883975",
+  title="Zero to Prod in Half an Hour: Part 6 --- Serving Web Pages"
+)}}
 
-Playlist
---------
+## Playlist
 
 {{ zero_to_prod_nav(selected = 6) }}
 
-Tools and Technologies Mentioned
---------------------------------
+## Tools and Technologies Mentioned
 
 Here are the tools and technologies that were mentioned in the video, along with
 related articles and other helpful links.
@@ -53,10 +55,9 @@ related articles and other helpful links.
 * [Monitorama PDX 2016 - Kelsey Hightower - healthz: Stop reverse engineering applications and start monitoring from the inside](https://vimeo.com/173610242)
 * [Kubernetes: Configure Liveness, Readiness and Startup Probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/)
 
-Read The Source
----------------
+## Read The Source
 
-* [Download the source code (_114kb zip
-  archive_)](https://assets.zerotohero.dev/zero-to-prod-in-30/zero-to-prod-in-30.zip)
+* [Download the source code (*114kb zip
+  archive*)](https://assets.zerotohero.dev/zero-to-prod-in-30/zero-to-prod-in-30.zip)
 
 Until the next lecture... May the source be with you 🦄.

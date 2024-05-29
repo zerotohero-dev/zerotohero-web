@@ -15,28 +15,30 @@ date = "2022-01-11"
 tags = ["zero-to-prod"]
 +++
 
-![Zero to Prod in Half an Hour: Part 4 --- App Authentication Overview](/images/size/w1200/2024/03/papers.png)
+{{img(
+  src="/images/size/w1200/2024/03/papers.png",
+  alt="Zero to Prod in Half an Hour: Part 4 --- App Authentication Overview"
+)}}
 
 In this section, we'll create a blank project for your web application, then
 overview how we can implement an **Auth0** Authenticator for our application to
 be used in our **OAuth 2.0** authentication **login**, **callback**, and *
 *logout** routes.
 
-Lecture
--------
+## Lecture
 
-Zero to Prod in Half an Hour: Part 4 --- App Authentication Overview
-661702567
+{{vimeo(
+  id="661702567",
+  title="Zero to Prod in Half an Hour: Part 4 --- App Authentication Overview"
+)}}
 
 --------
 
-Playlist
---------
+## Playlist
 
 {{ zero_to_prod_nav(selected = 4) }}
 
-Tools and Technologies Mentioned
---------------------------------
+## Tools and Technologies Mentioned
 
 Here are the tools and technologies that were mentioned in the video, along with
 related articles and other helpful links.
@@ -49,18 +51,16 @@ related articles and other helpful links.
 * [Go OIDC](https://github.com/coreos/go-oidc)
 * [Go OAuth2 Package](https://github.com/golang/oauth2)
 
-OAuth2 Authentication Sequence Diagram
---------------------------------------
+## OAuth2 Authentication Sequence Diagram
 
 Here's the sequence diagram that the video talked about:
 
 ![OAuth2 Authentication Sequence Diagram](/images/2022/01/Screen-Shot-2022-01-10-at-5.00.04-PM.png)
 
-Read The Source
----------------
+## Read The Source
 
-* [Download the source code (_114kb zip
-  archive_)](https://assets.zerotohero.dev/zero-to-prod-in-30/zero-to-prod-in-30.zip)
+* [Download the source code (*114kb zip
+  archive*)](https://assets.zerotohero.dev/zero-to-prod-in-30/zero-to-prod-in-30.zip)
 
 ------------
 

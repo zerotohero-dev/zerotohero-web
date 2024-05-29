@@ -23,6 +23,8 @@ Alfabetik sırayla:
 
 ## Can Şirin
 
+{{ avatar_can() }}
+
 Gariban <s>junior</s> yazılım mühendisi. Umut’a o kadar benziyor ki bazen 
 “*ikiz*”
 diyorlar. Can, “*az tecrübeli*” olmanın “*az yetenekli*” olmak anlamına 
@@ -52,6 +54,8 @@ Daha fazlası için [Can’ın LinkedIn profilini ziyaret edebilirsin](https://w
 
 ## Hamza Erbay
 
+{{ avatar_hamza() }}
+
 Hamza, Udemy’nin ciddi anlamda “*kıdemli*” yıldızlarından. Hatta rivayete göre
 önce Udemy ofisinin temelini atmışlar, sonra Hamza’yı binaya yerleştirmişler,
 ardından binanın inşasını tamamlamışlar.
@@ -76,6 +80,8 @@ Daha fazlası için [Hamza’nın kişisel web sitesini ziyaret
 edebilirsin](https://hamzaerbay.com/).
 
 ## Umut Şirin
+
+{{ avatar_umut() }}
 
 Umut… nerden başlasak… Tasarım Sistemleri ve Erişilebilirlik konusunda o kadar
 iyi ki, Discord logosundaki değişiklik bile onun onayına bakar. Dijital dünyayı
@@ -102,6 +108,8 @@ edebilirsin](https://www.linkedin.com/in/usirin/).
 
 ## Volkan Özçelik
 
+{{ avatar_volkan() }}
+
 Volkan, yazılım mühendisliği kariyerine yirmi yıldan fazla bir süre önce başladı
 ve bu yolculukta birçok startup’a kurucu ve ortak olarak öncülük etti. Farklı
 düşünmeyi, kavramlar arasında alakasız gibi görünen bağlantılar kurmayı ve
@@ -112,5 +120,5 @@ kariyerine yön veriyor. Bu bağlamda, yazılım mühendisliği alanındaki dene
 birikimi, ve yaratıcı çözüm arayışlarıyla, teknoloji dünyasının karmaşık 
 sorunlarına akılcı çözümler getirmeyi sürdürüyor.
 
-Daha fazlası için [volkan.io](https://volkan.io/) ve
+Daha fazlası için [volkan.io](@/about/volkan.md) ve
 [zerotohero.dev](@/_index.md) adreslerini ziyaret edebilirsin.

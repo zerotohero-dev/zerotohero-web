@@ -12,27 +12,33 @@ title = "Creating ECR Repositories"
 date = "2021-06-18"
 
 [taxonomies]
-tags = ["zero-to-prod"]
+tags = ["zero-to-prod", "aws", "ecr"]
 +++
 
-![Creating ECR Repositories](/images/size/w1200/2024/03/elastic.png)
+{{img(
+  src="/images/size/w1200/2024/03/elastic.png",
+  alt="These are 'elastic' containers."
+)}}
 
 This quick video will create an [**AWS ECR**](https://aws.amazon.com/ecr/) repo
 and set up our development environment to interact with it.
 
-Creating ECR Repositories
-564406841
+{{vimeo(
+  id="564406841",
+  title="Creating ECR Repositories"
+)}}
 
-
-Resources and Additional Reading
---------------------------------
+## Resources and Additional Reading
 
 * [Amazon Elastic Container Registry](https://aws.amazon.com/ecr/)
 * [Installing the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html)
 * [What is a Container](https://www.digitalocean.com/community/tutorials/what-is-a-container)
 
-Next Up
--------
+## Playlist
+
+{{ zero_to_prod_nav(selected = 15) }}
+
+## Next Up
 
 Next on my video production queue are:
 

@@ -23,12 +23,10 @@ tags = ["mtls", "spiffe", "spire"]
 Now that we have **SPIRE**, our server application can use it to establish an
 **mTLS** connectivity.
 
-{{ 
-  vimeo(
-    id="760885555", 
-    title="mTLS With SPIRE: Part 8: Configuring the Server to User SPIRE mTLS"
-  ) 
-}}
+{{vimeo(
+  id="760885555", 
+  title="mTLS With SPIRE: Part 8: Configuring the Server to User SPIRE mTLS"
+)}}
 
 --------
 

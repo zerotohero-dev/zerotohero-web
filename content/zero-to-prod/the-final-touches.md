@@ -15,26 +15,28 @@ date = "2022-02-09"
 tags = ["zero-to-prod"]
 +++
 
-![Zero to Prod in Half an Hour: Part 12 --- The Final Touches](/images/size/w1200/2024/03/artwork.png)
+{{img(
+  src="/images/size/w1200/2024/03/artwork.png",
+  alt="Zero to Prod in Half an Hour: Part 12 --- The Final Touches"
+)}}
 
 We are done with the authentication part. We are almost near the end of our
 application's initial implementation. We just need a questions handlers, which,
 in essence, is a glorified file server with some path traversal protection for
 an added level of security.
 
-Lecture
--------
+## Lecture
 
-Zero to Prod in Half an Hour: Part 12 --- The Final Touches
-662405388
+{{vimeo(
+  id="662405388",
+  title="Zero to Prod in Half an Hour: Part 12 --- The Final Touches"
+)}}
 
-Playlist
---------
+## Playlist
 
 {{ zero_to_prod_nav(selected = 12) }}
 
-Tools and Technologies Mentioned
---------------------------------
+## Tools and Technologies Mentioned
 
 Here are the tools and technologies that were mentioned in the video, along with
 related articles and other helpful links.
@@ -44,11 +46,10 @@ related articles and other helpful links.
 * [string Package](https://pkg.go.dev/strings)
 * [Path Traversal Attack](https://owasp.org/www-community/attacks/Path_Traversal)
 
-Read The Source
----------------
+## Read The Source
 
-* [Download the source code (_114kb zip
-  archive_)](https://assets.zerotohero.dev/zero-to-prod-in-30/zero-to-prod-in-30.zip)
+* [Download the source code (*114kb zip
+  archive*)](https://assets.zerotohero.dev/zero-to-prod-in-30/zero-to-prod-in-30.zip)
 
 ------------
 

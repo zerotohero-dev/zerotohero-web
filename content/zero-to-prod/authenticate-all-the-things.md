@@ -15,27 +15,29 @@ date = "2022-02-09"
 tags = ["zero-to-prod"]
 +++
 
-![Zero to Prod in Half an Hour: Part 8 --- Authenticate All the Things](/images/size/w1200/2024/03/locket.png)
+{{img(
+  src="/images/size/w1200/2024/03/locket.png",
+  alt="Zero to Prod in Half an Hour: Part 8 --- Authenticate All the Things"
+)}}
 
 We'll define placeholders for the routes we want to implement later. And then
 we'll implement a MongoDB-backed session store to be used in our Auth0 identity
 control plane.
 
-Lecture
--------
+## Lecture
 
-Zero to Prod in Half an Hour: Part 8 --- Authenticate All the Things
-662068994
+{{vimeo(
+  id="662068994",
+  title="Zero to Prod in Half an Hour: Part 8 --- Authenticate All the Things"
+)}}
 
 --------
 
-Playlist
---------
+## Playlist
 
 {{ zero_to_prod_nav(selected = 8) }}
 
-Tools and Technologies Mentioned
---------------------------------
+## Tools and Technologies Mentioned
 
 Here are the tools and technologies that were mentioned in the video, along with
 related articles and other helpful links.
@@ -53,11 +55,10 @@ related articles and other helpful links.
 * [mgo Package](https://pkg.go.dev/github.com/globalsign/mgo)
 * [Gin Middleware for Session Management](https://github.com/gin-contrib/sessions)
 
-Read The Source
----------------
+## Read The Source
 
-* [Download the source code (_114kb zip
-  archive_)](https://assets.zerotohero.dev/zero-to-prod-in-30/zero-to-prod-in-30.zip)
+* [Download the source code (*114kb zip
+  archive*)](https://assets.zerotohero.dev/zero-to-prod-in-30/zero-to-prod-in-30.zip)
 
 ------------
 

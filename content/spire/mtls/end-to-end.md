@@ -24,12 +24,10 @@ In this final video of this series, we'll exchance trust bundles between two *
 *SPIRE** servers to enable cross-cluster **mTLS** connectivity between workloads
 that reside in different clusters.
 
-{{ 
-  vimeo(
-    id="760885671", 
-    title="mTLS With SPIRE: Part 8: Configuring the Server to User SPIRE mTLS"
-  ) 
-}}
+{{vimeo(
+  id="760885671", 
+  title="mTLS With SPIRE: Part 8: Configuring the Server to User SPIRE mTLS"
+)}}
 
 --------
 

@@ -24,12 +24,10 @@ We'll continue creating creating container images and deploying the client app
 to the cluster too, then observe how the client and server communicate with each
 other within the pods.
 
-{{ 
-  vimeo(
-    id="760885401", 
-    title="mTLS With SPIRE: Part 5: Containerizing the Client"
-  ) 
-}}
+{{vimeo(
+  id="760885401", 
+  title="mTLS With SPIRE: Part 5: Containerizing the Client"
+)}}
 
 --------
 

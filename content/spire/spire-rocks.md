@@ -30,12 +30,10 @@ Psst... 🔎 Looking for **GopherCon, 2021, TR** resources? Say no more:
 
 Here is a video recording of the demo we made too:
 
-{{ 
-  vimeo(
-    id="655594498", 
-    title="mTLS Using Spire Under Three Minutes"
-  ) 
-}}
+{{vimeo(
+  id="655594498", 
+  title="mTLS Using Spire Under Three Minutes"
+)}}
 
 Make sure you watch the longer video below, and read the rest of the article
 too.
@@ -50,12 +48,10 @@ Enjoy, and may the source be with you 🦄.
 
 ## Lecture
 
-{{ 
-  vimeo(
-    id="623755802", 
-    title="Setting Up SPIRE on EKS in Less Than Ten Minutes"
-  ) 
-}}
+{{vimeo(
+  id="623755802", 
+  title="Setting Up SPIRE on EKS in Less Than Ten Minutes"
+)}}
 
 ## Introduction
 

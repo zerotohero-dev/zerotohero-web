@@ -8,14 +8,20 @@
 # |       ||      ||  | |  | learn.
 # `-------'`------'`--' `--'
 
-title = "TBD"
+title = "How to Work With Private Go Repositories"
 date = "2021-11-26"
+template = "geyik.html"
 
 [taxonomies]
 tags = ["go"]
 +++
 
-![How To Work With Private Go Repositories](/images/size/w1200/2024/03/private.png)
+# How to Work With Private Go Repositories
+
+{{img(
+  src="/images/size/w1200/2024/03/private.png",
+  alt="Private repositories, being private."
+)}}
 
 Introduction
 ------------
