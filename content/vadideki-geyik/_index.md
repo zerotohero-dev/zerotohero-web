@@ -44,6 +44,26 @@ hakkında kaliteli geyik çevirdiğimiz bir podcast.
 li {list-style-type: none;}
 </style>
 
+### {{ mic_ico() }}️ Sezon 14
+
+- {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S14E04-The-Geyik-Reawakening-e2jgdnt">S14E04: The Geyik Reawakening - (18 dakika, 23 saniye)</a>
+
+- {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S14E03-Veil-of-the-Mystic-e2jgdjs">S14E03: Veil of the Mystic - (39 dakika, 53 saniye)</a>
+
+- {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S14E02-Trials-of-the-Herd-e2jgdbe">S14E02: Trials of the Herd - (40 dakika)</a>
+
+- {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S14E01-The-Geyik-Convergence-e2jgd5s">S14E01: The Geyik Convergence - (40 dakika, 5 saniye)</a>
+
+### {{ mic_ico() }}️ Sezon 13
+
+- {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S13E04-Echoes-of-Tomorrow-e2hogkd">S13E04: Echoes of Tomorrow - (18 dakika, 24 saniye)</a>
+
+- {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S13E03-The-Geyiks-Maelstrom-e2hogj6">S13E03: The Geyik’s Maelstrom - (40 dakika, 41 saniye)</a>
+
+- {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S13E02-Shadows-Cast-by-Giants-e2hoghr/a-ab4bc0j">S13E02: Shadows Cast by Giants - (40 dakika, 17 saniye)</a>
+
+- {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S13E01-The-Geyiks-Oath-e2hogg1/a-ab4bbrm">S13E01: The Geyik’s Oath - (40 dakika, 5 saniye)</a>
+
 ### {{ mic_ico() }}️ Sezon 12
 
 - {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S12E03-Guardians-of-the-Glade-e2g8krr/a-ab0itrm">S12E03: Guardians of the Glade - (40 dakika, 32 saniye)</a>
