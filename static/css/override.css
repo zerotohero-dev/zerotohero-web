@@ -12,7 +12,7 @@
 .post-content pre,
 .post-content pre code {
     border-radius: var(--radius);
-    font-family: input-mono-condensed, monospace;
+    font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
     font-weight: 200;
 }
 .post-content pre code > table {

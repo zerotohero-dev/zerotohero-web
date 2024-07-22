@@ -60,8 +60,7 @@ h6 {
   color: var(--primary);
 }
 body {
-  font-family: myriad-pro, -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Oxygen,
-    Ubuntu, Cantarell, open sans, helvetica neue, sans-serif;
+  font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
   font-size: 18px;
   line-height: 1.6;
   word-break: break-word;
@@ -514,9 +513,17 @@ pre:hover .copy-code {
   margin: 40px auto 32px;
   font-size: 40px;
 }
+.post-title {
+  border-bottom: 0.4em #ffc832 solid;
+  margin-bottom: 0.25em;
+  margin-top: 0.5em;
+}
+
 .post-content h2 {
   margin: 32px auto 24px;
   font-size: 32px;
+  border-bottom: 0.1em #602FAE solid;
+  padding-bottom: 0.12em;
 }
 .post-content h3 {
   font-size: 24px;
@@ -632,7 +639,7 @@ pre:hover .copy-code {
   padding: 4px 6px;
   font-size: 0.86em;
   line-height: 1.5;
-  background: var(--code-bg);
+  xbackground: var(--code-bg);
   border-radius: 2px;
 }
 .post-content pre code {
@@ -640,7 +647,7 @@ pre:hover .copy-code {
   margin: auto 0;
   padding: 10px;
   color: #d5d5d6;
-  background: #35384d !important;
+  xbackground: #35384d !important;
   /*xbackground: var(--hljs-bg) !important;*/
   border-radius: var(--radius);
   overflow-x: auto;

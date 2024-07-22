@@ -15,7 +15,7 @@ template = "series-index.html"
 +++
 
 {{img(
-  src="/images/2024/road.md"
+  src="/images/2024/road.png"
   alt="It is the path that matters."
 )}}
 

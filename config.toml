@@ -24,7 +24,8 @@ taxonomies = [
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
 highlight_code = true
 smart_punctuation = true
-highlight_theme = "dracula"
+highlight_theme = "gruvbox-dark"
+# boron, green, dracula, kronuz, gruvbox-dark
 
 [extra]
 

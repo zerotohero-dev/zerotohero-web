@@ -49,3 +49,5 @@
   url: "@/roadmap/ramp-up-in-user-experience-design.md"
 - name: "Get Better at Typography"
   url: "@/roadmap/typography.md"
+- name: "Exploring Rust as a Go Developer"
+  url: "@/roadmap/learning-rust.md"
