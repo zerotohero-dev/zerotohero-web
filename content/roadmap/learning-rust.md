@@ -70,7 +70,7 @@ The command above will download a script and start the installation.
 
 By the end of the process you should see something like this:
 
-```text
+```txt
 Rust is installed now. Great!
 ```
 
@@ -127,7 +127,7 @@ cargo run
 
 `cargo new` creates a new project with the following structure:
 
-```text
+```txt
 ├── Cargo.lock
 ├── Cargo.toml
 ├── src
@@ -4038,7 +4038,7 @@ Now, let's structure our project:
 
 Here is the project file structure:
 
-```text
+```txt
 my_project/
 ├── Cargo.toml
 └── src/
@@ -5588,7 +5588,7 @@ In the generated code
 
 Here's a conceptual view of how it works:
 
-```text
+```txt
 [Your JavaScript Code] 
     <-> [JS Wrapper (.js)] 
        <-> [WebAssembly Module (.wasm)]

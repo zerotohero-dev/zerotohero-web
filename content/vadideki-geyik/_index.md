@@ -66,9 +66,7 @@ li {list-style-type: none;}
 
 ### {{ mic_ico() }}️ Sezon 12
 
-- {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S12E03-Guardians-of-the-Glade-e2g8krr/a-ab0itrm">S12E03: Guardians of the Glade - (40 dakika, 32 saniye)</a>
-- {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S12E02-The-Veiled-Path-e2g8kmd/a-ab0ite4">S12E02: The Veiled Path - (40 dakika, 12 saniye)</a>
-- {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S12E01-Dawn-of-the-New-Geyik-e2g8ki1/a-ab0it2h">S12E01: Dawn of the New Geyik - (40 dakika, 33 saniye)</a>
+- {{ play_ico() }} <a href="https://www.youtube.com/watch?v=dccD6mPo7Dc">Sezon 12 — All in One (YouTube)</a>
 
 ### {{ mic_ico() }}️️ Sezon 11
 
