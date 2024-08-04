@@ -11,6 +11,8 @@ Sonraki yayında konuşulabilir şeyler:
 
 ## Önceki Yayında Yarım Kalanlar
 
+* Forum kulturu nedir? Bir forumda nasil davranilir? Nasil soru sorulur? Nasil soru sorulmaz?
+  * Neden insanlar ozel merajla darlanmaz?
 * Sinyal isleme dersini niye iki kez aldim.
 * Jose Capablanca’ya Silikon Vadisi’nde nasil is teklifi nasil gelir?
   <https://www.chess.com/players/jose-raul-capablanca>
