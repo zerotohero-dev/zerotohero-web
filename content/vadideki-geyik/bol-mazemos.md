@@ -17,7 +17,6 @@ Sonraki yayında konuşulabilir şeyler:
 * Geyik: broadcomda sabah kahvaltisi
 * Korfez bolgesinde 2 sene arabasiz nasil yasanir?
 * HR: biz size guveniyoruz, ofise gelin de, ne zaman geldiginiz onemli degil.
-* VSecM maintainer access removal olayi
 * 30K kredi karti borcu, developer maasiyla nasil hizlica kapatilir?
 * “Mert var; sinif arkadasim; o olur mu?”
 * quote: “Yaya yaya okumayacaksin; odakli olarak giriseceksin;
@@ -40,13 +39,11 @@ Sonraki yayında konuşulabilir şeyler:
 * advices to your younger self
 * Las vegas: bu kadar ucuz olmamai oteller; daycare parasini kumardna kazanmak
 * universite anilari
-    * “Kasalari maviye boyadim 🎶”
     * Kuzey ve Guney kampus arasindaki fark.
     * Kulupler
     * Bir muhendis olarak Bertland Russel’in ogrencisinden felsefe dersi alma 
     manyakligi
 * Don’t outshine your master ve diger kurumsal ortam ipuclari.
-* 12 yasinda oyun yazmaca
 * Tefeciye ihtiyacim var, nereden bulurum?
 * Open Source yapiyorum; kendi repom var, bol bol hackernews klonu ekliyorum,
   ama hic bir sirketin umrunda degil. Neden?
@@ -75,11 +72,8 @@ Sonraki yayında konuşulabilir şeyler:
     * bu personayi onlira.co’da kullandim mi hatirlamiyorum; ama benzer 
     personalar kullanmistim.
     * MessengerFX zamani olusturmustum bu personalari; takipcileri vardi epey.
-* T.Erener, 4 saat degil, 8 saatti; konu guncellemesi.
-    * Nagişin konu ile ilgili fikri (eğer uyanıksa :)
 * “green card en rahat nasil alinir”
 * “vize aktarma” nedir; yenir mi?
-* Rusya ve corba.
 * Yatirimci’ya ev ziyareti
 * Van’li asker.
 * Intentional, unintentional biases and blind spots (Cinliler acayip matematige 
