@@ -11,22 +11,31 @@ Sonraki yayında konuşulabilir şeyler:
 
 ## Önceki Yayında Yarım Kalanlar
 
+* Dell Layofflari: Nereye gidiyoruz, neler oluyor? Makroekonomik degisimler.
+* Junior'im, is ariyorum, leverage'imi nasil arttirabilirim?
+  * Ilintili: Jose Capablanca’ya Silikon Vadisi’nde nasil is teklifi nasil gelir? 
+    <https://www.chess.com/players/jose-raul-capablanca>
+* Universitenin normalize etkisi ve birden “ortalama” oldugunu farketmek.
+  * Silkelenik kendine gelmek:
+    * Bir bar taburesinde ikinci senede 0.4/4 GPA
+* Diploma onemli mi?
+* Ogrenmek uzerine:
+  * Nasil oluyor da sinavda dil ogreniliyor?
+* Juan Budamaci ve dilin onemsizligi
+* "Kafamda olan maas beklentisinin iki katini mi isteyeyim; ciddi misin?"
 * Forum kulturu nedir? Bir forumda nasil davranilir? 
   * Nasil soru sorulur? Nasil soru sorulmaz?
-  * Neden insanlar ozel merajla darlanmaz?
+  * Neden insanlar ozel mesajla darlanmaz?
 * Sinyal isleme dersini niye iki kez aldim.
-* Jose Capablanca’ya Silikon Vadisi’nde nasil is teklifi nasil gelir?
-  <https://www.chess.com/players/jose-raul-capablanca>
-* Geyik: broadcomda sabah kahvaltisi
 * Korfez bolgesinde 2 sene arabasiz nasil yasanir?
-* HR: biz size guveniyoruz, ofise gelin de, ne zaman geldiginiz onemli degil.
-* 30K kredi karti borcu, developer maasiyla nasil hizlica kapatilir?
+* Tefeciye ihtiyacim var, nereden bulurum? 
+  * (aka: ~$30K kredi karti borcu, Turkiye developer maasiyla nasil 
+    hizlica kapatilir?)
 * “Mert var; sinif arkadasim; o olur mu?”
 * quote: “Yaya yaya okumayacaksin; odakli olarak giriseceksin;
   stratejin olacak, icerige gore stratejin dogrultusunda ilerleyeceksin.”
     * abi burada strateji olarak nasil davraniyorsun tam olarak? Hic bilmedigin
       bir konu hakkinda onden plani nasil yapabiliriz ki?
-* “Ben guvercin degilim” dedim 😄
 * WFH takım arkadaşı tarafından ghostlanmış olmak var ama ben harici kaç kişi
   yaşamıştır, bilmiyorum (ilintili: Cisco, pandemi oncesi bile hibriddi;
   kendini yalniz hissedebiliyordun, ayri bir alisma sureci o)
@@ -47,7 +56,7 @@ Sonraki yayında konuşulabilir şeyler:
     * Bir muhendis olarak Bertland Russel’in ogrencisinden felsefe dersi alma 
     manyakligi
 * Don’t outshine your master ve diger kurumsal ortam ipuclari.
-* Tefeciye ihtiyacim var, nereden bulurum?
+
 * Open Source yapiyorum; kendi repom var, bol bol hackernews klonu ekliyorum,
   ama hic bir sirketin umrunda degil. Neden?
 * Yaprak’in Istanbul’da karsidan karsiya gecis macerasi.
@@ -74,7 +83,6 @@ Sonraki yayında konuşulabilir şeyler:
     * bu personayi onlira.co’da kullandim mi hatirlamiyorum; ama benzer 
     personalar kullanmistim.
     * MessengerFX zamani olusturmustum bu personalari; takipcileri vardi epey.
-* “green card en rahat nasil alinir”
 * “vize aktarma” nedir; yenir mi?
 * Yatirimci’ya ev ziyareti
 * Van’li asker.
@@ -85,11 +93,6 @@ Sonraki yayında konuşulabilir şeyler:
 * Vidanjorle GTA
 * Jose Capablanca’ya is on gorusmesi (*phone screening*) teklifi.
 * Bir etkinligin nasil uc tane “ana” sponsoru olur?
-* Bir bar taburesinde ikinci senede 0.4/4 GPA
-* Universitenin normalize etkisi ve birden “ortalama” olmak.
-* Diploma onemli mi?
-* Nasil oluyor da sinavda dil ogreniliyor?
-* Juan Budamaci ve dilin onemsizligi
 * “Niye bizimle calismak istiyorsun?”
 * Truth coexists
 * dj’lik ve haber spikerligi
