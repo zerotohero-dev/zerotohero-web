@@ -16,7 +16,7 @@ Sonraki yayında konuşulabilir şeyler:
   * Ilintili: Jose Capablanca’ya Silikon Vadisi’nde nasil is teklifi nasil gelir? 
     <https://www.chess.com/players/jose-raul-capablanca>
 * Universitenin normalize etkisi ve birden “ortalama” oldugunu farketmek.
-  * Silkelenik kendine gelmek:
+  * Silkelenip kendine gelmek:
     * Bir bar taburesinde ikinci senede 0.4/4 GPA
 * Diploma onemli mi?
 * Ogrenmek uzerine:
