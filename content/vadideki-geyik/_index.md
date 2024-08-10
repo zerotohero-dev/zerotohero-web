@@ -32,9 +32,8 @@ hakkında kaliteli geyik çevirdiğimiz bir podcast.
 ## Onu Seven, Bunu Da Sevdi
 
 - {{ icon_sub() }} [Abone Ol](@/vadideki-geyik/subscribe.md)
-- {{ deer_ico() }} [Geyik Akademi](@/vadideki-geyik/geyik-academy/_index.md)
 - {{ icon_team() }} [Biz Kimiz](@/vadideki-geyik/team.md)
-- {{ icon_merch() }} [Geyik Merch](@/vadideki-geyik/merch.md)
+- {{ icon_merch() }} [Geyik Merch](https://geyik.store/)
 - {{ icon_mazemos() }} [Bol Mazemos](@/vadideki-geyik/bol-mazemos.md)
 - {{ icon_kampus() }} [Kampus (*Discord*)](https://discord.gg/kampus)
 

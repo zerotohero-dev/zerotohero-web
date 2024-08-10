@@ -11,6 +11,8 @@ Sonraki yayında konuşulabilir şeyler:
 
 ## Önceki Yayında Yarım Kalanlar
 
+* Geyik v2: Neden v2? Neler değişti? Neler değişmedi?
+* AudioHijack ile A/B Test Nasil Yapilir?
 * Dell Layofflari: Nereye gidiyoruz, neler oluyor? Makroekonomik degisimler.
 * Junior'im, is ariyorum, leverage'imi nasil arttirabilirim?
   * Ilintili: Jose Capablanca’ya Silikon Vadisi’nde nasil is teklifi nasil gelir? 
