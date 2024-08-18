@@ -10,6 +10,7 @@ tags = ["geyik"]
 
 ## Önceki Yayında Yarım Kalanlar / Sonraki Yayinda Konusulabilecekler
 
+* BOUN sizce şuan da nasıl bir durumda ? Günümüz için BOUN'da okumak ne kadar mantıklı ? 
 * AudioHijack ile A/B Test Nasil Yapilir?
 * Junior'im, is ariyorum, leverage'imi nasil arttirabilirim?
   * su anki ortamda juniorsam nasil hazirlanmaliyim?
