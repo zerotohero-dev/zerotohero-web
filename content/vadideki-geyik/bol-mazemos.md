@@ -7,9 +7,9 @@ template = "geyik.html"
 tags = ["geyik"]
 +++
 
-
 ## Önceki Yayında Yarım Kalanlar / Sonraki Yayinda Konusulabilecekler
 
+* VMware layofflari
 * Bir "*full stud developer*" nasil olunur?
 * Neden hayattayız? Yaşamın bir amacı var mı? Eğer varsa, bu amaç bir şeye 
   inanmak ve ona bağlı kalmak mı? Yalnız hissetmemek için mi yaşıyoruz?
