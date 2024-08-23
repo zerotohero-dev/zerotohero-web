@@ -10,6 +10,9 @@ tags = ["geyik"]
 
 ## Önceki Yayında Yarım Kalanlar / Sonraki Yayinda Konusulabilecekler
 
+* Bir "*full stud developer*" nasil olunur?
+* Neden hayattayız? Yaşamın bir amacı var mı? Eğer varsa, bu amaç bir şeye 
+  inanmak ve ona bağlı kalmak mı? Yalnız hissetmemek için mi yaşıyoruz?
 * AudioHijack ile A/B Test Nasil Yapilir?
 * Junior'im, is ariyorum, leverage'imi nasil arttirabilirim?
   * su anki ortamda juniorsam nasil hazirlanmaliyim?
