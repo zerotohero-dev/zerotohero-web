@@ -11,6 +11,7 @@ tags = ["geyik"]
 
 * VMware layofflari
 * Bir "*full stud developer*" nasil olunur?
+* Ozguven: Juan Budamaci ve dilin onemsizligi
 * AudioHijack ile A/B Test Nasil Yapilir?
 * Junior'im, is ariyorum, leverage'imi nasil arttirabilirim?
   * su anki ortamda juniorsam nasil hazirlanmaliyim?
@@ -23,7 +24,7 @@ tags = ["geyik"]
 * Bir tepsi baklava ne kapilar acar: Soft-skillerin kariyer ararken onemi
 * Ogrenmek uzerine:
   * Nasil oluyor da sinavda dil ogreniliyor?
-* Juan Budamaci ve dilin onemsizligi
+
 * "Kafamda olan maas beklentisinin iki katini mi isteyeyim; ciddi misin?"
 * Forum kulturu nedir? Bir forumda nasil davranilir? 
   * Nasil soru sorulur? Nasil soru sorulmaz?
