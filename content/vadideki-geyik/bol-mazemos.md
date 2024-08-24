@@ -11,8 +11,6 @@ tags = ["geyik"]
 
 * VMware layofflari
 * Bir "*full stud developer*" nasil olunur?
-* Neden hayattayız? Yaşamın bir amacı var mı? Eğer varsa, bu amaç bir şeye 
-  inanmak ve ona bağlı kalmak mı? Yalnız hissetmemek için mi yaşıyoruz?
 * AudioHijack ile A/B Test Nasil Yapilir?
 * Junior'im, is ariyorum, leverage'imi nasil arttirabilirim?
   * su anki ortamda juniorsam nasil hazirlanmaliyim?
@@ -59,7 +57,8 @@ tags = ["geyik"]
     * Bir muhendis olarak Bertland Russel’in ogrencisinden felsefe dersi alma 
     manyakligi
 * Don’t outshine your master ve diger kurumsal ortam ipuclari.
-
+* Neden hayattayız? Yaşamın bir amacı var mı? Eğer varsa, bu amaç bir şeye
+  inanmak ve ona bağlı kalmak mı? Yalnız hissetmemek için mi yaşıyoruz?
 * Open Source yapiyorum; kendi repom var, bol bol hackernews klonu ekliyorum,
   ama hic bir sirketin umrunda degil. Neden?
 * Yaprak’in Istanbul’da karsidan karsiya gecis macerasi.
