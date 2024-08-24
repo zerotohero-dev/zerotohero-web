@@ -10,6 +10,7 @@ tags = ["geyik"]
 ## Önceki Yayında Yarım Kalanlar / Sonraki Yayinda Konusulabilecekler
 
 * VMware layofflari
+* Umut'un "Bostanci" (Boston) maceralari
 * Bir "*full stud developer*" nasil olunur?
 * Ozguven: Juan Budamaci ve dilin onemsizligi
 * AudioHijack ile A/B Test Nasil Yapilir?
