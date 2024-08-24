@@ -45,6 +45,8 @@ li {list-style-type: none;}
 
 ### {{ mic_ico() }}️ Sezon 15
 
+- {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S15E04-Japonya-M--Bali-Mi-e2n1qo3/a-abfn6ar">S15E04: Japonya Mı, Bali Mi? - (22 dakika, 54 saniye)</a>
+
 - {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S15E03-Silikon-Vadisi-ve-Dell-Layofflari-Nereye-Gidiyoruz-e2n1qmf/a-abfn68p">S15E03: Silikon Vadisi ve Dell Layofflari: Nereye Gidiyoruz? - (39 dakika, 35 saniye)</a>
 
 - {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S15E02-Sui-orba--Salata-Sui--orba-Salata-e2n1qij/a-abfn63g">S15E02: Suşi-Çorba, Salata-Suşi, Çorba-Salata - (40 dakika, 32 saniye)</a>
