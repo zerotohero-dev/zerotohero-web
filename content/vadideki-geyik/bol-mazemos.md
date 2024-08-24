@@ -20,6 +20,7 @@ tags = ["geyik"]
   * Silkelenip kendine gelmek:
     * Bir bar taburesinde ikinci senede 0.4/4 GPA
 * Diploma onemli mi?
+* Bir tepsi baklava ne kapilar acar: Soft-skillerin kariyer ararken onemi
 * Ogrenmek uzerine:
   * Nasil oluyor da sinavda dil ogreniliyor?
 * Juan Budamaci ve dilin onemsizligi
