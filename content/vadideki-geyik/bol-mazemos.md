@@ -9,10 +9,7 @@ tags = ["geyik"]
 
 ## Önceki Yayında Yarım Kalanlar / Sonraki Yayinda Konusulabilecekler
 
-* VMware layofflari
-* Umut'un "Bostanci" (Boston) maceralari
-* Bir "*full stud developer*" nasil olunur?
-* Ozguven: Juan Budamaci ve dilin onemsizligi
+* BOUN sizce şuan da nasıl bir durumda ? Günümüz için BOUN'da okumak ne kadar mantıklı ? 
 * AudioHijack ile A/B Test Nasil Yapilir?
 * "Kafamda olan maas beklentisinin iki katini mi isteyeyim; ciddi misin?"
 * Forum kulturu nedir? Bir forumda nasil davranilir?
