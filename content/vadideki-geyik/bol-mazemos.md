@@ -7,26 +7,27 @@ template = "geyik.html"
 tags = ["geyik"]
 +++
 
-
 ## Önceki Yayında Yarım Kalanlar / Sonraki Yayinda Konusulabilecekler
 
 * BOUN sizce şuan da nasıl bir durumda ? Günümüz için BOUN'da okumak ne kadar mantıklı ? 
 * AudioHijack ile A/B Test Nasil Yapilir?
+* "Kafamda olan maas beklentisinin iki katini mi isteyeyim; ciddi misin?"
+* Forum kulturu nedir? Bir forumda nasil davranilir?
+  * Nasil soru sorulur? Nasil soru sorulmaz?
+  * Neden insanlar ozel mesajla darlanmaz?
 * Junior'im, is ariyorum, leverage'imi nasil arttirabilirim?
   * su anki ortamda juniorsam nasil hazirlanmaliyim?
   * Ilintili: Jose Capablanca’ya Silikon Vadisi’nde nasil is teklifi nasil gelir? 
     <https://www.chess.com/players/jose-raul-capablanca>
+
 * Universitenin normalize etkisi ve birden “ortalama” oldugunu farketmek.
   * Silkelenip kendine gelmek:
     * Bir bar taburesinde ikinci senede 0.4/4 GPA
 * Diploma onemli mi?
+* Bir tepsi baklava ne kapilar acar: Soft-skillerin kariyer ararken onemi
 * Ogrenmek uzerine:
   * Nasil oluyor da sinavda dil ogreniliyor?
-* Juan Budamaci ve dilin onemsizligi
-* "Kafamda olan maas beklentisinin iki katini mi isteyeyim; ciddi misin?"
-* Forum kulturu nedir? Bir forumda nasil davranilir? 
-  * Nasil soru sorulur? Nasil soru sorulmaz?
-  * Neden insanlar ozel mesajla darlanmaz?
+
 * Sinyal isleme dersini niye iki kez aldim.
 * Korfez bolgesinde 2 sene arabasiz nasil yasanir?
 * Tefeciye ihtiyacim var, nereden bulurum? 
@@ -57,7 +58,8 @@ tags = ["geyik"]
     * Bir muhendis olarak Bertland Russel’in ogrencisinden felsefe dersi alma 
     manyakligi
 * Don’t outshine your master ve diger kurumsal ortam ipuclari.
-
+* Neden hayattayız? Yaşamın bir amacı var mı? Eğer varsa, bu amaç bir şeye
+  inanmak ve ona bağlı kalmak mı? Yalnız hissetmemek için mi yaşıyoruz?
 * Open Source yapiyorum; kendi repom var, bol bol hackernews klonu ekliyorum,
   ama hic bir sirketin umrunda degil. Neden?
 * Yaprak’in Istanbul’da karsidan karsiya gecis macerasi.
