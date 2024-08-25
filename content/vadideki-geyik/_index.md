@@ -43,6 +43,16 @@ hakkında kaliteli geyik çevirdiğimiz bir podcast.
 li {list-style-type: none;}
 </style>
 
+### {{ mic_ico() }}️ Sezon 15
+
+- {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S15E04-Japonya-M--Bali-Mi-e2n1qo3/a-abfn6ar">S15E04: Japonya Mı, Bali Mi? - (22 dakika, 54 saniye)</a>
+
+- {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S15E03-Silikon-Vadisi-ve-Dell-Layofflari-Nereye-Gidiyoruz-e2n1qmf/a-abfn68p">S15E03: Silikon Vadisi ve Dell Layofflari: Nereye Gidiyoruz? - (39 dakika, 35 saniye)</a>
+
+- {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S15E02-Sui-orba--Salata-Sui--orba-Salata-e2n1qij/a-abfn63g">S15E02: Suşi-Çorba, Salata-Suşi, Çorba-Salata - (40 dakika, 32 saniye)</a>
+
+- {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S15E01-Silikon-Vadisinde-Hayat-e2n1qg2/a-abfn60m">S15E01: Silikon Vadisi’nde Hayat - (39 dakika, 32 saniye)</a>
+
 ### {{ mic_ico() }}️ Sezon 14
 
 - {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S14E04-The-Geyik-Reawakening-e2jgdnt">S14E04: The Geyik Reawakening - (18 dakika, 23 saniye)</a>
