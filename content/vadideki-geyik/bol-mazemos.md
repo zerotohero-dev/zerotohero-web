@@ -11,13 +11,10 @@ tags = ["geyik"]
 
 * BOUN sizce şuan da nasıl bir durumda ? Günümüz için BOUN'da okumak ne kadar mantıklı ? 
 * AudioHijack ile A/B Test Nasil Yapilir?
-* "Kafamda olan maas beklentisinin iki katini mi isteyeyim; ciddi misin?"
 * Forum kulturu nedir? Bir forumda nasil davranilir?
   * Nasil soru sorulur? Nasil soru sorulmaz?
   * Neden insanlar ozel mesajla darlanmaz?
-* Junior'im, is ariyorum, leverage'imi nasil arttirabilirim?
-  * su anki ortamda juniorsam nasil hazirlanmaliyim?
-  * Ilintili: Jose Capablanca’ya Silikon Vadisi’nde nasil is teklifi nasil gelir? 
+* Jose Capablanca’ya Silikon Vadisi’nde nasil is teklifi nasil gelir? 
     <https://www.chess.com/players/jose-raul-capablanca>
 
 * Universitenin normalize etkisi ve birden “ortalama” oldugunu farketmek.
