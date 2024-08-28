@@ -43,6 +43,10 @@ hakkında kaliteli geyik çevirdiğimiz bir podcast.
 li {list-style-type: none;}
 </style>
 
+### {{ mic_ico() }}️ Sezon 16
+
+- {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S16E01-Gz-Karar-Kavram-Azalarak-Kalkmal-M-e2nivsa">S16E01: "Göz Kararı" Kavramı Azalarak Kalkmalı Mı? - (30 dakika, 07 saniye)</a>
+
 ### {{ mic_ico() }}️ Sezon 15
 
 - {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S15E04-Japonya-M--Bali-Mi-e2n1qo3/a-abfn6ar">S15E04: Japonya Mı, Bali Mi? - (22 dakika, 54 saniye)</a>
