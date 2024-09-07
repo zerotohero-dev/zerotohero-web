@@ -45,6 +45,9 @@ li {list-style-type: none;}
 
 ### {{ mic_ico() }}️ Sezon 16
 
+- {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S016E04-Mlakat-Teknikleri-ve-Soft-Skiller-e2nj024/a-abgcadp">S016E04: Mülakat Teknikleri ve Soft Skiller - (36 dakika, 35 saniye)</a>
+- {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S016E03-Kariyerimin-bandaym--Deneyim-istiyorlar--Ne-yapmal-e2nj00k/a-abgcabn">S016E03: Kariyerimin başındayım. Deneyim istiyorlar? Ne yapmalı? - (29 dakika, 37 saniye)</a>
+- {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S16E02-Maa-Pazarl-Yaparken-Nelere-Dikkat-Etmeli-e2nivu7/a-abgca8q">S16E02: Maaş Pazarlığı Yaparken Nelere Dikkat Etmeli? - (31 dakika, 12 saniye)</a>
 - {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S16E01-Gz-Karar-Kavram-Azalarak-Kalkmal-M-e2nivsa">S16E01: "Göz Kararı" Kavramı Azalarak Kalkmalı Mı? - (30 dakika, 07 saniye)</a>
 
 ### {{ mic_ico() }}️ Sezon 15
