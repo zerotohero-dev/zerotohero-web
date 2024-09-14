@@ -41,6 +41,7 @@ regular expression for you.
 * [Regex Tester](https://extendsclass.com/regex-tester.html)
 * [Regexplained](http://leaverou.github.io/regexplained/)
 * [Scriptular](https://scriptular.com/)
+* [Pyrexp](https://pythonium.net/regex)
 
 That's all for now. I'll update the list if I bump into new tools or learning 
 resources.
