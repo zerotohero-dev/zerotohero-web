@@ -43,6 +43,14 @@ hakkında kaliteli geyik çevirdiğimiz bir podcast.
 li {list-style-type: none;}
 </style>
 
+### {{ mic_ico() }}️ Sezon 17
+
+- {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S017E04-Hamza-Nereye-Gidiyor-e2oa3o6/a-abh8rd9">
+S017E04: Hamza Nereye Gidiyor? - (19 dakika, 32 saniye)</a>
+- {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S017E03-u-ViaNietzche-de-ok-ey-e2oa3l4/a-abh8ra3">S017E03: “Şu ViaNietzche de Çok Şey” - (30 dakika, 37 saniye)</a>
+- {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S017E02-Silikon-Vadisinde-Ozel-Okullar-e2oa3jb/a-abh8r85">S017E02: Silikon Vadisi’nde Özel Okullar - (30 dakika, 49 saniye)</a>
+- {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S017E01-Sen-Yr-Dedi-Sensei-e2oa3hc/a-abh8r52">S017E01: “Sen Yürü” Dedi Sensei - (30 dakika, 44 saniye)</a>
+
 ### {{ mic_ico() }}️ Sezon 16
 
 - {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S016E04-Mlakat-Teknikleri-ve-Soft-Skiller-e2nj024/a-abgcadp">S016E04: Mülakat Teknikleri ve Soft Skiller - (36 dakika, 35 saniye)</a>
