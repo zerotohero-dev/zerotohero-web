@@ -56,28 +56,18 @@ Daha fazlası için [Can’ın LinkedIn profilini ziyaret edebilirsin](https://w
 
 {{ avatar_hamza() }}
 
-Hamza, Udemy’nin ciddi anlamda “*kıdemli*” yıldızlarından. Hatta rivayete göre
-önce Udemy ofisinin temelini atmışlar, sonra Hamza’yı binaya yerleştirmişler,
-ardından binanın inşasını tamamlamışlar.
+Hamza, Udemy’den Abridge’e geçiş yaparak yazılım mühendisliği alanındaki deneyimlerini yapay zeka ve sağlık teknolojileriyle buluşturuyor. 
+Udemy’de Yapay Zeka Asistani ve Abonelik Deneyimi ekibinin lideri olarak, ürün geliştirme süreçlerinde stratejik düşünen bir mühendis olarak tanındı. 
+Özellikle projelerin her aşamasını titizlikle planlayarak ekibiyle birlikte verimli çözümler üretti ve ürünlerin performansını iyileştirdi.
 
-Abonelik deneyimi ekibinin başında olan Hamza, asla sıradan bir mühendis değil:
-Aksine, bir dedektif gibi ürünlerdeki boşlukları bulan bir lider. Etkinlik fırtınası
-oturumlarını sıradan kahve sohbetlerine benzeten detaylı proje yol haritası şablonları
-ile tanınır.
+Abridge'de, yapay zeka ve sağlık teknolojilerini bir araya getirerek doktorların ve sağlık çalışanlarının iş akışlarını iyileştiren çözümler geliştiriyor. 
+Bu sayede, doktorların hasta görüşmelerini daha verimli bir şekilde yönetmelerine yardımcı olurken, sağlık sektörüne yenilikçi teknolojiler kazandırmaya devam ediyor.
 
-GraphQL veya Django kullanarak abonelik deneyimini cazip hale getirmediği zamanlarda,
-bilgi bombalarını moda olmaktan çıkmış gibi atan iki haftada bir teknik sohbet
-oturumlarının yıldızıdır.
+GraphQL ve Django gibi teknolojilerdeki uzmanlığı sayesinde, sistemlerin verimli çalışmasını sağlama konusunda derin bir deneyime sahip.
 
-Black Friday’deki yüksek trafikli günlerde, Hamza’nın kodu, Udemy’nin tüm
-sistemlerini dinamik ve statik bileşenler arasındaki farkı bilen yüksek düzey
-bileşenlerin arkasındaki beyin gibi çalıştırır.
+Boş vakitlerinde fırın sütlaç ve kazandibi yapar, drone ile fotoğraf çekerek yeni bakış açıları keşfeder, bisiklet sürüşleri yaparak şehrin farklı yerlerini keşfetmekten keyif alır.
 
-Boş vakitlerinde fırın sütlaç ve kazandibi yapar, ve bunları yemek için
-bir bahane bulur.
-
-Daha fazlası için [Hamza’nın kişisel web sitesini ziyaret
-edebilirsin](https://hamzaerbay.com/).
+Daha fazlası için [Hamza’nın kişisel web sitesi](https://hamzaerbay.com/), [Unsplash](https://unsplash.com/@hamzaerbay) ve [Strava](https://www.strava.com/athletes/hamzaerbay) adreslerini ziyaret edebilirsin.
 
 ## Umut Şirin
 
