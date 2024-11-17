@@ -9,7 +9,6 @@
 # `-------'`------'`--' `--'
 
 title = "CAREER101: Career Journey" 
-date = "2021-05-19"
 template = "geyik.html"
 +++
 

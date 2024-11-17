@@ -9,8 +9,6 @@
 # `-------'`------'`--' `--'
 
 title = "K8S101: Introduction to Orchestration with Kubernetes"
-date = "2021-05-19"
-xtemplate = "series-index.html"
 template = "geyik.html"
 +++
 

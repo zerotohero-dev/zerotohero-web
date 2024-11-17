@@ -10,7 +10,6 @@
 
 title = "Highlights"
 description = "Be the leader of your own journey."
-date = "2021-11-26"
 template = "series-index.html"
 +++
 

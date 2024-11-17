@@ -10,7 +10,6 @@
 
 title = "Roadmap"
 description = "Be the next version of yourself."
-date = "2024-05-19"
 template = "series-index.html"
 +++
 

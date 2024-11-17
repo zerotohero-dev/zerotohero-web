@@ -9,28 +9,22 @@ tags = ["geyik"]
 
 ## Önceki Yayında Yarım Kalanlar / Sonraki Yayinda Konusulabilecekler
 
-* BOUN sizce şuan da nasıl bir durumda ? Günümüz için BOUN'da okumak ne kadar mantıklı ? 
-* AudioHijack ile A/B Test Nasil Yapilir?
+* BOUN sizce şuan da nasıl bir durumda ? Günümüz için BOUN'da okumak ne kadar 
+  mantıklı? 
 * Forum kulturu nedir? Bir forumda nasil davranilir?
   * Nasil soru sorulur? Nasil soru sorulmaz?
   * Neden insanlar ozel mesajla darlanmaz?
 * Jose Capablanca’ya Silikon Vadisi’nde nasil is teklifi nasil gelir? 
     <https://www.chess.com/players/jose-raul-capablanca>
-
-* Universitenin normalize etkisi ve birden “ortalama” oldugunu farketmek.
-  * Silkelenip kendine gelmek:
-    * Bir bar taburesinde ikinci senede 0.4/4 GPA
 * Diploma onemli mi?
 * Bir tepsi baklava ne kapilar acar: Soft-skillerin kariyer ararken onemi
 * Ogrenmek uzerine:
   * Nasil oluyor da sinavda dil ogreniliyor?
-
 * Sinyal isleme dersini niye iki kez aldim.
 * Korfez bolgesinde 2 sene arabasiz nasil yasanir?
 * Tefeciye ihtiyacim var, nereden bulurum? 
   * (aka: ~$30K kredi karti borcu, Turkiye developer maasiyla nasil 
     hizlica kapatilir?)
-* “Mert var; sinif arkadasim; o olur mu?”
 * quote: “Yaya yaya okumayacaksin; odakli olarak giriseceksin;
   stratejin olacak, icerige gore stratejin dogrultusunda ilerleyeceksin.”
     * abi burada strateji olarak nasil davraniyorsun tam olarak? Hic bilmedigin
@@ -46,7 +40,6 @@ tags = ["geyik"]
 * Kariyerimin basindayim, ne gibi life hack’ler onerirsin ki sukela kariyerim olsun?
 * AI nereye gidiyor? Mesela 10 kisi calistiran bir sirket, AI geldi diye 8 
   kisi calistirma yoluna gider mi?
-* "yaptigim ispatlari sinifin onunde duzeltmese; sinif icinde otoritem kalmiyor"
 * advices to your younger self
 * Las vegas: bu kadar ucuz olmamai oteller; daycare parasini kumardna kazanmak
 * universite anilari
@@ -59,17 +52,12 @@ tags = ["geyik"]
   inanmak ve ona bağlı kalmak mı? Yalnız hissetmemek için mi yaşıyoruz?
 * Open Source yapiyorum; kendi repom var, bol bol hackernews klonu ekliyorum,
   ama hic bir sirketin umrunda degil. Neden?
-* Yaprak’in Istanbul’da karsidan karsiya gecis macerasi.
 * Limoncello ve Joe Beda.
 * Abi bir seyi merak ettim. Bu kadar isi bir arada nasil 
   yapiyorsun? (multitasking).
   Belki bir podcast konusu da olabilir bu. Onemli bir meziyet bence
 * Solak bardaklari—ozellikle kendim icin 😄 Tum dunya solaklara karsi.
-* Perry the Platypus ve “goz temasi”
-* Bogazici ve “soguk su” etkisi
-* 4 komutan
 * Ozan abi ben bi b`*`k yedim
-* full stack uber driver.
 * nasil geldik buralara
 * I Tipi, T Tipi, ve M Tipi insanlar; hangisi daha iyi.
 * “Sen simdi nerede mudur oldun?” — **mudur**, **title**, AMANIN!
@@ -83,21 +71,16 @@ tags = ["geyik"]
     * bu personayi onlira.co’da kullandim mi hatirlamiyorum; ama benzer 
     personalar kullanmistim.
     * MessengerFX zamani olusturmustum bu personalari; takipcileri vardi epey.
-* “vize aktarma” nedir; yenir mi?
 * Yatirimci’ya ev ziyareti
-* Van’li asker.
 * Intentional, unintentional biases and blind spots (Cinliler acayip matematige 
   hakimmis; hintliler cok savsakmis; almanlar cok bodoslama konusuyor, soyle 
   davraniyorsa kesin “gay”dir (1. nereden biliyorsun 2. SANA NE Anthony Queen!))
-* Kazan dairesi
 * Vidanjorle GTA
-* Jose Capablanca’ya is on gorusmesi (*phone screening*) teklifi.
 * Bir etkinligin nasil uc tane “ana” sponsoru olur?
 * “Niye bizimle calismak istiyorsun?”
 * Truth coexists
 * dj’lik ve haber spikerligi
 * okulu uzatmak
-* tekne partisi ve tekne mafyasi
 * politika ve “biz ne yapiyoruz burada lan?” sorusu
 * Kantinde scorpicor gormek.
 * acquisition nasil bir sey.

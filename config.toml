@@ -12,7 +12,7 @@ title = "Zero to Hero"
 base_url = "https://zerotohero.dev"
 compile_sass = true
 build_search_index = false
-generate_feed = true
+generate_feeds = true
 minify_html = true
 
 taxonomies = [

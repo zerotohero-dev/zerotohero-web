@@ -10,7 +10,6 @@
 
 title = "SPIFFE and SPIRE"
 description = "Articles and tutorials on SPIFFE and SPIRE."
-date = "2021-11-26"
 template = "series-index.html"
 +++
 

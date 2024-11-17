@@ -10,7 +10,6 @@
 
 title = "Tips"
 description = "Work it, make it. Do it, makes us. Harder, better. Faster, stronger."
-date = "2024-05-19"
 template = "series-index.html"
 +++
 

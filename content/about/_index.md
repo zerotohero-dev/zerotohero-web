@@ -10,7 +10,6 @@
 
 title = "About"
 description = "About, me, myself, and Zero to Hero."
-date = "2021-11-26"
 template = "series-index.html"
 +++
 

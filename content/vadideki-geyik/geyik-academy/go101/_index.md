@@ -10,7 +10,6 @@
 
 title = "GO101: Introduction to Go Progamming Language"
 description = "Learning Go programming language from scratch."
-date = "2021-05-19"
 template = "geyik.html"
 +++
 
