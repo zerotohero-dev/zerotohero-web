@@ -24,6 +24,7 @@
 {% set posts_18 = get_section(path="vadideki-geyik/geyik-academy/rust101/_index.md") %}
 {% set posts_19 = get_section(path="vadideki-geyik/_index.md") %}
 {% set posts_21 = get_section(path="zero-to-prod/_index.md") %}
+{% set posts_22 = get_section(path="inbox/_index.md") %}
 
 {% set combined_posts = posts_1.pages
   | concat(with=posts_2.pages)
@@ -40,10 +41,37 @@
   | concat(with=posts_18.pages)
   | concat(with=posts_19.pages)
   | concat(with=posts_21.pages)
+  | concat(with=posts_22.pages)
 %}
 
-{% set max = 5 %}
+{% set max = 50 %}
 
+<h2>Recently Published</h2>
+<p>Here are the most recent articles. This website contains many
+  more.</p>
+<p>A good place to start is to
+  <a href="/tags" style="text-decoration:underline;font-weight:bold;">look at the tags
+    and categories</a>.</p>
+<p>&nbsp;</p>
+
+{% for page in combined_posts | sort(attribute="date") | reverse | slice(end=max) %}
+<article class="post-entry">
+  <header class="entry-header">
+    <h2>{{ page.title }}</h2>
+  </header>
+  {% if page.summary %}
+  <div class="entry-content">
+    <p>{{ page.summary |safe }}</p>
+  </div>
+  {% endif %}
+  <footer class="entry-footer">
+    {% include "partials/post_meta.html" %}
+  </footer>
+
+  <a class="entry-link" aria-label="post link to {{ page.title }}"
+     href="{{ page.permalink }}"></a>
+</article>
+{% endfor %}
 
 <h2>Roadmap</h2>
 
@@ -256,6 +284,10 @@
   world, and everything in between.</p>
 <p>&nbsp;</p>
 
+
+
+
+
 {% set z2ps = get_section(path="top-of-mind/_index.md") %}
 
 <article class="post-entry">
@@ -315,38 +347,3 @@
 <p>&nbsp;</p>
 
 
-<h2>Recently Published</h2>
-<p>Here are the most recent articles. This website contains many
-  more.</p>
-<p>A good place to start is to
-  <a href="/tags" style="text-decoration:underline;font-weight:bold;">look at the tags
-    and categories</a>.</p>
-<p>&nbsp;</p>
-
-{% for page in combined_posts | sort(attribute="date") | reverse | slice(end=max) %}
-<article class="post-entry">
-  <header class="entry-header">
-      <h2>{{ page.title }}</h2>
-  </header>
-  {% if page.summary %}
-  <div class="entry-content">
-      <p>{{ page.summary |safe }}</p>
-  </div>
-  {% endif %}
-  <footer class="entry-footer">
-      {% include "partials/post_meta.html" %}
-  </footer>
-
-  <a class="entry-link" aria-label="post link to {{ page.title }}"
-     href="{{ page.permalink }}"></a>
-</article>
-{% endfor %}
-
-{% if combined_posts | length > max %}
-<footer class="page-footer">
-    <nav class="pagination">
-        <a class="next"
-           href="{{ combined_posts[max].permalink }}">Next »</a>
-    </nav>
-</footer>
-{% endif %}
