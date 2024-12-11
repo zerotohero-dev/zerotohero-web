@@ -16,6 +16,12 @@ date = "2024-12-10"
 tags = ["inbox", "esxi", "vmware", "server", "configuration"]
 +++
 
+## Video
+
+<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1038093522?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="LAB: VMware ESXi Server Installation and Configuration"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+
+## Notes
+
 After configuring basic network settings through the DCUI, the next step is accessing and configuring your ESXi host through its web interface. This guide walks you through the essential configuration steps using the ESXi host client.
 
 ## Accessing the Web Interface

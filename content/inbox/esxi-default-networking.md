@@ -16,6 +16,12 @@ date = "2024-12-10"
 tags = ["inbox", "esxi", "vmware", "server", "networking"]
 +++
 
+## Video
+
+<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1038093522?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="LAB: VMware ESXi Server Installation and Configuration"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+
+## Notes
+
 When you install ESXi, the system automatically configures several networking components. One of the most important default configurations is the creation of vSwitch0. Let's explore this virtual switch and understand its role in ESXi networking.
 
 ## Accessing Virtual Switch Configuration

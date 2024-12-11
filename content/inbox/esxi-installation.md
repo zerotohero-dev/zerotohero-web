@@ -16,6 +16,11 @@ date = "2024-12-10"
 tags = ["inbox", "esxi", "vmware", "server", "installation"]
 +++
 
+## Video
+
+<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1038093522?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="LAB: VMware ESXi Server Installation and Configuration"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+
+## Notes
 
 Setting up a new ESXi host requires careful planning and consideration of various hardware and software components. In this guide, we'll walk through the essential steps and considerations for installing VMware ESXi on a Dell rack server.
 
