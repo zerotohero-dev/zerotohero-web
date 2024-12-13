@@ -38,7 +38,7 @@ This default `/spire-agent` path component is hard-coded in SPIRE Server when no
 
 You can customize the agent SPIFFE ID path using the `agent_path_template` configuration option in your SPIRE Server configuration. Here's how:
 
-```hcl
+```txt
 server {
     trust_domain = "spike.ist"
     agent_path_template = "/custom-agents/{{ .AgentID }}"
@@ -64,13 +64,13 @@ Note that join token attestation provides fewer variables since it doesn't colle
 ## Example Templates
 
 1. Using AgentID with join token attestation:
-```hcl
+```txt
 agent_path_template = "/nodes/{{ .AgentID }}"
 # Results in: spiffe://spike.ist/nodes/c3d0ecbf-38b1-4a0c-86ac-67d181503f9d
 ```
 
 2. Combining multiple path components:
-```hcl
+```txt
 agent_path_template = "/datacenter/primary/agent/{{ .AgentID }}"
 ```
 
