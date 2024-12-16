@@ -9,22 +9,24 @@ tags = ["geyik"]
 
 ## Önceki Yayında Yarım Kalanlar / Sonraki Yayinda Konusulabilecekler
 
-* BOUN sizce şuan da nasıl bir durumda ? Günümüz için BOUN'da okumak ne kadar 
-  mantıklı? 
+* Progressive Career Document nedir, resume’den farki nedir?
+* Hizli ve etkili ogrenme teknikleri
+* Technical Leadership nedir? yenir mi?
+* Teorik bilgim var ama is yerinde pratikde kullanamiyorum, cunku "sirk" gibi 
+  sirket; ne yapmaliyim? (ref: [1])
+* BOUN sizce şuan da nasıl bir durumda? 
+  * Günümüz için BOUN'da okumak ne kadar mantıklı? 
 * Forum kulturu nedir? Bir forumda nasil davranilir?
   * Nasil soru sorulur? Nasil soru sorulmaz?
   * Neden insanlar ozel mesajla darlanmaz?
+* Diploma onemli mi?
 * Jose Capablanca’ya Silikon Vadisi’nde nasil is teklifi nasil gelir? 
     <https://www.chess.com/players/jose-raul-capablanca>
-* Diploma onemli mi?
-* Bir tepsi baklava ne kapilar acar: Soft-skillerin kariyer ararken onemi
 * Ogrenmek uzerine:
   * Nasil oluyor da sinavda dil ogreniliyor?
 * Sinyal isleme dersini niye iki kez aldim.
 * Korfez bolgesinde 2 sene arabasiz nasil yasanir?
 * Tefeciye ihtiyacim var, nereden bulurum? 
-  * (aka: ~$30K kredi karti borcu, Turkiye developer maasiyla nasil 
-    hizlica kapatilir?)
 * quote: “Yaya yaya okumayacaksin; odakli olarak giriseceksin;
   stratejin olacak, icerige gore stratejin dogrultusunda ilerleyeceksin.”
     * abi burada strateji olarak nasil davraniyorsun tam olarak? Hic bilmedigin
@@ -40,7 +42,6 @@ tags = ["geyik"]
 * Kariyerimin basindayim, ne gibi life hack’ler onerirsin ki sukela kariyerim olsun?
 * AI nereye gidiyor? Mesela 10 kisi calistiran bir sirket, AI geldi diye 8 
   kisi calistirma yoluna gider mi?
-* advices to your younger self
 * Las vegas: bu kadar ucuz olmamai oteller; daycare parasini kumardna kazanmak
 * universite anilari
     * Kuzey ve Guney kampus arasindaki fark.
@@ -60,7 +61,6 @@ tags = ["geyik"]
 * Ozan abi ben bi b`*`k yedim
 * nasil geldik buralara
 * I Tipi, T Tipi, ve M Tipi insanlar; hangisi daha iyi.
-* “Sen simdi nerede mudur oldun?” — **mudur**, **title**, AMANIN!
 * JavaScript ogrenmek icin Haskell ogrenmek lazim mi?
 * Bir işyerinde 2-3 yıldan fazla çalışmak bana mantıksız geliyordu ama aynı
   firmada 10 yıl gibi sürelerde çalışanlar görünce fikrim değişti.
@@ -84,8 +84,7 @@ tags = ["geyik"]
 * politika ve “biz ne yapiyoruz burada lan?” sorusu
 * Kantinde scorpicor gormek.
 * acquisition nasil bir sey.
-* Bir suru hobi projesi yapmak mi, yoksa bir tane buyuk proje mi?
-* Selam, benim sorum solid prensipleri, best practise konularını teorik olarak
+* [1] Selam, benim sorum solid prensipleri, best practise konularını teorik olarak
   öğrensek de iş hayatında çoğu zaman uygulamıyorum. Dahil olduğum projelerde az
   kullanıldığını, çoğu zaman spaghetti kod yazıldığını fark ediyorum.
   — Bu durumda günün sonunda kalitesiz iş yaptığımı düşünüyorum ve bu çark böyle 
