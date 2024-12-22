@@ -35,7 +35,7 @@ navigation = [
     { url = "$BASE_URL/vadideki-geyik/team", title = "Biz Kimiz" },
     { url = "https://geyik.store/", title = "Merch" },
     { url = "$BASE_URL/vadideki-geyik/bol-mazemos", title = "Bol Mazemos" },
-    { url = "$BASE_URL/", title = "Zero to Hero"},
+    { url = "$BASE_URL/", title = "Z→H"},
     { url = "https://discord.gg/kampus", title = "kamp.us", is_external = true },
     { url = "https://github.com/spiffe/spike", title = "SPIKE", is_external = true },
     { url = "https://github.com/vmware-tanzu/secrets-manager", title = "VSecM", is_external = true }
@@ -66,17 +66,15 @@ navigation = [
     { url = "/tags", title = "Tags" },
     { url = "/vadideki-geyik", title = "Vadideki Geyik" },
     { url = "https://discord.gg/kampus", title = "kamp.us", is_external = true },
-    { url = "https://vsecm.com/", title = "VSecM", is_external = true },
+    { url = "https://github.com/spiffe/spike", title = "SPIKE", is_external = true },
+    { url = "https://github.com/vmware-tanzu/secrets-manager", title = "VSecM", is_external = true }
 ]
-
-
 
 home_title = "🐢⚡️🦌🦄"
 home_content = "<p>Welcome to <strong>Zero to Hero</strong>.<br>You will find your answers here…</p><p style='text-align:right'>…<strong style='font-weight:900'>IF</strong> you don't forget the questions.</p>"
 
 social_icons = [
     { url = "https://github.com/zerotohero-dev", title = "GitHub", icon = "github" },
-    { url = "https://x.com/vadidekivolkan", title = "Twitter", icon = "twitter" },
     { url = "https://twitch.tv/vadidekivolkan", title = "Twitch", icon = "twitch" },
     { url = "https://discord.gg/kampus", title = "Discord", icon = "discord" },
     { url = "$BASE_URL/atom.xml", title = "RSS", icon = "rss" },
