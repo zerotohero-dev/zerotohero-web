@@ -43,18 +43,36 @@ hakkında kaliteli geyik çevirdiğimiz bir podcast.
 li {list-style-type: none;}
 </style>
 
+### {{ mic_ico() }}️ Sezon 20
+- {{ play_ico() }} <a href="https://creators.spotify.com/pod/show/vadideki-geyik/episodes/S019E02-Mdrm-kim--Ekibim-nerede-e2r6lbq/a-abkuras">S20E02: Kabak Yahnisinden Bluesky'a! - (39 dakika, 38 saniye)</a>
+- {{ play_ico() }} <a href="https://creators.spotify.com/pod/show/vadideki-geyik/episodes/S019E01-Silikon-Vadisinde-Poscasti-Olmak-e2r6k9o/a-abkuq23">S20E01: Silikon Vadisi'nde Dolap Savaşları - (39 dakika, 16 saniye)</a>
+
+### {{ mic_ico() }}️ Sezon 19
+- {{ play_ico() }} <a href="https://creators.spotify.com/pod/show/vadideki-geyik/episodes/S019E04-Vadinin-Kedileri-e2r6mm7/a-abkusk6">
+S19E04: Vadinin Kedileri - (22 dakika, 41 saniye)</a>
+- {{ play_ico() }} <a href="https://creators.spotify.com/pod/show/vadideki-geyik/episodes/S019E03-Reorg---Ben-neden-buradaym-e2r6mep/a-abkusat">S19E03: Reorg - "Ben neden buradayım?" - (22 dakika, 30 saniye)</a>
+- {{ play_ico() }} <a href="https://creators.spotify.com/pod/show/vadideki-geyik/episodes/S019E02-Mdrm-kim--Ekibim-nerede-e2r6lbq/a-abkuras">S19E02: Müdürüm kim? Ekibim nerede? - (36 dakika, 09 saniye)</a>
+- {{ play_ico() }} <a href="https://creators.spotify.com/pod/show/vadideki-geyik/episodes/S019E01-Silikon-Vadisinde-Poscasti-Olmak-e2r6k9o/a-abkuq23">S19E01: Silikon Vadisi'nde Podcastçi Olmak! - (38 dakika, 16 saniye)</a>
+
+### {{ mic_ico() }}️ Sezon 18
+- {{ play_ico() }} <a href="https://creators.spotify.com/pod/show/vadideki-geyik/episodes/S018E04-Yazlm-Kariyerinde-lerlemek-e2p4ie8/a-abicujc">
+S18E04: Yazılım Kariyerinde İlerlemek - (39 dakika, 41 saniye)</a>
+- {{ play_ico() }} <a href="https://creators.spotify.com/pod/show/vadideki-geyik/episodes/S018E03-FAANG-ve-tesi-Kltrel-Uyum-e2p4i4p/a-abicuag">S18E03: FAANG ve Ötesi: Kültürel Uyum - (39 dakika, 49 saniye)</a>
+- {{ play_ico() }} <a href="https://creators.spotify.com/pod/show/vadideki-geyik/episodes/S018E02-Vadiye-Uygun-Resume-Hazrlama-pular-e2p4i1h/a-abicu3e">S18E02: Vadi’ye Uygun Resume Hazırlama İpuçları - (39 dakika, 04 saniye)</a>
+- {{ play_ico() }} <a href="https://creators.spotify.com/pod/show/vadideki-geyik/episodes/S018E01-Silikon-Vadisi-FANG-Mlakatlar-e2p4huh/a-abictv2">S18E01: Silikon Vadisi FAANG Mülakatları - (40 dakika, 12 saniye)</a>
+
 ### {{ mic_ico() }}️ Sezon 17
 
 - {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S017E04-Hamza-Nereye-Gidiyor-e2oa3o6/a-abh8rd9">
-S017E04: Hamza Nereye Gidiyor? - (19 dakika, 32 saniye)</a>
-- {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S017E03-u-ViaNietzche-de-ok-ey-e2oa3l4/a-abh8ra3">S017E03: “Şu ViaNietzche de Çok Şey” - (30 dakika, 37 saniye)</a>
-- {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S017E02-Silikon-Vadisinde-Ozel-Okullar-e2oa3jb/a-abh8r85">S017E02: Silikon Vadisi’nde Özel Okullar - (30 dakika, 49 saniye)</a>
-- {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S017E01-Sen-Yr-Dedi-Sensei-e2oa3hc/a-abh8r52">S017E01: “Sen Yürü” Dedi Sensei - (30 dakika, 44 saniye)</a>
+S17E04: Hamza Nereye Gidiyor? - (19 dakika, 32 saniye)</a>
+- {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S017E03-u-ViaNietzche-de-ok-ey-e2oa3l4/a-abh8ra3">S17E03: “Şu ViaNietzche de Çok Şey” - (30 dakika, 37 saniye)</a>
+- {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S017E02-Silikon-Vadisinde-Ozel-Okullar-e2oa3jb/a-abh8r85">S17E02: Silikon Vadisi’nde Özel Okullar - (30 dakika, 49 saniye)</a>
+- {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S017E01-Sen-Yr-Dedi-Sensei-e2oa3hc/a-abh8r52">S17E01: “Sen Yürü” Dedi Sensei - (30 dakika, 44 saniye)</a>
 
 ### {{ mic_ico() }}️ Sezon 16
 
-- {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S016E04-Mlakat-Teknikleri-ve-Soft-Skiller-e2nj024/a-abgcadp">S016E04: Mülakat Teknikleri ve Soft Skiller - (36 dakika, 35 saniye)</a>
-- {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S016E03-Kariyerimin-bandaym--Deneyim-istiyorlar--Ne-yapmal-e2nj00k/a-abgcabn">S016E03: Kariyerimin başındayım. Deneyim istiyorlar? Ne yapmalı? - (29 dakika, 37 saniye)</a>
+- {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S016E04-Mlakat-Teknikleri-ve-Soft-Skiller-e2nj024/a-abgcadp">S16E04: Mülakat Teknikleri ve Soft Skiller - (36 dakika, 35 saniye)</a>
+- {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S016E03-Kariyerimin-bandaym--Deneyim-istiyorlar--Ne-yapmal-e2nj00k/a-abgcabn">S16E03: Kariyerimin başındayım. Deneyim istiyorlar? Ne yapmalı? - (29 dakika, 37 saniye)</a>
 - {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S16E02-Maa-Pazarl-Yaparken-Nelere-Dikkat-Etmeli-e2nivu7/a-abgca8q">S16E02: Maaş Pazarlığı Yaparken Nelere Dikkat Etmeli? - (31 dakika, 12 saniye)</a>
 - {{ play_ico() }} <a href="https://podcasters.spotify.com/pod/show/vadideki-geyik/episodes/S16E01-Gz-Karar-Kavram-Azalarak-Kalkmal-M-e2nivsa">S16E01: "Göz Kararı" Kavramı Azalarak Kalkmalı Mı? - (30 dakika, 07 saniye)</a>
 
