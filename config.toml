@@ -37,7 +37,8 @@ navigation = [
     { url = "$BASE_URL/vadideki-geyik/bol-mazemos", title = "Bol Mazemos" },
     { url = "$BASE_URL/", title = "Zero to Hero"},
     { url = "https://discord.gg/kampus", title = "kamp.us", is_external = true },
-    { url = "https://vsecm.com/", title = "VSecM", is_external = true }
+    { url = "https://github.com/spiffe/spike", title = "SPIKE", is_external = true },
+    { url = "https://github.com/vmware-tanzu/secrets-manager", title = "VSecM", is_external = true }
 ]
 
 [extra.papermod]
