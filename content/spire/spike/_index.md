@@ -1,3 +1,4 @@
++++
 #   (`-')           (`-').->
 #   ( OO).->        (OO )__
 # ,(_/----. .----. ,--. ,'-' doubt everything,
@@ -7,9 +8,14 @@
 # |       ||      ||  | |  | learn.
 # `-------'`------'`--' `--'
 
-- name: "Setting Up SPIRE on EKS in Less Than Ten Minutes"
-  url: "@/spire/spire-rocks.md"
-- name: "Shamir's Secret Sharing Scheme with SPIFFE and SPIKE"
-  url: "@/spire/spike/shamir-secrets-sharing.md"
-- name: "mTLS with SPIRE"
-  url: "@/spire/mtls/_index.md"
+title = "SPIKE"
+description = "Articles and tutorials on SPIKE."
+template = "series-index.html"
++++
+
+{{img(
+src="/images/2024/turtle.png",
+alt="Solving for the Bottom Turtle"
+)}}
+
+This section contains articles and tutorials on SPIKE.

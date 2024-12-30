@@ -25,6 +25,7 @@
 {% set posts_19 = get_section(path="vadideki-geyik/_index.md") %}
 {% set posts_21 = get_section(path="zero-to-prod/_index.md") %}
 {% set posts_22 = get_section(path="inbox/_index.md") %}
+{% set posts_24 = get_section(path="spire/spike/_index.md") %}
 
 {% set combined_posts = posts_1.pages
   | concat(with=posts_2.pages)
@@ -42,6 +43,7 @@
   | concat(with=posts_19.pages)
   | concat(with=posts_21.pages)
   | concat(with=posts_22.pages)
+  | concat(with=posts_24.pages)
 %}
 
 {% set max = 50 %}

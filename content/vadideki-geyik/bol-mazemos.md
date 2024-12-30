@@ -9,7 +9,10 @@ tags = ["geyik"]
 
 ## Önceki Yayında Yarım Kalanlar / Sonraki Yayinda Konusulabilecekler
 
+* Year in review : 2024
+* New Year Resolutions
 * Progressive Career Document nedir, resume’den farki nedir?
+* Okul onemli mi? Yoksa sadece ingilizce bilsem, herhangi bir okulla bu is hallolur mu?
 * Hizli ve etkili ogrenme teknikleri
 * Technical Leadership nedir? yenir mi?
 * Teorik bilgim var ama is yerinde pratikde kullanamiyorum, cunku "sirk" gibi 
