@@ -143,29 +143,6 @@ change**. You'll be more persuasive; you'll be amazed at how extensive your
 network has become. You'll see that you are building and leading teams
 naturally.
 
-## Recently on **Zero to Hero**
-
-Here are the recent articles for the week:
-
-* [**Installing Go on a 
-  Mac**](@/vadideki-geyik/geyik-academy/go101/installing-go-on-a-mac.md): 
-  This is a
-  step-by-step set of instructions to install a **Go** development environment
-  on a **Mac OS**. I've also created a video to show you how the process
-  actually looks. Still, it's not ready yet---I'll publish the video sometime
-  next week.
-* [**Places to learn Go**](@vadideki-geyik/geyik-academy/learn-go.md): This 
-  article covers tools and resources that can help you ramp up with **Go** 
-  programming and make you learn enough Go to be dangerous, at least.
-
-> Yes, there will be more **Go** content on the way; that said, we'll be
-> covering a hell lot of **JavaScript** and other related technologies too. Stay
-> tuned.
->
-> One thing that I constantly emphasize is the fact that _languages are tools_.
-> And you **use tools, not rules**: You pick the right tool for the job. And 
-> **Go** is the right tool for certain topics that we are going to cover.
-
 ## Look What I've Found
 
 Here are the things that grabbed my attention this week.

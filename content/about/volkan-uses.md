@@ -30,7 +30,7 @@ liked, and find worth mentioning.
 
 ## Personal
 
-* [Vadideki Geyik](@/vadideki-geyik/_index.md): Hands down, the best Turkish
+* [Vadideki Geyik](https://vadidekigeyik.com/): Hands down, the best Turkish
   tech podcast.
 * [zerotohero.dev](/): My blog (*that you are reading right now*).
 * [My Twitter](https://twitter.com/vadidekivolkan)

@@ -43,16 +43,11 @@ Here is a list of articles that I've published this week:
   use case, we created a **logging wrapper** module that logs messages to 
   **Syslog**: a standard network-based logging protocol that works on a wide 
   variety of different types of devices and applications.
-* In [How to Work With Private Go Repositories][repos], I have a video setting 
-  up my development environment to work with private go modules and repositories. 
-  At the end of the article, there's a lot of extra resources and learning 
-  material to dig in, for the interested, too.
 
 [fizzbuzz-pro]: @/zero-to-prod/fizzbuzz-pro-repos.md
 [microservices]: @/tips/microservice-env-vars.md
 [lean]: @/tips/make-your-code-leaner.md
 [syslog]: @/tips/lets-create-a-syslog-logger.md
-[repos]: @/vadideki-geyik/geyik-academy/go101/how-to-work-with-private-go-repositories.md
 
 ## Volkan Uses ⌨️
 

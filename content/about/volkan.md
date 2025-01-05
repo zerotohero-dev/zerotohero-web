@@ -49,7 +49,7 @@ I like tinkering with systems, and I’m not afraid to **break stuff**.
 {{ github_ico() }} [The source is strong at **zerotohero-dev**][github].
 
 [twitch]: https://twitch.tv/VadidekiVolkan
-[geyik]: @/vadideki-geyik/_index.md
+[geyik]: https://vadidekigeyik.com/
 [kampus]: https://discord.gg/kampus
 [music]: https://www.youtube.com/@SeeTheMusic
 [linkedin]: https://linkedin.com/in/volkanozcelik

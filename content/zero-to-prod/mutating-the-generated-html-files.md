@@ -44,9 +44,7 @@ related articles and other helpful links.
 
 * [**Pygments**](https://pygments.org/)
 * [**Go** Programming Language](https://go.dev/)
-* [Setting Up Your **Go** 
-  Development Environment](@/vadideki-geyik/geyik-academy/go101/go-setup.md)
-* [Places to Learn **Go**](@/vadideki-geyik/geyik-academy/go101/learn-go.md)
+* [Places to Learn **Go**](https://go.dev/)
 * [**Zero to Hero** Articles Tagged With "**_Go_**"](/tags/go/)
 * [filepath.Walk()](https://pkg.go.dev/path/filepath#Walk)
 * [filepath.WalkFunc](https://pkg.go.dev/path/filepath#WalkFunc)

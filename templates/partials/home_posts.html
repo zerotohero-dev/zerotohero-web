@@ -17,12 +17,6 @@
 {% set posts_10 = get_section(path="spire/mtls/_index.md") %}
 {% set posts_12 = get_section(path="tips/_index.md") %}
 {% set posts_13 = get_section(path="top-of-mind/_index.md") %}
-{% set posts_14 = get_section(path="vadideki-geyik/geyik-academy/go101/_index.md") %}
-{% set posts_15 = get_section(path="vadideki-geyik/geyik-academy/k8s101/_index.md") %}
-{% set posts_16 = get_section(path="vadideki-geyik/geyik-academy/lead101/_index.md") %}
-{% set posts_17 = get_section(path="vadideki-geyik/geyik-academy/rust101/_index.md") %}
-{% set posts_18 = get_section(path="vadideki-geyik/geyik-academy/rust101/_index.md") %}
-{% set posts_19 = get_section(path="vadideki-geyik/_index.md") %}
 {% set posts_21 = get_section(path="zero-to-prod/_index.md") %}
 {% set posts_22 = get_section(path="inbox/_index.md") %}
 {% set posts_24 = get_section(path="spire/spike/_index.md") %}
@@ -35,12 +29,6 @@
   | concat(with=posts_10.pages)
   | concat(with=posts_12.pages)
   | concat(with=posts_13.pages)
-  | concat(with=posts_14.pages)
-  | concat(with=posts_15.pages)
-  | concat(with=posts_16.pages)
-  | concat(with=posts_17.pages)
-  | concat(with=posts_18.pages)
-  | concat(with=posts_19.pages)
   | concat(with=posts_21.pages)
   | concat(with=posts_22.pages)
   | concat(with=posts_24.pages)

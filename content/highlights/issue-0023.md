@@ -87,7 +87,7 @@ the **Technology**category and**top 16**in Azerbaijan in the same category
 again. We are having**so much fun**while recording the sessions, also reflected
 in these stats.*
 
-With[**four folks from the Silly Cone Valley**](@/vadideki-geyik/team.md), 
+With[**four folks from the Silly Cone Valley**](https://vadidekigeyik.com/team), 
 we started a podcast about our experiences before and after working there and our 
 thoughts, ideas, and tips for those who want to follow a similar career path. 
 It's very well-received by the community.
@@ -105,7 +105,7 @@ the session **every other Saturday at 10 am Pacific time**.
 
 [talkspiffe]: https://www.twitch.tv/collections/m1nN8r4LZxc-bw
 [vsecm-sync]: https://vsecm.com/docs/contributor-sync/
-[vadideki-geyik]: @/vadideki-geyik/_index.md
+[vadideki-geyik]: https://vadidekigeyik.com/
 [kampus]: https://discord.gg/kampus
 [geyik-youtube]: https://youtube.com/@vadideki-geyik
 [twitch]: https://twitch.tv/VadidekiVolkan

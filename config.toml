@@ -64,7 +64,7 @@ navigation = [
     { url = "/about", title = "About" },
     { url = "/archive", title = "Archive" },
     { url = "/tags", title = "Tags" },
-    { url = "/vadideki-geyik", title = "Vadideki Geyik" },
+    { url = "https://vadidekigeyik.com", title = "Vadideki Geyik", is_external = true },
     { url = "https://discord.gg/kampus", title = "kamp.us", is_external = true },
     { url = "https://github.com/spiffe/spike", title = "SPIKE", is_external = true },
     { url = "https://github.com/vmware-tanzu/secrets-manager", title = "VSecM", is_external = true }

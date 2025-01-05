@@ -159,12 +159,6 @@ yourself based on all that feedback.
 
 ## Recently on **Zero to Hero**
 
-Here's [a quick video about installing **Go
-** on Mac OS](@/vadideki-geyik/geyik-academy/go101/installing-go-on-mac-os.md), 
-which is follow up to [Setting Up Your Go Development 
-Environment](@/vadideki-geyik/geyik-academy/go101/go-setup.md)
-article.
-
 Other than that, most of the work we did was under the hood.
 
 More content is on its way and it'll be ready for your reading and viewing

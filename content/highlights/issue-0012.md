@@ -27,16 +27,7 @@ infrastructure development. Let's have an overview.
 
 ## Kuberneters Gonna Kubernete
 
-We have [an article about Z-shell startup files and how to use
-them canonically][z-shell]. It was initially a section in
-[how to work with private Go repositories][private-go] article.
-However, after adding more and more content to it, realized that thing deserved
-its own place, so here you go.
-
-[z-shell]: @/tips/zshell-startup-files.md
-[private-go]: @/vadideki-geyik/geyik-academy/go101/how-to-work-with-private-go-repositories.md
-
-There's also [a 13-minute video about the journey of a microservice: from
+There's [a 13-minute video about the journey of a microservice: from
 source code to full-blown deployment][k8s-microservice] that I'm sure you'll
 like.
 

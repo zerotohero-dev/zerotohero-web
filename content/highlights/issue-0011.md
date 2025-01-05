@@ -87,16 +87,15 @@ provide you with additional *bedtime reading material* to dig in.
 The above video talks about deploying to **Kubernetes,** but how do we create a
 **Kubernetes** cluster in the first place.
 
-There are many ways.
-In [this article, I'm writing about how you can provision an AWS EKS 
-Kubernetes cluster using `eksctl`][eksctl].
+There are many ways but
+[eksctl][eksctl] is the preferred way.
 As always, there's more than mere instructions; I discuss the pros and cons of
 things, and there are further reference material for the interested to do a
 deeper dive.
 
 That's more or less this week in a nutshell. So what's coming up next?
 
-[eksctl]: @/vadideki-geyik/geyik-academy/k8s101/how-to-install-an-aws-eks-cluster-using-eksctl.md
+[eksctl]: https://eksctl.io/
 
 ## What's on the Horizon 👩‍🍳
 
