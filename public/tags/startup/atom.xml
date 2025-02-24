@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Zero to Hero - startup</title>
+    <link rel="self" type="application/atom+xml" href="https://zerotohero.dev/tags/startup/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://zerotohero.dev"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2021-11-26T00:00:00+00:00</updated>
+    <id>https://zerotohero.dev/tags/startup/atom.xml</id>
+    <entry xml:lang="en">
+        <title>A Startup Founder&#x27;s Bedtime Reading List</title>
+        <published>2021-11-26T00:00:00+00:00</published>
+        <updated>2021-11-26T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/roadmap/a-startup-founders-bedtime-reading-list/"/>
+        <id>https://zerotohero.dev/roadmap/a-startup-founders-bedtime-reading-list/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/roadmap/a-startup-founders-bedtime-reading-list/">&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;a-startup-founders-bedtime-reading-list&#x2F;&quot; alt=&quot;A Startup Founder’s Bedtime Reading List&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;journey-ship.png&quot; alt=&quot;It is a journey.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;It is a journey.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;Founding a startup? Here is a hand-picked list of transformational books for
+you.&lt;&#x2F;p&gt;
+&lt;p&gt;I’ll add more to the list if I bump into other interesting resources.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;22835624-the-art-of-the-start-2-0&quot;&gt;Art of the Start 2.0: The Time-Tested, Battle-Hardened Guide for Anyone
+Starting Anything&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;6828896-delivering-happiness&quot;&gt;Delivering Happiness: A Path to Profits, Passion, and
+Purpose&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;98233.Founders_at_Work&quot;&gt;Founders at Work: Stories of Startups’ Early
+Days&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;76865.Good_to_Great&quot;&gt;Good to Great: Why Some Companies Make the Leap and Others
+Don’t&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;4865.How_to_Win_Friends_and_Influence_People&quot;&gt;How To Win Friends and Influence
+People&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;123684.Influence&quot;&gt;Influence: Science and Practice&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;641604.Purple_Cow&quot;&gt;Purple Cow: Transform Your Business by Being
+Remarkable&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;69571.Rich_Dad_Poor_Dad&quot;&gt;Rich Dad Poor Dad: What the Rich Teach Their Kids About Money That the Poor
+and Middle Class Do Not&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;27220736-shoe-dog&quot;&gt;Shoe Dog: A Memoir by the Creator of
+Nike&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;7108725-start-with-wh&quot;&gt;Start with Why: How Great Leaders Inspire Everyone to Take
+Action&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;12605157-the-100-startup&quot;&gt;The $100 Startup: Reinvent the Way You Make a Living, Do What You Love, and
+Create a New Future&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;368593.The_4_Hour_Workweek&quot;&gt;The 4-Hour Workweek: Escape 9-5, Live Anywhere, and Join the New
+Rich&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;36072.The_7_Habits_of_Highly_Effective_People&quot;&gt;The 7 Habits of Highly Effective People: Powerful Lessons in Personal
+Change&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;40742319-e-myth-revisited-drive-life-leverage-7-habits-of-highly-effective-peo&quot;&gt;The E-Myth Revisited: Why Most Small Businesses Don’t Work and What to Do
+About It&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;18176747-the-hard-thing-about-hard-things&quot;&gt;The Hard Thing About Hard Things: Building a Business When There Are No Easy
+Answers&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;2615.The_Innovator_s_Dilemma&quot;&gt;The Innovator’s Dilemma: When New Technologies Cause Great Firms to Fail
+(Management of Innovation and Change)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;10127019-the-lean-startup&quot;&gt;The Lean Startup: How Today’s Entrepreneurs Use Continuous Innovation to
+Create Radically Successful Businesses&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;12609433-the-power-of-habit&quot;&gt;The Power of Habit: Why We Do What We Do in Life and
+Business&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;30186948-think-and-grow-rich&quot;&gt;Think and Grow Rich: The Landmark Bestseller Now Revised and Updated for the
+21st Century (Think and Grow Rich Series)&lt;&#x2F;a&gt;]&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;31823677-tools-of-titans&quot;&gt;Tools of Titans: The Tactics, Routines, and Habits of Billionaires, Icons,
+and World-Class Performers&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;22091581-traction&quot;&gt;Traction: How Any Startup Can Achieve Explosive Customer
+Growth&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;18050143-zero-to-one&quot;&gt;Zero to One: Notes on Startups, or How to Build the
+Future&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;That’s all for now. Good luck with your startup.&lt;&#x2F;p&gt;
+&lt;p&gt;And, until next time… May the source be with you 🦄.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;roadmap&#x2F;&quot;&gt;Be the Next Version of Yourself&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;hack-the-system&#x2F;&quot;&gt;Who Else is Ready to Hack?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;chisel&#x2F;&quot;&gt;Grab Your Chisel and Start Pounding&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learn-fast-remember-more&#x2F;&quot;&gt;Unlock Your Brain’s Power: Learn Fast, Remember More&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;the-art-of-learning&#x2F;&quot;&gt;Master Your Mind: Unleash the Power of Learning&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;bedtime-reading&#x2F;&quot;&gt;Resources Every Developer Must Read: No Exceptions&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;knowing-javascript-is-not-good-enough&#x2F;&quot;&gt;Knowing JavaScript Is Not Good Enough&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learn-javascript-the-unconventional-way&#x2F;&quot;&gt;Learn JavaScript the Unconventional Way&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learn-haskell&#x2F;&quot;&gt;Want to Learn JavaScript? Learn Haskell First&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;glossary&#x2F;&quot;&gt;A Glossary of Mostly Developer-Related Things&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;git&#x2F;&quot;&gt;Git Comfortable&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;vim&#x2F;&quot;&gt;Master Your Vim-Fu&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;one-does-not-simply-terminal&#x2F;&quot;&gt;One Does Not Simply Terminal 👌&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;design-patterns&#x2F;&quot;&gt;Paint Me Like One of Your French Design Patterns&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;regexp&#x2F;&quot;&gt;Tame Your Regular Expressions&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;security&#x2F;&quot;&gt;Security Is Not Optional&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;you-need-testing&#x2F;&quot;&gt;You Need Testing&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ A Startup Founder’s Bedtime Reading List&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;color-theory&#x2F;&quot;&gt;Orange Is the New Purple&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;ramp-up-in-user-experience-design&#x2F;&quot;&gt;Ramp Up in User Experience Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;typography&#x2F;&quot;&gt;Get Better at Typography&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learning-rust&#x2F;&quot;&gt;Exploring Rust as a Go Developer&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+</feed>

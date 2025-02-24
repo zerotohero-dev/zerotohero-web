@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Zero to Hero - federation</title>
+    <link rel="self" type="application/atom+xml" href="https://zerotohero.dev/tags/federation/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://zerotohero.dev"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2024-12-16T00:00:00+00:00</updated>
+    <id>https://zerotohero.dev/tags/federation/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Establishing SPIFFE Federation Between Kubernetes Clusters</title>
+        <published>2024-12-16T00:00:00+00:00</published>
+        <updated>2024-12-16T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/spiffe-federation/"/>
+        <id>https://zerotohero.dev/inbox/spiffe-federation/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/spiffe-federation/">&lt;p&gt;SPIFFE (Secure Production Identity Framework For Everyone) provides a robust framework for service identity across distributed systems. When using SPIFFE with SPIRE (SPIFFE Runtime Environment) in Kubernetes clusters, it’s common to have multiple trust domains. To enable secure communication between these domains, you need to establish SPIFFE federation by exchanging and trusting each other’s trust bundles.&lt;&#x2F;p&gt;
+&lt;p&gt;In this blog post, we’ll walk through the steps to establish SPIFFE federation between two Kubernetes clusters with separate trust domains.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;scenario-overview&quot;&gt;Scenario Overview&lt;&#x2F;h2&gt;
+&lt;p&gt;Assume you have:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Server A with a trust domain &lt;code&gt;trustdomainA&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Server B with a trust domain &lt;code&gt;trustdomainB&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Both servers are running SPIRE to manage identities. To enable federation, the servers need to exchange and trust each other’s trust bundles.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;step-1-export-the-trust-bundle&quot;&gt;Step 1: Export the Trust Bundle&lt;&#x2F;h2&gt;
+&lt;p&gt;Each SPIRE server has its own trust bundle, which includes the root CA certificate for its trust domain. Start by exporting the trust bundle from Server B:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;spire-server bundle show -format spiffe
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This command will output the trust bundle for &lt;code&gt;trustdomainB&lt;&#x2F;code&gt; in SPIFFE format. Save this output to a file (e.g., &lt;code&gt;trust-bundleB.pem&lt;&#x2F;code&gt;).&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;step-2-configure-federation-in-server-a&quot;&gt;Step 2: Configure Federation in Server A&lt;&#x2F;h2&gt;
+&lt;p&gt;Next, configure Server A to trust &lt;code&gt;trustdomainB&lt;&#x2F;code&gt;. To do this, you’ll use the exported trust bundle from Server B.&lt;&#x2F;p&gt;
+&lt;p&gt;Add the trust bundle to Server A’s configuration:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;spire-server bundle set -format spiffe -id spiffe:&#x2F;&#x2F;trustdomainB -path &#x2F;path&#x2F;to&#x2F;trust-bundleB.pem
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This command tells Server A to trust the root CA from &lt;code&gt;trustdomainB&lt;&#x2F;code&gt;. Update Server A’s &lt;code&gt;spire-server.conf&lt;&#x2F;code&gt; file if needed to reflect the federation relationship with &lt;code&gt;trustdomainB&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;step-3-validate-the-trust-relationship&quot;&gt;Step 3: Validate the Trust Relationship&lt;&#x2F;h2&gt;
+&lt;p&gt;After configuration, Server A will validate any SPIFFE identity (SVID) from &lt;code&gt;trustdomainB&lt;&#x2F;code&gt; by checking its signature against the root CA in the trust bundle.&lt;&#x2F;p&gt;
+&lt;p&gt;When Server A encounters an identity from &lt;code&gt;trustdomainB&lt;&#x2F;code&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;It verifies the SVID’s signature&lt;&#x2F;li&gt;
+&lt;li&gt;If the signature is valid and matches the root CA from &lt;code&gt;trustdomainB&lt;&#x2F;code&gt;, the identity is trusted&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;step-4-establish-bi-directional-trust-optional&quot;&gt;Step 4: Establish Bi-Directional Trust (Optional)&lt;&#x2F;h2&gt;
+&lt;p&gt;If you want Server B to trust identities from &lt;code&gt;trustdomainA&lt;&#x2F;code&gt;, repeat the process in reverse:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Export the trust bundle from Server A:&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;spire-server bundle show -format spiffe
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;Configure Server B to trust the exported bundle by adding it to &lt;code&gt;trustdomainA&lt;&#x2F;code&gt;:&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;spire-server bundle set -format spiffe -id spiffe:&#x2F;&#x2F;trustdomainA -path &#x2F;path&#x2F;to&#x2F;trust-bundleA.pem
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Now, both servers trust each other’s identities, enabling mutual federation.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;key-considerations&quot;&gt;Key Considerations&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;bundle-rotation&quot;&gt;Bundle Rotation&lt;&#x2F;h3&gt;
+&lt;p&gt;If the root CA in a trust domain is rotated, the updated trust bundle must be shared with the other server to maintain trust.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;unique-spiffe-ids&quot;&gt;Unique SPIFFE IDs&lt;&#x2F;h3&gt;
+&lt;p&gt;Ensure that SPIFFE IDs are unique across trust domains to avoid collisions.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;secure-transport&quot;&gt;Secure Transport&lt;&#x2F;h3&gt;
+&lt;p&gt;Always exchange trust bundles securely to prevent tampering.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;By following these steps, you can establish SPIFFE federation between two Kubernetes clusters with distinct trust domains. This enables secure identity-based communication across distributed systems, a critical component for modern cloud-native applications.&lt;&#x2F;p&gt;
+&lt;p&gt;SPIFFE federation simplifies the management of service identity across multiple clusters and trust domains, allowing you to focus on building secure and scalable applications.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

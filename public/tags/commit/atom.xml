@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Zero to Hero - commit</title>
+    <link rel="self" type="application/atom+xml" href="https://zerotohero.dev/tags/commit/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://zerotohero.dev"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2024-11-27T00:00:00+00:00</updated>
+    <id>https://zerotohero.dev/tags/commit/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Debugging Git GPG Signing Issuese</title>
+        <published>2024-11-27T00:00:00+00:00</published>
+        <updated>2024-11-27T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/git-gpg-sign/"/>
+        <id>https://zerotohero.dev/inbox/git-gpg-sign/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/git-gpg-sign/">&lt;p&gt;When working with signed Git commits, you might encounter this error:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;error: gpg failed to sign the data:
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;gpg: skipped &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;[EMAIL]&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;: No secret key
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;[GNUPG:] INV_SGNR 9 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;USER&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;[GNUPG:] FAILURE sign 17
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;gpg: signing failed: No secret key
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;fatal: failed to write commit object
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This error occurs when you try to create a signed Git commit (using the &lt;code&gt;-S&lt;&#x2F;code&gt; flag) but GPG can’t find the corresponding secret key for your email address. Let’s walk through how to diagnose and fix this issue.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;checking-your-gpg-keys&quot;&gt;Checking Your GPG Keys&lt;&#x2F;h2&gt;
+&lt;p&gt;First, check if you have any GPG keys installed:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;gpg --list-secret-keys --keyid-format&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;long
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This command will show output similar to:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;&#x2F;home&#x2F;user&#x2F;.gnupg&#x2F;pubring.kbx
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;-------------------------------
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;sec   ed25519&#x2F;KEYID 2024-11-06 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;SC&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;]
+&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;FULL_KEYID
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;uid                 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;ultimate&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;]&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt; User Name &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;email@example.com&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;ssb   cv25519&#x2F;SUBKEY 2024-11-06 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;E&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;]
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;if-you-have-a-key&quot;&gt;If You Have a Key&lt;&#x2F;h2&gt;
+&lt;p&gt;If you see output like above, you already have a GPG key. The key ID is the string after “ed25519&#x2F;” in the &lt;code&gt;sec&lt;&#x2F;code&gt; line. You’ll need to configure Git to use this key:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;git config --global user.signingkey YOUR_KEY_ID
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Also ensure your Git email matches the GPG key email:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;git config --global user.email &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;your.email@example.com&amp;quot;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;if-you-don-t-have-a-key&quot;&gt;If You Don’t Have a Key&lt;&#x2F;h2&gt;
+&lt;p&gt;If no keys are listed, you’ll need to generate a new one:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;gpg --full-generate-key
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Follow the prompts to create your key. Make sure to use the same email address that you use with Git.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;additional-configuration&quot;&gt;Additional Configuration&lt;&#x2F;h2&gt;
+&lt;p&gt;Sometimes, you might need to explicitly tell Git which GPG program to use:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;git config --global gpg.program $(which gpg)
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;testing-your-configuration&quot;&gt;Testing Your Configuration&lt;&#x2F;h2&gt;
+&lt;p&gt;After setting everything up, try creating a signed commit:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;git commit -S -m &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Your commit message&amp;quot;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;troubleshooting-tips&quot;&gt;Troubleshooting Tips&lt;&#x2F;h2&gt;
+&lt;p&gt;If you’re still having issues:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Verify your GPG key email matches your Git email&lt;&#x2F;li&gt;
+&lt;li&gt;Ensure your GPG key hasn’t expired&lt;&#x2F;li&gt;
+&lt;li&gt;Check if your key has signing capability (look for [S] in the key capabilities)&lt;&#x2F;li&gt;
+&lt;li&gt;Make sure you’re using the correct key ID&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;alternative-unsigned-commits&quot;&gt;Alternative: Unsigned Commits&lt;&#x2F;h2&gt;
+&lt;p&gt;If you need to make a commit without signing (assuming your repository allows it), you can simply omit the &lt;code&gt;-S&lt;&#x2F;code&gt; flag:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;git commit -m &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Your commit message&amp;quot;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;security-note&quot;&gt;Security Note&lt;&#x2F;h2&gt;
+&lt;p&gt;Signing your Git commits adds an extra layer of security by verifying that commits actually came from you. It’s especially important for open-source projects or when working in larger teams. However, make sure to keep your GPG private key secure and never share it with others.&lt;&#x2F;p&gt;
+&lt;p&gt;Remember that you can also configure Git to sign all commits by default:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;git config --global commit.gpgsign true
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This way, you won’t need to add the &lt;code&gt;-S&lt;&#x2F;code&gt; flag to every commit command.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;GPG signing issues in Git are usually straightforward to fix once you understand the relationship between your GPG keys and Git configuration. The key is to ensure that Git knows which GPG key to use and that the key is properly set up with your correct email address.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

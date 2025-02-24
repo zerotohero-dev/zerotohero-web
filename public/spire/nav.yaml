@@ -1,0 +1,15 @@
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
+- name: "Setting Up SPIRE on EKS in Less Than Ten Minutes"
+  url: "@/spire/spire-rocks.md"
+- name: "Shamir's Secret Sharing Scheme with SPIFFE and SPIKE"
+  url: "@/spire/spike/shamir-secrets-sharing.md"
+- name: "mTLS with SPIRE"
+  url: "@/spire/mtls/_index.md"

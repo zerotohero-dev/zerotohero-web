@@ -1,0 +1,958 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Zero to Hero - career</title>
+    <link rel="self" type="application/atom+xml" href="https://zerotohero.dev/tags/career/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://zerotohero.dev"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2024-05-21T00:00:00+00:00</updated>
+    <id>https://zerotohero.dev/tags/career/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Be the Next Version of Yourself</title>
+        <published>2024-05-21T00:00:00+00:00</published>
+        <updated>2024-05-21T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/roadmap/roadmap/"/>
+        <id>https://zerotohero.dev/roadmap/roadmap/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/roadmap/roadmap/">
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;journey.png&quot; alt=&quot;It&amp;#x27;s a journey, not a destination.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;It&amp;#x27;s a journey, not a destination.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;about-this-article&quot;&gt;About This Article&lt;&#x2F;h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;This is a Living Document&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;What you are reading is a &lt;strong&gt;living document&lt;&#x2F;strong&gt;.&lt;br &#x2F;&gt;
+I’ll update this article whenever I get a similar question that has not
+entirely been addressed by what I have here.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;I tried to keep the suggestions here as much field-agnostic as I can to make it
+beneficial to you no matter what part of “&lt;em&gt;the stack&lt;&#x2F;em&gt;” you are interested in.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;What Stack?!&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;I also honestly believe that there is no such thing called “the stack”, and
+the boundaries between the layers of “the stack” have vanished long time ago, so
+it is a “&lt;strong&gt;mesh&lt;&#x2F;strong&gt;”—&lt;em&gt;if anything&lt;&#x2F;em&gt;—rather than a stack, but that’s the
+topic of another article 🙂.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;how-to-read-this-article&quot;&gt;How To Read This Article&lt;&#x2F;h2&gt;
+&lt;p&gt;Do not just scan this article as if you are scanning through your birdsite news
+feed. I am not going to be humble here: This article it is the accumulation of
+years and years of experience. So, give it the &lt;strong&gt;time&lt;&#x2F;strong&gt; and &lt;strong&gt;concentration&lt;&#x2F;strong&gt; it
+deserves.&lt;&#x2F;p&gt;
+&lt;p&gt;While you are reading, you’ll
+find &lt;a href=&quot;https:&#x2F;&#x2F;www.cs.jhu.edu&#x2F;~jason&#x2F;advice&#x2F;how-to-read-a-paper.html&quot;&gt;links to other useful materials, such as this one&lt;&#x2F;a&gt;.
+&lt;strong&gt;Do not skip them&lt;&#x2F;strong&gt;: They are as important as the article itself.&lt;&#x2F;p&gt;
+&lt;p&gt;With that said, let us begin, shall we?&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;&#x2F;h2&gt;
+&lt;p&gt;People continuously ask me variations of the following questions at least a
+couple of times a week:&lt;&#x2F;p&gt;
+&lt;p&gt;“&lt;em&gt;I am a self-educated-developer&#x2F;programming-enthusiast&#x2F;you-name-it.&lt;br &#x2F;&gt;
+I can write code; however, when I dive into complex codebases, I get lost.&lt;&#x2F;em&gt;”&lt;&#x2F;p&gt;
+&lt;p&gt;Or, something like that:&lt;&#x2F;p&gt;
+&lt;p&gt;“&lt;em&gt;People assume that I know JavaScript, and I confess: I am a JavaScript
+developer who doesn’t know how to develop.&lt;&#x2F;em&gt;”&lt;&#x2F;p&gt;
+&lt;p&gt;I even got this one 😄:&lt;&#x2F;p&gt;
+&lt;p&gt;“&lt;em&gt;Help me Obi-Wan Kenobi; you’re my only hope.&lt;&#x2F;em&gt;”&lt;&#x2F;p&gt;
+&lt;p&gt;Since answering the same question over and over again is not the best use of
+the &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Opportunity_cost&quot;&gt;opportunity cost of my time&lt;&#x2F;a&gt;,
+I wanted to answer them here, once and for all.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;is-it-the-impostor-s-syndrome&quot;&gt;Is It the “Impostor’s Syndrome”?&lt;&#x2F;h2&gt;
+&lt;p&gt;Although there’s a hint
+of &lt;a href=&quot;https:&#x2F;&#x2F;www.fastcompany.com&#x2F;40421352&#x2F;the-five-types-of-impostor-syndrome-and-how-to-beat-them&quot;&gt;impostor’s syndrome&lt;&#x2F;a&gt;
+in those questions, there also exists a &lt;strong&gt;deep concern&lt;&#x2F;strong&gt; that waits to be
+addressed.&lt;&#x2F;p&gt;
+&lt;p&gt;All of these questions translate to the following:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;“&lt;em&gt;How do I leap to the next level in my field of expertise?&lt;&#x2F;em&gt;”&lt;&#x2F;li&gt;
+&lt;li&gt;“&lt;em&gt;How do I become the next possible version of myself?&lt;&#x2F;em&gt;”&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;These questions require a much well-thought-out answer than a “&lt;em&gt;It’s easy; you
+see: Learn React and MongoDB, and you are good to go.&lt;&#x2F;em&gt;” answer.&lt;&#x2F;p&gt;
+&lt;p&gt;So here it goes.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;ask-questions-doubt-everything-trust-in-evidence&quot;&gt;Ask Questions, Doubt Everything, Trust in Evidence&lt;&#x2F;h2&gt;
+&lt;p&gt;If you forget everything else you read here, take this “&lt;em&gt;red pill&lt;&#x2F;em&gt;”, and you’ll
+be fine:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Ask&lt;&#x2F;strong&gt; Questions. &lt;strong&gt;Doubt&lt;&#x2F;strong&gt; everything. &lt;strong&gt;Trust&lt;&#x2F;strong&gt; in evidence.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;☝️ That is the &lt;strong&gt;ultimate&lt;&#x2F;strong&gt; way to become a great developer: The rest is just
+trivia.&lt;&#x2F;p&gt;
+&lt;p&gt;Let me give you a related formula:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ask questions.&lt;&#x2F;li&gt;
+&lt;li&gt;Take initiative.&lt;&#x2F;li&gt;
+&lt;li&gt;Move out of your comfort zone.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Here is how it goes:&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;ask-questions&quot;&gt;Ask Questions&lt;&#x2F;h3&gt;
+&lt;p&gt;As long as there are people around and you know that there are things that you
+don’t know: Ask them out.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;There are naïve questions, tedious questions, ill-phrased questions, questions
+put after inadequate self-criticism. However, every question is a cry to
+understand the world. There is no such thing as a dumb question.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Carl Sagan&lt;&#x2F;strong&gt;—&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;17349.The_Demon_Haunted_World&quot;&gt;The Demon-Haunted World: Science as a Candle in the
+Dark&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Ask dumb questions.&lt;&#x2F;li&gt;
+&lt;li&gt;Ask scary questions.&lt;&#x2F;li&gt;
+&lt;li&gt;The more you ask, the better.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;While you are at
+it, &lt;a href=&quot;http:&#x2F;&#x2F;www.catb.org&#x2F;esr&#x2F;faqs&#x2F;smart-questions.html&quot;&gt;learn how to ask smart questions&lt;&#x2F;a&gt;
+and digest the fact
+that &lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;17349.The_Demon_Haunted_World&quot;&gt;there are no dumb questions&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;take-initiative&quot;&gt;Take Initiative&lt;&#x2F;h3&gt;
+&lt;p&gt;After asking as many questions as you &lt;strong&gt;possibly&lt;&#x2F;strong&gt; can, it is time to take the
+reins into your hand because after asking enough questions, you’ll eventually
+run into a set of problems that your coworkers, your friends, and your
+colleagues don’t know how to solve either.&lt;&#x2F;p&gt;
+&lt;p&gt;Trust me; this is &lt;strong&gt;very&lt;&#x2F;strong&gt; easy 😉.&lt;&#x2F;p&gt;
+&lt;p&gt;What you’ll do next is even easier:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Decide&lt;&#x2F;strong&gt; that you will figure out and solve this unsolvable problem anyway.&lt;&#x2F;li&gt;
+&lt;li&gt;Then solve it.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Voila!&lt;&#x2F;p&gt;
+&lt;p&gt;You have solved a domain-specific problem that nobody else has an answer to.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;move-out-of-your-comfort-zone&quot;&gt;Move Out of Your Comfort Zone&lt;&#x2F;h3&gt;
+&lt;p&gt;The more you program, the more issues you’ll find that…&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;You don’t know.&lt;&#x2F;li&gt;
+&lt;li&gt;Your colleagues don’t know.&lt;&#x2F;li&gt;
+&lt;li&gt;Google doesn’t know.&lt;&#x2F;li&gt;
+&lt;li&gt;And you’ll &lt;strong&gt;have to&lt;&#x2F;strong&gt; figure out (&lt;em&gt;as if your job depends on it—’cuz it
+does 😉&lt;&#x2F;em&gt;).&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Try to challenge yourself to &lt;a href=&quot;https:&#x2F;&#x2F;www.lifehack.org&#x2F;articles&#x2F;communication&#x2F;this-what-happens-when-you-move-out-your-comfort-zone.html&quot;&gt;&lt;strong&gt;move out of your comfort
+zone&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Screw everything. Get your pieces together.
+&lt;a href=&quot;https:&#x2F;&#x2F;www.heysigmund.com&#x2F;why-what-you-focus-on-is-what-becomes-powerful-why-your-thoughts-and-feelings-matter&#x2F;&quot;&gt;&lt;strong&gt;Focus&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+and solve that problem.&lt;&#x2F;p&gt;
+&lt;p&gt;Rinse and repeat this process, and you’ll be a domain expert in no time 🤓!&lt;&#x2F;p&gt;
+&lt;p&gt;I’m not kidding. And it’s not &lt;strong&gt;that&lt;&#x2F;strong&gt; hard.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;share-your-knowledge-with-the-community&quot;&gt;Share Your Knowledge with the Community&lt;&#x2F;h3&gt;
+&lt;p&gt;Share your knowledge: Help others.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Software engineering is not a path that you walk alone&lt;&#x2F;strong&gt;. Learning to share
+your knowledge with the community is as important (&lt;em&gt;if not more&lt;&#x2F;em&gt;) than learning
+something new.&lt;&#x2F;p&gt;
+&lt;p&gt;There’s a vast community of developers who are willing to help each other: Be
+one of them.&lt;&#x2F;p&gt;
+&lt;p&gt;Don’t shy away: You don’t have to be a guru to share your knowledge. Opening
+yourself up, sharing your experience, asking others’ opinions takes you a long
+way.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;you-are-not-your-code&quot;&gt;You Are not Your Code&lt;&#x2F;h2&gt;
+&lt;p&gt;“&lt;em&gt;You&lt;&#x2F;em&gt;” and “&lt;em&gt;your code&lt;&#x2F;em&gt;” are
+&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Orthogonality&quot;&gt;&lt;strong&gt;orthogonal&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; to each other.&lt;&#x2F;p&gt;
+&lt;p&gt;There is no shame in sharing your code.&lt;&#x2F;p&gt;
+&lt;p&gt;Share every semicolon you type on your IDE in
+&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;&quot;&gt;&lt;strong&gt;GitHub&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; (&lt;em&gt;or a similar open source code repository of your
+choice&lt;&#x2F;em&gt;).&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Whenever you discover something new: &lt;strong&gt;share it&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;Whenever you have a problem: &lt;strong&gt;yelp for help&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;Whenever you write code: &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;&quot;&gt;&lt;strong&gt;put it to GitHub&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; or
+&lt;a href=&quot;https:&#x2F;&#x2F;gist.github.com&#x2F;&quot;&gt;&lt;strong&gt;create a Gist&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;code-is-nothing&quot;&gt;Code Is Nothing&lt;&#x2F;h2&gt;
+&lt;p&gt;Don’t be afraid to put the code you write out in the open.&lt;&#x2F;p&gt;
+&lt;p&gt;Don’t be ashamed of your code.&lt;&#x2F;p&gt;
+&lt;p&gt;You know what? &lt;strong&gt;Code is nothing&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Trust me; it took a hell lot of years to digest that fact. And it is true:&lt;br &#x2F;&gt;
+&lt;strong&gt;Code is nothing&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;What you create with your code is everything.&lt;&#x2F;li&gt;
+&lt;li&gt;The way you &lt;strong&gt;share&lt;&#x2F;strong&gt; your knowledge is everything.&lt;&#x2F;li&gt;
+&lt;li&gt;The &lt;strong&gt;value&lt;&#x2F;strong&gt; you add to the &lt;strong&gt;community&lt;&#x2F;strong&gt; is everything.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;All great fighting is the same, Eragon, even as all great warriors are the
+same. Past a certain point, &lt;strong&gt;it does not matter&lt;&#x2F;strong&gt; whether you wield a sword, a
+claw, a tooth, or a tail. It’s true, you must be capable with your weapon, but
+anyone with the time and inclination can acquire technical proficiency.&lt;&#x2F;p&gt;
+&lt;p&gt;To achieve greatness though, that requires &lt;strong&gt;artistry&lt;&#x2F;strong&gt;. That requires
+&lt;strong&gt;imagination&lt;&#x2F;strong&gt; and &lt;strong&gt;thoughtfulness&lt;&#x2F;strong&gt;, and it’s those qualities that the best
+warriors share, even if, on the surface, they appear entirely different.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Christopher Paolini&lt;&#x2F;strong&gt;—&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;7664041-inheritance&quot;&gt;The Inheritance Cycle&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Code, in itself, is &lt;strong&gt;nothing&lt;&#x2F;strong&gt;. It is just a &lt;em&gt;tool&lt;&#x2F;em&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Code is just a tool: Sharing your code, and asking other’s feedback about your
+code will improve you &lt;strong&gt;a lot&lt;&#x2F;strong&gt; as a developer.&lt;&#x2F;p&gt;
+&lt;p&gt;With that kept in mind, here are a few developer communities that you might want
+to join and share your code.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;stackexchange.com&#x2F;sites&quot;&gt;Stack Exchange&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;&quot;&gt;Mozilla Developer Network (&lt;em&gt;MDN&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;fedsonslack.com&#x2F;&quot;&gt;FEDs on Slack&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;programming&quot;&gt;Reddit&#x2F;Programming&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;dev.to&#x2F;&quot;&gt;dev.to&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;hashnode.com&#x2F;explore&quot;&gt;Hashnode&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;This List is Just a Starting Point&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;The list of communities I shared here is, by no means, a definitive or
+conclusive list: A google search around your favorite programming language, or
+your favorite framework, or your favorite toolchain will reveal at least a dozen
+of quality developer groups that you can join in a heart beat.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h3 id=&quot;stack-exchange&quot;&gt;Stack Exchange&lt;&#x2F;h3&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;stackexchange.com&#x2F;sites&quot;&gt;Stack Exchange&lt;&#x2F;a&gt; is an absolute must as a
+programmer community site for anyone who is serious about &lt;strong&gt;development&lt;&#x2F;strong&gt; and *
+&lt;em&gt;programming&lt;&#x2F;em&gt;*.&lt;&#x2F;p&gt;
+&lt;p&gt;Don’t just read it. Be a part of it. Participate in its discussions. &lt;strong&gt;Add value
+to it&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;mozilla-developer-network&quot;&gt;Mozilla Developer Network&lt;&#x2F;h3&gt;
+&lt;p&gt;If you’re at all interested in the modern web and the technology stack around
+it &lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;&quot;&gt;Mozilla Developer Network (&lt;em&gt;MDN&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt; is
+the community to join.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;MDN&lt;&#x2F;strong&gt; also provides a ton of information about all of Mozilla’s products and
+how to use them properly.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;feds-on-slack&quot;&gt;FEDs on Slack&lt;&#x2F;h3&gt;
+&lt;p&gt;No, they are not the feds that you are thinking about 🙂.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;http:&#x2F;&#x2F;fedsonslack.com&#x2F;&quot;&gt;FEDS on Slack&lt;&#x2F;a&gt; is a helpful community for top-notch
+front-end developers.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;http:&#x2F;&#x2F;fedsonslack.com&#x2F;&quot;&gt;Join there&lt;&#x2F;a&gt;, and actively contribute to the
+discussions.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;reddit&quot;&gt;Reddit&lt;&#x2F;h3&gt;
+&lt;p&gt;There are also some subreddits such
+as &lt;a href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;programming&quot;&gt;&lt;code&gt;&#x2F;r&#x2F;programming&lt;&#x2F;code&gt;&lt;&#x2F;a&gt;
+and &lt;a href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;learnprogramming&quot;&gt;&lt;code&gt;&#x2F;r&#x2F;learnprogramming&lt;&#x2F;code&gt;&lt;&#x2F;a&gt; that you
+might want to follow.&lt;&#x2F;p&gt;
+&lt;p&gt;Though reddit is its own universe, don’t get lost in it 😉.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;dev-to&quot;&gt;dev.to&lt;&#x2F;h3&gt;
+&lt;p&gt;This one is so obvious; it almost hurts that there are people who don’t know it:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;dev.to&#x2F;&quot;&gt;&lt;strong&gt;dev.to&lt;&#x2F;strong&gt; is a &lt;strong&gt;capable&lt;&#x2F;strong&gt;, &lt;strong&gt;friendly&lt;&#x2F;strong&gt;, and &lt;strong&gt;vibrant&lt;&#x2F;strong&gt; community of
+coders&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;If you haven’t joined yet, what are you waiting for?&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;hashnode&quot;&gt;Hashnode&lt;&#x2F;h3&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;hashnode.com&#x2F;explore&quot;&gt;Hashnode&lt;&#x2F;a&gt; is the easiest way to start a developer
+blog on your personal domain for free and &lt;strong&gt;connect&lt;&#x2F;strong&gt; with the readers through
+our global dev community. Like, dev.to, this community is pretty vibrant and
+helpful too.Read the Source, Luke&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Copy&lt;&#x2F;strong&gt; what others have done before you.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;blog.codinghorror.com&#x2F;learn-to-read-the-source-luke&#x2F;&quot;&gt;Read and &lt;strong&gt;understand&lt;&#x2F;strong&gt; the source code
+piece by piece&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;And then, and only then, &lt;strong&gt;replicate&lt;&#x2F;strong&gt; it your own way.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;If you are planning to become a developer, you are going to be really **intimate
+** with &lt;strong&gt;the source&lt;&#x2F;strong&gt;. And that’s coming up next.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;read-the-source-luke&quot;&gt;Read the Source, Luke&lt;&#x2F;h2&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2021&amp;#x2F;10&amp;#x2F;read-the-source.jpeg&quot; alt=&quot;Read the source, Luke.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Read the source, Luke.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;Related to &lt;em&gt;sharing your code openly&lt;&#x2F;em&gt;:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Indulge in open source&lt;&#x2F;strong&gt; and &lt;strong&gt;read&lt;&#x2F;strong&gt; as much code as you can.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Explore Without Fear&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Make “&lt;em&gt;looking ‘under the hood’ of the open source project you like&lt;&#x2F;em&gt;” a habit.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Do. Or do not. There’s no try&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Initially, reading other’s code will feel painful, daunting, even. You’ll feel
+yourself like an alien in somebody else’s backyard. It’s difficult to think from
+someone else’s point of view, observe how they approach the task at hand,
+analyze &lt;strong&gt;how&lt;&#x2F;strong&gt; they solve a particular problem, and more importantly &lt;strong&gt;why&lt;&#x2F;strong&gt;
+they chose that particular approach instead of a different one.&lt;&#x2F;p&gt;
+&lt;p&gt;Reading others’ code takes time, dedication, and practice: And blimey—it’s a
+time well spent.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Reading Others’ Code&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Reading others’ code is just like reading finance: It will feel weird. At
+first, it’ll feel difficult. And the more you do it, the more comfortable you’ll
+get at it.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;The more you read, the better you’ll get the hang of the &lt;strong&gt;logical constructs&lt;&#x2F;strong&gt;,
+the &lt;strong&gt;terminology&lt;&#x2F;strong&gt;, the &lt;strong&gt;concepts&lt;&#x2F;strong&gt;, and the overall &lt;strong&gt;program flow&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;In addition to all these, reading open source code &lt;strong&gt;teaches&lt;&#x2F;strong&gt; you how to
+write &lt;a href=&quot;http:&#x2F;&#x2F;wiki.c2.com&#x2F;?CodingConvention&quot;&gt;by using the conventions and idioms of the
+language&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;add-value-to-the-community&quot;&gt;Add Value to The Community&lt;&#x2F;h2&gt;
+&lt;p&gt;As a follow-up to the above “&lt;em&gt;Share Your Knowledge with the Community&lt;&#x2F;em&gt;”
+guideline, &lt;strong&gt;the more you add value to the community, the more value you
+receive&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;The least you can do to add value is to &lt;a href=&quot;https:&#x2F;&#x2F;opensource.guide&#x2F;how-to-contribute&#x2F;&quot;&gt;contribute to the
+&lt;strong&gt;open source&lt;&#x2F;strong&gt; community&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;By adding value to the &lt;strong&gt;open source&lt;&#x2F;strong&gt; community you’ll…&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Improve&lt;&#x2F;strong&gt; your existing skills.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Find&lt;&#x2F;strong&gt; mentors to help you.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Be&lt;&#x2F;strong&gt; a mentor and help others.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Build&lt;&#x2F;strong&gt; public artifacts that help you gain visibility.&lt;&#x2F;li&gt;
+&lt;li&gt;Better visibility often means better &lt;strong&gt;career&lt;&#x2F;strong&gt; opportunities too.&lt;&#x2F;li&gt;
+&lt;li&gt;You’ll get better at &lt;strong&gt;people skills&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;More importantly, You’ll feel &lt;strong&gt;empowered 💪&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p&gt;You’ll gain self-confidence, which will help beat the inner impostor out of
+you (&lt;em&gt;more on that later&lt;&#x2F;em&gt;).&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;being-a-full-stackoverflow-developer-is-okay&quot;&gt;Being a &lt;strong&gt;Full StackOverflow Developer&lt;&#x2F;strong&gt; is Okay&lt;&#x2F;h2&gt;
+&lt;p&gt;Don’t be afraid to search: Even the most experienced developers search the most
+uncomplicated things all the time, that’s not a shame.&lt;&#x2F;p&gt;
+&lt;p&gt;Here’s a recent tweet that I shared on the topic:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Hey, I work at Cisco (which is a networking-focused company) and every time I
+need to NAT&#x2F;split a subnet&#x2F;cluster etc I google “IP Subnet Calculator”.&lt;&#x2F;p&gt;
+&lt;p&gt;Googling is not a shame:&lt;br &#x2F;&gt;
+STFW instead of memorizing stuff, use your brain for more important things:
+like solving problems.&lt;&#x2F;p&gt;
+&lt;p&gt;— Volkan Özçelik 🦄 (&lt;em&gt;September 3, 2018&lt;&#x2F;em&gt;)&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Don’t believe me? Then listen to the other experts who feel the same:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Hi, I am Chris. I coded 17 years JavaScript and wrote books and articles.
+Without looking things up
+and &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;code?ref_src=twsrc%5Etfw&quot;&gt;@code&lt;&#x2F;a&gt;
+autocomplete, It’d be lost.&lt;&#x2F;p&gt;
+&lt;p&gt;— Chris Heilmann (@codepo8) &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;codepo8&#x2F;status&#x2F;835986409890672640?ref_src=twsrc%5Etfw&quot;&gt;February 26, 2017&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Hi, I’m Michael. I’ve been writing JavaScript since 2001 and I still have to
+look up how to remove whitespace from a
+string. &lt;a href=&quot;https:&#x2F;&#x2F;t.co&#x2F;obYoCzKe3b&quot;&gt;https:&#x2F;&#x2F;t.co&#x2F;obYoCzKe3b&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;— Michael Bleigh (@mbleigh) &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;mbleigh&#x2F;status&#x2F;835942125992759296?ref_src=twsrc%5Etfw&quot;&gt;February 26, 2017&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Hello, I’m Malte. In 6 years at Google I had to code 3 advanced algorithms.
+Looked them up on Wikipedia. &lt;a href=&quot;https:&#x2F;&#x2F;t.co&#x2F;BTH3I4TpTO&quot;&gt;https:&#x2F;&#x2F;t.co&#x2F;BTH3I4TpTO&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;— Malte Ubl (@cramforce) &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;cramforce&#x2F;status&#x2F;835976913160056833?ref_src=twsrc%5Etfw&quot;&gt;February 26, 2017&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Hi I’m Dan, and I work on Polymer. The other day, I had to read the docs for
+how to use Polymer’s data
+binding. &lt;a href=&quot;https:&#x2F;&#x2F;t.co&#x2F;MarTrxsiKL&quot;&gt;https:&#x2F;&#x2F;t.co&#x2F;MarTrxsiKL&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;— Dan Freedman (@danfreedman) &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;danfreedman&#x2F;status&#x2F;835978986505166849?ref_src=twsrc%5Etfw&quot;&gt;February 26, 2017&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Hi, my name is Sean. I maintain ORMs for a living but have to google the
+CREATE TABLE syntax every time I do it in
+SQL. &lt;a href=&quot;https:&#x2F;&#x2F;t.co&#x2F;TP8A2IKjjx&quot;&gt;https:&#x2F;&#x2F;t.co&#x2F;TP8A2IKjjx&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;— Spooky Sage Griffin 🏳️‍⚧️🏳️‍🌈 (@sgrif) &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;sgrif&#x2F;status&#x2F;835929896794882048?ref_src=twsrc%5Etfw&quot;&gt;February 26, 2017&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Hi, my name is Sarah. I’ve been writing Rails code since 2006, and I still
+get `has_one` and `belongs_to`
+confused. &lt;a href=&quot;https:&#x2F;&#x2F;t.co&#x2F;NFA4uEmiSz&quot;&gt;https:&#x2F;&#x2F;t.co&#x2F;NFA4uEmiSz&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;— Sarah Mei (@sarahmei) &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;sarahmei&#x2F;status&#x2F;835927143833985024?ref_src=twsrc%5Etfw&quot;&gt;February 26, 2017&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Hi, my name is Harper. I have programmed computers since the 90s and still
+have google to split a string. Or the correct args for
+ln. &lt;a href=&quot;https:&#x2F;&#x2F;t.co&#x2F;zV7WxrqHc8&quot;&gt;https:&#x2F;&#x2F;t.co&#x2F;zV7WxrqHc8&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;— harper 🤯 (@harper) &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;harper&#x2F;status&#x2F;835979694264680448?ref_src=twsrc%5Etfw&quot;&gt;February 26, 2017&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Hi. My name is Erin. I’ve been writing JavaScript for 16 years and I still
+have to look up the function signature for
+Array.splice. &lt;a href=&quot;https:&#x2F;&#x2F;t.co&#x2F;OaxYz1K7Xx&quot;&gt;https:&#x2F;&#x2F;t.co&#x2F;OaxYz1K7Xx&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;— she builds their fires (@ErinIshimoticha) &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;ErinIshimoticha&#x2F;status&#x2F;835981374309941249?ref_src=twsrc%5Etfw&quot;&gt;February 26, 2017&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Looking things up is &lt;strong&gt;not&lt;&#x2F;strong&gt; a shame.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;to-learn-learn-to-learn-first&quot;&gt;To Learn, “&lt;em&gt;Learn to Learn&lt;&#x2F;em&gt;” First&lt;&#x2F;h2&gt;
+&lt;p&gt;With one &lt;strong&gt;caveat&lt;&#x2F;strong&gt; though: Do not apply the knowledge you acquired without
+learning about the details.&lt;&#x2F;p&gt;
+&lt;p&gt;Don’t just copy and paste things. Learn the “&lt;strong&gt;why&lt;&#x2F;strong&gt;“s and “&lt;strong&gt;how&lt;&#x2F;strong&gt;“s of the
+knowledge before using it in your code.&lt;&#x2F;p&gt;
+&lt;p&gt;Don’t just memorize, “&lt;strong&gt;learn to learn&lt;&#x2F;strong&gt;” instead.&lt;&#x2F;p&gt;
+&lt;p&gt;You’ll see more about “&lt;em&gt;learning to learn&lt;&#x2F;em&gt;” down below: Just 🐻 with me.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;know-how-your-wetware-brain-works&quot;&gt;Know How Your Wetware 🧠 Works&lt;&#x2F;h2&gt;
+&lt;p&gt;Your “&lt;em&gt;wetware&lt;&#x2F;em&gt;” is not good at memorizing: So, don’t memorize those software
+design patterns, or those interview questions and algorithmic puzzles.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Don’t Memorize What You Can Look Up&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+There is no reason to memorize anything as long as you can look it up.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;On the other hand, &lt;a href=&quot;https:&#x2F;&#x2F;www.sciencedirect.com&#x2F;science&#x2F;article&#x2F;pii&#x2F;S0020737369800246&quot;&gt;your &lt;strong&gt;wetware&lt;&#x2F;strong&gt; is a Yoda-level-master at &lt;strong&gt;pattern
+recognition&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Expose&lt;&#x2F;strong&gt; your wetware to as many patterns and variations as you can, and let
+your subconscious do the rest of the job.&lt;&#x2F;p&gt;
+&lt;p&gt;That’s why one of the best ways to learn something is to &lt;strong&gt;copy&lt;&#x2F;strong&gt; what others
+have done before you:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Imitation Is Learning&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Imitate people you admire to be, to be like them.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;you-learn-by-imitation&quot;&gt;You Learn by Imitation&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.jstor.org&#x2F;stable&#x2F;2762020&quot;&gt;You learn by imitation&lt;&#x2F;a&gt;: Learning
+software is no exception to that.&lt;&#x2F;p&gt;
+&lt;p&gt;Learning how to name variables, or how to create a folder structure, or how to
+couple different modules of your code together, how to document your code… is
+much easier when you &lt;strong&gt;imitate&lt;&#x2F;strong&gt; how others have done the same thing before you.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Stand on the Shoulders of the Giants&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Learn from the cumulative experience of developers before you.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Even if you want to reinvent the wheel first look at what others have done
+already, before doing it your way.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;About that Wheel…&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;chisel&#x2F;&quot;&gt;The “wheel” is, ironically, the most re-invented tool so far&lt;&#x2F;a&gt;
+🙂.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Since the day we are born, we learn by imitating. Our brains are wired to *
+&lt;em&gt;recognize patterns&lt;&#x2F;em&gt;*, &lt;strong&gt;copy&lt;&#x2F;strong&gt;, &lt;strong&gt;mimic&lt;&#x2F;strong&gt;, &lt;strong&gt;imitate&lt;&#x2F;strong&gt;, and &lt;strong&gt;mirror&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;The same applies when learning how to code, too:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Read&lt;&#x2F;strong&gt; others’ code.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Copy&lt;&#x2F;strong&gt; and &lt;strong&gt;replicate&lt;&#x2F;strong&gt; what you see.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;In time, you’ll understand how different patterns tie together:&lt;&#x2F;p&gt;
+&lt;p&gt;You’ll see the “&lt;em&gt;why&lt;&#x2F;em&gt;“s behind those “&lt;em&gt;what&lt;&#x2F;em&gt;“s.&lt;&#x2F;p&gt;
+&lt;p&gt;And the way to reach there is to…&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;First, &lt;strong&gt;imitate&lt;&#x2F;strong&gt; others,&lt;&#x2F;li&gt;
+&lt;li&gt;Then understand &lt;strong&gt;how&lt;&#x2F;strong&gt; the thing you imitated works,&lt;&#x2F;li&gt;
+&lt;li&gt;And only then start questioning &lt;strong&gt;why&lt;&#x2F;strong&gt; that code is implemented that way,&lt;&#x2F;li&gt;
+&lt;li&gt;And, finally, think about how to write it &lt;strong&gt;differently&lt;&#x2F;strong&gt;,&lt;&#x2F;li&gt;
+&lt;li&gt;Then, think about &lt;strong&gt;if&lt;&#x2F;strong&gt; writing it differently solves your problem more
+elegantly.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;take-your-time&quot;&gt;Take Your Time&lt;&#x2F;h2&gt;
+&lt;p&gt;Learning by imitation is a slow and gradual process: It requires a lot of time
+and patience. I’m sorry and there are no shortcuts to speed it up. Though, as in
+anything, practice makes perfect.&lt;&#x2F;p&gt;
+&lt;p&gt;The more you read others’ code, the better you’ll get at it: It’s worth the time
+and energy you invest in.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Hint&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;For starters, you might want to start reading the source code of the open
+source frameworks that you love: The transition will feel much easier then.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;After you get used to the codebase, it’ll start to feel familiar, and then can
+you find a chance to dig in further.&lt;&#x2F;p&gt;
+&lt;p&gt;When you feel you are familiar enough with the codebase,
+&lt;a href=&quot;https:&#x2F;&#x2F;help.github.com&#x2F;en&#x2F;github&#x2F;getting-started-with-github&#x2F;fork-a-repo&quot;&gt;&lt;strong&gt;fork&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+the project on your development environment, then &lt;strong&gt;build&lt;&#x2F;strong&gt; it, and then **debug
+** it to &lt;strong&gt;understand&lt;&#x2F;strong&gt; how its different pieces of the code interact with each
+other.&lt;&#x2F;p&gt;
+&lt;p&gt;Do this exercise regularly, &lt;strong&gt;every single day&lt;&#x2F;strong&gt;, and one day you’ll wake up and
+utter:&lt;&#x2F;p&gt;
+&lt;p&gt;“&lt;em&gt;I know kung-fu.&lt;&#x2F;em&gt;”&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;don-t-hang-onto-a-single-paradigm&quot;&gt;Don’t Hang onto a Single Paradigm&lt;&#x2F;h2&gt;
+&lt;p&gt;Whatever you do, don’t stick to a single language, or a single paradigm.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Embrace change&lt;&#x2F;strong&gt;, embrace different languages, embrace different approaches.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Don’t Have Firm Opinions on Anything&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;There is no single correct solution to any problem. Most of the time, there is
+more than a single truth. More often than not, those &lt;strong&gt;truths coexist&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Truth coexists.&lt;&#x2F;p&gt;
+&lt;p&gt;Consider this before
+talking&#x2F;typing.&lt;&#x2F;p&gt;
+&lt;p&gt;— Volkan Özçelik 🦄 (&lt;em&gt;October 6, 2021&lt;&#x2F;em&gt;)&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;The more languages you know, the broader spectrum of paradigms you’ll be exposed
+to. Knowing more than one language will help you shape the way you think. You’ll
+approach problems &lt;strong&gt;differently&lt;&#x2F;strong&gt;. And that is &lt;strong&gt;good&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;When you expand your horizon, and when you get out of your comfort zone, you
+will be able to combine seemingly unrelated facts with each other to come up
+with a solution—That is the &lt;em&gt;very&lt;&#x2F;em&gt; definition of &lt;strong&gt;creativity&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;With enough accumulated &lt;strong&gt;creativity&lt;&#x2F;strong&gt; and &lt;strong&gt;artistry&lt;&#x2F;strong&gt;, you will &lt;em&gt;eventually&lt;&#x2F;em&gt;
+be the one to find a solution to “&lt;em&gt;that&lt;&#x2F;em&gt;” problem even Google has no answer to.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;there-are-no-shortcuts&quot;&gt;There Are No Shortcuts&lt;&#x2F;h2&gt;
+&lt;p&gt;Related, somewhat ironically, to the above quote, we are not in the Matrix.&lt;&#x2F;p&gt;
+&lt;p&gt;Anything that claims you to “&lt;em&gt;teach X language in Y weeks&lt;&#x2F;em&gt;” is a big honking
+lie.&lt;&#x2F;p&gt;
+&lt;p&gt;Take it easy.&lt;&#x2F;p&gt;
+&lt;p&gt;Learn gradually.&lt;&#x2F;p&gt;
+&lt;p&gt;Give the time your brain deserves to internalize what you have learned.&lt;&#x2F;p&gt;
+&lt;p&gt;Learning requires:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Repetition&lt;&#x2F;strong&gt;,&lt;&#x2F;li&gt;
+&lt;li&gt;Routines,&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;blogsociology.wordpress.com&#x2F;tag&#x2F;habitualization&#x2F;&quot;&gt;Habitualization&lt;&#x2F;a&gt; *,&lt;&#x2F;li&gt;
+&lt;li&gt;Dedication,&lt;&#x2F;li&gt;
+&lt;li&gt;A hell lot of perspiration,&lt;&#x2F;li&gt;
+&lt;li&gt;And &lt;strong&gt;repetition&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;* “&lt;a href=&quot;https:&#x2F;&#x2F;blogsociology.wordpress.com&#x2F;tag&#x2F;habitualization&#x2F;&quot;&gt;Habitualization&lt;&#x2F;a&gt;”
+is just a big fancy word for creating habits based on stimulation in your
+environment.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Moreover, once you dedicate yourself, you’ll be amazed at the progress you make.&lt;&#x2F;p&gt;
+&lt;p&gt;The only difference between you and the role model that you want to be will be
+the amount of time you &lt;strong&gt;regularly&lt;&#x2F;strong&gt; dedicate yourself to your kung-fu and the
+number of things you &lt;strong&gt;sacrifice&lt;&#x2F;strong&gt; on the way.&lt;&#x2F;p&gt;
+&lt;p&gt;Learning is a means: It’s &lt;strong&gt;not&lt;&#x2F;strong&gt; the end.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Surprise: Learning Never Ends&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+If you are in this industry, you will continuously learn &lt;strong&gt;forever&lt;&#x2F;strong&gt;, be ready
+for that.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;beat-the-out-of-the-impostor-in-you&quot;&gt;Beat the $#!% Out of the Impostor in You&lt;&#x2F;h2&gt;
+&lt;p&gt;From time to time, you may feel that you are lagging behind, or you don’t know
+as much as your colleagues—That is a well-documented psychological phenomenon
+called &lt;a href=&quot;https:&#x2F;&#x2F;www.fastcompany.com&#x2F;40421352&#x2F;the-five-types-of-impostor-syndrome-and-how-to-beat-them&quot;&gt;the impostor’s syndrome&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;You might get a feeling that you are just lucky to be in your place. You might
+feel that you don’t deserve your place.&lt;&#x2F;p&gt;
+&lt;p&gt;You know what? That’s complete and utter 🐴 💩.&lt;&#x2F;p&gt;
+&lt;p&gt;Here’s why:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Nobody&lt;&#x2F;strong&gt; knows everything.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Nobody&lt;&#x2F;strong&gt; is perfect.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Everyone&lt;&#x2F;strong&gt; has a unique set of skills.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;You are &lt;strong&gt;priceless&lt;&#x2F;strong&gt; in what you bring to your environment, and nobody can add
+the values you specifically add.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Important&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;It is the &lt;strong&gt;union&lt;&#x2F;strong&gt; of the individual skills of the people that make the team
+more prominent than the sum of its contributors.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Most people experience moments of doubt, and that’s normal. The important part
+is not to let your uncertainty control your actions.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Yeet the Impostor Out of You&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Here’s a stupid trick that works: If you tell yourself you’ll never feel like
+an impostor, guess what? You’ll never feel like an impostor.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Just accept the fact that not knowing everything is normal. You’ll learn things
+when you need to learn things—That’s okay.&lt;&#x2F;p&gt;
+&lt;p&gt;You don’t have to learn that new API, or that new cool framework.&lt;&#x2F;p&gt;
+&lt;p&gt;Also, even if you do have to, you don’t have to learn all of it… like… right
+now 😁—Cut yourself some slack. &lt;strong&gt;Give yourself the time you deserve&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;If you are still not sure how to act like
+that, &lt;a href=&quot;https:&#x2F;&#x2F;www.fastcompany.com&#x2F;40421352&#x2F;the-five-types-of-impostor-syndrome-and-how-to-beat-them&quot;&gt;this article gives a couple of tips and
+tricks&lt;&#x2F;a&gt;
+on how to beat the impostor in you.&lt;&#x2F;p&gt;
+&lt;p&gt;After the fact that you are better than you think you are is set straight, we
+can move on to the more technical parts of the equation.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;be-a-good-software-craftsman&quot;&gt;Be a Good Software Craftsman&lt;&#x2F;h2&gt;
+&lt;p&gt;To be a good software craftsman is to read what others have to say about it.&lt;&#x2F;p&gt;
+&lt;p&gt;There is so much material about the subject that giving a digestible summary
+here is practically impossible. So, I’ll provide a list of &lt;strong&gt;bedtime reading&lt;&#x2F;strong&gt;
+material instead.&lt;&#x2F;p&gt;
+&lt;p&gt;I recommend you read the following the resources that I’ve listed here
+in &lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;bedtime-reading&#x2F;&quot;&gt;Resources Every Developer Must Read—No Exceptions&lt;&#x2F;a&gt;
+&lt;strong&gt;cover to cover&lt;&#x2F;strong&gt;, twice.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Once&lt;&#x2F;strong&gt;: Before you begin your programming journey.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Next&lt;&#x2F;strong&gt;: After you have been coding for several years, and you have learned
+more than one programming language well.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;A heads up: It’s a relatively long list, and it might take a while: Take your
+time.&lt;&#x2F;p&gt;
+&lt;p&gt;What’s common
+in &lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;bedtime-reading&#x2F;&quot;&gt;all of those resources&lt;&#x2F;a&gt; is that
+they don’t talk about how to use a specific programming language, they talk
+about things that are bigger than code.&lt;&#x2F;p&gt;
+&lt;p&gt;They are &lt;strong&gt;essential&lt;&#x2F;strong&gt;. I can go as far as advising you to read them &lt;strong&gt;before&lt;&#x2F;strong&gt;
+you even start learning to code.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Why?&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;If you want to be a good software craftsman, &lt;strong&gt;code&lt;&#x2F;strong&gt; is of &lt;strong&gt;secondary&lt;&#x2F;strong&gt;
+importance. “&lt;strong&gt;&lt;em&gt;Code is nothing&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;”, remember?&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Don’t give code more value than it deserves&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;know-your-tools-well&quot;&gt;Know Your Tools Well&lt;&#x2F;h2&gt;
+&lt;p&gt;What tools you choose will depend on what you want to achieve. This section will
+introduce a few common paths that you might want to explore. Though, don’t take
+is as an end-all be-all reference.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;You Know Where You Want to Go Better&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;You know where you want to go better than I do, and it’s virtually impossible
+for me to cover every possible niche. Instead, the areas I list below will be
+mostly the ones that I’m interested in and regularly exploring. I’ll add more
+resources here as I create more content.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;For example, if you want to get better at &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt; in particular and *
+&lt;em&gt;Front-End Development&lt;&#x2F;em&gt;* in
+general, &lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learn-javascript-the-unconventional-way&#x2F;&quot;&gt;Learn Your JavaScript the Unconventional Way&lt;&#x2F;a&gt;
+can be a great starting point. While at there, it would be good to remind
+yourself
+that &lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;knowing-javascript-is-not-good-enough&#x2F;&quot;&gt;Knowing JavaScript Is Not Good Enough&lt;&#x2F;a&gt;.
+And for an unorthodox take on the subject matter, you might even want
+to &lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learn-haskell&#x2F;&quot;&gt;Learn Haskell First to Learn JavaScript Better&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Or maybe you want to follow the path of an User Experience Designer. In that
+case, on &lt;strong&gt;Usability&lt;&#x2F;strong&gt; and &lt;strong&gt;User Experience&lt;&#x2F;strong&gt;, I’ve gathered quite a few
+resources
+in &lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;ramp-up-in-user-experience-design&#x2F;&quot;&gt;Don’t Make the User Think&lt;&#x2F;a&gt;
+that might pique your interest.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;how-about-software-design-patterns&quot;&gt;How About Software Design Patterns?&lt;&#x2F;h2&gt;
+&lt;p&gt;A quick advice about studying &lt;strong&gt;Software Design Patterns&lt;&#x2F;strong&gt; is, don’t try to fit
+everything into a “&lt;em&gt;pattern&lt;&#x2F;em&gt;”. Go with the flow.&lt;&#x2F;p&gt;
+&lt;p&gt;Experimenting with design patterns the first time is like playing paintball the
+first time: It’ll be fun, but it sure will be &lt;strong&gt;messy&lt;&#x2F;strong&gt; and it will hurt a lot.&lt;&#x2F;p&gt;
+&lt;p&gt;Design patterns are good, and you should read about them; however, keep in mind
+that they are &lt;strong&gt;guidelines&lt;&#x2F;strong&gt;, don’t take them as gospel.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;2021&#x2F;10&#x2F;Screen-Shot-2021-10-14-at-2.14.30-PM.png&quot; alt=&quot;They are more guidelines than actual rules.&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Don’t try to fit every problem you have into a pattern.&lt;&#x2F;p&gt;
+&lt;p&gt;Yes, there are specific sets of problems that fit well with certain software
+architecture patterns. One the other hand, forcing patterns into every single
+problem set will be counterproductive, at the very least.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;how-about-those-interview-prep-books-and-code-banks&quot;&gt;How About Those “&lt;em&gt;Interview Prep&lt;&#x2F;em&gt;” Books and Code Banks?&lt;&#x2F;h2&gt;
+&lt;p&gt;For books like “&lt;em&gt;Cracking the Coding Interview&lt;&#x2F;em&gt;”, and for websites like
+“&lt;em&gt;Leetcode&lt;&#x2F;em&gt;”, well, I have mixed feelings.&lt;&#x2F;p&gt;
+&lt;p&gt;If you want to pass an interview, sure thing, go ahead and read them.&lt;&#x2F;p&gt;
+&lt;p&gt;If you are prepping for an interview, not studying those resources is
+&lt;strong&gt;illogical&lt;&#x2F;strong&gt;: If that’s how the game is played, you should play it by the rules
+unless you are confident that you can set your own rules.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;About Competitive Programming Challenges&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;If you want to work for a company as a software developer, and if that company
+prefers asking competitive programming questions instead of seeking for a
+diversified and complementary mixture of creative human beings, then you have no
+other option but study those interview prep books and websites.&lt;&#x2F;p&gt;
+&lt;p&gt;From my anecdotal observation, that’s how the majority of the Silly Cone
+Valley companies are right now. There are exceptions, but it’s &lt;strong&gt;very&lt;&#x2F;strong&gt; rare.
+And from the looks of it, it’s not about to change anytime soon.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Though, I have a sliver of hope that, if you have read this article thus far,
+you have a strong belief that you are &lt;strong&gt;meant to be&lt;&#x2F;strong&gt; more than just a &lt;em&gt;walking
+scientific calculator&lt;&#x2F;em&gt; that can backtrack a maze, or reverse a binary tree.&lt;&#x2F;p&gt;
+&lt;p&gt;For mastering of your craftsmanship, interview prep books and websites are **not
+** worth your time.&lt;&#x2F;p&gt;
+&lt;p&gt;I mean, &lt;strong&gt;do&lt;&#x2F;strong&gt; buy those interview prep books, and &lt;strong&gt;do&lt;&#x2F;strong&gt; solve the question in
+those “&lt;em&gt;programming interview questions code bank&lt;&#x2F;em&gt;” websites; however, treat
+them as “&lt;em&gt;side dishes&lt;&#x2F;em&gt;”, not as the main course.&lt;&#x2F;p&gt;
+&lt;p&gt;Don’t let a stupid recursive array manipulation interview question dictate how
+good a software craftsman you are.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;flex-your-algorithmic-muscle&quot;&gt;Flex Your Algorithmic Muscle&lt;&#x2F;h2&gt;
+&lt;p&gt;Though, don’t get me wrong here. Learning algorithms; learning when, why, and
+how to use them is &lt;strong&gt;priceless&lt;&#x2F;strong&gt;. Memorizing algorithms, on the other hand, to
+pass a technical interview is a waste of time. This is a a subtle, yet
+importance difference.&lt;&#x2F;p&gt;
+&lt;p&gt;Don’t learn &lt;strong&gt;data structures&lt;&#x2F;strong&gt; and &lt;strong&gt;algorithms&lt;&#x2F;strong&gt; for the sake of studying for
+interviews. Learn them &lt;strong&gt;because&lt;&#x2F;strong&gt; it makes you a &lt;strong&gt;better&lt;&#x2F;strong&gt; programmer.&lt;&#x2F;p&gt;
+&lt;p&gt;Regardless, studying &lt;a href=&quot;https:&#x2F;&#x2F;projecteuler.net&#x2F;&quot;&gt;&lt;em&gt;competitive programming questions&lt;&#x2F;em&gt;&lt;&#x2F;a&gt;
+will help you in your programming interviews. There are even shortcuts (&lt;em&gt;like
+websites like leetcode&lt;&#x2F;em&gt;) that help you practice your algorithmic chops.&lt;&#x2F;p&gt;
+&lt;p&gt;Yet, that’s not the point. &lt;strong&gt;Do not take shortcuts&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Spend time to &lt;strong&gt;understand&lt;&#x2F;strong&gt; a &lt;strong&gt;broad spectrum&lt;&#x2F;strong&gt; of data structures and
+algorithms: Learn &lt;strong&gt;when&lt;&#x2F;strong&gt; to use them, &lt;strong&gt;how&lt;&#x2F;strong&gt; to use them, when &lt;strong&gt;not&lt;&#x2F;strong&gt; to use
+them.&lt;&#x2F;p&gt;
+&lt;p&gt;Learn what the &lt;strong&gt;benefits&lt;&#x2F;strong&gt; of a particular type of algorithm are.&lt;&#x2F;p&gt;
+&lt;p&gt;Learn what the &lt;strong&gt;liabilities&lt;&#x2F;strong&gt; of using specific data structures are.&lt;&#x2F;p&gt;
+&lt;p&gt;Here are two excellent (&lt;em&gt;and free&lt;&#x2F;em&gt;) resources to learn your algorithms:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;cses.fi&#x2F;book&#x2F;index.html&quot;&gt;Competitive Programmer’s Handbook&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;teachyourselfcs.com&#x2F;&quot;&gt;Teach Yourself CS&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Aside from them, I’d suggest reading these two books &lt;strong&gt;cover-to-cover&lt;&#x2F;strong&gt;, not
+skipping anything. Genuinely ingest everything in them:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;425208.The_Algorithm_Design_Manual&quot;&gt;The Algorithm Design Manual—S. Skiena&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;108986.Introduction_to_Algorithms&quot;&gt;Introduction to Algorithms—Cormen, et., al.&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;There are other books too, and you can investigate them on your own. Though,
+these two books will cover all your algorithm bases.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;learn-to-learn&quot;&gt;Learn to Learn&lt;&#x2F;h2&gt;
+&lt;p&gt;Before even beginning your learning adventure, you need to know two things:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;You should &lt;strong&gt;know&lt;&#x2F;strong&gt; how you learn: What type of learner you are.&lt;&#x2F;li&gt;
+&lt;li&gt;You need to “&lt;strong&gt;learn to learn&lt;&#x2F;strong&gt;”.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;That might sound “&lt;em&gt;too meta&lt;&#x2F;em&gt;”, so let me elaborate:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Learning to learn&lt;&#x2F;strong&gt; is easier said than done because to “&lt;em&gt;learn to learn&lt;&#x2F;em&gt;”,
+you have to &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Know_thyself&quot;&gt;&lt;strong&gt;know yourself&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+first—you have to have an idea of what type of a learner you are: There is
+no “&lt;em&gt;one size fits all&lt;&#x2F;em&gt;” solution in learning.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“Every fighter has a different way of eating yogurt.”&lt;&#x2F;p&gt;
+&lt;p&gt;— Turkish proverb&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Are you an &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Inductive_reasoning&quot;&gt;&lt;strong&gt;inductive learner&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+who starts with the foundation and understands the bigger picture by
+connecting pieces together.&lt;&#x2F;p&gt;
+&lt;p&gt;Alternatively, are you a &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Deductive_reasoning&quot;&gt;&lt;strong&gt;deductive learner&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+who likes to see a working system as a whole, only to split it into is building
+blocks recursively, and understand each piece until there is nothing left to
+split apart.&lt;&#x2F;p&gt;
+&lt;p&gt;Are you a &lt;a href=&quot;https:&#x2F;&#x2F;www.thestudygurus.com&#x2F;visual-study-tips&#x2F;&quot;&gt;&lt;strong&gt;visual learner&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;?
+Do you use flashcards? Do you want to draw things on a whiteboard? Do you want to
+look at things “&lt;em&gt;from a different perspective&lt;&#x2F;em&gt;” to “&lt;em&gt;get the hang of it&lt;&#x2F;em&gt;.” Do
+you understand things best when you have a “&lt;em&gt;clear picture&lt;&#x2F;em&gt;” in your mind?&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;learn-how-you-learn&quot;&gt;Learn How You Learn&lt;&#x2F;h2&gt;
+&lt;p&gt;Do you like watching videos to learn things, or are you more comfortable when
+you read books and articles and then apply the concepts you read at your own
+pace?&lt;&#x2F;p&gt;
+&lt;p&gt;Do you learn by playing toy projects?&lt;&#x2F;p&gt;
+&lt;p&gt;Do you learn by reading others’ code?&lt;&#x2F;p&gt;
+&lt;p&gt;There’s no exact answer to the “&lt;em&gt;how do I learn?&lt;&#x2F;em&gt;” question.&lt;&#x2F;p&gt;
+&lt;p&gt;If you’re not sure, I’d suggest you try a variety of different approaches and
+see which ones fit the best for you.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Caveat&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+An unrelated cautionary note: Most people don’t fit perfectly into a single
+learning-style category, so it’s highly likely that you will be better off using
+&lt;strong&gt;a mixture of learning styles&lt;&#x2F;strong&gt; and techniques.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Watch yourself, and be more aware of what styles of learning you prefer the
+most.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;don-t-rush&quot;&gt;Don’t Rush&lt;&#x2F;h2&gt;
+&lt;p&gt;Learning to code is no different from learning any other skill: It’s a &lt;strong&gt;slow&lt;&#x2F;strong&gt;,
+&lt;strong&gt;painstaking&lt;&#x2F;strong&gt;, and &lt;strong&gt;gradual&lt;&#x2F;strong&gt; process. The more you practice, the better
+you’ll get.&lt;&#x2F;p&gt;
+&lt;p&gt;Take “&lt;em&gt;reading others’ code&lt;&#x2F;em&gt;” for example. Do you have a problem reading others’
+code? Then attack the problem right at its heart:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Pick&lt;&#x2F;strong&gt; a few open source projects from &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;&quot;&gt;GitHub&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Read&lt;&#x2F;strong&gt; the code in there until your eyes bleed.&lt;&#x2F;li&gt;
+&lt;li&gt;Then &lt;strong&gt;read some more&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;It is a slow and gradual process: &lt;strong&gt;Be patient&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;before-you-begin-programming&quot;&gt;Before You Begin Programming…&lt;&#x2F;h2&gt;
+&lt;p&gt;No matter what you want to learn, if you aspire to be a good developer, you will
+need the following skills. So I encourage you to learn them sooner than later.&lt;&#x2F;p&gt;
+&lt;p&gt;After you are comfortable with them, you can continue your programming journey
+from where you left off.&lt;&#x2F;p&gt;
+&lt;p&gt;Here is a short list of skills that you’ll likely need for starters:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;A basic-level of &lt;strong&gt;terminal&lt;&#x2F;strong&gt; knowledge.&lt;&#x2F;li&gt;
+&lt;li&gt;Ability to write simple &lt;strong&gt;shell scripts&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;Basic knowledge of &lt;strong&gt;git&lt;&#x2F;strong&gt; and &lt;strong&gt;GitHub&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;And knowledge about how to &lt;strong&gt;ssh&lt;&#x2F;strong&gt; into a server.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;where-to-go-from-here&quot;&gt;Where to Go From Here&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;a href=&quot;&#x2F;tags&#x2F;roadmap&quot;&gt;There are a handful of articles that I keep on writing to augment
+this roadmap&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Here, you can find the list below, for your convenience. The list will
+update itself automatically as I add more resources and articles later:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Be the Next Version of Yourself&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;hack-the-system&#x2F;&quot;&gt;Who Else is Ready to Hack?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;chisel&#x2F;&quot;&gt;Grab Your Chisel and Start Pounding&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learn-fast-remember-more&#x2F;&quot;&gt;Unlock Your Brain’s Power: Learn Fast, Remember More&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;the-art-of-learning&#x2F;&quot;&gt;Master Your Mind: Unleash the Power of Learning&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;bedtime-reading&#x2F;&quot;&gt;Resources Every Developer Must Read: No Exceptions&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;knowing-javascript-is-not-good-enough&#x2F;&quot;&gt;Knowing JavaScript Is Not Good Enough&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learn-javascript-the-unconventional-way&#x2F;&quot;&gt;Learn JavaScript the Unconventional Way&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learn-haskell&#x2F;&quot;&gt;Want to Learn JavaScript? Learn Haskell First&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;glossary&#x2F;&quot;&gt;A Glossary of Mostly Developer-Related Things&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;git&#x2F;&quot;&gt;Git Comfortable&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;vim&#x2F;&quot;&gt;Master Your Vim-Fu&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;one-does-not-simply-terminal&#x2F;&quot;&gt;One Does Not Simply Terminal 👌&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;design-patterns&#x2F;&quot;&gt;Paint Me Like One of Your French Design Patterns&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;regexp&#x2F;&quot;&gt;Tame Your Regular Expressions&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;security&#x2F;&quot;&gt;Security Is Not Optional&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;you-need-testing&#x2F;&quot;&gt;You Need Testing&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;a-startup-founders-bedtime-reading-list&#x2F;&quot;&gt;A Startup Founder’s Bedtime Reading List&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;color-theory&#x2F;&quot;&gt;Orange Is the New Purple&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;ramp-up-in-user-experience-design&#x2F;&quot;&gt;Ramp Up in User Experience Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;typography&#x2F;&quot;&gt;Get Better at Typography&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learning-rust&#x2F;&quot;&gt;Exploring Rust as a Go Developer&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;If you have been patient enough to read to the end of this article without
+skipping anything, &lt;a href=&quot;https:&#x2F;&#x2F;www.nngroup.com&#x2F;articles&#x2F;how-little-do-users-read&#x2F;&quot;&gt;you are better than 75% the world
+already&lt;&#x2F;a&gt;.
+Congratulations.&lt;&#x2F;p&gt;
+&lt;p&gt;Learning is a never-ending journey. And learning is also a way to &lt;strong&gt;find
+yourself&lt;&#x2F;strong&gt;. Finding yourself—finding your core idenity—has never been an
+easy task.&lt;&#x2F;p&gt;
+&lt;p&gt;Of course there will be times you’ll stumble upon. In those times, make sure you
+are surrounded by a welcoming community to support you and push you forward.&lt;&#x2F;p&gt;
+&lt;p&gt;I’ll write a follow-up article, focusing on a more technical roadmap, especially
+focusing on the path of becoming a developer.&lt;&#x2F;p&gt;
+&lt;p&gt;Until next time… May the source be with you 🦄.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Build Strong Connections to Land Your Dream Job</title>
+        <published>2023-08-18T00:00:00+00:00</published>
+        <updated>2023-08-18T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/top-of-mind/the-dream-job/"/>
+        <id>https://zerotohero.dev/top-of-mind/the-dream-job/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/top-of-mind/the-dream-job/">&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;size&#x2F;w1200&#x2F;2024&#x2F;03&#x2F;dream-job.png&quot; alt=&quot;Build Strong Connections to Land Your Dream Job&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;&#x2F;h2&gt;
+&lt;p&gt;Imagine this scenario: You receive an email or LinkedIn message from someone you
+may not know or haven’t even met in person. They send you their résumé and ask
+for a referral at your company. What would you do?&lt;&#x2F;p&gt;
+&lt;p&gt;Not much? To be honest, you’ll highly-likely ignore their request and ghost
+them.&lt;&#x2F;p&gt;
+&lt;p&gt;But why? Because while asking for your help they’ve overlooked a few steps, such
+as:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Checking whether you are available and willing to assist,&lt;&#x2F;li&gt;
+&lt;li&gt;Making sure they are approaching the right person,&lt;&#x2F;li&gt;
+&lt;li&gt;Or, inquiring about your suitability for their request.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;And even more important than those, they are &lt;strong&gt;selfish&lt;&#x2F;strong&gt;; they haven’t built a
+relationship, and accrued enough goodwill to be able to ask help.&lt;&#x2F;p&gt;
+&lt;p&gt;Would you want a selfish colleague in your team? Probably not.&lt;&#x2F;p&gt;
+&lt;p&gt;Would you want someone who does not know how to approach people, and who does
+not value others’ time in your team? Again; probably not.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;you-don-t-kiss-on-a-first-date&quot;&gt;You Don’t Kiss on a First Date&lt;&#x2F;h2&gt;
+&lt;p&gt;Essentially, they’re attempting to rush things and make a “&lt;em&gt;first date kiss&lt;&#x2F;em&gt;.”&lt;&#x2F;p&gt;
+&lt;p&gt;Unfortunately, that’s not how networking works. This approach is likely to fail.&lt;&#x2F;p&gt;
+&lt;p&gt;You may believe that reaching out to people indiscriminately increases the
+chances of success—it’s “&lt;em&gt;a numbers game&lt;&#x2F;em&gt;” after all. However, in reality,
+this strategy has flaws because it’s dishonest.&lt;&#x2F;p&gt;
+&lt;p&gt;Let’s see how we can improve our approach.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;admit-and-recognize-that-people-are-busy&quot;&gt;Admit and Recognize that People are Busy&lt;&#x2F;h2&gt;
+&lt;p&gt;When it comes to networking, &lt;strong&gt;there is no free lunch&lt;&#x2F;strong&gt;. The more you give in to
+your relationships, the more you’ll get value in return.&lt;&#x2F;p&gt;
+&lt;p&gt;Everyone has their responsibilities, agendas, and priorities. So, don’t send
+cold emails and cold LinkedIn messages to people and expect them to respond
+back.&lt;&#x2F;p&gt;
+&lt;p&gt;Know them; nurture a professional relationship with them.&lt;&#x2F;p&gt;
+&lt;p&gt;If you don’t act professionally and put in the effort needed, don’t get
+surprised when your messages are ignored or even result in being blocked or
+reported 99% of the time.&lt;&#x2F;p&gt;
+&lt;p&gt;Also if you don’t act professionally, why would you assume that they will find
+you suitable for a professional work environment? That’s contradictory in
+itself.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;consider-the-risks-for-the-person-referring-you&quot;&gt;Consider the Risks for the Person Referring You&lt;&#x2F;h2&gt;
+&lt;p&gt;Referring someone for an open position can seriously affect their reputation
+within the company if the person gets the job but is not a good fit. Often, this
+risk outweighs any benefit (&lt;em&gt;including referral bonuses&lt;&#x2F;em&gt;) they may receive if
+you get an offer.&lt;&#x2F;p&gt;
+&lt;p&gt;That’s why you must show that you are more than capable of the role. And that,
+again, boils down to &lt;strong&gt;nurturing a professional relationship&lt;&#x2F;strong&gt; with the person
+&lt;strong&gt;months before&lt;&#x2F;strong&gt;, NOT at the last minute when you see that fancy job
+advertisement.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Build relationships before you need them&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;understand-the-significance-of-your-request&quot;&gt;Understand the Significance of Your Request&lt;&#x2F;h2&gt;
+&lt;p&gt;You’re asking a stranger to invest their time evaluating your skills, abilities,
+and credentials. You might even expect feedback, and maybe ask them to pass
+along your resume to parties. &lt;strong&gt;That’s a nontrivial demand&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Again, nobody will spend any time doing that if you haven’t already established
+a well-founded professional relationship.&lt;&#x2F;p&gt;
+&lt;p&gt;And, it’s not about being rude; it is out of necessity: People have so little
+time and so many things to do; so why should they help you if they don’t have
+confidence and trust in you.&lt;&#x2F;p&gt;
+&lt;p&gt;And to nurture the confidence and trust, you need to &lt;strong&gt;build a professional
+relationship&lt;&#x2F;strong&gt;. And that takes time, so you’ll need to start building your
+relationships way before you initiate your job search.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;embrace-networking&quot;&gt;Embrace Networking&lt;&#x2F;h2&gt;
+&lt;p&gt;That’s the third time I’m mentioning &lt;strong&gt;networking&lt;&#x2F;strong&gt;. I think it highlights its
+importance.&lt;&#x2F;p&gt;
+&lt;p&gt;Effective networking requires &lt;strong&gt;dedication&lt;&#x2F;strong&gt;, &lt;strong&gt;effort&lt;&#x2F;strong&gt;, and &lt;strong&gt;time&lt;&#x2F;strong&gt;. It
+requires mutual respect and understanding. Simply sending a “&lt;em&gt;please refer me&lt;&#x2F;em&gt;”
+message as if you were a door-to-door salesperson won’t cut it.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;In today’s interconnected world, &lt;strong&gt;networking&lt;&#x2F;strong&gt; holds importance. Especially
+when stakes are so high, the bar is raised to the moon, and everyone is hiring
+(&lt;em&gt;or wanting to hire&lt;&#x2F;em&gt;) A players.&lt;&#x2F;p&gt;
+&lt;p&gt;Treat the process with care and thoughtfulness, and you’ll find that your
+connections are more fruitful and more likely to lead you toward the
+opportunities you seek.&lt;&#x2F;p&gt;
+&lt;p&gt;Avoid being someone who alienates allies by making attempts at connection
+without building the necessary foundations first.&lt;&#x2F;p&gt;
+&lt;p&gt;Invest in building connections, grasp the subtleties of engagement, and approach
+your networking endeavors with genuine empathy and respect. The rewards will be
+significant. Your career will flourish as a result.&lt;&#x2F;p&gt;
+&lt;p&gt;Now, go get that job! And, may the source be with you 🦄.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;catch-22&#x2F;&quot;&gt;Catch 22&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;consume-less&#x2F;&quot;&gt;Consume Less&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;craft-captivating-documentation&#x2F;&quot;&gt;Craft Captivating Documentation&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;keep-your-secrets&#x2F;&quot;&gt;Keep Your Secrets… Secret&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;later-does-not-exist&#x2F;&quot;&gt;‘Later’ Does Not Exist&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;perception-pivot&#x2F;&quot;&gt;Transform Feedback into Professional Mastery&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;probing-questions&#x2F;&quot;&gt;Embracing Daily Reflection&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;psst-you-dont-have-to-use-medium&#x2F;&quot;&gt;Psst… You Don’t Have to Use Medium&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;reshape-your-workspace&#x2F;&quot;&gt;Reshape Your Workspace, Reshape Your Future&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;secrets&#x2F;&quot;&gt;Secrets&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Build Strong Connections to Land Your Dream Job&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;trust&#x2F;&quot;&gt;Trust Cultivates a Cohesive Team&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;vmware-secrets-manager&#x2F;&quot;&gt;Long Live Aegis!&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;write-to-forget&#x2F;&quot;&gt;Write to Forget&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;closure&#x2F;&quot;&gt;Closure&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;new-z2h-design&#x2F;&quot;&gt;The New Zero to Hero Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+</feed>

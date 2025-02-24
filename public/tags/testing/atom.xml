@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Zero to Hero - testing</title>
+    <link rel="self" type="application/atom+xml" href="https://zerotohero.dev/tags/testing/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://zerotohero.dev"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2021-11-26T00:00:00+00:00</updated>
+    <id>https://zerotohero.dev/tags/testing/atom.xml</id>
+    <entry xml:lang="en">
+        <title>You Need Testing</title>
+        <published>2021-11-26T00:00:00+00:00</published>
+        <updated>2021-11-26T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/roadmap/you-need-testing/"/>
+        <id>https://zerotohero.dev/roadmap/you-need-testing/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/roadmap/you-need-testing/">
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;testing.png&quot; alt=&quot;Test all the thingz!&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Test all the thingz!&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;testing-is-not-about-the-tools&quot;&gt;Testing is &lt;strong&gt;not&lt;&#x2F;strong&gt; About the Tools&lt;&#x2F;h2&gt;
+&lt;p&gt;Yes, there are frameworks
+like &lt;a href=&quot;https:&#x2F;&#x2F;jestjs.io&#x2F;&quot;&gt;Jest&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;mochajs.org&#x2F;&quot;&gt;Mocha&lt;&#x2F;a&gt;,
+and &lt;a href=&quot;https:&#x2F;&#x2F;jasmine.github.io&#x2F;&quot;&gt;Jasmine&lt;&#x2F;a&gt;. There are even test runners
+like &lt;a href=&quot;https:&#x2F;&#x2F;karma-runner.github.io&#x2F;2.0&#x2F;index.html&quot;&gt;Karma&lt;&#x2F;a&gt;; however, without
+proper &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Behavior-driven_development&quot;&gt;Behavior-Driven Development&lt;&#x2F;a&gt;
+and &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Test-driven_development&quot;&gt;Test Driven Development&lt;&#x2F;a&gt;
+foundation, you will not benefit from those tools.&lt;&#x2F;p&gt;
+&lt;p&gt;Testing is all about the mindset.&lt;&#x2F;p&gt;
+&lt;p&gt;At the very least, you’ll need to understand the terminology
+like &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Unit_testing&quot;&gt;unit tests&lt;&#x2F;a&gt;,
+&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Test_stub&quot;&gt;stubs&lt;&#x2F;a&gt;,
+&lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;questions&#x2F;12827580&#x2F;mocking-vs-spying-in-mocking-frameworks&quot;&gt;spies&lt;&#x2F;a&gt;,
+and more important than that, you’ll have to figure out &lt;strong&gt;why&lt;&#x2F;strong&gt; &lt;em&gt;you need
+testing (“unit testing”—see what I did there?&lt;&#x2F;em&gt;) and &lt;strong&gt;how&lt;&#x2F;strong&gt; to implement
+various testing strategies.&lt;&#x2F;p&gt;
+&lt;p&gt;There are several different testing types and strategies that you need to be
+aware of as well. For starters, you might want to learn
+about &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Unit_testing&quot;&gt;unit tests&lt;&#x2F;a&gt;,
+&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Integration_testing&quot;&gt;integration tests&lt;&#x2F;a&gt;,
+&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Functional_testing&quot;&gt;functional tests&lt;&#x2F;a&gt;,
+&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Acceptance_testing&quot;&gt;acceptance tests&lt;&#x2F;a&gt;,
+&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Software_performance_testing&quot;&gt;performance tests&lt;&#x2F;a&gt;,
+&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Smoke_testing_(software)&quot;&gt;smoke tests&lt;&#x2F;a&gt;,
+and &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Exploratory_testing&quot;&gt;exploratory testing&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;how-much-testing-is-enough-testing&quot;&gt;How Much Testing is Enough Testing?&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;strong&gt;How much&lt;&#x2F;strong&gt; testing is &lt;strong&gt;enough&lt;&#x2F;strong&gt; testing?&lt;&#x2F;p&gt;
+&lt;p&gt;That’s an important question too. The answer to it depends on your situation:&lt;&#x2F;p&gt;
+&lt;p&gt;For instance, if you are a startup, rapidly prototyping at an insane cadence,
+writing tests may (&lt;em&gt;“&lt;strong&gt;may&lt;&#x2F;strong&gt;” is the keyword here&lt;&#x2F;em&gt;) be counter-productive.&lt;&#x2F;p&gt;
+&lt;p&gt;Per contra, if you are a well-established organization with remotely
+collaborating teams and business units, or if you are open-sourcing a library,
+then &lt;em&gt;not&lt;&#x2F;em&gt; writing tests will be equivalent to being back-kicked by a donkey in
+the guts—not fun!&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;learning-resources&quot;&gt;Learning Resources&lt;&#x2F;h2&gt;
+&lt;p&gt;Here are some reference materials that can help in your journey:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;387190.Test_Driven_Development&quot;&gt;Test-Driven Development By Example&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;17165516-javascript-testing-with-jasmine&quot;&gt;JavaScript Testing with Jasmine: JavaScript Behavior-Driven Development&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;www.uxebu.com&#x2F;blog&#x2F;2013&#x2F;01&#x2F;08&#x2F;make-tests-read-like-a-book&#x2F;&quot;&gt;Make Tests Read Like a Book&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;3133219-performance-testing-guidance-for-web-applications&quot;&gt;Performance Testing Guidance for Web Applications&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;20578311-bdd-in-action&quot;&gt;BDD in Action: Behavior-Driven Development for the Whole Software Lifecycle&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;This article provided you with some bedtime reading material on test-driven
+development.&lt;&#x2F;p&gt;
+&lt;p&gt;Testing is a vast field, and there is a lot to explore. Hence, the resources
+here are by no means a definitive list. Instead, they are hand-curated for you
+as a &lt;strong&gt;starting point&lt;&#x2F;strong&gt; to build a solid testing &lt;strong&gt;foundation&lt;&#x2F;strong&gt; and &lt;strong&gt;mindset&lt;&#x2F;strong&gt;.
+Once you consume them, you’ll have a much better understanding of where to go
+next.&lt;&#x2F;p&gt;
+&lt;p&gt;Until next time… May the source be with you 🦄.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;roadmap&#x2F;&quot;&gt;Be the Next Version of Yourself&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;hack-the-system&#x2F;&quot;&gt;Who Else is Ready to Hack?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;chisel&#x2F;&quot;&gt;Grab Your Chisel and Start Pounding&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learn-fast-remember-more&#x2F;&quot;&gt;Unlock Your Brain’s Power: Learn Fast, Remember More&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;the-art-of-learning&#x2F;&quot;&gt;Master Your Mind: Unleash the Power of Learning&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;bedtime-reading&#x2F;&quot;&gt;Resources Every Developer Must Read: No Exceptions&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;knowing-javascript-is-not-good-enough&#x2F;&quot;&gt;Knowing JavaScript Is Not Good Enough&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learn-javascript-the-unconventional-way&#x2F;&quot;&gt;Learn JavaScript the Unconventional Way&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learn-haskell&#x2F;&quot;&gt;Want to Learn JavaScript? Learn Haskell First&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;glossary&#x2F;&quot;&gt;A Glossary of Mostly Developer-Related Things&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;git&#x2F;&quot;&gt;Git Comfortable&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;vim&#x2F;&quot;&gt;Master Your Vim-Fu&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;one-does-not-simply-terminal&#x2F;&quot;&gt;One Does Not Simply Terminal 👌&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;design-patterns&#x2F;&quot;&gt;Paint Me Like One of Your French Design Patterns&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;regexp&#x2F;&quot;&gt;Tame Your Regular Expressions&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;security&#x2F;&quot;&gt;Security Is Not Optional&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ You Need Testing&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;a-startup-founders-bedtime-reading-list&#x2F;&quot;&gt;A Startup Founder’s Bedtime Reading List&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;color-theory&#x2F;&quot;&gt;Orange Is the New Purple&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;ramp-up-in-user-experience-design&#x2F;&quot;&gt;Ramp Up in User Experience Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;typography&#x2F;&quot;&gt;Get Better at Typography&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learning-rust&#x2F;&quot;&gt;Exploring Rust as a Go Developer&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+</feed>

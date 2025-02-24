@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Zero to Hero - content</title>
+    <link rel="self" type="application/atom+xml" href="https://zerotohero.dev/tags/content/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://zerotohero.dev"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2024-03-06T00:00:00+00:00</updated>
+    <id>https://zerotohero.dev/tags/content/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Psst... You Don&#x27;t Have to Use Medium: Discover the Freedom of Owning Your Content</title>
+        <published>2024-03-06T00:00:00+00:00</published>
+        <updated>2024-03-06T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/top-of-mind/psst-you-dont-have-to-use-medium/"/>
+        <id>https://zerotohero.dev/top-of-mind/psst-you-dont-have-to-use-medium/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/top-of-mind/psst-you-dont-have-to-use-medium/">&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;size&#x2F;w1200&#x2F;2024&#x2F;03&#x2F;freedom.png&quot; alt=&quot;Psst… You Don’t Have to Use Medium: Discover the Freedom of Owning Your Content&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;wait-but-why&quot;&gt;Wait… But Why?&lt;&#x2F;h2&gt;
+&lt;p&gt;Medium has risen in popularity among writers, bloggers, and readers due to its
+user interface and community-centered features that have attracted a large
+following.&lt;&#x2F;p&gt;
+&lt;p&gt;Despite Medium’s appeal and ubiquity, the paywall approach and the authority it
+wields over content is worrisome at best. I cannot emphasize this enough: &lt;strong&gt;You
+must own your content as a creator&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;dear-medium-for-once-have-a-spine-will-you&quot;&gt;Dear Medium, for once, have a spine—will you?&lt;&#x2F;h2&gt;
+&lt;p&gt;Medium’s practice of blocking nonsubscribers from accessing content is
+dishonest: While it puts a paywall around the content, it fully enables search
+engines to index it.&lt;&#x2F;p&gt;
+&lt;p&gt;Let me make it clear: Had Medium made its entire content subscriber-only without
+intentionally leaking it to the search engines, I would have been one of the
+first to subscribe and support it.&lt;&#x2F;p&gt;
+&lt;p&gt;While it aims to monetize content and support writers financially, it also
+&lt;strong&gt;creates obstacles to information accessibility&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;This paywall can discourage readers and restrict the audience to emerging or
+specialized bloggers. Additionally, Medium’s method of displaying paywalled
+material on search engines but preventing access without a subscription is
+&lt;strong&gt;deceptive&lt;&#x2F;strong&gt;, leading to nothing but frustration among readers.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-predicament-of-platform-authority&quot;&gt;The Predicament of Platform Authority&lt;&#x2F;h2&gt;
+&lt;p&gt;A major issue with Medium revolves around its control over users’ content.&lt;&#x2F;p&gt;
+&lt;p&gt;You are a &lt;strong&gt;content creator&lt;&#x2F;strong&gt;. You should not give a flying care about “the
+algorithm.”—Your writing shall not be influenced by the platform’s evolving
+rules and algorithms.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Your content is yours&lt;&#x2F;strong&gt;; own it.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You are not and shall not be a puppet to make your content more engaging. Your
+voice should not be a slave to the algorithm. Don’t lose yourself.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;There’s also the concern that Medium could change its business&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-significance-of-ownership-and-control&quot;&gt;The Significance of Ownership and Control&lt;&#x2F;h2&gt;
+&lt;p&gt;Values like &lt;strong&gt;ownership&lt;&#x2F;strong&gt;, &lt;strong&gt;transparency&lt;&#x2F;strong&gt;, and &lt;strong&gt;control&lt;&#x2F;strong&gt; are important not
+only in your work but also in how you share knowledge and ideas (&lt;em&gt;including
+through blogging&lt;&#x2F;em&gt;).&lt;&#x2F;p&gt;
+&lt;p&gt;Ownership of your content allows you to &lt;strong&gt;choose&lt;&#x2F;strong&gt; how it is displayed and
+shared: If you want to monetize your content, it’s on your own terms; if you
+don’t, no external party can enforce it.&lt;&#x2F;p&gt;
+&lt;p&gt;That’s why I’m sharing my thoughts on this blog,
+using &lt;a href=&quot;https:&#x2F;&#x2F;ghost.org&#x2F;&quot;&gt;&lt;strong&gt;Ghost&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; as a platform. If you don’t prefer to
+use Ghost, there are many choices you can pick from. But please, pretty please,
+if you value your content, don’t post it to a place you don’t own.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Update: 2025-05-21&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;I started using &lt;a href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;&quot;&gt;Zola&lt;&#x2F;a&gt; for this blog instead
+of Ghost, but the main premise of owning your content remains the same.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;why-i-use-ghost&quot;&gt;Why I Use Ghost?&lt;&#x2F;h2&gt;
+&lt;p&gt;As I mentioned, the kind of platform you choose is of little importance. Still,
+this is a good point to segue into why I like &lt;strong&gt;Ghost&lt;&#x2F;strong&gt; as a blogging platform.&lt;&#x2F;p&gt;
+&lt;p&gt;Ghost is a notable &lt;strong&gt;open-source&lt;&#x2F;strong&gt; blogging platform. I like its &lt;strong&gt;speed&lt;&#x2F;strong&gt; and
+&lt;strong&gt;simplicity&lt;&#x2F;strong&gt;. Although I don’t care too much about SEO, it’s good to know that
+Ghost also offers robust SEO capabilities built-in.&lt;&#x2F;p&gt;
+&lt;p&gt;As a Ghost user, I have full ownership of my content and the freedom to
+personalize the site’s appearance and functionality. I can use an existing
+theme, purchase a theme, and tweak it, or, if I so want, build my own Ghost
+theme with its unique functionality. Literally, the Sky is the limit there!&lt;&#x2F;p&gt;
+&lt;p&gt;If I want, Ghost offers features like memberships and subscriptions built into
+the platform, allowing me to monetize my content directly without anyone in the
+middle.&lt;&#x2F;p&gt;
+&lt;p&gt;In today’s world, the ability to innovate, customize, and communicate freely is
+not a choice but a &lt;strong&gt;fundamental principle&lt;&#x2F;strong&gt; that should be honored.&lt;&#x2F;p&gt;
+&lt;p&gt;And, I don’t even have to host Ghost. Because I value my time, I
+use &lt;a href=&quot;https:&#x2F;&#x2F;ghost.org&#x2F;pricing&#x2F;&quot;&gt;Ghost’s managed solution&lt;&#x2F;a&gt;. This eases the
+responsibilities of server maintenance, updates, and security management. It’s a
+perfect option because I want to prioritize content creation to infrastructure
+management.&lt;&#x2F;p&gt;
+&lt;p&gt;Yet, despite the managed nature, I have full ownership. I can even streamline my
+backups through Ghost API. I can back up my entire blog periodically to a
+storage solution of my preference, which will give me further peace of mind.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;In this new world of AI-generated copycats, high-quality content reigns supreme,
+and having the ability to manage and possess your own voice is more important
+than ever.&lt;&#x2F;p&gt;
+&lt;p&gt;While platforms such as Medium have made it easier for writers to reach
+audiences they also come with restrictions that can hinder creativity and
+restrict engagement with readers.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Taking ownership of your content goes beyond independence&lt;&#x2F;strong&gt;—it’s about
+safeguarding your heritage and ensuring that your voice remains genuine and
+unfiltered.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Self-publishing&lt;&#x2F;strong&gt; is about crafting a space that truly mirrors your vision and
+evolves alongside your audience free from the changing rules and priorities of
+platforms.&lt;&#x2F;p&gt;
+&lt;p&gt;Self-publishing is an investment in &lt;strong&gt;building your brand&lt;&#x2F;strong&gt; and &lt;strong&gt;advancing
+professionally&lt;&#x2F;strong&gt;. It gives you the freedom to &lt;strong&gt;experiment&lt;&#x2F;strong&gt;, &lt;strong&gt;innovate&lt;&#x2F;strong&gt;, and
+&lt;strong&gt;customize&lt;&#x2F;strong&gt; your content strategy to suit the needs and preferences of your
+audience—a &lt;strong&gt;priceless&lt;&#x2F;strong&gt; experience.&lt;&#x2F;p&gt;
+&lt;p&gt;With tools and platforms tailored for creators, the barriers to getting started
+have never been lower. You don’t have to use Ghost; use
+something, &lt;a href=&quot;https:&#x2F;&#x2F;jekyllrb.com&#x2F;&quot;&gt;Jekyll&lt;&#x2F;a&gt;,
+&lt;a href=&quot;https:&#x2F;&#x2F;wordpress.org&#x2F;&quot;&gt;WordPress&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;www.drupal.org&#x2F;&quot;&gt;Drupal&lt;&#x2F;a&gt;,
+&lt;a href=&quot;https:&#x2F;&#x2F;www.gatsbyjs.com&#x2F;&quot;&gt;Gatsby&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;nextjs.org&#x2F;&quot;&gt;Next&lt;&#x2F;a&gt;…
+Your options are countless. I’m sure you can find one that fits your unique
+needs.&lt;&#x2F;p&gt;
+&lt;p&gt;Owning your platform allows you to focus on what counts;
+creating &lt;strong&gt;valuable&lt;&#x2F;strong&gt; and &lt;strong&gt;meaningful&lt;&#x2F;strong&gt; content.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Own your content&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;catch-22&#x2F;&quot;&gt;Catch 22&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;consume-less&#x2F;&quot;&gt;Consume Less&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;craft-captivating-documentation&#x2F;&quot;&gt;Craft Captivating Documentation&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;keep-your-secrets&#x2F;&quot;&gt;Keep Your Secrets… Secret&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;later-does-not-exist&#x2F;&quot;&gt;‘Later’ Does Not Exist&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;perception-pivot&#x2F;&quot;&gt;Transform Feedback into Professional Mastery&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;probing-questions&#x2F;&quot;&gt;Embracing Daily Reflection&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Psst… You Don’t Have to Use Medium&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;reshape-your-workspace&#x2F;&quot;&gt;Reshape Your Workspace, Reshape Your Future&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;secrets&#x2F;&quot;&gt;Secrets&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;the-dream-job&#x2F;&quot;&gt;Build Strong Connections to Land Your Dream Job&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;trust&#x2F;&quot;&gt;Trust Cultivates a Cohesive Team&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;vmware-secrets-manager&#x2F;&quot;&gt;Long Live Aegis!&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;write-to-forget&#x2F;&quot;&gt;Write to Forget&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;closure&#x2F;&quot;&gt;Closure&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;new-z2h-design&#x2F;&quot;&gt;The New Zero to Hero Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+</feed>

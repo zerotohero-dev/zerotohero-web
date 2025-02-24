@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Zero to Hero - best-practices</title>
+    <link rel="self" type="application/atom+xml" href="https://zerotohero.dev/tags/best-practices/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://zerotohero.dev"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2024-12-12T00:00:00+00:00</updated>
+    <id>https://zerotohero.dev/tags/best-practices/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Host Commissioning in VMware C`loud Foundation: A Complete Guide</title>
+        <published>2024-12-12T00:00:00+00:00</published>
+        <updated>2024-12-12T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/vcf-host-comissioning/"/>
+        <id>https://zerotohero.dev/inbox/vcf-host-comissioning/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/vcf-host-comissioning/">&lt;p&gt;In VMware Cloud Foundation (VCF), adding cloud capacity is accomplished through a process called host commissioning, where physical servers are added to the SDDC Manager inventory. This guide walks through the process and key considerations.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;understanding-host-commissioning&quot;&gt;Understanding Host Commissioning&lt;&#x2F;h2&gt;
+&lt;p&gt;Host commissioning creates a “free pool” of available capacity from added servers. This pool serves as the foundation for:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Creating new workload domains&lt;&#x2F;li&gt;
+&lt;li&gt;Expanding existing clusters&lt;&#x2F;li&gt;
+&lt;li&gt;Managing overall cloud capacity&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;network-pool-configuration&quot;&gt;Network Pool Configuration&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;default-configuration&quot;&gt;Default Configuration&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Management pool created during initial bringup&lt;&#x2F;li&gt;
+&lt;li&gt;Serves as the baseline for management domain&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;creating-new-network-pools&quot;&gt;Creating New Network Pools&lt;&#x2F;h3&gt;
+&lt;p&gt;Network pools can support multiple network types:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;vSAN&lt;&#x2F;li&gt;
+&lt;li&gt;vMotion&lt;&#x2F;li&gt;
+&lt;li&gt;iSCSI&lt;&#x2F;li&gt;
+&lt;li&gt;NFS&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;network-pool-setup-process&quot;&gt;Network Pool Setup Process&lt;&#x2F;h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Navigate to Network Settings&lt;&#x2F;li&gt;
+&lt;li&gt;Click “Create Network Pool”&lt;&#x2F;li&gt;
+&lt;li&gt;Specify:
+&lt;ul&gt;
+&lt;li&gt;Pool name&lt;&#x2F;li&gt;
+&lt;li&gt;Network types to support&lt;&#x2F;li&gt;
+&lt;li&gt;VLAN details&lt;&#x2F;li&gt;
+&lt;li&gt;MTU settings&lt;&#x2F;li&gt;
+&lt;li&gt;IP subnet information&lt;&#x2F;li&gt;
+&lt;li&gt;IP address ranges for SDDC manager&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;host-commissioning-process&quot;&gt;Host Commissioning Process&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;prerequisites-checklist&quot;&gt;Prerequisites Checklist&lt;&#x2F;h3&gt;
+&lt;p&gt;Before commissioning hosts, verify:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;ESXi installation completed&lt;&#x2F;li&gt;
+&lt;li&gt;vSphere standard switch configured&lt;&#x2F;li&gt;
+&lt;li&gt;Pre-existing disk partitions removed&lt;&#x2F;li&gt;
+&lt;li&gt;DNS configuration completed&lt;&#x2F;li&gt;
+&lt;li&gt;Network connectivity established&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;adding-hosts&quot;&gt;Adding Hosts&lt;&#x2F;h3&gt;
+&lt;p&gt;Two methods are available:&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;individual-host-addition&quot;&gt;Individual Host Addition&lt;&#x2F;h4&gt;
+&lt;p&gt;Requires:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fully qualified hostname&lt;&#x2F;li&gt;
+&lt;li&gt;Principal storage type&lt;&#x2F;li&gt;
+&lt;li&gt;Network pool assignment&lt;&#x2F;li&gt;
+&lt;li&gt;Root user credentials&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h4 id=&quot;bulk-host-import&quot;&gt;Bulk Host Import&lt;&#x2F;h4&gt;
+&lt;p&gt;For multiple hosts:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Uses JSON file format&lt;&#x2F;li&gt;
+&lt;li&gt;Includes same information as individual addition&lt;&#x2F;li&gt;
+&lt;li&gt;More efficient for large-scale deployments&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;json-file-structure&quot;&gt;JSON File Structure&lt;&#x2F;h3&gt;
+&lt;p&gt;The import file must include:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Host details&lt;&#x2F;li&gt;
+&lt;li&gt;Storage configuration&lt;&#x2F;li&gt;
+&lt;li&gt;Network assignments&lt;&#x2F;li&gt;
+&lt;li&gt;Credentials&lt;&#x2F;li&gt;
+&lt;li&gt;Additional configuration parameters&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;validation-process&quot;&gt;Validation Process&lt;&#x2F;h2&gt;
+&lt;p&gt;After adding hosts:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;SDDC Manager connects to each host&lt;&#x2F;li&gt;
+&lt;li&gt;Verifies prerequisites&lt;&#x2F;li&gt;
+&lt;li&gt;Checks connectivity&lt;&#x2F;li&gt;
+&lt;li&gt;Validates configurations&lt;&#x2F;li&gt;
+&lt;li&gt;Reports success or failure&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;commissioning-workflow&quot;&gt;Commissioning Workflow&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;steps&quot;&gt;Steps&lt;&#x2F;h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Initial validation&lt;&#x2F;li&gt;
+&lt;li&gt;Host preparation&lt;&#x2F;li&gt;
+&lt;li&gt;Network configuration&lt;&#x2F;li&gt;
+&lt;li&gt;Storage setup&lt;&#x2F;li&gt;
+&lt;li&gt;Final verification&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h3 id=&quot;monitoring&quot;&gt;Monitoring&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;View workflow progress in SDDC Manager&lt;&#x2F;li&gt;
+&lt;li&gt;Monitor subtasks&lt;&#x2F;li&gt;
+&lt;li&gt;Access error details if needed&lt;&#x2F;li&gt;
+&lt;li&gt;Track completion status&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;best-practices&quot;&gt;Best Practices&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Pre-commissioning&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Verify all prerequisites&lt;&#x2F;li&gt;
+&lt;li&gt;Prepare network pools&lt;&#x2F;li&gt;
+&lt;li&gt;Document host information&lt;&#x2F;li&gt;
+&lt;li&gt;Test connectivity&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;During Commissioning&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Monitor workflow progress&lt;&#x2F;li&gt;
+&lt;li&gt;Address any validation errors&lt;&#x2F;li&gt;
+&lt;li&gt;Keep credentials secure&lt;&#x2F;li&gt;
+&lt;li&gt;Document any issues&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Post-commissioning&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Verify host availability&lt;&#x2F;li&gt;
+&lt;li&gt;Check network configurations&lt;&#x2F;li&gt;
+&lt;li&gt;Test connectivity&lt;&#x2F;li&gt;
+&lt;li&gt;Update documentation&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;Host commissioning is a critical process in expanding VCF capacity. By following these steps and best practices, administrators can ensure successful host addition and maintain a healthy cloud infrastructure. Remember to always verify prerequisites and monitor the commissioning process to ensure successful deployment.&lt;&#x2F;p&gt;
+&lt;p&gt;The ability to commission hosts both individually and in bulk provides flexibility for different deployment scenarios, while the comprehensive validation process helps ensure reliability and consistency in your VCF environment.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

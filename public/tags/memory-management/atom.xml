@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Zero to Hero - memory-management</title>
+    <link rel="self" type="application/atom+xml" href="https://zerotohero.dev/tags/memory-management/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://zerotohero.dev"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2024-12-12T00:00:00+00:00</updated>
+    <id>https://zerotohero.dev/tags/memory-management/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Understanding Docker&#x27;s 6MB Memory Limit: A Deep Dive</title>
+        <published>2024-12-12T00:00:00+00:00</published>
+        <updated>2024-12-12T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/docker-memory-limits/"/>
+        <id>https://zerotohero.dev/inbox/docker-memory-limits/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/docker-memory-limits/">&lt;p&gt;Have you ever encountered this puzzling error message while working with Docker containers?&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#282828;color:#fdf4c1aa;&quot;&gt;&lt;code&gt;&lt;span&gt;Warning Failed 89s (x12 over 3m44s) kubelet Error: Error response from daemon: Minimum memory limit allowed is 6MB
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;If you’re like many developers, your first instinct might be to check Kubernetes’ LimitRange resources:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;$ kubectl get limitrange -A
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;No resources found
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;But wait - if there are no LimitRange resources defined, where is this 6MB limit coming from? Let’s dive deep into this common containerization puzzle.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-mystery-of-the-6mb-limit&quot;&gt;The Mystery of the 6MB Limit&lt;&#x2F;h2&gt;
+&lt;p&gt;The key to understanding this issue lies in recognizing that this limit isn’t coming from Kubernetes at all - it’s actually a built-in restriction in Docker itself. This often surprises developers because it’s not documented prominently in Docker’s documentation.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;why-does-this-limit-exist&quot;&gt;Why Does This Limit Exist?&lt;&#x2F;h3&gt;
+&lt;p&gt;The 6MB minimum memory limit serves as a critical safeguard in Docker’s architecture. It’s designed to prevent containers from being started with dangerously low memory limits that could lead to:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Immediate Out-of-Memory (OOM) kills&lt;&#x2F;li&gt;
+&lt;li&gt;Unstable container behavior&lt;&#x2F;li&gt;
+&lt;li&gt;System resource exhaustion&lt;&#x2F;li&gt;
+&lt;li&gt;Cascading failures in container orchestration&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;configuration-options-what-can-you-do&quot;&gt;Configuration Options: What Can You Do?&lt;&#x2F;h2&gt;
+&lt;p&gt;While this limit is hardcoded into Docker’s engine, you’re not entirely without options. Here are several approaches to dealing with this limitation:&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;1-adjust-your-resource-allocation&quot;&gt;1. Adjust Your Resource Allocation&lt;&#x2F;h3&gt;
+&lt;p&gt;The most straightforward solution is to ensure your containers have adequate memory allocation. If you’re hitting this limit, it’s worth questioning whether running with such minimal memory is truly optimal for your application.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;2-alternative-approaches&quot;&gt;2. Alternative Approaches&lt;&#x2F;h3&gt;
+&lt;p&gt;If you absolutely need to work with very low memory limits, consider these options:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Use Docker Swarm with Compatibility Mode&lt;&#x2F;strong&gt;: Running Docker Swarm with the &lt;code&gt;--compatibility&lt;&#x2F;code&gt; flag can alter how memory limits are interpreted&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Switch Container Runtimes&lt;&#x2F;strong&gt;: Consider using containerd or another container runtime that doesn’t impose this limitation&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Custom Docker Build&lt;&#x2F;strong&gt;: Though not recommended for production, you could technically modify Docker’s source code to adjust this limit&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;best-practices-and-recommendations&quot;&gt;Best Practices and Recommendations&lt;&#x2F;h2&gt;
+&lt;p&gt;When working with container memory limits, consider these best practices:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Right-size Your Containers&lt;&#x2F;strong&gt;: Instead of trying to run with minimal memory, focus on appropriate sizing based on actual application needs&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Monitor Memory Usage&lt;&#x2F;strong&gt;: Use tools like cAdvisor or Prometheus to understand your actual memory usage patterns&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Test Thoroughly&lt;&#x2F;strong&gt;: Always test your containers under load to ensure memory limits are appropriate&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Document Your Settings&lt;&#x2F;strong&gt;: Make memory requirements and limits explicit in your deployment documentation&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;While Docker’s 6MB memory limit might seem restrictive at first, it’s actually a thoughtful safeguard that helps prevent potentially problematic container configurations. Understanding this limit - and working with it rather than against it - will help you build more reliable containerized applications.&lt;&#x2F;p&gt;
+&lt;p&gt;Remember: Just because you can run a container with minimal memory doesn’t always mean you should. Focus on stability and reliability over minimal resource usage unless you have a compelling reason to do otherwise.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;additional-resources&quot;&gt;Additional Resources&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Docker Documentation on Resource Constraints&lt;&#x2F;li&gt;
+&lt;li&gt;Kubernetes Memory Management Documentation&lt;&#x2F;li&gt;
+&lt;li&gt;Container Runtime Comparisons&lt;&#x2F;li&gt;
+&lt;li&gt;Memory Optimization Strategies for Containers&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Happy containerizing!&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

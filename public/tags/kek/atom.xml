@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Zero to Hero - KEK</title>
+    <link rel="self" type="application/atom+xml" href="https://zerotohero.dev/tags/kek/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://zerotohero.dev"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2024-12-22T00:00:00+00:00</updated>
+    <id>https://zerotohero.dev/tags/kek/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Understanding DEK and KEK in Encryption: A Practical Guide</title>
+        <published>2024-12-22T00:00:00+00:00</published>
+        <updated>2024-12-22T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/dek-kek/"/>
+        <id>https://zerotohero.dev/inbox/dek-kek/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/dek-kek/">&lt;p&gt;Modern data encryption strategies often employ a two-layer model of key management to balance strong security with operational flexibility. Two commonly used concepts in this model are the Data Encryption Key (DEK) and the Key Encryption Key (KEK). In this post, we’ll unpack how these two keys work together, and how you might store and retrieve them effectively.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-are-dek-and-kek&quot;&gt;What Are DEK and KEK?&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;strong&gt;Data Encryption Key (DEK):&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+A DEK is the key used directly to encrypt and decrypt your data (e.g., files, database entries, or messages). Symmetric encryption algorithms such as AES (Advanced Encryption Standard) are typically used here because they’re efficient and optimized for handling large amounts of data.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Key Encryption Key (KEK):&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+A KEK is used to encrypt (or “wrap”) your DEK, rather than encrypting the data directly. By storing the DEK in a protected, encrypted form, you ensure that even if the encrypted DEK is compromised, it’s unreadable without the KEK.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;why-do-we-separate-keys&quot;&gt;Why Do We Separate Keys?&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;strong&gt;Efficiency:&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+Encrypting large data sets is best done using symmetric keys (DEKs) because they operate quickly and efficiently at scale.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Security:&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+The KEK ensures that DEKs are never stored in plaintext. If an attacker obtains an encrypted DEK, they can’t decrypt the actual data without the KEK.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Scalability and Flexibility:&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+Rotating a KEK doesn’t require re-encrypting all the data—just re-wrapping the DEKs. This modular approach makes it easier to manage large fleets of encrypted objects.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;practical-workflow&quot;&gt;Practical Workflow&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Encrypting Data:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Generate a DEK.&lt;&#x2F;li&gt;
+&lt;li&gt;Encrypt your data with the DEK.&lt;&#x2F;li&gt;
+&lt;li&gt;Encrypt the DEK using the KEK.&lt;&#x2F;li&gt;
+&lt;li&gt;Store the encrypted data along with the encrypted DEK.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Decrypting Data:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Retrieve the encrypted data and the encrypted DEK.&lt;&#x2F;li&gt;
+&lt;li&gt;Use the KEK to unwrap (decrypt) the DEK.&lt;&#x2F;li&gt;
+&lt;li&gt;Use the now-unwrapped DEK to decrypt your data.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;&lt;strong&gt;Analogy:&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+Think of the data as a treasure in a chest, and the DEK as the key to that chest. Instead of leaving that key out in the open, you lock it in a secure safe. The KEK is the combination to that safe. Without knowing the combination (KEK), the chest key (DEK) remains inaccessible, and so does your treasure (data).&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;identifying-the-right-kek-using-key-aliases&quot;&gt;Identifying the Right KEK: Using Key Aliases&lt;&#x2F;h2&gt;
+&lt;p&gt;A common question is how to know which KEK was used if you store many DEKs and data blobs. Since you’ll often have a “table” of encrypted DEKs, you need some metadata to help you fetch the right KEK.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Solution: Store a Key Alias or Key Identifier&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+Alongside each encrypted DEK, store a key alias or unique identifier that maps to the KEK used. When you need to decrypt, you look up this alias, fetch the corresponding KEK, and unwrap the DEK.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;example&quot;&gt;Example&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Encryption Time:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Data is encrypted with DEK_123.&lt;&#x2F;li&gt;
+&lt;li&gt;DEK_123 is wrapped with a KEK referenced by “KEK_Alias”.&lt;&#x2F;li&gt;
+&lt;li&gt;You store the encrypted data, encrypted DEK_123, and “KEK_Alias” together.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Decryption Time:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Look up “KEK_Alias”.&lt;&#x2F;li&gt;
+&lt;li&gt;Fetch the KEK that “KEK_Alias” represents.&lt;&#x2F;li&gt;
+&lt;li&gt;Unwrap DEK_123 using the KEK.&lt;&#x2F;li&gt;
+&lt;li&gt;Decrypt the data using the now-unwrapped DEK_123.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;why-versioning-helps&quot;&gt;Why Versioning Helps&lt;&#x2F;h3&gt;
+&lt;p&gt;Over time, you may rotate KEKs for security reasons. By storing a key alias and possibly a version number, you can keep track of which version of the KEK was used at the time of encryption. This makes it possible to decrypt older data even after you’ve updated the KEK.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;pros-and-cons&quot;&gt;Pros and Cons&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;strong&gt;Pros:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Efficient Encryption:&lt;&#x2F;strong&gt; Bulk data encryption using symmetric DEKs is fast.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Enhanced Security:&lt;&#x2F;strong&gt; DEKs aren’t stored in plaintext; they’re always protected by a KEK.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Scalable Rotation:&lt;&#x2F;strong&gt; You can rotate KEKs without re-encrypting all your data.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;strong&gt;Cons:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Added Complexity:&lt;&#x2F;strong&gt; Two-tier key management is more complex to implement.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Centralized Dependence:&lt;&#x2F;strong&gt; If the KEK or its associated alias system is compromised, attackers might gain access to multiple DEKs.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;key-takeaways&quot;&gt;Key Takeaways&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Use DEKs for fast, efficient encryption of data.&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Wrap DEKs with KEKs to keep them secure.&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Store a key alias (or key ID) alongside encrypted DEKs so you know which KEK to use during decryption.&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;further-reading&quot;&gt;Further Reading&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;NIST Special Publication 800-57: Recommendation for Key Management&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;csrc.nist.gov&#x2F;publications&#x2F;detail&#x2F;sp&#x2F;800-57-part-1&#x2F;rev-5&#x2F;final&quot;&gt;https:&#x2F;&#x2F;csrc.nist.gov&#x2F;publications&#x2F;detail&#x2F;sp&#x2F;800-57-part-1&#x2F;rev-5&#x2F;final&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;AWS KMS Best Practices&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;docs.aws.amazon.com&#x2F;kms&#x2F;latest&#x2F;developerguide&#x2F;best-practices.html&quot;&gt;https:&#x2F;&#x2F;docs.aws.amazon.com&#x2F;kms&#x2F;latest&#x2F;developerguide&#x2F;best-practices.html&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Google Cloud KMS Concepts&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;cloud.google.com&#x2F;kms&#x2F;docs&#x2F;concepts&quot;&gt;https:&#x2F;&#x2F;cloud.google.com&#x2F;kms&#x2F;docs&#x2F;concepts&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;HashiCorp Vault Key Management&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;www.vaultproject.io&#x2F;docs&#x2F;secrets&quot;&gt;https:&#x2F;&#x2F;www.vaultproject.io&#x2F;docs&#x2F;secrets&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;By keeping your key management strategy organized and using clear metadata like aliases, you can confidently store and retrieve your encrypted data, even as KEKs evolve over time.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

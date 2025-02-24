@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Zero to Hero - backstory</title>
+    <link rel="self" type="application/atom+xml" href="https://zerotohero.dev/tags/backstory/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://zerotohero.dev"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2024-05-18T00:00:00+00:00</updated>
+    <id>https://zerotohero.dev/tags/backstory/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Every Saga Has a Beginning</title>
+        <published>2024-05-18T00:00:00+00:00</published>
+        <updated>2024-05-18T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/about/a-new-hope/"/>
+        <id>https://zerotohero.dev/about/a-new-hope/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/about/a-new-hope/">
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;beginning.png&quot; alt=&quot;Pivot, change, and ignite.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Pivot, change, and ignite.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Update 2024-05-18&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;This is—I believe—the &lt;strong&gt;fourth&lt;&#x2F;strong&gt; incarnation of &lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Since I wrote this article &lt;strong&gt;a lot&lt;&#x2F;strong&gt; have changed, which I can summarize as&lt;br &#x2F;&gt;
+“life got in the way even further.”&lt;&#x2F;p&gt;
+&lt;p&gt;The text below is the original article that I wrote on &lt;strong&gt;May the Fourth,
+2021&lt;&#x2F;strong&gt;.Since then, a lot have changed in my personal and professional life. So,
+keep in mind that the text below is a snapshot of the past, and things have
+evolved since then.&lt;&#x2F;p&gt;
+&lt;p&gt;Currently, &lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt; serves as my personal blog where I write about
+what I think, when I think. You can find the latest articles on the
+&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;&quot;&gt;home page&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;In addition, I have removed the subscription-based content strategy, and I’m
+publishing everything on this platform for free.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;hello-world-hello-stars-hello-universe&quot;&gt;Hello World, Hello Stars, Hello Universe&lt;&#x2F;h2&gt;
+&lt;p&gt;Hi there 👋,&lt;&#x2F;p&gt;
+&lt;p&gt;As you can see, this is the new &lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Which begs the question “&lt;em&gt;What is the ‘old’ ‘Zero to Hero’ then?&lt;&#x2F;em&gt;”.&lt;&#x2F;p&gt;
+&lt;p&gt;Just 🐻 with me, I’ll get to it shortly. But, in a nutshell: Around &lt;strong&gt;2018&lt;&#x2F;strong&gt;,
+I created a video course titled “&lt;em&gt;JavaScript from Zero to Hero&lt;&#x2F;em&gt;”. I gradually
+added more content, videos, lesson notes… Yet, “&lt;em&gt;life&lt;&#x2F;em&gt;” got in the way and
+I was never able to finalize the course.&lt;&#x2F;p&gt;
+&lt;p&gt;So, as of May the fourth 2021, I decided to make a radical change and start
+everything from scratch with a &lt;strong&gt;blank canvas&lt;&#x2F;strong&gt; and a different content
+strategy.&lt;&#x2F;p&gt;
+&lt;p&gt;Coincidentally, &lt;strong&gt;May the Fourth&lt;&#x2F;strong&gt; 2021, is the
+&lt;a href=&quot;https:&#x2F;&#x2F;www.starwars.com&#x2F;star-wars-day&quot; title=&quot;International Star Wars Day&quot;&gt;International Star Wars Day&lt;&#x2F;a&gt;, and also my &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;The_Hitchhiker%27s_Guide_to_the_Galaxy&quot; title=&quot;The Hitchiker&amp;#39;s Guide to the Galaxy&quot;&gt;42&lt;&#x2F;a&gt;nd
+birthday. There couldn’t have been any better day for this kind of a
+transformation 🙂.&lt;&#x2F;p&gt;
+&lt;p&gt;This very page is that &lt;strong&gt;blank canvas&lt;&#x2F;strong&gt; that you are looking at right now.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;so-what-s-coming-up&quot;&gt;So, What’s Coming Up&lt;&#x2F;h2&gt;
+&lt;p&gt;Yes, his is ground zero. Yes, I’m starting everything from scratch.&lt;&#x2F;p&gt;
+&lt;p&gt;This is a radical decision that deserves an explanation. In this article, I’ll
+try to outline the &lt;strong&gt;why&lt;&#x2F;strong&gt;s and &lt;strong&gt;how&lt;&#x2F;strong&gt;s of this decision as best as I can.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-content&quot;&gt;The Content&lt;&#x2F;h2&gt;
+&lt;p&gt;I will create one (&lt;em&gt;and only one&lt;&#x2F;em&gt;) kinds of content here:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Free&lt;&#x2F;strong&gt;: Where anyone can read and learn from.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Why? Because, simply, and very plainly: I don’t need to make money from this.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;I have a day job that pays well. Trying to make a living from this will only
+add unnecessary pressure and stress to my life. It will also limit my creativity
+and freedom. I will have to end up optimizing for impressions.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;I DO NOT WANT THAT&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;I want to create because I want to create. I don’t want to create to feed
+an algorithm.&lt;&#x2F;p&gt;
+&lt;p&gt;I don’t want &lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt; to turn into a &lt;strong&gt;content mill&lt;&#x2F;strong&gt;. I don’t want
+it to be a burden. I want it to be a &lt;strong&gt;joy&lt;&#x2F;strong&gt;, so that I can create more
+valuable content, freely, without any constraints.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-pivot&quot;&gt;The Pivot&lt;&#x2F;h2&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2021&amp;#x2F;05&amp;#x2F;saga-15.png)&quot; alt=&quot;Every saga has a beginning.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Every saga has a beginning.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;So what’s the plan?&lt;&#x2F;p&gt;
+&lt;p&gt;I’m recreating the existing content with a totally different approach:&lt;&#x2F;p&gt;
+&lt;p&gt;I’ll focus creating more &lt;strong&gt;textual content&lt;&#x2F;strong&gt;, diagrams and visualizations,
+source code, embedded code playgrounds, and the like.&lt;&#x2F;p&gt;
+&lt;p&gt;I’ll augment the textual content with videos only when it’s needed (&lt;em&gt;like,
+for example, showing a complicated AWS Console setup, which is easier to
+&lt;strong&gt;see&lt;&#x2F;strong&gt; than to &lt;strong&gt;read&lt;&#x2F;strong&gt; and follow&lt;&#x2F;em&gt;).&lt;&#x2F;p&gt;
+&lt;p&gt;There are several reasons for that:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Creating video content is tenfold harder than creating a textual content:
+Publishing a five-minute video lesson takes at least ten-to-fifteen hours of
+time. Creating textual content is much faster.&lt;&#x2F;li&gt;
+&lt;li&gt;Editing, updating, iterating textual content is &lt;strong&gt;much&lt;&#x2F;strong&gt; more convenient:
+It’s as simple as deleting some text, and adding the new text, updating images
+and other references. Per contra, for video, you’ll have to reshoot your
+entire video, which will cost you at least another fifteen hours per video.&lt;&#x2F;li&gt;
+&lt;li&gt;Textual content is searchable and indexable: With videos, you can achieve
+something similar with bookmarks, and annotations, but still it won’t be even
+close to the comfort you have with text.&lt;&#x2F;li&gt;
+&lt;li&gt;You can copy&#x2F;paste, save, backup, mix and mash text. With video, it’s
+&lt;strong&gt;a lot&lt;&#x2F;strong&gt; harder to do that.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;content-is-the-king&quot;&gt;Content is the King&lt;&#x2F;h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“Success isn’t always about greatness. It’s about consistency. Consistent hard
+work leads to success. Greatness will come.”
+– &lt;strong&gt;Dwayne (&lt;em&gt;the Rock&lt;&#x2F;em&gt;) Johnson&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;It will take a while to think about the &lt;strong&gt;content strategy&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;I have a plan… several plans in fact. And I’ll gradually get there.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;My first action item is to &lt;strong&gt;maintain&lt;&#x2F;strong&gt; a writing &lt;strong&gt;cadence&lt;&#x2F;strong&gt;: I don’t know if
+this will be daily, every other day, weekly, or something different… but
+I’ll reserve an &lt;strong&gt;uninterrupted, focused, content creation time&lt;&#x2F;strong&gt; on my
+calendar.&lt;&#x2F;p&gt;
+&lt;p&gt;Once I am comfortable with the cadence, then I’ll think about the content
+strategy; not before.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;a-change-in-the-process&quot;&gt;A Change in the Process&lt;&#x2F;h2&gt;
+&lt;p&gt;I began working on “&lt;em&gt;JavaScript: from Zero to Hero&lt;&#x2F;em&gt;” around &lt;strong&gt;2018&lt;&#x2F;strong&gt;. The course
+was a video course about creating and maintaining your &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt; stack in a
+real-life production environment, paying special attention to things like
+&lt;strong&gt;scalability&lt;&#x2F;strong&gt;, &lt;strong&gt;fault-tolerance&lt;&#x2F;strong&gt;, &lt;strong&gt;high availability&lt;&#x2F;strong&gt;,
+&lt;strong&gt;disaster recovery&lt;&#x2F;strong&gt;, &lt;strong&gt;auditing&lt;&#x2F;strong&gt;, &lt;strong&gt;security&lt;&#x2F;strong&gt;… As far as I could see, no
+one had come closer to creating a course like that. So there was &lt;strong&gt;a lot&lt;&#x2F;strong&gt; of
+value in creating it.&lt;&#x2F;p&gt;
+&lt;p&gt;So why the sudden shift, you may—rightfully—ask.&lt;&#x2F;p&gt;
+&lt;p&gt;By the time of this writing, it is &lt;strong&gt;mid-2021&lt;&#x2F;strong&gt;. And I am… more-or-less
+&lt;strong&gt;70%&lt;&#x2F;strong&gt; complete, give or take a few percents.&lt;&#x2F;p&gt;
+&lt;p&gt;If I continue with this pace, my guesstimate is, the course will not be released
+before late 2023. And I believe, this is turning out to be an uphill battle,
+and I need to change my parameters to &lt;strong&gt;expedite&lt;&#x2F;strong&gt; the process.&lt;&#x2F;p&gt;
+&lt;p&gt;Right now, I find myself lucky if I can publish one video lesson per week. To be
+upfront and honest with you again, I don’t remember when was the last time I
+published a new video… it has been at least several months.&lt;&#x2F;p&gt;
+&lt;p&gt;I have (&lt;em&gt;as of this writing, again&lt;&#x2F;em&gt;) around &lt;strong&gt;fifty&lt;&#x2F;strong&gt; lectures to add before I
+finalize the course. So do the math yourself 🙂.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;… Well, I did the math 🙂 If you consider the ever-changing pace of
+technology, that rate is unsustainable for an online technical video course.
+It is an uphill battle.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;is-creating-a-video-course-really-that-hard&quot;&gt;Is Creating a Video Course Really “that” Hard?&lt;&#x2F;h2&gt;
+&lt;p&gt;But why is that? I mean, isn’t that too much time for a &lt;strong&gt;just&lt;&#x2F;strong&gt; a
+“&lt;em&gt;JavaScript&lt;&#x2F;em&gt;” course?&lt;&#x2F;p&gt;
+&lt;p&gt;Trust me, I thought about that too.&lt;&#x2F;p&gt;
+&lt;p&gt;While thinking, I decided to put my thoughts into words.&lt;&#x2F;p&gt;
+&lt;p&gt;There is a multitude of reasons, why the course took more than an average
+“&lt;em&gt;let’s make an online recipe sharing web app with React and GraphQL&lt;&#x2F;em&gt;” course:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Firstly, my responsibilities grew as I gained more clout within the company.
+This resulted in a more &lt;strong&gt;demanding job&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;In addition, as the kids got older, my responsibilities as a &lt;strong&gt;parent&lt;&#x2F;strong&gt;,
+guardian, and a &lt;strong&gt;spouse&lt;&#x2F;strong&gt; grew—Not everyone knows this, but we are a
+&lt;strong&gt;non-neurotypical&lt;&#x2F;strong&gt; family of four. And that multiplies the &lt;strong&gt;attention&lt;&#x2F;strong&gt;,
+care, and &lt;strong&gt;communication&lt;&#x2F;strong&gt; needs orders of magnitude compared with an
+equivalent “&lt;em&gt;typical&lt;&#x2F;em&gt;” (&lt;em&gt;if that’s a thing&lt;&#x2F;em&gt;) household.&lt;&#x2F;li&gt;
+&lt;li&gt;Plus, the course was not “&lt;strong&gt;just&lt;&#x2F;strong&gt;” a &lt;em&gt;JavaScript&lt;&#x2F;em&gt; course: In the lessons, I
+talked about topics varying from virtual subnet setups to lambda functions to
+message queues… It was &lt;strong&gt;deep&lt;&#x2F;strong&gt; and &lt;strong&gt;broad&lt;&#x2F;strong&gt;. And I didn’t want to
+sacrifice quality.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Ah, as a cherry on top of all of this “’Rona” happened. We jumped into a
+seemingly endless year of lockdown, homeschooling, remote work, isolation. I
+call that “&lt;em&gt;sheltering at work&lt;&#x2F;em&gt;”, and it’s much more than that indeed. The
+lockdown amplified the emotional roller-coasters that we, as a family, were
+having.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;resistance-is-futile&quot;&gt;Resistance is Futile&lt;&#x2F;h2&gt;
+&lt;p&gt;I am an engineer. Always was, always will be.&lt;&#x2F;p&gt;
+&lt;p&gt;Doing &lt;strong&gt;constraint optimizations&lt;&#x2F;strong&gt; is what I’m good at—one way of approaching
+the “&lt;em&gt;lack of time&lt;&#x2F;em&gt;” challenge was to set a deadline, set milestones, and
+pressure myself to reach those milestones as best as you can.&lt;&#x2F;p&gt;
+&lt;p&gt;Pushing myself further would have taken me to the limits of burning myself out.
+I simply did not have the luxury to burn out, so I decided to find a different
+solution.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;a-quick-flashback&quot;&gt;A Quick Flashback&lt;&#x2F;h2&gt;
+&lt;p&gt;Let me add a few screenshots to show you how the course looked like.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2021&amp;#x2F;05&amp;#x2F;Screen-Shot-2021-05-04-at-2.21.04-PM-11.png&quot; alt=&quot;The landing page.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;The landing page.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2021&amp;#x2F;05&amp;#x2F;Screen-Shot-2021-05-04-at-2.29.18-PM-11.png)&quot; alt=&quot;The learning management system.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;The learning management system.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;The application was truly slick, micro-services-based, learning management
+system. I’m planning to &lt;strong&gt;rework&lt;&#x2F;strong&gt; on it too, and share my progress here with
+y’all—although I’m sunsetting the current system, I’m proud of it. And I’m
+proud of everyone who has been with me through this journey.&lt;&#x2F;p&gt;
+&lt;p&gt;Like I said, the goal of the course was to be something other than yet another
+“&lt;em&gt;Let’s build a restaurant rating and comparison app using React and GraphQL&lt;&#x2F;em&gt;”
+course. I wanted it to be something that teaches you how a &lt;strong&gt;real-life&lt;&#x2F;strong&gt;
+production application was &lt;strong&gt;built&lt;&#x2F;strong&gt;, &lt;strong&gt;evolved&lt;&#x2F;strong&gt;, and &lt;strong&gt;maintained&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;I wanted to create a platform where the interested individuals will learn the
+following the hard way:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Develop robust, lean, and error-free apps.&lt;&#x2F;li&gt;
+&lt;li&gt;Create reusable, modular, and modern codebases that stand the test of time.&lt;&#x2F;li&gt;
+&lt;li&gt;Build, scale, diagnose, and monitor a full-stack production application.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;It was an ambitious goal, I know. Still, I was step by step getting there.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;then-life-got-in-the-way&quot;&gt;Then Life Got in the Way&lt;&#x2F;h2&gt;
+&lt;p&gt;As I outlined before, while I’m working on &lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt;, a lot happened in
+the meantime. A lot have changed both in my &lt;strong&gt;personal&lt;&#x2F;strong&gt; and &lt;strong&gt;professional&lt;&#x2F;strong&gt;
+life. The project almost moved to a halt. And I’ve realized a few things:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;The scope of the course was way too big to be reasonably completed in time.&lt;&#x2F;li&gt;
+&lt;li&gt;Creating a video-heavy content, while having a full-time job and two kids at
+school age required a lot of &lt;strong&gt;sacrifice&lt;&#x2F;strong&gt; from my personal time and my
+&lt;strong&gt;sanity&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;I also realized all of this burden was creating a &lt;strong&gt;very&lt;&#x2F;strong&gt; heavy toll on my
+personal well-being and my relationship with my family.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Family&lt;&#x2F;strong&gt; is where I draw the line. Family comes first; &lt;strong&gt;always&lt;&#x2F;strong&gt;;
+no exceptions.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;erase-and-rewind&quot;&gt;Erase and Rewind&lt;&#x2F;h2&gt;
+&lt;p&gt;Eventually—and took &lt;strong&gt;many&lt;&#x2F;strong&gt; months of debilitation—I’ve decided to put a
+“&lt;strong&gt;hard reset&lt;&#x2F;strong&gt;” on everything:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;I’ve moved my Twitter to private.&lt;&#x2F;li&gt;
+&lt;li&gt;I’ve jumped off all other social media.&lt;&#x2F;li&gt;
+&lt;li&gt;The only medium that I’ve been sharing stuff for the last couple of months
+is &lt;a href=&quot;https:&#x2F;&#x2F;linkedin.com&#x2F;in&#x2F;volkanozcelik&quot; title=&quot;Volkan Özçelik on LinkedIn&quot;&gt;LinkedIn&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;And during that time frame, I’ve been thinking about what to do… how to
+&lt;strong&gt;restart&lt;&#x2F;strong&gt;, how to &lt;strong&gt;reignite&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;And this web app that you see is the end result of months and months of
+thinking, introspection, and self-reflection.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;changing-perspective&quot;&gt;Changing Perspective&lt;&#x2F;h2&gt;
+&lt;p&gt;After thinking about this &lt;strong&gt;a lot&lt;&#x2F;strong&gt; and weighing all my options: I’ve decided to
+pivot my idea into a knowledge-sharing system that I can populate faster,
+easier, without friction—almost naturally.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2021&amp;#x2F;05&amp;#x2F;CXYEte2UwAAdugK-10.jpg&quot; alt=&quot;Sometimes you need a shift in your perspective. 
+    Sometimes you need a splash of water in your face. 
+    Almost always, you need both.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Sometimes you need a shift in your perspective. 
+    Sometimes you need a splash of water in your face. 
+    Almost always, you need both.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;What will the new &lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt; be like?&lt;&#x2F;p&gt;
+&lt;p&gt;Well, honestly, time will tell. I have a lot of ideas.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;videos-are-holding-you-back&quot;&gt;Videos are Holding You Back&lt;&#x2F;h2&gt;
+&lt;p&gt;That said, creating visual content for the last few years, I realized that not
+only creating video content is holding me back, but also
+&lt;strong&gt;videos are holding you back&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Think about it: The average video course is spoken at 150 words per minute,
+while you can read at-the-very-least 250 words per minute.&lt;&#x2F;p&gt;
+&lt;p&gt;I know this is a blanket statement, and people with certain conditions have
+hard time reading things. And to certain people consuming video content at
+2x speed is a much better to learn things than following text. But, in general,
+reading something takes much less time than watching an equivalent content.&lt;&#x2F;p&gt;
+&lt;p&gt;In addition, you can read a lot faster if you have mastered scanning and
+skimming techniques. If you have read that thousand page brick-sized book
+before your final exam, you know what I mean 😄—try that with watching
+video lessons.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;With textual content, it’s much easier to find your own pace, adjust your
+speed, skip blocks of text, scan and skim the text to drill down further
+later—that’s the beauty of text.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Moreover, you can &lt;strong&gt;search&lt;&#x2F;strong&gt; textual content easily. Even when you have
+properly-set-up bookmarks and annotations, and transcripts, searching inside
+a video is &lt;strong&gt;much&lt;&#x2F;strong&gt; harder.&lt;&#x2F;p&gt;
+&lt;p&gt;And this one is for me: Creating textual content is way faster than creating
+audiovisual content. I can create more valuable content faster this way.&lt;&#x2F;p&gt;
+&lt;p&gt;That said, I also do believe there needs to be a &lt;strong&gt;hybrid&lt;&#x2F;strong&gt; approach: The
+textual content needs to be &lt;strong&gt;augmented&lt;&#x2F;strong&gt; with clarifying videos to show
+&lt;strong&gt;how&lt;&#x2F;strong&gt; things work when they work the way they work.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Furthermore, inside a text-oriented web app, you can embed live coding
+&lt;strong&gt;playgrounds&lt;&#x2F;strong&gt;, other &lt;strong&gt;interactive tools&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;You can create an app for the users of the system to take their own notes
+and annotate the content to their liking. Like you see a lot can be done,
+and text is the starting point. It’s the &lt;strong&gt;origin&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;I’m also jotting down some of those ideas in my backlog, which will end up as
+useful &lt;strong&gt;widgets&lt;&#x2F;strong&gt; that add value to this new platform that you are reading
+and using right now.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;nothing-is-lost-everything-transforms&quot;&gt;Nothing is Lost: Everything Transforms&lt;&#x2F;h2&gt;
+&lt;p&gt;Tangentially: Everything in life is based on three main forces:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Rotation&lt;&#x2F;li&gt;
+&lt;li&gt;Oscillation&lt;&#x2F;li&gt;
+&lt;li&gt;And Transformation&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt; is no exception to that.&lt;&#x2F;p&gt;
+&lt;p&gt;This post marks &lt;strong&gt;the beginning&lt;&#x2F;strong&gt; of a &lt;strong&gt;transformation&lt;&#x2F;strong&gt; phase.&lt;&#x2F;p&gt;
+&lt;p&gt;The older content is &lt;strong&gt;not&lt;&#x2F;strong&gt; going anywhere. I have triple backups of everything.
+They will find their place here in some way, shape or form.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;onwards-to-a-new-ride&quot;&gt;Onwards to a New Ride&lt;&#x2F;h2&gt;
+&lt;p&gt;This has been a wonderful ride so far. I cannot thank enough to everyone who
+have been with me. You mean &lt;strong&gt;a lot&lt;&#x2F;strong&gt; to me and words cannot express how
+grateful I am to have y’all by my side.&lt;&#x2F;p&gt;
+&lt;p&gt;This is a new beginning.&lt;&#x2F;p&gt;
+&lt;p&gt;Stay tuned: More will come.&lt;&#x2F;p&gt;
+&lt;p&gt;May the source be with you 🦄,&lt;&#x2F;p&gt;
+&lt;p&gt;Volkan.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;explore-more&quot;&gt;Explore More&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Every Saga Has a Beginning&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;about&#x2F;volkan&#x2F;&quot;&gt;Volkan Özçelik&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;about&#x2F;volkan-uses&#x2F;&quot;&gt;Volkan Uses&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;about&#x2F;contact&#x2F;&quot;&gt;Contact&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;about&#x2F;privacy&#x2F;&quot;&gt;Privacy Policy&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+</feed>

@@ -1,0 +1,114 @@
+<!doctype html><html dir=auto lang=en><head><meta charset=utf-8><meta content="IE=edge" http-equiv=X-UA-Compatible><meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name=viewport><meta content="index, follow" name=robots><title>Understanding TLS Renegotiation in Go: When and Why to Use RenegotiateNever</title><meta content="keyword1, keyword2, keyword3" name=keywords><meta content="Understanding TLS Renegotiation in Go: When and Why to Use RenegotiateNeverg" name=description><meta content="Volkan Özçelik" name=author><link href=https://zerotohero.dev/inbox/tls-renogatiation/ rel=canonical><link href=https://zerotohero.dev/css/includes/scroll-bar.css rel=stylesheet><link href=https://zerotohero.dev/css/styles.css rel=stylesheet><link href=https://zerotohero.dev/css/override.css rel=stylesheet><link href=https://zerotohero.dev/atom.xml rel=alternate title=RSS type=application/atom+xml><noscript><style>#theme-toggle,.top-link{display:none}</style> <style>@media (prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:#dadadb;--secondary:#9b9c9d;--tertiary:#414244;--content:#c4c4c5;--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><body id=top><script>if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }</script><script src=https://player.vimeo.com/api/player.js></script><header class=header><nav class=nav><div class=logo><a title="Zero to Hero (Alt + H)" accesskey=h href=https://zerotohero.dev> <svg viewbox="-0.5 -0.5 32 32" height=32 id=High-Voltage--Streamline-Kawaii-Emoji style=position:relative;top:2px;left:4px width=32 xmlns=http://www.w3.org/2000/svg><desc>High Voltage Streamline Emoji: https://streamlinehq.com</desc><path d="M16.244 18.21002a56.048 56.048 0 0 1 -8.1313 -0.8853599999999999 3.3480000000000003 3.3480000000000003 0 0 1 -2.3374 -4.7802C6.500699999999999 11.097999999999999 16.04994 3.35854 21.79548 1.2059a1.14328 1.14328 0 0 1 1.36772 1.68392c-1.2183 1.8599999999999999 -3.5340000000000003 4.0641 -7.88702 8.56716 1.98772 0.124 4.207319999999999 -0.093 6.55216 -0.07688a3.66172 3.66172 0 0 1 3.0534999999999997 1.3813600000000001c0.6975 0.9734 0.97898 2.33058 0.32674000000000003 3.3356 -1.54504 2.37894 -9.10284 9.4054 -13.52468 12.80362 -1.5741800000000001 1.2096200000000001 -2.7565199999999996 1.27596 -3.41 0.26226 -0.39742 -0.6169 0.18166 -1.32618 0.5251399999999999 -1.8258999999999999C10.185979999999999 25.320800000000002 16.182000000000002 18.20754 16.244 18.21002z" fill=#ffe500 stroke-width=1></path><path d="M24.881839999999997 12.76146a3.66172 3.66172 0 0 0 -3.0534999999999997 -1.3813600000000001 52.95544 52.95544 0 0 0 -1.9734599999999998 0.03038 3.472 3.472 0 0 1 2.54696 1.3509799999999998c0.6975 0.9734 0.9796 2.33058 0.32674000000000003 3.3356 -1.5444200000000001 2.37894 -9.10284 9.40478 -13.52468 12.80362a6.66996 6.66996 0 0 1 -0.744 0.496c0.682 0.75144 1.78498 0.6107 3.2209000000000003 -0.496 4.424939999999999 -3.3988400000000003 11.98336 -10.42468 13.52778 -12.80362 0.65286 -1.00502 0.37076 -2.3622 -0.32674000000000003 -3.3356zM20.6832 2.88982c-1.16498 1.77816 -3.3368399999999996 3.87314 -7.33026 7.9918000000000005a0.35773999999999995 0.35773999999999995 0 0 0 0.248 0.60698c0.65596 0.01302 1.33486 0 2.0292600000000003 -0.02294 -0.11656 -0.00496 -0.23994000000000001 0 -0.35525999999999996 -0.00868 4.34 -4.495 6.66066 -6.700340000000001 7.88082 -8.556000000000001a1.1457600000000001 1.1457600000000001 0 0 0 -1.35904 -1.69446c-0.3565 0.1333 -0.7285 0.28892 -1.11104 0.46252a1.09802 1.09802 0 0 1 -0.00248 1.22078z" fill=#f2c100 stroke-width=1></path><path d="M16.244 18.21002a56.048 56.048 0 0 1 -8.1313 -0.8853599999999999 3.3480000000000003 3.3480000000000003 0 0 1 -2.3374 -4.7802C6.500699999999999 11.097999999999999 16.04994 3.35854 21.79548 1.2059a1.14328 1.14328 0 0 1 1.36772 1.68392c-1.2183 1.8599999999999999 -3.5340000000000003 4.0641 -7.88702 8.56716 1.98772 0.124 4.207319999999999 -0.093 6.55216 -0.07688a3.66172 3.66172 0 0 1 3.0534999999999997 1.3813600000000001c0.6975 0.9734 0.97898 2.33058 0.32674000000000003 3.3356 -1.54504 2.37894 -9.10284 9.4054 -13.52468 12.80362 -1.5741800000000001 1.2096200000000001 -2.7565199999999996 1.27596 -3.41 0.26226 -0.39742 -0.6169 0.18166 -1.32618 0.5251399999999999 -1.8258999999999999C10.185979999999999 25.320800000000002 16.182000000000002 18.20754 16.244 18.21002z" fill=none stroke=#45413c stroke-linecap=round stroke-linejoin=round stroke-width=1></path></svg> Zero to Hero </a><div class=logo-switches><button title="(Alt + T)" accesskey=t id=theme-toggle><svg viewbox="0 0 24 24" fill=none height=18 id=moon stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=24 xmlns=http://www.w3.org/2000/svg><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg> <svg viewbox="0 0 24 24" fill=none height=18 id=sun stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=24 xmlns=http://www.w3.org/2000/svg><circle cx=12 cy=12 r=5></circle><line x1=12 x2=12 y1=1 y2=3></line><line x1=12 x2=12 y1=21 y2=23></line><line x1=4.22 x2=5.64 y1=4.22 y2=5.64></line><line x1=18.36 x2=19.78 y1=18.36 y2=19.78></line><line x1=1 x2=3 y1=12 y2=12></line><line x1=21 x2=23 y1=12 y2=12></line><line x1=4.22 x2=5.64 y1=19.78 y2=18.36></line><line x1=18.36 x2=19.78 y1=5.64 y2=4.22></line></svg></button><ul class=lang-switch><li></ul></div></div><ul id=menu><li><a href=/about title=About> <span>About</span> </a><li><a href=/archive title=Archive> <span>Archive</span> </a><li><a href=/tags title=Tags> <span>Tags</span> </a><li><a title="Geyik TV" href=https://zerotohero.tv> <span>Geyik TV</span> <svg viewbox="0 0 24 24" fill=none height=12 shape-rendering=geometricPrecision stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2.5 width=12><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path><path d="M15 3h6v6"></path><path d="M10 14L21 3"></path></svg> </a><li><a title="Vadideki Geyik" href=https://vadidekigeyik.com> <span>Vadideki Geyik</span> <svg viewbox="0 0 24 24" fill=none height=12 shape-rendering=geometricPrecision stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2.5 width=12><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path><path d="M15 3h6v6"></path><path d="M10 14L21 3"></path></svg> </a><li><a href=https://discord.gg/kampus title=kamp.us> <span>kamp.us</span> <svg viewbox="0 0 24 24" fill=none height=12 shape-rendering=geometricPrecision stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2.5 width=12><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path><path d="M15 3h6v6"></path><path d="M10 14L21 3"></path></svg> </a><li><a href=https://github.com/spiffe/spike title=SPIKE> <span>SPIKE</span> <svg viewbox="0 0 24 24" fill=none height=12 shape-rendering=geometricPrecision stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2.5 width=12><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path><path d="M15 3h6v6"></path><path d="M10 14L21 3"></path></svg> </a><li><a href=https://github.com/vmware-tanzu/secrets-manager title=VSecM> <span>VSecM</span> <svg viewbox="0 0 24 24" fill=none height=12 shape-rendering=geometricPrecision stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2.5 width=12><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path><path d="M15 3h6v6"></path><path d="M10 14L21 3"></path></svg> </a></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://zerotohero.dev>Home</a> »  <a href=https://zerotohero.dev/>Posts</a> »  <a href=https://zerotohero.dev/inbox/tls-renogatiation/>Understanding TLS Renegotiation in Go: When and Why to Use RenegotiateNever</a></div><h1 class=post-title>Understanding TLS Renegotiation in Go: When and Why to Use RenegotiateNever</h1><div class=post-description>Understanding TLS Renegotiation in Go: When and Why to Use RenegotiateNeverg</div><div class=post-meta><span title="2024-12-03 00:00:00 +0000">2024-12-03</span> · 3 min · Volkan Özçelik</div></header><div class=toc><details><summary title="(Alt + C)" accesskey=c><span class=details>Table of Contents</span></summary> <div class=inner><ul><li><a aria-label="What is TLS Renegotiation?" href=#what-is-tls-renegotiation>What is TLS Renegotiation?</a><li><a aria-label="The Three Options in Go" href=#the-three-options-in-go>The Three Options in Go</a> <ul><li><a aria-label="1. RenegotiateNever" href=#1-renegotiatenever>1. RenegotiateNever</a><li><a aria-label="2. RenegotiateOnceAsClient" href=#2-renegotiateonceasclient>2. RenegotiateOnceAsClient</a><li><a aria-label="3. RenegotiateFreelyAsClient" href=#3-renegotiatefreelyasclient>3. RenegotiateFreelyAsClient</a></ul><li><a aria-label="Why Choose RenegotiateNever?" href=#why-choose-renegotiatenever>Why Choose RenegotiateNever?</a> <ul><li><a aria-label="Security Benefits" href=#security-benefits>Security Benefits</a><li><a aria-label="Performance Advantages" href=#performance-advantages>Performance Advantages</a><li><a aria-label="Simplified Security Model" href=#simplified-security-model>Simplified Security Model</a></ul><li><a aria-label="When Might You Need Renegotiation?" href=#when-might-you-need-renegotiation>When Might You Need Renegotiation?</a><li><a aria-label="Best Practices" href=#best-practices>Best Practices</a><li><a aria-label="Example Configuration" href=#example-configuration>Example Configuration</a><li><a aria-label=Conclusion href=#conclusion>Conclusion</a></ul></div></details></div><div class=post-content><p>When configuring TLS in Go applications, you’ll often come across the recommendation to set <code>Renegotiation: tls.RenegotiateNever</code> in your TLS configuration. But what exactly does this mean, and why is it recommended? Let’s dive deep into TLS renegotiation, its implications, and when you might want to use different settings.<h2 id=what-is-tls-renegotiation>What is TLS Renegotiation?</h2><p>TLS renegotiation is a feature that allows clients and servers to update their TLS session parameters (like cipher suites or client certificates) without interrupting the existing connection. While this sounds useful, it comes with its own set of challenges.<h2 id=the-three-options-in-go>The Three Options in Go</h2><p>Go’s crypto/tls package provides three options for handling TLS renegotiation:<pre class=language-go data-lang=go style=color:#fdf4c1aa;background-color:#282828><code class=language-go data-lang=go><span style=color:#fdf4c1>tlsConfig </span><span style=color:#fe8019>:= &</span><span style=color:#fdf4c1>tls</span><span>.</span><span style=color:#fdf4c1>Config</span><span>{
+</span><span>    </span><span style=color:#fdf4c1>Renegotiation</span><span>: </span><span style=color:#fdf4c1>tls</span><span>.</span><span style=color:#fdf4c1>RenegotiateNever</span><span>,  </span><span style=color:#928374;font-style:italic>// Option 1
+</span><span>    </span><span style=color:#928374;font-style:italic>// or tls.RenegotiateOnceAsClient     // Option 2
+</span><span>    </span><span style=color:#928374;font-style:italic>// or tls.RenegotiateFreelyAsClient   // Option 3
+</span><span>}
+</span></code></pre><h3 id=1-renegotiatenever>1. RenegotiateNever</h3><p>This option completely disables renegotiation. It’s often the recommended choice for modern systems.<h3 id=2-renegotiateonceasclient>2. RenegotiateOnceAsClient</h3><p>This is Go’s default setting. It allows a single renegotiation per connection.<h3 id=3-renegotiatefreelyasclient>3. RenegotiateFreelyAsClient</h3><p>This allows unlimited renegotiations, but it’s generally not recommended.<h2 id=why-choose-renegotiatenever>Why Choose RenegotiateNever?</h2><h3 id=security-benefits>Security Benefits</h3><p>TLS renegotiation has a history of security vulnerabilities. The most notable was discovered in 2009, leading to the TLS Renegotiation Attack. While modern TLS implementations have addressed these specific vulnerabilities, disabling renegotiation altogether eliminates an entire class of potential security risks.<h3 id=performance-advantages>Performance Advantages</h3><p>TLS renegotiation is computationally expensive. Each renegotiation requires:<ul><li>New key exchange<li>New cryptographic computations<li>Additional network roundtrips</ul><p>By disabling renegotiation, you avoid these performance impacts.<h3 id=simplified-security-model>Simplified Security Model</h3><p>With renegotiation disabled, the TLS connection model becomes simpler and more predictable. This makes it easier to:<ul><li>Reason about security properties<li>Debug connection issues<li>Maintain consistent behavior</ul><h2 id=when-might-you-need-renegotiation>When Might You Need Renegotiation?</h2><p>Despite the advantages of <code>RenegotiateNever</code>, there are legitimate use cases for TLS renegotiation:<ol><li><strong>Legacy System Integration</strong>: Some older systems require renegotiation for certain operations.<li><strong>Client Certificate Updates</strong>: In systems where client certificates need to be updated mid-session.<li><strong>Long-lived Connections</strong>: When security parameters need to be updated without dropping the connection.</ol><h2 id=best-practices>Best Practices</h2><ol><li><p><strong>Default to RenegotiateNever</strong></p> <ul><li>Start with renegotiation disabled<li>Only enable it if you have a specific need</ul><li><p><strong>Monitor for Issues</strong></p> <ul><li>Watch for connection failures with legacy systems<li>Be prepared to adjust if needed</ul><li><p><strong>Consider Alternatives</strong></p> <ul><li>Instead of renegotiation, consider establishing new connections<li>Use modern protocols that handle parameter updates differently</ul></ol><h2 id=example-configuration>Example Configuration</h2><p>Here’s a modern, secure TLS configuration in Go:<pre class=language-go data-lang=go style=color:#fdf4c1aa;background-color:#282828><code class=language-go data-lang=go><span style=color:#fdf4c1>tlsConfig </span><span style=color:#fe8019>:= &</span><span style=color:#fdf4c1>tls</span><span>.</span><span style=color:#fdf4c1>Config</span><span>{
+</span><span>    </span><span style=color:#fdf4c1>Certificates</span><span>: []</span><span style=color:#fdf4c1>tls</span><span>.</span><span style=color:#fdf4c1>Certificate</span><span>{</span><span style=color:#fdf4c1>cert</span><span>},
+</span><span>    </span><span style=color:#fdf4c1>MinVersion</span><span>: </span><span style=color:#fdf4c1>tls</span><span>.</span><span style=color:#fdf4c1>VersionTLS12</span><span>,
+</span><span>    </span><span style=color:#fdf4c1>CipherSuites</span><span>: []</span><span style=color:#fabd2f>uint16</span><span>{
+</span><span>        </span><span style=color:#fdf4c1>tls</span><span>.</span><span style=color:#fdf4c1>TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384</span><span>,
+</span><span>        </span><span style=color:#fdf4c1>tls</span><span>.</span><span style=color:#fdf4c1>TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384</span><span>,
+</span><span>        </span><span style=color:#fdf4c1>tls</span><span>.</span><span style=color:#fdf4c1>TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305</span><span>,
+</span><span>        </span><span style=color:#fdf4c1>tls</span><span>.</span><span style=color:#fdf4c1>TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305</span><span>,
+</span><span>    },
+</span><span>    </span><span style=color:#fdf4c1>Renegotiation</span><span>: </span><span style=color:#fdf4c1>tls</span><span>.</span><span style=color:#fdf4c1>RenegotiateNever</span><span>,
+</span><span>    </span><span style=color:#fdf4c1>NextProtos</span><span>: []</span><span style=color:#fabd2f>string</span><span>{</span><span style=color:#b8bb26>"h2"</span><span>, </span><span style=color:#b8bb26>"http/1.1"</span><span>},
+</span><span>    </span><span style=color:#fdf4c1>CurvePreferences</span><span>: []</span><span style=color:#fdf4c1>tls</span><span>.</span><span style=color:#fdf4c1>CurveID</span><span>{</span><span style=color:#fdf4c1>tls</span><span>.</span><span style=color:#fdf4c1>X25519</span><span>, </span><span style=color:#fdf4c1>tls</span><span>.</span><span style=color:#fdf4c1>CurveP256</span><span>},
+</span><span>}
+</span></code></pre><h2 id=conclusion>Conclusion</h2><p>While TLS renegotiation can be useful in specific scenarios, disabling it with <code>RenegotiateNever</code> is often the right choice for modern applications. It provides better security, performance, and simplicity. However, always consider your specific use case and requirements when making this decision.<p>Remember that security is never one-size-fits-all. While <code>RenegotiateNever</code> is a good default, the best configuration for your application depends on your specific requirements, constraints, and the systems you need to interact with.</div><footer class=post-footer><ul class=post-tags><li><a href=https://zerotohero.dev/tags/inbox/>inbox</a><li><a href=https://zerotohero.dev/tags/tls/>tls</a><li><a href=https://zerotohero.dev/tags/go/>go</a><li><a href=https://zerotohero.dev/tags/security/>security</a><li><a href=https://zerotohero.dev/tags/performance/>performance</a></ul><nav class=paginav></nav></footer></article></main><footer class=footer><span>© <a href=https://zerotohero.dev>Volkan Özçelik</a> and <a href=/vadideki-geyik/team>Team Geyik</a></span><br><br> The content on this website is distributed under a <a href=https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en>CC-BY-NC-SA 4.0 license</a>.<br><br><a href=/about/privacy>Privacy Policy</a> | <a href=/about/contact>Contact</a><br><br><br></footer><a aria-label="go to top" title="Go to Top (Alt + G)" accesskey=g class=top-link href=#top id=top-link> <svg viewbox="0 0 12 6" fill=currentColor xmlns=http://www.w3.org/2000/svg><path d="M12 6H0l6-6z"/></svg> </a><script>let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });</script><script>var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };</script><script>document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })</script><script>document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                var content = codeblock.textContent;
+                if(codeblock.firstChild.tagName == 'TABLE') {
+                    content = Array(...codeblock.firstChild.getElementsByTagName('span')).map((span) => { return span.textContent; }).join('');
+                }
+                navigator.clipboard.writeText(content);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            // td containing LineNos
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            // table containing LineNos and code
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            // code blocks not having highlight as parent class
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });</script>

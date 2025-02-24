@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Zero to Hero - vsecm</title>
+    <link rel="self" type="application/atom+xml" href="https://zerotohero.dev/tags/vsecm/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://zerotohero.dev"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2023-08-16T00:00:00+00:00</updated>
+    <id>https://zerotohero.dev/tags/vsecm/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Keep Your Secrets... Secret: Introducing VMware Secrets Manager</title>
+        <published>2023-08-16T00:00:00+00:00</published>
+        <updated>2023-08-16T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/top-of-mind/keep-your-secrets/"/>
+        <id>https://zerotohero.dev/top-of-mind/keep-your-secrets/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/top-of-mind/keep-your-secrets/">&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;size&#x2F;w1200&#x2F;2024&#x2F;03&#x2F;VSecM-1.png&quot; alt=&quot;Keep Your Secrets… Secret: Introducing VMware Secrets Manager&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;In the ever-evolving landscape of cloud-native applications, secrets management
+is critical to ensuring sensitive information’s security and integrity. While
+several solutions are available, the recent shift in HashiCorp’s licensing
+towards a Business Source License (BSL) has raised concerns and sparked
+discussions within the community.&lt;&#x2F;p&gt;
+&lt;p&gt;As the lead architect of &lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;&quot;&gt;&lt;strong&gt;VMware Secrets Manager&lt;&#x2F;strong&gt; (&lt;strong&gt;&lt;em&gt;VSecM&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;)&lt;&#x2F;a&gt;,
+I’d like to take this opportunity to introduce our solution, which offers a robust,
+flexible, and &lt;strong&gt;permissive&lt;&#x2F;strong&gt; alternative to HashiCorp’s Vault.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;⭐️ Star Us on GitHub ⭐️&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;If you find value in our approach and want to help others discover this
+outstanding technology, &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;vmware-tanzu&#x2F;secrets-manager&quot;&gt;&lt;strong&gt;star our GitHub
+repository&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;. Your support helps
+increase visibility and encourages more collaboration and innovation within the
+community.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;a-new-licensing-landscape&quot;&gt;A New Licensing Landscape&lt;&#x2F;h2&gt;
+&lt;p&gt;HashiCorp’s decision to adopt a Business Source License has been viewed by some
+as a restrictive move. The BSL, unlike open-source licenses, imposes certain
+limitations and conditions that may not align with the needs and values of all
+organizations and developers.&lt;&#x2F;p&gt;
+&lt;p&gt;In contrast, &lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;&quot;&gt;&lt;strong&gt;VMware Secrets Manager&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; is licensed under
+the BSD 2-Clause License, a permissive open-source license that encourages
+collaboration, innovation, and freedom of use.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;vmware-secrets-manager-a-closer-look&quot;&gt;VMware Secrets Manager: A Closer Look&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;strong&gt;VSecM&lt;&#x2F;strong&gt; is designed with modern developers and DevOps professionals in mind.
+Here’s why it stands out:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Ease of Use&lt;&#x2F;strong&gt;: With a &lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;docs&#x2F;quickstart&#x2F;&quot;&gt;&lt;strong&gt;Quickstart Guide&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;,
+intuitive &lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;docs&#x2F;cli&#x2F;&quot;&gt;&lt;strong&gt;CLI&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, and developer-friendly
+&lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;docs&#x2F;sdk&#x2F;&quot;&gt;&lt;strong&gt;SDK&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, &lt;strong&gt;VSecM&lt;&#x2F;strong&gt; simplifies secrets management
+without compromising security.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Kubernetes Is a First-Class Citizen&lt;&#x2F;strong&gt;: &lt;strong&gt;VSecM&lt;&#x2F;strong&gt; seamlessly integrates with
+Kubernetes, leveraging &lt;a href=&quot;https:&#x2F;&#x2F;spiffe.io&#x2F;docs&#x2F;latest&#x2F;spire-about&#x2F;&quot;&gt;&lt;strong&gt;SPIRE&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+for authentication and offering flexible secret storage and transformation
+options.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Community Engagement&lt;&#x2F;strong&gt;: We believe in open collaboration and
+community-driven development. Our &lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;docs&#x2F;contributing&#x2F;&quot;&gt;&lt;strong&gt;Contributing Guide&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+invites developers to get involved, ask questions, and contribute to the project.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Secure by Default&lt;&#x2F;strong&gt;: &lt;strong&gt;VSecM&lt;&#x2F;strong&gt; offers advanced security features, including
+encryption, manual master secret setting, and integration with various backing
+stores.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;join-the-future-of-secrets-management&quot;&gt;Join the Future of Secrets Management&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;strong&gt;VMware Secrets Manager&lt;&#x2F;strong&gt; is more than just a tool; it’s a community-driven
+project that aims to redefine secrets management in a cloud-native world. We
+invite you to explore &lt;strong&gt;VSecM&lt;&#x2F;strong&gt;, contribute to its growth, and join us in
+shaping the future of secure and resilient applications.&lt;&#x2F;p&gt;
+&lt;p&gt;Whether you’re a developer looking to contribute or an organization seeking a
+flexible and secure solution for secrets management, &lt;strong&gt;VSecM&lt;&#x2F;strong&gt; offers a
+welcoming and innovative platform.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;this-is-just-the-beginning-a-vision-for-the-future&quot;&gt;This is Just the Beginning: A Vision for the Future&lt;&#x2F;h3&gt;
+&lt;p&gt;At &lt;strong&gt;VMware Secrets Manager&lt;&#x2F;strong&gt;, we believe in continuous innovation and growth.
+Our &lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;docs&#x2F;roadmap&quot;&gt;&lt;strong&gt;roadmap&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; is a testament to our
+commitment to delivering cutting-edge solutions that meet the evolving needs of
+the cloud-native community.&lt;&#x2F;p&gt;
+&lt;p&gt;Here’s a glimpse of what’s on the horizon:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Stability and Usability Enhancements&lt;&#x2F;strong&gt;: Upcoming releases focus on improving
+stability, documentation, build automation, and overall user experience.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Innovative Features&lt;&#x2F;strong&gt;: From Secretless VSecM to machine-readable logs,
+performance improvements, and large-scale secret ingestion, we’re pushing the
+boundaries of what’s possible in secrets management.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Integration and Compatibility&lt;&#x2F;strong&gt;: Future iterations include integration with
+AWS KMS, Azure Key Vault, Google Cloud KMS, and even HashiCorp Vault,
+expanding the reach and compatibility of VSecM.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Community Development and Collaboration&lt;&#x2F;strong&gt;: We’re investing in community
+development efforts, multi-cluster secret federation, and creating
+abstractions to make cloud integrations easier.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Our roadmap is not just a plan; it’s a promise to our users and contributors
+that we have a lot planned for the future of VMware Secrets Manager. We’re
+excited about the journey ahead and invite you to be a part of it.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;⭐️ Star Us on GitHub ⭐️&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;If you find value in our approach and want to help others discover this
+outstanding technology, &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;vmware-tanzu&#x2F;secrets-manager&quot;&gt;&lt;strong&gt;star our GitHub repository&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.
+Your support helps increase visibility and encourages more collaboration and
+innovation within the community.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h3 id=&quot;help-us-shape-the-future&quot;&gt;Help Us Shape the Future&lt;&#x2F;h3&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;&quot;&gt;&lt;strong&gt;Start your journey with VMware Secrets Manager today&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+and unlock the potential of cloud-native secrets management.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;catch-22&#x2F;&quot;&gt;Catch 22&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;consume-less&#x2F;&quot;&gt;Consume Less&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;craft-captivating-documentation&#x2F;&quot;&gt;Craft Captivating Documentation&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Keep Your Secrets… Secret&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;later-does-not-exist&#x2F;&quot;&gt;‘Later’ Does Not Exist&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;perception-pivot&#x2F;&quot;&gt;Transform Feedback into Professional Mastery&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;probing-questions&#x2F;&quot;&gt;Embracing Daily Reflection&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;psst-you-dont-have-to-use-medium&#x2F;&quot;&gt;Psst… You Don’t Have to Use Medium&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;reshape-your-workspace&#x2F;&quot;&gt;Reshape Your Workspace, Reshape Your Future&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;secrets&#x2F;&quot;&gt;Secrets&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;the-dream-job&#x2F;&quot;&gt;Build Strong Connections to Land Your Dream Job&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;trust&#x2F;&quot;&gt;Trust Cultivates a Cohesive Team&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;vmware-secrets-manager&#x2F;&quot;&gt;Long Live Aegis!&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;write-to-forget&#x2F;&quot;&gt;Write to Forget&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;closure&#x2F;&quot;&gt;Closure&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;new-z2h-design&#x2F;&quot;&gt;The New Zero to Hero Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Long Live Aegis!</title>
+        <published>2023-08-03T00:00:00+00:00</published>
+        <updated>2023-08-03T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/top-of-mind/vmware-secrets-manager/"/>
+        <id>https://zerotohero.dev/top-of-mind/vmware-secrets-manager/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/top-of-mind/vmware-secrets-manager/">&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;size&#x2F;w1200&#x2F;2024&#x2F;03&#x2F;aegis.png&quot; alt=&quot;Long Live Aegis!&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Dear community,&lt;&#x2F;p&gt;
+&lt;p&gt;I am thrilled to share an update with all of you. &lt;strong&gt;Aegis&lt;&#x2F;strong&gt; has transformed and
+landed into its new home! It is now entering a phase as **VMware Secrets Manager
+** for Cloud-Native workloads!&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;vmware-tanzu&#x2F;secrets-manager&quot;&gt;Please learn more about our project in the repository
+following this link&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Also, &lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;&quot;&gt;stay updated with us on our website at &lt;strong&gt;vsecm.com&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;coming-up-next&quot;&gt;Coming Up Next&lt;&#x2F;h2&gt;
+&lt;p&gt;This change represents more than just a new name. It symbolizes our unwavering
+dedication to pushing boundaries, fostering innovation, and delivering reliable
+solutions for your cloud-native workloads.&lt;&#x2F;p&gt;
+&lt;p&gt;As things settle down, we’re already busy planning our steps. You can keep track
+of our progress.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;docs&#x2F;roadmap&#x2F;&quot;&gt;Follow our plans in our roadmap page&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;We aim to provide how the project will proceed as transparently as possible. Of
+course, our contribution cadence and frequency depend on the availability and
+commitment of our core contributors.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;stronger-together&quot;&gt;Stronger Together&lt;&#x2F;h2&gt;
+&lt;p&gt;While Aegis has served us well, &lt;strong&gt;VMware Secrets Manager&lt;&#x2F;strong&gt; under VMware Tanzu
+GitHub organization opens up possibilities. It brings us closer to fulfilling
+our promise of offering you an efficient, secure, and cutting-edge cloud-native
+Secrets Management solution.&lt;&#x2F;p&gt;
+&lt;p&gt;We are thrilled about this chapter and eagerly anticipate serving you, our
+community, as we move forward. Your contributions and feedback mean the world to
+us.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;who-else-wants-to-contribute&quot;&gt;Who Else Wants to Contribute?&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;docs&#x2F;community&#x2F;&quot;&gt;Feel free to reach out if you’re interested in contributing to &lt;strong&gt;VMware Secrets
+Manager&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Stay tuned for updates and developments as we continue on this journey.&lt;&#x2F;p&gt;
+&lt;p&gt;Thank you very much for your support!&lt;&#x2F;p&gt;
+&lt;p&gt;Turtle power 🐢⚡️.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;catch-22&#x2F;&quot;&gt;Catch 22&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;consume-less&#x2F;&quot;&gt;Consume Less&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;craft-captivating-documentation&#x2F;&quot;&gt;Craft Captivating Documentation&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;keep-your-secrets&#x2F;&quot;&gt;Keep Your Secrets… Secret&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;later-does-not-exist&#x2F;&quot;&gt;‘Later’ Does Not Exist&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;perception-pivot&#x2F;&quot;&gt;Transform Feedback into Professional Mastery&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;probing-questions&#x2F;&quot;&gt;Embracing Daily Reflection&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;psst-you-dont-have-to-use-medium&#x2F;&quot;&gt;Psst… You Don’t Have to Use Medium&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;reshape-your-workspace&#x2F;&quot;&gt;Reshape Your Workspace, Reshape Your Future&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;secrets&#x2F;&quot;&gt;Secrets&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;the-dream-job&#x2F;&quot;&gt;Build Strong Connections to Land Your Dream Job&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;trust&#x2F;&quot;&gt;Trust Cultivates a Cohesive Team&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Long Live Aegis!&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;write-to-forget&#x2F;&quot;&gt;Write to Forget&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;closure&#x2F;&quot;&gt;Closure&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;new-z2h-design&#x2F;&quot;&gt;The New Zero to Hero Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+</feed>

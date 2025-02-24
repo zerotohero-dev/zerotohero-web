@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Zero to Hero - tcp&#x2F;ip</title>
+    <link rel="self" type="application/atom+xml" href="https://zerotohero.dev/tags/tcp-ip/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://zerotohero.dev"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2024-12-12T00:00:00+00:00</updated>
+    <id>https://zerotohero.dev/tags/tcp-ip/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Understanding the OSI Model: A Practical Guide to Network Communication</title>
+        <published>2024-12-12T00:00:00+00:00</published>
+        <updated>2024-12-12T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/osi-model/"/>
+        <id>https://zerotohero.dev/inbox/osi-model/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/osi-model/">&lt;p&gt;Every day, millions of people access resources on the public internet without giving it a second thought. But have you ever wondered what actually happens when you type a website address into your browser? Behind that simple action lies a complex series of processes that make network communication possible. Let’s break it down using one of the most fundamental frameworks in networking: the OSI Model.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;a-real-world-example&quot;&gt;A Real-World Example&lt;&#x2F;h2&gt;
+&lt;p&gt;Let’s start with something familiar. Imagine you’re sitting at your computer and want to visit &lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&quot;&gt;https:&#x2F;&#x2F;zerotohero.dev&lt;&#x2F;a&gt;. You open your browser, type in the address, press enter, and within seconds, you’re there. Simple, right? Not quite. Behind this seemingly straightforward action, multiple components work together to make this connection possible.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;introduction-to-the-osi-model&quot;&gt;Introduction to the OSI Model&lt;&#x2F;h2&gt;
+&lt;p&gt;The Open System Interconnect (OSI) Model is a logical framework that helps us understand the components involved in network communication. While it’s not a literal representation of how modern networks operate, it serves as an excellent educational tool for understanding the various layers of network communication.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-seven-layers-of-the-osi-model&quot;&gt;The Seven Layers of the OSI Model&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;layer-7-application-layer&quot;&gt;Layer 7: Application Layer&lt;&#x2F;h3&gt;
+&lt;p&gt;This is where the user interaction happens. Think of it as the layer responsible for providing services and applications that users directly interact with, such as:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Web browsing&lt;&#x2F;li&gt;
+&lt;li&gt;File transfer&lt;&#x2F;li&gt;
+&lt;li&gt;Printing services&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;layer-6-presentation-layer&quot;&gt;Layer 6: Presentation Layer&lt;&#x2F;h3&gt;
+&lt;p&gt;This layer handles how data is encoded, compressed, and potentially encrypted. It’s particularly important because different operating systems might represent data differently, and this layer ensures compatibility.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;layer-5-session-layer&quot;&gt;Layer 5: Session Layer&lt;&#x2F;h3&gt;
+&lt;p&gt;Imagine having multiple browser tabs open – one to ZeroToHero.dev, another to YouTube, and a third to Palo Alto Networks. The session layer manages these different communication sessions, keeping them organized and separate.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;layer-4-transport-layer&quot;&gt;Layer 4: Transport Layer&lt;&#x2F;h3&gt;
+&lt;p&gt;This is where we start getting into the nitty-gritty of data delivery. The transport layer uses different protocols that either:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Care about reliability (like TCP) – ensuring data arrives completely and in order&lt;&#x2F;li&gt;
+&lt;li&gt;Don’t care about reliability (like UDP) – just sending data without guarantees&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;layer-3-network-layer&quot;&gt;Layer 3: Network Layer&lt;&#x2F;h3&gt;
+&lt;p&gt;Think of this as the addressing layer. Just like how houses have street addresses, computers need network addresses (IP addresses) to find each other on the network. This layer handles the routing of data to its correct destination.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;layer-2-data-link-layer&quot;&gt;Layer 2: Data Link Layer&lt;&#x2F;h3&gt;
+&lt;p&gt;If Layer 3 is like the street address, Layer 2 is like the mailbox number. It handles local delivery of data and ensures it gets to the right “mailbox slot” on the local network. This layer also deals with different types of “envelopes” (frames) for different network types.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;layer-1-physical-layer&quot;&gt;Layer 1: Physical Layer&lt;&#x2F;h3&gt;
+&lt;p&gt;This is where the rubber meets the road – or rather, where the data meets the wire. The physical layer handles the actual transmission of bits across the physical medium, whether that’s an ethernet cable, fiber optic line, or wireless signal.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;why-this-matters&quot;&gt;Why This Matters&lt;&#x2F;h2&gt;
+&lt;p&gt;The beauty of this layered approach is its modularity. The application layer doesn’t need to know whether you’re connected via ethernet, Wi-Fi, or any other technology. Each layer handles its specific responsibilities, making networks more flexible and easier to troubleshoot.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;memorization-tips&quot;&gt;Memorization Tips&lt;&#x2F;h2&gt;
+&lt;p&gt;Need help remembering the layers? Here are two popular mnemonics:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Bottom to top: “Please Do Not Throw Sausage Pizza Away” (Physical, Data Link, Network, Transport, Session, Presentation, Application)&lt;&#x2F;li&gt;
+&lt;li&gt;Top to bottom: “All People Seem To Need Data Processing” (Application, Presentation, Session, Transport, Network, Data Link, Physical)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;the-real-world&quot;&gt;The Real World&lt;&#x2F;h2&gt;
+&lt;p&gt;While the OSI Model is primarily theoretical, its principles are reflected in the TCP&#x2F;IP protocol suite that powers today’s internet. Understanding these layers helps network professionals troubleshoot issues and design better networks.&lt;&#x2F;p&gt;
+&lt;p&gt;Whether you’re a network engineer or just curious about how the internet works, understanding the OSI Model provides valuable insight into the complex world of network communication. Next time you visit a website, you’ll have a better appreciation for all the layers working together to make that connection possible.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

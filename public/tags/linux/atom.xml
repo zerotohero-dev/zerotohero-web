@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Zero to Hero - linux</title>
+    <link rel="self" type="application/atom+xml" href="https://zerotohero.dev/tags/linux/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://zerotohero.dev"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2021-08-09T00:00:00+00:00</updated>
+    <id>https://zerotohero.dev/tags/linux/atom.xml</id>
+    <entry xml:lang="en">
+        <title>.zprofile, .zshrc, .zenv, OMG! What Do I Put Where?!</title>
+        <published>2021-08-09T00:00:00+00:00</published>
+        <updated>2021-08-09T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/tips/zshell-startup-files/"/>
+        <id>https://zerotohero.dev/tips/zshell-startup-files/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/tips/zshell-startup-files/">
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;plac2.png&quot; alt=&quot;.zprofile, .zshrc, .zenv, OMG! What Do I Put Where?!&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;.zprofile, .zshrc, .zenv, OMG! What Do I Put Where?!&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zsh.sourceforge.io&#x2F;Doc&#x2F;Release&#x2F;index.html&quot;&gt;Z-shell&lt;&#x2F;a&gt; has quite a bunch
+of &lt;a href=&quot;https:&#x2F;&#x2F;zsh.sourceforge.io&#x2F;Intro&#x2F;intro_3.html&quot;&gt;startup and shutdown&lt;&#x2F;a&gt; files.
+So sometimes it gets difficult to decide what kind of functions, aliases, and
+operations to define in which of those files.&lt;&#x2F;p&gt;
+&lt;p&gt;Here is the complete list of files:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;txt&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-txt &quot;&gt;&lt;code class=&quot;language-txt&quot; data-lang=&quot;txt&quot;&gt;&lt;span&gt;$ZDOTDIR&#x2F;.zshenv
+&lt;&#x2F;span&gt;&lt;span&gt;$ZDOTDIR&#x2F;.zprofile
+&lt;&#x2F;span&gt;&lt;span&gt;$ZDOTDIR&#x2F;.zshrc
+&lt;&#x2F;span&gt;&lt;span&gt;$ZDOTDIR&#x2F;.zlogin
+&lt;&#x2F;span&gt;&lt;span&gt;$ZDOTDIR&#x2F;.zlogout
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;In this article, we’ll cover what those files are for, when, and how to use
+them.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-is-zprofile&quot;&gt;What is ~&#x2F;.zprofile&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;code&gt;~&#x2F;.zprofile&lt;&#x2F;code&gt; is one of
+the &lt;a href=&quot;https:&#x2F;&#x2F;zsh.sourceforge.io&#x2F;Doc&#x2F;Release&#x2F;Files.html#Files&quot;&gt;zsh startup and shutdown files&lt;&#x2F;a&gt;.
+It is &lt;strong&gt;read at login&lt;&#x2F;strong&gt;. There’s also its cousin, &lt;code&gt;~&#x2F;.zshrc&lt;&#x2F;code&gt;, which is &lt;strong&gt;read
+when interactive&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;login-and-interactive-shells&quot;&gt;Login and Interactive Shells&lt;&#x2F;h2&gt;
+&lt;p&gt;But what is &lt;strong&gt;login&lt;&#x2F;strong&gt;, and what is &lt;strong&gt;interactive&lt;&#x2F;strong&gt;?&lt;&#x2F;p&gt;
+&lt;p&gt;Or—to ask differently—what is a &lt;strong&gt;login shell&lt;&#x2F;strong&gt; and what is an &lt;strong&gt;interactive
+non-login shell&lt;&#x2F;strong&gt;?&lt;&#x2F;p&gt;
+&lt;p&gt;A &lt;strong&gt;login shell&lt;&#x2F;strong&gt; is a shell where you log in. You can recognize a login shell
+from a &lt;code&gt;ps -f&lt;&#x2F;code&gt; listing. For example, when I call &lt;code&gt;ps -f&lt;&#x2F;code&gt; after opening a Mac
+terminal, I get the following:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;txt&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-txt &quot;&gt;&lt;code class=&quot;language-txt&quot; data-lang=&quot;txt&quot;&gt;&lt;span&gt;volkan@iMac ~ % ps -f
+&lt;&#x2F;span&gt;&lt;span&gt;  UID   PID  PPID   C STIME   TTY           TIME CMD
+&lt;&#x2F;span&gt;&lt;span&gt;  501 22250 22249   0  6:47PM ttys000    0:00.18 -zsh
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;An &lt;strong&gt;interactive non-login shell&lt;&#x2F;strong&gt; is typically a shell environment that you can
+read from and write to (&lt;em&gt;i.e., your typical terminal session&lt;&#x2F;em&gt;). An interactive
+non-login shell can be invoked from the &lt;em&gt;login shell&lt;&#x2F;em&gt;, such as when you
+type &lt;code&gt;zsh&lt;&#x2F;code&gt; and press enter in the command prompt. Or, it can be invoked when you
+open a new terminal tab.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-goes-to-zprofile-and-what-goes-to-zshrc&quot;&gt;What Goes to &lt;code&gt;~&#x2F;.zprofile&lt;&#x2F;code&gt; and What Goes to &lt;code&gt;~&#x2F;.zshrc&lt;&#x2F;code&gt;?&lt;&#x2F;h2&gt;
+&lt;p&gt;Since &lt;code&gt;~&#x2F;.zprofile&lt;&#x2F;code&gt; is loaded &lt;strong&gt;only once&lt;&#x2F;strong&gt; at login time, it’s best to put
+things that are loaded only once and can be inherited by subshells. An excellent
+example of this is &lt;strong&gt;environment variables&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;On the other hand, &lt;code&gt;~&#x2F;.zshrc&lt;&#x2F;code&gt; is typically reserved for things that are &lt;strong&gt;not&lt;&#x2F;strong&gt;
+inheritable by subshells, such as &lt;strong&gt;aliases&lt;&#x2F;strong&gt; and &lt;strong&gt;functions&lt;&#x2F;strong&gt;, custom prompts,
+history customizations, and so on.&lt;&#x2F;p&gt;
+&lt;p&gt;In addition, put the commands that should run &lt;strong&gt;every time&lt;&#x2F;strong&gt; you launch a new
+shell in the &lt;code&gt;.zshrc&lt;&#x2F;code&gt; file, too.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;What About &lt;code&gt;.zshenv&lt;&#x2F;code&gt;?&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;For &lt;strong&gt;Z-Shell&lt;&#x2F;strong&gt;, another good place to put environment variables is
+the &lt;code&gt;~&#x2F;.zshenv&lt;&#x2F;code&gt; file. The &lt;code&gt;~&#x2F;.zshenv&lt;&#x2F;code&gt; file is &lt;strong&gt;always loaded&lt;&#x2F;strong&gt;. See the
+remainder of the article for details. That said, I, personally, prefer putting
+my environment variables into &lt;code&gt;~&#x2F;.zprofile&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;zsh-startup-and-shutdown-files&quot;&gt;&lt;code&gt;zsh&lt;&#x2F;code&gt; Startup and Shutdown Files&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;code&gt;.zprofile&lt;&#x2F;code&gt; and &lt;code&gt;.zshrc&lt;&#x2F;code&gt; are the two main startup files that you’ll 99% be
+dealing with. Yet, other files have their uses too. Let’s see all together.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zsh.sourceforge.io&#x2F;Doc&#x2F;Release&#x2F;Files.html&quot;&gt;You can refer to the official reference&lt;&#x2F;a&gt;
+if you like. I will just add some notes and comments that you may not find in
+the official docs, to clarfiy things a little, if you will.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;zprofile&quot;&gt;.zprofile&lt;&#x2F;h3&gt;
+&lt;p&gt;&lt;code&gt;.zlogin&lt;&#x2F;code&gt; and &lt;code&gt;.zprofile&lt;&#x2F;code&gt; do the same thing. They set the environment for *
+&lt;em&gt;login shells&lt;&#x2F;em&gt;*. The only difference is they just get loaded at different
+times (&lt;em&gt;see below&lt;&#x2F;em&gt;). I would use &lt;code&gt;.zprofile&lt;&#x2F;code&gt; at all times for consistence.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;zshrc&quot;&gt;.zshrc&lt;&#x2F;h3&gt;
+&lt;p&gt;&lt;code&gt;.zshrc&lt;&#x2F;code&gt; sets the environment for &lt;strong&gt;interactive shells&lt;&#x2F;strong&gt;. &lt;code&gt;.zshrc&lt;&#x2F;code&gt; gets loaded *
+&lt;em&gt;after&lt;&#x2F;em&gt;* &lt;code&gt;.zprofile&lt;&#x2F;code&gt;. It is a place where you “&lt;em&gt;set and forget&lt;&#x2F;em&gt;” things.&lt;&#x2F;p&gt;
+&lt;p&gt;Since it’s loaded after &lt;code&gt;.zprofile&lt;&#x2F;code&gt;, in interactive shells, it will override
+anything you set in &lt;code&gt;.zprofile&lt;&#x2F;code&gt;. Like the &lt;code&gt;$PATH&lt;&#x2F;code&gt; variable. It’s a good place to
+define &lt;strong&gt;aliases&lt;&#x2F;strong&gt; and &lt;strong&gt;functions&lt;&#x2F;strong&gt; that you would like to have both in login *
+&lt;em&gt;and&lt;&#x2F;em&gt;* interactive shells (&lt;em&gt;see the sidenote below&lt;&#x2F;em&gt;).&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;.zprofile Quirks&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Apple terminal initially opens &lt;strong&gt;both a login &lt;em&gt;and&lt;&#x2F;em&gt; an interactive shell&lt;&#x2F;strong&gt;
+even though you don’t authenticate (i.e., enter login credentials). That’s
+why &lt;code&gt;.zshrc&lt;&#x2F;code&gt; will &lt;strong&gt;always&lt;&#x2F;strong&gt; be loaded. However, after the first terminal
+session, any subsequent shells that are opened are only interactive;
+thus &lt;code&gt;.zprofile&lt;&#x2F;code&gt; will &lt;strong&gt;not&lt;&#x2F;strong&gt; be loaded.&lt;&#x2F;p&gt;
+&lt;p&gt;You can test this out by putting an alias or setting a variable
+in &lt;code&gt;.zprofile&lt;&#x2F;code&gt;, then opening Terminal and seeing if that variable&#x2F;alias exists.
+Then open another shell (type &lt;code&gt;zsh&lt;&#x2F;code&gt;); that variable won’t be accessible anymore.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h3 id=&quot;zshenv&quot;&gt;.zshenv&lt;&#x2F;h3&gt;
+&lt;p&gt;This is read first and read &lt;strong&gt;every time&lt;&#x2F;strong&gt;, regardless of the shell being login,
+interactive, or none.&lt;&#x2F;p&gt;
+&lt;p&gt;This is the &lt;strong&gt;recommended&lt;&#x2F;strong&gt; place to set &lt;strong&gt;environment variables&lt;&#x2F;strong&gt;, though I
+still prefer to set my environment variables in &lt;code&gt;.zprofile&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Why would you need it? Because, for example, if you have a script that gets
+called by &lt;code&gt;launchd&lt;&#x2F;code&gt;, it will run under &lt;strong&gt;non-interactive non-login&lt;&#x2F;strong&gt; shell, so
+neither &lt;code&gt;.zshrc&lt;&#x2F;code&gt; nor &lt;code&gt;.zprofile&lt;&#x2F;code&gt; will get loaded.&lt;&#x2F;p&gt;
+&lt;p&gt;I’ve never needed to use this file so far, but it’s there if you need it, and
+there is nothing wrong with using it to define environment variables.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;zlogout&quot;&gt;.zlogout&lt;&#x2F;h3&gt;
+&lt;p&gt;This file is read when you &lt;strong&gt;log out&lt;&#x2F;strong&gt; of a session. Useful for cleaning things
+up.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;file-load-order&quot;&gt;File Load Order&lt;&#x2F;h3&gt;
+&lt;p&gt;Here’s the order these profile files are processed, without getting into too
+much detail:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;code&gt;.zshenv&lt;&#x2F;code&gt; → &lt;code&gt;.zprofile&lt;&#x2F;code&gt; → &lt;code&gt;.zshrc&lt;&#x2F;code&gt; → &lt;code&gt;.zlogin&lt;&#x2F;code&gt; → &lt;code&gt;.zlogout&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;That was an overview
+of &lt;a href=&quot;https:&#x2F;&#x2F;zsh.sourceforge.io&#x2F;Intro&#x2F;intro_3.html&quot;&gt;Z-Shell startup and shutdown
+files&lt;&#x2F;a&gt;. If you are a
+&lt;strong&gt;bash&lt;&#x2F;strong&gt; user, &lt;a href=&quot;https:&#x2F;&#x2F;www.gnu.org&#x2F;software&#x2F;bash&#x2F;manual&#x2F;html_node&#x2F;Bash-Startup-Files.html&quot;&gt;bash has a a similar set up startup
+files too&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Aside&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;For the sake of completeness, &lt;a href=&quot;https:&#x2F;&#x2F;kb.iu.edu&#x2F;d&#x2F;abdy&quot;&gt;this knowledge base contains startup and
+termination files used by various unix systems&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;I hope this article clarifies what all these &lt;strong&gt;Z-Shell&lt;&#x2F;strong&gt; startup files are, and
+how to use them in the most canonical way.&lt;&#x2F;p&gt;
+&lt;p&gt;Until the next article… may the source be with you 🦄.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;base64-decoding-a-string-in-go&#x2F;&quot;&gt;Base64 Decoding a String in Go&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;destructure&#x2F;&quot;&gt;Use Destructuring to Remove Attributes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;getting-the-body-of-an-http-request-with-go&#x2F;&quot;&gt;Getting the Body of an HTTP Request With Go&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;lets-create-a-syslog-logger&#x2F;&quot;&gt;Let’s Create a Syslog Logger&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;make-your-code-leaner&#x2F;&quot;&gt;Make Your Code Leaner By Extracting Method&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;mastodon-101&#x2F;&quot;&gt;Who Else Wants to Have Their Own Mastodon Server?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;microservice-env-vars&#x2F;&quot;&gt;How to Ensure Environment Variables Are Set&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;scaling-your-node-api-like-a-boss&#x2F;&quot;&gt;Scaling Your Node.js API Like a Boss&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;talkspiffe-stream-setup&#x2F;&quot;&gt;The Live Stream Dream&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ .zprofile, .zshrc, .zenv, OMG! What Do I Put Where?!&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;redirect-index-page&#x2F;&quot;&gt;Redirecting a Static Web Page&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+</feed>

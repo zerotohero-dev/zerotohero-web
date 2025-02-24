@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Zero to Hero - redirect</title>
+    <link rel="self" type="application/atom+xml" href="https://zerotohero.dev/tags/redirect/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://zerotohero.dev"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2024-05-23T00:00:00+00:00</updated>
+    <id>https://zerotohero.dev/tags/redirect/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Redirecting a Static Web Page</title>
+        <published>2024-05-23T00:00:00+00:00</published>
+        <updated>2024-05-23T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/tips/redirect-index-page/"/>
+        <id>https://zerotohero.dev/tips/redirect-index-page/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/tips/redirect-index-page/">
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2024&amp;#x2F;redirect.png&quot; alt=&quot;Hadooken.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Hadooken.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;&#x2F;h2&gt;
+&lt;p&gt;While migrating &lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;&quot;&gt;zerotohero.dev&lt;&#x2F;a&gt; to its new design,
+I needed to find a quick and dirty way to redirect incoming requests to
+certain websites to their corresponding pages on &lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;This nugget gives a neat trick to achieve this with the least amount of
+effort.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;meta-refresh-to-the-rescue&quot;&gt;&lt;code&gt;&amp;lt;meta&amp;gt;&lt;&#x2F;code&gt; Refresh to the Rescue&lt;&#x2F;h2&gt;
+&lt;p&gt;Since all of those websites were static sites backed by an S3 bucket, updating
+the error page (&lt;code&gt;404.html&lt;&#x2F;code&gt;) and the index page (&lt;code&gt;index.html&lt;&#x2F;code&gt;) was the quickest
+way to achieve this:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;html&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-html &quot;&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span style=&quot;color:#83a598;&quot;&gt;&amp;lt;!&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;DOCTYPE &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;html&lt;&#x2F;span&gt;&lt;span style=&quot;color:#83a598;&quot;&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&amp;lt;!--
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;404.html and index.html are the same.
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;S3 bucket is configured to serve 404.html for errors,
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;and index.html is configured to be the default page.
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;--&amp;gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#83a598;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;html &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;lang=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;en&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#83a598;&quot;&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#83a598;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;head&lt;&#x2F;span&gt;&lt;span style=&quot;color:#83a598;&quot;&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#83a598;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;meta &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;charset=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;UTF-8&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#83a598;&quot;&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#83a598;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;meta &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;name=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;viewport&amp;quot; 
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;   content=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;width=device-width, initial-scale=1.0&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#83a598;&quot;&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#83a598;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;title&lt;&#x2F;span&gt;&lt;span style=&quot;color:#83a598;&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt;Redirecting...&lt;&#x2F;span&gt;&lt;span style=&quot;color:#83a598;&quot;&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;title&lt;&#x2F;span&gt;&lt;span style=&quot;color:#83a598;&quot;&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#83a598;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;meta &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;http-equiv=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;refresh&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;content=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;0; 
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;    url=https:&#x2F;&#x2F;zerotohero.dev&#x2F;about&#x2F;volkan&#x2F;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#83a598;&quot;&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#83a598;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;link &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;rel=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;canonical&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;href=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;about&#x2F;volkan&#x2F;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#83a598;&quot;&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#83a598;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;meta &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;name=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;robots&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;content=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;noindex, follow&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#83a598;&quot;&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#83a598;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;script &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;type=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;text&#x2F;javascript&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#83a598;&quot;&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;setTimeout&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;function&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;() {
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;window&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;.location.href &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;about&#x2F;volkan&#x2F;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;    }, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;);
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#83a598;&quot;&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;script&lt;&#x2F;span&gt;&lt;span style=&quot;color:#83a598;&quot;&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#83a598;&quot;&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;head&lt;&#x2F;span&gt;&lt;span style=&quot;color:#83a598;&quot;&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#83a598;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;body&lt;&#x2F;span&gt;&lt;span style=&quot;color:#83a598;&quot;&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#83a598;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;p&lt;&#x2F;span&gt;&lt;span style=&quot;color:#83a598;&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt;If you are not redirected automatically,
+&lt;&#x2F;span&gt;&lt;span&gt;  follow this link:
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#83a598;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;a &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;href=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;about&#x2F;volkan&#x2F;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#83a598;&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt;https:&#x2F;&#x2F;zerotohero.dev&#x2F;about&#x2F;volkan&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#83a598;&quot;&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;a&lt;&#x2F;span&gt;&lt;span style=&quot;color:#83a598;&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#83a598;&quot;&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;p&lt;&#x2F;span&gt;&lt;span style=&quot;color:#83a598;&quot;&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#83a598;&quot;&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;body&lt;&#x2F;span&gt;&lt;span style=&quot;color:#83a598;&quot;&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#83a598;&quot;&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;html&lt;&#x2F;span&gt;&lt;span style=&quot;color:#83a598;&quot;&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This way, I won’t have to worry about configuring the S3 bucket to redirect
+incoming requests to the new URL. And as a bonus, I can still keep certain
+(&lt;em&gt;hidden&lt;&#x2F;em&gt;) pages on the old website without having to worry about them being
+indexed by search engines.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;in-a-nutshell&quot;&gt;In a Nutshell&lt;&#x2F;h2&gt;
+&lt;p&gt;Here’s a breakdown of the code:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;The &lt;code&gt;meta&lt;&#x2F;code&gt; tag with the &lt;code&gt;http-equiv&lt;&#x2F;code&gt; attribute is used to refresh the page
+after 0 seconds to the new URL.&lt;&#x2F;li&gt;
+&lt;li&gt;The &lt;code&gt;script&lt;&#x2F;code&gt; tag is used as a fallback in case the &lt;code&gt;meta&lt;&#x2F;code&gt; tag is not
+supported by the browser (&lt;em&gt;very unlikely&lt;&#x2F;em&gt;).
+&lt;ul&gt;
+&lt;li&gt;The &lt;code&gt;setTimeout&lt;&#x2F;code&gt; function is used to redirect the user to the new URL
+after 0 seconds (&lt;em&gt;i.e. immediately&lt;&#x2F;em&gt;).&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;For search engines:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;With &lt;code&gt;&amp;lt;link rel=&quot;canonical&quot; ... &#x2F;&amp;gt;&lt;&#x2F;code&gt;, we are telling the search engines that
+the alternative url is the preferred one.&lt;&#x2F;li&gt;
+&lt;li&gt;The &lt;code&gt;&amp;lt;meta name=&quot;robots&quot; content=&quot;noindex, follow&quot;&amp;gt;&lt;&#x2F;code&gt; tag is used to tell
+the search engines not to index the page but to follow the links on the page.&lt;&#x2F;li&gt;
+&lt;li&gt;Which is good enough for search engines to understand that the page has been
+moved to a new location.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;how-about-3xx-redirects&quot;&gt;How About &lt;code&gt;3xx&lt;&#x2F;code&gt; Redirects?&lt;&#x2F;h2&gt;
+&lt;p&gt;The only thing I am not doing for the search engines is to set the &lt;code&gt;301&lt;&#x2F;code&gt; status
+code in the HTTP response.&lt;&#x2F;p&gt;
+&lt;p&gt;That is doable with some &lt;a href=&quot;https:&#x2F;&#x2F;aws.amazon.com&#x2F;cloudfront&#x2F;&quot;&gt;CloudFront&lt;&#x2F;a&gt;
+and &lt;a href=&quot;https:&#x2F;&#x2F;aws.amazon.com&#x2F;lambda&#x2F;edge&#x2F;&quot;&gt;AWS Lambda at Edge&lt;&#x2F;a&gt; trickery, but I feel
+it’s an overkill.&lt;&#x2F;p&gt;
+&lt;p&gt;Why?&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Firstly, search engines are a thing of the past.&lt;&#x2F;li&gt;
+&lt;li&gt;And, secondly,  we already inform the search engines
+about the change anyway.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;Hope you liked this little nugget. It’s the fastest to way to achieve the task
+without having to worry about the underlying infrastructure.&lt;&#x2F;p&gt;
+&lt;p&gt;Until next time… May the source be with you 🦄.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;base64-decoding-a-string-in-go&#x2F;&quot;&gt;Base64 Decoding a String in Go&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;destructure&#x2F;&quot;&gt;Use Destructuring to Remove Attributes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;getting-the-body-of-an-http-request-with-go&#x2F;&quot;&gt;Getting the Body of an HTTP Request With Go&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;lets-create-a-syslog-logger&#x2F;&quot;&gt;Let’s Create a Syslog Logger&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;make-your-code-leaner&#x2F;&quot;&gt;Make Your Code Leaner By Extracting Method&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;mastodon-101&#x2F;&quot;&gt;Who Else Wants to Have Their Own Mastodon Server?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;microservice-env-vars&#x2F;&quot;&gt;How to Ensure Environment Variables Are Set&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;scaling-your-node-api-like-a-boss&#x2F;&quot;&gt;Scaling Your Node.js API Like a Boss&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;talkspiffe-stream-setup&#x2F;&quot;&gt;The Live Stream Dream&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;zshell-startup-files&#x2F;&quot;&gt;.zprofile, .zshrc, .zenv, OMG! What Do I Put Where?!&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Redirecting a Static Web Page&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+</feed>

@@ -1,0 +1,871 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Zero to Hero - automation</title>
+    <link rel="self" type="application/atom+xml" href="https://zerotohero.dev/tags/automation/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://zerotohero.dev"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2024-12-12T00:00:00+00:00</updated>
+    <id>https://zerotohero.dev/tags/automation/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Software Bundle Management in VMware Cloud Foundation: A Complete Guide</title>
+        <published>2024-12-12T00:00:00+00:00</published>
+        <updated>2024-12-12T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/vcf-bundle/"/>
+        <id>https://zerotohero.dev/inbox/vcf-bundle/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/vcf-bundle/">&lt;p&gt;For VMware Cloud Foundation (VCF) administrators, understanding software bundle management is crucial for maintaining a healthy infrastructure. This guide explores the essentials of managing software bundles in VCF environments.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;understanding-software-bundles&quot;&gt;Understanding Software Bundles&lt;&#x2F;h2&gt;
+&lt;p&gt;Software bundles are the foundation of VCF lifecycle management, coming in two primary types:&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;patch-upgrade-bundles&quot;&gt;Patch&#x2F;Upgrade Bundles&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Used for existing infrastructure components&lt;&#x2F;li&gt;
+&lt;li&gt;Covers vCenter Server, NSX, and ESXi&lt;&#x2F;li&gt;
+&lt;li&gt;Applied to currently managed VCF components&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;install-bundles&quot;&gt;Install Bundles&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Used for new workload domain deployments&lt;&#x2F;li&gt;
+&lt;li&gt;Contains fresh installations of required components&lt;&#x2F;li&gt;
+&lt;li&gt;Essential for infrastructure expansion&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;bundle-management-methods&quot;&gt;Bundle Management Methods&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;online-deployment&quot;&gt;Online Deployment&lt;&#x2F;h3&gt;
+&lt;p&gt;For environments with internet access:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Configure Online Depot in SDDC Manager&lt;&#x2F;li&gt;
+&lt;li&gt;Provide VMware Customer Connect credentials&lt;&#x2F;li&gt;
+&lt;li&gt;Access bundles directly through the interface&lt;&#x2F;li&gt;
+&lt;li&gt;View available bundles and types in Bundle Management section&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h3 id=&quot;offline-deployment&quot;&gt;Offline Deployment&lt;&#x2F;h3&gt;
+&lt;p&gt;For air-gapped environments:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Use the offline bundle transfer utility from Customer Connect&lt;&#x2F;li&gt;
+&lt;li&gt;Download bundles on an internet-connected system&lt;&#x2F;li&gt;
+&lt;li&gt;Transfer to SDDC Manager&lt;&#x2F;li&gt;
+&lt;li&gt;Import bundles into the depot&lt;&#x2F;li&gt;
+&lt;li&gt;Validate bundles before use&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;download-management&quot;&gt;Download Management&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;flexible-scheduling-options&quot;&gt;Flexible Scheduling Options&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Schedule downloads during off-peak hours&lt;&#x2F;li&gt;
+&lt;li&gt;Initiate immediate downloads when needed&lt;&#x2F;li&gt;
+&lt;li&gt;Track progress in Download History tab&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;size-considerations&quot;&gt;Size Considerations&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Bundles can be several gigabytes&lt;&#x2F;li&gt;
+&lt;li&gt;Plan bandwidth usage accordingly&lt;&#x2F;li&gt;
+&lt;li&gt;Consider storage requirements&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;automation-capabilities&quot;&gt;Automation Capabilities&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;api-integration&quot;&gt;API Integration&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Manage bundles via API calls&lt;&#x2F;li&gt;
+&lt;li&gt;Enable infrastructure as code (IaC) workflows&lt;&#x2F;li&gt;
+&lt;li&gt;Support for scale operations&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;powercli-support&quot;&gt;PowerCLI Support&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Use PowerCLI Bundle Management Tool (KB Article 94760)&lt;&#x2F;li&gt;
+&lt;li&gt;Automate routine bundle operations&lt;&#x2F;li&gt;
+&lt;li&gt;Integrate with existing automation frameworks&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;release-management&quot;&gt;Release Management&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;version-control&quot;&gt;Version Control&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Access BOM (Bill of Materials) for each VCF release&lt;&#x2F;li&gt;
+&lt;li&gt;View release notes and documentation&lt;&#x2F;li&gt;
+&lt;li&gt;Track compatibility requirements&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;update-notifications&quot;&gt;Update Notifications&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Banner notifications for new bundles&lt;&#x2F;li&gt;
+&lt;li&gt;Easy access to bundle details&lt;&#x2F;li&gt;
+&lt;li&gt;Streamlined update process&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;best-practices&quot;&gt;Best Practices&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Preparation&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Download bundles before starting upgrades&lt;&#x2F;li&gt;
+&lt;li&gt;Verify storage capacity&lt;&#x2F;li&gt;
+&lt;li&gt;Check network bandwidth availability&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Validation&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Always validate bundles after import&lt;&#x2F;li&gt;
+&lt;li&gt;Verify bundle compatibility&lt;&#x2F;li&gt;
+&lt;li&gt;Review release notes&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Organization&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Maintain bundle inventory&lt;&#x2F;li&gt;
+&lt;li&gt;Track download history&lt;&#x2F;li&gt;
+&lt;li&gt;Document deployment patterns&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;workflow-integration&quot;&gt;Workflow Integration&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Updates&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Bundles available for immediate updates&lt;&#x2F;li&gt;
+&lt;li&gt;Compatible with existing infrastructure&lt;&#x2F;li&gt;
+&lt;li&gt;Automated validation checks&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;New Deployments&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ready for workload domain creation&lt;&#x2F;li&gt;
+&lt;li&gt;Consistent deployment process&lt;&#x2F;li&gt;
+&lt;li&gt;Validated configurations&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;Effective software bundle management is key to maintaining a healthy VCF environment. Whether working in connected or air-gapped environments, VCF provides flexible options for managing software bundles. The combination of automated tools, API support, and robust validation processes ensures administrators can maintain their infrastructure efficiently and securely.&lt;&#x2F;p&gt;
+&lt;p&gt;Remember to leverage available automation tools and follow best practices for bundle management to streamline operations and maintain consistency across your VCF deployment.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>VMware Cloud Foundation: A Modern Cloud Operating Model for vSphere Admins</title>
+        <published>2024-12-12T00:00:00+00:00</published>
+        <updated>2024-12-12T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/vcf-for-vsphere-admins/"/>
+        <id>https://zerotohero.dev/inbox/vcf-for-vsphere-admins/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/vcf-for-vsphere-admins/">&lt;p&gt;As organizations continue to modernize their infrastructure, vSphere administrators are increasingly looking for ways to streamline operations and reduce maintenance overhead. VMware Cloud Foundation (VCF) offers a compelling solution by providing a modern, agile, and highly efficient cloud operating model that brings the convenience of public cloud operations to your on-premises datacenter.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-is-vmware-cloud-foundation&quot;&gt;What is VMware Cloud Foundation?&lt;&#x2F;h2&gt;
+&lt;p&gt;At its core, VCF is an integrated software stack that enables you to deploy and manage software-defined compute, storage, networking, and cloud management across all your infrastructure. Whether you’re running workloads in private datacenters, public clouds, government clouds, or edge locations, VCF provides a consistent operational model.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;key-components&quot;&gt;Key Components&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;sddc-manager-the-automation-hub&quot;&gt;SDDC Manager: The Automation Hub&lt;&#x2F;h3&gt;
+&lt;p&gt;The Software-Defined Data Center (SDDC) Manager serves as the cornerstone of VCF’s automation capabilities. It handles:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Day 0 through Day 2 operational tasks&lt;&#x2F;li&gt;
+&lt;li&gt;Automated patching and upgrades&lt;&#x2F;li&gt;
+&lt;li&gt;Lifecycle management of the entire software stack&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;vsphere-the-familiar-foundation&quot;&gt;vSphere: The Familiar Foundation&lt;&#x2F;h3&gt;
+&lt;p&gt;As the core hypervisor platform, vSphere continues to be the building block that vSphere administrators know and trust. VCF allows you to leverage your existing skills while adding new capabilities to your infrastructure.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;vsan-software-defined-storage&quot;&gt;vSAN: Software-Defined Storage&lt;&#x2F;h3&gt;
+&lt;p&gt;vSAN provides secure shared storage managed through software policies, offering:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Policy-based storage management&lt;&#x2F;li&gt;
+&lt;li&gt;Flexible storage services&lt;&#x2F;li&gt;
+&lt;li&gt;Integration with existing storage solutions&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;nsx-network-virtualization-and-security&quot;&gt;NSX: Network Virtualization and Security&lt;&#x2F;h3&gt;
+&lt;p&gt;NSX transforms traditional networking into software-defined infrastructure, providing:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Software-defined network segments&lt;&#x2F;li&gt;
+&lt;li&gt;Virtual routers and distributed switches&lt;&#x2F;li&gt;
+&lt;li&gt;Load balancers and distributed firewalls&lt;&#x2F;li&gt;
+&lt;li&gt;Migration capabilities without re-IPing VMs&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;tanzu-kubernetes-integration&quot;&gt;Tanzu: Kubernetes Integration&lt;&#x2F;h3&gt;
+&lt;p&gt;For organizations embracing containerization, VCF includes Tanzu support:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Native Kubernetes infrastructure provisioning&lt;&#x2F;li&gt;
+&lt;li&gt;Automated deployment through SDDC Manager&lt;&#x2F;li&gt;
+&lt;li&gt;Consistent developer experience across environments&lt;&#x2F;li&gt;
+&lt;li&gt;Integration with familiar vSphere management tools&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;aria-comprehensive-cloud-management&quot;&gt;Aria: Comprehensive Cloud Management&lt;&#x2F;h3&gt;
+&lt;p&gt;Aria rounds out the stack by providing:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Capacity management&lt;&#x2F;li&gt;
+&lt;li&gt;Performance monitoring and logging&lt;&#x2F;li&gt;
+&lt;li&gt;Self-service application catalog&lt;&#x2F;li&gt;
+&lt;li&gt;Automated application delivery&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;the-power-of-consistency&quot;&gt;The Power of Consistency&lt;&#x2F;h2&gt;
+&lt;p&gt;VCF’s true value lies in its ability to deliver consistency across all environments. Through automation and standardization, organizations can:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Deploy infrastructure with predictable results&lt;&#x2F;li&gt;
+&lt;li&gt;Scale resources consistently across sites&lt;&#x2F;li&gt;
+&lt;li&gt;Maintain stability through automated lifecycle management&lt;&#x2F;li&gt;
+&lt;li&gt;Reduce operational overhead and human error&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;real-world-impact&quot;&gt;Real-World Impact&lt;&#x2F;h2&gt;
+&lt;p&gt;The benefits of VCF are not just theoretical. Organizations implementing VCF have reported significant operational improvements, including:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;75% reduction in P1 and P2 infrastructure outage calls&lt;&#x2F;li&gt;
+&lt;li&gt;Ability to perform updates during business hours&lt;&#x2F;li&gt;
+&lt;li&gt;Reduced after-hours maintenance requirements&lt;&#x2F;li&gt;
+&lt;li&gt;Lower operational costs&lt;&#x2F;li&gt;
+&lt;li&gt;Enhanced security posture&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;For vSphere administrators looking to modernize their infrastructure operations, VMware Cloud Foundation offers a path forward that combines familiar tools with modern automation capabilities. By bringing public cloud operational models to on-premises infrastructure, VCF enables IT teams to spend less time on maintenance and more time on innovation.&lt;&#x2F;p&gt;
+&lt;p&gt;By leveraging VCF’s comprehensive automation and integrated stack, organizations can deliver cloud infrastructure with the reliability of traditional on-premises deployments and the agility of public cloud providers. This marks a significant evolution in how we manage infrastructure, making those dreaded 2 AM infrastructure outage pages increasingly rare.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Creating Workload Domains in VMware Cloud Foundation: Step-by-Step Guide</title>
+        <published>2024-12-12T00:00:00+00:00</published>
+        <updated>2024-12-12T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/vcf-workload-domain-create/"/>
+        <id>https://zerotohero.dev/inbox/vcf-workload-domain-create/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/vcf-workload-domain-create/">&lt;p&gt;Workload domains in VMware Cloud Foundation (VCF) are the primary method of allocating cloud capacity for hosting workloads. This guide walks through the process of creating and configuring workload domains.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;understanding-workload-domains&quot;&gt;Understanding Workload Domains&lt;&#x2F;h2&gt;
+&lt;p&gt;Two primary types exist:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Management Domain (created automatically during bringup)&lt;&#x2F;li&gt;
+&lt;li&gt;VI (Virtual Infrastructure) Workload Domain (for business workloads)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;creation-process&quot;&gt;Creation Process&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;1-initial-configuration&quot;&gt;1. Initial Configuration&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Navigate to Workload Domains in SDDC Manager&lt;&#x2F;li&gt;
+&lt;li&gt;Select “Add Workload Domain”&lt;&#x2F;li&gt;
+&lt;li&gt;Choose “VI Workload Domain” type&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;2-storage-configuration&quot;&gt;2. Storage Configuration&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Select principal storage type (e.g., vSAN)&lt;&#x2F;li&gt;
+&lt;li&gt;For vSAN configurations:
+&lt;ul&gt;
+&lt;li&gt;Set failures to tolerate&lt;&#x2F;li&gt;
+&lt;li&gt;Configure deduplication and compression options&lt;&#x2F;li&gt;
+&lt;li&gt;Minimum of three hosts required&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;3-domain-settings&quot;&gt;3. Domain Settings&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Assign domain name&lt;&#x2F;li&gt;
+&lt;li&gt;Choose SSO domain option:
+&lt;ul&gt;
+&lt;li&gt;Join existing management SSO domain&lt;&#x2F;li&gt;
+&lt;li&gt;Create new SSO domain&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Select lifecycle management approach:
+&lt;ul&gt;
+&lt;li&gt;VLCM (vSphere Lifecycle Manager) images (default in vCenter 8)&lt;&#x2F;li&gt;
+&lt;li&gt;Traditional baseline approach (optional)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;4-vcenter-configuration&quot;&gt;4. vCenter Configuration&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Provide cluster name&lt;&#x2F;li&gt;
+&lt;li&gt;Select VLCM image (if using VLCM)&lt;&#x2F;li&gt;
+&lt;li&gt;Configure vCenter Server details:
+&lt;ul&gt;
+&lt;li&gt;Hostname&lt;&#x2F;li&gt;
+&lt;li&gt;Password&lt;&#x2F;li&gt;
+&lt;li&gt;DNS verification for IP assignment&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;5-nsx-setup&quot;&gt;5. NSX Setup&lt;&#x2F;h3&gt;
+&lt;p&gt;For first VI workload domain:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Deploy new NSX fabric&lt;&#x2F;li&gt;
+&lt;li&gt;Configure NSX manager appliances:
+&lt;ul&gt;
+&lt;li&gt;Hostnames (DNS-verified)&lt;&#x2F;li&gt;
+&lt;li&gt;Admin and audit account passwords&lt;&#x2F;li&gt;
+&lt;li&gt;IP assignments&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;6-network-configuration&quot;&gt;6. Network Configuration&lt;&#x2F;h3&gt;
+&lt;p&gt;Configure vSphere Distributed Switch (VDS):&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;default-switch-configuration&quot;&gt;Default Switch Configuration&lt;&#x2F;h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Single distributed switch&lt;&#x2F;li&gt;
+&lt;li&gt;Distributed port groups for:
+&lt;ul&gt;
+&lt;li&gt;Management traffic&lt;&#x2F;li&gt;
+&lt;li&gt;vSAN traffic&lt;&#x2F;li&gt;
+&lt;li&gt;vMotion traffic&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h4 id=&quot;custom-switch-configuration&quot;&gt;Custom Switch Configuration&lt;&#x2F;h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Multiple distributed switches possible&lt;&#x2F;li&gt;
+&lt;li&gt;Requires additional NICs&lt;&#x2F;li&gt;
+&lt;li&gt;Use cases:
+&lt;ul&gt;
+&lt;li&gt;Isolate vSAN traffic&lt;&#x2F;li&gt;
+&lt;li&gt;Separate NSX overlay traffic&lt;&#x2F;li&gt;
+&lt;li&gt;Split management traffic&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;7-additional-network-settings&quot;&gt;7. Additional Network Settings&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Configure VLAN ID for NSX overlay traffic&lt;&#x2F;li&gt;
+&lt;li&gt;Set up traffic types on distributed switches&lt;&#x2F;li&gt;
+&lt;li&gt;Assign NICs to appropriate switches&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;8-licensing&quot;&gt;8. Licensing&lt;&#x2F;h3&gt;
+&lt;p&gt;Provide license keys for:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;NSX&lt;&#x2F;li&gt;
+&lt;li&gt;vSAN&lt;&#x2F;li&gt;
+&lt;li&gt;vSphere&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;post-deployment-configuration&quot;&gt;Post-Deployment Configuration&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;automated-tasks&quot;&gt;Automated Tasks&lt;&#x2F;h3&gt;
+&lt;p&gt;The workflow (~90 minutes) includes:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;vCenter Server deployment&lt;&#x2F;li&gt;
+&lt;li&gt;vCenter inventory configuration&lt;&#x2F;li&gt;
+&lt;li&gt;ESXi host addition&lt;&#x2F;li&gt;
+&lt;li&gt;Cluster configuration&lt;&#x2F;li&gt;
+&lt;li&gt;vSAN setup&lt;&#x2F;li&gt;
+&lt;li&gt;VDS and port group configuration&lt;&#x2F;li&gt;
+&lt;li&gt;NSX manager deployment&lt;&#x2F;li&gt;
+&lt;li&gt;NSX cluster preparation&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;verification-steps&quot;&gt;Verification Steps&lt;&#x2F;h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;SDDC Manager&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Check domain status&lt;&#x2F;li&gt;
+&lt;li&gt;Verify host assignments&lt;&#x2F;li&gt;
+&lt;li&gt;Review cluster configuration&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;vSphere Client&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Verify VM deployments&lt;&#x2F;li&gt;
+&lt;li&gt;Check vSAN datastore&lt;&#x2F;li&gt;
+&lt;li&gt;Review networking configuration&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;NSX Manager&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Verify host preparation&lt;&#x2F;li&gt;
+&lt;li&gt;Check fabric configuration&lt;&#x2F;li&gt;
+&lt;li&gt;Review network settings&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;best-practices&quot;&gt;Best Practices&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Planning&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ensure sufficient resources&lt;&#x2F;li&gt;
+&lt;li&gt;Verify DNS entries&lt;&#x2F;li&gt;
+&lt;li&gt;Prepare network configurations&lt;&#x2F;li&gt;
+&lt;li&gt;Have licenses ready&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Configuration&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Consider traffic isolation needs&lt;&#x2F;li&gt;
+&lt;li&gt;Plan NIC assignments&lt;&#x2F;li&gt;
+&lt;li&gt;Document VLAN assignments&lt;&#x2F;li&gt;
+&lt;li&gt;Review security requirements&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Post-Deployment&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Verify all components&lt;&#x2F;li&gt;
+&lt;li&gt;Test connectivity&lt;&#x2F;li&gt;
+&lt;li&gt;Document configuration&lt;&#x2F;li&gt;
+&lt;li&gt;Update DNS records&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;Creating workload domains is a fundamental operation in VCF that requires careful planning and execution. While the process is largely automated, understanding each component and its configuration options ensures successful deployment and operation of your cloud infrastructure.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Understanding VMware Cloud Foundation Workload Domains: The Building Blocks of Your Private Cloud</title>
+        <published>2024-12-12T00:00:00+00:00</published>
+        <updated>2024-12-12T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/vcf-workload-domains/"/>
+        <id>https://zerotohero.dev/inbox/vcf-workload-domains/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/vcf-workload-domains/">&lt;p&gt;For vSphere administrators looking to build a more flexible and automated private cloud infrastructure, understanding VMware Cloud Foundation (VCF) Workload Domains is essential. Let’s dive into what they are and how they can transform your datacenter operations.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-is-a-workload-domain&quot;&gt;What is a Workload Domain?&lt;&#x2F;h2&gt;
+&lt;p&gt;At its core, a Workload Domain is a vCenter instance with an ESXi compute cluster, but with an important distinction: it’s deployed through automation following a prescribed architecture. This automation handles:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;ESXi host deployment with dedicated vCenter server&lt;&#x2F;li&gt;
+&lt;li&gt;Software-defined networking (SDN) configuration&lt;&#x2F;li&gt;
+&lt;li&gt;Storage connectivity and configuration&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Once deployed, the SDDC (Software-Defined Data Center) Manager takes control of the Workload Domain, enabling you to:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Create new domains&lt;&#x2F;li&gt;
+&lt;li&gt;Expand or contract resources&lt;&#x2F;li&gt;
+&lt;li&gt;Delete domains&lt;&#x2F;li&gt;
+&lt;li&gt;Manage the entire lifecycle&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;This automation-first approach brings public cloud-like operations to your private datacenter.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;types-of-workload-domains&quot;&gt;Types of Workload Domains&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;1-management-workload-domain&quot;&gt;1. Management Workload Domain&lt;&#x2F;h3&gt;
+&lt;p&gt;The Management Workload Domain is the foundation of your VCF deployment and hosts most management VMs, including:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;vCenter Server&lt;&#x2F;li&gt;
+&lt;li&gt;NSX Managers&lt;&#x2F;li&gt;
+&lt;li&gt;Aria appliances&lt;&#x2F;li&gt;
+&lt;li&gt;Third-party management and operations (MANO) applications&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;The only exception is the NSX Edge network cluster nodes, which are deployed separately.&lt;&#x2F;p&gt;
+&lt;p&gt;For smaller deployments (SMB&#x2F;ROBO), the Management Workload Domain can also host business workloads. However, larger infrastructures typically benefit from separate domains.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;2-vi-virtual-infrastructure-workload-domain&quot;&gt;2. VI (Virtual Infrastructure) Workload Domain&lt;&#x2F;h3&gt;
+&lt;p&gt;VI Workload Domains are purpose-built for running applications, offering:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Clear separation between management and business workloads&lt;&#x2F;li&gt;
+&lt;li&gt;Prevention of “noisy neighbor” situations&lt;&#x2F;li&gt;
+&lt;li&gt;Independent lifecycle management&lt;&#x2F;li&gt;
+&lt;li&gt;Dedicated resources for specific use cases&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;scaling-and-flexibility&quot;&gt;Scaling and Flexibility&lt;&#x2F;h2&gt;
+&lt;p&gt;VCF offers multiple deployment options to match your needs:&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;multiple-workload-domains&quot;&gt;Multiple Workload Domains&lt;&#x2F;h3&gt;
+&lt;p&gt;Each domain can have its own:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;vCenter Server&lt;&#x2F;li&gt;
+&lt;li&gt;NSX management plane&lt;&#x2F;li&gt;
+&lt;li&gt;Storage resources&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;This separation enables scenarios like:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Dedicated domains for Windows and Linux teams&lt;&#x2F;li&gt;
+&lt;li&gt;Separate domains for DMZ applications&lt;&#x2F;li&gt;
+&lt;li&gt;Isolated environments for virtual desktops&lt;&#x2F;li&gt;
+&lt;li&gt;Independent patch management schedules&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;nsx-management-plane-options&quot;&gt;NSX Management Plane Options&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Deploy new NSX management planes for each domain&lt;&#x2F;li&gt;
+&lt;li&gt;Share existing NSX management planes across domains&lt;&#x2F;li&gt;
+&lt;li&gt;Mix and match based on requirements&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;sso-domain-flexibility&quot;&gt;SSO Domain Flexibility&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Default: Shared SSO across domains&lt;&#x2F;li&gt;
+&lt;li&gt;Optional: SSO domain isolation&lt;&#x2F;li&gt;
+&lt;li&gt;Full isolation capability (popular with cloud service providers)&lt;&#x2F;li&gt;
+&lt;li&gt;Maintain central management through SDDC Manager&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;advanced-deployment-scenarios&quot;&gt;Advanced Deployment Scenarios&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;multi-site-support&quot;&gt;Multi-Site Support&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Remote cluster deployment capabilities&lt;&#x2F;li&gt;
+&lt;li&gt;Two-node remote clusters with third-party storage&lt;&#x2F;li&gt;
+&lt;li&gt;Three or more node clusters with vSAN&lt;&#x2F;li&gt;
+&lt;li&gt;Management plane remains centralized&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;stretched-clusters&quot;&gt;Stretched Clusters&lt;&#x2F;h3&gt;
+&lt;p&gt;When used with vSAN, VCF supports stretched cluster deployments between sites, enabling:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Zero-downtime maintenance&lt;&#x2F;li&gt;
+&lt;li&gt;VM restart and recovery for unplanned failures&lt;&#x2F;li&gt;
+&lt;li&gt;Application migration between sites&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;benefits-of-workload-domains&quot;&gt;Benefits of Workload Domains&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Control Boundaries&lt;&#x2F;strong&gt;: Clear separation of resources and responsibilities&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Cloud Automation&lt;&#x2F;strong&gt;: Public cloud-like operations in your datacenter&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Flexible Architecture&lt;&#x2F;strong&gt;: Multiple options to match your needs&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Consistent Deployment&lt;&#x2F;strong&gt;: Repeatable, automated architecture&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Independent Lifecycle Management&lt;&#x2F;strong&gt;: Separate upgrade schedules for different teams&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Scalability&lt;&#x2F;strong&gt;: Easy addition of resources within or across domains&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;Workload Domains are the foundation of VMware Cloud Foundation’s ability to deliver cloud-like operations in your private datacenter. Through automation and flexible architecture options, they enable organizations to maintain separation of concerns while ensuring consistent deployment and management of resources. Whether you’re running a small business or a large enterprise, VCF’s Workload Domains provide the architecture needed to build and manage modern private cloud infrastructure.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>vSphere 8 Update 2: What&#x27;s New in VMware&#x27;s Latest Releasee</title>
+        <published>2024-12-12T00:00:00+00:00</published>
+        <updated>2024-12-12T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/whats-new-in-vsphere-8/"/>
+        <id>https://zerotohero.dev/inbox/whats-new-in-vsphere-8/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/whats-new-in-vsphere-8/">&lt;p&gt;VMware has announced significant updates to vSphere 8 with Update 2, along with new cloud services for vSphere Plus customers. These updates focus on three key areas: administrative efficiency, performance improvements, and developer enablement.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;enhanced-it-admin-efficiency&quot;&gt;Enhanced IT Admin Efficiency&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;new-lifecycle-management-service&quot;&gt;New Lifecycle Management Service&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;ESXi-Linux lifecycle management service for vSphere Plus customers&lt;&#x2F;li&gt;
+&lt;li&gt;Cloud console management for ESXi host fleet updates&lt;&#x2F;li&gt;
+&lt;li&gt;Dramatically reduced update operations for large environments&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;improved-vcenter-updates&quot;&gt;Improved vCenter Updates&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Reduced Downtime Upgrade technology now available to all vSphere customers&lt;&#x2F;li&gt;
+&lt;li&gt;Update downtime reduced from ~1 hour to just minutes&lt;&#x2F;li&gt;
+&lt;li&gt;Streamlined upgrade process&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;enhanced-identity-management&quot;&gt;Enhanced Identity Management&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Expanded identity provider support&lt;&#x2F;li&gt;
+&lt;li&gt;New support for Microsoft Azure AD (now Entra ID)&lt;&#x2F;li&gt;
+&lt;li&gt;Joins existing support for:
+&lt;ul&gt;
+&lt;li&gt;ADFS&lt;&#x2F;li&gt;
+&lt;li&gt;Okta&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Centralizes authentication&lt;&#x2F;li&gt;
+&lt;li&gt;Simplifies security audits&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;supercharged-performance&quot;&gt;Supercharged Performance&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;enhanced-gpu-support&quot;&gt;Enhanced GPU Support&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Increased GPU capacity up to 16 GPUs per VM&lt;&#x2F;li&gt;
+&lt;li&gt;Improved DRS (Distributed Resource Scheduler):
+&lt;ul&gt;
+&lt;li&gt;Smarter GPU workload distribution&lt;&#x2F;li&gt;
+&lt;li&gt;Enhanced GPU resource utilization&lt;&#x2F;li&gt;
+&lt;li&gt;Better load balancing for GPU-intensive workloads&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;expanded-dpu-ecosystem&quot;&gt;Expanded DPU Ecosystem&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;New hardware vendor support:
+&lt;ul&gt;
+&lt;li&gt;Lenovo&lt;&#x2F;li&gt;
+&lt;li&gt;Fujitsu&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Adds to existing partnerships with:
+&lt;ul&gt;
+&lt;li&gt;Dell&lt;&#x2F;li&gt;
+&lt;li&gt;HPE&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Enhanced CPU offloading capabilities&lt;&#x2F;li&gt;
+&lt;li&gt;Improved resource optimization&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;developer-and-devops-enhancements&quot;&gt;Developer and DevOps Enhancements&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;vm-management-improvements&quot;&gt;VM Management Improvements&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;New VM registry functionality&lt;&#x2F;li&gt;
+&lt;li&gt;Self-service VM provisioning&lt;&#x2F;li&gt;
+&lt;li&gt;Enhanced Windows VM support:
+&lt;ul&gt;
+&lt;li&gt;Independent Windows VM creation&lt;&#x2F;li&gt;
+&lt;li&gt;Removed previous restrictions&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;expanded-vm-service-capabilities&quot;&gt;Expanded VM Service Capabilities&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Support for all vSphere-compatible VM types&lt;&#x2F;li&gt;
+&lt;li&gt;Removed previous VM type limitations&lt;&#x2F;li&gt;
+&lt;li&gt;Improved self-service options&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;kubernetes-integration&quot;&gt;Kubernetes Integration&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Streamlined supervisor cluster setup&lt;&#x2F;li&gt;
+&lt;li&gt;New configuration export&#x2F;import capability&lt;&#x2F;li&gt;
+&lt;li&gt;Simplified cluster replication&lt;&#x2F;li&gt;
+&lt;li&gt;Faster deployment processes&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;key-benefits&quot;&gt;Key Benefits&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;For Administrators&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Reduced maintenance time&lt;&#x2F;li&gt;
+&lt;li&gt;Simplified updates&lt;&#x2F;li&gt;
+&lt;li&gt;Better security management&lt;&#x2F;li&gt;
+&lt;li&gt;Enhanced automation&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;For AI&#x2F;ML Workloads&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Improved GPU utilization&lt;&#x2F;li&gt;
+&lt;li&gt;Enhanced performance&lt;&#x2F;li&gt;
+&lt;li&gt;Better resource distribution&lt;&#x2F;li&gt;
+&lt;li&gt;Expanded hardware support&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;For Developers&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Greater autonomy&lt;&#x2F;li&gt;
+&lt;li&gt;Simplified workflows&lt;&#x2F;li&gt;
+&lt;li&gt;Improved self-service capabilities&lt;&#x2F;li&gt;
+&lt;li&gt;Enhanced Kubernetes management&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;best-practices-for-adoption&quot;&gt;Best Practices for Adoption&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Planning&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Review current environment&lt;&#x2F;li&gt;
+&lt;li&gt;Identify priority areas&lt;&#x2F;li&gt;
+&lt;li&gt;Plan GPU resource allocation&lt;&#x2F;li&gt;
+&lt;li&gt;Assess identity management needs&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Implementation&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Start with lifecycle management improvements&lt;&#x2F;li&gt;
+&lt;li&gt;Gradually expand GPU utilization&lt;&#x2F;li&gt;
+&lt;li&gt;Enable developer self-service features&lt;&#x2F;li&gt;
+&lt;li&gt;Document new processes&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Optimization&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Monitor GPU resource usage&lt;&#x2F;li&gt;
+&lt;li&gt;Fine-tune DRS settings&lt;&#x2F;li&gt;
+&lt;li&gt;Evaluate developer workflows&lt;&#x2F;li&gt;
+&lt;li&gt;Collect feedback from teams&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;vSphere 8 Update 2 represents a significant step forward in VMware’s commitment to enhancing administrative efficiency, supporting AI workloads, and enabling developer productivity. The combination of reduced maintenance overhead, improved performance capabilities, and expanded self-service options provides organizations with the tools needed to meet modern infrastructure demands while preparing for future innovations.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Creating GitHub Releases with Binary Artifacts: A Complete Guide</title>
+        <published>2024-11-27T00:00:00+00:00</published>
+        <updated>2024-11-27T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/github-releases/"/>
+        <id>https://zerotohero.dev/inbox/github-releases/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/github-releases/">&lt;p&gt;Whether you’re distributing compiled binaries, executables, or any other release artifacts, GitHub provides two convenient methods to create releases and share your builds. In this guide, we’ll explore both the manual UI approach and automated workflows for creating GitHub releases.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;method-1-using-github-s-web-interface&quot;&gt;Method 1: Using GitHub’s Web Interface&lt;&#x2F;h2&gt;
+&lt;p&gt;The simplest way to create a release is directly through GitHub’s user interface. Here’s a step-by-step guide:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Navigate to Releases&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Go to your repository&lt;&#x2F;li&gt;
+&lt;li&gt;Click on “Releases” in the right sidebar&lt;&#x2F;li&gt;
+&lt;li&gt;If you don’t see it, you can also access it via “Tags” → “Releases”&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Create the Release&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Click the “Create a new release” button&lt;&#x2F;li&gt;
+&lt;li&gt;If you have no releases yet, look for “Draft a new release”&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Configure Release Details&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Tag&lt;&#x2F;strong&gt;: Either choose an existing tag or create a new one (e.g., &lt;code&gt;v1.0.0&lt;&#x2F;code&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Release title&lt;&#x2F;strong&gt;: Give your release a descriptive name&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Description&lt;&#x2F;strong&gt;: Add release notes, changelog, or any relevant documentation&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Upload Binary Artifacts&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Look for the “Attach binaries” section&lt;&#x2F;li&gt;
+&lt;li&gt;Either drag and drop your files directly onto this area&lt;&#x2F;li&gt;
+&lt;li&gt;Or use the “Choose files” button to select them from your computer&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Set Release Type&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Regular release: For stable versions&lt;&#x2F;li&gt;
+&lt;li&gt;Pre-release: For beta or testing versions&lt;&#x2F;li&gt;
+&lt;li&gt;Draft: To save without publishing&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Publish&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Click “Publish release” to make it public&lt;&#x2F;li&gt;
+&lt;li&gt;Or “Save draft” to continue editing later&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;method-2-automated-releases-with-github-actions&quot;&gt;Method 2: Automated Releases with GitHub Actions&lt;&#x2F;h2&gt;
+&lt;p&gt;For more consistent and automated releases, you can use GitHub Actions. This is particularly useful when you have:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Multiple binary artifacts&lt;&#x2F;li&gt;
+&lt;li&gt;Cross-platform builds&lt;&#x2F;li&gt;
+&lt;li&gt;Regular release cycles&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Here’s how to set it up:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Create Workflow File&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Create a &lt;code&gt;.github&#x2F;workflows&lt;&#x2F;code&gt; directory in your repository&lt;&#x2F;li&gt;
+&lt;li&gt;Add a file named &lt;code&gt;release.yml&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Configure the Workflow&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;yaml&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-yaml &quot;&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;name&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;Release Binaries
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;on&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;push&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;tags&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;      - &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;v*&amp;#39;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Define Build and Release Steps&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Set up your build environment&lt;&#x2F;li&gt;
+&lt;li&gt;Compile binaries for different platforms&lt;&#x2F;li&gt;
+&lt;li&gt;Upload artifacts to the release&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Trigger Release&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;git tag v1.0.0
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;git push origin v1.0.0
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;best-practices&quot;&gt;Best Practices&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Versioning&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use semantic versioning (e.g., v1.0.0)&lt;&#x2F;li&gt;
+&lt;li&gt;Be consistent with your version numbering&lt;&#x2F;li&gt;
+&lt;li&gt;Include build numbers if needed&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Documentation&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Always include release notes&lt;&#x2F;li&gt;
+&lt;li&gt;Document breaking changes&lt;&#x2F;li&gt;
+&lt;li&gt;List new features and bug fixes&lt;&#x2F;li&gt;
+&lt;li&gt;Add installation instructions&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Binary Organization&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use clear naming conventions&lt;&#x2F;li&gt;
+&lt;li&gt;Include architecture information in filenames&lt;&#x2F;li&gt;
+&lt;li&gt;Consider adding checksums for verification&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Post-Release&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Test download links&lt;&#x2F;li&gt;
+&lt;li&gt;Verify binary artifacts&lt;&#x2F;li&gt;
+&lt;li&gt;Update documentation references&lt;&#x2F;li&gt;
+&lt;li&gt;Announce the release in relevant channels&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;managing-existing-releases&quot;&gt;Managing Existing Releases&lt;&#x2F;h2&gt;
+&lt;p&gt;You can also manage releases after publication:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Editing Releases&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Navigate to the release page&lt;&#x2F;li&gt;
+&lt;li&gt;Click “Edit release”&lt;&#x2F;li&gt;
+&lt;li&gt;Modify description, title, or binary artifacts&lt;&#x2F;li&gt;
+&lt;li&gt;Save changes&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Deleting Releases&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use with caution&lt;&#x2F;li&gt;
+&lt;li&gt;Can remove individual artifacts&lt;&#x2F;li&gt;
+&lt;li&gt;Or delete entire releases&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;GitHub Releases provide a robust platform for distributing your binary artifacts. Whether you choose the manual UI approach or automated workflows, following these guidelines will help you create professional and well-organized releases for your users.&lt;&#x2F;p&gt;
+&lt;p&gt;Remember that releases serve as important historical markers for your project, so take time to document them properly and ensure all artifacts are properly tested before publishing.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;p&gt;&lt;em&gt;Last updated: November 2024&lt;&#x2F;em&gt;&lt;br &#x2F;&gt;
+&lt;em&gt;Feel free to share and adapt this guide with attribution.&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

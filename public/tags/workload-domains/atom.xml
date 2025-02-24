@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Zero to Hero - workload-domains</title>
+    <link rel="self" type="application/atom+xml" href="https://zerotohero.dev/tags/workload-domains/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://zerotohero.dev"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2024-12-12T00:00:00+00:00</updated>
+    <id>https://zerotohero.dev/tags/workload-domains/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Understanding VMware Cloud Foundation Workload Domains: The Building Blocks of Your Private Cloud</title>
+        <published>2024-12-12T00:00:00+00:00</published>
+        <updated>2024-12-12T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/vcf-workload-domains/"/>
+        <id>https://zerotohero.dev/inbox/vcf-workload-domains/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/vcf-workload-domains/">&lt;p&gt;For vSphere administrators looking to build a more flexible and automated private cloud infrastructure, understanding VMware Cloud Foundation (VCF) Workload Domains is essential. Let’s dive into what they are and how they can transform your datacenter operations.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-is-a-workload-domain&quot;&gt;What is a Workload Domain?&lt;&#x2F;h2&gt;
+&lt;p&gt;At its core, a Workload Domain is a vCenter instance with an ESXi compute cluster, but with an important distinction: it’s deployed through automation following a prescribed architecture. This automation handles:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;ESXi host deployment with dedicated vCenter server&lt;&#x2F;li&gt;
+&lt;li&gt;Software-defined networking (SDN) configuration&lt;&#x2F;li&gt;
+&lt;li&gt;Storage connectivity and configuration&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Once deployed, the SDDC (Software-Defined Data Center) Manager takes control of the Workload Domain, enabling you to:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Create new domains&lt;&#x2F;li&gt;
+&lt;li&gt;Expand or contract resources&lt;&#x2F;li&gt;
+&lt;li&gt;Delete domains&lt;&#x2F;li&gt;
+&lt;li&gt;Manage the entire lifecycle&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;This automation-first approach brings public cloud-like operations to your private datacenter.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;types-of-workload-domains&quot;&gt;Types of Workload Domains&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;1-management-workload-domain&quot;&gt;1. Management Workload Domain&lt;&#x2F;h3&gt;
+&lt;p&gt;The Management Workload Domain is the foundation of your VCF deployment and hosts most management VMs, including:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;vCenter Server&lt;&#x2F;li&gt;
+&lt;li&gt;NSX Managers&lt;&#x2F;li&gt;
+&lt;li&gt;Aria appliances&lt;&#x2F;li&gt;
+&lt;li&gt;Third-party management and operations (MANO) applications&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;The only exception is the NSX Edge network cluster nodes, which are deployed separately.&lt;&#x2F;p&gt;
+&lt;p&gt;For smaller deployments (SMB&#x2F;ROBO), the Management Workload Domain can also host business workloads. However, larger infrastructures typically benefit from separate domains.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;2-vi-virtual-infrastructure-workload-domain&quot;&gt;2. VI (Virtual Infrastructure) Workload Domain&lt;&#x2F;h3&gt;
+&lt;p&gt;VI Workload Domains are purpose-built for running applications, offering:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Clear separation between management and business workloads&lt;&#x2F;li&gt;
+&lt;li&gt;Prevention of “noisy neighbor” situations&lt;&#x2F;li&gt;
+&lt;li&gt;Independent lifecycle management&lt;&#x2F;li&gt;
+&lt;li&gt;Dedicated resources for specific use cases&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;scaling-and-flexibility&quot;&gt;Scaling and Flexibility&lt;&#x2F;h2&gt;
+&lt;p&gt;VCF offers multiple deployment options to match your needs:&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;multiple-workload-domains&quot;&gt;Multiple Workload Domains&lt;&#x2F;h3&gt;
+&lt;p&gt;Each domain can have its own:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;vCenter Server&lt;&#x2F;li&gt;
+&lt;li&gt;NSX management plane&lt;&#x2F;li&gt;
+&lt;li&gt;Storage resources&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;This separation enables scenarios like:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Dedicated domains for Windows and Linux teams&lt;&#x2F;li&gt;
+&lt;li&gt;Separate domains for DMZ applications&lt;&#x2F;li&gt;
+&lt;li&gt;Isolated environments for virtual desktops&lt;&#x2F;li&gt;
+&lt;li&gt;Independent patch management schedules&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;nsx-management-plane-options&quot;&gt;NSX Management Plane Options&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Deploy new NSX management planes for each domain&lt;&#x2F;li&gt;
+&lt;li&gt;Share existing NSX management planes across domains&lt;&#x2F;li&gt;
+&lt;li&gt;Mix and match based on requirements&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;sso-domain-flexibility&quot;&gt;SSO Domain Flexibility&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Default: Shared SSO across domains&lt;&#x2F;li&gt;
+&lt;li&gt;Optional: SSO domain isolation&lt;&#x2F;li&gt;
+&lt;li&gt;Full isolation capability (popular with cloud service providers)&lt;&#x2F;li&gt;
+&lt;li&gt;Maintain central management through SDDC Manager&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;advanced-deployment-scenarios&quot;&gt;Advanced Deployment Scenarios&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;multi-site-support&quot;&gt;Multi-Site Support&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Remote cluster deployment capabilities&lt;&#x2F;li&gt;
+&lt;li&gt;Two-node remote clusters with third-party storage&lt;&#x2F;li&gt;
+&lt;li&gt;Three or more node clusters with vSAN&lt;&#x2F;li&gt;
+&lt;li&gt;Management plane remains centralized&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;stretched-clusters&quot;&gt;Stretched Clusters&lt;&#x2F;h3&gt;
+&lt;p&gt;When used with vSAN, VCF supports stretched cluster deployments between sites, enabling:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Zero-downtime maintenance&lt;&#x2F;li&gt;
+&lt;li&gt;VM restart and recovery for unplanned failures&lt;&#x2F;li&gt;
+&lt;li&gt;Application migration between sites&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;benefits-of-workload-domains&quot;&gt;Benefits of Workload Domains&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Control Boundaries&lt;&#x2F;strong&gt;: Clear separation of resources and responsibilities&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Cloud Automation&lt;&#x2F;strong&gt;: Public cloud-like operations in your datacenter&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Flexible Architecture&lt;&#x2F;strong&gt;: Multiple options to match your needs&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Consistent Deployment&lt;&#x2F;strong&gt;: Repeatable, automated architecture&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Independent Lifecycle Management&lt;&#x2F;strong&gt;: Separate upgrade schedules for different teams&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Scalability&lt;&#x2F;strong&gt;: Easy addition of resources within or across domains&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;Workload Domains are the foundation of VMware Cloud Foundation’s ability to deliver cloud-like operations in your private datacenter. Through automation and flexible architecture options, they enable organizations to maintain separation of concerns while ensuring consistent deployment and management of resources. Whether you’re running a small business or a large enterprise, VCF’s Workload Domains provide the architecture needed to build and manage modern private cloud infrastructure.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

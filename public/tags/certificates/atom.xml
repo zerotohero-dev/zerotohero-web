@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Zero to Hero - certificates</title>
+    <link rel="self" type="application/atom+xml" href="https://zerotohero.dev/tags/certificates/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://zerotohero.dev"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2024-12-12T00:00:00+00:00</updated>
+    <id>https://zerotohero.dev/tags/certificates/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Understanding SSL Certificates: From Public CAs to Custom Root Certificates in Kubernetes</title>
+        <published>2024-12-12T00:00:00+00:00</published>
+        <updated>2024-12-12T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/custom-ca/"/>
+        <id>https://zerotohero.dev/inbox/custom-ca/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/custom-ca/">&lt;p&gt;As organizations scale their Kubernetes infrastructure, managing SSL certificates becomes increasingly complex. Let’s dive into some common misconceptions and explore how certificate management really works, especially when dealing with custom Certificate Authorities (CAs).&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-common-misconception&quot;&gt;The Common Misconception&lt;&#x2F;h2&gt;
+&lt;p&gt;Many developers initially believe that having an SSL certificate for a domain (let’s say example.com) allows them to create new certificates for its subdomains. This seems logical but isn’t how SSL certificates actually work.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;understanding-certificate-types&quot;&gt;Understanding Certificate Types&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;standard-ssl-certificates&quot;&gt;Standard SSL Certificates&lt;&#x2F;h3&gt;
+&lt;p&gt;A standard SSL certificate from a provider like Verisign is an end-entity certificate. Think of it as a leaf node in a tree - it can prove its own identity but can’t vouch for others. This means:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;It works for the specific domain it was issued for&lt;&#x2F;li&gt;
+&lt;li&gt;It might cover www.example.com if included&lt;&#x2F;li&gt;
+&lt;li&gt;It cannot create or sign other certificates&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;wildcard-certificates&quot;&gt;Wildcard Certificates&lt;&#x2F;h3&gt;
+&lt;p&gt;Wildcard certificates (*.example.com) are more flexible but still have limitations:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Cover all first-level subdomains&lt;&#x2F;li&gt;
+&lt;li&gt;Don’t cover the root domain or multi-level subdomains&lt;&#x2F;li&gt;
+&lt;li&gt;Cannot create new certificates&lt;&#x2F;li&gt;
+&lt;li&gt;Share the same private key across all subdomains&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;the-custom-ca-approach&quot;&gt;The Custom CA Approach&lt;&#x2F;h2&gt;
+&lt;p&gt;This is where things get interesting. Organizations sometimes opt for a custom Root CA, which provides maximum flexibility but comes with its own challenges.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;how-it-works&quot;&gt;How It Works&lt;&#x2F;h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Create or obtain a Root CA certificate and private key&lt;&#x2F;li&gt;
+&lt;li&gt;Configure cert-manager to use this CA for signing certificates&lt;&#x2F;li&gt;
+&lt;li&gt;Install the Root CA certificate in user browsers&lt;&#x2F;li&gt;
+&lt;li&gt;Deploy services with automatically generated certificates&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h3 id=&quot;advantages&quot;&gt;Advantages&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Complete control over certificate issuance&lt;&#x2F;li&gt;
+&lt;li&gt;Automated certificate management with cert-manager&lt;&#x2F;li&gt;
+&lt;li&gt;No external CA dependencies&lt;&#x2F;li&gt;
+&lt;li&gt;Cost-effective for large deployments&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;challenges&quot;&gt;Challenges&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Requires careful private key management&lt;&#x2F;li&gt;
+&lt;li&gt;Must distribute and maintain Root CA trust in browsers&lt;&#x2F;li&gt;
+&lt;li&gt;Not practical for public-facing websites&lt;&#x2F;li&gt;
+&lt;li&gt;Increased security responsibility&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;implementation-in-kubernetes&quot;&gt;Implementation in Kubernetes&lt;&#x2F;h2&gt;
+&lt;p&gt;Here’s where tools like cert-manager shine. With a custom Root CA, you can:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Automatically generate certificates for new services&lt;&#x2F;li&gt;
+&lt;li&gt;Handle certificate rotation&lt;&#x2F;li&gt;
+&lt;li&gt;Manage different certificate types for different environments&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;pre data-lang=&quot;yaml&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-yaml &quot;&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;apiVersion&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;cert-manager.io&#x2F;v1
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;kind&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;Certificate
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;metadata&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;name&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;store-example-com
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;spec&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;secretName&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;store-tls
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;issuerRef&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;name&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;custom-ca-issuer
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;kind&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;ClusterIssuer
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;dnsNames&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;  - &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;store.example.com
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;best-practices-and-considerations&quot;&gt;Best Practices and Considerations&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Security First&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Store the Root CA private key securely&lt;&#x2F;li&gt;
+&lt;li&gt;Use separate CAs for different environments&lt;&#x2F;li&gt;
+&lt;li&gt;Implement proper access controls&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Automation&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use cert-manager for certificate lifecycle management&lt;&#x2F;li&gt;
+&lt;li&gt;Automate CA trust distribution&lt;&#x2F;li&gt;
+&lt;li&gt;Monitor certificate expiration&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Environment-Specific Approaches&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Development: Custom CA is perfect&lt;&#x2F;li&gt;
+&lt;li&gt;Internal tools: Custom CA works well&lt;&#x2F;li&gt;
+&lt;li&gt;Public websites: Stick to public CAs&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;when-to-use-what&quot;&gt;When to Use What&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;use-public-cas-when&quot;&gt;Use Public CAs When:&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Building public-facing websites&lt;&#x2F;li&gt;
+&lt;li&gt;Can’t control client environments&lt;&#x2F;li&gt;
+&lt;li&gt;Need universal trust&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;use-custom-ca-when&quot;&gt;Use Custom CA When:&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Operating in controlled environments&lt;&#x2F;li&gt;
+&lt;li&gt;Managing many internal services&lt;&#x2F;li&gt;
+&lt;li&gt;Need complete control over certificate lifecycle&lt;&#x2F;li&gt;
+&lt;li&gt;Have proper security measures in place&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;While custom Root CAs provide powerful capabilities for certificate management in Kubernetes, they’re not a silver bullet. The choice between public CAs and custom CAs should be based on your specific use case, security requirements, and operational capabilities.&lt;&#x2F;p&gt;
+&lt;p&gt;Remember: The power to create certificates for any domain comes with great responsibility. Ensure your team is prepared for the security implications before implementing a custom CA solution.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Debugging TLS Certificate Issues in Go: A Base64 Decoding Story</title>
+        <published>2024-12-10T00:00:00+00:00</published>
+        <updated>2024-12-10T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/tls-decoding-go/"/>
+        <id>https://zerotohero.dev/inbox/tls-decoding-go/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/tls-decoding-go/">&lt;p&gt;When working with TLS certificates in Go applications, you might encounter some unexpected challenges. In this post, we’ll explore a common issue that occurs when dealing with base64-encoded certificates and how to resolve it.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-problem&quot;&gt;The Problem&lt;&#x2F;h2&gt;
+&lt;p&gt;Consider a scenario where you’re building a secure web server in Go that needs to use TLS certificates. You’re retrieving these certificates from a secrets management system, but when you try to start the server, you get this cryptic error:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#282828;color:#fdf4c1aa;&quot;&gt;&lt;code&gt;&lt;span&gt;Error loading server certificate and key: tls: failed to find any PEM data in certificate input
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This error occurs because the certificates are being provided in base64-encoded format, but Go’s TLS configuration expects them in PEM format. Let’s look at how to fix this.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-initial-code&quot;&gt;The Initial Code&lt;&#x2F;h2&gt;
+&lt;p&gt;Here’s what the problematic code might look like:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cert&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;tls&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;X509KeyPair&lt;&#x2F;span&gt;&lt;span&gt;([]&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;byte&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;serverCert&lt;&#x2F;span&gt;&lt;span&gt;), []&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;byte&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;serverKey&lt;&#x2F;span&gt;&lt;span&gt;))
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;log&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Fatalf&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Error loading server certificate and key: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;%v&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;tlsConfig &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &amp;amp;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;tls&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Config&lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Certificates&lt;&#x2F;span&gt;&lt;span&gt;: []&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;tls&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Certificate&lt;&#x2F;span&gt;&lt;span&gt;{&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cert&lt;&#x2F;span&gt;&lt;span&gt;},
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This code assumes the certificate and key are in PEM format, but what if they’re base64-encoded? Let’s look at how to modify this to handle base64-encoded certificates.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-solution&quot;&gt;The Solution&lt;&#x2F;h2&gt;
+&lt;p&gt;The solution involves adding a decoding step before creating the X509 key pair. Here’s the complete code with the fix:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;package &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;main
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;import &lt;&#x2F;span&gt;&lt;span&gt;(
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;crypto&#x2F;tls&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;encoding&#x2F;base64&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;encoding&#x2F;json&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;fmt&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;log&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;net&#x2F;http&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;strings&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;main&lt;&#x2F;span&gt;&lt;span&gt;() {
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; ... (certificate fetching code)
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Decode base64 encoded certificate and key
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;decodedCert&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;base64&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;StdEncoding&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;DecodeString&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;serverCert&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;log&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Fatalf&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Error decoding server certificate: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;%v&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;decodedKey&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;base64&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;StdEncoding&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;DecodeString&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;serverKey&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;log&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Fatalf&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Error decoding server key: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;%v&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Configure TLS with decoded certificate and key
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cert&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;tls&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;X509KeyPair&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;decodedCert&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;decodedKey&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;log&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Fatalf&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Error loading server certificate and key: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;%v&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;tlsConfig &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &amp;amp;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;tls&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Config&lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Certificates&lt;&#x2F;span&gt;&lt;span&gt;: []&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;tls&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Certificate&lt;&#x2F;span&gt;&lt;span&gt;{&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cert&lt;&#x2F;span&gt;&lt;span&gt;},
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Set up the HTTP server
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;server &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &amp;amp;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;http&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Server&lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Addr&lt;&#x2F;span&gt;&lt;span&gt;:      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;:8443&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;TLSConfig&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;tlsConfig&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;fmt&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Println&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Server is running on :8443 with TLS enabled&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;log&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Fatal&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;server&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;ListenAndServeTLS&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;))
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;understanding-the-fix&quot;&gt;Understanding the Fix&lt;&#x2F;h2&gt;
+&lt;p&gt;The key changes in this solution are:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Import the base64 package&lt;&#x2F;strong&gt;: We need to add &lt;code&gt;encoding&#x2F;base64&lt;&#x2F;code&gt; to our imports to handle the decoding.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Decode the certificates&lt;&#x2F;strong&gt;: Before creating the X509 key pair, we decode both the certificate and key:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;decodedCert&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;base64&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;StdEncoding&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;DecodeString&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;serverCert&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;decodedKey&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;base64&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;StdEncoding&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;DecodeString&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;serverKey&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Use decoded data&lt;&#x2F;strong&gt;: We use the decoded data to create the X509 key pair instead of the raw base64-encoded strings.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;how-to-identify-base64-encoded-certificates&quot;&gt;How to Identify Base64-Encoded Certificates&lt;&#x2F;h2&gt;
+&lt;p&gt;Base64-encoded certificates typically have these characteristics:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;They contain only alphanumeric characters, plus ‘+’, ‘&#x2F;’ and ‘=’&lt;&#x2F;li&gt;
+&lt;li&gt;They don’t have the familiar “BEGIN CERTIFICATE” and “END CERTIFICATE” markers&lt;&#x2F;li&gt;
+&lt;li&gt;They’re usually one long string without line breaks&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;In contrast, PEM-formatted certificates look like this:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#282828;color:#fdf4c1aa;&quot;&gt;&lt;code&gt;&lt;span&gt;-----BEGIN CERTIFICATE-----
+&lt;&#x2F;span&gt;&lt;span&gt;MIIDQTCCAimgAwIBAgIUOL6XR5PRHNs...
+&lt;&#x2F;span&gt;&lt;span&gt;-----END CERTIFICATE-----
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;best-practices&quot;&gt;Best Practices&lt;&#x2F;h2&gt;
+&lt;p&gt;When working with TLS certificates in Go:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Always validate certificate format&lt;&#x2F;strong&gt;: Check whether your certificates are base64-encoded or PEM-formatted before processing them.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Handle errors gracefully&lt;&#x2F;strong&gt;: Include proper error handling for both decoding and certificate loading steps.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Log meaningful messages&lt;&#x2F;strong&gt;: Include detailed error messages to make debugging easier.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Consider automation&lt;&#x2F;strong&gt;: Use tools or scripts to handle certificate format conversion if you frequently deal with different formats.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;Dealing with TLS certificates in Go can be tricky, especially when they’re not in the expected format. By understanding that certificates might be base64-encoded and knowing how to handle them, you can avoid common pitfalls and build more robust applications.&lt;&#x2F;p&gt;
+&lt;p&gt;Remember to always check the format of your certificates when debugging TLS-related issues. The error “failed to find any PEM data in certificate input” is often a good indicator that you’re dealing with encoded certificates that need to be decoded first.&lt;&#x2F;p&gt;
+&lt;p&gt;Happy coding!&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Modernizing TLS Certificates in Kubernetes: From CN to SAN</title>
+        <published>2024-12-10T00:00:00+00:00</published>
+        <updated>2024-12-10T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/tls-san/"/>
+        <id>https://zerotohero.dev/inbox/tls-san/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/tls-san/">&lt;p&gt;When working with Kubernetes and TLS certificates, you might encounter an error message that looks something like this:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#282828;color:#fdf4c1aa;&quot;&gt;&lt;code&gt;&lt;span&gt;error: failed to verify certificate: x509: certificate relies on legacy Common Name field, use SANs instead
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This article explains why this error occurs and how to fix it, particularly in the context of the external-secrets operator and VSecM integration.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;understanding-the-problem&quot;&gt;Understanding the Problem&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;the-legacy-common-name-field&quot;&gt;The Legacy Common Name Field&lt;&#x2F;h3&gt;
+&lt;p&gt;Historically, TLS certificates used the Common Name (CN) field to specify the hostname that the certificate was valid for. This approach had several limitations:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;It only allowed for a single hostname per certificate&lt;&#x2F;li&gt;
+&lt;li&gt;The field wasn’t explicitly defined for hostname verification&lt;&#x2F;li&gt;
+&lt;li&gt;It created potential security vulnerabilities&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h3 id=&quot;the-modern-approach-subject-alternative-names-sans&quot;&gt;The Modern Approach: Subject Alternative Names (SANs)&lt;&#x2F;h3&gt;
+&lt;p&gt;Subject Alternative Names (SANs) were introduced to address these limitations. SANs provide:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Support for multiple hostnames&lt;&#x2F;li&gt;
+&lt;li&gt;Explicit fields for DNS names, IP addresses, and other identifiers&lt;&#x2F;li&gt;
+&lt;li&gt;Better security through more precise hostname matching&lt;&#x2F;li&gt;
+&lt;li&gt;Compliance with modern security standards&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;real-world-example&quot;&gt;Real-World Example&lt;&#x2F;h2&gt;
+&lt;p&gt;Let’s look at a real-world scenario involving the external-secrets operator and VSecM Scout. The following error occurs when using a certificate generated with only a Common Name:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#282828;color:#fdf4c1aa;&quot;&gt;&lt;code&gt;&lt;span&gt;Warning  UpdateFailed  error retrieving secret: failed to call endpoint: tls: failed to verify certificate: 
+&lt;&#x2F;span&gt;&lt;span&gt;x509: certificate relies on legacy Common Name field, use SANs instead
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;the-solution&quot;&gt;The Solution&lt;&#x2F;h3&gt;
+&lt;p&gt;To fix this, we need to modify our certificate generation process to include Subject Alternative Names. Here’s how to do it:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Create an OpenSSL configuration file that includes SAN extensions&lt;&#x2F;li&gt;
+&lt;li&gt;Generate the certificate using this configuration&lt;&#x2F;li&gt;
+&lt;li&gt;Update the certificate in your Kubernetes cluster&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;Here’s the complete script that implements these changes:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;#!&#x2F;usr&#x2F;bin&#x2F;env bash
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;SCOUT_DNS&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;vsecm-scout.vsecm-system.svc.cluster.local&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Generate a private key
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;openssl genrsa -out server.key 2048
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Create a configuration file for the certificate
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cat &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt; server.conf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;&amp;lt;&amp;lt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;EOF
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;[req]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;distinguished_name = req_distinguished_name
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;x509_extensions = v3_req
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;prompt = no
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;[req_distinguished_name]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;CN = ${SCOUT_DNS}
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;[v3_req]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;keyUsage = critical, digitalSignature, keyEncipherment
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;extendedKeyUsage = serverAuth
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;subjectAltName = @alt_names
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;[alt_names]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;DNS.1 = ${SCOUT_DNS}
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;EOF
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Create a self-signed certificate using the configuration file
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;openssl req -new -x509 -sha256 -key server.key -out server.crt \
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;  -days 3650 -config server.conf
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;understanding-the-changes&quot;&gt;Understanding the Changes&lt;&#x2F;h2&gt;
+&lt;p&gt;Let’s break down the key components of the solution:&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;1-configuration-file-structure&quot;&gt;1. Configuration File Structure&lt;&#x2F;h3&gt;
+&lt;p&gt;The OpenSSL configuration file includes several important sections:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;[req]&lt;&#x2F;code&gt;: Basic certificate request settings&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;[req_distinguished_name]&lt;&#x2F;code&gt;: Certificate subject information&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;[v3_req]&lt;&#x2F;code&gt;: Certificate extensions&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;[alt_names]&lt;&#x2F;code&gt;: Subject Alternative Names&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;2-key-extensions&quot;&gt;2. Key Extensions&lt;&#x2F;h3&gt;
+&lt;p&gt;We specify two important extensions:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#282828;color:#fdf4c1aa;&quot;&gt;&lt;code&gt;&lt;span&gt;keyUsage = critical, digitalSignature, keyEncipherment
+&lt;&#x2F;span&gt;&lt;span&gt;extendedKeyUsage = serverAuth
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;These define how the certificate can be used and ensure it’s properly configured for server authentication.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;3-subject-alternative-names&quot;&gt;3. Subject Alternative Names&lt;&#x2F;h3&gt;
+&lt;p&gt;The crucial part that fixes our error:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#282828;color:#fdf4c1aa;&quot;&gt;&lt;code&gt;&lt;span&gt;subjectAltName = @alt_names
+&lt;&#x2F;span&gt;&lt;span&gt;[alt_names]
+&lt;&#x2F;span&gt;&lt;span&gt;DNS.1 = ${SCOUT_DNS}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This explicitly defines the DNS name that the certificate is valid for.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;best-practices&quot;&gt;Best Practices&lt;&#x2F;h2&gt;
+&lt;p&gt;When updating your certificates:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Always include both CN and SAN fields for maximum compatibility&lt;&#x2F;li&gt;
+&lt;li&gt;Use specific key usage and extended key usage extensions&lt;&#x2F;li&gt;
+&lt;li&gt;Keep the certificate validity period reasonable (3650 days in our example)&lt;&#x2F;li&gt;
+&lt;li&gt;Store private keys securely&lt;&#x2F;li&gt;
+&lt;li&gt;Implement proper certificate rotation procedures&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;verifying-the-certificate&quot;&gt;Verifying the Certificate&lt;&#x2F;h2&gt;
+&lt;p&gt;After generating your certificate, you can verify it has the correct SAN entries using:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;openssl x509 -in server.crt -text -noout &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;grep DNS
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;You should see your DNS name listed in the Subject Alternative Name section.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;Moving from Common Name to Subject Alternative Names is more than just fixing an error—it’s about adopting modern security practices. While the change requires updating certificate generation scripts, the benefits include improved security, better compatibility with modern systems, and adherence to current best practices.&lt;&#x2F;p&gt;
+&lt;p&gt;Remember to update your certificate generation processes across all your infrastructure to prevent similar issues in the future. This small change can save you from debugging sessions and potential security vulnerabilities down the line.&lt;&#x2F;p&gt;
+&lt;p&gt;Stay secure! 🔐&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

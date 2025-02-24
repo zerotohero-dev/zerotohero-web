@@ -1,0 +1,899 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Zero to Hero - zero-trust</title>
+    <link rel="self" type="application/atom+xml" href="https://zerotohero.dev/tags/zero-trust/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://zerotohero.dev"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2021-12-18T00:00:00+00:00</updated>
+    <id>https://zerotohero.dev/tags/zero-trust/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Setting Up SPIRE on EKS in Less Than Ten Minutes</title>
+        <published>2021-12-18T00:00:00+00:00</published>
+        <updated>2021-12-18T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/spire/spire-rocks/"/>
+        <id>https://zerotohero.dev/spire/spire-rocks/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/spire/spire-rocks/">&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;size&#x2F;w1200&#x2F;2024&#x2F;03&#x2F;trust.png&quot; alt=&quot;Setting Up SPIRE on EKS in Less Than Ten Minutes&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;trust.png&quot; alt=&quot;Trust ie hard to gain, easy to lose. Zero Trust is no different.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Trust ie hard to gain, easy to lose. Zero Trust is no different.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;Psst… 🔎 Looking for &lt;strong&gt;GopherCon, 2021, TR&lt;&#x2F;strong&gt; resources? Say no more:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;GopherCon TR, Dec, 2021: &lt;em&gt;Friends Don’t Let Friends Hard-Code Their Secrets&lt;&#x2F;em&gt;
+&lt;ul&gt;
+&lt;li&gt;✴️ &lt;a href=&quot;https:&#x2F;&#x2F;assets.zerotohero.dev&#x2F;gophercon-tr-dec-2021&#x2F;SPIRE-gophercon-TR-Dec-2021.pdf&quot;&gt;&lt;strong&gt;Slides&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;✴️ &lt;a href=&quot;https:&#x2F;&#x2F;assets.zerotohero.dev&#x2F;gophercon-tr-dec-2021&#x2F;SPIRE-gophercon-TR-Dec-2021-src.zip&quot;&gt;&lt;strong&gt;Source Code&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Here is a video recording of the demo we made too:&lt;&#x2F;p&gt;
+&lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;655594498?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
+    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+    title=&quot;mTLS Using Spire Under Three Minutes&quot;&gt;&lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;mTLS Using Spire Under Three Minutes&lt;&#x2F;p&gt;
+&lt;p&gt;Make sure you watch the longer video below, and read the rest of the article
+too.&lt;&#x2F;p&gt;
+&lt;p&gt;Enjoy, and may the source be with you 🦄.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;⚠️ Important ⚠️&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;If you are new to &lt;a href=&quot;https:&#x2F;&#x2F;spiffe.io&#x2F;&quot;&gt;&lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; and
+&lt;a href=&quot;https:&#x2F;&#x2F;spiffe.io&#x2F;downloads&#x2F;&quot;&gt;&lt;strong&gt;SPIRE&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, &lt;strong&gt;read the rest of the article
+first&lt;&#x2F;strong&gt; before watching the video.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
+&lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;623755802?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
+    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+    title=&quot;Setting Up SPIRE on EKS in Less Than Ten Minutes&quot;&gt;&lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;Setting Up SPIRE on EKS in Less Than Ten Minutes&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;&#x2F;h2&gt;
+&lt;p&gt;This article will look at what &lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt; and &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt; are. Then, we’ll explore
+why managing identities and &lt;strong&gt;Trust&lt;&#x2F;strong&gt; at scale is a tough challenge and how to
+solve it in a repeatable, scalable, and platform-agnostic way.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2021&amp;#x2F;10&amp;#x2F;spiffe-spire-logo-small.png&quot; alt=&quot;SPIFFE and SPIRE Logos&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;SPIFFE and SPIRE Logos&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;In the video that accompanies this article, you’ll see how you can configure
+&lt;strong&gt;SPIRE&lt;&#x2F;strong&gt; on an &lt;strong&gt;AWS EKS&lt;&#x2F;strong&gt; Kubernetes cluster. Then we’ll ensure that it can
+fetch &lt;strong&gt;SPIFFE ID&lt;&#x2F;strong&gt; documents (&lt;em&gt;or &lt;strong&gt;SVID&lt;&#x2F;strong&gt;s&lt;&#x2F;em&gt;) from the &lt;strong&gt;SPIRE Server&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;SVID&lt;&#x2F;strong&gt;s, which stand for &lt;em&gt;SPIFFE verifiable identity document&lt;&#x2F;em&gt;, are
+specially-crafted &lt;strong&gt;X.509 Certificates&lt;&#x2F;strong&gt; that the &lt;strong&gt;Workloads&lt;&#x2F;strong&gt; can use to
+authenticate with each other.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;**SVIDs Rotate Automatically&lt;&#x2F;p&gt;
+&lt;p&gt;SVID**s are short-lived, their lifetime is 1 hour by default, and they are
+renewed every 30 minutes so that you don’t run out of SVIDs due to TTL.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;But before going any further, it’s better to clarify all this buzzword bingo—I
+mean, what is a “&lt;strong&gt;workload&lt;&#x2F;strong&gt;”?—what the heck is and &lt;strong&gt;SVID&lt;&#x2F;strong&gt;? Why do we even
+need it? Can we eat it 😁?&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-is-a-workload&quot;&gt;What is a Workload?&lt;&#x2F;h2&gt;
+&lt;p&gt;Let’s start with something familiar: The &lt;strong&gt;workload&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;A &lt;strong&gt;workload&lt;&#x2F;strong&gt;, in the context of &lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt; and &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt;, is anything that
+does a computation.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Portable and Platform-Agnostic&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;In Cloud-Native terms, a &lt;strong&gt;workload&lt;&#x2F;strong&gt; is an integrated stack of application,
+middleware, and operating system that accomplishes a computing task. A workload
+is &lt;strong&gt;portable&lt;&#x2F;strong&gt; and &lt;strong&gt;platform-agnostic&lt;&#x2F;strong&gt;. A workload, or a collection of
+workloads makes up a &lt;strong&gt;business service&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Let us take the project that we have been developing so far, for example. In
+that case, the &lt;strong&gt;idm&lt;&#x2F;strong&gt;, &lt;strong&gt;crypto&lt;&#x2F;strong&gt;, &lt;strong&gt;mailer&lt;&#x2F;strong&gt;, &lt;strong&gt;questions&lt;&#x2F;strong&gt;, and &lt;strong&gt;store&lt;&#x2F;strong&gt;
+pods that expose RESTful APIs in our Kubernetes cluster are all &lt;strong&gt;workload&lt;&#x2F;strong&gt;s.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;➜  ~ kubectl get po
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;NAME                         READY   STATUS    RESTARTS   AGE
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;client-649db6b744-g85wb      1&#x2F;1     Running   0          23d
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;crypto-66d75ccdbf-k2khl      1&#x2F;1     Running   0          31d
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;idm-b9497f654-r7qg6          1&#x2F;1     Running   0          31d
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;mailer-6d5c745b87-nz9dt      1&#x2F;1     Running   0          31d
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;questions-67d5559dd9-dglc6   1&#x2F;1     Running   0          31d
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;store-74bd85799b-w5xx9       1&#x2F;1     Running   0          31d
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Pods in our FizzBuzz Pro production cluster.&lt;&#x2F;p&gt;
+&lt;p&gt;Workloads will often need to communicate; they must send API requests to
+different downstream workloads and receive API responses.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2021&amp;#x2F;10&amp;#x2F;Screen-Shot-2021-10-09-at-7.27.39-AM.png&quot; alt=&quot;FizzBuzz Pro email verification flow.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;FizzBuzz Pro email verification flow.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;In the above sequence diagram, the &lt;strong&gt;idm&lt;&#x2F;strong&gt; workload talks to the &lt;strong&gt;crypto&lt;&#x2F;strong&gt;
+workload to get a verification token. Then, the &lt;strong&gt;idm&lt;&#x2F;strong&gt; workload talks to the *
+&lt;em&gt;mailer&lt;&#x2F;em&gt;* workload to relay that token in an email message.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Workload == Service&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;One more thing before I move further: In this article, and also in the video
+that accompanies this article, I use the terms &lt;strong&gt;workloads&lt;&#x2F;strong&gt; and &lt;strong&gt;services&lt;&#x2F;strong&gt;
+interchangeably. Our microservices &lt;strong&gt;are&lt;&#x2F;strong&gt; our workloads, don’t get confused.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Within the context of this article, a &lt;strong&gt;workload&lt;&#x2F;strong&gt; or &lt;strong&gt;service&lt;&#x2F;strong&gt; is a process
+that lives on a physical or virtual machine and does some form of meaningful
+computation. Workloads often communicate and exchange information through
+protocols like &lt;strong&gt;RESTful API&lt;&#x2F;strong&gt;s, &lt;strong&gt;protocol buffers&lt;&#x2F;strong&gt;, &lt;strong&gt;domain sockets&lt;&#x2F;strong&gt;, or
+other inter-process communication mechanisms.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;hope-is-not-a-security-posture&quot;&gt;“&lt;em&gt;Hope&lt;&#x2F;em&gt;” Is Not a Security Posture&lt;&#x2F;h2&gt;
+&lt;p&gt;The problem is, how do we &lt;strong&gt;secure&lt;&#x2F;strong&gt; this communication channel between the
+workloads that we have?&lt;&#x2F;p&gt;
+&lt;p&gt;One way to take care of this is to create a large enough &lt;strong&gt;trust boundary&lt;&#x2F;strong&gt; to
+know that the network is trusted. Then you &lt;strong&gt;hope&lt;&#x2F;strong&gt; no malicious parties can get
+inside this secured zone to attack your services.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2021&amp;#x2F;10&amp;#x2F;network.png&quot; alt=&quot;A subset of FizzBuzz Pro microservices&amp;#x27; network boundaries.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;A subset of FizzBuzz Pro microservices&amp;#x27; network boundaries.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;If we look into the above network boundary diagram, the &lt;strong&gt;mailer&lt;&#x2F;strong&gt; and **crypto
+** services are inside a private network; they don’t expose any public APIs. We
+&lt;strong&gt;hope&lt;&#x2F;strong&gt; this could be enough to secure them.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Hope&lt;&#x2F;strong&gt; is not the best strategy in terms of hardening your security posture. I
+won’t dive into too much detail in this article, and there are so many ways *
+&lt;em&gt;hope&lt;&#x2F;em&gt;* as a security strategy can go wrong.&lt;&#x2F;p&gt;
+&lt;p&gt;To give a single example, though, assume we have another pod here (&lt;em&gt;see the
+diagram below&lt;&#x2F;em&gt;). This pod is a &lt;strong&gt;web-ui&lt;&#x2F;strong&gt; pod that has nothing to do with mailer
+and crypto. Therefore, it should not know about these services and not care that
+they exist at all.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2021&amp;#x2F;10&amp;#x2F;Screen-Shot-2021-10-09-at-8.11.10-AM.png&quot; alt=&quot;A brand new web UI pod, reaching larger parts of the network than it should.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;A brand new web UI pod, reaching larger parts of the network than it should.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;Can you &lt;strong&gt;hope&lt;&#x2F;strong&gt; that this service will not start talking to the crypto service,
+generate random tokens? Can you ensure there isn’t a vulnerability in a
+dependency that it uses? How about &lt;em&gt;a dependency of a dependency of a
+dependency… 🐢&lt;&#x2F;em&gt;? Can you be sure that the code is free of &lt;em&gt;logic errors&lt;&#x2F;em&gt;? Can
+you be sure that the pod will not start acting weirdly all of a sudden?&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2021&amp;#x2F;10&amp;#x2F;code-reviews.jpeg&quot; alt=&quot;This is why code reviews are a good thing.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;This is why code reviews are a good thing.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;Can you &lt;strong&gt;hope&lt;&#x2F;strong&gt; that nothing like this could happen?&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Hope&lt;&#x2F;strong&gt; is &lt;strong&gt;not&lt;&#x2F;strong&gt; a strategy. Instead, it would be best if you hardened the
+communication between these workloads. That way, only the intended parties could
+talk to each other. No one else in the network could manipulate this
+communication.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;zero-trust&quot;&gt;Zero Trust&lt;&#x2F;h2&gt;
+&lt;p&gt;That’s where the concept of &lt;strong&gt;Zero Trust&lt;&#x2F;strong&gt; comes into play. Again, you can learn
+more about it in the &lt;strong&gt;References and Further Reading&lt;&#x2F;strong&gt; section at the end of
+this article, but in essence, &lt;strong&gt;Zero Trust&lt;&#x2F;strong&gt; means that &lt;em&gt;you cannot trust the
+network&lt;&#x2F;em&gt;. Therefore, you should assume that your network is insecure and is
+breached by default.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Zero Trust&lt;&#x2F;strong&gt; is a network security model based on a strict identity
+verification process. The &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Zero_trust_security_model&quot;&gt;&lt;em&gt;&lt;strong&gt;Zero Trust&lt;&#x2F;strong&gt; Security
+Model&lt;&#x2F;em&gt;&lt;&#x2F;a&gt; dictates that
+only authenticated and authorized workloads can talk to other &lt;strong&gt;authenticated&lt;&#x2F;strong&gt;
+and &lt;strong&gt;authorized&lt;&#x2F;strong&gt; workloads.&lt;&#x2F;p&gt;
+&lt;p&gt;Here are some of the key motivations behind the &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Zero_trust_security_model&quot;&gt;&lt;em&gt;&lt;strong&gt;Zero Trust&lt;&#x2F;strong&gt; Security
+Model&lt;&#x2F;em&gt;&lt;&#x2F;a&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Users, devices, applications, and data are moving outside trust boundaries all
+the time. Now it’s near impossible to do perimeter-based protection.&lt;&#x2F;li&gt;
+&lt;li&gt;“&lt;em&gt;Trust but verify&lt;&#x2F;em&gt;” is no longer an option, as targeted, advanced threats
+constantly move inside the corporate perimeter.&lt;&#x2F;li&gt;
+&lt;li&gt;The network has become a complex mess with the introduction of cloud apps and
+the Internet of Things. The increased risk is not compatible with traditional
+access-control-list-oriented network security models.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;the-cia-triad-man-in-suit&quot;&gt;The CIA Triad 🕴&lt;&#x2F;h2&gt;
+&lt;p&gt;Then, the question reduces to “&lt;em&gt;how do we ensure workload-to-workload
+communication where the network is untrustworthy?&lt;&#x2F;em&gt;”.&lt;&#x2F;p&gt;
+&lt;p&gt;So how do we secure service-to-service communication then?&lt;&#x2F;p&gt;
+&lt;p&gt;This puzzle has three parts to solve, also known as the &lt;strong&gt;CIA&lt;&#x2F;strong&gt; Triad: *
+&lt;em&gt;Confidentiality&lt;&#x2F;em&gt;*, &lt;strong&gt;Authenticity&lt;&#x2F;strong&gt;, and &lt;strong&gt;Integrity&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Confidentiality&lt;&#x2F;strong&gt;: The workload-to-workload communication should be on a
+secure channel that no one else can listen to.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Integrity&lt;&#x2F;strong&gt;: The message that is being sent from one workload has not been
+tampered with. The data is complete, accurate, and hasn’t been altered by anyone
+else.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Authenticity&lt;&#x2F;strong&gt;: The sender of the data is the workload who claims it is. It is
+not some other service that’s trying to impersonate the original service.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2021&amp;#x2F;10&amp;#x2F;cia-triad.png&quot; alt=&quot;The CIA triad.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;The CIA triad.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;x-509-digital-certificates&quot;&gt;X.509 Digital Certificates&lt;&#x2F;h2&gt;
+&lt;p&gt;There are well-established, industry-standard ways of solving the puzzle. We can
+establish &lt;strong&gt;confidentiality&lt;&#x2F;strong&gt;, verify &lt;strong&gt;integrity&lt;&#x2F;strong&gt;, and ensure &lt;strong&gt;authenticity&lt;&#x2F;strong&gt;
+in an industry-standard way.&lt;&#x2F;p&gt;
+&lt;p&gt;The most common way is to use asymmetric cryptography and &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;X.509&quot;&gt;&lt;strong&gt;X.509 Digital
+Certificates&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;. Again, I’m not going into
+too much detail about certificates and certificate chains. Check out the
+reference material at the end of this article for a deeper drill-down on the
+subject matter.&lt;&#x2F;p&gt;
+&lt;p&gt;For the context of this article, we need to know that when two workloads have
+each other’s &lt;strong&gt;X.509&lt;&#x2F;strong&gt; public keys, they can establish a secure communication
+channel. Then, they can talk to each other through this secure communication
+channel.&lt;&#x2F;p&gt;
+&lt;p&gt;Moreover, they can prove the message’s authenticity and integrity by digitally
+signing the message with their private key.&lt;&#x2F;p&gt;
+&lt;p&gt;Finally, they can ensure the confidentiality of the communication channel by
+encrypting the payload with the receiver’s public key.&lt;&#x2F;p&gt;
+&lt;p&gt;How these mechanisms work varies by the algorithm and implementation, and it’s a
+bit more involved than the quick summary outlined above. Suppose we sacrifice a
+little bit of rigor for clarity. In that case, we can say that when you have
+your &lt;em&gt;Certificates of Trust&lt;&#x2F;em&gt;, you can ensure &lt;strong&gt;confidentiality&lt;&#x2F;strong&gt;, &lt;strong&gt;integrity&lt;&#x2F;strong&gt;,
+and &lt;strong&gt;authenticity&lt;&#x2F;strong&gt; in your &lt;strong&gt;workload-to-workload communications&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;meet-spiffe&quot;&gt;Meet &lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;The following outstanding question is: “&lt;em&gt;Since they are so helpful, how do we
+create these &lt;strong&gt;X.509&lt;&#x2F;strong&gt; Certificates?&lt;&#x2F;em&gt;”&lt;&#x2F;p&gt;
+&lt;p&gt;Other questions one might wonder are:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Since these certificates ensure secure service-to-service communication, it’s
+a good idea to rotate them frequently. How do we do that?&lt;&#x2F;li&gt;
+&lt;li&gt;And also, it’s a good idea to invalidate them if some of these certificates
+leak. How can we do it?&lt;&#x2F;li&gt;
+&lt;li&gt;Also, how do we optimize and automate the process the certificate rotation and
+expiration?&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Why automate? Because &lt;strong&gt;security and humans do not mix well together&lt;&#x2F;strong&gt;. So we
+better &lt;strong&gt;automate&lt;&#x2F;strong&gt; this entire certificate generation, rotation, revocation,
+and invalidation process &lt;strong&gt;without needing any human intervention&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;That’s where &lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt; comes into play.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt;, &lt;em&gt;the Secure Production Identity Framework For Everyone&lt;&#x2F;em&gt;, provides a
+&lt;strong&gt;secure identity&lt;&#x2F;strong&gt;, in the form of a specially crafted &lt;strong&gt;x.509 certificate&lt;&#x2F;strong&gt;,
+to every workload in your production environment.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Short-Lived Keys&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;The heart of the &lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt; specifications is the one that defines short-lived
+cryptographic identity documents – called &lt;strong&gt;SVID&lt;&#x2F;strong&gt;s via a simple API. Workloads
+can then use these identity documents when authenticating to other workloads.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt; is a set of &lt;strong&gt;open-source specifications&lt;&#x2F;strong&gt; for a framework capable of
+&lt;strong&gt;bootstrapping&lt;&#x2F;strong&gt; and issuing &lt;strong&gt;identity&lt;&#x2F;strong&gt; to services anywhere without
+depending on any specific platform.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;There Are&lt;&#x2F;strong&gt; &lt;strong&gt;JWT SVIDs, Too&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;There are other ways &lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt; provides identity documents too, but in this
+article, we’ll talk about &lt;strong&gt;X.509&lt;&#x2F;strong&gt; identities only. More specifically, &lt;strong&gt;X.509
+SPIFFE Verifiable Identity documents&lt;&#x2F;strong&gt; or &lt;strong&gt;SVIDs&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;spiffe-key-elements&quot;&gt;&lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt; Key Elements&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt; has the following key components:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;The &lt;strong&gt;SPIFFE ID&lt;&#x2F;strong&gt;, how a software service’s &lt;strong&gt;name&lt;&#x2F;strong&gt; (&lt;em&gt;or &lt;strong&gt;identity&lt;&#x2F;strong&gt;&lt;&#x2F;em&gt;) is
+represented.&lt;&#x2F;li&gt;
+&lt;li&gt;The &lt;strong&gt;SPIFFE Verifiable Identity Document&lt;&#x2F;strong&gt; (&lt;strong&gt;&lt;em&gt;SVID&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;), a cryptographically
+verifiable document used to prove a service’s identity to a peer.&lt;&#x2F;li&gt;
+&lt;li&gt;The &lt;strong&gt;SPIFFE Workload API&lt;&#x2F;strong&gt;, a simple node-local API that services use to
+obtain their identities without the need for authentication.&lt;&#x2F;li&gt;
+&lt;li&gt;The &lt;strong&gt;SPIFFE Trust Bundle&lt;&#x2F;strong&gt;, a format for representing the collection of
+public keys in use by a given &lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt; issuing authority.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;SPIFFE Federation&lt;&#x2F;strong&gt;, a simple mechanism by which &lt;em&gt;&lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt; Trust Bundles&lt;&#x2F;em&gt;
+can be shared.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;benefits-of-using-spiffe&quot;&gt;Benefits of Using &lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;By using &lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt;, you won’t need to maintain application-level authentication
+information.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;No Tokens, No Problem&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Think about it. That’s something &lt;strong&gt;BIG&lt;&#x2F;strong&gt;:&lt;br &#x2F;&gt;
+You won’t need a unique secret service key or a special token for your
+workload to prove its identity anymore.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;In addition, &lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt; is a platform-agnostic standard, so you avoid vendor
+lock-in by using it across your clusters.&lt;&#x2F;p&gt;
+&lt;p&gt;And since &lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt; is an open standard, you can interact with any application
+or service that supports &lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt; without having to modify your codebase or
+your application configuration.&lt;&#x2F;p&gt;
+&lt;p&gt;Moreover, &lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt; solves the automating the credential creation problem that
+we mentioned before. It is an open standard that establishes how these &lt;strong&gt;SVID
+x.509 Certificates&lt;&#x2F;strong&gt; are &lt;strong&gt;created&lt;&#x2F;strong&gt;, &lt;strong&gt;defined&lt;&#x2F;strong&gt;, &lt;strong&gt;rotated&lt;&#x2F;strong&gt;, &lt;strong&gt;verified&lt;&#x2F;strong&gt;,
+and &lt;strong&gt;invalidated&lt;&#x2F;strong&gt; automatically without needing human intervention.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Caching and Performance&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;The workloads periodically receive updated identity documents (i.e., &lt;strong&gt;SVID&lt;&#x2F;strong&gt;
+s) as certificates expire or the configuration changes. The &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt; agent *
+&lt;em&gt;preloads&lt;&#x2F;em&gt;* the identities for all workloads it may host. This preload operation
+minimizes the impact of server downtime on the availability of the Workload API.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;In addition to all these, you won’t have to assume that your network is secure
+because the &lt;strong&gt;SVID&lt;&#x2F;strong&gt;s will ensure the security and integrity of
+service-to-service communication that the services have.&lt;&#x2F;p&gt;
+&lt;p&gt;That’s a great advantage because maintaining network access control list and
+firewall rules is &lt;strong&gt;cumbersome&lt;&#x2F;strong&gt;. It is prone to &lt;strong&gt;human errors&lt;&#x2F;strong&gt;,
+time-consuming, and &lt;strong&gt;impractical&lt;&#x2F;strong&gt; when your network boundaries and the network
+overlays you use change all the time.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;hello-spire&quot;&gt;Hello, &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Okay, that was &lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt;. But, what is
+&lt;a href=&quot;https:&#x2F;&#x2F;spiffe.io&#x2F;docs&#x2F;latest&#x2F;spire-about&#x2F;spire-concepts&#x2F;&quot;&gt;&lt;strong&gt;SPIRE&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;?&lt;&#x2F;p&gt;
+&lt;p&gt;{{img(
+src=“&#x2F;images&#x2F;2021&#x2F;10&#x2F;keymaker.png”,
+alt=“SPIFFE defines how to make keys; SPIRE is the key maker.”
+)}&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;About SPIRE&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;If &lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt; is a set of standards, what implements those standards? That’s
+where &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt; comes into play.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;SPIRE&lt;&#x2F;strong&gt; is a production-ready reference implementation of &lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;SPIRE&lt;&#x2F;strong&gt; does its job by &lt;a href=&quot;https:&#x2F;&#x2F;spiffe.io&#x2F;docs&#x2F;latest&#x2F;spire-about&#x2F;spire-concepts&#x2F;#workload-attestation&quot;&gt;performing &lt;strong&gt;node&lt;&#x2F;strong&gt; and &lt;strong&gt;workload&lt;&#x2F;strong&gt;
+&lt;strong&gt;attestation&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.
+This way, it reliably and securely identifies workloads and issues them &lt;strong&gt;SVID&lt;&#x2F;strong&gt;
+s (&lt;em&gt;SPIFFE Verfifiables IDs&lt;&#x2F;em&gt;), which are nothing but specialized &lt;em&gt;X.509
+Certificates&lt;&#x2F;em&gt;. The workloads, then, can use them to prove their identity.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2021&amp;#x2F;10&amp;#x2F;attestation.png&quot; alt=&quot;Workload attestation.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Workload attestation.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;You’ll see an example of how this attestation flow works in the video I’ve added
+to the beginning of this article.&lt;&#x2F;p&gt;
+&lt;p&gt;If you want a quick summary, workload attestation is a process where the
+&lt;strong&gt;SPIRE&lt;&#x2F;strong&gt; agent relies on locally trusted workload attributes. These attributes
+can be as process&#x2F;group ID or container runtime metadata. Some examples of these
+metadata include the pod names, namespaces, service accounts, and the like.&lt;&#x2F;p&gt;
+&lt;p&gt;After all, if our cluster’s &lt;strong&gt;Kubernetes API&lt;&#x2F;strong&gt; can &lt;strong&gt;attest&lt;&#x2F;strong&gt; that our workload
+pod has a particular &lt;strong&gt;name&lt;&#x2F;strong&gt;, with certain &lt;strong&gt;tags&lt;&#x2F;strong&gt;, managed by a specific *
+&lt;em&gt;service account&lt;&#x2F;em&gt;*, in a given &lt;strong&gt;namespace&lt;&#x2F;strong&gt;, in a known &lt;strong&gt;cluster&lt;&#x2F;strong&gt;… that is
+enough information to identify this workload.&lt;&#x2F;p&gt;
+&lt;p&gt;This way, the workload will not need to provide a secret key to prove its
+authenticity. Instead, we shift the trust and responsibility of establishing the
+workload’s authenticity to the orchestration framework (&lt;em&gt;&lt;strong&gt;Kubernetes&lt;&#x2F;strong&gt; in this
+case&lt;&#x2F;em&gt;). By talking to Kubernetes APIs, we can verify, with confidence, that this
+workload pod is what it claims it is.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Node and Workload Registration&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;One thing that I’ve been conveniently hiding so far, is, you have to *
+&lt;em&gt;register&lt;&#x2F;em&gt;* nodes and workloads before you can attest them. For the interested,
+this document outlines the details of
+&lt;a href=&quot;https:&#x2F;&#x2F;spiffe.io&#x2F;docs&#x2F;latest&#x2F;deploying&#x2F;registering&#x2F;&quot;&gt;how workloads are registered with &lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt; IDs in the
+&lt;strong&gt;SPIRE&lt;&#x2F;strong&gt; server&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;detectivefemale-spire-agents&quot;&gt;🕵️‍♀️ SPIRE Agents&lt;&#x2F;h2&gt;
+&lt;p&gt;There is a single &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt; &lt;strong&gt;Agent&lt;&#x2F;strong&gt; on each &lt;strong&gt;Node&lt;&#x2F;strong&gt;. The agents talk to the
+&lt;strong&gt;SPIRE Server&lt;&#x2F;strong&gt;. Multiple workloads on the node talk to the same agent using the
+&lt;strong&gt;SPIFFE Workload API&lt;&#x2F;strong&gt; to receive their &lt;strong&gt;SVID&lt;&#x2F;strong&gt;s.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2021&amp;#x2F;10&amp;#x2F;server_and_agent.png&quot; alt=&quot;SPIRE Server and Agent architecture.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;SPIRE Server and Agent architecture.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;registering-a-workload&quot;&gt;Registering a Workload&lt;&#x2F;h2&gt;
+&lt;p&gt;For &lt;strong&gt;workloads&lt;&#x2F;strong&gt; to receive &lt;strong&gt;SVID&lt;&#x2F;strong&gt;s, they need to be &lt;strong&gt;registered&lt;&#x2F;strong&gt; first.&lt;&#x2F;p&gt;
+&lt;p&gt;There are several ways to register a workload: Either an operator registers your
+workloads to the &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt; server, and then the operator manually provisions the
+workloads. Or you can automate this step entirely in your &lt;strong&gt;CI Pipeline&lt;&#x2F;strong&gt;: Your
+&lt;strong&gt;CI&#x2F;CD&lt;&#x2F;strong&gt; orchestration tool can &lt;strong&gt;register&lt;&#x2F;strong&gt; the workloads to the &lt;strong&gt;SPIRE
+Server&lt;&#x2F;strong&gt; and &lt;strong&gt;deploy&lt;&#x2F;strong&gt; them to your cluster.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;You Define Your Attestors During Registration&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;The &lt;strong&gt;Workload Registration&lt;&#x2F;strong&gt; step is also where you specify your workload
+attestors to the SPIRE server. Then the &lt;strong&gt;SPIRE Agent&lt;&#x2F;strong&gt; will use those attestors
+to assign an identity to your workload and assign them &lt;strong&gt;SVID&lt;&#x2F;strong&gt;s.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;After the workoad registration is complete, workloads will bind to the spire
+agent’s &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Unix_domain_socket&quot;&gt;&lt;strong&gt;domain socket&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+and regularly fetch &lt;strong&gt;SVID&lt;&#x2F;strong&gt;s.&lt;&#x2F;p&gt;
+&lt;p&gt;And that’s all about it. After a successful registration, &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt; takes care
+of the certificate initialization, assignment, revocation, and rotation problems
+when everything is set up, each of which is hard to solve individually.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;go-spiffe&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;spiffe&#x2F;go-spiffe&quot;&gt;&lt;strong&gt;go-spiffe&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; is a library that can
+make the “fetching &lt;strong&gt;SVID&lt;&#x2F;strong&gt;s from the &lt;strong&gt;SPIRE Agent&lt;&#x2F;strong&gt;” part much painless
+(&lt;em&gt;among other abstractions&lt;&#x2F;em&gt;).&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;turtle-secret-zero&quot;&gt;🐢 Secret Zero&lt;&#x2F;h2&gt;
+&lt;p&gt;What makes &lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt; stand out is that it solves what’s called the
+“&lt;strong&gt;&lt;em&gt;secret zero&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;” problem. In a nutshell, the problem statement goes as follows:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Enabling access control to service requires a secret such as an API key or
+password.&lt;&#x2F;li&gt;
+&lt;li&gt;That key or password needs to be protected, so you encrypt the key.&lt;&#x2F;li&gt;
+&lt;li&gt;But then you have to watch the decryption key that you’ll use to get your
+service key back.&lt;&#x2F;li&gt;
+&lt;li&gt;So you put the decryption key to a Keystore.&lt;&#x2F;li&gt;
+&lt;li&gt;But then you’ll have to protect the Keystore’s master key.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;And this goes on and on. Ultimately, protecting access to one secret results in
+a new secret you need to save.&lt;&#x2F;p&gt;
+&lt;p&gt;Which begs the following question: “&lt;em&gt;Who protects the &lt;strong&gt;secret zero&lt;&#x2F;strong&gt;—the
+ultimate secret—that gives the keys to the entire kingdom?&lt;&#x2F;em&gt;”.&lt;&#x2F;p&gt;
+&lt;p&gt;Rest assured, we’ll get there. Just 🐻 with me for a while.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;turtle-it-s-secrets-all-the-way-down&quot;&gt;🐢 It’s Secrets all the Way Down&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;strong&gt;Identity&lt;&#x2F;strong&gt; and &lt;strong&gt;Authentication&lt;&#x2F;strong&gt; go hand-in-hand. Claiming an identity is
+useless unless you can &lt;strong&gt;authenticate&lt;&#x2F;strong&gt; that identity and &lt;strong&gt;prove&lt;&#x2F;strong&gt; with
+confidence that the identity is indeed what it claims to be.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2021&amp;#x2F;10&amp;#x2F;turtles.jpeg&quot; alt=&quot;Turtles all the way down.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Turtles all the way down.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;One way to authenticate an identity is to provide a secret key or a password
+along with the identity. Then a second independent identity management service
+can verify this identity. In certain other implementations, services can use
+hard-coded secret service keys to identify themselves.&lt;&#x2F;p&gt;
+&lt;p&gt;In either case, to prove the identity, you need a &lt;strong&gt;secret&lt;&#x2F;strong&gt;. But this secret is
+&lt;strong&gt;vital&lt;&#x2F;strong&gt; because if an attacker gets a hold of this secret, they can
+authenticate as the service holding the secret.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Do Not Hard-Code Your Secrets&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;That’s why hard-coding the secret inside the source code or baking it on a
+virtual machine image such as an AWS AMI is not a good idea.&lt;&#x2F;p&gt;
+&lt;p&gt;Also, although the &lt;a href=&quot;https:&#x2F;&#x2F;12factor.net&#x2F;&quot;&gt;Twelve Factor App Methodology&lt;&#x2F;a&gt;
+encourages it, storing secrets in the workload as environment variables can
+cause security problems (especially, in form of leaked environment variables
+inside the aggregated log streams)—Apps should ideally keep their secrets in
+&lt;strong&gt;temporary&lt;&#x2F;strong&gt; memory-mounted volumes.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;A better way is to put the secret into a &lt;strong&gt;Keystore&lt;&#x2F;strong&gt;, let the service
+authenticate with the secret store, and let the service get it from the key
+store.&lt;&#x2F;p&gt;
+&lt;p&gt;A third-party orchestration system can authenticate with the Keystore by
+unlocking the Keystore using the Keystore’s master key. Then it can fetch the
+secret key that the service will use. Then inject it as a read-only, in-memory
+configuration volume to the service and then lock the Keystore so that no one
+else can reach it.&lt;&#x2F;p&gt;
+&lt;p&gt;But then, how do we protect the Keystore’s master key? Because if an evil
+attacker gets it from our orchestration system somehow, then we are at square
+zero; they will get all the keys to all the services.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.vaultproject.io&#x2F;&quot;&gt;HashiCorp &lt;strong&gt;Vault&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, for example, attempts to
+solve this problem using
+&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Shamir%27s_Secret_Sharing&quot;&gt;&lt;strong&gt;Shamir’s Secret Sharing Algorithm&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Vault&lt;&#x2F;strong&gt; splits the key into three or more parts; if you don’t provide either
+all the parts or the majority of the parts (&lt;em&gt;depending on how you set up Vault&lt;&#x2F;em&gt;),
+Vault will not unlock.&lt;&#x2F;p&gt;
+&lt;p&gt;So it makes getting the key harder, but still, it’s just pushing the problem one
+level down, not entirely solving it.&lt;&#x2F;p&gt;
+&lt;p&gt;No matter how hard it is, if you get the three master keys from wherever they
+are stored, you can generate what Vault calls the “&lt;strong&gt;&lt;em&gt;unseal key&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;.” Then, you
+gain access to the entire kingdom again.&lt;&#x2F;p&gt;
+&lt;p&gt;To add more security, you can use Vault’s “&lt;em&gt;&lt;strong&gt;auto unseal&lt;&#x2F;strong&gt;&lt;&#x2F;em&gt;” feature and
+delegate the providing and rotating of the unseal key to a &lt;em&gt;bare metal&lt;&#x2F;em&gt; or
+*cloud_ &lt;strong&gt;HSM&lt;&#x2F;strong&gt;. But now, you’ll need to protect the HSM’s master key because
+reaching it will give access to Vault’s unseal key, which will provide access to
+all of your service secret keys.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;turtle-solving-the-bottom-turtle&quot;&gt;🐢 Solving the Bottom Turtle&lt;&#x2F;h2&gt;
+&lt;p&gt;Do you see the issue here?&lt;&#x2F;p&gt;
+&lt;p&gt;Managing secrets at scale requires effective &lt;strong&gt;access control&lt;&#x2F;strong&gt;; implementing
+access control requires &lt;strong&gt;validating identity&lt;&#x2F;strong&gt;. That’s because without
+providing a valid identity, it will be “&lt;em&gt;public access&lt;&#x2F;em&gt;,” which defeats the
+entire purpose of using secret keys in the first place. Yet, proving identity
+requires possession of &lt;strong&gt;yet another secret&lt;&#x2F;strong&gt;—That’s akin to stacking one
+turtle atop another. It’s &lt;strong&gt;turtles all the way down&lt;&#x2F;strong&gt; 🐢.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2021&amp;#x2F;10&amp;#x2F;turtle-1.jpeg&quot; alt=&quot;A turtle in the bottom of the ocean (a &amp;#x27;bottom turtle&amp;#x27;?).&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;A turtle in the bottom of the ocean (a &amp;#x27;bottom turtle&amp;#x27;?).&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🐢 &lt;strong&gt;Turtles All the Way Down&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;em&gt;“&lt;strong&gt;Turtles all the way down&lt;&#x2F;strong&gt;”&lt;&#x2F;em&gt; is an expression of the problem of infinite
+recursion. The saying alludes to the mythological idea of a World Turtle that
+supports a flat earth on its back. It suggests that this turtle rests on the
+back of an even larger turtle, which itself is part of a column of increasingly
+large turtles that continues ad infinitum.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Protecting one secret requires coming up with some way to protect another
+secret, which then requires protecting that secret, and so on.&lt;&#x2F;p&gt;
+&lt;p&gt;That’s why improperly designed secrets management solutions have a master key
+that unlocks everything. All a hacker needs to do is either steal or guess this
+one master password to access everything. This master password is
+&lt;strong&gt;secret zero&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;This approach is equivalent to locking all of your keys in a drawer and then
+putting the key of the drawer under the flower pot in your backyard—don’t do
+that 🙃.&lt;&#x2F;p&gt;
+&lt;p&gt;To break this loop, we need to find a &lt;strong&gt;&lt;em&gt;bottom turtle&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;, that is, some secret
+that provides access to the rest of the secrets we need for authentication and
+access control.&lt;&#x2F;p&gt;
+&lt;p&gt;The next section is about how to find the &lt;strong&gt;bottom turtle&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-shift-of-trust&quot;&gt;The Shift of Trust&lt;&#x2F;h2&gt;
+&lt;p&gt;A better solution to &lt;strong&gt;secret zero&lt;&#x2F;strong&gt; is a tad counterintuitive:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;What If I Told You…&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+Instead of securing the secret zero, what if we didn’t use any secret at all?&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;As it happens, we can avoid the &lt;strong&gt;secret zero&lt;&#x2F;strong&gt; problems entirely by leveraging
+&lt;strong&gt;authenticators&lt;&#x2F;strong&gt; that work with the &lt;strong&gt;underlying infrastructure&lt;&#x2F;strong&gt; to
+authenticate the access to your secrets.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2021&amp;#x2F;10&amp;#x2F;Screen-Shot-2021-10-09-at-8.49.47-AM.png&quot; alt=&quot;No secrets, no problem.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;No secrets, no problem.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;In &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt;, this authentication process is called &lt;strong&gt;attestation&lt;&#x2F;strong&gt;. You
+&lt;strong&gt;attest&lt;&#x2F;strong&gt; both the &lt;strong&gt;nodes&lt;&#x2F;strong&gt; and also the &lt;strong&gt;workloads&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;**What are Nodes?&lt;&#x2F;p&gt;
+&lt;p&gt;Nodes** are virtual or physical machines, and &lt;strong&gt;workloads&lt;&#x2F;strong&gt; are processes
+running on these nodes either directly or inside a container in a pod.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;To verify that a workload is authorized for a particular identity,
+&lt;a href=&quot;https:&#x2F;&#x2F;spiffe.io&#x2F;docs&#x2F;latest&#x2F;spire-about&#x2F;spire-concepts&#x2F;#workload-attestation&quot;&gt;the &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt; agent performs
+&lt;strong&gt;workload attestation&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.
+During &lt;strong&gt;workload attestation&lt;&#x2F;strong&gt;, workload’s attributes are read from the kernel
+or other trusted components on the local system. Then, the &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt; agent
+matches the attributes against configured identities and provides each workload
+with all the identities for which it is authorized.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Two Workloads Can Share the Same ID&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Note that workload-identity association is a many-to-many relationship: A
+workload may be authorized for zero or more identities. Similarly, zero or more
+workloads can be associated with a single identity.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;For example, if the Kubernetes &lt;strong&gt;api-server&lt;&#x2F;strong&gt; can verify that your pod has a
+name &lt;strong&gt;idm&lt;&#x2F;strong&gt;, living inside a cluster named &lt;strong&gt;fizz-cluster&lt;&#x2F;strong&gt; using a service
+account named &lt;strong&gt;fizz-sa&lt;&#x2F;strong&gt; under a namespace &lt;strong&gt;fizz&lt;&#x2F;strong&gt;; that is adequate
+identifying information to &lt;strong&gt;prove&lt;&#x2F;strong&gt; the identity of the &lt;strong&gt;idm&lt;&#x2F;strong&gt; pod with
+confidence. So even if the pod does not provide any secret, the &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt;
+&lt;strong&gt;workload attestor&lt;&#x2F;strong&gt; plugin can verify the identity of the idm pod by talking to
+Kubernetes APIs.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Root of Trust&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;During the workload &lt;strong&gt;attestation&lt;&#x2F;strong&gt; process (&lt;em&gt;as exemplified above&lt;&#x2F;em&gt;),
+&lt;strong&gt;SPIRE&lt;&#x2F;strong&gt; establishes a &lt;strong&gt;Root of Trust&lt;&#x2F;strong&gt;. It builds an automated solution
+around workload identity. This identity then forms the foundation for all the
+interactions that require authentication and authorization.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;there-s-no-spoon&quot;&gt;There’s No Spoon&lt;&#x2F;h2&gt;
+&lt;p&gt;In other words, when you use &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt;, you shift the burden of trust from the
+Keystore to the operating system’s kernel, the cloud provider APIs, the
+orchestration framework, or to a mixture of all of these.&lt;&#x2F;p&gt;
+&lt;p&gt;It’s a good time to re-intruduce the &lt;strong&gt;&lt;em&gt;SPIRE workload attestation&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt; diagram.
+Pay attention to how the &lt;strong&gt;workload attestor&lt;&#x2F;strong&gt; uses different plugins to use *
+&lt;em&gt;kubelet&lt;&#x2F;em&gt;* for Kubernetes-native workloads, and the linux &lt;strong&gt;kernel&lt;&#x2F;strong&gt; for other
+workloads. &lt;a href=&quot;https:&#x2F;&#x2F;spiffe.io&#x2F;docs&#x2F;latest&#x2F;planning&#x2F;extending&#x2F;&quot;&gt;This &lt;strong&gt;plugin-based&lt;&#x2F;strong&gt;
+architecture&lt;&#x2F;a&gt; is one of
+the reasons why &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt; is so easy to extend.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;2021&#x2F;10&#x2F;attestation-1.png&quot; alt=&quot;SPIRE workload attestation.&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;How the &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt; workload attestation works is—at a very high&#x2F;conceptual
+level—similar to how the &lt;a href=&quot;https:&#x2F;&#x2F;docs.aws.amazon.com&#x2F;AWSEC2&#x2F;latest&#x2F;UserGuide&#x2F;ec2-instance-metadata.html&quot;&gt;&lt;em&gt;&lt;strong&gt;AWS Instance Metadata&lt;&#x2F;strong&gt;
+API&lt;&#x2F;em&gt;&lt;&#x2F;a&gt;
+works or how the instance metadata API of any other cloud provider functions.&lt;&#x2F;p&gt;
+&lt;p&gt;In a similar fashion to the &lt;em&gt;AWS Instance Metadata API&lt;&#x2F;em&gt;, the
+&lt;a href=&quot;https:&#x2F;&#x2F;spiffe.io&#x2F;docs&#x2F;latest&#x2F;spire-about&#x2F;spire-concepts&#x2F;#workload-registration&quot;&gt;&lt;strong&gt;SPIRE&lt;&#x2F;strong&gt; &lt;strong&gt;Workload API&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+does not require that a calling workload have any knowledge of its own identity
+or possess any authentication token when calling the API. Using the Instance
+Metadata API means your application does not need not co-deploy any
+authentication secrets with the workload:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;There’s no spoon&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2021&amp;#x2F;10&amp;#x2F;Screen-Shot-2021-10-09-at-9.07.00-AM.png&quot; alt=&quot;SPIRE workload attestation.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;SPIRE workload attestation.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;Unlike these other APIs, however, the &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt; Workload API is
+&lt;strong&gt;platform-agnostic&lt;&#x2F;strong&gt;. In addition, it can identify running services at the
+&lt;strong&gt;process level&lt;&#x2F;strong&gt; and &lt;strong&gt;kernel level&lt;&#x2F;strong&gt;, making it suitable for use with
+container schedulers such as &lt;strong&gt;Kubernetes&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Having learned the basics of &lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt; and &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt;, let’s look at some use
+cases from companies that use &lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt; on scale production.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;use-cases&quot;&gt;Use Cases&lt;&#x2F;h2&gt;
+&lt;p&gt;Here are some examples of real-life use cases that talk about &lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt; and
+&lt;strong&gt;SPIRE&lt;&#x2F;strong&gt; out in the wild.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=o98SFmW4akQ&quot;&gt;Using &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt; in Production at Uber&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.crowdcast.io&#x2F;e&#x2F;pin-spiffe&quot;&gt;Overcoming the identity crisis at Pinterest with &lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;youtu.be&#x2F;x642wq7lbpY&quot;&gt;10 Lessons From Migrating to &lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt; After 10 Years Of Service Identity at Square&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;youtu.be&#x2F;nZXCbiS6wfE&quot;&gt;Passport App: The role of &lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt; and &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt; in return to work solution&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;youtu.be&#x2F;vX8SS5wQuY8&quot;&gt;&lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt; at GitHub&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;youtu.be&#x2F;4pfY0uFW7yk&quot;&gt;Securing Kafka with &lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;youtu.be&#x2F;xgzQEb9hbMI?t=222&quot;&gt;Attesting Istio Workload Identities with &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;youtu.be&#x2F;xgzQEb9hbMI?t=1606&quot;&gt;Parsec and &lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=eCLTdSp4JzE&quot;&gt;Cloud-Native Identity Management&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;youtu.be&#x2F;H5IlmYmEDKk?t=2585&quot;&gt;Using &lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt; and &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt; to ensure secure communications across hybrid infrastructure services&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=1TlEO0xO8jw&amp;amp;list=PLWsNZXV-gXVY_br7I8gz9q0Fijk4DoUxG&amp;amp;index=8&amp;amp;t=0s&quot;&gt;Securing Grey Matter: &lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt;&#x2F;&lt;strong&gt;SPIRE&lt;&#x2F;strong&gt; in a Hybrid Mesh&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=TfnU1xD9EFY&quot;&gt;Building Zero Trust-based Authentication in Healthcare with &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;youtu.be&#x2F;TOjb_imYuLE&quot;&gt;Lessons Learned: Designing Scalable, PKI-based Authentication With &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt; at ByteDance&#x2F;TikTok&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;use-the-source&quot;&gt;Use The Source&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;assets.zerotohero.dev&#x2F;spire-rocks&#x2F;3092102c-18cf-4658-b918-862d93ca2ec2&#x2F;fizz-infra.zip&quot;&gt;Here’s the zip archive of the project that we’ve used in the
+demo video&lt;&#x2F;a&gt;
+(&lt;em&gt;32KB&lt;&#x2F;em&gt;). There are other manifest files that are not part of the demo. Yet, I’m
+keeping them to give a more complete view of the system that we are working
+with.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Aside&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;In the source code archive, I have not included Kubernetes Secret manifests
+for obvious reasons—also, after reading this article, who needs secrets
+anyway.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;¯\_(ツ)_&#x2F;¯&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;references-and-further-reading&quot;&gt;References and Further Reading&lt;&#x2F;h2&gt;
+&lt;p&gt;Here is some additional “&lt;em&gt;bedtime reading&lt;&#x2F;em&gt;” for those who want to dig into the
+concept further.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;kubernetes-concepts-covered-in-the-video&quot;&gt;Kubernetes Concepts Covered in the Video&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;aws.amazon.com&#x2F;eks&#x2F;&quot;&gt;Amazon Elastic Kubernetes Service (&lt;strong&gt;&lt;em&gt;EKS&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;&quot;&gt;Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;concepts&#x2F;overview&#x2F;working-with-objects&#x2F;namespaces&#x2F;&quot;&gt;&lt;strong&gt;Namespace&lt;&#x2F;strong&gt;s&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;concepts&#x2F;workloads&#x2F;controllers&#x2F;daemonset&#x2F;&quot;&gt;&lt;strong&gt;DaemonSet&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;concepts&#x2F;workloads&#x2F;controllers&#x2F;statefulset&#x2F;&quot;&gt;&lt;strong&gt;StatefulSet&lt;&#x2F;strong&gt;s&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;tasks&#x2F;configure-pod-container&#x2F;configure-service-account&#x2F;&quot;&gt;Configure &lt;strong&gt;ServiceAccount&lt;&#x2F;strong&gt;s for &lt;strong&gt;Pod&lt;&#x2F;strong&gt;s&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;reference&#x2F;access-authn-authz&#x2F;rbac&#x2F;&quot;&gt;Using &lt;strong&gt;RBAC&lt;&#x2F;strong&gt; Authorization&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;medium.com&#x2F;@hajsanad&#x2F;kubernetes-token-review-and-authentication-56e06cc55ed3&quot;&gt;Kubernetes &lt;strong&gt;Token Review API&lt;&#x2F;strong&gt; and &lt;strong&gt;Authentication&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;concepts&#x2F;configuration&#x2F;configmap&#x2F;&quot;&gt;&lt;strong&gt;ConfigMap&lt;&#x2F;strong&gt;s&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;concepts&#x2F;configuration&#x2F;secret&#x2F;&quot;&gt;&lt;strong&gt;Secret&lt;&#x2F;strong&gt;s&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;tasks&#x2F;configure-pod-container&#x2F;configure-liveness-readiness-startup-probes&#x2F;&quot;&gt;Configure &lt;strong&gt;Liveness&lt;&#x2F;strong&gt;, &lt;strong&gt;Readiness&lt;&#x2F;strong&gt;, and &lt;strong&gt;Startup&lt;&#x2F;strong&gt; Probes&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;concepts&#x2F;services-networking&#x2F;service&#x2F;&quot;&gt;&lt;strong&gt;Service&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;concepts&#x2F;workloads&#x2F;controllers&#x2F;deployment&#x2F;&quot;&gt;&lt;strong&gt;Deployment&lt;&#x2F;strong&gt;s&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;concepts&#x2F;workloads&#x2F;pods&#x2F;&quot;&gt;&lt;strong&gt;Pod&lt;&#x2F;strong&gt;s&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;concepts&#x2F;storage&#x2F;persistent-volumes&#x2F;&quot;&gt;&lt;strong&gt;Persistent Volume&lt;&#x2F;strong&gt;s&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;concepts&#x2F;storage&#x2F;volumes&#x2F;&quot;&gt;&lt;strong&gt;Volume&lt;&#x2F;strong&gt;s&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;concepts&#x2F;architecture&#x2F;nodes&#x2F;&quot;&gt;&lt;strong&gt;Node&lt;&#x2F;strong&gt;s&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;spiffe-and-spire-fundamentals&quot;&gt;SPIFFE and SPIRE Fundamentals&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;spiffe.io&#x2F;docs&#x2F;latest&#x2F;spiffe-about&#x2F;spiffe-concepts&#x2F;&quot;&gt;&lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt; Concepts&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;spiffe.io&#x2F;docs&#x2F;latest&#x2F;spire-about&#x2F;spire-concepts&#x2F;&quot;&gt;&lt;strong&gt;SPIRE&lt;&#x2F;strong&gt; Concepts&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;spiffe&#x2F;spiffe&#x2F;blob&#x2F;main&#x2F;standards&#x2F;SPIFFE_Workload_API.md&quot;&gt;&lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt; Workload API&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;spiffe.io&#x2F;docs&#x2F;latest&#x2F;deploying&#x2F;svids&#x2F;&quot;&gt;Working With &lt;strong&gt;SVID&lt;&#x2F;strong&gt;s&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;spiffe.io&#x2F;docs&#x2F;latest&#x2F;planning&#x2F;extending&#x2F;&quot;&gt;Extending &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;spiffe&#x2F;go-spiffe&quot;&gt;&lt;strong&gt;go-spiffe&lt;&#x2F;strong&gt;: Golang Library for &lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt; Support&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;key-concepts&quot;&gt;Key Concepts&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;csrc.nist.gov&#x2F;publications&#x2F;detail&#x2F;sp&#x2F;800-207&#x2F;final&quot;&gt;&lt;strong&gt;Zero Trust&lt;&#x2F;strong&gt; Architecture&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Zero_trust_security_model&quot;&gt;&lt;strong&gt;Zero Trust&lt;&#x2F;strong&gt; Security Model&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Trust_boundary&quot;&gt;Trust Boundary&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Information_security&quot;&gt;Information Security&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Public_key_infrastructure&quot;&gt;Public Key Infrastructure (&lt;em&gt;PKI&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;knowledge.digicert.com&#x2F;solution&#x2F;SO16297.html&quot;&gt;How Certificate Chains Work&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;&quot;&gt;Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developers.google.com&#x2F;protocol-buffers&quot;&gt;Protocol Buffers&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;grpc.io&#x2F;&quot;&gt;&lt;strong&gt;gRPC&lt;&#x2F;strong&gt;: A Universal RPC Framework&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Unix_domain_socket&quot;&gt;Unix Domain Sockets&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Inter-process_communication&quot;&gt;Inter-Process Communication&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.redhat.com&#x2F;en&#x2F;topics&#x2F;devops&#x2F;what-is-ci-cd&quot;&gt;What is CI&#x2F;CD?&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;algorithms-and-standards&quot;&gt;Algorithms and Standards&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;X.509&quot;&gt;X.509&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;spiffe&#x2F;spiffe&#x2F;blob&#x2F;main&#x2F;standards&#x2F;X509-SVID.md&quot;&gt;X.509 &lt;strong&gt;SVID&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Shamir&amp;#x27;s_Secret_Sharing&quot;&gt;Shamir’s Secret Sharing Algorithm&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Certificate_revocation_list&quot;&gt;Certificate Revocation Lists (&lt;em&gt;CRL&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;people.csail.mit.edu&#x2F;rivest&#x2F;pubs&#x2F;Riv98b.pdf&quot;&gt;Can we eliminate &lt;strong&gt;CRL&lt;&#x2F;strong&gt;s?&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;related-technologies&quot;&gt;Related Technologies&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.vaultproject.io&#x2F;docs&#x2F;concepts&#x2F;seal&quot;&gt;How Vault Seals&#x2F;Unseals Using Shamir’s Secret Sharing Algorithm&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Hardware_security_module&quot;&gt;&lt;strong&gt;HSM&lt;&#x2F;strong&gt;: Hardware Security Module&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;aws.amazon.com&#x2F;cloudhsm&#x2F;&quot;&gt;AWS Cloud HSM&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;IBM&#x2F;istio-spire&quot;&gt;Istio identity with &lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt; and &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.openpolicyagent.org&#x2F;&quot;&gt;&lt;strong&gt;OPA&lt;&#x2F;strong&gt;: Open Policy Agent&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;certificate.transparency.dev&#x2F;&quot;&gt;Certificate Transparency&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.aws.amazon.com&#x2F;AWSEC2&#x2F;latest&#x2F;UserGuide&#x2F;ec2-instance-metadata.html&quot;&gt;AWS Instance Metadata and User Data&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;aws.amazon.com&#x2F;eks&#x2F;&quot;&gt;Amazon &lt;strong&gt;EKS&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.aws.amazon.com&#x2F;AWSEC2&#x2F;latest&#x2F;UserGuide&#x2F;AMIs.html&quot;&gt;Amazon Machine Images (&lt;em&gt;AMI&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;cloud.google.com&#x2F;security&#x2F;encryption-in-transit&#x2F;application-layer-transport-security&#x2F;&quot;&gt;ALTS: Application Layer Transport Security&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;engineering.fb.com&#x2F;2019&#x2F;05&#x2F;29&#x2F;security&#x2F;service-encryption&#x2F;&quot;&gt;Building Facebook’s Service Encryption&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=15H5uCj1hlE&quot;&gt;Automated Bootstrapping of Secrets &amp;amp; Identity in the Cloud&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;12factor.net&#x2F;&quot;&gt;The Twelve Factor App&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;key-terms&quot;&gt;Key Terms&lt;&#x2F;h2&gt;
+&lt;p&gt;Here is an non-exhaustive list of the key terms and phrases covered in this
+article and video. Of course, if you check the **References and Further Reading
+** section above, you will find a lot more. Yet, it’s an excellent start to get
+acquainted with these and do more profound research around them.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;zero-trust-1&quot;&gt;Zero Trust&lt;&#x2F;h3&gt;
+&lt;p&gt;A security concept centered on the idea that organizations should not
+automatically trust anything based on whether a service is running inside or
+outside a network boundary and must verify everything trying to connect to its
+systems before granting access.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;authentication&quot;&gt;Authentication&lt;&#x2F;h3&gt;
+&lt;p&gt;The process of verifying the identity of a user or a system. Answers: “What are
+you?”.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;authorization&quot;&gt;Authorization&lt;&#x2F;h3&gt;
+&lt;p&gt;The process of determining the permissions of a user or a system over a
+resource. Answers: “What can you do?”.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;node-worker&quot;&gt;Node&#x2F;Worker&lt;&#x2F;h3&gt;
+&lt;p&gt;A logical or physical entity that runs computational workloads.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;workload&quot;&gt;Workload&lt;&#x2F;h3&gt;
+&lt;p&gt;A workload is a single piece of software deployed with a particular
+configuration for a single purpose that can consist of multiple running
+instances, all of which perform the same task.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;attestation&quot;&gt;Attestation&lt;&#x2F;h3&gt;
+&lt;p&gt;In the context of &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt;, attestation is asserting specific properties of a
+&lt;strong&gt;Node&lt;&#x2F;strong&gt; or &lt;strong&gt;Workload&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;spiffe-id&quot;&gt;SPIFFE ID&lt;&#x2F;h3&gt;
+&lt;p&gt;A string that uniquely identifies a workload, e.g.
+&lt;code&gt;spiffe:&#x2F;&#x2F;fizzbuzz.pro&#x2F;service&#x2F;idm&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;svid-spiffe-verifiable-identity-document&quot;&gt;SVID (&lt;em&gt;SPIFFE Verifiable Identity Document&lt;&#x2F;em&gt;)&lt;&#x2F;h3&gt;
+&lt;p&gt;A document with which a workload proves its identity. An &lt;strong&gt;SVID&lt;&#x2F;strong&gt; contains a
+&lt;strong&gt;SPIFFE ID&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;trust-bootstrap&quot;&gt;Trust Bootstrap&lt;&#x2F;h3&gt;
+&lt;p&gt;Establishing Trust in a service or system.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;trust-domain&quot;&gt;Trust Domain&lt;&#x2F;h3&gt;
+&lt;p&gt;Corresponds to the Trust Root of a system. A &lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt; &lt;strong&gt;trust domain&lt;&#x2F;strong&gt; is an
+identity namespace that is backed by an issuing authority.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;root-of-trust&quot;&gt;Root of Trust&lt;&#x2F;h3&gt;
+&lt;p&gt;A source in which another trust is built on.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;signing&quot;&gt;Signing&lt;&#x2F;h3&gt;
+&lt;p&gt;The addition of a digital signature for verifying the authenticity of a message
+or document.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;mutual-tls-mtls&quot;&gt;Mutual TLS (&lt;em&gt;mTLS&lt;&#x2F;em&gt;)&lt;&#x2F;h3&gt;
+&lt;p&gt;A cryptographic protocol that ensures that the network traffic is both secure
+and trusted in both directions between a client and server.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;public-key-cryptography-asymmetric-cryptography&quot;&gt;Public-key cryptography (&lt;em&gt;asymmetric cryptography&lt;&#x2F;em&gt;)&lt;&#x2F;h3&gt;
+&lt;p&gt;A cryptographic system that uses pairs of keys (&lt;em&gt;&lt;strong&gt;private&lt;&#x2F;strong&gt; keys and &lt;strong&gt;public&lt;&#x2F;strong&gt;
+keys&lt;&#x2F;em&gt;). One key encrypts data, while the other key is used to decrypt the data.
+&lt;strong&gt;For example, X.509 Digital Certificates&lt;&#x2F;strong&gt; are created using public-key
+cryptography.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;pki-public-key-infrastructure&quot;&gt;PKI (&lt;em&gt;Public Key Infrastructure&lt;&#x2F;em&gt;)&lt;&#x2F;h3&gt;
+&lt;p&gt;A set of policies, procedures, and tools used to create, manage, and distribute
+digital certificates.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;x-509&quot;&gt;X.509&lt;&#x2F;h3&gt;
+&lt;p&gt;A widely used standard format for public-key certificates. These certificates
+are used in many internet protocols, including TLS&#x2F;SSL.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;x509-svid&quot;&gt;X509-SVID&lt;&#x2F;h3&gt;
+&lt;p&gt;The &lt;strong&gt;X.509&lt;&#x2F;strong&gt; representation of an &lt;strong&gt;SVID&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;kernel&quot;&gt;Kernel&lt;&#x2F;h3&gt;
+&lt;p&gt;The central part of an operating system, which manages the memory, CPU, and
+device operations.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;hardening&quot;&gt;Hardening&lt;&#x2F;h3&gt;
+&lt;p&gt;The process of putting a system through a sequence of actions to increase its
+security posture, including patching, updating configuration, and limiting
+network access.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;hardware-security-module-hsm&quot;&gt;Hardware Security Module (&lt;em&gt;HSM&lt;&#x2F;em&gt;)&lt;&#x2F;h3&gt;
+&lt;p&gt;A dedicated cryptographic processor designed to manage and safeguard sensitive
+keys.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;key-management-service-kms&quot;&gt;Key Management Service (&lt;em&gt;KMS&lt;&#x2F;em&gt;)&lt;&#x2F;h3&gt;
+&lt;p&gt;A system that manages cryptographic keys. It deals with generating, exchange,
+storing, and revocation of keys.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;In this article, we’ve seen how hard it is to manage service identity across
+clusters at scale. We also had a demo video showing how you can install
+&lt;strong&gt;SPIRE&lt;&#x2F;strong&gt; on an &lt;strong&gt;AWS EKS&lt;&#x2F;strong&gt; Kubernetes cluster. In the video, we also consumed
+the &lt;strong&gt;SPIRE Agent&lt;&#x2F;strong&gt;’s &lt;strong&gt;Workload API&lt;&#x2F;strong&gt;s to get &lt;strong&gt;SVID&lt;&#x2F;strong&gt;s in no time.&lt;&#x2F;p&gt;
+&lt;p&gt;When it comes to identity federation, &lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt; and its reference implementation
+&lt;strong&gt;SPIRE&lt;&#x2F;strong&gt; solve many cross-cutting concerns. Some of these common
+problems are &lt;strong&gt;secret management&lt;&#x2F;strong&gt;, secret creation, secret sharing, and
+&lt;strong&gt;secret invalidation&lt;&#x2F;strong&gt;. With &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt;, you don’t need to trust the network or
+create firewall rules and access control lists.&lt;&#x2F;p&gt;
+&lt;p&gt;Using the foundation that we created in this article, we’ll create a service to
+service &lt;strong&gt;mTLS&lt;&#x2F;strong&gt; communication channel in the follow-up articles.&lt;&#x2F;p&gt;
+&lt;p&gt;Until then… May the source be with you 🦄.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Setting Up SPIRE on EKS in Less Than Ten Minutes&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;spire&#x2F;spike&#x2F;shamir-secrets-sharing&#x2F;&quot;&gt;Shamir’s Secret Sharing Scheme with SPIFFE and SPIKE&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;spire&#x2F;mtls&#x2F;&quot;&gt;mTLS with SPIRE&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>mTLS With SPIRE: Part 1: Introduction</title>
+        <published>2021-10-19T00:00:00+00:00</published>
+        <updated>2021-10-19T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/spire/mtls/intro/"/>
+        <id>https://zerotohero.dev/spire/mtls/intro/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/spire/mtls/intro/">
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;cluster-arch.png&quot; alt=&quot;mTLS With SPIRE: Part 1: Introduction&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;mTLS With SPIRE: Part 1: Introduction&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;This video will introduce the cluster architecture and talk about what we are
+planning to achieve by the end of the video series.&lt;&#x2F;p&gt;
+&lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;760885179?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
+    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+    title=&quot;mTLS With SPIRE: Part 1: Introduction&quot;&gt;&lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;mTLS With SPIRE: Part 1: Introduction&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;playlist&quot;&gt;Playlist&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ mTLS With SPIRE: Part 1: Introduction&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;spire&#x2F;mtls&#x2F;server-app&#x2F;&quot;&gt;mTLS With SPIRE: Part 2: Creating the Server App&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;spire&#x2F;mtls&#x2F;client-app&#x2F;&quot;&gt;mTLS With SPIRE: Part 3: Creating the Client App&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;spire&#x2F;mtls&#x2F;bundle-server&#x2F;&quot;&gt;mTLS With SPIRE: Part 4: Containerizing the Server App&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;spire&#x2F;mtls&#x2F;bundle-client&#x2F;&quot;&gt;mTLS With SPIRE: Part 5: Containerizing the Client App&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;spire&#x2F;mtls&#x2F;rollout&#x2F;&quot;&gt;mTLS With SPIRE: Part 6: Rolling Out SPIRE to the Cluster&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;spire&#x2F;mtls&#x2F;register&#x2F;&quot;&gt;mTLS With SPIRE: Part 7: Registering Nodes and Workloads to SPIRE&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;spire&#x2F;mtls&#x2F;setup-server&#x2F;&quot;&gt;mTLS With SPIRE: Part 8: Configuring the Server to Use SPIRE mTLS&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;spire&#x2F;mtls&#x2F;setup-client&#x2F;&quot;&gt;mTLS With SPIRE: Part 9: Configuring the Client to Use SPIRE mTLS&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;spire&#x2F;mtls&#x2F;end-to-end&#x2F;&quot;&gt;mTLS With SPIRE: Part 10: Establishing Cross-Cluster mTLS&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;tools-and-technologies-mentioned&quot;&gt;Tools and Technologies Mentioned&lt;&#x2F;h2&gt;
+&lt;p&gt;Here are the tools and technologies that were mentioned in the video, along with
+related articles and other helpful links.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;spire&#x2F;spire-rocks&#x2F;&quot;&gt;Setting Up &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt; on EKS in Less
+Than Ten Minutes&lt;&#x2F;a&gt; (&lt;em&gt;read this first&lt;&#x2F;em&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Public_key_infrastructure&quot;&gt;Public Key Infrastructure (&lt;strong&gt;&lt;em&gt;PKI&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Transport_Layer_Security&quot;&gt;Transport Layer Security (&lt;strong&gt;&lt;em&gt;TLS&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Mutual_authentication&quot;&gt;Mutual Transport Layer Security (&lt;strong&gt;&lt;em&gt;mTLS&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;X.509&quot;&gt;&lt;strong&gt;X.509&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;home&#x2F;&quot;&gt;Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;concepts&#x2F;containers&#x2F;&quot;&gt;Containers&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;concepts&#x2F;workloads&#x2F;pods&#x2F;&quot;&gt;Pods&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;grpc.io&#x2F;&quot;&gt;&lt;strong&gt;gRPC&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;spiffe.io&#x2F;&quot;&gt;&lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;spiffe.io&#x2F;docs&#x2F;latest&#x2F;spiffe-about&#x2F;overview&#x2F;&quot;&gt;&lt;strong&gt;SPIRE&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;spiffe.io&#x2F;docs&#x2F;latest&#x2F;architecture&#x2F;federation&#x2F;readme&#x2F;&quot;&gt;&lt;strong&gt;SPIRE&lt;&#x2F;strong&gt; Federation&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;read-the-source&quot;&gt;Read the Source&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;zerotohero-dev&#x2F;spire-mtls&quot;&gt;Access the source code and other related assets from &lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt; GitHub&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+</feed>

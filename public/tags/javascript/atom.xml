@@ -1,0 +1,1079 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Zero to Hero - javascript</title>
+    <link rel="self" type="application/atom+xml" href="https://zerotohero.dev/tags/javascript/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://zerotohero.dev"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2023-03-07T00:00:00+00:00</updated>
+    <id>https://zerotohero.dev/tags/javascript/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Use Destructuring to Remove Attributes </title>
+        <published>2023-03-07T00:00:00+00:00</published>
+        <updated>2023-03-07T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/tips/destructure/"/>
+        <id>https://zerotohero.dev/tips/destructure/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/tips/destructure/">
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;destructure.png&quot; alt=&quot;Destructure.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Destructure.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;Here’s a neat little trick:&lt;&#x2F;p&gt;
+&lt;p&gt;In JavaScript, you can destructure unwanted&#x2F;sensitive attributes from an object.&lt;&#x2F;p&gt;
+&lt;p&gt;Here’s an example:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;javascript&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-javascript &quot;&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;const &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;user &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;  firstName: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Matara&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;  lastName: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Masuko&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;  ssn: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;123-45-6789&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;  location: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;USA&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;};
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;const &lt;&#x2F;span&gt;&lt;span&gt;{ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;ssn&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;...&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cleanUser &lt;&#x2F;span&gt;&lt;span&gt;} &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;user&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;console&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;log&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cleanUser&lt;&#x2F;span&gt;&lt;span&gt;);
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; logs: { firstName: &amp;#39;Matara&amp;#39;, 
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F;   lastName: &amp;#39;Masuko&amp;#39;, location: &amp;#39;USA&amp;#39; }
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;It’s much cleaner than looping through all attributes, eh?&lt;&#x2F;p&gt;
+&lt;p&gt;That was your little nugget.&lt;&#x2F;p&gt;
+&lt;p&gt;Until next time… May the source be with you 🦄.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;base64-decoding-a-string-in-go&#x2F;&quot;&gt;Base64 Decoding a String in Go&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Use Destructuring to Remove Attributes&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;getting-the-body-of-an-http-request-with-go&#x2F;&quot;&gt;Getting the Body of an HTTP Request With Go&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;lets-create-a-syslog-logger&#x2F;&quot;&gt;Let’s Create a Syslog Logger&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;make-your-code-leaner&#x2F;&quot;&gt;Make Your Code Leaner By Extracting Method&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;mastodon-101&#x2F;&quot;&gt;Who Else Wants to Have Their Own Mastodon Server?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;microservice-env-vars&#x2F;&quot;&gt;How to Ensure Environment Variables Are Set&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;scaling-your-node-api-like-a-boss&#x2F;&quot;&gt;Scaling Your Node.js API Like a Boss&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;talkspiffe-stream-setup&#x2F;&quot;&gt;The Live Stream Dream&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;zshell-startup-files&#x2F;&quot;&gt;.zprofile, .zshrc, .zenv, OMG! What Do I Put Where?!&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;redirect-index-page&#x2F;&quot;&gt;Redirecting a Static Web Page&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Learn Your JavaScript the Unconventional Way</title>
+        <published>2021-11-27T00:00:00+00:00</published>
+        <updated>2021-11-27T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/roadmap/learn-javascript-the-unconventional-way/"/>
+        <id>https://zerotohero.dev/roadmap/learn-javascript-the-unconventional-way/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/roadmap/learn-javascript-the-unconventional-way/">
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;comfortable.png&quot; alt=&quot;Leave your comfort zone.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Leave your comfort zone.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;getting-your-feet-wet&quot;&gt;Getting Your Feet Wet&lt;&#x2F;h2&gt;
+&lt;p&gt;Suppose you want a quick overview of &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt; before diving into the real
+deal. In that case, &lt;a href=&quot;https:&#x2F;&#x2F;bonsaiden.github.io&#x2F;JavaScript-Garden&#x2F;&quot;&gt;&lt;strong&gt;JavaScript Garden&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+is an oldie but goldie.&lt;&#x2F;p&gt;
+&lt;p&gt;Here are some other resources that you’ll find helpful too:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;javascript-allonge&#x2F;read&quot;&gt;&lt;strong&gt;JavaScript Allonge&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;eloquentjavascript.net&#x2F;&quot;&gt;&lt;strong&gt;Eloquent JavaScript&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.smashingmagazine.com&#x2F;2012&#x2F;10&#x2F;designing-javascript-apis-usability&#x2F;&quot;&gt;Designing Usable &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt; APIs&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;MostlyAdequate&#x2F;mostly-adequate-guide&quot;&gt;Mostly Adequate Guide to &lt;strong&gt;Functional&lt;&#x2F;strong&gt; Programming in &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Once you read the ones above, the following books can supplement your knowledge:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;exploringjs.com&#x2F;&quot;&gt;The “&lt;strong&gt;&lt;em&gt;Exploring JS&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;” Series&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;148050.JavaScript&quot;&gt;JavaScript: The Definitive Guide&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;15812614-programming-javascript-applications&quot;&gt;Programming JavaScript Applications&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Along with these, here are a few additional resources for those who are just
+getting started with &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;JavaScript&quot;&gt;MDN: &lt;strong&gt;Javascript&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;htmldog.com&#x2F;guides&#x2F;javascript&#x2F;&quot;&gt;HTMLDog &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt; Tutorials&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;javascript.info&#x2F;&quot;&gt;javascript.info&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;www.javascriptkit.com&#x2F;javatutors&#x2F;index.shtml&quot;&gt;&lt;strong&gt;JavaScript&lt;&#x2F;strong&gt; Kit&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;lukehoban&#x2F;es6features&quot;&gt;ES6 Features&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;blog.adtile.me&#x2F;2014&#x2F;01&#x2F;16&#x2F;a-dive-into-plain-javascript&#x2F;&quot;&gt;A Dive Into Plain JavaScript&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;www.jblotus.com&#x2F;2013&#x2F;01&#x2F;13&#x2F;common-javascript-gotchas&#x2F;&quot;&gt;Common &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt; Gotchas&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikibooks.org&#x2F;wiki&#x2F;JavaScript&#x2F;Introduction&quot;&gt;WikiBooks: &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt;: Introduction&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;digging-into-the-mildly-confusing&quot;&gt;Digging Into the Mildly-Confusing&lt;&#x2F;h2&gt;
+&lt;p&gt;Here are a couple of “&lt;em&gt;relatively&lt;&#x2F;em&gt;” confusing parts of &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt; that you&lt;br &#x2F;&gt;
+might want to pay extra attention to:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zeekat.nl&#x2F;articles&#x2F;constructors-considered-mildly-confusing.html&quot;&gt;Constructors Considered Mildly Confusing&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;msdn.microsoft.com&#x2F;en-us&#x2F;magazine&#x2F;ff852808.aspx&quot;&gt;Prototypes and Inheritance in &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;yehudakatz.com&#x2F;2011&#x2F;08&#x2F;12&#x2F;understanding-prototypes-in-javascript&#x2F;&quot;&gt;Understanding Prototypes in &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;blog.jeremymartin.name&#x2F;2008&#x2F;03&#x2F;understanding-loose-typing-in.html&quot;&gt;Understanding Loose Typing in &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.kirupa.com&#x2F;html5&#x2F;a_deeper_look_at_objects_in_javascript.htm&quot;&gt;A Deeper Look at &lt;strong&gt;Objects&lt;&#x2F;strong&gt; in &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;yehudakatz.com&#x2F;2011&#x2F;08&#x2F;11&#x2F;understanding-javascript-function-invocation-and-this&#x2F;&quot;&gt;Understanding &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt; Function Invocation and &lt;code&gt;this&lt;&#x2F;code&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;www.adequatelygood.com&#x2F;JavaScript-Module-Pattern-In-Depth.html&quot;&gt;JavaScript &lt;strong&gt;Module&lt;&#x2F;strong&gt; Pattern In-Depth (&lt;em&gt;historical&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;2998152.JavaScript_The_Good_Parts&quot;&gt;&lt;strong&gt;JavaScript&lt;&#x2F;strong&gt;: The Good Parts (&lt;em&gt;historical&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;web.dev&#x2F;promises&#x2F;&quot;&gt;JavaScript &lt;strong&gt;Promises&lt;&#x2F;strong&gt;: an Introduction&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;www.adequatelygood.com&#x2F;JavaScript-Scoping-and-Hoisting.html&quot;&gt;JavaScript &lt;strong&gt;Scoping&lt;&#x2F;strong&gt; and &lt;strong&gt;Hoisting&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.smashingmagazine.com&#x2F;2014&#x2F;01&#x2F;understanding-javascript-function-prototype-bind&#x2F;&quot;&gt;Understanding JavaScript &lt;code&gt;bind()&lt;&#x2F;code&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;promisesaplus.com&#x2F;&quot;&gt;&lt;strong&gt;Promise&lt;&#x2F;strong&gt; A+ Specification (&lt;em&gt;historical&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;JavaScript&#x2F;Reference&#x2F;Global_Objects&#x2F;Promise&quot;&gt;&lt;strong&gt;Promise&lt;&#x2F;strong&gt; (&lt;em&gt;MDN&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;robotlolita.me&#x2F;2015&#x2F;11&#x2F;15&#x2F;how-do-promises-work.html&quot;&gt;How Do &lt;strong&gt;Promises&lt;&#x2F;strong&gt; Work&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;sporto.github.io&#x2F;blog&#x2F;2012&#x2F;12&#x2F;09&#x2F;callbacks-listeners-promises&#x2F;&quot;&gt;&lt;strong&gt;Callbacks&lt;&#x2F;strong&gt;, Listeners, and &lt;strong&gt;Promises&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;codeburst.io&#x2F;javascript-es-2017-learn-async-await-by-example-48acc58bad65&quot;&gt;Learn &lt;strong&gt;async&#x2F;await&lt;&#x2F;strong&gt; By Example&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;medium.com&#x2F;javascript-inside&#x2F;generators-and-channels-in-javascript-594f2cf9c16e&quot;&gt;&lt;strong&gt;Generators&lt;&#x2F;strong&gt; and &lt;strong&gt;Channels&lt;&#x2F;strong&gt; in JavaScript&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;2ality.com&#x2F;2017&#x2F;03&#x2F;csp-vs-async-generators.html&quot;&gt;&lt;strong&gt;Communicating Sequential Processess&lt;&#x2F;strong&gt; (CSP) in &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;lucasmreis.github.io&#x2F;blog&#x2F;quick-introduction-to-csp-in-javascript&#x2F;&quot;&gt;A Quick Introduction to &lt;strong&gt;CSP&lt;&#x2F;strong&gt; in JavaScript&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Historical&lt;&#x2F;strong&gt;?&lt;&#x2F;p&gt;
+&lt;p&gt;The resources marked as “&lt;em&gt;historical”&lt;&#x2F;em&gt; might have outdated examples and
+recommendations, so read them with a grain of salt. Though they still are worth
+reading, don’t skip them.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;patterns-and-practices&quot;&gt;Patterns and Practices&lt;&#x2F;h2&gt;
+&lt;p&gt;The more you practice, the more you establish your personal style. There are
+also well-known and adopted JavaScript patterns and practices that are tailored
+for specific use cases. The following resources can help you in those areas.
+When you learn these best practices, you can adapt them to match your style and
+make them yours:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;addyosmani.com&#x2F;resources&#x2F;essentialjsdesignpatterns&#x2F;book&#x2F;&quot;&gt;Learning JavaScript Design Patterns&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;7008656-high-performance-javascript&quot;&gt;High-Performance JavaScript&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.smashingmagazine.com&#x2F;2012&#x2F;10&#x2F;designing-javascript-apis-usability&quot;&gt;How to Design Better &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt; &lt;strong&gt;API&lt;&#x2F;strong&gt;s&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;robotlolita.me&#x2F;articles&#x2F;2011&#x2F;understanding-javascript-oop&#x2F;&quot;&gt;Understanding Object-Oriented JavaScript (&lt;em&gt;historical&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;functions-and-functional-javascript&quot;&gt;Functions and Functional JavaScript&lt;&#x2F;h2&gt;
+&lt;p&gt;Functional programming is not strictly related to JavaScript; however,
+JavaScript is a better fit to be used along with Functional Programming
+paradigms.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Learn Asynchronous JavaScript Well First&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+Before diving deeper into &lt;strong&gt;functional&lt;&#x2F;strong&gt; &lt;strong&gt;programming&lt;&#x2F;strong&gt; with JavaScript, you
+might want to get more comfortable with asynchronous flow control concepts,
+including &lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;JavaScript&#x2F;Reference&#x2F;Statements&#x2F;async_function&quot;&gt;&lt;strong&gt;&lt;code&gt;async&#x2F;await&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;,
+and &lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;JavaScript&#x2F;Reference&#x2F;Global_Objects&#x2F;Promise&quot;&gt;&lt;strong&gt;&lt;code&gt;Promise&lt;&#x2F;code&gt;s&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Along with those, diving further into &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Functional_programming&quot;&gt;&lt;strong&gt;Functional Programming&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+will change the way you look at the world—in a good way.&lt;&#x2F;p&gt;
+&lt;p&gt;The current &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt; programming scene is leaning more and more
+towards [&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Functional_programming&quot;&gt;functional programming&lt;&#x2F;a&gt;,
+so don’t be surprised if some of the functional paradigms that you see in the
+libraries get merged into the language standards soon.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;How Do New Features Get Introduced Into JavaScript&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;When it comes to adopting new features into the language standards, that is
+how it has been so far: If something gains enough popularity, it finds itself
+in the next version of the language.&lt;&#x2F;p&gt;
+&lt;p&gt;For example, first &lt;a href=&quot;http:&#x2F;&#x2F;bluebirdjs.com&#x2F;docs&#x2F;getting-started.html&quot;&gt;Bluebird&lt;&#x2F;a&gt;
+and other libraries came up with a &lt;a href=&quot;https:&#x2F;&#x2F;promisesaplus.com&#x2F;&quot;&gt;&lt;strong&gt;Promise&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+implementation, and after its widespread
+adoption, &lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;JavaScript&#x2F;Reference&#x2F;Global_Objects&#x2F;Promise&quot;&gt;the native &lt;code&gt;Promise&lt;&#x2F;code&gt; constructor&lt;&#x2F;a&gt;
+got itself merged into the language.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Here are some resources to get you started you with &lt;strong&gt;Functional JavaScript&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Glossary&#x2F;First-class_Function&quot;&gt;First-class Function&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;JavaScript&#x2F;Closures&quot;&gt;&lt;strong&gt;Closures&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;benalman.com&#x2F;news&#x2F;2010&#x2F;11&#x2F;immediately-invoked-function-expression&#x2F;&quot;&gt;Immediately-Invoked Function Expression (&lt;em&gt;historical&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;javascript.info&#x2F;currying-partials&quot;&gt;&lt;strong&gt;Currying&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;benalman.com&#x2F;news&#x2F;2012&#x2F;09&#x2F;partial-application-in-javascript&#x2F;&quot;&gt;&lt;strong&gt;Partial Application&lt;&#x2F;strong&gt; in &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;ramdajs.com&#x2F;&quot;&gt;Why &lt;strong&gt;Ramda&lt;&#x2F;strong&gt;?&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;itnext.io&#x2F;a-beginners-guide-to-ramda-part-1-7e4a34972e97&quot;&gt;A Beginner’s Guide to &lt;strong&gt;Ramda&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.educative.io&#x2F;courses&#x2F;functional-programming-patterns-with-ramdajs&quot;&gt;Functional Programming Patterns With &lt;strong&gt;Ramda&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;While at there, you might want to experiment with some of the functional
+libraries out there to get a taste of how functional programming with JavaScript
+feels like. &lt;a href=&quot;https:&#x2F;&#x2F;ramdajs.com&#x2F;&quot;&gt;&lt;strong&gt;Ramda&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; and
+&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ReactiveX&#x2F;rxjs&quot;&gt;&lt;strong&gt;RxJS&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; are my favorites:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;ramdajs.com&#x2F;&quot;&gt;Ramda&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ReactiveX&#x2F;rxjs&quot;&gt;RxJS&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;folktale.origamitower.com&#x2F;&quot;&gt;FolkTale&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;lodash.com&#x2F;&quot;&gt;LoDash&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;cullophid&#x2F;barely-functional&quot;&gt;barely-functional&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;algesten&#x2F;fnuc&quot;&gt;fnuc&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;fp-dom&#x2F;&quot;&gt;fp-dom&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;smartprocure&#x2F;futil-js&quot;&gt;futil&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;miketalbot&#x2F;js-coroutines&quot;&gt;js-coroutines&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;Debdut&#x2F;omg-curry&quot;&gt;omg-curry&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;cycle.js.org&#x2F;&quot;&gt;cycle.js&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;dom-and-virtual-dom&quot;&gt;DOM and Virtual DOM&lt;&#x2F;h2&gt;
+&lt;p&gt;Strictly speaking Virtual-DOM is not specific to &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt;. And, in fact,
+from a 50K feeet overview, it is merely an implementation of
+the &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Multiple_buffering&quot;&gt;double buffering technique&lt;&#x2F;a&gt;
+that has been around since the dawn of time.&lt;&#x2F;p&gt;
+&lt;p&gt;That being said, it’s so widespread that it will be helpful for you to learn
+virtual dom along with dom. Here are some resources to get you started:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;API&#x2F;Document_Object_Model&#x2F;Introduction&quot;&gt;Introduction to DOM&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jbi.sh&#x2F;what-is-virtual-dom&#x2F;&quot;&gt;What is Virtual DOM&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;reactjs.org&#x2F;docs&#x2F;faq-internals.html&quot;&gt;Virtual DOM and React Internals&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;learn-your-timers&quot;&gt;Learn Your Timers&lt;&#x2F;h2&gt;
+&lt;p&gt;Related to &lt;strong&gt;flow control&lt;&#x2F;strong&gt;, one concept that’s important and most do not pay&lt;br &#x2F;&gt;
+enough attention is how the &lt;strong&gt;event loop&lt;&#x2F;strong&gt;, the &lt;strong&gt;main thread&lt;&#x2F;strong&gt;, the&lt;br &#x2F;&gt;
+&lt;strong&gt;compositor thread&lt;&#x2F;strong&gt;, and various &lt;strong&gt;task queues&lt;&#x2F;strong&gt; and &lt;strong&gt;timers&lt;&#x2F;strong&gt; in&lt;br &#x2F;&gt;
+&lt;strong&gt;JavaScript&lt;&#x2F;strong&gt; runtimes work.&lt;&#x2F;p&gt;
+&lt;p&gt;Here’s, again, a list of study material to shed some light on it:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jakearchibald.com&#x2F;2015&#x2F;tasks-microtasks-queues-and-schedules&#x2F;&quot;&gt;&lt;strong&gt;Tasks&lt;&#x2F;strong&gt;, &lt;strong&gt;Microtasks&lt;&#x2F;strong&gt;, Queues, and Schedules&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=8aGhZQkoFbQ&quot;&gt;What the Heck is &lt;strong&gt;Event Loop&lt;&#x2F;strong&gt; Anyway&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=cCOL7MC4Pl0&amp;amp;vl=en&quot;&gt;In the &lt;strong&gt;Loop&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;nodejs.org&#x2F;en&#x2F;docs&#x2F;guides&#x2F;event-loop-timers-and-nexttick&#x2F;&quot;&gt;The &lt;strong&gt;Node.js&lt;&#x2F;strong&gt; Event Loops, &lt;strong&gt;Timers&lt;&#x2F;strong&gt;, and &lt;code&gt;process.nextTick&lt;&#x2F;code&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jsblog.insiderattack.net&#x2F;timers-immediates-and-process-nexttick-nodejs-event-loop-part-2-2c53fd511bb3&quot;&gt;Timers, &lt;strong&gt;Immediates&lt;&#x2F;strong&gt;, and &lt;code&gt;process.nextTick&lt;&#x2F;code&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;YuzuJS&#x2F;setImmediate&#x2F;blob&#x2F;master&#x2F;README.md&quot;&gt;&lt;code&gt;setImmediate&lt;&#x2F;code&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=QyUFheng6J0&quot;&gt;JavaScript VM internals, &lt;strong&gt;EventLoop&lt;&#x2F;strong&gt;, &lt;strong&gt;Async&lt;&#x2F;strong&gt; and &lt;strong&gt;ScopeChain&lt;&#x2F;strong&gt;s&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=8aGhZQkoFbQ&quot;&gt;What the Heck Is the &lt;strong&gt;Event Loop&lt;&#x2F;strong&gt; Anyway?&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.zcfy.cc&#x2F;original&#x2F;how-node-event-loop-really-works-or-why-most-of-the-event-loop-diagrams-are-wrong-2544.html&quot;&gt;How Node &lt;strong&gt;Event Loop&lt;&#x2F;strong&gt; Really Works&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.html5rocks.com&#x2F;en&#x2F;tutorials&#x2F;speed&#x2F;animations&#x2F;&quot;&gt;Leaner Meaner Faster &lt;strong&gt;Animations&lt;&#x2F;strong&gt; with &lt;strong&gt;requestAnimationFrame&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.kirupa.com&#x2F;html5&#x2F;introduction_to_easing_in_javascript.htm&quot;&gt;Introduction to &lt;strong&gt;Easing&lt;&#x2F;strong&gt; in &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;learn-various-methods-of-communicating-with-the-server&quot;&gt;Learn Various Methods of Communicating With the Server&lt;&#x2F;h2&gt;
+&lt;p&gt;If you are writing a web application, you’ll probably find yourself consuming
+external resources and data streams. You’ll need to know various ways to
+communicate with the remote endpoints. Here are a few articles and references
+that can help you with that:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;API&#x2F;XMLHttpRequest&quot;&gt;XMLHttpRequest&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;HTTP&#x2F;CORS&quot;&gt;Cross-Origin Resource Sharing&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;API&#x2F;Fetch_API&quot;&gt;the Fetch API&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;API&#x2F;Window&#x2F;postMessage&quot;&gt;Web Messaging&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;API&#x2F;WebSockets_API&quot;&gt;Web Sockets&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;API&#x2F;Server-sent_events&#x2F;Using_server-sent_events&quot;&gt;Server-Sent Events&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;API&#x2F;Server-sent_events&#x2F;Using_server-sent_events&quot;&gt;Web Workers&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;sendgrid.com&#x2F;blog&#x2F;whats-webhook&#x2F;&quot;&gt;What is a Webhook?&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;API&#x2F;Beacon_API&quot;&gt;Beacon API&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;JSONP&quot;&gt;JSONP (&lt;em&gt;historical&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;msdn.microsoft.com&#x2F;en-us&#x2F;library&#x2F;bb735305.aspx&quot;&gt;Cross-Origin Communication with a Klein Bottle (&lt;em&gt;historical&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Historical&lt;&#x2F;strong&gt;?&lt;&#x2F;p&gt;
+&lt;p&gt;In this section, the techniques marked “&lt;em&gt;historical&lt;&#x2F;em&gt;” in this section
+are—indeed— &lt;strong&gt;historical&lt;&#x2F;strong&gt;. &lt;strong&gt;Never&lt;&#x2F;strong&gt; resort to them unless there is no
+other option because you are dealing with some legacy system.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;know-your-local-stores&quot;&gt;Know Your Local Stores&lt;&#x2F;h2&gt;
+&lt;p&gt;Sooner or later, you are going to need to persist your data somewhere on the
+client too. There are several options that you can try, each with its pros and
+cons. Learn them, and understand which API, tool or technique is the best fit
+for what types of scenarios.&lt;&#x2F;p&gt;
+&lt;p&gt;Here is a non-exhaustive list of client-side storage technologies:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;msdn.microsoft.com&#x2F;en-us&#x2F;library&#x2F;bb735305.aspx&quot;&gt;Cookies&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;API&#x2F;Window&#x2F;sessionStorage&quot;&gt;sessionStorage&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;API&#x2F;Window&#x2F;localStorage&quot;&gt;localStorage&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;API&#x2F;IndexedDB_API&quot;&gt;indexedDB&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developers.google.com&#x2F;web&#x2F;progressive-web-apps&#x2F;&quot;&gt;Progressive Web Apps&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developers.google.com&#x2F;web&#x2F;fundamentals&#x2F;instant-and-offline&#x2F;web-storage&#x2F;offline-for-pwa&quot;&gt;Offline Storage for Progressive Web Apps&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;There are also storage API wrappers that can make your life easier.&lt;br &#x2F;&gt;
+Here are a few of my selections—&lt;a href=&quot;https:&#x2F;&#x2F;pouchdb.com&#x2F;&quot;&gt;&lt;strong&gt;PouchDB&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; is my
+favorite, by the way:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;pouchdb.com&#x2F;&quot;&gt;PouchDB&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;dexie.org&#x2F;&quot;&gt;Dexie&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;erikolson186&#x2F;zangodb&quot;&gt;ZangoDB&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;localforage.github.io&#x2F;localForage&#x2F;&quot;&gt;localForage&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;jsstore.net&#x2F;&quot;&gt;JSStore&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;learn-a-javascript-type-system&quot;&gt;Learn a JavaScript Type System&lt;&#x2F;h2&gt;
+&lt;p&gt;If it were a couple of years ago, I’d have said “&lt;em&gt;you can live without&lt;br &#x2F;&gt;
+using a type system&lt;&#x2F;em&gt;”; however, the world is leaning towards a strongly-typed&lt;br &#x2F;&gt;
+&lt;strong&gt;JavaScript&lt;&#x2F;strong&gt; ecosystem, and it’s leaning towards that direction real fast. So,
+better learn your types sooner than later.&lt;&#x2F;p&gt;
+&lt;p&gt;Currently, &lt;strong&gt;TypeScript&lt;&#x2F;strong&gt; is the only mature type system that is widely adopted
+and worth learning.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.typescriptlang.org&#x2F;&quot;&gt;TypeScript&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;flow.org&#x2F;&quot;&gt;FlowType&lt;&#x2F;a&gt; (&lt;em&gt;historical&lt;&#x2F;em&gt;)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;meta-programming&quot;&gt;Meta Programming&lt;&#x2F;h2&gt;
+&lt;p&gt;You’ll rarely find yourself in need to
+use &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Reflective_programming&quot;&gt;reflection or meta programming&lt;&#x2F;a&gt;
+in &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt;. Even when you feel the urge to use reflection, think of a
+cleaner way to code that does not involve reflection.
+Remember: &lt;a href=&quot;https:&#x2F;&#x2F;dave.cheney.net&#x2F;2019&#x2F;07&#x2F;09&#x2F;clear-is-better-than-clever&quot;&gt;clear is better than clever&lt;&#x2F;a&gt;,
+and &lt;strong&gt;reflection is never clear&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;JavaScript&#x2F;Reference&#x2F;Global_Objects&#x2F;Reflect&quot;&gt;JavaScript Reflection API&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;JavaScript&#x2F;Reference&#x2F;Global_Objects&#x2F;Proxy&quot;&gt;JavaScript Proxy&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;JavaScript&#x2F;Reference&#x2F;Global_objects&#x2F;Function&#x2F;bind&quot;&gt;&lt;code&gt;Function.prototype.bind&lt;&#x2F;code&gt; (&lt;em&gt;MDN&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;JavaScript&#x2F;Reference&#x2F;Global_objects&#x2F;Function&#x2F;apply&quot;&gt;&lt;code&gt;Function.prototype.apply&lt;&#x2F;code&gt; (&lt;em&gt;MDN&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;dialects-and-runtimes&quot;&gt;Dialects and Runtimes&lt;&#x2F;h2&gt;
+&lt;p&gt;Here are several dialects and runtimes that you will likely encounter sooner or
+later:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.typescriptlang.org&#x2F;index.html&quot;&gt;TypeScript&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;nodejs.org&#x2F;&quot;&gt;Node&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;deno.land&#x2F;&quot;&gt;Deno&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;I have mixed feelings about &lt;a href=&quot;https:&#x2F;&#x2F;deno.land&#x2F;&quot;&gt;&lt;strong&gt;Deno&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, and I still think
+it’s in an experimental phase as of this writing, yet feel free to play with it
+too. &lt;a href=&quot;https:&#x2F;&#x2F;nodejs.org&#x2F;&quot;&gt;&lt;strong&gt;Node&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; is your choice if you want a battle-tested,
+stable, and production-ready JavaScript runtime.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Want More Node? Keep on Reading&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+I’ll provide resources related to learning &lt;a href=&quot;https:&#x2F;&#x2F;nodejs.org&#x2F;&quot;&gt;&lt;strong&gt;Node&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;,
+for the interested, in separate section near the end of this article.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;react-or-vue-or-angular-or-alpine-or-oh-my-exploding-head&quot;&gt;React, or Vue, or Angular, or Alpine, or… Oh my… 🤯&lt;&#x2F;h2&gt;
+&lt;p&gt;Especially when you are new to &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt; and Front-End development you have
+this dilemma: “&lt;em&gt;shall I learn React, or Vue, or Ember, or Alpine, or jQuery…&lt;&#x2F;em&gt;”&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;confused.jpeg&quot; alt=&quot;Choosing a JavaScript framework can be confusing at times.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Choosing a JavaScript framework can be confusing at times.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;Well, there is a very simple solution to this:&lt;&#x2F;p&gt;
+&lt;p&gt;Choose one framework, and stick with it until you master it.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Your preferences drive your choices.&lt;&#x2F;p&gt;
+&lt;p&gt;But when you have two equally appealing choices (popcorn or pringles; Angular
+or React, etc), your choices will create new neural pathways that
+literally will define your preferences.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Learning a single JavaScript framework is often &lt;strong&gt;good enough&lt;&#x2F;strong&gt; because once you
+learn one framework, it’s not so difficult to translate the underlying concepts
+to the next.&lt;&#x2F;p&gt;
+&lt;p&gt;There are a lot of web frameworks out there, and when it comes to picking one to
+study most of the time you’ll find yourself choosing between
+&lt;a href=&quot;https:&#x2F;&#x2F;reactjs.org&#x2F;&quot;&gt;&lt;strong&gt;React&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;angular.io&#x2F;&quot;&gt;&lt;strong&gt;Angular&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Both &lt;a href=&quot;https:&#x2F;&#x2F;reactjs.org&#x2F;&quot;&gt;&lt;strong&gt;React&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;angular.io&#x2F;&quot;&gt;&lt;strong&gt;Angular&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+are useful tools that solve similar problems that have robust open-source
+ecosystems behind them. So, learning either one will suffice.&lt;&#x2F;p&gt;
+&lt;p&gt;However, if I were you, I’d pick &lt;a href=&quot;https:&#x2F;&#x2F;reactjs.org&#x2F;&quot;&gt;&lt;strong&gt;React&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, and only
+after I master &lt;a href=&quot;https:&#x2F;&#x2F;reactjs.org&#x2F;&quot;&gt;&lt;strong&gt;React&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, would I look at &lt;a href=&quot;https:&#x2F;&#x2F;angular.io&#x2F;&quot;&gt;**Angular
+**&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;I have several reasons for that:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;First and foremost, once you learn &lt;strong&gt;React&lt;&#x2F;strong&gt;, it’s easier to learn the
+rest—The contrary is not always true.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;React&lt;&#x2F;strong&gt; treats &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt; as a &lt;strong&gt;first-class citizen&lt;&#x2F;strong&gt;. That is not true
+for many other frameworks.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;React&lt;&#x2F;strong&gt; is (&lt;em&gt;often&lt;&#x2F;em&gt;) &lt;strong&gt;not&lt;&#x2F;strong&gt; opinionated, you can bend it to your will.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;React&lt;&#x2F;strong&gt; is &lt;strong&gt;well-supported&lt;&#x2F;strong&gt;, and &lt;a href=&quot;https:&#x2F;&#x2F;reactjs.org&#x2F;docs&#x2F;getting-started.html&quot;&gt;&lt;strong&gt;well-documented&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;React&lt;&#x2F;strong&gt; is (&lt;em&gt;most of the time&lt;&#x2F;em&gt;) &lt;strong&gt;fool-proof&lt;&#x2F;strong&gt;. Unless you try hard to shoot
+yourself in the foot, you can always create a React application that will
+perform well.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Understanding Client-Side JavaScript Frameworks&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+If you want to drill down
+deeper, &lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Learn&#x2F;Tools_and_testing&#x2F;Client-side_JavaScript_frameworks&quot;&gt;MDN has a curated list of learning resources&lt;&#x2F;a&gt;
+on various client-side libraries and frameworks.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;do-i-really-need-a-javascript-framework-anyway&quot;&gt;Do I Really Need a JavaScript Framework Anyway?&lt;&#x2F;h2&gt;
+&lt;p&gt;Each framework comes with a &lt;strong&gt;performance baggage&lt;&#x2F;strong&gt;. Although it is very fast,
+&lt;strong&gt;React&lt;&#x2F;strong&gt; is no exception: &lt;a href=&quot;https:&#x2F;&#x2F;reactjs.org&#x2F;docs&#x2F;faq-internals.html&quot;&gt;&lt;strong&gt;Virtual DOM&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+is fantastic; however, it is not free. The same is true for all the abstraction layers that &lt;a href=&quot;https:&#x2F;&#x2F;reactjs.org&#x2F;&quot;&gt;**React
+**&lt;&#x2F;a&gt; provides over native
+&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;API&#x2F;Document_Object_Model&quot;&gt;DOM&lt;&#x2F;a&gt;
+and &lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;API&#x2F;DocumentFragment&quot;&gt;Document fragment&lt;&#x2F;a&gt;
+usage.&lt;&#x2F;p&gt;
+&lt;p&gt;In &lt;strong&gt;very&lt;&#x2F;strong&gt; rare edge cases, you might find yourself opting out from using *
+&lt;em&gt;React&lt;&#x2F;em&gt;* and &lt;strong&gt;Virtual DOM&lt;&#x2F;strong&gt; and managing your apps’ performance yourself by
+using your own caching and DOM-manipulation strategies at a lower level
+by &lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;API&#x2F;Document_Object_Model&quot;&gt;using the &lt;strong&gt;DOM&lt;&#x2F;strong&gt; API&lt;&#x2F;a&gt;,
+&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;API&#x2F;DocumentFragment&quot;&gt;Document fragments&lt;&#x2F;a&gt;
+and all sorts of other clever tricks and black magic. I’ve been there; trust me,
+&lt;strong&gt;it’s not as easy as it looks&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Using a framework eases that burden off of your shoulders, with a &lt;em&gt;slight&lt;&#x2F;em&gt;
+(&lt;em&gt;often negligible&lt;&#x2F;em&gt;) performance cost. That said, especially when you are
+developing a hybrid application to some low-end mobile devices, using a
+framework might not be your best option: You might be better off writing a
+well-optimized plain &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt; from scratch instead. Yet, these are more
+exceptions than the norm: 99% or the time &lt;a href=&quot;https:&#x2F;&#x2F;reactjs.org&#x2F;&quot;&gt;&lt;strong&gt;React&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+(&lt;em&gt;or any other front-end framework for that matter&lt;&#x2F;em&gt;) will be &lt;strong&gt;good enough&lt;&#x2F;strong&gt;
+for your needs.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Why not Both?&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;You don’t have to take an all-or-nothing approach:&lt;br &#x2F;&gt;
+With APIs
+like &lt;a href=&quot;https:&#x2F;&#x2F;reactjs.org&#x2F;docs&#x2F;dom-elements.html#dangerouslysetinnerhtml&quot;&gt;&lt;code&gt;dangerouslySetInnerHTML()&lt;&#x2F;code&gt;&lt;&#x2F;a&gt;,
+&lt;strong&gt;React&lt;&#x2F;strong&gt;, for example, can yield total control to your custom
+framework-agnostic &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt;, and let you optimize parts of the app using
+plain &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;API&#x2F;Document_Object_Model&quot;&gt;&lt;strong&gt;DOM&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; as
+you see fit.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;your-hard-work-will-pay-off&quot;&gt;Your Hard Work Will Pay Off&lt;&#x2F;h2&gt;
+&lt;p&gt;When you consume all the content that I’ve shared so far, learning &lt;strong&gt;&lt;em&gt;any&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;
+JavaScript framework will take a matter of &lt;strong&gt;days&lt;&#x2F;strong&gt; instead of weeks or months.&lt;&#x2F;p&gt;
+&lt;p&gt;You’ll be able to see the similarities and differences between various
+frameworks, understand them at the core architecture level. You will better
+understand which framework is a better fit for what kinds of problems.&lt;&#x2F;p&gt;
+&lt;p&gt;Trust me, it’s totally worth the opportunity cost of your time.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-source-of-truth&quot;&gt;The Source of Truth&lt;&#x2F;h2&gt;
+&lt;p&gt;The &lt;a href=&quot;https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&#x2F;&quot;&gt;ECMA-262 specification&lt;&#x2F;a&gt; contains the most
+in-depth, detailed, and formalized information about &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt;. It defines
+the language. But being that formalized, it’s difficult to understand at first.
+So if you need the most trustworthy source of information about the language
+details, the specification is the right place. But it’s not for everyday use.&lt;&#x2F;p&gt;
+&lt;p&gt;A new specification version is released every year. In-between these releases,
+the latest specification draft is
+at &lt;a href=&quot;https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&quot;&gt;https:&#x2F;&#x2F;tc39.es&#x2F;ecma262&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;To read about new bleeding-edge features, including those that are “almost
+standard” (Stage 3), see proposals
+at &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;tc39&#x2F;proposals&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;tc39&#x2F;proposals&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;I’ll give an unconventional recommendation again: After you trust yourself that
+you’ve learned enough JavaScript to be dangerous at
+least. &lt;a href=&quot;https:&#x2F;&#x2F;tc39.github.io&#x2F;ecma262&#x2F;&quot;&gt;read the JavaScript Language
+Specification &lt;strong&gt;cover to cover&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;I’ll be honest with you: &lt;a href=&quot;https:&#x2F;&#x2F;tc39.github.io&#x2F;ecma262&#x2F;&quot;&gt;The &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt; Language
+Specification&lt;&#x2F;a&gt; is much harder to
+read than, say, the &lt;a href=&quot;https:&#x2F;&#x2F;golang.org&#x2F;ref&#x2F;spec&quot;&gt;&lt;strong&gt;Go&lt;&#x2F;strong&gt; Language Specification&lt;&#x2F;a&gt;.
+Honestly, it’s much duller to read than the &lt;strong&gt;Go&lt;&#x2F;strong&gt; Language Specification;
+however, you will learn &lt;strong&gt;a lot&lt;&#x2F;strong&gt; by reading it.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;blogs&quot;&gt;Blogs&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;scotch.io&#x2F;&quot;&gt;scotch.io&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;davidwalsh.name&#x2F;tutorials&#x2F;javascript&quot;&gt;David Walsh on JavaScript&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;free-javascript-courses&quot;&gt;Free JavaScript Courses&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.coursera.org&#x2F;search?query=javascript&quot;&gt;Coursera &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt; Courses&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;channel9.msdn.com&#x2F;Series&#x2F;JavaScript-Fundamentals-Development-for-Absolute-Beginners&quot;&gt;Channel9: &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.udacity.com&#x2F;course&#x2F;intro-to-javascript--ud803&quot;&gt;Udacity: Introduction to &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.codecademy.com&#x2F;learn&#x2F;introduction-to-javascript&quot;&gt;Codecademy: Introduction to &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;teamtreehouse.com&#x2F;library&#x2F;javascript-basics&quot;&gt;TreeHouse: &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt; Basics&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;youtube&quot;&gt;YouTube&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=Sh6lK57Cuk4&amp;amp;list=PL0vfts4VzfNixzfaQWwDUg3W5TRbE7CyI&quot;&gt;The Weird History of &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=hdI2bqOjy3c&quot;&gt;&lt;strong&gt;JavaScript&lt;&#x2F;strong&gt; Crash Course&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;playlist?list=PLZlA0Gpn_vH9k5ju1yq9qCDqvtuTVgTr6&quot;&gt;Introduction to &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;playlist?list=PLoYCgNOIyGACTDHuZtn0qoBdpzV9c327V&quot;&gt;&lt;strong&gt;JavaScript&lt;&#x2F;strong&gt; Fundamentals&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;playlist?list=PLgBH1CvjOA636I8hnHSyuOnX341XQrBth&quot;&gt;&lt;strong&gt;JavaScript&lt;&#x2F;strong&gt; Form Validation&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;playlist?list=PLRpq_iSq4KCHV2hNst8Uu1cI-abPCXDyv&quot;&gt;Flavio: &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt; Fundamentals&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;playlist?list=PLRD1Niz0lz1uR4W3ms6DygWMjXW-6hDB_&quot;&gt;&lt;strong&gt;JavaScript&lt;&#x2F;strong&gt; Game Walkthroughs&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=2nZiB1JItbY&amp;amp;list=PLDyQo7g0_nsX8_gZAB8KD1lL4j4halQBJ&quot;&gt;Getting Started With &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=iWOYAxlnaww&amp;amp;list=PL4cUxeGkcC9haFPT7J25Q9GRB_ZkFrQAc&quot;&gt;Modern JavaScript Tutorial&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=PkZNo7MFNFg&quot;&gt;&lt;strong&gt;JavaScript&lt;&#x2F;strong&gt; in Three Hours&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;know-your-web-fundamentals&quot;&gt;Know Your Web Fundamentals&lt;&#x2F;h2&gt;
+&lt;p&gt;You cannot separate the web, browsers, CSS from JavaScript. So once you get
+comfortable with programming in JavaScript, you’ll inevitably need to dig into
+web fundamentals. Here is a list of learning resources to get you started with
+in that area.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;web-fundamentals-in-general&quot;&gt;Web Fundamentals In General&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.internetingishard.com&#x2F;&quot;&gt;Interneting Is Hard&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Learn&#x2F;Front-end_web_developer&quot;&gt;MDN: Front-End Developer Learning Path&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&quot;&gt;MDN: Web Technology for Developers&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developers.google.com&#x2F;web&#x2F;&quot;&gt;GDN: Web Fundamentals&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;learn-your-html-like-a-pro&quot;&gt;Learn Your HTML Like a Pro&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;html.spec.whatwg.org&#x2F;&quot;&gt;HTML Spec&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;HTML&quot;&gt;MDN: HTML&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;HTML&quot;&gt;HyperText Markup Language&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;become-a-css-master&quot;&gt;Become a CSS Master&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Learn&#x2F;CSS&quot;&gt;MDN: Learn CSS&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learn.shayhowe.com&#x2F;html-css&#x2F;&quot;&gt;Learn to Code HTML and CSS&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Learn&#x2F;CSS&quot;&gt;Learn to Style HTML Using CSS&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;hicksdesign.co.uk&#x2F;boxmodel&#x2F;&quot;&gt;Box Model&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.smashingmagazine.com&#x2F;2007&#x2F;07&#x2F;css-specificity-things-you-should-know&#x2F;&quot;&gt;CSS Specificity: Things You Should Know&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;css-tricks.com&#x2F;snippets&#x2F;css&#x2F;a-guide-to-flexbox&#x2F;&quot;&gt;A Complete Guide to Flexbox&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learncssgrid.com&#x2F;&quot;&gt;Learn CSS Grid&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;CSS&#x2F;CSS_Animations&#x2F;Using_CSS_animations&quot;&gt;Using CSS Animations&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;CSS&#x2F;CSS_Transitions&#x2F;Using_CSS_transitions&quot;&gt;Using CSS Transitions&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;cssguidelin.es&#x2F;&quot;&gt;CSS Guidelines&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;css-tricks.com&#x2F;&quot;&gt;CSS Tricks&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;css-frameworks-tools-and-paradigms&quot;&gt;CSS Frameworks, Tools, and Paradigms&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;smacss.com&#x2F;&quot;&gt;Scalable and Modern Architecture for CSS&lt;&#x2F;a&gt; (&lt;em&gt;an oldie,
+but still the best conceptual framework&lt;&#x2F;em&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;sass-lang.com&#x2F;&quot;&gt;Sass: Syntactically Awesome Stylesheets&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.styled-components.com&#x2F;&quot;&gt;Styled Components&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;getbem.com&#x2F;&quot;&gt;BEM&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;tailwindcss.com&#x2F;&quot;&gt;Tailwind CSS&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;acss.io&#x2F;&quot;&gt;Atomic CSS&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;get-better-at-visualization&quot;&gt;Get Better at Visualization&lt;&#x2F;h3&gt;
+&lt;p&gt;Again, sooner or later you’ll need to &lt;strong&gt;visualize&lt;&#x2F;strong&gt; things. That can be a&lt;br &#x2F;&gt;
+simple dashboard, or a real-time histogram, or a time series data
+visualization.&lt;br &#x2F;&gt;
+Knowing of a couple of visualization libraries will be helpful.&lt;&#x2F;p&gt;
+&lt;p&gt;Here are a few libraries that you can take a stab at:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;d3js.org&#x2F;&quot;&gt;d3&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;snapsvg.io&#x2F;&quot;&gt;snapsvg&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;dmitrybaranovskiy.github.io&#x2F;raphael&#x2F;&quot;&gt;Raphaël&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;get-comfortable-with-developer-tools&quot;&gt;Get Comfortable with Developer Tools&lt;&#x2F;h2&gt;
+&lt;p&gt;When it comes to web development, browser tooling is something that you
+definitely need to get yourself familiar with. Here are a few pointers that can
+help you in that area:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Learn&#x2F;Tools_and_testing&#x2F;Understanding_client-side_tools&quot;&gt;MDN: Understanding Client-Side Tools&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developers.google.com&#x2F;web&#x2F;tools&#x2F;chrome-devtools&#x2F;&quot;&gt;Chrome Developer Tools&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Tools&quot;&gt;Firefox Developer Tools&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;christianheilmann.com&#x2F;2021&#x2F;11&#x2F;01&#x2F;developer-tools-secrets-that-shouldnt-be-secrets&#x2F;&quot;&gt;Developer Tools Secrets that Shouldn’t Be Secrets&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Knowing your tools will help a &lt;strong&gt;great deal&lt;&#x2F;strong&gt; when you need to debug web user
+interfaces and code.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;know-your-bundlers&quot;&gt;Know Your Bundlers&lt;&#x2F;h2&gt;
+&lt;p&gt;Related to developer tooling is bundlers and builders. The most popular ones
+are &lt;a href=&quot;https:&#x2F;&#x2F;webpack.js.org&#x2F;&quot;&gt;&lt;strong&gt;Webpack&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;parceljs.org&#x2F;&quot;&gt;&lt;strong&gt;parcel&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;,
+&lt;a href=&quot;https:&#x2F;&#x2F;rollupjs.org&#x2F;guide&#x2F;en&quot;&gt;&lt;strong&gt;rollup&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, and &lt;a href=&quot;https:&#x2F;&#x2F;gulpjs.com&#x2F;&quot;&gt;&lt;strong&gt;gulp&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;If you are not sure where to start, I’d suggest you master &lt;a href=&quot;https:&#x2F;&#x2F;webpack.js.org&#x2F;&quot;&gt;&lt;strong&gt;Webpack&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+first, and take a stab at other tools later. But, regardless, all of these tools
+serve more-or-less similar purposes (&lt;em&gt;with some variations in how you configure
+them&lt;&#x2F;em&gt;); so once you know how one of them work conceptually, the others will
+just make sense.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;browsers-and-performance-optimization&quot;&gt;Browsers And Performance Optimization&lt;&#x2F;h2&gt;
+&lt;p&gt;This section is the last section, and there’s a reason for that. Performance
+optimization is so tempting that once you get the poison, you’ll want to
+optimize everything all the time.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;2021&#x2F;11&#x2F;premature.jpeg&quot; alt=&quot;Premature optimization is the root of all evil.&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;There’s an old (&lt;em&gt;and quite correct&lt;&#x2F;em&gt;) saying about performance optimization:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“The first rule of program optimization: Don’t do it. The second rule of
+program optimization (&lt;em&gt;for experts only!&lt;&#x2F;em&gt;): Don’t do it &lt;strong&gt;yet&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;There’s no need to prematurely &lt;strong&gt;optimize&lt;&#x2F;strong&gt; your code until you feel enough *
+&lt;em&gt;pain&lt;&#x2F;em&gt;* to justify the cause.
+Remember, &lt;a href=&quot;https:&#x2F;&#x2F;blog.codinghorror.com&#x2F;everything-is-fast-for-small-n&#x2F;&quot;&gt;everything is fast for small n&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;If you don’t take my word for it, maybe you can listen
+to &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Donald_Knuth&quot;&gt;Donald Knuth&lt;&#x2F;a&gt;:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“Programmers waste enormous amounts of time thinking about, or worrying about,
+the speed of noncritical parts of their programs, and these attempts at
+efficiency actually have a strong negative impact when debugging and maintenance
+are considered. We should forget about small efficiencies, say about 97% of the
+time: &lt;strong&gt;premature optimization is the root of all evil&lt;&#x2F;strong&gt;. Yet we should not pass
+up our opportunities in that critical 3%.”&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;One quick tip before giving performance pointers: &lt;strong&gt;Write code for humans to
+read&lt;&#x2F;strong&gt;. When you need to choose between performance and readability, &lt;strong&gt;always
+choose readability&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;To quote it differently…&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“Always code as if the guy who ends up maintaining your code will be a&lt;br &#x2F;&gt;
+violent psychopath who knows where you live.”&lt;br &#x2F;&gt;
+— &lt;a href=&quot;https:&#x2F;&#x2F;groups.google.com&#x2F;forum&#x2F;#!msg&#x2F;comp.lang.c++&#x2F;rYCO5yn4lXw&#x2F;oITtSkZOtoUJ&quot;&gt;&lt;strong&gt;John Woods&lt;&#x2F;strong&gt;, Software Engineer, Google&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Those said, here are a few pointers to guide you through the dark alleys of
+&lt;strong&gt;JavaScript&lt;&#x2F;strong&gt; performance optimization:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;7008656.High_Performance_JavaScript&quot;&gt;High-Performance JavaScript&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;jankfree.org&#x2F;&quot;&gt;Jank Free&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=hAzhayTnhEI&quot;&gt;Jank Busters: Building Performant Web Apps&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;web.dev&#x2F;time-to-first-byte&#x2F;&quot;&gt;Time to First Byte&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;web.dev&#x2F;first-meaningful-paint&#x2F;&quot;&gt;First Meaningful Paint&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;web.dev&#x2F;extract-critical-css&#x2F;&quot;&gt;Extract Critical CSS&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;speakerdeck.com&#x2F;addyosmani&#x2F;velocityconf-rendering-performance-case-studies&quot;&gt;Rendering Performance Case Studies&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;gent.ilcore.com&#x2F;2011&#x2F;03&#x2F;how-not-to-trigger-layout-in-webkit.html&quot;&gt;How not to Trigger a Layout in Webkit (&lt;em&gt;historical&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.smashingmagazine.com&#x2F;2012&#x2F;11&#x2F;writing-fast-memory-efficient-javascript&#x2F;&quot;&gt;How to Write Fast, Memory-Efficient JavaScript (&lt;em&gt;historical&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;nodejs.org&#x2F;en&#x2F;blog&#x2F;uncategorized&#x2F;profiling-node-js&#x2F;&quot;&gt;Profiling Node.js&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;questions&#x2F;1911015&#x2F;how-do-i-debug-node-js-applications&#x2F;16512303#16512303&quot;&gt;Debugging and Profiling Node.js&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.jetbrains.com&#x2F;help&#x2F;webstorm&#x2F;v8-cpu-and-memory-profiling.html&quot;&gt;v8 CPU and Memory Profiling&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.oreilly.com&#x2F;ideas&#x2F;top-nodejs-metrics-to-watch&quot;&gt;Top Node.js Metrics to Watch&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;3133219-performance-testing-guidance-for-web-applications&quot;&gt;Performance Testing Guidance for Web Applications&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;4843320-the-art-of-application-performance-testing&quot;&gt;The Art of Application Performance Testing: Help for Programmers and QA&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;4843320-the-art-of-application-performance-testing&quot;&gt;How Do You Load Test a Web Application&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;4843320-the-art-of-application-performance-testing&quot;&gt;Application Performance Testing Tutorial&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;4843320-the-art-of-application-performance-testing&quot;&gt;Software Performance Testing&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UCnUYZLuoy1rq1aVMwx4aTzw&quot;&gt;YouTube: Google Chrome Developers Channel&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;While learning &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt;, you’ll inevitably have to learn browser internals
+to a certain extent. I believe this topic deserves a separate article on its own.
+Yet, here are some resources to get you started if you want to dive into the
+performance optimization rabbit hole:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;mathiasbynens.be&#x2F;notes&#x2F;shapes-ics&quot;&gt;JavaScript Engine Fundamentals&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.html5rocks.com&#x2F;en&#x2F;tutorials&#x2F;internals&#x2F;howbrowserswork&#x2F;&quot;&gt;How Browsers Work: Behind the Scenes of Modern Web Browsers&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;v8&#x2F;v8&#x2F;wiki&quot;&gt;v8 wiki&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;hpbn.co&#x2F;&quot;&gt;High-Performance Browser Networking&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.smashingmagazine.com&#x2F;2012&#x2F;11&#x2F;writing-fast-memory-efficient-javascript&#x2F;&quot;&gt;How to Write Fast, Memory Efficient &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;danbev&#x2F;learning-v8&quot;&gt;Learning v8&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;codeburst.io&#x2F;node-js-v8-internals-an-illustrative-primer-83766e983bf6&quot;&gt;v8 internals: an Illustrative Primer&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;richardartoul.github.io&#x2F;jekyll&#x2F;update&#x2F;2015&#x2F;04&#x2F;26&#x2F;hidden-classes.html&quot;&gt;Hidden Classes and Inline Caching in v8&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;blog.ghaiklor.com&#x2F;optimizations-tricks-in-v8-d284b6c8b183&quot;&gt;Optimization Tricks in v8&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.html5rocks.com&#x2F;en&#x2F;tutorials&#x2F;speed&#x2F;v8&#x2F;&quot;&gt;Performance tips for JavaScript in v8&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;www.jayconrod.com&#x2F;posts&#x2F;51&#x2F;a-tour-of-v8-full-compiler&quot;&gt;A Tour of v8 Compiler&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;thibaultlaurens.github.io&#x2F;javascript&#x2F;2013&#x2F;04&#x2F;29&#x2F;how-the-v8-engine-works&#x2F;&quot;&gt;How the v8 Engine Works&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;The videos, books, links, and resources I shared here are by no means
+conclusive. &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt; in particular, and &lt;strong&gt;Front-End Development&lt;&#x2F;strong&gt; in
+general, are vast and ever-growing fields. Again, I believe the material you
+find here will be a good starting point for newcomers and refreshers for the
+masters alike.&lt;&#x2F;p&gt;
+&lt;p&gt;Until next time… May the source be with you 🦄.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;roadmap&#x2F;&quot;&gt;Be the Next Version of Yourself&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;hack-the-system&#x2F;&quot;&gt;Who Else is Ready to Hack?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;chisel&#x2F;&quot;&gt;Grab Your Chisel and Start Pounding&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learn-fast-remember-more&#x2F;&quot;&gt;Unlock Your Brain’s Power: Learn Fast, Remember More&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;the-art-of-learning&#x2F;&quot;&gt;Master Your Mind: Unleash the Power of Learning&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;bedtime-reading&#x2F;&quot;&gt;Resources Every Developer Must Read: No Exceptions&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;knowing-javascript-is-not-good-enough&#x2F;&quot;&gt;Knowing JavaScript Is Not Good Enough&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Learn JavaScript the Unconventional Way&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learn-haskell&#x2F;&quot;&gt;Want to Learn JavaScript? Learn Haskell First&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;glossary&#x2F;&quot;&gt;A Glossary of Mostly Developer-Related Things&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;git&#x2F;&quot;&gt;Git Comfortable&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;vim&#x2F;&quot;&gt;Master Your Vim-Fu&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;one-does-not-simply-terminal&#x2F;&quot;&gt;One Does Not Simply Terminal 👌&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;design-patterns&#x2F;&quot;&gt;Paint Me Like One of Your French Design Patterns&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;regexp&#x2F;&quot;&gt;Tame Your Regular Expressions&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;security&#x2F;&quot;&gt;Security Is Not Optional&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;you-need-testing&#x2F;&quot;&gt;You Need Testing&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;a-startup-founders-bedtime-reading-list&#x2F;&quot;&gt;A Startup Founder’s Bedtime Reading List&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;color-theory&#x2F;&quot;&gt;Orange Is the New Purple&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;ramp-up-in-user-experience-design&#x2F;&quot;&gt;Ramp Up in User Experience Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;typography&#x2F;&quot;&gt;Get Better at Typography&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learning-rust&#x2F;&quot;&gt;Exploring Rust as a Go Developer&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Knowing JavaScript Is Not Good Enough</title>
+        <published>2021-11-21T00:00:00+00:00</published>
+        <updated>2021-11-21T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/roadmap/knowing-javascript-is-not-good-enough/"/>
+        <id>https://zerotohero.dev/roadmap/knowing-javascript-is-not-good-enough/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/roadmap/knowing-javascript-is-not-good-enough/">
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;Volkan_zelik_the_most_buoyant_girl_in_the_known_universe_c92b2c3b-d6d5-4142-8b1b-7dcafcf07e14.png&quot; alt=&quot;Elevate yourself beyond.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Elevate yourself beyond.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;expand-your-vision&quot;&gt;Expand Your Vision&lt;&#x2F;h2&gt;
+&lt;p&gt;Especially on social media, I see and read this preached a lot:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“Learn JavaScript, and you won’t need to learn anything else; you can do
+everything with JavaScript, from front-end to back-end, to AI&#x2F;ML, to game
+development… It is the best investment you’ll ever make!”&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;That’s a codswallop! Complete and utter 🐴💩.&lt;&#x2F;p&gt;
+&lt;p&gt;Don’t believe me? Check the profiles of these preaches. You’ll see that they are
+highly likely selling a JavaScript course, book, newsletter, or something along
+those lines. However, be aware that that advice is targeted more towards the
+preacher’s benefit rather than yours.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;learning-javascript-is-a-great-starting-point&quot;&gt;Learning JavaScript is a Great Starting Point&lt;&#x2F;h2&gt;
+&lt;p&gt;And if you want to stay there for the rest of your career, that’s totally okay.
+Just do this knowingly. Do it because you know that it is the right decision for
+you. Don’t do that because some figure with many followers on social media told
+you you should do it.&lt;&#x2F;p&gt;
+&lt;p&gt;Yes, learning JavaScript and related front-end technologies will take you
+places. But that will only take you so far. It is okay, as long as you and &lt;strong&gt;you
+only&lt;&#x2F;strong&gt; realize that that’s only part of the journey, and that’s where you want
+to be for the time being.&lt;&#x2F;p&gt;
+&lt;p&gt;However, if someone claims that only knowing &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt; is good enough for
+you because you can get whatever you need out of it. Or, worse, they tell you
+that you’ll be a (quote&#x2F;unquote) “&lt;em&gt;full stack developer&lt;&#x2F;em&gt;” once you master
+JavaScript, then approach that person’s “&lt;em&gt;thought leadership&lt;&#x2F;em&gt;” with a grain of
+salt.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;there-is-no-spoon&quot;&gt;There is No Spoon&lt;&#x2F;h2&gt;
+&lt;p&gt;On top of all these, people who preach these things intentionally ignore that
+there is no such thing as “&lt;em&gt;the stack&lt;&#x2F;em&gt;”. The term “full-stack” is redundant at
+least, useless at worst.&lt;&#x2F;p&gt;
+&lt;p&gt;The boundaries between the layers of “&lt;em&gt;the stack&lt;&#x2F;em&gt;” vanished a long time ago. It
+is a “&lt;strong&gt;mesh&lt;&#x2F;strong&gt;”—if anything—rather than a stack. Nowadays, the things one
+needs to know to manage an application end-to-end are so broad and wide that
+nobody can claim to know it all.&lt;&#x2F;p&gt;
+&lt;p&gt;Think about it.&lt;&#x2F;p&gt;
+&lt;p&gt;Can anyone claim to be an expert from Orchestration, to InfoSec, to performance
+optimization and SRE, to supply chain management, to Flexbox, to Edge networking
+and Serverless Compute, to CSS, sass and friends, to Accessibility and
+Usability, to Message Queues, Streams, Consensus Algorithms, Rate Limiting
+Distributed Tracing, to front end frameworks, to Databases, Sharding,
+Clustering, Distributed system design…?&lt;&#x2F;p&gt;
+&lt;p&gt;☝️ The list can go on and on… No one on earth can assume to know the entire
+stack of things.&lt;&#x2F;p&gt;
+&lt;p&gt;If one considers
+understanding &lt;a href=&quot;https:&#x2F;&#x2F;blog.logrocket.com&#x2F;mern-stack-tutorial&#x2F;&quot;&gt;the MERN Stack&lt;&#x2F;a&gt; inside out as a sufficient prerequisite
+to adding the term “full-stack engineer” to their résumé, they likely don’t
+know how much they don’t know yet.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;is-there-such-thing-as-a-half-stack-anyway&quot;&gt;Is There Such Thing as a “Half-Stack” Anyway?&lt;&#x2F;h2&gt;
+&lt;p&gt;The curios thing is, there is no such thing as &lt;strong&gt;half-stack&lt;&#x2F;strong&gt; either.&lt;&#x2F;p&gt;
+&lt;p&gt;To be a great software engineer, you’ll have to know &lt;strong&gt;both&lt;&#x2F;strong&gt; front-end and
+back-end anyway. Why? Because to be a great front-end developer, you first have
+to be a great back-end developer and vice versa. So if you think otherwise, you
+are deceiving yourself.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;There Are No Boundaries&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+The stack is not layered. You cannot isolate the stack. Nor can you restrict
+the stack. Without knowing about one part of the stack, you cannot be productive
+in the other parts either.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Ergo, any qualified developer has no other choice to work across the stack.
+Calling a developer a “&lt;em&gt;full-stack&lt;&#x2F;em&gt;” developer is akin to calling a car a
+“&lt;em&gt;horseless carriage&lt;&#x2F;em&gt;”—It is &lt;strong&gt;redundant&lt;&#x2F;strong&gt;, outdated, and a &lt;strong&gt;tautology&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;Know your path. Know where you want to go. And walk your path knowingly.&lt;&#x2F;p&gt;
+&lt;p&gt;If you claim to work on the entire stack with a single language under your tool
+belt, it only proves that you are afraid of and closed to learning new
+things—None of these are good attributes to have in a developer who wants to
+get better at what they do.&lt;&#x2F;p&gt;
+&lt;p&gt;Everything changes. And everything starts by knowing yourself.&lt;&#x2F;p&gt;
+&lt;p&gt;Knowing one’s self, in itself, is a lifelong journey. A Twitter thread cannot
+show you that. Ironically, neither this article can show it to you. Though, I
+humbly hope it shed some light on the “why“s and “how” of expanding your
+horizon.&lt;&#x2F;p&gt;
+&lt;p&gt;Until the next one… May the source be with you 🦄.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;roadmap&#x2F;&quot;&gt;Be the Next Version of Yourself&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;hack-the-system&#x2F;&quot;&gt;Who Else is Ready to Hack?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;chisel&#x2F;&quot;&gt;Grab Your Chisel and Start Pounding&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learn-fast-remember-more&#x2F;&quot;&gt;Unlock Your Brain’s Power: Learn Fast, Remember More&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;the-art-of-learning&#x2F;&quot;&gt;Master Your Mind: Unleash the Power of Learning&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;bedtime-reading&#x2F;&quot;&gt;Resources Every Developer Must Read: No Exceptions&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Knowing JavaScript Is Not Good Enough&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learn-javascript-the-unconventional-way&#x2F;&quot;&gt;Learn JavaScript the Unconventional Way&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learn-haskell&#x2F;&quot;&gt;Want to Learn JavaScript? Learn Haskell First&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;glossary&#x2F;&quot;&gt;A Glossary of Mostly Developer-Related Things&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;git&#x2F;&quot;&gt;Git Comfortable&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;vim&#x2F;&quot;&gt;Master Your Vim-Fu&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;one-does-not-simply-terminal&#x2F;&quot;&gt;One Does Not Simply Terminal 👌&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;design-patterns&#x2F;&quot;&gt;Paint Me Like One of Your French Design Patterns&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;regexp&#x2F;&quot;&gt;Tame Your Regular Expressions&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;security&#x2F;&quot;&gt;Security Is Not Optional&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;you-need-testing&#x2F;&quot;&gt;You Need Testing&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;a-startup-founders-bedtime-reading-list&#x2F;&quot;&gt;A Startup Founder’s Bedtime Reading List&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;color-theory&#x2F;&quot;&gt;Orange Is the New Purple&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;ramp-up-in-user-experience-design&#x2F;&quot;&gt;Ramp Up in User Experience Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;typography&#x2F;&quot;&gt;Get Better at Typography&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learning-rust&#x2F;&quot;&gt;Exploring Rust as a Go Developer&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Want to Learn JavaScript? Learn Haskell First</title>
+        <published>2021-11-09T00:00:00+00:00</published>
+        <updated>2021-11-09T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/roadmap/learn-haskell/"/>
+        <id>https://zerotohero.dev/roadmap/learn-haskell/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/roadmap/learn-haskell/">&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;size&#x2F;w1200&#x2F;2024&#x2F;03&#x2F;functinal.png&quot; alt=&quot;Want to Learn JavaScript? Learn Haskell First&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;functinal.png&quot; alt=&quot;Be functional.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Be functional.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;srsly&quot;&gt;Srsly?&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;em&gt;I&lt;&#x2F;em&gt;’m serious about this.&lt;&#x2F;p&gt;
+&lt;p&gt;Anyone who wants to master &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt; had
+better &lt;a href=&quot;http:&#x2F;&#x2F;learnyouahaskell.com&#x2F;&quot;&gt;learn Haskell&lt;&#x2F;a&gt; beforehand.&lt;&#x2F;p&gt;
+&lt;p&gt;This article explains the “&lt;em&gt;why&lt;&#x2F;em&gt;“s and “&lt;em&gt;how&lt;&#x2F;em&gt;“s of it.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;why-do-i-need-haskell&quot;&gt;Why Do I Need Haskell?&lt;&#x2F;h2&gt;
+&lt;p&gt;Modern &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt; has become and more &lt;strong&gt;functional&lt;&#x2F;strong&gt;. Also, the modern
+&lt;strong&gt;JavaScript&lt;&#x2F;strong&gt; frameworks and libraries strongly encourage (&lt;em&gt;sometimes, to the
+point of &lt;strong&gt;enforcing&lt;&#x2F;strong&gt;&lt;&#x2F;em&gt;) you
+to &lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;29627874-functional-thinking&quot;&gt;think functionally&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Moreover, most of the &lt;strong&gt;functional&lt;&#x2F;strong&gt; constructs that modern &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt;
+implements have been borrowed straight out of &lt;a href=&quot;https:&#x2F;&#x2F;www.haskell.org&#x2F;&quot;&gt;&lt;strong&gt;Haskell&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+or are easier to grok when you already know their &lt;a href=&quot;https:&#x2F;&#x2F;www.haskell.org&#x2F;&quot;&gt;&lt;strong&gt;Haskell&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; counterparts.&lt;&#x2F;p&gt;
+&lt;p&gt;Not only vanilla &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt;, but also many popular &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt; tools and
+frameworks such as &lt;a href=&quot;https:&#x2F;&#x2F;redux.js.org&#x2F;&quot;&gt;Redux&lt;&#x2F;a&gt;, or
+the &lt;a href=&quot;https:&#x2F;&#x2F;reactjs.org&#x2F;docs&#x2F;context.html&quot;&gt;React Context API&lt;&#x2F;a&gt;,
+or &lt;a href=&quot;https:&#x2F;&#x2F;facebook.github.io&#x2F;immutable-js&#x2F;&quot;&gt;immutable.js&lt;&#x2F;a&gt; are tools that are *
+&lt;em&gt;highly inspired&lt;&#x2F;em&gt;* by &lt;em&gt;functional&lt;&#x2F;em&gt; languages like &lt;a href=&quot;https:&#x2F;&#x2F;www.haskell.org&#x2F;&quot;&gt;&lt;strong&gt;Haskell&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Even &lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;JavaScript&#x2F;Reference&#x2F;Global_Objects&#x2F;Promise&quot;&gt;&lt;code&gt;Promise&lt;&#x2F;code&gt;&lt;&#x2F;a&gt;
+s are &lt;a href=&quot;https:&#x2F;&#x2F;wiki.haskell.org&#x2F;All_About_Monads&quot;&gt;Monadic constructs&lt;&#x2F;a&gt;, and
+&lt;a href=&quot;https:&#x2F;&#x2F;adit.io&#x2F;posts&#x2F;2013-04-17-functors,_applicatives,_and_monads_in_pictures.html&quot;&gt;&lt;strong&gt;Monad&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+is a data type that &lt;strong&gt;Haskell&lt;&#x2F;strong&gt; programs use extensively to modify state.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Haskell is a Paradigm Shift&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.haskell.org&#x2F;&quot;&gt;Learning &lt;strong&gt;Haskell&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; will change how you think:
+You’ll look at programming problems from a &lt;strong&gt;simplistic&lt;&#x2F;strong&gt;, elegant, &lt;strong&gt;pure&lt;&#x2F;strong&gt;,
+and different perspective. That’s what matters.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;The reason many developers have a hard time understanding &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt; is not
+about the complexity of
+it: &lt;a href=&quot;https:&#x2F;&#x2F;tc39.github.io&#x2F;ecma262&#x2F;&quot;&gt;JavaScript is an easy-to-understand language&lt;&#x2F;a&gt;.
+You can learn the basics of it in a couple of days to a few months tops.&lt;&#x2F;p&gt;
+&lt;p&gt;The problem is not the rules, or semantics of the language: Learning to “&lt;em&gt;think
+in JavaScript&lt;&#x2F;em&gt;” is what takes time, effort, and energy.&lt;&#x2F;p&gt;
+&lt;p&gt;When you learn a &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Purely_functional_programming&quot;&gt;&lt;em&gt;purely functional
+language&lt;&#x2F;em&gt;&lt;&#x2F;a&gt;,
+and &lt;a href=&quot;https:&#x2F;&#x2F;www.haskell.org&#x2F;&quot;&gt;&lt;strong&gt;Haskell&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; is the best “&lt;em&gt;pure&lt;&#x2F;em&gt;” functional
+language out there, thinking in &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt; will be a &lt;strong&gt;cakewalk&lt;&#x2F;strong&gt; for you.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;where-do-i-learn-haskell&quot;&gt;Where Do I Learn Haskell?&lt;&#x2F;h2&gt;
+&lt;p&gt;Here are a few links to help you learn Haskell:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;channel9.msdn.com&#x2F;Series&#x2F;C9-Lectures-Erik-Meijer-Functional-Programming-Fundamentals&#x2F;Lecture-Series-Erik-Meijer-Functional-Programming-Fundamentals-Chapter-1&quot;&gt;C9: Programming in Haskell&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;wiki.haskell.org&#x2F;Tutorials&quot;&gt;Introduction to Haskell&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;learnyouahaskell.com&#x2F;introduction&quot;&gt;Learn Your Haskell for Great Good&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;wiki.haskell.org&#x2F;Learning_Haskel&quot;&gt;Learning Haskell (&lt;em&gt;Haskell Wiki&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;book.realworldhaskell.org&#x2F;&quot;&gt;Real-World Haskell&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;wiki.haskell.org&#x2F;All_About_Monads&quot;&gt;All About Monads&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;adit.io&#x2F;posts&#x2F;2013-04-17-functors,_applicatives,_and_monads_in_pictures.html&quot;&gt;Functors, Applicatives, and Monads in Pictures&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.haskell.org&#x2F;hoogle&#x2F;&quot;&gt;Hoogle&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;www.cs.nott.ac.uk&#x2F;~pszgmh&#x2F;pih.html&quot;&gt;Programming in Haskell&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;wiki.haskell.org&#x2F;Tutorials&quot;&gt;Haskell Tutorials&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;bonus-read-k-r-s-c-programming-language&quot;&gt;&lt;strong&gt;Bonus&lt;&#x2F;strong&gt;: Read K&amp;amp;R’s &lt;strong&gt;C Programming Language&lt;&#x2F;strong&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Even if you don’t professionally plan to write C, every developer should
+read &lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;515601.The_C_Programming_Language&quot;&gt;K&amp;amp;R’s C Programming Language&lt;&#x2F;a&gt;
+—It teaches you a lot in so little; it’s a classic.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Rant&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;A programmer who has not
+read &lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;515601.The_C_Programming_Language&quot;&gt;K&amp;amp;R’s ANSI C&lt;&#x2F;a&gt;
+is like a geek who has not read Asimov. Don’t be that person.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;After learning &lt;strong&gt;Haskell&lt;&#x2F;strong&gt;, I’d recommend you
+&lt;a href=&quot;https:&#x2F;&#x2F;go.dev&#x2F;&quot;&gt;give &lt;strong&gt;Go&lt;&#x2F;strong&gt; a go&lt;&#x2F;a&gt; too.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Don’t Forget Your HTML and CSS&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+It would even be better if you dig into
+some &lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;HTML&quot;&gt;HTML&lt;&#x2F;a&gt;,
+&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;CSS&quot;&gt;CSS&lt;&#x2F;a&gt;,
+and a good dose
+of &lt;a href=&quot;https:&#x2F;&#x2F;owasp.org&#x2F;www-project-top-ten&#x2F;&quot;&gt;Web Application Security&lt;&#x2F;a&gt; before you
+begin your &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt; journey.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;I hear some of you asking, “&lt;em&gt;What’s the advantage of learning two other
+languages, just to learn a third language?&lt;&#x2F;em&gt;”.&lt;&#x2F;p&gt;
+&lt;p&gt;If you ever watched &lt;a href=&quot;https:&#x2F;&#x2F;www.imdb.com&#x2F;title&#x2F;tt0087538&#x2F;&quot;&gt;The Karate Kid&lt;&#x2F;a&gt;,
+then you know the reason: Even if you have studied a couple of weeks of &lt;a href=&quot;https:&#x2F;&#x2F;www.haskell.org&#x2F;&quot;&gt;*
+&lt;em&gt;Haskell&lt;&#x2F;em&gt;*&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;go.dev&#x2F;&quot;&gt;**Go
+**&lt;&#x2F;a&gt;, you’ll be “&lt;em&gt;miles
+ahead&lt;&#x2F;em&gt;”
+when you
+begin your &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt; journey.&lt;&#x2F;p&gt;
+&lt;p&gt;Your mind will be &lt;em&gt;wired&lt;&#x2F;em&gt; to think in &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt; without you even realize.&lt;&#x2F;p&gt;
+&lt;p&gt;There are countless articles, books, videos, and tutorials to cover your *
+&lt;em&gt;JavaScript&lt;&#x2F;em&gt;* bases. I’ll write about it later. Yet a quick web search will
+provide you with more resources than you need 🙂.&lt;&#x2F;p&gt;
+&lt;p&gt;So off you go, learn some cool $#!%.&lt;&#x2F;p&gt;
+&lt;p&gt;And until next time… May the source be with you 🦄.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;roadmap&#x2F;&quot;&gt;Be the Next Version of Yourself&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;hack-the-system&#x2F;&quot;&gt;Who Else is Ready to Hack?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;chisel&#x2F;&quot;&gt;Grab Your Chisel and Start Pounding&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learn-fast-remember-more&#x2F;&quot;&gt;Unlock Your Brain’s Power: Learn Fast, Remember More&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;the-art-of-learning&#x2F;&quot;&gt;Master Your Mind: Unleash the Power of Learning&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;bedtime-reading&#x2F;&quot;&gt;Resources Every Developer Must Read: No Exceptions&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;knowing-javascript-is-not-good-enough&#x2F;&quot;&gt;Knowing JavaScript Is Not Good Enough&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learn-javascript-the-unconventional-way&#x2F;&quot;&gt;Learn JavaScript the Unconventional Way&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Want to Learn JavaScript? Learn Haskell First&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;glossary&#x2F;&quot;&gt;A Glossary of Mostly Developer-Related Things&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;git&#x2F;&quot;&gt;Git Comfortable&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;vim&#x2F;&quot;&gt;Master Your Vim-Fu&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;one-does-not-simply-terminal&#x2F;&quot;&gt;One Does Not Simply Terminal 👌&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;design-patterns&#x2F;&quot;&gt;Paint Me Like One of Your French Design Patterns&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;regexp&#x2F;&quot;&gt;Tame Your Regular Expressions&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;security&#x2F;&quot;&gt;Security Is Not Optional&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;you-need-testing&#x2F;&quot;&gt;You Need Testing&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;a-startup-founders-bedtime-reading-list&#x2F;&quot;&gt;A Startup Founder’s Bedtime Reading List&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;color-theory&#x2F;&quot;&gt;Orange Is the New Purple&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;ramp-up-in-user-experience-design&#x2F;&quot;&gt;Ramp Up in User Experience Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;typography&#x2F;&quot;&gt;Get Better at Typography&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learning-rust&#x2F;&quot;&gt;Exploring Rust as a Go Developer&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+</feed>

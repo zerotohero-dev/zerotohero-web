@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Zero to Hero - cross-compilation</title>
+    <link rel="self" type="application/atom+xml" href="https://zerotohero.dev/tags/cross-compilation/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://zerotohero.dev"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2024-11-27T00:00:00+00:00</updated>
+    <id>https://zerotohero.dev/tags/cross-compilation/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Cross-Compiling Go Applications on M3 Macs: A Practical Guide</title>
+        <published>2024-11-27T00:00:00+00:00</published>
+        <updated>2024-11-27T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/cross-compilation/"/>
+        <id>https://zerotohero.dev/inbox/cross-compilation/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/cross-compilation/">&lt;p&gt;Cross-compiling Go applications on Apple Silicon (M-series) Macs can be tricky, especially when dealing with CGO dependencies. In this guide, we’ll explore different approaches to building Go applications for multiple architectures, specifically targeting Linux (AMD64 and ARM64) and macOS (ARM64).&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-challenge&quot;&gt;The Challenge&lt;&#x2F;h2&gt;
+&lt;p&gt;When working with Go applications that use CGO, simple cross-compilation commands like &lt;code&gt;GOOS=linux GOARCH=amd64 go build&lt;&#x2F;code&gt; might not be sufficient. This is particularly true when:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Your application uses CGO-dependent packages&lt;&#x2F;li&gt;
+&lt;li&gt;You need to build for multiple architectures&lt;&#x2F;li&gt;
+&lt;li&gt;You’re working on an M-series Mac&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;initial-approach-local-cross-compilation&quot;&gt;Initial Approach: Local Cross-Compilation&lt;&#x2F;h2&gt;
+&lt;p&gt;My first attempt involved using traditional cross-compilation tools. Here’s what I initially tried:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Linux ARM64
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;CGO_ENABLED&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;0 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOEXPERIMENT&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;boringcrypto &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;go build -o keeper .&#x2F;app&#x2F;keeper&#x2F;cmd&#x2F;main.go
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;CGO_ENABLED&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOEXPERIMENT&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;boringcrypto &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;go build -o nexus .&#x2F;app&#x2F;nexus&#x2F;cmd&#x2F;main.go
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;CGO_ENABLED&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;0 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOEXPERIMENT&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;boringcrypto &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;go build -o spike .&#x2F;app&#x2F;spike&#x2F;cmd&#x2F;main.go
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;However, when trying to cross-compile for different architectures, I ran into issues:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOOS&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;linux &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOARCH&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;amd64 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;CGO_ENABLED&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOEXPERIMENT&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;boringcrypto &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;go build -o nexus-linux-amd64 .&#x2F;app&#x2F;nexus&#x2F;cmd&#x2F;main.go
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This approach failed because it needed proper cross-compilation toolchains.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-solution-docker-based-cross-compilation&quot;&gt;The Solution: Docker-Based Cross-Compilation&lt;&#x2F;h2&gt;
+&lt;p&gt;After exploring various options, I found that using Docker for cross-compilation provides the most reliable and reproducible solution. Here’s how to implement it:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;First, create a Dockerfile:&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;pre data-lang=&quot;dockerfile&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-dockerfile &quot;&gt;&lt;code class=&quot;language-dockerfile&quot; data-lang=&quot;dockerfile&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;FROM&lt;&#x2F;span&gt;&lt;span&gt; golang:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;1.21-alpine &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;AS &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;builder
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Install build tools
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;RUN &lt;&#x2F;span&gt;&lt;span&gt;apk add --no-cache gcc musl-dev
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Set working directory
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;WORKDIR &lt;&#x2F;span&gt;&lt;span&gt;&#x2F;app
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Copy go mod files
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;COPY&lt;&#x2F;span&gt;&lt;span&gt; go.mod go.sum .&#x2F;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;RUN &lt;&#x2F;span&gt;&lt;span&gt;go mod download
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Copy source code
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;COPY&lt;&#x2F;span&gt;&lt;span&gt; . .
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Build for different platforms
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;RUN &lt;&#x2F;span&gt;&lt;span&gt;GOOS=linux GOARCH=amd64 CGO_ENABLED=0 GOEXPERIMENT=boringcrypto go build -o keeper-linux-amd64 .&#x2F;app&#x2F;keeper&#x2F;cmd&#x2F;main.go &amp;amp;&amp;amp; \
+&lt;&#x2F;span&gt;&lt;span&gt;    GOOS=linux GOARCH=amd64 CGO_ENABLED=1 GOEXPERIMENT=boringcrypto go build -o nexus-linux-amd64 .&#x2F;app&#x2F;nexus&#x2F;cmd&#x2F;main.go &amp;amp;&amp;amp; \
+&lt;&#x2F;span&gt;&lt;span&gt;    GOOS=linux GOARCH=amd64 CGO_ENABLED=0 GOEXPERIMENT=boringcrypto go build -o spike-linux-amd64 .&#x2F;app&#x2F;spike&#x2F;cmd&#x2F;main.go &amp;amp;&amp;amp; \
+&lt;&#x2F;span&gt;&lt;span&gt;    GOOS=linux GOARCH=arm64 CGO_ENABLED=0 GOEXPERIMENT=boringcrypto go build -o keeper-linux-arm64 .&#x2F;app&#x2F;keeper&#x2F;cmd&#x2F;main.go &amp;amp;&amp;amp; \
+&lt;&#x2F;span&gt;&lt;span&gt;    GOOS=linux GOARCH=arm64 CGO_ENABLED=1 GOEXPERIMENT=boringcrypto go build -o nexus-linux-arm64 .&#x2F;app&#x2F;nexus&#x2F;cmd&#x2F;main.go &amp;amp;&amp;amp; \
+&lt;&#x2F;span&gt;&lt;span&gt;    GOOS=linux GOARCH=arm64 CGO_ENABLED=0 GOEXPERIMENT=boringcrypto go build -o spike-linux-arm64 .&#x2F;app&#x2F;spike&#x2F;cmd&#x2F;main.go
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;Create a build script:&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;#!&#x2F;bin&#x2F;bash
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Build the Docker image
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;docker build -t go-cross-compiler .
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Create a container and copy the binaries
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;docker create --name temp-container go-cross-compiler
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;docker cp temp-container:&#x2F;app&#x2F;keeper-linux-amd64 .
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;docker cp temp-container:&#x2F;app&#x2F;nexus-linux-amd64 .
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;docker cp temp-container:&#x2F;app&#x2F;spike-linux-amd64 .
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;docker cp temp-container:&#x2F;app&#x2F;keeper-linux-arm64 .
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;docker cp temp-container:&#x2F;app&#x2F;nexus-linux-arm64 .
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;docker cp temp-container:&#x2F;app&#x2F;spike-linux-arm64 .
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Clean up
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;docker rm temp-container
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;advantages-of-the-docker-approach&quot;&gt;Advantages of the Docker Approach&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Reproducibility&lt;&#x2F;strong&gt;: The build environment is consistent across different development machines&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;No Local Dependencies&lt;&#x2F;strong&gt;: No need to install cross-compilation tools locally&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Simplified Process&lt;&#x2F;strong&gt;: One command builds all targets&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Consistent Results&lt;&#x2F;strong&gt;: Binaries are built in a controlled environment&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Easy CI&#x2F;CD Integration&lt;&#x2F;strong&gt;: The Docker-based approach works well in automated pipelines&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;building-for-macos-arm64&quot;&gt;Building for macOS ARM64&lt;&#x2F;h2&gt;
+&lt;p&gt;For macOS ARM64 builds, you can still build natively on your M-series Mac:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOOS&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;darwin &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOARCH&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;arm64 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;CGO_ENABLED&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;0 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOEXPERIMENT&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;boringcrypto &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;go build -o keeper-darwin-arm64 .&#x2F;app&#x2F;keeper&#x2F;cmd&#x2F;main.go
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOOS&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;darwin &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOARCH&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;arm64 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;CGO_ENABLED&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOEXPERIMENT&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;boringcrypto &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;go build -o nexus-darwin-arm64 .&#x2F;app&#x2F;nexus&#x2F;cmd&#x2F;main.go
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOOS&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;darwin &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOARCH&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;arm64 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;CGO_ENABLED&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;0 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOEXPERIMENT&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;boringcrypto &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;go build -o spike-darwin-arm64 .&#x2F;app&#x2F;spike&#x2F;cmd&#x2F;main.go
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;common-pitfalls-and-solutions&quot;&gt;Common Pitfalls and Solutions&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;CGO Dependencies&lt;&#x2F;strong&gt;: When &lt;code&gt;CGO_ENABLED=1&lt;&#x2F;code&gt;, ensure your Docker container has the necessary build tools installed&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Architecture Mismatch&lt;&#x2F;strong&gt;: Double-check &lt;code&gt;GOOS&lt;&#x2F;code&gt; and &lt;code&gt;GOARCH&lt;&#x2F;code&gt; values match your target platforms&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Build Tags&lt;&#x2F;strong&gt;: Consider using build tags for platform-specific code&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Static Linking&lt;&#x2F;strong&gt;: For better portability, use &lt;code&gt;CGO_ENABLED=0&lt;&#x2F;code&gt; when possible&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;While cross-compilation on M-series Macs presents some challenges, using Docker provides a robust and maintainable solution. This approach simplifies the build process and ensures consistent results across different architectures.&lt;&#x2F;p&gt;
+&lt;p&gt;For projects that don’t require CGO, you might still use direct cross-compilation. However, for complex projects with CGO dependencies, the Docker-based approach is recommended.&lt;&#x2F;p&gt;
+&lt;p&gt;Remember to version your build scripts and Dockerfile alongside your project code to maintain build reproducibility across your team.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

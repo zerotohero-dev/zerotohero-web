@@ -1,0 +1,1035 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Zero to Hero - streaming</title>
+    <link rel="self" type="application/atom+xml" href="https://zerotohero.dev/tags/streaming/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://zerotohero.dev"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2024-05-27T00:00:00+00:00</updated>
+    <id>https://zerotohero.dev/tags/streaming/atom.xml</id>
+    <entry xml:lang="en">
+        <title>The Live Stream Dream</title>
+        <published>2024-05-27T00:00:00+00:00</published>
+        <updated>2024-05-27T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/tips/talkspiffe-stream-setup/"/>
+        <id>https://zerotohero.dev/tips/talkspiffe-stream-setup/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/tips/talkspiffe-stream-setup/">
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;stream.png&quot; alt=&quot;Streaming.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Streaming.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;&#x2F;h2&gt;
+&lt;p&gt;It is an understatement to say that “&lt;em&gt;&lt;strong&gt;streaming is complicated&lt;&#x2F;strong&gt;.&lt;&#x2F;em&gt;”&lt;&#x2F;p&gt;
+&lt;p&gt;Live streaming, especially involving &lt;em&gt;multiple participants&lt;&#x2F;em&gt;, is an intricate
+technology dance. Each puzzle must harmonize to ensure a seamless, interactive,
+high-quality viewer experience.&lt;&#x2F;p&gt;
+&lt;p&gt;The complexity increases even more when we decide to share not just our faces or
+voices but our desktops too. This is the path we have chosen in &lt;a href=&quot;https:&#x2F;&#x2F;www.twitch.tv&#x2F;VadidekiVolkan&#x2F;schedule&quot;&gt;our ongoing
+&lt;strong&gt;TalkSPIFFE&lt;&#x2F;strong&gt; series&lt;&#x2F;a&gt;: The live
+office hours we dedicate to the &lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt; and &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt; community.&lt;&#x2F;p&gt;
+&lt;p&gt;This article provides a comprehensive guide for designing an intricate
+multi-platform streaming model. I want this to be a resource for my future self
+and the fantastic community interested in replicating such a setup. It’s an
+insider look into the dynamic and complex world of multi-streaming, showing how
+technology, when used innovatively, can foster powerful and engaging digital
+experiences.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-16-at-11.33.11-AM.png&quot; alt=&quot;Eli (left) and I (right) enjoying the show.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Eli (left) and I (right) enjoying the show.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;talkspiffe-is-that-something-new-can-i-eat-it&quot;&gt;TalkSPIFFE? Is That Something New? Can I Eat It?&lt;&#x2F;h2&gt;
+&lt;p&gt;Before I continue, it’s a perfect moment to delve deeper into what
+&lt;a href=&quot;https:&#x2F;&#x2F;twitch.tv&#x2F;VadidekiVolkan&quot;&gt;&lt;strong&gt;TalkSPIFFE&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; truly is.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;TalkSPIFFE&lt;&#x2F;strong&gt; is more than just a live stream; it’s a platform designed to
+demystify and elucidate the intricacies of the
+&lt;a href=&quot;https:&#x2F;&#x2F;spiffe.io&#x2F;&quot;&gt;&lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; (&lt;em&gt;Secure Production Identity Framework for
+Everyone&lt;&#x2F;em&gt;) technology. It’s an opportunity for &lt;strong&gt;SPIFFE&#x2F;SPIRE&lt;&#x2F;strong&gt; enthusiasts,
+professionals, and those who want to learn more about &lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt; and &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt;
+to come together and engage in enlightening discussions, learn from each other,
+and help foster a community.&lt;&#x2F;p&gt;
+&lt;p&gt;We’ve aimed for &lt;strong&gt;TalkSPIFFE&lt;&#x2F;strong&gt; to be a space that feels both welcoming and
+informative rather than being strictly academic or intimidatingly technical. We
+believe in a more dynamic interaction that allows anyone and everyone to gain
+knowledge and contribute unique insights.&lt;&#x2F;p&gt;
+&lt;p&gt;In our weekly sessions every other Friday, we tackle various &lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt;-related
+topics, discuss the latest updates, share best practices, and do live demos.&lt;&#x2F;p&gt;
+&lt;p&gt;Whether you’re just dipping your toes into the &lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt; waters or are a
+seasoned professional looking to stay updated and share your wisdom,
+&lt;strong&gt;TalkSPIFFE&lt;&#x2F;strong&gt; offers you a place to do just that.&lt;&#x2F;p&gt;
+&lt;p&gt;So join us in our upcoming streams, and let’s make &lt;strong&gt;TalkSPIFFE&lt;&#x2F;strong&gt; a thriving
+platform for learning, sharing, and collaborative growth in &lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt; and *
+&lt;em&gt;SPIRE&lt;&#x2F;em&gt;*.&lt;&#x2F;p&gt;
+&lt;p&gt;That was the segue 🙂 Now, back to our setup.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;a-deep-dive-into-the-talkspiffe-streaming-setup&quot;&gt;A Deep Dive Into the TalkSPIFFE Streaming Setup&lt;&#x2F;h2&gt;
+&lt;p&gt;Since my streaming setup is far from ordinary, I wanted to give you an inside
+look into the process.&lt;&#x2F;p&gt;
+&lt;p&gt;In this article, I’ll share how we’ve used applications like
+&lt;a href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;audiohijack&#x2F;&quot;&gt;&lt;strong&gt;Audio Hijack&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;,
+&lt;a href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;loopback&#x2F;&quot;&gt;&lt;strong&gt;Loopback&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;,
+&lt;a href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;airfoil&#x2F;mac&#x2F;&quot;&gt;&lt;strong&gt;Airfoil Satellite&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;,
+&lt;a href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;farrago&#x2F;&quot;&gt;&lt;strong&gt;Farrago&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;,
+&lt;strong&gt;&lt;em&gt;Zoom&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;, &lt;strong&gt;&lt;em&gt;Discord&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;,
+&lt;a href=&quot;https:&#x2F;&#x2F;help.twitch.tv&#x2F;s&#x2F;article&#x2F;guest-star?language=en_US&quot;&gt;Twitch’s Guest Star feature&lt;&#x2F;a&gt;,
+&lt;a href=&quot;https:&#x2F;&#x2F;obsproject.com&#x2F;&quot;&gt;&lt;strong&gt;Open Broadcaster Software (&lt;em&gt;OBS&lt;&#x2F;em&gt;)&lt;&#x2F;strong&gt;,&lt;&#x2F;a&gt; and
+&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;waydabber&#x2F;BetterDisplay&quot;&gt;&lt;strong&gt;BetterDisplay&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; to create a
+compelling and interactive live streaming experience.&lt;&#x2F;p&gt;
+&lt;p&gt;Each platform plays a vital role, from integrating our desktops through Zoom and
+routing our audio via a Discord voice channel to broadcasting our video feed on
+Twitch. The added twist of background music takes the viewer experience to
+another level, immersing them in our conversational and instructional narrative.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;twitch-s-guest-star-feature-is-a-life-saver&quot;&gt;Twitch’s Guest Star Feature is a Life Saver&lt;&#x2F;h2&gt;
+&lt;p&gt;Navigating the turbulent waters of streaming a guest’s audio and video on a live
+stream can be challenging. This is where &lt;a href=&quot;https:&#x2F;&#x2F;help.twitch.tv&#x2F;s&#x2F;article&#x2F;guest-star&quot;&gt;Twitch’s innovative “&lt;strong&gt;Guest Star&lt;&#x2F;strong&gt;” feature&lt;&#x2F;a&gt;
+shines.&lt;&#x2F;p&gt;
+&lt;p&gt;The &lt;strong&gt;Guest Star&lt;&#x2F;strong&gt; tool lets you establish “guest slot” browser sources you can
+deftly arrange in your broadcasting software. With ease, you can swiftly add or
+change the guests appearing in that slot directly through &lt;strong&gt;Twitch&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;The beauty of this feature is its &lt;strong&gt;simplicity&lt;&#x2F;strong&gt;: Streamlining the process of
+integrating a guest’s video feed into your live stream, and all without needing
+to dabble with complex configurations or multiple third-party tools.&lt;&#x2F;p&gt;
+&lt;p&gt;Using this feature, I can stream the camera of my guest directly as a browser
+source into my Open Broadcaster Software (&lt;strong&gt;OBS&lt;&#x2F;strong&gt;).&lt;&#x2F;p&gt;
+&lt;p&gt;If I want, I can also change the guests appearing in that slot directly through
+Twitch, effortlessly integrating a guest’s video feed into my live stream
+without juggling complex configurations or multiple third-party tools.&lt;&#x2F;p&gt;
+&lt;p&gt;So far, everything about &lt;strong&gt;Guest Star&lt;&#x2F;strong&gt; works like a charm.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;a-sneak-peek-at-the-backstage&quot;&gt;A Sneak Peek at the Backstage&lt;&#x2F;h2&gt;
+&lt;p&gt;Here’s how we typically initiate our stream:&lt;&#x2F;p&gt;
+&lt;p&gt;Before the event starts, there is a 15-minute interval where the stream will be
+live and a “&lt;em&gt;starting soon&lt;&#x2F;em&gt;” scene with a countdown timer is displayed life
+(&lt;em&gt;the &lt;code&gt;63:46&lt;&#x2F;code&gt; countdown timer in the image below is just for demonstration
+purposes; consider it something like 11:25 or similar—starting from 15:00 and
+counting backward&lt;&#x2F;em&gt;).&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-15-at-2.30.25-PM.png&quot; alt=&quot;The &amp;#x27;waiting room&amp;#x27; and the countdown timer.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;The &amp;#x27;waiting room&amp;#x27; and the countdown timer.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;During that time, I invite &lt;a href=&quot;https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;elinesterov&#x2F;&quot;&gt;&lt;strong&gt;Eli&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;,
+&lt;strong&gt;TalkSPIFFE&lt;&#x2F;strong&gt;’s cohost, as a “&lt;a href=&quot;https:&#x2F;&#x2F;help.twitch.tv&#x2F;s&#x2F;article&#x2F;guest-star?language=en_US&quot;&gt;&lt;em&gt;guest star&lt;&#x2F;em&gt;&lt;&#x2F;a&gt;”
+to a virtual backstage. That’s how I can use his camera feed on the stream.&lt;&#x2F;p&gt;
+&lt;p&gt;In addition, I initiate a Discord voice chat session from which we air Eli’s
+voice feed.&lt;&#x2F;p&gt;
+&lt;p&gt;After I ensure the guests’ camera and sound work fine, using the &lt;strong&gt;Studio Mode&lt;&#x2F;strong&gt;
+of OBS, I make sure that all the scenes and camera feeds are up and running and
+there is no missing source anywhere.&lt;&#x2F;p&gt;
+&lt;p&gt;This step is significant because when you reboot your system or restart OBS,
+sometimes OBS fails to detect some of the input sources, and you’ll need to
+update them manually.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-15-at-2.40.42-PM.png&quot; alt=&quot;OBS&amp;#x27;s Studio mode. Left: Upcoming scene; right: the scene streaming live.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;OBS&amp;#x27;s Studio mode. Left: Upcoming scene; right: the scene streaming live.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;I use &lt;a href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;audiohijack&#x2F;&quot;&gt;&lt;strong&gt;Audio Hijack&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; for chaining,
+filtering, and mixing various audio streams. And I use
+&lt;a href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;loopback&#x2F;&quot;&gt;&lt;strong&gt;Loopback&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; to create virtual audio interfaces that I
+can set as audio input sources for Zoom and Discord. As you’ll see shortly, the
+loopback interfaces I make in Audio Hijack will find their respective places
+as “&lt;em&gt;sinks&lt;&#x2F;em&gt;” in Audio Hijack.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-talkspiffe-audio-chain&quot;&gt;The &lt;strong&gt;TalkSPIFFE&lt;&#x2F;strong&gt; Audio Chain&lt;&#x2F;h2&gt;
+&lt;p&gt;Here follows our &lt;strong&gt;Audio Hijack&lt;&#x2F;strong&gt; stream setup. You can tap on the image to see
+an enlarged version. I will zoom in and explain each box in this layout below:&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;audio-hijack.png&quot; alt=&quot;The audio chain.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;The audio chain.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;It might look a bit involved, though fear not; we’ll dissect the entire audio
+chain piece by piece.&lt;&#x2F;p&gt;
+&lt;p&gt;Let’s zoom into the topmost browser source first:&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-13-at-1.39.25-PM.png&quot; alt=&quot;Splitting the background music.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Splitting the background music.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;The input source named “&lt;strong&gt;MUSIC IN&lt;&#x2F;strong&gt;” is Safari playing a playlist of
+instrumental music as background music for &lt;strong&gt;TalkSPIFFE&lt;&#x2F;strong&gt;. I split the audio
+into three parts:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;The top row is adjusted to a lower volume level and is to be used as the
+background music when we talk,&lt;&#x2F;li&gt;
+&lt;li&gt;The middle row has a higher volume level, and it’s to be played before the
+stream starts or during breaks,&lt;&#x2F;li&gt;
+&lt;li&gt;And the bottom one is a separate track that will be streamed to my and my
+guest Eli’s headphones.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Then, there is an A&#x2F;B switch (&lt;em&gt;see the image below&lt;&#x2F;em&gt;) where the top two rows
+meet:&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-13-at-1.39.55-PM.png&quot; alt=&quot;To the output device.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;To the output device.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;Then, there is an A&#x2F;B switch (&lt;em&gt;see the image above&lt;&#x2F;em&gt;) where the top two rows meet
+for me to toggle between two different volume levels and send the virtual output
+devices named “&lt;strong&gt;Stream Background Pass&lt;&#x2F;strong&gt;” and “&lt;strong&gt;Zoom Mic PassThru&lt;&#x2F;strong&gt;,”
+respectively.&lt;&#x2F;p&gt;
+&lt;p&gt;These virtual devices are loopback audio interfaces that I created using
+&lt;a href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;loopback&#x2F;&quot;&gt;&lt;strong&gt;Loopback&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Stream Background Pass&lt;&#x2F;strong&gt; is used by OBS as a background music source for the
+stream,&lt;&#x2F;li&gt;
+&lt;li&gt;and &lt;strong&gt;Zoom Mic PassThru&lt;&#x2F;strong&gt; is sent to the Zoom video chat session that we share
+this stream simultaneously.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;If you look closely, you’ll see that the top set of volume filters is lower than
+the bottom ones on the second row. This way, we can have quieter background
+music to talk over during the stream without becoming too loud to distract the
+audience. During breaks or before the stream begins, I can switch to the bottom
+lane to let the audience enjoy the music to its fullest.&lt;&#x2F;p&gt;
+&lt;p&gt;Then comes the third row. Follow the arrows in the image below:&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-13-at-1.40.25-PM.png&quot; alt=&quot;We also enjoy the background music while streaming.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;We also enjoy the background music while streaming.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;The third row is what Eli and I hear in our headphones as a piece of background
+music so that we can bob our heads to the same beats during the event 🙂.&lt;&#x2F;p&gt;
+&lt;p&gt;Let’s move on to our next audio source: Discord. Discord is where I capture
+Eli’s voice and forward it into two mixers.&lt;&#x2F;p&gt;
+&lt;p&gt;You’ll also see that “&lt;strong&gt;&lt;em&gt;Guest Star&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;” audio is forwarded to the same mixer. I
+aim to use the “Guest Star” feature as a backup audio source. So, if anything
+happens to Discord, I can disable Discord and swap it to Guest Star instead to
+capture Eli’s audio.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-13-at-1.40.58-PM.png&quot; alt=&quot;Splitting the guest audio.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Splitting the guest audio.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;Or an alternative way is to use an A&#x2F;B switch and keep both of the input sources
+enabled and switch between them using the A&#x2F;B switch:&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-15-at-10.04.25-PM.png&quot; alt=&quot;Using an A&amp;#x2F;B switch.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Using an A&amp;#x2F;B switch.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;Then, in the middle of the setup, I have two audio sources:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;ELI AUDIO IN&lt;&#x2F;strong&gt; (&lt;em&gt;Discord&lt;&#x2F;em&gt;) is a Discord voice chat that Eli and I will use.
+I take Eli’s audio from that source to push it into
+&lt;a href=&quot;https:&#x2F;&#x2F;obsproject.com&#x2F;&quot;&gt;OBS (&lt;em&gt;Open Broadcast Software&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt; as a stream source.
+While at that, I’ll also clone it and send it to my headphones through a separate channel.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;GUEST STAR&lt;&#x2F;strong&gt; (&lt;em&gt;Chrome&lt;&#x2F;em&gt;) is where
+Eli’s &lt;a href=&quot;https:&#x2F;&#x2F;help.twitch.tv&#x2F;s&#x2F;article&#x2F;guest-star?language=en_US&quot;&gt;Twitch Guest Star&lt;&#x2F;a&gt;
+browser source is. I keep it as a backup source in case Discord’s audio fails.
+Though I’ve had minor glitches while testing it as an audio source, I’m
+reluctant to use it. For now, it’s just a backup for emergencies.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1000&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-13-at-1.42.00-PM.png&quot; alt=&quot;Mixing the vocals.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Mixing the vocals.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;The orange lines above pass through my microphone
+(&lt;a href=&quot;https:&#x2F;&#x2F;www.shure.com&#x2F;en-US&#x2F;products&#x2F;microphones&#x2F;sm7b&quot;&gt;&lt;strong&gt;&lt;em&gt;Shure SM7B&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;),
+a general-purpose noise filter, a vocal-specialized noise filter, and an
+equalizer before it reaches an A&#x2F;B switch, respectively.&lt;&#x2F;p&gt;
+&lt;p&gt;I use the A&#x2F;B switch to quickly prevent my voice from being sent to the stream.
+That way, I can tell something Eli behind the scenes without my voice broadcast
+live.&lt;&#x2F;p&gt;
+&lt;p&gt;In the image below are my equalizer settings for the curious; this setup makes
+more voice subtly deeper. Overdo it, and you’ll sound like Darth Vader or an
+accented version of Morgan Freeman. Be very careful.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-13-at-1.28.53-PM.png&quot; alt=&quot;Equalizer settings.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Equalizer settings.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;Since everyone’s audio gear, vocal cords, room, and vocal modulation needs
+differ, your equalizer setting will likely vary significantly from mine. So, I’m
+leaving this just as a reference point. Trust your ears and experiment with the
+settings until you are satisfied.&lt;&#x2F;p&gt;
+&lt;p&gt;Remember: Subtler is better. Be so subtle that the difference is almost
+unnoticeable to an untrained ear. If you realize what you generate sounds
+considerably different than you, then you have overdone it. And, trust me, it’s
+&lt;strong&gt;very&lt;&#x2F;strong&gt; easy to overdo with one’s own vocals. When you set it up, take a
+30-minute break, do something else, and then listen to your audio again. If it
+sounds odd, you have overshot some settings; try readjusting it.&lt;&#x2F;p&gt;
+&lt;p&gt;And below is my noise gate. Again, this is a representative snapshot and may not
+meet your needs. Adjust the configuration yourself, and always use your ears.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-13-at-1.29.12-PM.png&quot; alt=&quot;Noise gate settings.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Noise gate settings.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;The green line has the same setup except for the intermediate filtering. It’s
+the sound coming from our dear guest, Eli. I’m sharing the image below again for
+your convenience:&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1000&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-13-at-1.42.00-PM.png&quot; alt=&quot;Mixing the vocals.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Mixing the vocals.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;Then my voice and Eli’s are combined, compressed, gain-adjusted, and set to
+“&lt;em&gt;&lt;strong&gt;SPIFFE Loopback Audio&lt;&#x2F;strong&gt;&lt;&#x2F;em&gt;” as a sink (&lt;em&gt;see below&lt;&#x2F;em&gt;)—&lt;em&gt;SPIFFE Loopback Audio&lt;&#x2F;em&gt;
+is a virtual audio device.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-13-at-1.42.32-PM.png&quot; alt=&quot;Onwards to the virtual audio device.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Onwards to the virtual audio device.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;I created “&lt;strong&gt;&lt;em&gt;SPIFFE Loopback Audio&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;” using &lt;a href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;loopback&#x2F;&quot;&gt;&lt;strong&gt;Loopback&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;;
+I use it in OBS as an audio source to send to the stream.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-13-at-1.43.14-PM.png&quot; alt=&quot;Combining with the background music.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Combining with the background music.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;Then the background music (&lt;em&gt;arrows coming from the top&lt;&#x2F;em&gt;) and our combined
+vocals (&lt;em&gt;arrows coming from the bottom&lt;&#x2F;em&gt;) are mixed into a single stream and sent
+to the “&lt;strong&gt;Zoom Mic PassTru&lt;&#x2F;strong&gt;” Loopback virtual device to be used as an audio
+source in Zoom (&lt;em&gt;see below&lt;&#x2F;em&gt;).&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-13-at-1.44.40-PM.png&quot; alt=&quot;Mixing my vocals with the background music.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Mixing my vocals with the background music.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;This final image above shows how my vocals are combined with the background
+music and pushed toward the “&lt;strong&gt;Volkan Just Mic&lt;&#x2F;strong&gt;” virtual audio device. This is
+what Eli hears.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;pinning-important-audio-controls&quot;&gt;Pinning Important Audio Controls&lt;&#x2F;h2&gt;
+&lt;p&gt;One helpful feature of &lt;strong&gt;Audio Hijack&lt;&#x2F;strong&gt; is I can float and pin almost everything
+in the UI. Here are my most frequently used controls dragged to the top corner
+of my widescreen.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-15-at-4.19.01-AM.png&quot; alt=&quot;You can pin what you want, and ignore the rest.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;You can pin what you want, and ignore the rest.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;This feature allows me to hide the convoluted chain of filters from my view
+during the stream and focus on the few essential elements that matter most.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;recent-changes-after-our-first-pilot&quot;&gt;Recent Changes After Our First Pilot&lt;&#x2F;h2&gt;
+&lt;p&gt;After our first pilot today, we decided it would be much easier to simplify
+things by not streaming Zoom altogether. In addition, using Twitch’s &lt;strong&gt;Guest
+Star&lt;&#x2F;strong&gt; feature as an audio source worked better for Eli than Discord’s audio.
+So, for now, we’ll use Discord only to share Eli’s Desktop, and for his camera
+and audio, we’ll use Twitch’s &lt;strong&gt;Guest Star&lt;&#x2F;strong&gt; feature.&lt;&#x2F;p&gt;
+&lt;p&gt;Considering this, here’s our (&lt;em&gt;quote&lt;&#x2F;em&gt;) “simplified” audio pipeline:&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-16-at-12.34.34-PM.png&quot; alt=&quot;Maybe not quite &amp;#x27;as&amp;#x27; simple, but it looks good 🙂.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Maybe not quite &amp;#x27;as&amp;#x27; simple, but it looks good 🙂.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;a-dedicated-streaming-machine&quot;&gt;A Dedicated Streaming Machine&lt;&#x2F;h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Update 2021-05-27&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;With &lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;about&#x2F;volkan-uses&#x2F;&quot;&gt;my new Mac Studio&lt;&#x2F;a&gt; I don’t need a dedicated
+streaming machine anymore. I can do everything on a single machine.&lt;&#x2F;p&gt;
+&lt;p&gt;However, keeping a separate machine for streaming is still a good idea.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;To ensure a smooth streaming experience I use two machines:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;A Mac Mini that I use as a demo&#x2F;screencast machine. I’ll call it the &lt;strong&gt;demo
+machine&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;And a Macbook Pro that I use specifically for OBS and streaming and nothing
+else. I make sure that nothing unnecessary runs on it. I’ll call it the
+&lt;strong&gt;streaming machine&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;But why would I need a different machine to stream? Can’t it be done on the same
+box? Well, short answer: If you are using Apple devices, you’ll have to
+&lt;strong&gt;&lt;em&gt;cut many corners&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt; to make streaming on a single machine work flawlessly.
+Using two machines provides better stream quality and will make my life much
+easier.&lt;&#x2F;p&gt;
+&lt;p&gt;For a longer answer: One of the challenges we tackled in our &lt;strong&gt;TalkSPIFFE&lt;&#x2F;strong&gt;
+setup is managing the computational load of running demos while live streaming.
+Since some of our demonstrations can be quite resource-intensive, performing
+them on the same machine as the live stream could potentially degrade the
+stream’s quality, leading to lower bitrates, missing frames, and a sub-optimal
+viewing experience.&lt;&#x2F;p&gt;
+&lt;p&gt;To set this dual-machine configuration up, firstly, I connected the HDMI output
+of my demo machine to an &lt;a href=&quot;https:&#x2F;&#x2F;www.elgato.com&#x2F;us&#x2F;en&#x2F;p&#x2F;cam-link-4khttps:&#x2F;&#x2F;www.elgato.com&#x2F;us&#x2F;en&#x2F;p&#x2F;cam-link-4k&quot;&gt;&lt;strong&gt;Elgato Camlink 4K&lt;&#x2F;strong&gt; capture card&lt;&#x2F;a&gt;,
+which is plugged into my streaming machine. I created a 1080p virtual display on
+my demo machine to share the required content using &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;waydabber&#x2F;BetterDisplay&quot;&gt;&lt;strong&gt;BetterDisplay&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;After connecting it to the streaming machine, too, &lt;strong&gt;Camlink 4K&lt;&#x2F;strong&gt; identifies
+itself as an additional display on my demo machine.&lt;&#x2F;p&gt;
+&lt;p&gt;I mirrored the virtual monitor onto the Camlink 4K to have a separate view that
+I can enlarge on my larger 32“ monitor if I need to. In addition, the mirroring
+allows me to use a copy of the demo window right in front of me so that I won’t
+have to tilt my unnecessarily on the live stream.&lt;&#x2F;p&gt;
+&lt;p&gt;The following set of images shows what the overall setup looks like.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;2023&#x2F;06&#x2F;Screenshot-2023-06-15-at-2.57.58-PM.png&quot; alt=&quot;&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;2023&#x2F;06&#x2F;Screenshot-2023-06-15-at-2.58.03-PM.png&quot; alt=&quot;&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;2023&#x2F;06&#x2F;Screenshot-2023-06-15-at-2.58.21-PM.png&quot; alt=&quot;&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;2023&#x2F;06&#x2F;Screenshot-2023-06-15-at-2.58.34-PM.png&quot; alt=&quot;&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;2023&#x2F;06&#x2F;Screenshot-2023-06-15-at-2.59.56-PM.png&quot; alt=&quot;&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;The feed from the &lt;strong&gt;Camlink 4K&lt;&#x2F;strong&gt; is then directed into
+&lt;a href=&quot;https:&#x2F;&#x2F;obsproject.com&#x2F;&quot;&gt;&lt;strong&gt;OBS&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; on my streaming machine. You can check the
+“Physical Setup” section for additional details on how things connect at the
+physical layer.&lt;&#x2F;p&gt;
+&lt;p&gt;Once things are set up this way, the demo machine shoulders the burden of
+resource-intensive demos. In contrast, my streaming machine remains dedicated to
+delivering a smooth streaming experience without system degradation.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;making-stream-management-easier&quot;&gt;Making Stream Management Easier&lt;&#x2F;h2&gt;
+&lt;p&gt;However, this dual-machine arrangement necessitates fast switching between the
+two systems during a live stream. To overcome this challenge, I adopted a few
+strategies:&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;network-stability&quot;&gt;Network Stability&lt;&#x2F;h3&gt;
+&lt;p&gt;&lt;strong&gt;All&lt;&#x2F;strong&gt; &lt;strong&gt;of my connections are wired&lt;&#x2F;strong&gt; to ensure stable network connectivity. I
+learned the hard way long ago never to rely on WiFi for such a critical setup.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;remote-connection-to-the-streaming-machine&quot;&gt;Remote Connection to the Streaming Machine&lt;&#x2F;h3&gt;
+&lt;p&gt;To streamline the control process, I remotely connect to my streaming machine
+from my demo machine. This way, I can use a single keyboard to interact with
+both machines.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;keyboard-and-mouse-that-can-connect-to-multiple-devices&quot;&gt;Keyboard and Mouse that Can Connect to Multiple Devices&lt;&#x2F;h3&gt;
+&lt;p&gt;There can be tricky moments when I need to move my mouse pointer into the
+virtual monitor – a task that’s impossible when you are remotely connected. To
+circumnavigate this, I use a
+&lt;a href=&quot;https:&#x2F;&#x2F;www.logitech.com&#x2F;en-us&#x2F;mx&#x2F;master-series.html&quot;&gt;&lt;strong&gt;Logi MX Master Wireless Mouse&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;,
+which can be connected to up to three machines.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Logi MX Master&lt;&#x2F;strong&gt;’s ability to instantly switch from one machine to another
+allows me to directly control the cursor on the streaming machine when required.
+As a fail-safe, I also keep an old (&lt;em&gt;but in perfect working condition&lt;&#x2F;em&gt;) wired
+mouse connected to my streaming machine (the MacBook Pro). I never fully trust
+remote connectivity!&lt;&#x2F;p&gt;
+&lt;p&gt;I’ve crafted a resilient system that handles resource-heavy demonstrations while
+maintaining high-quality live streaming by implementing these strategies.&lt;&#x2F;p&gt;
+&lt;p&gt;This is a testimony to the idea that you can overcome the challenges and
+constraints inherent in live streaming with careful planning and a bit of
+technological creativity.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;video-setup&quot;&gt;Video Setup&lt;&#x2F;h2&gt;
+&lt;p&gt;The video setup is comparably simpler than the “&lt;em&gt;auido&lt;&#x2F;em&gt;” one.&lt;&#x2F;p&gt;
+&lt;p&gt;First of all, I only need to modify my camera’s properties. I need to change
+them only because I am using a green screen. Otherwise, I could very well use my
+camera feed as is.&lt;&#x2F;p&gt;
+&lt;p&gt;I’ll also stream Eli’s camera feed as is without any modification.&lt;&#x2F;p&gt;
+&lt;p&gt;Besides, I have a pretty good camera
+(&lt;a href=&quot;https:&#x2F;&#x2F;shop.panasonic.com&#x2F;cameras-and-camcorders&#x2F;camcorders&#x2F;consumer-camcorders&#x2F;hc-v180k&quot;&gt;&lt;strong&gt;&lt;em&gt;Panasonic HC-V180K&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;)
+that makes my life much easier.&lt;&#x2F;p&gt;
+&lt;p&gt;I just applied some alpha filter and color correction to my camera.&lt;&#x2F;p&gt;
+&lt;p&gt;Here is the end result:&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-15-at-8.18.44-AM.png&quot; alt=&quot;Me in front of the green screen, chroma key and color correction applied.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Me in front of the green screen, chroma key and color correction applied.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;And here are the settings for the “&lt;em&gt;color correction&lt;&#x2F;em&gt;” and “&lt;em&gt;chroma-key&lt;&#x2F;em&gt;”
+filters, respectively:&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-15-at-8.20.27-AM.png&quot; alt=&quot;Color correction settings.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Color correction settings.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-15-at-8.20.53-AM.png&quot; alt=&quot;Chroma key settings.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Chroma key settings.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;screen-annotations&quot;&gt;Screen Annotations&lt;&#x2F;h2&gt;
+&lt;p&gt;You remember the orange arrows in the “&lt;em&gt;Audio Device Chain&lt;&#x2F;em&gt;” section? I made
+them using &lt;a href=&quot;https:&#x2F;&#x2F;presentify.compzets.com&#x2F;&quot;&gt;&lt;strong&gt;Presentify&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;The benefit of &lt;strong&gt;Presentify&lt;&#x2F;strong&gt; is it’s not only for annotating static images like
+this. You can use Presentify for online classes, video presentations, or
+tutorials by letting you annotate your screen and highlight your cursor, even
+when the application you are drawing over is in full-screen mode.&lt;&#x2F;p&gt;
+&lt;p&gt;It’s a great helper, especially when you are demonstrating technical content.
+It’s one of those tools you don’t know how much you need before using.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;composing-scenes&quot;&gt;Composing Scenes&lt;&#x2F;h2&gt;
+&lt;p&gt;I already showed the camera setup for myself and my guest Eli.&lt;&#x2F;p&gt;
+&lt;p&gt;I have two scenes in &lt;strong&gt;OBS&lt;&#x2F;strong&gt; that include those cameras in them. Having a
+separate scene for the camera instead of directly embedding the cameras in the
+scenes gives me the flexibility to modify them and reflect the changes in all
+the scenes I use.&lt;&#x2F;p&gt;
+&lt;p&gt;For example, if I add a blue border around the camera view, it will be reflected
+everywhere the camera view is used; I won’t have to repeat adding that border
+around the camera to all of the scenes.&lt;&#x2F;p&gt;
+&lt;p&gt;In addition, I can apply filters both to the camera and to the scene itself.
+This layered composition of color correction and chroma key filters gives more
+flexibility in configuring the sources.&lt;&#x2F;p&gt;
+&lt;p&gt;Also, if I have a problem with a camera source like it is scaled incorrectly or
+not showing up, I can fix it in one scene instead of jumping into every scene
+that uses the camera and setting it one by one.&lt;&#x2F;p&gt;
+&lt;p&gt;That part clarified, let’s begin with the camera scenes and go all the way up,
+building larger and larger scenes from sub-scenes.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;camera-scenes&quot;&gt;Camera Scenes&lt;&#x2F;h2&gt;
+&lt;p&gt;That’s the source of my camera schene called “&lt;strong&gt;my-camera&lt;&#x2F;strong&gt;.”&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-15-at-11.19.47-AM.png&quot; alt=&quot;My camera.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;My camera.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;And that’s the source of Eli’s camera view, which is a browser source from
+Twitch Guest Star. The view is very creatively named “&lt;strong&gt;twitch-guest-slot-1&lt;&#x2F;strong&gt;”.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-15-at-11.22.38-AM.png&quot; alt=&quot;Twitch guest slot 1.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Twitch guest slot 1.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;The image source named &lt;strong&gt;frame&lt;&#x2F;strong&gt; is a blue image to give a distinct border
+around both of the camera feeds similar to the one below:&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-15-at-11.20.41-AM.png&quot; alt=&quot;Teal border.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Teal border.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;talking-heads&quot;&gt;Talking Heads&lt;&#x2F;h2&gt;
+&lt;p&gt;After setting up the camera primitives, I compose those “&lt;strong&gt;&lt;em&gt;my-camera&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;” and
+“&lt;strong&gt;&lt;em&gt;twitch-guest-slot-1&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;” scenes as the camera feeds into larger screens.&lt;&#x2F;p&gt;
+&lt;p&gt;Below is the source layout named “&lt;strong&gt;&lt;em&gt;talking-head&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;,” containing the two camera
+scenes mentioned before.&lt;&#x2F;p&gt;
+&lt;p&gt;Again, this “&lt;strong&gt;&lt;em&gt;talking-head&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;” scene is a &lt;strong&gt;sub-scene&lt;&#x2F;strong&gt; that will be composed
+into different scenes.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-15-at-11.20.09-AM.png&quot; alt=&quot;Talking head.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Talking head.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;Here’s how the scene looks:&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-15-at-11.20.56-AM.png&quot; alt=&quot;Talking heads on the lower third.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Talking heads on the lower third.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;side-by-side&quot;&gt;Side by Side&lt;&#x2F;h2&gt;
+&lt;p&gt;Here is the source layout of another scene named “&lt;strong&gt;&lt;em&gt;talking-heads-lg&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;.”&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-15-at-11.20.18-AM.png&quot; alt=&quot;Larger talking heads.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Larger talking heads.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;It creates a larger layout with our names and some turtle embellishments, again
+to be embedded into more concrete scenes.&lt;&#x2F;p&gt;
+&lt;p&gt;Below you can see what the combined view looks like. Note that there are camera
+feeds inside the boxes. Right now, they are disabled, so the boxes look black
+and empty.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-15-at-11.21.02-AM-1.png&quot; alt=&quot;Talking heads (larger).&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Talking heads (larger).&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;demo-over-zoom&quot;&gt;Demo Over Zoom&lt;&#x2F;h2&gt;
+&lt;p&gt;Here’s how the “&lt;em&gt;&lt;strong&gt;talking-heads&lt;&#x2F;strong&gt;&lt;&#x2F;em&gt;” scene is embedded into a view that shares a
+full-screen zoom session (&lt;em&gt;which, on my OBS Scenes panel, is very creatively
+named… … … “&lt;strong&gt;Zoom&lt;&#x2F;strong&gt;”&lt;&#x2F;em&gt; 🙂) so that both of our camera feeds will be visible
+when either Eli, or I am demonstrating something over Zoom.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-15-at-11.37.11-AM.png&quot; alt=&quot;The zoom view.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;The zoom view.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;Here is the list of sources in this scene:&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-15-at-11.38.00-AM.png&quot; alt=&quot;The Zoom view&amp;#x27;s sources&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;The Zoom view&amp;#x27;s sources&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;As you see, even the &lt;strong&gt;Asus|Dummy(Zoom)&lt;&#x2F;strong&gt; view (&lt;em&gt;highlighted above&lt;&#x2F;em&gt;) is a scene
+in itself. Here’s its source layout.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-15-at-11.40.03-AM.png&quot; alt=&quot;Dummy capture device.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Dummy capture device.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;The naming suggests that the view reflects a dummy 1080p virtual monitor
+(&lt;em&gt;created using &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;waydabber&#x2F;BetterDisplay#readme&quot;&gt;&lt;strong&gt;&lt;em&gt;BetterDisplay&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;em&gt;),
+which a real 1080p Asus monitor mirrors.&lt;&#x2F;p&gt;
+&lt;p&gt;A virtual display is helpful; I can mirror one of my main displays to it and
+have it as a small overview on my large central display, like a rear-view mirror
+of sorts so that I don’t miss the action in my peripheral vision when I focused
+managing scene transitions and other stream properties.&lt;&#x2F;p&gt;
+&lt;p&gt;Keeping the screens bound to 1080p resolution helps me quickly share anything on
+the stream at 1080p resolution. This includes full-screen windows too. I can
+drag a Zoom desktop sharing session or a remote desktop connection to a
+different device or a browser window. Literally, I can easily show anything I
+can see on my streaming machine to the audience in 1080p resolution. Having a
+spare monitor to stream things gives &lt;strong&gt;a lot&lt;&#x2F;strong&gt; of flexibility.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-15-at-11.40.22-AM.png&quot; alt=&quot;Display capture.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Display capture.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;I also have a third 1080p monitor that I also pair with a dummy monitor
+and &lt;a href=&quot;https:&#x2F;&#x2F;www.elgato.com&#x2F;us&#x2F;en&#x2F;p&#x2F;cam-link-4k&quot;&gt;Elgato Cam Link 4k&lt;&#x2F;a&gt; so that I
+can share my demo machine’s desktop with ease:&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-15-at-1.32.54-PM.png&quot; alt=&quot;Streaming my demo machine&amp;#x27;s desktop.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Streaming my demo machine&amp;#x27;s desktop.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;Here is how to compose my desktop into any view:&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-15-at-1.41.09-PM.png&quot; alt=&quot;Adding the desktop view into another view.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Adding the desktop view into another view.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;And here are the details of the “&lt;strong&gt;&lt;em&gt;(my desktop) cam link4k&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;” view highlighted
+above:&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-15-at-1.41.21-PM.png&quot; alt=&quot;Camlink video source view.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Camlink video source view.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;It has &lt;strong&gt;Elgato Cam Link 4K&lt;&#x2F;strong&gt; as the input source and nothing else. Having a
+view with a single source might look unnecessary; however, this setup gives the
+flexibility to manage the camera, and if something happens to the camera view,
+then I’ll only have to fix it in a single place.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-fireside-chat&quot;&gt;The Fireside Chat&lt;&#x2F;h2&gt;
+&lt;p&gt;Here’s the “&lt;strong&gt;&lt;em&gt;Fireside Chat&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;” screen, where my and Eli’s cameras are
+displayed side-by-side. Again, the cameras are off in this screenshot, but both
+of our camera feeds will be there in the live stream.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-15-at-11.20.18-AM-1.png&quot; alt=&quot;Fireside chat.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Fireside chat.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;Here is the source layout of the above scene.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-15-at-11.20.18-AM-1.png&quot; alt=&quot;Fireside chat sources.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Fireside chat sources.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;And here is what the &lt;strong&gt;twitch-guest-slot-1&lt;&#x2F;strong&gt; sub-scene looks like:&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-15-at-11.22.38-AM-1.png&quot; alt=&quot;Twitch guest slot sub-scene.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Twitch guest slot sub-scene.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;It has a teal frame and a browser source from &lt;a href=&quot;https:&#x2F;&#x2F;help.twitch.tv&#x2F;s&#x2F;article&#x2F;guest-star&quot;&gt;Twitch Guest Star&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-big-red-clock&quot;&gt;The Big Red Clock&lt;&#x2F;h2&gt;
+&lt;p&gt;Yes, the clock is green to fit the overall theme, but the application’s name
+is &lt;a href=&quot;http:&#x2F;&#x2F;www.bigredclock.com&#x2F;&quot;&gt;&lt;strong&gt;The Big Red Clock&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, and it does its job
+amazingly well. It’s an app I use as a countdown timer before the show starts or
+whenever we need a break.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-13-at-1.22.34-PM.png&quot; alt=&quot;The big red clock.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;The big red clock.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;To make it blend in better, I add the following color key filters:&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-16-at-2.47.51-PM.png&quot; alt=&quot;Big red clock color filters.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Big red clock color filters.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;And for extra flexibility, I manage the big red clock in its own scene as well:&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-15-at-1.48.42-PM.png&quot; alt=&quot;Big red clock alignment.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Big red clock alignment.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;the-interstitials&quot;&gt;The Interstitials&lt;&#x2F;h2&gt;
+&lt;p&gt;We use these “&lt;strong&gt;&lt;em&gt;break screens&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;” during the show whenever needed.&lt;&#x2F;p&gt;
+&lt;p&gt;Aside from positioning the &lt;strong&gt;Big Red Clock&lt;&#x2F;strong&gt;, not much configuration is needed.
+I’ll share them here for the sake of completeness.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-15-at-1.50.47-PM-1.png&quot; alt=&quot;Starting soon.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Starting soon.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-15-at-1.50.54-PM-1.png&quot; alt=&quot;Be right back.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Be right back.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-15-at-1.51.04-PM.png&quot; alt=&quot;End of stream.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;End of stream.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;streaming-from-twitch-to-zoom&quot;&gt;Streaming from Twitch to Zoom&lt;&#x2F;h2&gt;
+&lt;p&gt;Sharing the Zoom session on Twitch is easy: There is a scene for that. However,
+if you wanted to send a copy of the Twitch stream back to zoom, it’s not that
+straightforward.&lt;&#x2F;p&gt;
+&lt;p&gt;Luckily, there is a quick hack: &lt;strong&gt;OBS Virtual Camera&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Press this big fat button, and you can send the entire stream as a camera source
+to any application that accepts virtual camera sources.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-15-at-2.19.38-PM.png&quot; alt=&quot;OBS virtual camera.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;OBS virtual camera.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;Here’s how the camera feed looks on a movie player that can display camera views
+too:&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-14-at-11.55.58-AM.png&quot; alt=&quot;OBS virtual camera output.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;OBS virtual camera output.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;my-mini-studio&quot;&gt;My Mini Studio&lt;&#x2F;h2&gt;
+&lt;p&gt;Here’s how things look from the outside:&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1000&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;IMG-7330.jpg&quot; alt=&quot;My workspace.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;My workspace.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;Let me unpack the mess for you:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;I have a green screen behind me.&lt;&#x2F;li&gt;
+&lt;li&gt;A light source to my left is designed to diffuse light gently. And since I
+have a white and low ceiling, it creates evenly-spread natural-looking
+lighting on me and on the curtain without creating solid shadows. When
+possible, bouncing light off of surfaces is always a better option than
+directly pointing it to the subjects (&lt;em&gt;the “subject” being me sitting on the
+chair in this case&lt;&#x2F;em&gt;).&lt;&#x2F;li&gt;
+&lt;li&gt;There’s a warm fill light below, and &lt;a href=&quot;https:&#x2F;&#x2F;www.ikea.com&#x2F;us&#x2F;en&#x2F;p&#x2F;isjakt-led-floor-uplighter-reading-lamp-dimmable-nickel-plated-70459716&#x2F;&quot;&gt;you can get the fixture (&lt;strong&gt;&lt;em&gt;ISJAKT led
+floor uplighter&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;) from
+Ikea&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;There are two &lt;a href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;gp&#x2F;product&#x2F;B07T8FBZC2&quot;&gt;&lt;strong&gt;Neewer Key Lights&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; in front of me. They are
+dirt cheap and are as effective as their expensive counterparts. But of
+course, you get what you pay for: there are no remote controls, you cannot
+change the color of the LEDs mid-stream, and you need to adjust its levels
+manually by pressing the buttons. But other than that, the lights’ quality,
+spread, and intensity are excellent. And nothing can compete with its
+price-over-performance ratio.&lt;&#x2F;li&gt;
+&lt;li&gt;There’s a camera directly focused on me at an angle from above. It’s my
+faithful &lt;a href=&quot;https:&#x2F;&#x2F;shop.panasonic.com&#x2F;cameras-and-camcorders&#x2F;camcorders&#x2F;consumer-camcorders&#x2F;hc-v180k&quot;&gt;&lt;strong&gt;&lt;em&gt;Panasonic HC-V180K&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;I have one sizeable curved monitor as my main stage and two 1080p monitors to
+display my guest’s screen and my demo machine’s desktop, respectively.&lt;&#x2F;li&gt;
+&lt;li&gt;The large monitor is connected to my demo machine, and I established a remote
+desktop connection to the stream machine.&lt;&#x2F;li&gt;
+&lt;li&gt;If needed, there is a button below the monitor that I can switch to view the
+desktop of the streaming machine without having to remotely connect to it as a
+backup measure.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;video-and-audio-capture-layout&quot;&gt;Video and Audio Capture Layout&lt;&#x2F;h2&gt;
+&lt;p&gt;To put things into more perspective, here’s a schematic of the stream-related
+hardware that I use:&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;hardware-setup.jpg&quot; alt=&quot;Streaming setup.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Streaming setup.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;The demo machine and the camera are connected to the streaming machine as video
+input sources through capture cards. I use
+&lt;a href=&quot;https:&#x2F;&#x2F;help.elgato.com&#x2F;hc&#x2F;en-us&#x2F;articles&#x2F;360034170131-Elgato-Game-Capture-HD60-S-Technical-Specifications&quot;&gt;&lt;strong&gt;Elgato HD60S+&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+and &lt;a href=&quot;https:&#x2F;&#x2F;www.elgato.com&#x2F;us&#x2F;en&#x2F;p&#x2F;cam-link-4k&quot;&gt;&lt;strong&gt;Elgato Cam Link 4K&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; for
+capture cards.&lt;&#x2F;p&gt;
+&lt;p&gt;I like &lt;strong&gt;Cam Link 4K&lt;&#x2F;strong&gt; for its small form factor, but &lt;strong&gt;HD60S+&lt;&#x2F;strong&gt; offers a
+pass-through HDMI output, which can sometimes be helpful.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;store.focusrite.com&#x2F;en-gb&#x2F;product&#x2F;scarlett-solo-3rd-gen&#x2F;MOSC0024DM~MOSC0024DM&quot;&gt;&lt;strong&gt;Focusrite Scarlett Solo&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+is my amplifier choice, and &lt;a href=&quot;https:&#x2F;&#x2F;www.shure.com&#x2F;en-US&#x2F;products&#x2F;microphones&#x2F;sm7b?variant=SM7B&quot;&gt;&lt;strong&gt;Shure SM7B&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+is a microphone I cannot live without.&lt;&#x2F;p&gt;
+&lt;p&gt;There’s also &lt;a href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;Cloud-Microphones-CL-1-Cloudlifter-1-channel&#x2F;dp&#x2F;B004MQSV04&quot;&gt;&lt;strong&gt;CloudLifter&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+as a signal booster. I use it to boost the gain of the audio signal, clean it,
+and improve the overall signal-to-noise ratio.&lt;&#x2F;p&gt;
+&lt;p&gt;But why do I need that gain boost? Because while &lt;strong&gt;Shure SM7B&lt;&#x2F;strong&gt; is known for its
+rich and detailed sound (&lt;em&gt;and hefty price tag&lt;&#x2F;em&gt;), it also has a relatively low
+output level compared to many other microphones. This means that it requires
+more gain from the preamp in the audio interface or mixer to produce a strong,
+clean signal.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;camera-and-lighting-setup&quot;&gt;Camera and Lighting Setup&lt;&#x2F;h2&gt;
+&lt;p&gt;I use a &lt;a href=&quot;https:&#x2F;&#x2F;shop.panasonic.com&#x2F;cameras-and-camcorders&#x2F;camcorders&#x2F;consumer-camcorders&#x2F;hc-v180k&quot;&gt;&lt;strong&gt;Panasonic HC-V180K&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+camcorder to stream myself. It’s known for its superior performance under good
+lighting and has never failed me once so far. The Panasonic HC-V180K feeds
+directly into the Elgato HD60S+ capture card, ensuring a crystal-clear,
+high-definition video feed.&lt;&#x2F;p&gt;
+&lt;p&gt;Lighting is essential to any high-quality video setup, and ours is no exception.
+My &lt;a href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;gp&#x2F;product&#x2F;B07T8FBZC2&quot;&gt;&lt;strong&gt;Neewer Key Lights&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;,
+positioned strategically behind the camera as you see below:&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;IMG-7337.jpg&quot; alt=&quot;Camera and key lights.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Camera and key lights.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;But… but… but! There’s something else. What’s this little dude?&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-15-at-3.17.17-PM.png&quot; alt=&quot;Perry?&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Perry?&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;Well, meet Perry the Platypus!&lt;&#x2F;p&gt;
+&lt;p&gt;I use him as an odd trick to complement my stream.&lt;&#x2F;p&gt;
+&lt;p&gt;But &lt;strong&gt;how&lt;&#x2F;strong&gt;, or before that, &lt;strong&gt;why&lt;&#x2F;strong&gt;?!&lt;&#x2F;p&gt;
+&lt;p&gt;Because to connect to your audience and establish an intimate streaming
+experience, you have to make eye contact with the camera.&lt;&#x2F;p&gt;
+&lt;p&gt;The problem is: Making eye contact with a camera feels &lt;strong&gt;weird&lt;&#x2F;strong&gt;; it feels like
+looking in the eye of a Cyclops, and it gets irritating (&lt;em&gt;for me, at least&lt;&#x2F;em&gt;).&lt;&#x2F;p&gt;
+&lt;p&gt;That’s where &lt;strong&gt;Perry&lt;&#x2F;strong&gt; helps. Instead of the camera, I see eye-to-eye with him,
+and I look around the vicinity of the camera. Since the camera is far away, and
+Perry sits within a few degrees of my line of sight, it’s as good as looking
+into the camera itself.&lt;&#x2F;p&gt;
+&lt;p&gt;Just look at him; how can you say no to this little trouble maker 🙂:&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;IMG-7338.jpg&quot; alt=&quot;Perry!&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Perry!&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;Aside from the key lights, I use a white oval light source to achieve a more
+natural and even light spread with reduced shadows.&lt;&#x2F;p&gt;
+&lt;p&gt;This light bounces off the ceiling, subtly illuminating me and the green screen.
+It allows greater flexibility when adjusting the camera’s chroma key and color
+correction filters in OBS.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;IMG-7336.jpg&quot; alt=&quot;Bouncing light off of solid surfaces.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Bouncing light off of solid surfaces.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;And finally, to add depth and warmth to the video, I use a small fill light.
+Emitting a warm off-white yellow light, it delicately balances any shadows on my
+face and adds a touch of warmth to the overall video.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;IMG-7335.jpg&quot; alt=&quot;Fill light.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Fill light.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;Of course, this is only possible with the final piece of our video setup: the
+green screen. Acting as a backdrop, it allows me to overlay any desired
+background during the streaming process, lending an additional layer of
+professionalism and versatility.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-16-at-10.45.42-PM.png&quot; alt=&quot;The green screen.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;The green screen.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;For your needs, any green screen would do. I use
+&lt;a href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;Instahibit-Retractable-Backdrop-Chromakey-Mountable&#x2F;dp&#x2F;B087V2DHTW&quot;&gt;&lt;strong&gt;Instahibit Retractable Green Screen
+Backdrop&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;smoothing-the-acoustics&quot;&gt;Smoothing the Acoustics&lt;&#x2F;h2&gt;
+&lt;p&gt;Sound in the rooms gets bouncy, especially when that room is not a professional
+recording studio. In the quest for crisp and clear sound, I have taken measures
+to address potential acoustic challenges too. One of the essential steps in this
+direction is using &lt;strong&gt;acoustic canvas panels&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Strategically placed around the room, these panels are vital in managing the
+sound environment. Muffling the sounds bouncing off the walls significantly
+reduces any potential echo or reverb. This results in a clearer and more
+professional-sounding audio output for our stream.&lt;&#x2F;p&gt;
+&lt;p&gt;Playing the right sound effects at the right moment during the stream is also a
+lot of fun. For that, I use &lt;a href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;farrago&#x2F;&quot;&gt;&lt;strong&gt;Farrago&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;,
+which, to me, is the best rapid soundboard ever: Robust, easy to use, and
+integrates with almost everything, including your midi keyboard.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-16-at-11.23.47-AM.png&quot; alt=&quot;Farrago.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Farrago.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;After all, no stream is fun without a bleating goat in it!&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;bonus-game-streaming&quot;&gt;Bonus: Game Streaming&lt;&#x2F;h2&gt;
+&lt;p&gt;This one is not directly related to &lt;strong&gt;TalkSPIFFE&lt;&#x2F;strong&gt;, but I use it when I stream
+games. And Twitch is not much fun if you don’t stream video games every once in
+a while.&lt;&#x2F;p&gt;
+&lt;p&gt;Since video games use many system resources, I follow a similar strategy and use
+my &lt;strong&gt;capture card&lt;&#x2F;strong&gt; to stream my demo computer’s desktop to &lt;strong&gt;OBS&lt;&#x2F;strong&gt; on my
+streaming computer.&lt;&#x2F;p&gt;
+&lt;p&gt;And for the audio, I use &lt;strong&gt;Audio Hijack&lt;&#x2F;strong&gt; to redirect the game audio to the
+capture card and then from the capture card to one of the virtual audio devices
+that &lt;strong&gt;OBS&lt;&#x2F;strong&gt; is listening to.&lt;&#x2F;p&gt;
+&lt;p&gt;The audio chain below links my game audio onto the capture card:&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-16-at-8.07.21-PM.png&quot; alt=&quot;Game audio to capture card.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Game audio to capture card.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;And this chain links the sound from the capture card to the loopback audio that
+OBS takes as an input source.&lt;&#x2F;p&gt;
+&lt;p&gt;Sending audio through the capture card does not have to be game-related. You can
+get clever with it. For example, I’m thinking of using the Discord audio in my
+demo machine instead of the streamer machine and shoving its audio through the
+capture card:&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-17-at-9.29.44-AM.png&quot; alt=&quot;From discord to capture card.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;From discord to capture card.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;Then, I can use it as an audio source, instead of the guest start audio that
+comes from Twitch, and disable the “&lt;em&gt;guest star&lt;&#x2F;em&gt;” Chrome audio input entirely as
+shown below:&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-17-at-9.32.26-AM.png&quot; alt=&quot;From capture card to guest in.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;From capture card to guest in.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;That would mean running one less application on the stream machine, which would
+ensure an even smoother streaming experience.&lt;&#x2F;p&gt;
+&lt;p&gt;Finally, here is how the game looks on OBS, the game audio streaming from the
+Vocals track is seen below:&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2023&amp;#x2F;06&amp;#x2F;Screenshot-2023-06-16-at-8.08.04-PM.png&quot; alt=&quot;Game streamed in OBS with audio coming from the virtual device.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Game streamed in OBS with audio coming from the virtual device.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;Remember that every stream is different, and every streamer’s’ setup, needs, and
+wants will differ too. Though I hope that this article can help some of you
+folks inspire and that you can use it as a starting point in your streaming
+journey.&lt;&#x2F;p&gt;
+&lt;p&gt;And things change. There is no perfect setup; you keep on adjusting. For
+example, after our first pilot we realized that streaming to Zoom caused some
+audio echo&#x2F;feedback issues on the “guest” end of things, and we decided it’s not
+worth it at the moment for two reasons:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;First, since we don’t have a very large audience (yet), it’s not worth
+splitting it to multiple venues. We can use Twitch as the one single place to
+stream things, and we can use SPIFFE slack workspace for questions. That
+would unite the community and will result in people exchanging comments and
+ideas in the same medium instead of spreading the creative juice to several
+mediums.&lt;&#x2F;li&gt;
+&lt;li&gt;Second, it makes things simpler to manage, and with less moving parts there’s
+less possibility to make errors too.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;That said, the world of live-streaming is an ever-evolving landscape, one that’s
+limited only by the boundaries of your imagination. Whether you’re a seasoned
+streamer or just dipping your toes into these waters, remember that every stream
+is an opportunity to learn, grow, and create unforgettable experiences for your
+viewers.&lt;&#x2F;p&gt;
+&lt;p&gt;Keep pushing the boundaries, and may the source be with you 🦄.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;base64-decoding-a-string-in-go&#x2F;&quot;&gt;Base64 Decoding a String in Go&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;destructure&#x2F;&quot;&gt;Use Destructuring to Remove Attributes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;getting-the-body-of-an-http-request-with-go&#x2F;&quot;&gt;Getting the Body of an HTTP Request With Go&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;lets-create-a-syslog-logger&#x2F;&quot;&gt;Let’s Create a Syslog Logger&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;make-your-code-leaner&#x2F;&quot;&gt;Make Your Code Leaner By Extracting Method&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;mastodon-101&#x2F;&quot;&gt;Who Else Wants to Have Their Own Mastodon Server?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;microservice-env-vars&#x2F;&quot;&gt;How to Ensure Environment Variables Are Set&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;scaling-your-node-api-like-a-boss&#x2F;&quot;&gt;Scaling Your Node.js API Like a Boss&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ The Live Stream Dream&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;zshell-startup-files&#x2F;&quot;&gt;.zprofile, .zshrc, .zenv, OMG! What Do I Put Where?!&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;redirect-index-page&#x2F;&quot;&gt;Redirecting a Static Web Page&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+</feed>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Zero to Hero - workload-domain</title>
+    <link rel="self" type="application/atom+xml" href="https://zerotohero.dev/tags/workload-domain/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://zerotohero.dev"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2024-12-12T00:00:00+00:00</updated>
+    <id>https://zerotohero.dev/tags/workload-domain/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Creating Workload Domains in VMware Cloud Foundation: Step-by-Step Guide</title>
+        <published>2024-12-12T00:00:00+00:00</published>
+        <updated>2024-12-12T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/vcf-workload-domain-create/"/>
+        <id>https://zerotohero.dev/inbox/vcf-workload-domain-create/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/vcf-workload-domain-create/">&lt;p&gt;Workload domains in VMware Cloud Foundation (VCF) are the primary method of allocating cloud capacity for hosting workloads. This guide walks through the process of creating and configuring workload domains.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;understanding-workload-domains&quot;&gt;Understanding Workload Domains&lt;&#x2F;h2&gt;
+&lt;p&gt;Two primary types exist:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Management Domain (created automatically during bringup)&lt;&#x2F;li&gt;
+&lt;li&gt;VI (Virtual Infrastructure) Workload Domain (for business workloads)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;creation-process&quot;&gt;Creation Process&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;1-initial-configuration&quot;&gt;1. Initial Configuration&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Navigate to Workload Domains in SDDC Manager&lt;&#x2F;li&gt;
+&lt;li&gt;Select “Add Workload Domain”&lt;&#x2F;li&gt;
+&lt;li&gt;Choose “VI Workload Domain” type&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;2-storage-configuration&quot;&gt;2. Storage Configuration&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Select principal storage type (e.g., vSAN)&lt;&#x2F;li&gt;
+&lt;li&gt;For vSAN configurations:
+&lt;ul&gt;
+&lt;li&gt;Set failures to tolerate&lt;&#x2F;li&gt;
+&lt;li&gt;Configure deduplication and compression options&lt;&#x2F;li&gt;
+&lt;li&gt;Minimum of three hosts required&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;3-domain-settings&quot;&gt;3. Domain Settings&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Assign domain name&lt;&#x2F;li&gt;
+&lt;li&gt;Choose SSO domain option:
+&lt;ul&gt;
+&lt;li&gt;Join existing management SSO domain&lt;&#x2F;li&gt;
+&lt;li&gt;Create new SSO domain&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Select lifecycle management approach:
+&lt;ul&gt;
+&lt;li&gt;VLCM (vSphere Lifecycle Manager) images (default in vCenter 8)&lt;&#x2F;li&gt;
+&lt;li&gt;Traditional baseline approach (optional)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;4-vcenter-configuration&quot;&gt;4. vCenter Configuration&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Provide cluster name&lt;&#x2F;li&gt;
+&lt;li&gt;Select VLCM image (if using VLCM)&lt;&#x2F;li&gt;
+&lt;li&gt;Configure vCenter Server details:
+&lt;ul&gt;
+&lt;li&gt;Hostname&lt;&#x2F;li&gt;
+&lt;li&gt;Password&lt;&#x2F;li&gt;
+&lt;li&gt;DNS verification for IP assignment&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;5-nsx-setup&quot;&gt;5. NSX Setup&lt;&#x2F;h3&gt;
+&lt;p&gt;For first VI workload domain:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Deploy new NSX fabric&lt;&#x2F;li&gt;
+&lt;li&gt;Configure NSX manager appliances:
+&lt;ul&gt;
+&lt;li&gt;Hostnames (DNS-verified)&lt;&#x2F;li&gt;
+&lt;li&gt;Admin and audit account passwords&lt;&#x2F;li&gt;
+&lt;li&gt;IP assignments&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;6-network-configuration&quot;&gt;6. Network Configuration&lt;&#x2F;h3&gt;
+&lt;p&gt;Configure vSphere Distributed Switch (VDS):&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;default-switch-configuration&quot;&gt;Default Switch Configuration&lt;&#x2F;h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Single distributed switch&lt;&#x2F;li&gt;
+&lt;li&gt;Distributed port groups for:
+&lt;ul&gt;
+&lt;li&gt;Management traffic&lt;&#x2F;li&gt;
+&lt;li&gt;vSAN traffic&lt;&#x2F;li&gt;
+&lt;li&gt;vMotion traffic&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h4 id=&quot;custom-switch-configuration&quot;&gt;Custom Switch Configuration&lt;&#x2F;h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Multiple distributed switches possible&lt;&#x2F;li&gt;
+&lt;li&gt;Requires additional NICs&lt;&#x2F;li&gt;
+&lt;li&gt;Use cases:
+&lt;ul&gt;
+&lt;li&gt;Isolate vSAN traffic&lt;&#x2F;li&gt;
+&lt;li&gt;Separate NSX overlay traffic&lt;&#x2F;li&gt;
+&lt;li&gt;Split management traffic&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;7-additional-network-settings&quot;&gt;7. Additional Network Settings&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Configure VLAN ID for NSX overlay traffic&lt;&#x2F;li&gt;
+&lt;li&gt;Set up traffic types on distributed switches&lt;&#x2F;li&gt;
+&lt;li&gt;Assign NICs to appropriate switches&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;8-licensing&quot;&gt;8. Licensing&lt;&#x2F;h3&gt;
+&lt;p&gt;Provide license keys for:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;NSX&lt;&#x2F;li&gt;
+&lt;li&gt;vSAN&lt;&#x2F;li&gt;
+&lt;li&gt;vSphere&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;post-deployment-configuration&quot;&gt;Post-Deployment Configuration&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;automated-tasks&quot;&gt;Automated Tasks&lt;&#x2F;h3&gt;
+&lt;p&gt;The workflow (~90 minutes) includes:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;vCenter Server deployment&lt;&#x2F;li&gt;
+&lt;li&gt;vCenter inventory configuration&lt;&#x2F;li&gt;
+&lt;li&gt;ESXi host addition&lt;&#x2F;li&gt;
+&lt;li&gt;Cluster configuration&lt;&#x2F;li&gt;
+&lt;li&gt;vSAN setup&lt;&#x2F;li&gt;
+&lt;li&gt;VDS and port group configuration&lt;&#x2F;li&gt;
+&lt;li&gt;NSX manager deployment&lt;&#x2F;li&gt;
+&lt;li&gt;NSX cluster preparation&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;verification-steps&quot;&gt;Verification Steps&lt;&#x2F;h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;SDDC Manager&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Check domain status&lt;&#x2F;li&gt;
+&lt;li&gt;Verify host assignments&lt;&#x2F;li&gt;
+&lt;li&gt;Review cluster configuration&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;vSphere Client&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Verify VM deployments&lt;&#x2F;li&gt;
+&lt;li&gt;Check vSAN datastore&lt;&#x2F;li&gt;
+&lt;li&gt;Review networking configuration&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;NSX Manager&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Verify host preparation&lt;&#x2F;li&gt;
+&lt;li&gt;Check fabric configuration&lt;&#x2F;li&gt;
+&lt;li&gt;Review network settings&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;best-practices&quot;&gt;Best Practices&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Planning&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ensure sufficient resources&lt;&#x2F;li&gt;
+&lt;li&gt;Verify DNS entries&lt;&#x2F;li&gt;
+&lt;li&gt;Prepare network configurations&lt;&#x2F;li&gt;
+&lt;li&gt;Have licenses ready&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Configuration&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Consider traffic isolation needs&lt;&#x2F;li&gt;
+&lt;li&gt;Plan NIC assignments&lt;&#x2F;li&gt;
+&lt;li&gt;Document VLAN assignments&lt;&#x2F;li&gt;
+&lt;li&gt;Review security requirements&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Post-Deployment&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Verify all components&lt;&#x2F;li&gt;
+&lt;li&gt;Test connectivity&lt;&#x2F;li&gt;
+&lt;li&gt;Document configuration&lt;&#x2F;li&gt;
+&lt;li&gt;Update DNS records&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;Creating workload domains is a fundamental operation in VCF that requires careful planning and execution. While the process is largely automated, understanding each component and its configuration options ensures successful deployment and operation of your cloud infrastructure.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

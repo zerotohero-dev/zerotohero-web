@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Zero to Hero - networking</title>
+    <link rel="self" type="application/atom+xml" href="https://zerotohero.dev/tags/networking/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://zerotohero.dev"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2024-12-12T00:00:00+00:00</updated>
+    <id>https://zerotohero.dev/tags/networking/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Deploying Application Virtual Networks (AVNs) in VMware Cloud Foundation: A Guide for Aria Suite</title>
+        <published>2024-12-12T00:00:00+00:00</published>
+        <updated>2024-12-12T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/deploying-application-virtual-networks/"/>
+        <id>https://zerotohero.dev/inbox/deploying-application-virtual-networks/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/deploying-application-virtual-networks/">&lt;p&gt;Application Virtual Networks (AVNs) are software-defined networking constructs built on overlay-backed virtual networks within NSX. When deploying the VMware Aria suite in Cloud Foundation, understanding AVN configuration is crucial for proper implementation.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;understanding-avn-types&quot;&gt;Understanding AVN Types&lt;&#x2F;h2&gt;
+&lt;p&gt;When deploying AVNs for the Aria suite, two distinct network segments are created:&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;1-region-segment-local-virtual-network&quot;&gt;1. Region Segment (Local Virtual Network)&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Purpose: Hosts components that run locally&lt;&#x2F;li&gt;
+&lt;li&gt;Characteristics: No failover requirement&lt;&#x2F;li&gt;
+&lt;li&gt;Example components: Aria Operations for Logs&lt;&#x2F;li&gt;
+&lt;li&gt;Local-only operations&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;2-cross-region-segment&quot;&gt;2. Cross-Region Segment&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Purpose: Hosts components requiring DR capabilities&lt;&#x2F;li&gt;
+&lt;li&gt;Supports failover to DR site during outages&lt;&#x2F;li&gt;
+&lt;li&gt;Hosts components such as:
+&lt;ul&gt;
+&lt;li&gt;Aria Suite Lifecycle Manager&lt;&#x2F;li&gt;
+&lt;li&gt;Workspace ONE Access&lt;&#x2F;li&gt;
+&lt;li&gt;Aria Automation&lt;&#x2F;li&gt;
+&lt;li&gt;Aria Operations&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;deployment-process&quot;&gt;Deployment Process&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;prerequisites&quot;&gt;Prerequisites&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;NSX edge cluster must be deployed in the management domain&lt;&#x2F;li&gt;
+&lt;li&gt;Tier-1 router must be available&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;configuration-steps&quot;&gt;Configuration Steps&lt;&#x2F;h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Initial Navigation&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Access SDDC Manager&lt;&#x2F;li&gt;
+&lt;li&gt;Navigate to AVNs tab&lt;&#x2F;li&gt;
+&lt;li&gt;Select management domain&lt;&#x2F;li&gt;
+&lt;li&gt;Choose Actions &amp;gt; Add AVNs&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Network Type Selection&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Choose between:
+&lt;ul&gt;
+&lt;li&gt;Overlay-backed NSX segments&lt;&#x2F;li&gt;
+&lt;li&gt;VLAN-backed NSX segments&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Note: DR capabilities require overlay-backed segments&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Edge Configuration&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Select NSX edge cluster&lt;&#x2F;li&gt;
+&lt;li&gt;Choose associated Tier-1 router&lt;&#x2F;li&gt;
+&lt;li&gt;Configure segment attachment&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h3 id=&quot;segment-configuration&quot;&gt;Segment Configuration&lt;&#x2F;h3&gt;
+&lt;h4 id=&quot;region-network-settings&quot;&gt;Region Network Settings&lt;&#x2F;h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Name specification (e.g., “region”)&lt;&#x2F;li&gt;
+&lt;li&gt;Subnet configuration (e.g., 192.168.11.0)&lt;&#x2F;li&gt;
+&lt;li&gt;Gateway assignment (e.g., 192.168.11.1)&lt;&#x2F;li&gt;
+&lt;li&gt;MTU setting (typically 8940)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h4 id=&quot;cross-region-network-settings&quot;&gt;Cross-Region Network Settings&lt;&#x2F;h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Name specification (e.g., “x-region”)&lt;&#x2F;li&gt;
+&lt;li&gt;Subnet configuration (e.g., 192.168.31.0)&lt;&#x2F;li&gt;
+&lt;li&gt;Gateway assignment (e.g., 192.168.31.1)&lt;&#x2F;li&gt;
+&lt;li&gt;MTU setting (typically 8940)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;deployment-verification&quot;&gt;Deployment Verification&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;nsx-manager&quot;&gt;NSX Manager&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Check network topology&lt;&#x2F;li&gt;
+&lt;li&gt;Verify segment creation&lt;&#x2F;li&gt;
+&lt;li&gt;Confirm routing configuration&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;vsphere-client&quot;&gt;vSphere Client&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;View segments as port groups&lt;&#x2F;li&gt;
+&lt;li&gt;Verify distributed switch integration&lt;&#x2F;li&gt;
+&lt;li&gt;Check network availability&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;implementation-considerations&quot;&gt;Implementation Considerations&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Design Planning&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Determine component placement&lt;&#x2F;li&gt;
+&lt;li&gt;Plan IP addressing scheme&lt;&#x2F;li&gt;
+&lt;li&gt;Consider DR requirements&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Network Architecture&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Review existing network topology&lt;&#x2F;li&gt;
+&lt;li&gt;Plan segment integration&lt;&#x2F;li&gt;
+&lt;li&gt;Consider bandwidth requirements&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Security Considerations&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Segment isolation&lt;&#x2F;li&gt;
+&lt;li&gt;Access controls&lt;&#x2F;li&gt;
+&lt;li&gt;Traffic patterns&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;benefits&quot;&gt;Benefits&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Software-Defined Networking&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Flexible network configuration&lt;&#x2F;li&gt;
+&lt;li&gt;Automated deployment&lt;&#x2F;li&gt;
+&lt;li&gt;Consistent implementation&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Disaster Recovery&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Built-in failover capability&lt;&#x2F;li&gt;
+&lt;li&gt;Site resilience&lt;&#x2F;li&gt;
+&lt;li&gt;Component protection&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Integration&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Seamless NSX integration&lt;&#x2F;li&gt;
+&lt;li&gt;vSphere compatibility&lt;&#x2F;li&gt;
+&lt;li&gt;Automated management&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;Deploying AVNs through SDDC Manager provides a streamlined approach to creating the necessary network infrastructure for the Aria suite. The automated process ensures consistent configuration while supporting both local operations and disaster recovery requirements.&lt;&#x2F;p&gt;
+&lt;p&gt;The separation between region and cross-region segments allows for flexible component placement while maintaining appropriate failover capabilities where needed. This architecture supports both operational efficiency and business continuity requirements.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Understanding the OSI Model: A Practical Guide to Network Communication</title>
+        <published>2024-12-12T00:00:00+00:00</published>
+        <updated>2024-12-12T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/osi-model/"/>
+        <id>https://zerotohero.dev/inbox/osi-model/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/osi-model/">&lt;p&gt;Every day, millions of people access resources on the public internet without giving it a second thought. But have you ever wondered what actually happens when you type a website address into your browser? Behind that simple action lies a complex series of processes that make network communication possible. Let’s break it down using one of the most fundamental frameworks in networking: the OSI Model.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;a-real-world-example&quot;&gt;A Real-World Example&lt;&#x2F;h2&gt;
+&lt;p&gt;Let’s start with something familiar. Imagine you’re sitting at your computer and want to visit &lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&quot;&gt;https:&#x2F;&#x2F;zerotohero.dev&lt;&#x2F;a&gt;. You open your browser, type in the address, press enter, and within seconds, you’re there. Simple, right? Not quite. Behind this seemingly straightforward action, multiple components work together to make this connection possible.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;introduction-to-the-osi-model&quot;&gt;Introduction to the OSI Model&lt;&#x2F;h2&gt;
+&lt;p&gt;The Open System Interconnect (OSI) Model is a logical framework that helps us understand the components involved in network communication. While it’s not a literal representation of how modern networks operate, it serves as an excellent educational tool for understanding the various layers of network communication.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-seven-layers-of-the-osi-model&quot;&gt;The Seven Layers of the OSI Model&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;layer-7-application-layer&quot;&gt;Layer 7: Application Layer&lt;&#x2F;h3&gt;
+&lt;p&gt;This is where the user interaction happens. Think of it as the layer responsible for providing services and applications that users directly interact with, such as:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Web browsing&lt;&#x2F;li&gt;
+&lt;li&gt;File transfer&lt;&#x2F;li&gt;
+&lt;li&gt;Printing services&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;layer-6-presentation-layer&quot;&gt;Layer 6: Presentation Layer&lt;&#x2F;h3&gt;
+&lt;p&gt;This layer handles how data is encoded, compressed, and potentially encrypted. It’s particularly important because different operating systems might represent data differently, and this layer ensures compatibility.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;layer-5-session-layer&quot;&gt;Layer 5: Session Layer&lt;&#x2F;h3&gt;
+&lt;p&gt;Imagine having multiple browser tabs open – one to ZeroToHero.dev, another to YouTube, and a third to Palo Alto Networks. The session layer manages these different communication sessions, keeping them organized and separate.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;layer-4-transport-layer&quot;&gt;Layer 4: Transport Layer&lt;&#x2F;h3&gt;
+&lt;p&gt;This is where we start getting into the nitty-gritty of data delivery. The transport layer uses different protocols that either:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Care about reliability (like TCP) – ensuring data arrives completely and in order&lt;&#x2F;li&gt;
+&lt;li&gt;Don’t care about reliability (like UDP) – just sending data without guarantees&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;layer-3-network-layer&quot;&gt;Layer 3: Network Layer&lt;&#x2F;h3&gt;
+&lt;p&gt;Think of this as the addressing layer. Just like how houses have street addresses, computers need network addresses (IP addresses) to find each other on the network. This layer handles the routing of data to its correct destination.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;layer-2-data-link-layer&quot;&gt;Layer 2: Data Link Layer&lt;&#x2F;h3&gt;
+&lt;p&gt;If Layer 3 is like the street address, Layer 2 is like the mailbox number. It handles local delivery of data and ensures it gets to the right “mailbox slot” on the local network. This layer also deals with different types of “envelopes” (frames) for different network types.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;layer-1-physical-layer&quot;&gt;Layer 1: Physical Layer&lt;&#x2F;h3&gt;
+&lt;p&gt;This is where the rubber meets the road – or rather, where the data meets the wire. The physical layer handles the actual transmission of bits across the physical medium, whether that’s an ethernet cable, fiber optic line, or wireless signal.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;why-this-matters&quot;&gt;Why This Matters&lt;&#x2F;h2&gt;
+&lt;p&gt;The beauty of this layered approach is its modularity. The application layer doesn’t need to know whether you’re connected via ethernet, Wi-Fi, or any other technology. Each layer handles its specific responsibilities, making networks more flexible and easier to troubleshoot.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;memorization-tips&quot;&gt;Memorization Tips&lt;&#x2F;h2&gt;
+&lt;p&gt;Need help remembering the layers? Here are two popular mnemonics:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Bottom to top: “Please Do Not Throw Sausage Pizza Away” (Physical, Data Link, Network, Transport, Session, Presentation, Application)&lt;&#x2F;li&gt;
+&lt;li&gt;Top to bottom: “All People Seem To Need Data Processing” (Application, Presentation, Session, Transport, Network, Data Link, Physical)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;the-real-world&quot;&gt;The Real World&lt;&#x2F;h2&gt;
+&lt;p&gt;While the OSI Model is primarily theoretical, its principles are reflected in the TCP&#x2F;IP protocol suite that powers today’s internet. Understanding these layers helps network professionals troubleshoot issues and design better networks.&lt;&#x2F;p&gt;
+&lt;p&gt;Whether you’re a network engineer or just curious about how the internet works, understanding the OSI Model provides valuable insight into the complex world of network communication. Next time you visit a website, you’ll have a better appreciation for all the layers working together to make that connection possible.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Host Commissioning in VMware C`loud Foundation: A Complete Guide</title>
+        <published>2024-12-12T00:00:00+00:00</published>
+        <updated>2024-12-12T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/vcf-host-comissioning/"/>
+        <id>https://zerotohero.dev/inbox/vcf-host-comissioning/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/vcf-host-comissioning/">&lt;p&gt;In VMware Cloud Foundation (VCF), adding cloud capacity is accomplished through a process called host commissioning, where physical servers are added to the SDDC Manager inventory. This guide walks through the process and key considerations.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;understanding-host-commissioning&quot;&gt;Understanding Host Commissioning&lt;&#x2F;h2&gt;
+&lt;p&gt;Host commissioning creates a “free pool” of available capacity from added servers. This pool serves as the foundation for:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Creating new workload domains&lt;&#x2F;li&gt;
+&lt;li&gt;Expanding existing clusters&lt;&#x2F;li&gt;
+&lt;li&gt;Managing overall cloud capacity&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;network-pool-configuration&quot;&gt;Network Pool Configuration&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;default-configuration&quot;&gt;Default Configuration&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Management pool created during initial bringup&lt;&#x2F;li&gt;
+&lt;li&gt;Serves as the baseline for management domain&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;creating-new-network-pools&quot;&gt;Creating New Network Pools&lt;&#x2F;h3&gt;
+&lt;p&gt;Network pools can support multiple network types:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;vSAN&lt;&#x2F;li&gt;
+&lt;li&gt;vMotion&lt;&#x2F;li&gt;
+&lt;li&gt;iSCSI&lt;&#x2F;li&gt;
+&lt;li&gt;NFS&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;network-pool-setup-process&quot;&gt;Network Pool Setup Process&lt;&#x2F;h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Navigate to Network Settings&lt;&#x2F;li&gt;
+&lt;li&gt;Click “Create Network Pool”&lt;&#x2F;li&gt;
+&lt;li&gt;Specify:
+&lt;ul&gt;
+&lt;li&gt;Pool name&lt;&#x2F;li&gt;
+&lt;li&gt;Network types to support&lt;&#x2F;li&gt;
+&lt;li&gt;VLAN details&lt;&#x2F;li&gt;
+&lt;li&gt;MTU settings&lt;&#x2F;li&gt;
+&lt;li&gt;IP subnet information&lt;&#x2F;li&gt;
+&lt;li&gt;IP address ranges for SDDC manager&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;host-commissioning-process&quot;&gt;Host Commissioning Process&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;prerequisites-checklist&quot;&gt;Prerequisites Checklist&lt;&#x2F;h3&gt;
+&lt;p&gt;Before commissioning hosts, verify:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;ESXi installation completed&lt;&#x2F;li&gt;
+&lt;li&gt;vSphere standard switch configured&lt;&#x2F;li&gt;
+&lt;li&gt;Pre-existing disk partitions removed&lt;&#x2F;li&gt;
+&lt;li&gt;DNS configuration completed&lt;&#x2F;li&gt;
+&lt;li&gt;Network connectivity established&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;adding-hosts&quot;&gt;Adding Hosts&lt;&#x2F;h3&gt;
+&lt;p&gt;Two methods are available:&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;individual-host-addition&quot;&gt;Individual Host Addition&lt;&#x2F;h4&gt;
+&lt;p&gt;Requires:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fully qualified hostname&lt;&#x2F;li&gt;
+&lt;li&gt;Principal storage type&lt;&#x2F;li&gt;
+&lt;li&gt;Network pool assignment&lt;&#x2F;li&gt;
+&lt;li&gt;Root user credentials&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h4 id=&quot;bulk-host-import&quot;&gt;Bulk Host Import&lt;&#x2F;h4&gt;
+&lt;p&gt;For multiple hosts:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Uses JSON file format&lt;&#x2F;li&gt;
+&lt;li&gt;Includes same information as individual addition&lt;&#x2F;li&gt;
+&lt;li&gt;More efficient for large-scale deployments&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;json-file-structure&quot;&gt;JSON File Structure&lt;&#x2F;h3&gt;
+&lt;p&gt;The import file must include:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Host details&lt;&#x2F;li&gt;
+&lt;li&gt;Storage configuration&lt;&#x2F;li&gt;
+&lt;li&gt;Network assignments&lt;&#x2F;li&gt;
+&lt;li&gt;Credentials&lt;&#x2F;li&gt;
+&lt;li&gt;Additional configuration parameters&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;validation-process&quot;&gt;Validation Process&lt;&#x2F;h2&gt;
+&lt;p&gt;After adding hosts:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;SDDC Manager connects to each host&lt;&#x2F;li&gt;
+&lt;li&gt;Verifies prerequisites&lt;&#x2F;li&gt;
+&lt;li&gt;Checks connectivity&lt;&#x2F;li&gt;
+&lt;li&gt;Validates configurations&lt;&#x2F;li&gt;
+&lt;li&gt;Reports success or failure&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;commissioning-workflow&quot;&gt;Commissioning Workflow&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;steps&quot;&gt;Steps&lt;&#x2F;h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Initial validation&lt;&#x2F;li&gt;
+&lt;li&gt;Host preparation&lt;&#x2F;li&gt;
+&lt;li&gt;Network configuration&lt;&#x2F;li&gt;
+&lt;li&gt;Storage setup&lt;&#x2F;li&gt;
+&lt;li&gt;Final verification&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h3 id=&quot;monitoring&quot;&gt;Monitoring&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;View workflow progress in SDDC Manager&lt;&#x2F;li&gt;
+&lt;li&gt;Monitor subtasks&lt;&#x2F;li&gt;
+&lt;li&gt;Access error details if needed&lt;&#x2F;li&gt;
+&lt;li&gt;Track completion status&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;best-practices&quot;&gt;Best Practices&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Pre-commissioning&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Verify all prerequisites&lt;&#x2F;li&gt;
+&lt;li&gt;Prepare network pools&lt;&#x2F;li&gt;
+&lt;li&gt;Document host information&lt;&#x2F;li&gt;
+&lt;li&gt;Test connectivity&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;During Commissioning&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Monitor workflow progress&lt;&#x2F;li&gt;
+&lt;li&gt;Address any validation errors&lt;&#x2F;li&gt;
+&lt;li&gt;Keep credentials secure&lt;&#x2F;li&gt;
+&lt;li&gt;Document any issues&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Post-commissioning&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Verify host availability&lt;&#x2F;li&gt;
+&lt;li&gt;Check network configurations&lt;&#x2F;li&gt;
+&lt;li&gt;Test connectivity&lt;&#x2F;li&gt;
+&lt;li&gt;Update documentation&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;Host commissioning is a critical process in expanding VCF capacity. By following these steps and best practices, administrators can ensure successful host addition and maintain a healthy cloud infrastructure. Remember to always verify prerequisites and monitor the commissioning process to ensure successful deployment.&lt;&#x2F;p&gt;
+&lt;p&gt;The ability to commission hosts both individually and in bulk provides flexibility for different deployment scenarios, while the comprehensive validation process helps ensure reliability and consistency in your VCF environment.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Understanding ESXi&#x27;s Default Virtual Switch Configuration</title>
+        <published>2024-12-10T00:00:00+00:00</published>
+        <updated>2024-12-10T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/esxi-default-networking/"/>
+        <id>https://zerotohero.dev/inbox/esxi-default-networking/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/esxi-default-networking/">&lt;h2 id=&quot;video&quot;&gt;Video&lt;&#x2F;h2&gt;
+&lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;&lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;1038093522?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; title=&quot;LAB: VMware ESXi Server Installation and Configuration&quot;&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;div&gt;&lt;script src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;api&#x2F;player.js&quot;&gt;&lt;&#x2F;script&gt;
+&lt;h2 id=&quot;notes&quot;&gt;Notes&lt;&#x2F;h2&gt;
+&lt;p&gt;When you install ESXi, the system automatically configures several networking components. One of the most important default configurations is the creation of vSwitch0. Let’s explore this virtual switch and understand its role in ESXi networking.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;accessing-virtual-switch-configuration&quot;&gt;Accessing Virtual Switch Configuration&lt;&#x2F;h2&gt;
+&lt;p&gt;To view the default virtual switch configuration:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Open the ESXi host client&lt;&#x2F;li&gt;
+&lt;li&gt;Navigate to Networking&lt;&#x2F;li&gt;
+&lt;li&gt;Select Virtual Switches&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;default-virtual-switch-vswitch0-overview&quot;&gt;Default Virtual Switch (vSwitch0) Overview&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;basic-configuration&quot;&gt;Basic Configuration&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Name: vSwitch0&lt;&#x2F;li&gt;
+&lt;li&gt;Default Physical Adapter: vmnic0 (first physical NIC)&lt;&#x2F;li&gt;
+&lt;li&gt;Note: You may see a warning about having only one adapter (this is normal for initial setup)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;logical-architecture&quot;&gt;Logical Architecture&lt;&#x2F;h3&gt;
+&lt;p&gt;The default networking setup consists of several components working together:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Physical Layer&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Physical Network Interface Card (vmnic0)&lt;&#x2F;li&gt;
+&lt;li&gt;Connected to physical network switch&lt;&#x2F;li&gt;
+&lt;li&gt;Provides connectivity to management network (e.g., 192.168.1.x)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Virtual Switch Layer&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;vSwitch0 acts as a logical Layer 2 switch&lt;&#x2F;li&gt;
+&lt;li&gt;Bridges virtual and physical networks&lt;&#x2F;li&gt;
+&lt;li&gt;Created automatically during ESXi installation&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;VMkernel Interface&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;VMkernel port (vmk0)&lt;&#x2F;li&gt;
+&lt;li&gt;Configured with management IP (e.g., 192.168.1.102)&lt;&#x2F;li&gt;
+&lt;li&gt;Provides management access to ESXi host&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;network-traffic-flow&quot;&gt;Network Traffic Flow&lt;&#x2F;h2&gt;
+&lt;p&gt;The logical flow of network traffic follows this path:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#282828;color:#fdf4c1aa;&quot;&gt;&lt;code&gt;&lt;span&gt;Management Computer (192.168.1.151)
+&lt;&#x2F;span&gt;&lt;span&gt;    ↕
+&lt;&#x2F;span&gt;&lt;span&gt;Physical Network Switch
+&lt;&#x2F;span&gt;&lt;span&gt;    ↕
+&lt;&#x2F;span&gt;&lt;span&gt;ESXi Host Physical NIC (vmnic0)
+&lt;&#x2F;span&gt;&lt;span&gt;    ↕
+&lt;&#x2F;span&gt;&lt;span&gt;Virtual Switch (vSwitch0)
+&lt;&#x2F;span&gt;&lt;span&gt;    ↕
+&lt;&#x2F;span&gt;&lt;span&gt;VMkernel Port (vmk0 - 192.168.1.102)
+&lt;&#x2F;span&gt;&lt;span&gt;    ↕
+&lt;&#x2F;span&gt;&lt;span&gt;ESXi Host Management Interface
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This configuration enables:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Management access to the ESXi host&lt;&#x2F;li&gt;
+&lt;li&gt;ESXi host client web interface connectivity&lt;&#x2F;li&gt;
+&lt;li&gt;Basic network services for the host&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;important-notes&quot;&gt;Important Notes&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Single NIC Configuration&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;While functional, using a single NIC may not be ideal for production&lt;&#x2F;li&gt;
+&lt;li&gt;Additional NICs can be added later for redundancy&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Future Expansion&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;This basic configuration can be enhanced with:
+&lt;ul&gt;
+&lt;li&gt;Additional physical NICs&lt;&#x2F;li&gt;
+&lt;li&gt;Multiple virtual switches&lt;&#x2F;li&gt;
+&lt;li&gt;Distributed switches&lt;&#x2F;li&gt;
+&lt;li&gt;Advanced networking features&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Storage Considerations&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Virtual machines will require storage access&lt;&#x2F;li&gt;
+&lt;li&gt;Can be configured with:
+&lt;ul&gt;
+&lt;li&gt;Local storage on the ESXi host&lt;&#x2F;li&gt;
+&lt;li&gt;Network-attached storage&lt;&#x2F;li&gt;
+&lt;li&gt;The specific storage configuration will influence network design&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;next-steps&quot;&gt;Next Steps&lt;&#x2F;h2&gt;
+&lt;p&gt;After understanding the default virtual switch configuration, typical next steps include:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Configuring storage for virtual machines&lt;&#x2F;li&gt;
+&lt;li&gt;Adding redundant network connections&lt;&#x2F;li&gt;
+&lt;li&gt;Setting up additional virtual switches as needed&lt;&#x2F;li&gt;
+&lt;li&gt;Implementing more advanced networking features&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;&lt;em&gt;Note: This configuration represents a basic setup suitable for initial deployment or lab environments. Production environments typically require more robust networking configurations with redundancy and additional security measures.&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Build Strong Connections to Land Your Dream Job</title>
+        <published>2023-08-18T00:00:00+00:00</published>
+        <updated>2023-08-18T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/top-of-mind/the-dream-job/"/>
+        <id>https://zerotohero.dev/top-of-mind/the-dream-job/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/top-of-mind/the-dream-job/">&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;size&#x2F;w1200&#x2F;2024&#x2F;03&#x2F;dream-job.png&quot; alt=&quot;Build Strong Connections to Land Your Dream Job&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;&#x2F;h2&gt;
+&lt;p&gt;Imagine this scenario: You receive an email or LinkedIn message from someone you
+may not know or haven’t even met in person. They send you their résumé and ask
+for a referral at your company. What would you do?&lt;&#x2F;p&gt;
+&lt;p&gt;Not much? To be honest, you’ll highly-likely ignore their request and ghost
+them.&lt;&#x2F;p&gt;
+&lt;p&gt;But why? Because while asking for your help they’ve overlooked a few steps, such
+as:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Checking whether you are available and willing to assist,&lt;&#x2F;li&gt;
+&lt;li&gt;Making sure they are approaching the right person,&lt;&#x2F;li&gt;
+&lt;li&gt;Or, inquiring about your suitability for their request.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;And even more important than those, they are &lt;strong&gt;selfish&lt;&#x2F;strong&gt;; they haven’t built a
+relationship, and accrued enough goodwill to be able to ask help.&lt;&#x2F;p&gt;
+&lt;p&gt;Would you want a selfish colleague in your team? Probably not.&lt;&#x2F;p&gt;
+&lt;p&gt;Would you want someone who does not know how to approach people, and who does
+not value others’ time in your team? Again; probably not.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;you-don-t-kiss-on-a-first-date&quot;&gt;You Don’t Kiss on a First Date&lt;&#x2F;h2&gt;
+&lt;p&gt;Essentially, they’re attempting to rush things and make a “&lt;em&gt;first date kiss&lt;&#x2F;em&gt;.”&lt;&#x2F;p&gt;
+&lt;p&gt;Unfortunately, that’s not how networking works. This approach is likely to fail.&lt;&#x2F;p&gt;
+&lt;p&gt;You may believe that reaching out to people indiscriminately increases the
+chances of success—it’s “&lt;em&gt;a numbers game&lt;&#x2F;em&gt;” after all. However, in reality,
+this strategy has flaws because it’s dishonest.&lt;&#x2F;p&gt;
+&lt;p&gt;Let’s see how we can improve our approach.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;admit-and-recognize-that-people-are-busy&quot;&gt;Admit and Recognize that People are Busy&lt;&#x2F;h2&gt;
+&lt;p&gt;When it comes to networking, &lt;strong&gt;there is no free lunch&lt;&#x2F;strong&gt;. The more you give in to
+your relationships, the more you’ll get value in return.&lt;&#x2F;p&gt;
+&lt;p&gt;Everyone has their responsibilities, agendas, and priorities. So, don’t send
+cold emails and cold LinkedIn messages to people and expect them to respond
+back.&lt;&#x2F;p&gt;
+&lt;p&gt;Know them; nurture a professional relationship with them.&lt;&#x2F;p&gt;
+&lt;p&gt;If you don’t act professionally and put in the effort needed, don’t get
+surprised when your messages are ignored or even result in being blocked or
+reported 99% of the time.&lt;&#x2F;p&gt;
+&lt;p&gt;Also if you don’t act professionally, why would you assume that they will find
+you suitable for a professional work environment? That’s contradictory in
+itself.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;consider-the-risks-for-the-person-referring-you&quot;&gt;Consider the Risks for the Person Referring You&lt;&#x2F;h2&gt;
+&lt;p&gt;Referring someone for an open position can seriously affect their reputation
+within the company if the person gets the job but is not a good fit. Often, this
+risk outweighs any benefit (&lt;em&gt;including referral bonuses&lt;&#x2F;em&gt;) they may receive if
+you get an offer.&lt;&#x2F;p&gt;
+&lt;p&gt;That’s why you must show that you are more than capable of the role. And that,
+again, boils down to &lt;strong&gt;nurturing a professional relationship&lt;&#x2F;strong&gt; with the person
+&lt;strong&gt;months before&lt;&#x2F;strong&gt;, NOT at the last minute when you see that fancy job
+advertisement.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Build relationships before you need them&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;understand-the-significance-of-your-request&quot;&gt;Understand the Significance of Your Request&lt;&#x2F;h2&gt;
+&lt;p&gt;You’re asking a stranger to invest their time evaluating your skills, abilities,
+and credentials. You might even expect feedback, and maybe ask them to pass
+along your resume to parties. &lt;strong&gt;That’s a nontrivial demand&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Again, nobody will spend any time doing that if you haven’t already established
+a well-founded professional relationship.&lt;&#x2F;p&gt;
+&lt;p&gt;And, it’s not about being rude; it is out of necessity: People have so little
+time and so many things to do; so why should they help you if they don’t have
+confidence and trust in you.&lt;&#x2F;p&gt;
+&lt;p&gt;And to nurture the confidence and trust, you need to &lt;strong&gt;build a professional
+relationship&lt;&#x2F;strong&gt;. And that takes time, so you’ll need to start building your
+relationships way before you initiate your job search.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;embrace-networking&quot;&gt;Embrace Networking&lt;&#x2F;h2&gt;
+&lt;p&gt;That’s the third time I’m mentioning &lt;strong&gt;networking&lt;&#x2F;strong&gt;. I think it highlights its
+importance.&lt;&#x2F;p&gt;
+&lt;p&gt;Effective networking requires &lt;strong&gt;dedication&lt;&#x2F;strong&gt;, &lt;strong&gt;effort&lt;&#x2F;strong&gt;, and &lt;strong&gt;time&lt;&#x2F;strong&gt;. It
+requires mutual respect and understanding. Simply sending a “&lt;em&gt;please refer me&lt;&#x2F;em&gt;”
+message as if you were a door-to-door salesperson won’t cut it.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;In today’s interconnected world, &lt;strong&gt;networking&lt;&#x2F;strong&gt; holds importance. Especially
+when stakes are so high, the bar is raised to the moon, and everyone is hiring
+(&lt;em&gt;or wanting to hire&lt;&#x2F;em&gt;) A players.&lt;&#x2F;p&gt;
+&lt;p&gt;Treat the process with care and thoughtfulness, and you’ll find that your
+connections are more fruitful and more likely to lead you toward the
+opportunities you seek.&lt;&#x2F;p&gt;
+&lt;p&gt;Avoid being someone who alienates allies by making attempts at connection
+without building the necessary foundations first.&lt;&#x2F;p&gt;
+&lt;p&gt;Invest in building connections, grasp the subtleties of engagement, and approach
+your networking endeavors with genuine empathy and respect. The rewards will be
+significant. Your career will flourish as a result.&lt;&#x2F;p&gt;
+&lt;p&gt;Now, go get that job! And, may the source be with you 🦄.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;catch-22&#x2F;&quot;&gt;Catch 22&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;consume-less&#x2F;&quot;&gt;Consume Less&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;craft-captivating-documentation&#x2F;&quot;&gt;Craft Captivating Documentation&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;keep-your-secrets&#x2F;&quot;&gt;Keep Your Secrets… Secret&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;later-does-not-exist&#x2F;&quot;&gt;‘Later’ Does Not Exist&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;perception-pivot&#x2F;&quot;&gt;Transform Feedback into Professional Mastery&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;probing-questions&#x2F;&quot;&gt;Embracing Daily Reflection&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;psst-you-dont-have-to-use-medium&#x2F;&quot;&gt;Psst… You Don’t Have to Use Medium&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;reshape-your-workspace&#x2F;&quot;&gt;Reshape Your Workspace, Reshape Your Future&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;secrets&#x2F;&quot;&gt;Secrets&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Build Strong Connections to Land Your Dream Job&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;trust&#x2F;&quot;&gt;Trust Cultivates a Cohesive Team&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;vmware-secrets-manager&#x2F;&quot;&gt;Long Live Aegis!&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;write-to-forget&#x2F;&quot;&gt;Write to Forget&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;closure&#x2F;&quot;&gt;Closure&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;new-z2h-design&#x2F;&quot;&gt;The New Zero to Hero Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+</feed>

@@ -1,0 +1,2459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Zero to Hero - zero-to-prod</title>
+    <link rel="self" type="application/atom+xml" href="https://zerotohero.dev/tags/zero-to-prod/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://zerotohero.dev"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2024-05-21T00:00:00+00:00</updated>
+    <id>https://zerotohero.dev/tags/zero-to-prod/atom.xml</id>
+    <entry xml:lang="en">
+        <title>It&#x27;s Time to Fizz that Buzz</title>
+        <published>2024-05-21T00:00:00+00:00</published>
+        <updated>2024-05-21T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/zero-to-prod/fizz-that-buzz/"/>
+        <id>https://zerotohero.dev/zero-to-prod/fizz-that-buzz/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/zero-to-prod/fizz-that-buzz/">
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;Volkan_zelik_data_structures_and_algorithms_but_they_are_alive_c53953fa-c2af-4acf-8494-e5d209cc1029.png&quot; alt=&quot;Technical interviews in the valley require a weird mindset.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Technical interviews in the valley require a weird mindset.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;&#x2F;h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Update 2024-05-21&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;I have archived &lt;strong&gt;FizzBuzz Pro&lt;&#x2F;strong&gt; project for a while. I still have plans
+to repurpose it, but it’s not a priority right now. I’ll keep you posted
+when I start working on it again, or when I reuse some of its content
+and components in other projects.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;In the video at the end of this post, I’m talking about &lt;strong&gt;FizzBuzz Pro&lt;&#x2F;strong&gt;—a
+sister project of &lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;In the video, I’m outlining a high-level architecture of the login flow of the
+project, how it integrates with the &lt;strong&gt;Ghost&lt;&#x2F;strong&gt; content publishing platform as a
+membership provider, and how I’m going to proceed.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;FizzBuzz Pro&lt;&#x2F;strong&gt; is a greenfield project, and as I continue developing and
+productizing it, I will be sharing the entire process with y’all with more
+videos and articles.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The video that I’m sharing here is a ~30min &lt;strong&gt;uncut&lt;&#x2F;strong&gt; recording: It’s as raw
+as it gets.&lt;&#x2F;p&gt;
+&lt;p&gt;I wanted to share it in its entirety, before post-production, where I usually
+relentlessly cut out at least two-third of the video to increase the
+signal-to-noise ratio of it and provide as much value for the time you spend as
+I possibly can.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;the-high-level-overview&quot;&gt;The High Level Overview&lt;&#x2F;h2&gt;
+&lt;p&gt;Here’s the high-level authentication and identity management architecture that
+I’ll be talking about (&lt;em&gt;you can open the image in another tab for a
+higher-resolution version&lt;&#x2F;em&gt;):&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2021&amp;#x2F;05&amp;#x2F;fizzbuzz-pro-verification-flow-2.png&quot; alt=&quot;FizzBuzz Pro authentication high-level overview.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;FizzBuzz Pro authentication high-level overview.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;video-discussion&quot;&gt;Video Discussion&lt;&#x2F;h2&gt;
+&lt;p&gt;So, without further ado, here goes the video.&lt;&#x2F;p&gt;
+&lt;p&gt;Here’s a quick cut where I’m talking about &lt;strong&gt;FizzBuzz Pro&lt;&#x2F;strong&gt; in general:&lt;&#x2F;p&gt;
+&lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;557079474?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
+    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+    title=&quot;A brief overview of FizzBuzz Pro.&quot;&gt;&lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;A brief overview of FizzBuzz Pro.&lt;&#x2F;p&gt;
+&lt;p&gt;And here’s the entire raw &lt;strong&gt;uncut&lt;&#x2F;strong&gt; video for your viewing pleasure:&lt;&#x2F;p&gt;
+&lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;556452479?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
+    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+    title=&quot;FizzBuzz Pro High Level Design&quot;&gt;&lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;FizzBuzz Pro High Level Design&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;playlist&quot;&gt;Playlist&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;an-overview-of-fizzbuzz-pro&#x2F;&quot;&gt;Part 1: An Overview of FizzBuzz Pro&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;generating-static-html&#x2F;&quot;&gt;Part 2: Generating Static HTML&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;mutating-the-generated-html-files&#x2F;&quot;&gt;Part 3: Mutating the Generated HTML Files&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;app-authentication-overview&#x2F;&quot;&gt;Part 4: App Authentication Overview&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;implementing-an-oidc-authenticator&#x2F;&quot;&gt;Part 5: Implementing an OIDC Authenticator&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;serving-web-pages&#x2F;&quot;&gt;Part 6: Serving Web Pages&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;a-mild-introduction-to-middlewares&#x2F;&quot;&gt;Part 7: A Mild Introduction to Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;authenticate-all-the-things&#x2F;&quot;&gt;Part 8: Authenticate All the Things&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;thinking-in-middlewares&#x2F;&quot;&gt;Part 9: Thinking in Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;authentication-and-subscription-middlewares&#x2F;&quot;&gt;Part 10: Authentication and Subscription Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;implementing-authentication-handlers&#x2F;&quot;&gt;Part 11: Implementing Authentication Handlers&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;the-final-touches&#x2F;&quot;&gt;Part 12: The Final Touches&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;containerizing-our-application&#x2F;&quot;&gt;Part 13: Containerizing Our Application&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;onwards-to-kubernetes&#x2F;&quot;&gt;Part 14: Onwards to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;creating-ecr-repositories&#x2F;&quot;&gt;Creating ECR Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;deploying-a-microservice-to-k8s&#x2F;&quot;&gt;Deploying a Microservice to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Fizz that Buzz&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-hla&#x2F;&quot;&gt;FizzBuzz Pro High-Level Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-repos&#x2F;&quot;&gt;FizzBuzz Pro Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;on-keeping-things-simple&quot;&gt;On Keeping Things Simple&lt;&#x2F;h2&gt;
+&lt;p&gt;After recording the video, I’ve realized that maybe coupling &lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt; (
+&lt;em&gt;ghost&lt;&#x2F;em&gt;) user accounts with the &lt;strong&gt;FizzBuzz Pro&lt;&#x2F;strong&gt; user accounts is not the best
+way to proceed.&lt;&#x2F;p&gt;
+&lt;p&gt;The architecture I outlined above complicates things without providing any real
+business value. It’s better (&lt;em&gt;and simpler, and easier to maintain&lt;&#x2F;em&gt;) to keep *
+&lt;em&gt;FizzBuzz Pro&lt;&#x2F;em&gt;* as a separate service, and maybe provide a discounted enrollment
+option (&lt;em&gt;using a zero-to-hero-generated discount coupon&lt;&#x2F;em&gt;) to &lt;strong&gt;FizzBuzz Pro&lt;&#x2F;strong&gt;
+for the &lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt; premium members. To do that, we can create a separate
+premium-member-only page where they can copy a discount coupon.&lt;&#x2F;p&gt;
+&lt;p&gt;I’ll update the diagram accordingly, create a follow-up articles, and also
+create another video that walks through the new login flow.&lt;&#x2F;p&gt;
+&lt;p&gt;And until then, enjoy… And may the source be with you 🦄.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Zero to Prod in Half an Hour: Part 7: A Mild Introduction to Middlewares</title>
+        <published>2024-03-05T00:00:00+00:00</published>
+        <updated>2024-03-05T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/zero-to-prod/a-mild-introduction-to-middlewares/"/>
+        <id>https://zerotohero.dev/zero-to-prod/a-mild-introduction-to-middlewares/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/zero-to-prod/a-mild-introduction-to-middlewares/">
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;bob.png&quot; alt=&quot;Let us put a happy little middleware here.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Let us put a happy little middleware here.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;This section will introduce a middleware layer to our project and we’ll write a
+sample middleware to see it in action.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
+&lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;661986834?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
+    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+    title=&quot;Zero to Prod in Half an Hour: Part 7: 
+    A Mild Introduction to Middlewares&quot;&gt;&lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;Zero to Prod in Half an Hour: Part 7: 
+    A Mild Introduction to Middlewares&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;playlist&quot;&gt;Playlist&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;an-overview-of-fizzbuzz-pro&#x2F;&quot;&gt;Part 1: An Overview of FizzBuzz Pro&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;generating-static-html&#x2F;&quot;&gt;Part 2: Generating Static HTML&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;mutating-the-generated-html-files&#x2F;&quot;&gt;Part 3: Mutating the Generated HTML Files&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;app-authentication-overview&#x2F;&quot;&gt;Part 4: App Authentication Overview&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;implementing-an-oidc-authenticator&#x2F;&quot;&gt;Part 5: Implementing an OIDC Authenticator&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;serving-web-pages&#x2F;&quot;&gt;Part 6: Serving Web Pages&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Part 7: A Mild Introduction to Middlewares&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;authenticate-all-the-things&#x2F;&quot;&gt;Part 8: Authenticate All the Things&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;thinking-in-middlewares&#x2F;&quot;&gt;Part 9: Thinking in Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;authentication-and-subscription-middlewares&#x2F;&quot;&gt;Part 10: Authentication and Subscription Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;implementing-authentication-handlers&#x2F;&quot;&gt;Part 11: Implementing Authentication Handlers&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;the-final-touches&#x2F;&quot;&gt;Part 12: The Final Touches&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;containerizing-our-application&#x2F;&quot;&gt;Part 13: Containerizing Our Application&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;onwards-to-kubernetes&#x2F;&quot;&gt;Part 14: Onwards to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;creating-ecr-repositories&#x2F;&quot;&gt;Creating ECR Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;deploying-a-microservice-to-k8s&#x2F;&quot;&gt;Deploying a Microservice to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizz-that-buzz&#x2F;&quot;&gt;Fizz that Buzz&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-hla&#x2F;&quot;&gt;FizzBuzz Pro High-Level Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-repos&#x2F;&quot;&gt;FizzBuzz Pro Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;tools-and-technologies-mentioned&quot;&gt;Tools and Technologies Mentioned&lt;&#x2F;h2&gt;
+&lt;p&gt;Here are the tools and technologies that were mentioned in the video, along
+with related articles and other helpful links.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Glossary&#x2F;Middleware&quot;&gt;What is a Middleware&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;curl.se&#x2F;&quot;&gt;cURL&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;read-the-source&quot;&gt;Read The Source&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;assets.zerotohero.dev&#x2F;zero-to-prod-in-30&#x2F;zero-to-prod-in-30.zip&quot;&gt;Download the source code (&lt;em&gt;114kb zip archive&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;hr &#x2F;&gt;
+&lt;p&gt;Until the next lecture… May the source be with you 🦄.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Zero to Prod in Half an Hour: Part 1 --- An Overview of FizzBuzz Pro</title>
+        <published>2022-10-15T00:00:00+00:00</published>
+        <updated>2022-10-15T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/zero-to-prod/an-overview-of-fizzbuzz-pro/"/>
+        <id>https://zerotohero.dev/zero-to-prod/an-overview-of-fizzbuzz-pro/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/zero-to-prod/an-overview-of-fizzbuzz-pro/">
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;app.png&quot; alt=&quot;Zero to Prod in Half an Hour: Part 1 --- An Overview of FizzBuzz Pro&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Zero to Prod in Half an Hour: Part 1 --- An Overview of FizzBuzz Pro&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;This series will show how you can deploy a full-blown production-ready web
+application in half an hour. Let’s look into what kind of an application we’ll
+build and what technologies we’ll use.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
+&lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;661262113?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
+    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+    title=&quot;Zero to Prod in Half an Hour: Part 1 --- An Overview of FizzBuzz Pro&quot;&gt;&lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;Zero to Prod in Half an Hour: Part 1 --- An Overview of FizzBuzz Pro&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;playlist&quot;&gt;Playlist&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Part 1: An Overview of FizzBuzz Pro&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;generating-static-html&#x2F;&quot;&gt;Part 2: Generating Static HTML&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;mutating-the-generated-html-files&#x2F;&quot;&gt;Part 3: Mutating the Generated HTML Files&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;app-authentication-overview&#x2F;&quot;&gt;Part 4: App Authentication Overview&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;implementing-an-oidc-authenticator&#x2F;&quot;&gt;Part 5: Implementing an OIDC Authenticator&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;serving-web-pages&#x2F;&quot;&gt;Part 6: Serving Web Pages&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;a-mild-introduction-to-middlewares&#x2F;&quot;&gt;Part 7: A Mild Introduction to Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;authenticate-all-the-things&#x2F;&quot;&gt;Part 8: Authenticate All the Things&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;thinking-in-middlewares&#x2F;&quot;&gt;Part 9: Thinking in Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;authentication-and-subscription-middlewares&#x2F;&quot;&gt;Part 10: Authentication and Subscription Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;implementing-authentication-handlers&#x2F;&quot;&gt;Part 11: Implementing Authentication Handlers&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;the-final-touches&#x2F;&quot;&gt;Part 12: The Final Touches&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;containerizing-our-application&#x2F;&quot;&gt;Part 13: Containerizing Our Application&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;onwards-to-kubernetes&#x2F;&quot;&gt;Part 14: Onwards to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;creating-ecr-repositories&#x2F;&quot;&gt;Creating ECR Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;deploying-a-microservice-to-k8s&#x2F;&quot;&gt;Deploying a Microservice to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizz-that-buzz&#x2F;&quot;&gt;Fizz that Buzz&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-hla&#x2F;&quot;&gt;FizzBuzz Pro High-Level Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-repos&#x2F;&quot;&gt;FizzBuzz Pro Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;tools-and-technologies-mentioned&quot;&gt;Tools and Technologies Mentioned&lt;&#x2F;h2&gt;
+&lt;p&gt;Here are the tools and technologies that were mentioned in the video, along with
+related articles and other helpful links.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;pygments.org&#x2F;&quot;&gt;Python Pygments&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;pygments.org&#x2F;docs&#x2F;cmdline&#x2F;&quot;&gt;Python Pygments CLI&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.docker.com&#x2F;&quot;&gt;Docker&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.docker.com&#x2F;engine&#x2F;reference&#x2F;builder&#x2F;&quot;&gt;Dockerfile&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;setup&#x2F;production-environment&#x2F;container-runtimes&#x2F;&quot;&gt;Container Runtimes&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;&quot;&gt;Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.mongodb.com&#x2F;&quot;&gt;MongoDB&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.mongodb.com&#x2F;cloud&#x2F;atlas&quot;&gt;MongoDB Atlas&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.papertrail.com&#x2F;&quot;&gt;Papertrail&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;gumroad.com&#x2F;&quot;&gt;Gumroad&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;app.gumroad.com&#x2F;api&quot;&gt;Gumroad API&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;go.dev&#x2F;&quot;&gt;Go Programming Language&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;gin-gonic.com&#x2F;&quot;&gt;Gin Web Framework&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;aws.amazon.com&#x2F;eks&#x2F;&quot;&gt;Amazon EKS&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;aws.amazon.com&#x2F;ecr&#x2F;&quot;&gt;Amazon ECR&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;aws.amazon.com&#x2F;s3&#x2F;&quot;&gt;Amazon S3&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;aws.amazon.com&#x2F;route53&#x2F;&quot;&gt;Amazon Route53&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;aws.amazon.com&#x2F;elasticloadbalancing&#x2F;&quot;&gt;Elastic Load Balancing&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;aws.amazon.com&#x2F;cloudfront&#x2F;&quot;&gt;Amazon Cloudfront&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;read-the-source&quot;&gt;Read The Source&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;assets.zerotohero.dev&#x2F;zero-to-prod-in-30&#x2F;zero-to-prod-in-30.zip&quot;&gt;Download the source code (&lt;em&gt;114kb zip
+archive&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;hr &#x2F;&gt;
+&lt;p&gt;Until the next lecture… May the source be with you 🦄.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Zero to Prod in Half an Hour: Part 10 --- Authentication and Subscription Middlewares</title>
+        <published>2022-02-10T00:00:00+00:00</published>
+        <updated>2022-02-10T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/zero-to-prod/authentication-and-subscription-middlewares/"/>
+        <id>https://zerotohero.dev/zero-to-prod/authentication-and-subscription-middlewares/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/zero-to-prod/authentication-and-subscription-middlewares/">
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;through.png&quot; alt=&quot;Zero to Prod in Half an Hour: Part 10 --- Authentication and Subscription Middlewares&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Zero to Prod in Half an Hour: Part 10 --- Authentication and Subscription Middlewares&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;This section will implement middlewares that we need for authentication,
+authorization, and service subscription.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
+&lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;662146491?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
+    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+    title=&quot;Zero to Prod in Half an Hour: Part 10 --- Authentication and Subscription Middlewares&quot;&gt;&lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;Zero to Prod in Half an Hour: Part 10 --- Authentication and Subscription Middlewares&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;playlist&quot;&gt;Playlist&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;an-overview-of-fizzbuzz-pro&#x2F;&quot;&gt;Part 1: An Overview of FizzBuzz Pro&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;generating-static-html&#x2F;&quot;&gt;Part 2: Generating Static HTML&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;mutating-the-generated-html-files&#x2F;&quot;&gt;Part 3: Mutating the Generated HTML Files&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;app-authentication-overview&#x2F;&quot;&gt;Part 4: App Authentication Overview&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;implementing-an-oidc-authenticator&#x2F;&quot;&gt;Part 5: Implementing an OIDC Authenticator&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;serving-web-pages&#x2F;&quot;&gt;Part 6: Serving Web Pages&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;a-mild-introduction-to-middlewares&#x2F;&quot;&gt;Part 7: A Mild Introduction to Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;authenticate-all-the-things&#x2F;&quot;&gt;Part 8: Authenticate All the Things&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;thinking-in-middlewares&#x2F;&quot;&gt;Part 9: Thinking in Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Part 10: Authentication and Subscription Middlewares&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;implementing-authentication-handlers&#x2F;&quot;&gt;Part 11: Implementing Authentication Handlers&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;the-final-touches&#x2F;&quot;&gt;Part 12: The Final Touches&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;containerizing-our-application&#x2F;&quot;&gt;Part 13: Containerizing Our Application&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;onwards-to-kubernetes&#x2F;&quot;&gt;Part 14: Onwards to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;creating-ecr-repositories&#x2F;&quot;&gt;Creating ECR Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;deploying-a-microservice-to-k8s&#x2F;&quot;&gt;Deploying a Microservice to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizz-that-buzz&#x2F;&quot;&gt;Fizz that Buzz&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-hla&#x2F;&quot;&gt;FizzBuzz Pro High-Level Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-repos&#x2F;&quot;&gt;FizzBuzz Pro Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;tools-and-technologies-mentioned&quot;&gt;Tools and Technologies Mentioned&lt;&#x2F;h2&gt;
+&lt;p&gt;Here are the tools and technologies that were mentioned in the video, along with
+related articles and other helpful links.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;gumroad.com&#x2F;&quot;&gt;Gumroad&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;app.gumroad.com&#x2F;api&quot;&gt;Gumroad API&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;martinfowler.com&#x2F;books&#x2F;refactoring.html&quot;&gt;Refactoring: Improving the Design of Existing Codc&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;refactoring.com&#x2F;catalog&#x2F;extractFunction.html&quot;&gt;Extract Function&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;read-the-source&quot;&gt;Read The Source&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;assets.zerotohero.dev&#x2F;zero-to-prod-in-30&#x2F;zero-to-prod-in-30.zip&quot;&gt;Download the source code (&lt;em&gt;114kb zip
+archive&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;hr &#x2F;&gt;
+&lt;p&gt;Until the next lecture… May the source be with you 🦄.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Zero to Prod in Half an Hour: Part 13 --- Containerizing Our Application</title>
+        <published>2022-02-10T00:00:00+00:00</published>
+        <updated>2022-02-10T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/zero-to-prod/containerizing-our-application/"/>
+        <id>https://zerotohero.dev/zero-to-prod/containerizing-our-application/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/zero-to-prod/containerizing-our-application/">
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;containerize.png&quot; alt=&quot;Zero to Prod in Half an Hour: Part 13 --- Containerizing Our Application&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Zero to Prod in Half an Hour: Part 13 --- Containerizing Our Application&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;We have an app that works locally. Now it’s time to put it into a container and
+yeet it out to a cluster. And that’s what we’ll do.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
+&lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;662428552?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
+    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+    title=&quot;Zero to Prod in Half an Hour: Part 13 --- Containerizing Our Application&quot;&gt;&lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;Zero to Prod in Half an Hour: Part 13 --- Containerizing Our Application&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;playlist&quot;&gt;Playlist&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;an-overview-of-fizzbuzz-pro&#x2F;&quot;&gt;Part 1: An Overview of FizzBuzz Pro&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;generating-static-html&#x2F;&quot;&gt;Part 2: Generating Static HTML&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;mutating-the-generated-html-files&#x2F;&quot;&gt;Part 3: Mutating the Generated HTML Files&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;app-authentication-overview&#x2F;&quot;&gt;Part 4: App Authentication Overview&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;implementing-an-oidc-authenticator&#x2F;&quot;&gt;Part 5: Implementing an OIDC Authenticator&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;serving-web-pages&#x2F;&quot;&gt;Part 6: Serving Web Pages&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;a-mild-introduction-to-middlewares&#x2F;&quot;&gt;Part 7: A Mild Introduction to Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;authenticate-all-the-things&#x2F;&quot;&gt;Part 8: Authenticate All the Things&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;thinking-in-middlewares&#x2F;&quot;&gt;Part 9: Thinking in Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;authentication-and-subscription-middlewares&#x2F;&quot;&gt;Part 10: Authentication and Subscription Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;implementing-authentication-handlers&#x2F;&quot;&gt;Part 11: Implementing Authentication Handlers&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;the-final-touches&#x2F;&quot;&gt;Part 12: The Final Touches&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Part 13: Containerizing Our Application&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;onwards-to-kubernetes&#x2F;&quot;&gt;Part 14: Onwards to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;creating-ecr-repositories&#x2F;&quot;&gt;Creating ECR Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;deploying-a-microservice-to-k8s&#x2F;&quot;&gt;Deploying a Microservice to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizz-that-buzz&#x2F;&quot;&gt;Fizz that Buzz&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-hla&#x2F;&quot;&gt;FizzBuzz Pro High-Level Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-repos&#x2F;&quot;&gt;FizzBuzz Pro Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;tools-and-technologies-mentioned&quot;&gt;Tools and Technologies Mentioned&lt;&#x2F;h2&gt;
+&lt;p&gt;Here are the tools and technologies that were mentioned in the video, along with
+related articles and other helpful links.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;&quot;&gt;Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.docker.com&#x2F;engine&#x2F;reference&#x2F;builder&#x2F;&quot;&gt;Dockerfile Reference&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.docker.com&#x2F;develop&#x2F;develop-images&#x2F;multistage-build&#x2F;&quot;&gt;Use Multi Stage Builds&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;48816583-container-security&quot;&gt;Container Security&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;aws.amazon.com&#x2F;ecr&#x2F;&quot;&gt;Amozon ECR&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;aws.amazon.com&#x2F;eks&#x2F;&quot;&gt;Amazon EKS&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;read-the-source&quot;&gt;Read The Source&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;assets.zerotohero.dev&#x2F;zero-to-prod-in-30&#x2F;zero-to-prod-in-30.zip&quot;&gt;Download the source code (&lt;em&gt;114kb zip
+archive&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;hr &#x2F;&gt;
+&lt;p&gt;Until the next lecture… May the source be with you 🦄.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Zero to Prod in Half an Hour: Part 11 --- Implementing Authentication Handlers</title>
+        <published>2022-02-10T00:00:00+00:00</published>
+        <updated>2022-02-10T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/zero-to-prod/implementing-authentication-handlers/"/>
+        <id>https://zerotohero.dev/zero-to-prod/implementing-authentication-handlers/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/zero-to-prod/implementing-authentication-handlers/">
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;authz.png&quot; alt=&quot;Zero to Prod in Half an Hour: Part 11 --- Implementing Authentication Handlers&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Zero to Prod in Half an Hour: Part 11 --- Implementing Authentication Handlers&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;Having implemented our middlewares, now it’s time to implement the missing
+OAuth0 callback, login, and logout handlers.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
+&lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;662357647?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
+    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+    title=&quot;Zero to Prod in Half an Hour: Part 11 --- Implementing Authentication Handlers&quot;&gt;&lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;Zero to Prod in Half an Hour: Part 11 --- Implementing Authentication Handlers&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;playlist&quot;&gt;Playlist&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;an-overview-of-fizzbuzz-pro&#x2F;&quot;&gt;Part 1: An Overview of FizzBuzz Pro&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;generating-static-html&#x2F;&quot;&gt;Part 2: Generating Static HTML&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;mutating-the-generated-html-files&#x2F;&quot;&gt;Part 3: Mutating the Generated HTML Files&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;app-authentication-overview&#x2F;&quot;&gt;Part 4: App Authentication Overview&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;implementing-an-oidc-authenticator&#x2F;&quot;&gt;Part 5: Implementing an OIDC Authenticator&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;serving-web-pages&#x2F;&quot;&gt;Part 6: Serving Web Pages&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;a-mild-introduction-to-middlewares&#x2F;&quot;&gt;Part 7: A Mild Introduction to Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;authenticate-all-the-things&#x2F;&quot;&gt;Part 8: Authenticate All the Things&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;thinking-in-middlewares&#x2F;&quot;&gt;Part 9: Thinking in Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;authentication-and-subscription-middlewares&#x2F;&quot;&gt;Part 10: Authentication and Subscription Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Part 11: Implementing Authentication Handlers&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;the-final-touches&#x2F;&quot;&gt;Part 12: The Final Touches&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;containerizing-our-application&#x2F;&quot;&gt;Part 13: Containerizing Our Application&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;onwards-to-kubernetes&#x2F;&quot;&gt;Part 14: Onwards to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;creating-ecr-repositories&#x2F;&quot;&gt;Creating ECR Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;deploying-a-microservice-to-k8s&#x2F;&quot;&gt;Deploying a Microservice to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizz-that-buzz&#x2F;&quot;&gt;Fizz that Buzz&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-hla&#x2F;&quot;&gt;FizzBuzz Pro High-Level Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-repos&#x2F;&quot;&gt;FizzBuzz Pro Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;tools-and-technologies-mentioned&quot;&gt;Tools and Technologies Mentioned&lt;&#x2F;h2&gt;
+&lt;p&gt;Here are the tools and technologies that were mentioned in the video, along with
+related articles and other helpful links.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;pkg.go.dev&#x2F;github.com&#x2F;gin-gonic&#x2F;gin#HandlerFunc&quot;&gt;Gin.HandlerFunc&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;auth0.com&#x2F;&quot;&gt;Auth0&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;auth0.com&#x2F;docs&#x2F;get-started&#x2F;authentication-and-authorization-flow&#x2F;which-oauth-2-0-flow-should-i-use&quot;&gt;Which OAuth 2.0 Flow Should I Use?&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Higher-order_function&quot;&gt;Higher-Order Function&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jwt.io&#x2F;introduction&quot;&gt;JSON Web Token Introduction&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;datatracker.ietf.org&#x2F;doc&#x2F;html&#x2F;rfc7519&quot;&gt;RFC 7519 — JSON Web Token (JWT)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;read-the-source&quot;&gt;Read The Source&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;assets.zerotohero.dev&#x2F;zero-to-prod-in-30&#x2F;zero-to-prod-in-30.zip&quot;&gt;Download the source code (&lt;em&gt;114kb zip
+archive&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;hr &#x2F;&gt;
+&lt;p&gt;Until the next lecture… May the source be with you 🦄.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Zero to Prod in Half an Hour: Part 8 --- Authenticate All the Things</title>
+        <published>2022-02-09T00:00:00+00:00</published>
+        <updated>2022-02-09T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/zero-to-prod/authenticate-all-the-things/"/>
+        <id>https://zerotohero.dev/zero-to-prod/authenticate-all-the-things/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/zero-to-prod/authenticate-all-the-things/">
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;locket.png&quot; alt=&quot;Zero to Prod in Half an Hour: Part 8 --- Authenticate All the Things&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Zero to Prod in Half an Hour: Part 8 --- Authenticate All the Things&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;We’ll define placeholders for the routes we want to implement later. And then
+we’ll implement a MongoDB-backed session store to be used in our Auth0 identity
+control plane.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
+&lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;662068994?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
+    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+    title=&quot;Zero to Prod in Half an Hour: Part 8 --- Authenticate All the Things&quot;&gt;&lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;Zero to Prod in Half an Hour: Part 8 --- Authenticate All the Things&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;playlist&quot;&gt;Playlist&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;an-overview-of-fizzbuzz-pro&#x2F;&quot;&gt;Part 1: An Overview of FizzBuzz Pro&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;generating-static-html&#x2F;&quot;&gt;Part 2: Generating Static HTML&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;mutating-the-generated-html-files&#x2F;&quot;&gt;Part 3: Mutating the Generated HTML Files&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;app-authentication-overview&#x2F;&quot;&gt;Part 4: App Authentication Overview&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;implementing-an-oidc-authenticator&#x2F;&quot;&gt;Part 5: Implementing an OIDC Authenticator&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;serving-web-pages&#x2F;&quot;&gt;Part 6: Serving Web Pages&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;a-mild-introduction-to-middlewares&#x2F;&quot;&gt;Part 7: A Mild Introduction to Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Part 8: Authenticate All the Things&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;thinking-in-middlewares&#x2F;&quot;&gt;Part 9: Thinking in Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;authentication-and-subscription-middlewares&#x2F;&quot;&gt;Part 10: Authentication and Subscription Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;implementing-authentication-handlers&#x2F;&quot;&gt;Part 11: Implementing Authentication Handlers&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;the-final-touches&#x2F;&quot;&gt;Part 12: The Final Touches&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;containerizing-our-application&#x2F;&quot;&gt;Part 13: Containerizing Our Application&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;onwards-to-kubernetes&#x2F;&quot;&gt;Part 14: Onwards to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;creating-ecr-repositories&#x2F;&quot;&gt;Creating ECR Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;deploying-a-microservice-to-k8s&#x2F;&quot;&gt;Deploying a Microservice to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizz-that-buzz&#x2F;&quot;&gt;Fizz that Buzz&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-hla&#x2F;&quot;&gt;FizzBuzz Pro High-Level Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-repos&#x2F;&quot;&gt;FizzBuzz Pro Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;tools-and-technologies-mentioned&quot;&gt;Tools and Technologies Mentioned&lt;&#x2F;h2&gt;
+&lt;p&gt;Here are the tools and technologies that were mentioned in the video, along with
+related articles and other helpful links.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;auth0.com&#x2F;&quot;&gt;Auth0&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;oauth.net&#x2F;2&#x2F;&quot;&gt;OAuth 2.0&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;gumroad.com&#x2F;&quot;&gt;Gumroad&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;app.gumroad.com&#x2F;api&quot;&gt;Gumroad API&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;pkg.go.dev&#x2F;encoding&#x2F;gob&quot;&gt;gob Package&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jwt.io&#x2F;&quot;&gt;JSON Web Tokens&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;auth0.com&#x2F;docs&#x2F;secure&#x2F;tokens&#x2F;json-web-tokens&#x2F;json-web-token-claims&quot;&gt;Json Web Token Claims&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.mongodb.com&#x2F;&quot;&gt;MongoDB&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.mongodb.com&#x2F;cloud&#x2F;atlas&quot;&gt;MongoDB Atlas&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.mongodb.com&#x2F;try&#x2F;download&#x2F;community&quot;&gt;MongoDB Community Server&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;pkg.go.dev&#x2F;github.com&#x2F;globalsign&#x2F;mgo&quot;&gt;mgo Package&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;gin-contrib&#x2F;sessions&quot;&gt;Gin Middleware for Session Management&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;read-the-source&quot;&gt;Read The Source&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;assets.zerotohero.dev&#x2F;zero-to-prod-in-30&#x2F;zero-to-prod-in-30.zip&quot;&gt;Download the source code (&lt;em&gt;114kb zip
+archive&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;hr &#x2F;&gt;
+&lt;p&gt;Until the next lecture… May the source be with you 🦄.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Zero to Prod in Half an Hour: Part 14: Onwards to Kubernetes</title>
+        <published>2022-02-09T00:00:00+00:00</published>
+        <updated>2022-02-09T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/zero-to-prod/onwards-to-kubernetes/"/>
+        <id>https://zerotohero.dev/zero-to-prod/onwards-to-kubernetes/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/zero-to-prod/onwards-to-kubernetes/">
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;eks.png&quot; alt=&quot;Onwards to Kubernetes.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Onwards to Kubernetes.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;As a final step, we’ll deploy our application to an AWS EKS Kubernetes cluster
+and make sure that it’s healthy, up, and running.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
+&lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;662457596?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
+    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+    title=&quot;Zero to Prod in Half an Hour: Part 14 --- Onwards to Kubernetes&quot;&gt;&lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;Zero to Prod in Half an Hour: Part 14 --- Onwards to Kubernetes&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;playlist&quot;&gt;Playlist&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;an-overview-of-fizzbuzz-pro&#x2F;&quot;&gt;Part 1: An Overview of FizzBuzz Pro&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;generating-static-html&#x2F;&quot;&gt;Part 2: Generating Static HTML&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;mutating-the-generated-html-files&#x2F;&quot;&gt;Part 3: Mutating the Generated HTML Files&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;app-authentication-overview&#x2F;&quot;&gt;Part 4: App Authentication Overview&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;implementing-an-oidc-authenticator&#x2F;&quot;&gt;Part 5: Implementing an OIDC Authenticator&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;serving-web-pages&#x2F;&quot;&gt;Part 6: Serving Web Pages&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;a-mild-introduction-to-middlewares&#x2F;&quot;&gt;Part 7: A Mild Introduction to Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;authenticate-all-the-things&#x2F;&quot;&gt;Part 8: Authenticate All the Things&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;thinking-in-middlewares&#x2F;&quot;&gt;Part 9: Thinking in Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;authentication-and-subscription-middlewares&#x2F;&quot;&gt;Part 10: Authentication and Subscription Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;implementing-authentication-handlers&#x2F;&quot;&gt;Part 11: Implementing Authentication Handlers&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;the-final-touches&#x2F;&quot;&gt;Part 12: The Final Touches&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;containerizing-our-application&#x2F;&quot;&gt;Part 13: Containerizing Our Application&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Part 14: Onwards to Kubernetes&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;creating-ecr-repositories&#x2F;&quot;&gt;Creating ECR Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;deploying-a-microservice-to-k8s&#x2F;&quot;&gt;Deploying a Microservice to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizz-that-buzz&#x2F;&quot;&gt;Fizz that Buzz&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-hla&#x2F;&quot;&gt;FizzBuzz Pro High-Level Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-repos&#x2F;&quot;&gt;FizzBuzz Pro Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;tools-and-technologies-mentioned&quot;&gt;Tools and Technologies Mentioned&lt;&#x2F;h2&gt;
+&lt;p&gt;Here are the tools and technologies that were mentioned in the video, along with
+related articles and other helpful links.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;aws.amazon.com&#x2F;eks&quot;&gt;Amazon EKS&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;aws.amazon.com&#x2F;ecr&#x2F;&quot;&gt;Amazon ECR&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.aws.amazon.com&#x2F;elasticloadbalancing&#x2F;latest&#x2F;application&#x2F;introduction.html&quot;&gt;What is an Application Load Balancer?&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.aws.amazon.com&#x2F;eks&#x2F;latest&#x2F;userguide&#x2F;alb-ingress.html&quot;&gt;Application Load Balancing on Amazon EKS&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;&quot;&gt;Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;tasks&#x2F;tools&#x2F;&quot;&gt;Kubernetes Tools&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;concepts&#x2F;workloads&#x2F;controllers&#x2F;deployment&#x2F;&quot;&gt;Deployments&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;concepts&#x2F;services-networking&#x2F;service&#x2F;&quot;&gt;Service&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;concepts&#x2F;configuration&#x2F;configmap&#x2F;&quot;&gt;ConfigMaps&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;concepts&#x2F;configuration&#x2F;secret&#x2F;&quot;&gt;Secrets&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;concepts&#x2F;configuration&#x2F;manage-resources-containers&#x2F;&quot;&gt;Resource Management for Pods and Containers&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;concepts&#x2F;services-networking&#x2F;ingress&#x2F;&quot;&gt;Ingress&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;tasks&#x2F;configure-pod-container&#x2F;configure-liveness-readiness-startup-probes&#x2F;&quot;&gt;Configure Liveness, Readiness, and Startup Probes&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;high-level-deployment-diagram&quot;&gt;High-Level Deployment Diagram&lt;&#x2F;h2&gt;
+&lt;p&gt;Here’s a high-level diagram for the entire Kubernetes deployment.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2022&amp;#x2F;02&amp;#x2F;fizz-cluster-high-level-diagram.png&quot; alt=&quot;Fizz Cluster High-Level Deployment Diagram&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Fizz Cluster High-Level Deployment Diagram&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;read-the-source&quot;&gt;Read The Source&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;assets.zerotohero.dev&#x2F;zero-to-prod-in-30&#x2F;zero-to-prod-in-30.zip&quot;&gt;Download the source code (&lt;em&gt;114kb zip
+archive&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;hr &#x2F;&gt;
+&lt;p&gt;Until the next lecture… May the source be with you 🦄.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Zero to Prod in Half an Hour: Part 12 --- The Final Touches</title>
+        <published>2022-02-09T00:00:00+00:00</published>
+        <updated>2022-02-09T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/zero-to-prod/the-final-touches/"/>
+        <id>https://zerotohero.dev/zero-to-prod/the-final-touches/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/zero-to-prod/the-final-touches/">
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;artwork.png&quot; alt=&quot;Zero to Prod in Half an Hour: Part 12 --- The Final Touches&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Zero to Prod in Half an Hour: Part 12 --- The Final Touches&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;We are done with the authentication part. We are almost near the end of our
+application’s initial implementation. We just need a questions handlers, which,
+in essence, is a glorified file server with some path traversal protection for
+an added level of security.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
+&lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;662405388?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
+    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+    title=&quot;Zero to Prod in Half an Hour: Part 12 --- The Final Touches&quot;&gt;&lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;Zero to Prod in Half an Hour: Part 12 --- The Final Touches&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;playlist&quot;&gt;Playlist&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;an-overview-of-fizzbuzz-pro&#x2F;&quot;&gt;Part 1: An Overview of FizzBuzz Pro&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;generating-static-html&#x2F;&quot;&gt;Part 2: Generating Static HTML&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;mutating-the-generated-html-files&#x2F;&quot;&gt;Part 3: Mutating the Generated HTML Files&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;app-authentication-overview&#x2F;&quot;&gt;Part 4: App Authentication Overview&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;implementing-an-oidc-authenticator&#x2F;&quot;&gt;Part 5: Implementing an OIDC Authenticator&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;serving-web-pages&#x2F;&quot;&gt;Part 6: Serving Web Pages&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;a-mild-introduction-to-middlewares&#x2F;&quot;&gt;Part 7: A Mild Introduction to Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;authenticate-all-the-things&#x2F;&quot;&gt;Part 8: Authenticate All the Things&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;thinking-in-middlewares&#x2F;&quot;&gt;Part 9: Thinking in Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;authentication-and-subscription-middlewares&#x2F;&quot;&gt;Part 10: Authentication and Subscription Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;implementing-authentication-handlers&#x2F;&quot;&gt;Part 11: Implementing Authentication Handlers&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Part 12: The Final Touches&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;containerizing-our-application&#x2F;&quot;&gt;Part 13: Containerizing Our Application&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;onwards-to-kubernetes&#x2F;&quot;&gt;Part 14: Onwards to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;creating-ecr-repositories&#x2F;&quot;&gt;Creating ECR Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;deploying-a-microservice-to-k8s&#x2F;&quot;&gt;Deploying a Microservice to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizz-that-buzz&#x2F;&quot;&gt;Fizz that Buzz&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-hla&#x2F;&quot;&gt;FizzBuzz Pro High-Level Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-repos&#x2F;&quot;&gt;FizzBuzz Pro Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;tools-and-technologies-mentioned&quot;&gt;Tools and Technologies Mentioned&lt;&#x2F;h2&gt;
+&lt;p&gt;Here are the tools and technologies that were mentioned in the video, along with
+related articles and other helpful links.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;pkg.go.dev&#x2F;github.com&#x2F;gin-gonic&#x2F;gin#HandlerFunc&quot;&gt;Gin HandlerFunc&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;gobyexample.com&#x2F;regular-expressions&quot;&gt;Regular Expressions: Go By Example&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;pkg.go.dev&#x2F;strings&quot;&gt;string Package&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;owasp.org&#x2F;www-community&#x2F;attacks&#x2F;Path_Traversal&quot;&gt;Path Traversal Attack&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;read-the-source&quot;&gt;Read The Source&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;assets.zerotohero.dev&#x2F;zero-to-prod-in-30&#x2F;zero-to-prod-in-30.zip&quot;&gt;Download the source code (&lt;em&gt;114kb zip
+archive&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;hr &#x2F;&gt;
+&lt;p&gt;Until the next lecture… May the source be with you 🦄.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Zero to Prod in Half an Hour: Part 9 --- Thinking in Middlewares</title>
+        <published>2022-02-09T00:00:00+00:00</published>
+        <updated>2022-02-09T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/zero-to-prod/thinking-in-middlewares/"/>
+        <id>https://zerotohero.dev/zero-to-prod/thinking-in-middlewares/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/zero-to-prod/thinking-in-middlewares/">
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;mw.png&quot; alt=&quot;Zero to Prod in Half an Hour: Part 9 --- Thinking in Middlewares&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Zero to Prod in Half an Hour: Part 9 --- Thinking in Middlewares&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;This section will discuss various middlewares that we need in our application.
+We’ll register the middlewares in our routes as if they have already been
+implemented; and we’ll implement the missing pieces in the upcoming lectures.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
+&lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;662112549?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
+    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+    title=&quot;Zero to Prod in Half an Hour: Part 9 --- Thinking in Middlewares&quot;&gt;&lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;Zero to Prod in Half an Hour: Part 9 --- Thinking in Middlewares&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;playlist&quot;&gt;Playlist&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;an-overview-of-fizzbuzz-pro&#x2F;&quot;&gt;Part 1: An Overview of FizzBuzz Pro&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;generating-static-html&#x2F;&quot;&gt;Part 2: Generating Static HTML&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;mutating-the-generated-html-files&#x2F;&quot;&gt;Part 3: Mutating the Generated HTML Files&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;app-authentication-overview&#x2F;&quot;&gt;Part 4: App Authentication Overview&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;implementing-an-oidc-authenticator&#x2F;&quot;&gt;Part 5: Implementing an OIDC Authenticator&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;serving-web-pages&#x2F;&quot;&gt;Part 6: Serving Web Pages&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;a-mild-introduction-to-middlewares&#x2F;&quot;&gt;Part 7: A Mild Introduction to Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;authenticate-all-the-things&#x2F;&quot;&gt;Part 8: Authenticate All the Things&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Part 9: Thinking in Middlewares&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;authentication-and-subscription-middlewares&#x2F;&quot;&gt;Part 10: Authentication and Subscription Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;implementing-authentication-handlers&#x2F;&quot;&gt;Part 11: Implementing Authentication Handlers&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;the-final-touches&#x2F;&quot;&gt;Part 12: The Final Touches&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;containerizing-our-application&#x2F;&quot;&gt;Part 13: Containerizing Our Application&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;onwards-to-kubernetes&#x2F;&quot;&gt;Part 14: Onwards to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;creating-ecr-repositories&#x2F;&quot;&gt;Creating ECR Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;deploying-a-microservice-to-k8s&#x2F;&quot;&gt;Deploying a Microservice to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizz-that-buzz&#x2F;&quot;&gt;Fizz that Buzz&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-hla&#x2F;&quot;&gt;FizzBuzz Pro High-Level Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-repos&#x2F;&quot;&gt;FizzBuzz Pro Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;tools-and-technologies-mentioned&quot;&gt;Tools and Technologies Mentioned&lt;&#x2F;h2&gt;
+&lt;p&gt;Here are the tools and technologies that were mentioned in the video, along with
+related articles and other helpful links.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;app.gumroad.com&#x2F;api&quot;&gt;Gumroad API&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;sosedoff.com&#x2F;2014&#x2F;12&#x2F;21&#x2F;gin-middleware.html&quot;&gt;Gin Middleware Examples&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;auth0.com&#x2F;&quot;&gt;Auth0&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;read-the-source&quot;&gt;Read The Source&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;assets.zerotohero.dev&#x2F;zero-to-prod-in-30&#x2F;zero-to-prod-in-30.zip&quot;&gt;Download the source code (&lt;em&gt;114kb zip
+archive&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Until the next lecture… May the source be with you 🦄.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Zero to Prod in Half an Hour: Part 6 --- Serving Web Pages</title>
+        <published>2022-01-15T00:00:00+00:00</published>
+        <updated>2022-01-15T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/zero-to-prod/serving-web-pages/"/>
+        <id>https://zerotohero.dev/zero-to-prod/serving-web-pages/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/zero-to-prod/serving-web-pages/">
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;recurse.png&quot; alt=&quot;Zero to Prod in Half an Hour: Part 6 --- Serving Web Pages&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Zero to Prod in Half an Hour: Part 6 --- Serving Web Pages&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;This section will add a bunch of static web page templates into our application
+and serve them in several routes. We will also use a Gumroad embed form and a
+very minimal dynamic templating in our subscription form.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
+&lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;661883975?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
+    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+    title=&quot;Zero to Prod in Half an Hour: Part 6 --- Serving Web Pages&quot;&gt;&lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;Zero to Prod in Half an Hour: Part 6 --- Serving Web Pages&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;playlist&quot;&gt;Playlist&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;an-overview-of-fizzbuzz-pro&#x2F;&quot;&gt;Part 1: An Overview of FizzBuzz Pro&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;generating-static-html&#x2F;&quot;&gt;Part 2: Generating Static HTML&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;mutating-the-generated-html-files&#x2F;&quot;&gt;Part 3: Mutating the Generated HTML Files&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;app-authentication-overview&#x2F;&quot;&gt;Part 4: App Authentication Overview&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;implementing-an-oidc-authenticator&#x2F;&quot;&gt;Part 5: Implementing an OIDC Authenticator&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Part 6: Serving Web Pages&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;a-mild-introduction-to-middlewares&#x2F;&quot;&gt;Part 7: A Mild Introduction to Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;authenticate-all-the-things&#x2F;&quot;&gt;Part 8: Authenticate All the Things&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;thinking-in-middlewares&#x2F;&quot;&gt;Part 9: Thinking in Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;authentication-and-subscription-middlewares&#x2F;&quot;&gt;Part 10: Authentication and Subscription Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;implementing-authentication-handlers&#x2F;&quot;&gt;Part 11: Implementing Authentication Handlers&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;the-final-touches&#x2F;&quot;&gt;Part 12: The Final Touches&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;containerizing-our-application&#x2F;&quot;&gt;Part 13: Containerizing Our Application&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;onwards-to-kubernetes&#x2F;&quot;&gt;Part 14: Onwards to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;creating-ecr-repositories&#x2F;&quot;&gt;Creating ECR Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;deploying-a-microservice-to-k8s&#x2F;&quot;&gt;Deploying a Microservice to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizz-that-buzz&#x2F;&quot;&gt;Fizz that Buzz&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-hla&#x2F;&quot;&gt;FizzBuzz Pro High-Level Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-repos&#x2F;&quot;&gt;FizzBuzz Pro Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;tools-and-technologies-mentioned&quot;&gt;Tools and Technologies Mentioned&lt;&#x2F;h2&gt;
+&lt;p&gt;Here are the tools and technologies that were mentioned in the video, along with
+related articles and other helpful links.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;gin-gonic.com&#x2F;&quot;&gt;Gin Web Framework&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;pkg.go.dev&#x2F;github.com&#x2F;gin-gonic&#x2F;gin#HandlerFunc&quot;&gt;gin.HandlerFunc&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;pkg.go.dev&#x2F;github.com&#x2F;gin-gonic&#x2F;gin#Context&quot;&gt;gin.Context&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;pkg.go.dev&#x2F;github.com&#x2F;gin-gonic&#x2F;gin#Engine.LoadHTMLGlob&quot;&gt;gin.Engine.LoadHTMLGlob()&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Higher-order_function&quot;&gt;Higher-Order Function&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.mongodb.com&#x2F;&quot;&gt;MongoDB&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;pkg.go.dev&#x2F;github.com&#x2F;globalsign&#x2F;mgo&quot;&gt;mgo&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;gumroad.com&#x2F;&quot;&gt;Gumroad&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;app.gumroad.com&#x2F;api&quot;&gt;Gumroad API&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.papertrail.com&#x2F;&quot;&gt;Papertrail&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Syslog&quot;&gt;Syslog&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.aws.amazon.com&#x2F;eks&#x2F;latest&#x2F;userguide&#x2F;alb-ingress.html&quot;&gt;Application load balancing on Amazon EKS&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;vimeo.com&#x2F;173610242&quot;&gt;Monitorama PDX 2016 - Kelsey Hightower - healthz: Stop reverse engineering applications and start monitoring from the inside&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;tasks&#x2F;configure-pod-container&#x2F;configure-liveness-readiness-startup-probes&#x2F;&quot;&gt;Kubernetes: Configure Liveness, Readiness and Startup Probes&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;read-the-source&quot;&gt;Read The Source&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;assets.zerotohero.dev&#x2F;zero-to-prod-in-30&#x2F;zero-to-prod-in-30.zip&quot;&gt;Download the source code (&lt;em&gt;114kb zip
+archive&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Until the next lecture… May the source be with you 🦄.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Zero to Prod in Half an Hour: Part 4 --- App Authentication Overview</title>
+        <published>2022-01-11T00:00:00+00:00</published>
+        <updated>2022-01-11T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/zero-to-prod/app-authentication-overview/"/>
+        <id>https://zerotohero.dev/zero-to-prod/app-authentication-overview/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/zero-to-prod/app-authentication-overview/">
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;papers.png&quot; alt=&quot;Zero to Prod in Half an Hour: Part 4 --- App Authentication Overview&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Zero to Prod in Half an Hour: Part 4 --- App Authentication Overview&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;In this section, we’ll create a blank project for your web application, then
+overview how we can implement an &lt;strong&gt;Auth0&lt;&#x2F;strong&gt; Authenticator for our application to
+be used in our &lt;strong&gt;OAuth 2.0&lt;&#x2F;strong&gt; authentication &lt;strong&gt;login&lt;&#x2F;strong&gt;, &lt;strong&gt;callback&lt;&#x2F;strong&gt;, and *
+&lt;em&gt;logout&lt;&#x2F;em&gt;* routes.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
+&lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;661702567?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
+    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+    title=&quot;Zero to Prod in Half an Hour: Part 4 --- App Authentication Overview&quot;&gt;&lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;Zero to Prod in Half an Hour: Part 4 --- App Authentication Overview&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;playlist&quot;&gt;Playlist&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;an-overview-of-fizzbuzz-pro&#x2F;&quot;&gt;Part 1: An Overview of FizzBuzz Pro&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;generating-static-html&#x2F;&quot;&gt;Part 2: Generating Static HTML&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;mutating-the-generated-html-files&#x2F;&quot;&gt;Part 3: Mutating the Generated HTML Files&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Part 4: App Authentication Overview&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;implementing-an-oidc-authenticator&#x2F;&quot;&gt;Part 5: Implementing an OIDC Authenticator&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;serving-web-pages&#x2F;&quot;&gt;Part 6: Serving Web Pages&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;a-mild-introduction-to-middlewares&#x2F;&quot;&gt;Part 7: A Mild Introduction to Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;authenticate-all-the-things&#x2F;&quot;&gt;Part 8: Authenticate All the Things&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;thinking-in-middlewares&#x2F;&quot;&gt;Part 9: Thinking in Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;authentication-and-subscription-middlewares&#x2F;&quot;&gt;Part 10: Authentication and Subscription Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;implementing-authentication-handlers&#x2F;&quot;&gt;Part 11: Implementing Authentication Handlers&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;the-final-touches&#x2F;&quot;&gt;Part 12: The Final Touches&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;containerizing-our-application&#x2F;&quot;&gt;Part 13: Containerizing Our Application&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;onwards-to-kubernetes&#x2F;&quot;&gt;Part 14: Onwards to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;creating-ecr-repositories&#x2F;&quot;&gt;Creating ECR Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;deploying-a-microservice-to-k8s&#x2F;&quot;&gt;Deploying a Microservice to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizz-that-buzz&#x2F;&quot;&gt;Fizz that Buzz&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-hla&#x2F;&quot;&gt;FizzBuzz Pro High-Level Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-repos&#x2F;&quot;&gt;FizzBuzz Pro Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;tools-and-technologies-mentioned&quot;&gt;Tools and Technologies Mentioned&lt;&#x2F;h2&gt;
+&lt;p&gt;Here are the tools and technologies that were mentioned in the video, along with
+related articles and other helpful links.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;oauth.net&#x2F;2&#x2F;&quot;&gt;OAuth 2.0&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.digitalocean.com&#x2F;community&#x2F;tutorials&#x2F;an-introduction-to-oauth-2&quot;&gt;How Does OAuth 2.0 Work?&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;auth0.com&#x2F;&quot;&gt;Auth0&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jwt.io&#x2F;&quot;&gt;JSON Web Tokens (&lt;em&gt;JWT&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;openid.net&#x2F;connect&#x2F;&quot;&gt;OpenID Connect (&lt;em&gt;OIDC&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;coreos&#x2F;go-oidc&quot;&gt;Go OIDC&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;golang&#x2F;oauth2&quot;&gt;Go OAuth2 Package&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;oauth2-authentication-sequence-diagram&quot;&gt;OAuth2 Authentication Sequence Diagram&lt;&#x2F;h2&gt;
+&lt;p&gt;Here’s the sequence diagram that the video talked about:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;2022&#x2F;01&#x2F;Screen-Shot-2022-01-10-at-5.00.04-PM.png&quot; alt=&quot;OAuth2 Authentication Sequence Diagram&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;read-the-source&quot;&gt;Read The Source&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;assets.zerotohero.dev&#x2F;zero-to-prod-in-30&#x2F;zero-to-prod-in-30.zip&quot;&gt;Download the source code (&lt;em&gt;114kb zip
+archive&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;hr &#x2F;&gt;
+&lt;p&gt;Until the next lecture… May the source be with you 🦄.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Zero to Prod in Half an Hour: Part 3 --- Mutating the Generated HTML Files</title>
+        <published>2022-01-09T00:00:00+00:00</published>
+        <updated>2022-01-09T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/zero-to-prod/mutating-the-generated-html-files/"/>
+        <id>https://zerotohero.dev/zero-to-prod/mutating-the-generated-html-files/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/zero-to-prod/mutating-the-generated-html-files/">&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;size&#x2F;w1200&#x2F;2024&#x2F;03&#x2F;mutation.png&quot; alt=&quot;Zero to Prod in Half an Hour: Part 3 — Mutating the Generated HTML Files&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;mutation.png&quot; alt=&quot;Zero to Prod in Half an Hour: Part 3 --- Mutating the Generated HTML Files&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Zero to Prod in Half an Hour: Part 3 --- Mutating the Generated HTML Files&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;As it turns out, using pygmentize can only do so much for us and we’ll need to
+extend the generated HTML files. This section will update the generated HTML
+files and implements custom mutations using Go programming language.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
+&lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;661642565?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
+    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+    title=&quot;Zero to Prod in Half an Hour: Part 3 --- Generating Static HTML&quot;&gt;&lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;Zero to Prod in Half an Hour: Part 3 --- Generating Static HTML&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;playlist&quot;&gt;Playlist&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;an-overview-of-fizzbuzz-pro&#x2F;&quot;&gt;Part 1: An Overview of FizzBuzz Pro&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;generating-static-html&#x2F;&quot;&gt;Part 2: Generating Static HTML&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Part 3: Mutating the Generated HTML Files&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;app-authentication-overview&#x2F;&quot;&gt;Part 4: App Authentication Overview&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;implementing-an-oidc-authenticator&#x2F;&quot;&gt;Part 5: Implementing an OIDC Authenticator&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;serving-web-pages&#x2F;&quot;&gt;Part 6: Serving Web Pages&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;a-mild-introduction-to-middlewares&#x2F;&quot;&gt;Part 7: A Mild Introduction to Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;authenticate-all-the-things&#x2F;&quot;&gt;Part 8: Authenticate All the Things&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;thinking-in-middlewares&#x2F;&quot;&gt;Part 9: Thinking in Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;authentication-and-subscription-middlewares&#x2F;&quot;&gt;Part 10: Authentication and Subscription Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;implementing-authentication-handlers&#x2F;&quot;&gt;Part 11: Implementing Authentication Handlers&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;the-final-touches&#x2F;&quot;&gt;Part 12: The Final Touches&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;containerizing-our-application&#x2F;&quot;&gt;Part 13: Containerizing Our Application&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;onwards-to-kubernetes&#x2F;&quot;&gt;Part 14: Onwards to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;creating-ecr-repositories&#x2F;&quot;&gt;Creating ECR Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;deploying-a-microservice-to-k8s&#x2F;&quot;&gt;Deploying a Microservice to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizz-that-buzz&#x2F;&quot;&gt;Fizz that Buzz&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-hla&#x2F;&quot;&gt;FizzBuzz Pro High-Level Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-repos&#x2F;&quot;&gt;FizzBuzz Pro Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;tools-and-technologies-mentioned&quot;&gt;Tools and Technologies Mentioned&lt;&#x2F;h2&gt;
+&lt;p&gt;Here are the tools and technologies that were mentioned in the video, along with
+related articles and other helpful links.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;pygments.org&#x2F;&quot;&gt;&lt;strong&gt;Pygments&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;go.dev&#x2F;&quot;&gt;&lt;strong&gt;Go&lt;&#x2F;strong&gt; Programming Language&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;go.dev&#x2F;&quot;&gt;Places to Learn &lt;strong&gt;Go&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;&#x2F;tags&#x2F;go&#x2F;&quot;&gt;&lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt; Articles Tagged With “&lt;strong&gt;&lt;em&gt;Go&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;”&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;pkg.go.dev&#x2F;path&#x2F;filepath#Walk&quot;&gt;filepath.Walk()&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;pkg.go.dev&#x2F;path&#x2F;filepath#WalkFunc&quot;&gt;filepath.WalkFunc&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;gobyexample.com&#x2F;regular-expressions&quot;&gt;Go By Example: egular Expressions&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;http-party&#x2F;http-server&quot;&gt;http-server&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;read-the-source&quot;&gt;Read The Source&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;assets.zerotohero.dev&#x2F;zero-to-prod-in-30&#x2F;zero-to-prod-in-30.zip&quot;&gt;Download the source code (&lt;em&gt;114kb zip
+archive&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;hr &#x2F;&gt;
+&lt;p&gt;Until the next lecture… May the source be with you 🦄.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Zero to Prod in Half an Hour: Part 2 --- Generating Static HTML</title>
+        <published>2022-01-06T00:00:00+00:00</published>
+        <updated>2022-01-06T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/zero-to-prod/generating-static-html/"/>
+        <id>https://zerotohero.dev/zero-to-prod/generating-static-html/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/zero-to-prod/generating-static-html/">
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;structure.png&quot; alt=&quot;Zero to Prod in Half an Hour: Part 2 --- Generating Static HTML&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Zero to Prod in Half an Hour: Part 2 --- Generating Static HTML&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;In this part of the series, we’ll create a generator that reads a repository
+full of Go source code files, and create syntax-highlighted HTML versions of
+those files. In this process, Pygments Python Syntax Highlighter will do the
+heavy-lifting.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
+&lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;661262162?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
+    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+    title=&quot;Zero to Prod in Half an Hour: Part 2 --- Generating Static HTML&quot;&gt;&lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;Zero to Prod in Half an Hour: Part 2 --- Generating Static HTML&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;playlist&quot;&gt;Playlist&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;an-overview-of-fizzbuzz-pro&#x2F;&quot;&gt;Part 1: An Overview of FizzBuzz Pro&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Part 2: Generating Static HTML&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;mutating-the-generated-html-files&#x2F;&quot;&gt;Part 3: Mutating the Generated HTML Files&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;app-authentication-overview&#x2F;&quot;&gt;Part 4: App Authentication Overview&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;implementing-an-oidc-authenticator&#x2F;&quot;&gt;Part 5: Implementing an OIDC Authenticator&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;serving-web-pages&#x2F;&quot;&gt;Part 6: Serving Web Pages&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;a-mild-introduction-to-middlewares&#x2F;&quot;&gt;Part 7: A Mild Introduction to Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;authenticate-all-the-things&#x2F;&quot;&gt;Part 8: Authenticate All the Things&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;thinking-in-middlewares&#x2F;&quot;&gt;Part 9: Thinking in Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;authentication-and-subscription-middlewares&#x2F;&quot;&gt;Part 10: Authentication and Subscription Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;implementing-authentication-handlers&#x2F;&quot;&gt;Part 11: Implementing Authentication Handlers&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;the-final-touches&#x2F;&quot;&gt;Part 12: The Final Touches&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;containerizing-our-application&#x2F;&quot;&gt;Part 13: Containerizing Our Application&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;onwards-to-kubernetes&#x2F;&quot;&gt;Part 14: Onwards to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;creating-ecr-repositories&#x2F;&quot;&gt;Creating ECR Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;deploying-a-microservice-to-k8s&#x2F;&quot;&gt;Deploying a Microservice to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizz-that-buzz&#x2F;&quot;&gt;Fizz that Buzz&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-hla&#x2F;&quot;&gt;FizzBuzz Pro High-Level Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-repos&#x2F;&quot;&gt;FizzBuzz Pro Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;tools-and-technologies-mentioned&quot;&gt;Tools and Technologies Mentioned&lt;&#x2F;h2&gt;
+&lt;p&gt;Here are the tools and technologies that were mentioned in the video, along with
+related articles and other helpful links.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;pygments.org&#x2F;&quot;&gt;Python Pygments Syntax Highlighter&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;pygments.org&#x2F;docs&#x2F;cmdline&#x2F;&quot;&gt;Pygments Command Line Interface&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;one-does-not-simply-terminal&#x2F;&quot;&gt;One Does Not Simply “Terminal” 👌&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;read-the-source&quot;&gt;Read The Source&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;assets.zerotohero.dev&#x2F;zero-to-prod-in-30&#x2F;zero-to-prod-in-30.zip&quot;&gt;Download the source code (&lt;em&gt;114kb zip
+archive&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;hr &#x2F;&gt;
+&lt;p&gt;Until the next lecture… May the source be with you 🦄.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>The Journey of a Microservice: From Source Code to a Full-Blown Kubernetes Deployment</title>
+        <published>2021-08-09T00:00:00+00:00</published>
+        <updated>2021-08-09T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/zero-to-prod/deploying-a-microservice-to-k8s/"/>
+        <id>https://zerotohero.dev/zero-to-prod/deploying-a-microservice-to-k8s/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/zero-to-prod/deploying-a-microservice-to-k8s/">
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;harmony.png&quot; alt=&quot;The Journey of a Microservice: From Source Code to a Full-Blown Kubernetes Deployment&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;The Journey of a Microservice: From Source Code to a Full-Blown Kubernetes Deployment&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;&#x2F;h2&gt;
+&lt;p&gt;In this lecture, we’ll containerize and deploy a &lt;a href=&quot;https:&#x2F;&#x2F;www.redhat.com&#x2F;en&#x2F;topics&#x2F;api&#x2F;what-is-a-rest-api&quot;&gt;**REST
+**ful&lt;&#x2F;a&gt; Go microservice
+to a &lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;&quot;&gt;&lt;strong&gt;Kubernetes&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; cluster. We’ll also learn about
+some important building blocks of our cluster such
+as &lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;concepts&#x2F;workloads&#x2F;controllers&#x2F;deployment&#x2F;&quot;&gt;&lt;code&gt;Deployment&lt;&#x2F;code&gt;&lt;&#x2F;a&gt;
+s, &lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;concepts&#x2F;services-networking&#x2F;service&#x2F;&quot;&gt;&lt;code&gt;Service&lt;&#x2F;code&gt;&lt;&#x2F;a&gt;
+s, &lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;concepts&#x2F;configuration&#x2F;configmap&#x2F;&quot;&gt;&lt;code&gt;ConfigMap&lt;&#x2F;code&gt;&lt;&#x2F;a&gt;
+s, &lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;concepts&#x2F;configuration&#x2F;secret&#x2F;&quot;&gt;&lt;code&gt;Secret&lt;&#x2F;code&gt;&lt;&#x2F;a&gt;
+s, &lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;concepts&#x2F;services-networking&#x2F;ingress&#x2F;&quot;&gt;&lt;code&gt;Ingress&lt;&#x2F;code&gt;&lt;&#x2F;a&gt;
+es, and the like.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
+&lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;581601867?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
+    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+    title=&quot;Deploying a Microservice to Kubernetes&quot;&gt;&lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;Deploying a Microservice to Kubernetes&lt;&#x2F;p&gt;
+&lt;p&gt;Below, you’ll find the &lt;strong&gt;source code&lt;&#x2F;strong&gt; of the projects that we used in this
+video, links, resources, and other reference material for you learn and practice
+even further.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;read-the-source&quot;&gt;Read the Source&lt;&#x2F;h2&gt;
+&lt;p&gt;Below, you’ll find the &lt;strong&gt;zip archives&lt;&#x2F;strong&gt; of the projects and other related
+artifacts that we’ve covered in this article.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;assets.zerotohero.dev&#x2F;deploying-a-microserve-to-kubernetes&#x2F;68c3fb40-efdf-497b-8341-25962884db0d&#x2F;fizz-crypto.zip&quot;&gt;&lt;code&gt;fizz-crypto&lt;&#x2F;code&gt; (&lt;strong&gt;53KB&lt;&#x2F;strong&gt; zip archive)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;assets.zerotohero.dev&#x2F;deploying-a-microserve-to-kubernetes&#x2F;68c3fb40-efdf-497b-8341-25962884db0d&#x2F;fizz-infra.zip&quot;&gt;&lt;code&gt;fizz-infra&lt;&#x2F;code&gt; (&lt;strong&gt;29KB&lt;&#x2F;strong&gt; zip archive)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;the-contents-of-the-netrc-file&quot;&gt;The Contents of the .netrc File&lt;&#x2F;h2&gt;
+&lt;pre data-lang=&quot;txt&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-txt &quot;&gt;&lt;code class=&quot;language-txt&quot; data-lang=&quot;txt&quot;&gt;&lt;span&gt;machine github.com
+&lt;&#x2F;span&gt;&lt;span&gt;login your_github_username_comes_here
+&lt;&#x2F;span&gt;&lt;span&gt;password ghp_your_github_api_key_comes_here
+&lt;&#x2F;span&gt;&lt;span&gt;machine api.github.com
+&lt;&#x2F;span&gt;&lt;span&gt;login your_github_username_comes_here
+&lt;&#x2F;span&gt;&lt;span&gt;password ghp_your_github_api_key_comes_here
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;the-environment-variables&quot;&gt;The Environment Variables&lt;&#x2F;h2&gt;
+&lt;p&gt;Here are the environment variables of interest that our builder script uses:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;ECR_REPO&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;112233445566.dkr.ecr.us-west-2.amazonaws.com
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;ECR_IMAGE_FIZZ_CRYPTO&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;fizz-crypto
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;ECR_TAG_FIZZ_CRYPTO&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;0.0.15
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;ecr-login-script&quot;&gt;ECR Login Script&lt;&#x2F;h2&gt;
+&lt;p&gt;Here’s the login script I used in the video:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;aws ecr get-login-password --region us-west-2 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span&gt;\
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;docker login --username AWS --password-stdin \
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;1122334455667788.dkr.ecr.us-west-2.amazonaws.com
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;To use the above script, you need
+to &lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;creating-ecr-repositories&#x2F;&quot;&gt;install and configure AWS CLI&lt;&#x2F;a&gt;
+first.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;resources-and-additional-reading&quot;&gt;Resources and Additional Reading&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;services-we-used-in-the-video&quot;&gt;Services We Used in the Video&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;aws.amazon.com&#x2F;eks&#x2F;&quot;&gt;Amazon Elastic Kubernetes Service&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.papertrail.com&#x2F;&quot;&gt;Papertrail: Frustration-free Log Management&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;kubernetes&quot;&gt;Kubernetes&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;&quot;&gt;Kuberetes&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;kubernetes-sigs&quot;&gt;Kubernetes Special Interest Groups (_SIG_s)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;tutorials&#x2F;kubernetes-basics&#x2F;update&#x2F;update-intro&#x2F;&quot;&gt;Kubernetes: Performing a Rolling Update&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;tasks&#x2F;access-application-cluster&#x2F;configure-access-multiple-clusters&#x2F;&quot;&gt;Configuring Access to Multiple Clusters&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;tasks&#x2F;configure-pod-container&#x2F;configure-liveness-readiness-startup-probes&#x2F;&quot;&gt;Configuring Liveness, Readiness, and Startup Probes&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;kubernetes-api-objects-that-we-saw-in-the-video&quot;&gt;Kubernetes API Objects That We Saw in the Video&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;concepts&#x2F;workloads&#x2F;controllers&#x2F;deployment&#x2F;&quot;&gt;&lt;code&gt;Deployment&lt;&#x2F;code&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;concepts&#x2F;workloads&#x2F;controllers&#x2F;replicaset&#x2F;&quot;&gt;&lt;code&gt;ReplicaSet&lt;&#x2F;code&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;concepts&#x2F;services-networking&#x2F;service&#x2F;&quot;&gt;&lt;code&gt;Service&lt;&#x2F;code&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;concepts&#x2F;configuration&#x2F;configmap&#x2F;&quot;&gt;&lt;code&gt;ConfigMap&lt;&#x2F;code&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;concepts&#x2F;configuration&#x2F;secret&#x2F;&quot;&gt;&lt;code&gt;Secret&lt;&#x2F;code&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;concepts&#x2F;services-networking&#x2F;ingress&#x2F;&quot;&gt;&lt;code&gt;Ingress&lt;&#x2F;code&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;concepts&#x2F;workloads&#x2F;controllers&#x2F;job&#x2F;&quot;&gt;&lt;code&gt;Job&lt;&#x2F;code&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;containers&quot;&gt;Containers&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;concepts&#x2F;containers&#x2F;&quot;&gt;Containers&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.docker.com&#x2F;engine&#x2F;&quot;&gt;&lt;strong&gt;Docker Engine&lt;&#x2F;strong&gt; Overview&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;containerd.io&#x2F;docs&#x2F;&quot;&gt;&lt;strong&gt;containerd&lt;&#x2F;strong&gt; Overview&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;cri-o.io&#x2F;#what-is-cri-o&quot;&gt;What is &lt;strong&gt;cri-o&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;concepts&#x2F;configuration&#x2F;manage-resources-containers&#x2F;&quot;&gt;Managing Resources for Containers&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;kubernetes&#x2F;community&#x2F;blob&#x2F;master&#x2F;contributors&#x2F;devel&#x2F;sig-node&#x2F;container-runtime-interface.md&quot;&gt;&lt;strong&gt;CRI&lt;&#x2F;strong&gt;: Container Runtime Interface&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;container-images-we-used&quot;&gt;Container Images We Used&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;hub.docker.com&#x2F;_&#x2F;golang&quot;&gt;&lt;code&gt;golang&lt;&#x2F;code&gt; Official Docker Image&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;nicolaka&#x2F;netshoot&quot;&gt;&lt;code&gt;netshoot&lt;&#x2F;code&gt;: a Docker + Kubernetes network trouble-shooting swiss-army container&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;building-images&quot;&gt;Building Images&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.docker.com&#x2F;engine&#x2F;reference&#x2F;builder&#x2F;&quot;&gt;&lt;code&gt;Dockerfile&lt;&#x2F;code&gt; reference&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.docker.com&#x2F;develop&#x2F;develop-images&#x2F;multistage-build&#x2F;&quot;&gt;Using multi-stage builds&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;best-practices&quot;&gt;Best Practices&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.redhat.com&#x2F;en&#x2F;topics&#x2F;api&#x2F;what-is-a-rest-api&quot;&gt;What is a REST API&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;semver.org&#x2F;&quot;&gt;Semantic Versioning&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;github-access-tokens&quot;&gt;GitHub Access Tokens&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.gnu.org&#x2F;software&#x2F;inetutils&#x2F;manual&#x2F;html_node&#x2F;The-_002enetrc-file.html&quot;&gt;&lt;code&gt;.netrc&lt;&#x2F;code&gt; File&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.github.com&#x2F;en&#x2F;github&#x2F;authenticating-to-github&#x2F;keeping-your-account-and-data-secure&#x2F;creating-a-personal-access-token&quot;&gt;Creating &lt;strong&gt;GitHub&lt;&#x2F;strong&gt; Personal Access Tokens&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;linux&quot;&gt;Linux&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;zshell-startup-files&#x2F;&quot;&gt;.zprofile, .zshrc, .zenv, OMG! What Do I Put Where?! (&lt;em&gt;a &lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt; article&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;curl.se&#x2F;&quot;&gt;&lt;code&gt;curl&lt;&#x2F;code&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Telnet&quot;&gt;&lt;code&gt;telnet&lt;&#x2F;code&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;playlist&quot;&gt;Playlist&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;an-overview-of-fizzbuzz-pro&#x2F;&quot;&gt;Part 1: An Overview of FizzBuzz Pro&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;generating-static-html&#x2F;&quot;&gt;Part 2: Generating Static HTML&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;mutating-the-generated-html-files&#x2F;&quot;&gt;Part 3: Mutating the Generated HTML Files&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;app-authentication-overview&#x2F;&quot;&gt;Part 4: App Authentication Overview&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;implementing-an-oidc-authenticator&#x2F;&quot;&gt;Part 5: Implementing an OIDC Authenticator&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;serving-web-pages&#x2F;&quot;&gt;Part 6: Serving Web Pages&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;a-mild-introduction-to-middlewares&#x2F;&quot;&gt;Part 7: A Mild Introduction to Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;authenticate-all-the-things&#x2F;&quot;&gt;Part 8: Authenticate All the Things&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;thinking-in-middlewares&#x2F;&quot;&gt;Part 9: Thinking in Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;authentication-and-subscription-middlewares&#x2F;&quot;&gt;Part 10: Authentication and Subscription Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;implementing-authentication-handlers&#x2F;&quot;&gt;Part 11: Implementing Authentication Handlers&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;the-final-touches&#x2F;&quot;&gt;Part 12: The Final Touches&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;containerizing-our-application&#x2F;&quot;&gt;Part 13: Containerizing Our Application&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;onwards-to-kubernetes&#x2F;&quot;&gt;Part 14: Onwards to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;creating-ecr-repositories&#x2F;&quot;&gt;Creating ECR Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Deploying a Microservice to Kubernetes&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizz-that-buzz&#x2F;&quot;&gt;Fizz that Buzz&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-hla&#x2F;&quot;&gt;FizzBuzz Pro High-Level Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-repos&#x2F;&quot;&gt;FizzBuzz Pro Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;That was how you can containerize and deploy a &lt;strong&gt;Go&lt;&#x2F;strong&gt;-based microservice to a
+&lt;strong&gt;Kubernetes&lt;&#x2F;strong&gt; cluster.&lt;&#x2F;p&gt;
+&lt;p&gt;We’ll have more &lt;strong&gt;Go&lt;&#x2F;strong&gt; programming and &lt;strong&gt;Kubernetes&lt;&#x2F;strong&gt; deployments in the
+upcoming future.&lt;&#x2F;p&gt;
+&lt;p&gt;Until next time… May the source be with you 🦄.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>FizzBuzz Pro High Level Design</title>
+        <published>2021-07-23T00:00:00+00:00</published>
+        <updated>2021-07-23T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/zero-to-prod/fizzbuzz-pro-hla/"/>
+        <id>https://zerotohero.dev/zero-to-prod/fizzbuzz-pro-hla/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/zero-to-prod/fizzbuzz-pro-hla/">
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;blueprint.png&quot; alt=&quot;FizzBuzz Pro High Level Design&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;FizzBuzz Pro High Level Design&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;In this quick video, we’ll overview a high-level overview of &lt;strong&gt;FizzBuzz Pro&lt;&#x2F;strong&gt;
+APIs.&lt;&#x2F;p&gt;
+&lt;p&gt;Since &lt;strong&gt;FizzBuzz Pro&lt;&#x2F;strong&gt; is a work in progress, anything can change anytime;
+however we have to start designing somewhere. So, without further ado, here
+comes the video that explains the initial design:&lt;&#x2F;p&gt;
+&lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;578676419?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
+    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+    title=&quot;FizzBuzz Pro High Level Design&quot;&gt;&lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;FizzBuzz Pro High Level Design&lt;&#x2F;p&gt;
+&lt;p&gt;As I said in the video, I’ll create additional content in the form of **articles
+**, &lt;strong&gt;source code&lt;&#x2F;strong&gt;, and more &lt;strong&gt;videos&lt;&#x2F;strong&gt; as I continue implementing &lt;strong&gt;FizzBuzz
+Pro&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;It’ll be an awesome learning journey. Stay tuned 🎵.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;playlist&quot;&gt;Playlist&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;an-overview-of-fizzbuzz-pro&#x2F;&quot;&gt;Part 1: An Overview of FizzBuzz Pro&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;generating-static-html&#x2F;&quot;&gt;Part 2: Generating Static HTML&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;mutating-the-generated-html-files&#x2F;&quot;&gt;Part 3: Mutating the Generated HTML Files&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;app-authentication-overview&#x2F;&quot;&gt;Part 4: App Authentication Overview&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;implementing-an-oidc-authenticator&#x2F;&quot;&gt;Part 5: Implementing an OIDC Authenticator&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;serving-web-pages&#x2F;&quot;&gt;Part 6: Serving Web Pages&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;a-mild-introduction-to-middlewares&#x2F;&quot;&gt;Part 7: A Mild Introduction to Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;authenticate-all-the-things&#x2F;&quot;&gt;Part 8: Authenticate All the Things&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;thinking-in-middlewares&#x2F;&quot;&gt;Part 9: Thinking in Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;authentication-and-subscription-middlewares&#x2F;&quot;&gt;Part 10: Authentication and Subscription Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;implementing-authentication-handlers&#x2F;&quot;&gt;Part 11: Implementing Authentication Handlers&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;the-final-touches&#x2F;&quot;&gt;Part 12: The Final Touches&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;containerizing-our-application&#x2F;&quot;&gt;Part 13: Containerizing Our Application&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;onwards-to-kubernetes&#x2F;&quot;&gt;Part 14: Onwards to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;creating-ecr-repositories&#x2F;&quot;&gt;Creating ECR Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;deploying-a-microservice-to-k8s&#x2F;&quot;&gt;Deploying a Microservice to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizz-that-buzz&#x2F;&quot;&gt;Fizz that Buzz&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ FizzBuzz Pro High-Level Design&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-repos&#x2F;&quot;&gt;FizzBuzz Pro Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;resources-and-additional-reading&quot;&gt;Resources and Additional Reading&lt;&#x2F;h2&gt;
+&lt;p&gt;Here are some of the concepts that we covered in the video that you might want
+to drill down further.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.virtuesecurity.com&#x2F;kb&#x2F;username-enumeration&#x2F;&quot;&gt;What is username enumeration&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;cheatsheetseries.owasp.org&#x2F;index.html&quot;&gt;OWASP Cheatsheet Series&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jwt.io&#x2F;&quot;&gt;JSON Web Tokens&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.vinaysahni.com&#x2F;best-practices-for-a-pragmatic-restful-api&quot;&gt;Best Practices for Designing Pragmatic RESTful API&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;next-up&quot;&gt;Next Up&lt;&#x2F;h2&gt;
+&lt;p&gt;Next on my video production queue are:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;How to harden our IAM account security.&lt;&#x2F;li&gt;
+&lt;li&gt;A quickie about Ghost theme development.&lt;&#x2F;li&gt;
+&lt;li&gt;And a mini-series about provisioning an AKS cluster and configuring TLS,
+Ingress, networking and other magic.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;There will be a lot of cool content coming up. Wait for it.&lt;&#x2F;p&gt;
+&lt;p&gt;Until the next video… May the source be with you 🦄.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Creating ECR Repositories</title>
+        <published>2021-06-18T00:00:00+00:00</published>
+        <updated>2021-06-18T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/zero-to-prod/creating-ecr-repositories/"/>
+        <id>https://zerotohero.dev/zero-to-prod/creating-ecr-repositories/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/zero-to-prod/creating-ecr-repositories/">
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;elastic.png&quot; alt=&quot;These are &amp;#x27;elastic&amp;#x27; containers.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;These are &amp;#x27;elastic&amp;#x27; containers.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;This quick video will create an &lt;a href=&quot;https:&#x2F;&#x2F;aws.amazon.com&#x2F;ecr&#x2F;&quot;&gt;&lt;strong&gt;AWS ECR&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; repo
+and set up our development environment to interact with it.&lt;&#x2F;p&gt;
+&lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;564406841?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
+    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+    title=&quot;Creating ECR Repositories&quot;&gt;&lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;Creating ECR Repositories&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;resources-and-additional-reading&quot;&gt;Resources and Additional Reading&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;aws.amazon.com&#x2F;ecr&#x2F;&quot;&gt;Amazon Elastic Container Registry&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.aws.amazon.com&#x2F;cli&#x2F;latest&#x2F;userguide&#x2F;cli-chap-install.html&quot;&gt;Installing the AWS CLI&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.digitalocean.com&#x2F;community&#x2F;tutorials&#x2F;what-is-a-container&quot;&gt;What is a Container&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;playlist&quot;&gt;Playlist&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;an-overview-of-fizzbuzz-pro&#x2F;&quot;&gt;Part 1: An Overview of FizzBuzz Pro&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;generating-static-html&#x2F;&quot;&gt;Part 2: Generating Static HTML&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;mutating-the-generated-html-files&#x2F;&quot;&gt;Part 3: Mutating the Generated HTML Files&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;app-authentication-overview&#x2F;&quot;&gt;Part 4: App Authentication Overview&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;implementing-an-oidc-authenticator&#x2F;&quot;&gt;Part 5: Implementing an OIDC Authenticator&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;serving-web-pages&#x2F;&quot;&gt;Part 6: Serving Web Pages&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;a-mild-introduction-to-middlewares&#x2F;&quot;&gt;Part 7: A Mild Introduction to Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;authenticate-all-the-things&#x2F;&quot;&gt;Part 8: Authenticate All the Things&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;thinking-in-middlewares&#x2F;&quot;&gt;Part 9: Thinking in Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;authentication-and-subscription-middlewares&#x2F;&quot;&gt;Part 10: Authentication and Subscription Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;implementing-authentication-handlers&#x2F;&quot;&gt;Part 11: Implementing Authentication Handlers&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;the-final-touches&#x2F;&quot;&gt;Part 12: The Final Touches&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;containerizing-our-application&#x2F;&quot;&gt;Part 13: Containerizing Our Application&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;onwards-to-kubernetes&#x2F;&quot;&gt;Part 14: Onwards to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Creating ECR Repositories&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;deploying-a-microservice-to-k8s&#x2F;&quot;&gt;Deploying a Microservice to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizz-that-buzz&#x2F;&quot;&gt;Fizz that Buzz&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-hla&#x2F;&quot;&gt;FizzBuzz Pro High-Level Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-repos&#x2F;&quot;&gt;FizzBuzz Pro Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;next-up&quot;&gt;Next Up&lt;&#x2F;h2&gt;
+&lt;p&gt;Next on my video production queue are:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Going through the sequence diagrams of &lt;strong&gt;FizzBuzz Pro&lt;&#x2F;strong&gt; authentication,
+subscription, and signup flow.&lt;&#x2F;li&gt;
+&lt;li&gt;How to harden our &lt;strong&gt;IAM account security&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;And a quickie about &lt;strong&gt;Ghost theme development&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Once those videos are done, we’ll start working on actually implementing the *
+&lt;em&gt;FizzBuzz Pro&lt;&#x2F;em&gt;* infrastructure, one microservice at a time; it’ll be fun.&lt;&#x2F;p&gt;
+&lt;p&gt;Until the next video… May the source be with you 🦄.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Here Are the Repositories, Tools, and Services We&#x27;ll Use for FizzBuzz Pro</title>
+        <published>2021-06-05T00:00:00+00:00</published>
+        <updated>2021-06-05T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/zero-to-prod/fizzbuzz-pro-repos/"/>
+        <id>https://zerotohero.dev/zero-to-prod/fizzbuzz-pro-repos/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/zero-to-prod/fizzbuzz-pro-repos/">
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;shopping.png&quot; alt=&quot;Go shopping for microservices.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Go shopping for microservices.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;&#x2F;h2&gt;
+&lt;p&gt;In this series, we will create &lt;strong&gt;use
+case&lt;&#x2F;strong&gt; articles about &lt;strong&gt;FizzBuzz Pro&lt;&#x2F;strong&gt;. Those articles will outline the entire
+architecture design, proof of concepts, and development of
+&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizz-that-buzz&#x2F;&quot;&gt;&lt;strong&gt;FizzBuzz Pro&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; and &lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;While we are working hard creating stuff, you’ll feel right in the kitchen
+👩‍🍳.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;This is one of those articles where I’m sharing the repository structure and
+what kinds of microservices &lt;strong&gt;FizzBuzz Pro&lt;&#x2F;strong&gt; will have.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;repositories&quot;&gt;Repositories&lt;&#x2F;h2&gt;
+&lt;p&gt;Here is how I’ve organized the current repositories in &lt;a href=&quot;https:&#x2F;&#x2F;www.git-tower.com&#x2F;&quot;&gt;Tower&lt;&#x2F;a&gt;:&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2021&amp;#x2F;06&amp;#x2F;Screen-Shot-2021-06-04-at-8.44.36-PM.png&quot; alt=&quot;Current Zero to Hero and FizzBuzz Pro repositories.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Current Zero to Hero and FizzBuzz Pro repositories.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;Most of the repositories are &lt;em&gt;empty&lt;&#x2F;em&gt; right now; however, the picture above &lt;em&gt;at
+least&lt;&#x2F;em&gt; gives some structure about which services we will initially design.&lt;&#x2F;p&gt;
+&lt;p&gt;Let me briefly go over those repositories:&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;zero-to-hero-design&quot;&gt;&lt;strong&gt;Zero to Hero Design&lt;&#x2F;strong&gt;&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;z2h-ghost-tpl&lt;&#x2F;code&gt;: The theme of this very page that you are looking at. &lt;strong&gt;Zero
+to Hero&lt;&#x2F;strong&gt; is a &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;TryGhost&#x2F;Ghost&quot;&gt;&lt;strong&gt;Ghost&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;-based learning
+management system. This repository contains a customized fork of &lt;strong&gt;Casper&lt;&#x2F;strong&gt;,
+the default &lt;strong&gt;Ghost&lt;&#x2F;strong&gt; theme.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;fizzbuzz-pro-knowledge-base&quot;&gt;&lt;strong&gt;FizzBuzz Pro&lt;&#x2F;strong&gt; Knowledge Base&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;fizz-buzz&lt;&#x2F;code&gt;: This is where the meat of &lt;strong&gt;FizzBuzz Pro&lt;&#x2F;strong&gt; will be. It will have
+study notes, questions, answers, strategy recommendations… anything you need
+to become a better competitive programmer to nail that coding interview.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;fizzbuzz-pro-devops-and-automation&quot;&gt;&lt;strong&gt;FizzBuzz Pro&lt;&#x2F;strong&gt; DevOps and Automation&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;fizz-job-kb&lt;&#x2F;code&gt;: This is
+a &lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;concepts&#x2F;workloads&#x2F;controllers&#x2F;job&#x2F;&quot;&gt;Kubernetes Job&lt;&#x2F;a&gt;
+that fetches the content from the above &lt;code&gt;fizz-buzz&lt;&#x2F;code&gt; repository, does some
+preprocessing and conversion on it and uploads it to
+an &lt;a href=&quot;https:&#x2F;&#x2F;aws.amazon.com&#x2F;s3&#x2F;&quot;&gt;S3 Bucket&lt;&#x2F;a&gt; for some of the
+microservices to pre-populate their local caches
+using &lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;concepts&#x2F;workloads&#x2F;pods&#x2F;init-containers&#x2F;&quot;&gt;Init Containers&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;fizz-infra&lt;&#x2F;code&gt;: Infrastructure-related configurations, descriptors, manifests,
+scripts. This repository will primarily be used by the
+[&lt;strong&gt;CI&#x2F;CD&lt;&#x2F;strong&gt;][ci-dd] pipeline.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;fizzbuzz-pro-libraries&quot;&gt;&lt;strong&gt;FizzBuzz Pro&lt;&#x2F;strong&gt; Libraries&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;fizz-entity&lt;&#x2F;code&gt;: Data models and entities that all of the microservices share in
+common.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;fizz-logging&lt;&#x2F;code&gt;: Common logging utilities that all of the microservices share.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;fizz-validation&lt;&#x2F;code&gt;: Common validation and sanitization methods that all the
+microservices share.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;fizz-middleware&lt;&#x2F;code&gt;: HTTP security and tracing middleware that all the
+microservices use in common.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;fizz-app&lt;&#x2F;code&gt;: Contains microservice application related middlewares and
+utilities like &lt;code&gt;Monitor()&lt;&#x2F;code&gt;, &lt;code&gt;ListenAndServe()&lt;&#x2F;code&gt; which decorate and augment
+existing functionality.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;fizzbuzz-pro-microservices&quot;&gt;&lt;strong&gt;FizzBuzz Pro&lt;&#x2F;strong&gt; Microservices&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;fizz-idm&lt;&#x2F;code&gt;: Identity management, users, password reminders, account
+activation, and the like.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;fizz-store&lt;&#x2F;code&gt;: Payment gateway integration.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;fizz-crypto&lt;&#x2F;code&gt;: Anything cryptography-related: encryption, decryption, token
+generation, token validation, etc.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;fizz-mailer&lt;&#x2F;code&gt;: Sends emails from &lt;code&gt;hermes@fizzbuzz.pro&lt;&#x2F;code&gt; to places.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;fizz-questions&lt;&#x2F;code&gt;: A microservice to serve questions and answers.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;fizz-notes&lt;&#x2F;code&gt;: A microservice that serves additional notes and articles.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;external-services-to-use&quot;&gt;External Services to Use&lt;&#x2F;h2&gt;
+&lt;p&gt;We’ll be leveraging third-party “&lt;em&gt;as a service&lt;&#x2F;em&gt;” solutions as much as possible
+instead of reinventing the wheel so that we can focus on… well… things
+like… actually providing some value.&lt;&#x2F;p&gt;
+&lt;p&gt;I haven’t decided on all of them yet, so things may change down the line. And
+here are the initial list of services that I think we’ll leverage.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.mongodb.com&#x2F;cloud&#x2F;atlas&quot;&gt;&lt;strong&gt;MongoDB Atlas&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+for both the database and also the caching layer.&lt;br &#x2F;&gt;
+— I doubt it, but if &lt;strong&gt;caching&lt;&#x2F;strong&gt; becomes a more significant issue, we might
+launch an &lt;a href=&quot;https:&#x2F;&#x2F;aws.amazon.com&#x2F;elasticache&#x2F;&quot;&gt;&lt;strong&gt;Amazon ElastiCache&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; cluster
+too. Still, there’s no need to use it unless there’s a significant lag that a
+caching layer can solve.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.mailgun.com&#x2F;&quot;&gt;&lt;strong&gt;Mailgun&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; for sending system
+emails and newsletters.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;aws.amazon.com&#x2F;ecr&#x2F;&quot;&gt;&lt;strong&gt;Amazon Elastic Container Registry&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; to
+push microservice container images.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;aws.amazon.com&#x2F;eks&quot;&gt;&lt;strong&gt;Amazon EKS&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; for a managed
+Kubernetes cluster. We don’t strictly need Kubernetes, but it’ll be fun to
+deploy the infrastructure onto a &lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;&quot;&gt;
+&lt;em&gt;Kubernetes&lt;&#x2F;em&gt;&lt;&#x2F;a&gt; cluster.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;aws.amazon.com&#x2F;s3&#x2F;&quot;&gt;&lt;strong&gt;Amazon S3&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, along with
+&lt;a href=&quot;https:&#x2F;&#x2F;aws.amazon.com&#x2F;cloudfront&#x2F;&quot;&gt;&lt;strong&gt;Amazon CloudFront&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+to serve the static web apps.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;aws.amazon.com&#x2F;cloudwatch&#x2F;&quot;&gt;&lt;strong&gt;CloudWatch&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; and
+&lt;strong&gt;Amazon Container Insights&lt;&#x2F;strong&gt; for monitoring.&lt;br &#x2F;&gt;
+— Later on, we might consider a solution like
+&lt;a href=&quot;https:&#x2F;&#x2F;www.datadoghq.com&#x2F;&quot;&gt;&lt;strong&gt;DataDog&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; for better visibility and
+observability. Still, we’ll initially start with what the &lt;strong&gt;AWS&lt;&#x2F;strong&gt; ecosystem
+already provides us.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.papertrail.com&#x2F;&quot;&gt;&lt;strong&gt;Papertrail&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; for log
+aggregation.&lt;br &#x2F;&gt;
+— Related to that, &lt;a href=&quot;https:&#x2F;&#x2F;www.honeybadger.io&#x2F;&quot;&gt;&lt;strong&gt;Honeybadger&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; for
+catching and reporting errors.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;playlist&quot;&gt;Playlist&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;an-overview-of-fizzbuzz-pro&#x2F;&quot;&gt;Part 1: An Overview of FizzBuzz Pro&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;generating-static-html&#x2F;&quot;&gt;Part 2: Generating Static HTML&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;mutating-the-generated-html-files&#x2F;&quot;&gt;Part 3: Mutating the Generated HTML Files&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;app-authentication-overview&#x2F;&quot;&gt;Part 4: App Authentication Overview&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;implementing-an-oidc-authenticator&#x2F;&quot;&gt;Part 5: Implementing an OIDC Authenticator&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;serving-web-pages&#x2F;&quot;&gt;Part 6: Serving Web Pages&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;a-mild-introduction-to-middlewares&#x2F;&quot;&gt;Part 7: A Mild Introduction to Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;authenticate-all-the-things&#x2F;&quot;&gt;Part 8: Authenticate All the Things&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;thinking-in-middlewares&#x2F;&quot;&gt;Part 9: Thinking in Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;authentication-and-subscription-middlewares&#x2F;&quot;&gt;Part 10: Authentication and Subscription Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;implementing-authentication-handlers&#x2F;&quot;&gt;Part 11: Implementing Authentication Handlers&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;the-final-touches&#x2F;&quot;&gt;Part 12: The Final Touches&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;containerizing-our-application&#x2F;&quot;&gt;Part 13: Containerizing Our Application&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;onwards-to-kubernetes&#x2F;&quot;&gt;Part 14: Onwards to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;creating-ecr-repositories&#x2F;&quot;&gt;Creating ECR Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;deploying-a-microservice-to-k8s&#x2F;&quot;&gt;Deploying a Microservice to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizz-that-buzz&#x2F;&quot;&gt;Fizz that Buzz&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-hla&#x2F;&quot;&gt;FizzBuzz Pro High-Level Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ FizzBuzz Pro Repositories&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;This is a long journey, and there’s &lt;strong&gt;a lot&lt;&#x2F;strong&gt; to do. My first focus is to
+develop a “&lt;em&gt;minimally delightful&lt;&#x2F;em&gt;” user experience as fast as possible.&lt;&#x2F;p&gt;
+&lt;p&gt;I’ll share the entire journey with y’all with all of the design, architecture,
+and business decisions with complete transparency: There will be lots of use
+case articles and videos to cover how &lt;strong&gt;FizzBuzz Pro&lt;&#x2F;strong&gt; is evolving.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Aside&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Before I forget, the source code will be private; but I’ll share enough of it
+to give you ideas and pointers to use as a starting point if you want to create
+a similar service.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;That being said, that’s all there is to it for today.&lt;&#x2F;p&gt;
+&lt;p&gt;Next, I think I’ll start creating some of these services locally. I’ll then
+ensure that they run on a local &lt;strong&gt;Kubernetes&lt;&#x2F;strong&gt; cluster before deploying them to
+a staging &lt;strong&gt;EKS&lt;&#x2F;strong&gt; &lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;&quot;&gt;&lt;em&gt;Kubernetes&lt;&#x2F;em&gt;&lt;&#x2F;a&gt;
+cluster.&lt;&#x2F;p&gt;
+&lt;p&gt;And until then… may the source be with you 🦄.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Zero to Prod in Half an Hour: Part 5 --- Implementing an OIDC Authenticator</title>
+        <published>2021-01-12T00:00:00+00:00</published>
+        <updated>2021-01-12T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/zero-to-prod/implementing-an-oidc-authenticator/"/>
+        <id>https://zerotohero.dev/zero-to-prod/implementing-an-oidc-authenticator/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/zero-to-prod/implementing-an-oidc-authenticator/">
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;oidc.png&quot; alt=&quot;Zero to Prod in Half an Hour: Part 5 --- Implementing an OIDC Authenticator&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Zero to Prod in Half an Hour: Part 5 --- Implementing an OIDC Authenticator&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;This lecture will implement the &lt;strong&gt;Authenticator&lt;&#x2F;strong&gt; that we outlined in the
+previous lecture. Our authenticator will extend an OIDC provider, and and oauth2
+Config. In the upcoming lectures we’ll use this Authenticator to implement
+identity management functionality of our app.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h1&gt;
+&lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;661765992?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
+    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+    title=&quot;Zero to Prod in Half an Hour: Part 5 --- Implementing an OIDC Authenticator&quot;&gt;&lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;Zero to Prod in Half an Hour: Part 5 --- Implementing an OIDC Authenticator&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;playlist&quot;&gt;Playlist&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;an-overview-of-fizzbuzz-pro&#x2F;&quot;&gt;Part 1: An Overview of FizzBuzz Pro&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;generating-static-html&#x2F;&quot;&gt;Part 2: Generating Static HTML&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;mutating-the-generated-html-files&#x2F;&quot;&gt;Part 3: Mutating the Generated HTML Files&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;app-authentication-overview&#x2F;&quot;&gt;Part 4: App Authentication Overview&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Part 5: Implementing an OIDC Authenticator&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;serving-web-pages&#x2F;&quot;&gt;Part 6: Serving Web Pages&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;a-mild-introduction-to-middlewares&#x2F;&quot;&gt;Part 7: A Mild Introduction to Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;authenticate-all-the-things&#x2F;&quot;&gt;Part 8: Authenticate All the Things&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;thinking-in-middlewares&#x2F;&quot;&gt;Part 9: Thinking in Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;authentication-and-subscription-middlewares&#x2F;&quot;&gt;Part 10: Authentication and Subscription Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;implementing-authentication-handlers&#x2F;&quot;&gt;Part 11: Implementing Authentication Handlers&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;the-final-touches&#x2F;&quot;&gt;Part 12: The Final Touches&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;containerizing-our-application&#x2F;&quot;&gt;Part 13: Containerizing Our Application&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;onwards-to-kubernetes&#x2F;&quot;&gt;Part 14: Onwards to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;creating-ecr-repositories&#x2F;&quot;&gt;Creating ECR Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;deploying-a-microservice-to-k8s&#x2F;&quot;&gt;Deploying a Microservice to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizz-that-buzz&#x2F;&quot;&gt;Fizz that Buzz&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-hla&#x2F;&quot;&gt;FizzBuzz Pro High-Level Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-repos&#x2F;&quot;&gt;FizzBuzz Pro Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;tools-and-technologies-mentioned&quot;&gt;Tools and Technologies Mentioned&lt;&#x2F;h2&gt;
+&lt;p&gt;Here are the tools and technologies that were mentioned in the video, along with
+related articles and other helpful links.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;oauth.net&#x2F;2&#x2F;&quot;&gt;OAuth2.0&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;openid.net&#x2F;connect&#x2F;&quot;&gt;OpenID Connect&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;auth0.com&#x2F;docs&quot;&gt;Auth0 Documentation&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;auth0.com&#x2F;docs&#x2F;get-started&#x2F;apis&#x2F;scopes&#x2F;openid-connect-scopes&quot;&gt;OpenID Connect Scopes&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;read-the-source&quot;&gt;Read The Source&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;assets.zerotohero.dev&#x2F;zero-to-prod-in-30&#x2F;zero-to-prod-in-30.zip&quot;&gt;Download the source code (&lt;em&gt;114kb zip
+archive&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Until the next lecture… May the source be with you 🦄.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Zero to Hero - secret-management</title>
+    <link rel="self" type="application/atom+xml" href="https://zerotohero.dev/tags/secret-management/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://zerotohero.dev"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2024-12-22T00:00:00+00:00</updated>
+    <id>https://zerotohero.dev/tags/secret-management/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Using External Secrets Operator with HashiCorp Vault to Create Kubernetes Secrets</title>
+        <published>2024-12-22T00:00:00+00:00</published>
+        <updated>2024-12-22T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/eso-vault/"/>
+        <id>https://zerotohero.dev/inbox/eso-vault/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/eso-vault/">&lt;p&gt;When working with Kubernetes, securely managing secrets is a crucial part of your infrastructure. Traditional approaches—like directly embedding secrets in manifests or manually managing &lt;code&gt;Secret&lt;&#x2F;code&gt; objects—can become cumbersome and less secure over time. Enter the &lt;a href=&quot;https:&#x2F;&#x2F;external-secrets.io&quot;&gt;External Secrets Operator (ESO)&lt;&#x2F;a&gt;, a powerful way to integrate external secret stores with Kubernetes. One such secret store is &lt;a href=&quot;https:&#x2F;&#x2F;www.vaultproject.io&quot;&gt;HashiCorp Vault&lt;&#x2F;a&gt;, a proven solution for securely storing and accessing secrets.&lt;&#x2F;p&gt;
+&lt;p&gt;In this post, we’ll walk through the key Custom Resource Definitions (CRDs) you need to set up in your cluster to fetch secrets from Vault and have them automatically synchronized as Kubernetes secrets.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;overview&quot;&gt;Overview&lt;&#x2F;h2&gt;
+&lt;p&gt;ESO acts as a bridge between external secret stores (in this case, Vault) and Kubernetes &lt;code&gt;Secret&lt;&#x2F;code&gt; objects. To make this happen, you’ll define a store resource that tells ESO &lt;strong&gt;where&lt;&#x2F;strong&gt; and &lt;strong&gt;how&lt;&#x2F;strong&gt; to retrieve secrets. You’ll then define another resource that specifies &lt;strong&gt;which&lt;&#x2F;strong&gt; secrets to fetch and how to transform them into Kubernetes secrets.&lt;&#x2F;p&gt;
+&lt;p&gt;In other words:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;SecretStore&#x2F;ClusterSecretStore:&lt;&#x2F;strong&gt; Defines the external secret provider configuration&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;ExternalSecret:&lt;&#x2F;strong&gt; Defines the specific secrets you want to pull from your chosen store and how to map them into Kubernetes secrets&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;key-resources&quot;&gt;Key Resources&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;1-secretstore-or-clustersecretstore&quot;&gt;1. SecretStore or ClusterSecretStore&lt;&#x2F;h3&gt;
+&lt;p&gt;The &lt;code&gt;SecretStore&lt;&#x2F;code&gt; or &lt;code&gt;ClusterSecretStore&lt;&#x2F;code&gt; resource provides information about your Vault instance, including:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Endpoint:&lt;&#x2F;strong&gt; The URL of the Vault server&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Authentication method:&lt;&#x2F;strong&gt; How ESO should authenticate to Vault (e.g., using a Kubernetes Service Account token, Vault token, or another method)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Paths and parameters:&lt;&#x2F;strong&gt; Details like which Vault mount paths and keys to read from&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;strong&gt;When to use &lt;code&gt;SecretStore&lt;&#x2F;code&gt; vs. &lt;code&gt;ClusterSecretStore&lt;&#x2F;code&gt;?&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;SecretStore:&lt;&#x2F;strong&gt; Used when you want the configuration to be namespace-specific&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;ClusterSecretStore:&lt;&#x2F;strong&gt; Used when you want a cluster-wide configuration accessible by multiple namespaces&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;yaml&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-yaml &quot;&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;apiVersion&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;external-secrets.io&#x2F;v1beta1
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;kind&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;ClusterSecretStore
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;metadata&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;name&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;vault-backend
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;spec&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;provider&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;vault&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;server&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;https:&#x2F;&#x2F;vault.example.com&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;path&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;secret&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# The path where secrets are stored in Vault
+&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;version&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;v2&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;auth&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;tokenSecretRef&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;          &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;name&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;vault-token
+&lt;&#x2F;span&gt;&lt;span&gt;          &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;key&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;token
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This &lt;code&gt;ClusterSecretStore&lt;&#x2F;code&gt; tells ESO how to communicate with a Vault server at &lt;code&gt;vault.example.com&lt;&#x2F;code&gt;, using a token stored in the &lt;code&gt;vault-token&lt;&#x2F;code&gt; Secret.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;2-externalsecret&quot;&gt;2. ExternalSecret&lt;&#x2F;h3&gt;
+&lt;p&gt;The &lt;code&gt;ExternalSecret&lt;&#x2F;code&gt; resource references the &lt;code&gt;SecretStore&lt;&#x2F;code&gt; or &lt;code&gt;ClusterSecretStore&lt;&#x2F;code&gt; and tells ESO which keys from Vault to sync and how to project them into a Kubernetes Secret.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;yaml&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-yaml &quot;&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;apiVersion&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;external-secrets.io&#x2F;v1beta1
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;kind&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;ExternalSecret
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;metadata&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;name&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;my-app-secret
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;namespace&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;default
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;spec&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;refreshInterval&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;1h
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;secretStoreRef&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;kind&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;ClusterSecretStore
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;name&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;vault-backend
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;target&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;name&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;my-app-k8s-secret
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;creationPolicy&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;Owner
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;data&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;    - &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;secretKey&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;api-key       &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Key in the resulting K8s Secret
+&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;remoteRef&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;key&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;my-app&#x2F;api-key     &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Path&#x2F;key in Vault
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;In this &lt;code&gt;ExternalSecret&lt;&#x2F;code&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;secretStoreRef&lt;&#x2F;code&gt; points to the &lt;code&gt;ClusterSecretStore&lt;&#x2F;code&gt; named &lt;code&gt;vault-backend&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;It requests a secret named &lt;code&gt;my-app&#x2F;api-key&lt;&#x2F;code&gt; from Vault&lt;&#x2F;li&gt;
+&lt;li&gt;It maps that key into a Kubernetes Secret named &lt;code&gt;my-app-k8s-secret&lt;&#x2F;code&gt; under the &lt;code&gt;api-key&lt;&#x2F;code&gt; key&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;how-it-works&quot;&gt;How it Works&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Define the Store:&lt;&#x2F;strong&gt;
+Set up a &lt;code&gt;ClusterSecretStore&lt;&#x2F;code&gt; or &lt;code&gt;SecretStore&lt;&#x2F;code&gt; resource that points to your Vault instance and specifies authentication details.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Request the Secret:&lt;&#x2F;strong&gt;
+Create an &lt;code&gt;ExternalSecret&lt;&#x2F;code&gt; resource that references the store and specifies the exact secrets you need.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;ESO Synchronizes the Secret:&lt;&#x2F;strong&gt;
+The External Secrets Operator continuously reconciles resources. When it sees your &lt;code&gt;ExternalSecret&lt;&#x2F;code&gt;, it connects to Vault (using the instructions from the store resource), fetches the requested secret, and creates or updates the corresponding Kubernetes Secret object in your cluster.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;analogies&quot;&gt;Analogies&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Think of the &lt;code&gt;ClusterSecretStore&lt;&#x2F;code&gt; as a “GPS coordinate” that tells ESO where to find the treasure (your secrets) in Vault.&lt;&#x2F;li&gt;
+&lt;li&gt;The &lt;code&gt;ExternalSecret&lt;&#x2F;code&gt; is your “shopping list,” telling ESO which items (specific keys&#x2F;values) to bring back from that secret store and how to pack them into a Kubernetes Secret.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;pros-and-cons&quot;&gt;Pros and Cons&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;pros&quot;&gt;Pros:&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Separation of concerns: Store configuration is separate from secret retrieval specifications&lt;&#x2F;li&gt;
+&lt;li&gt;Reusability: You can reuse the same &lt;code&gt;ClusterSecretStore&lt;&#x2F;code&gt; for multiple &lt;code&gt;ExternalSecrets&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Security: Keeps sensitive data in Vault, only syncing what’s necessary to Kubernetes&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;cons&quot;&gt;Cons:&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Initial complexity: Requires understanding CRDs and writing additional YAML manifests&lt;&#x2F;li&gt;
+&lt;li&gt;Extra components: Relies on running ESO and Vault integrations&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;&#x2F;h2&gt;
+&lt;p&gt;By defining a &lt;code&gt;SecretStore&lt;&#x2F;code&gt; or &lt;code&gt;ClusterSecretStore&lt;&#x2F;code&gt; and one or more &lt;code&gt;ExternalSecrets&lt;&#x2F;code&gt;, you can seamlessly integrate HashiCorp Vault secrets into your Kubernetes cluster with the External Secrets Operator. This pattern centralizes and secures your secret management workflow, providing a more maintainable and secure approach than manually managing Secret objects.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;key-takeaways&quot;&gt;Key Takeaways:&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Use &lt;code&gt;SecretStore&lt;&#x2F;code&gt; or &lt;code&gt;ClusterSecretStore&lt;&#x2F;code&gt; to define how to connect to Vault&lt;&#x2F;li&gt;
+&lt;li&gt;Use &lt;code&gt;ExternalSecret&lt;&#x2F;code&gt; to specify which secrets to pull from Vault&lt;&#x2F;li&gt;
+&lt;li&gt;ESO automatically keeps your Kubernetes secrets in sync with Vault’s secrets&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;further-reading&quot;&gt;Further Reading&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;external-secrets.io&quot;&gt;External Secrets Operator Documentation&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.vaultproject.io&quot;&gt;HashiCorp Vault Documentation&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+</feed>

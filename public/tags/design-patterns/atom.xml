@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Zero to Hero - design-patterns</title>
+    <link rel="self" type="application/atom+xml" href="https://zerotohero.dev/tags/design-patterns/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://zerotohero.dev"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2021-11-26T00:00:00+00:00</updated>
+    <id>https://zerotohero.dev/tags/design-patterns/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Paint Me Like One of Your French Design Patterns</title>
+        <published>2021-11-26T00:00:00+00:00</published>
+        <updated>2021-11-26T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/roadmap/design-patterns/"/>
+        <id>https://zerotohero.dev/roadmap/design-patterns/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/roadmap/design-patterns/">&lt;p&gt;![Paint Me Like One of Your French Design Patterns](&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;design-pattern.png&quot; alt=&quot;Using design patterns are half science, half art.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Using design patterns are half science, half art.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;&#x2F;h2&gt;
+&lt;p&gt;The more you are in software engineering, the more you realize that similar
+problems are repeated all the time. Moreover, those similar sets of issues are
+often solved using similar approaches.&lt;&#x2F;p&gt;
+&lt;p&gt;That’s where &lt;strong&gt;design patterns&lt;&#x2F;strong&gt; come in handy. A design pattern is a *
+&lt;em&gt;repeatable&lt;&#x2F;em&gt;* solution to a commonly occurring software problem. You can
+consider it as a “&lt;em&gt;blueprint&lt;&#x2F;em&gt;.” It is not a finished design; it’s more like a
+template to solve a specific problem that can be used in many different
+scenarios.&lt;&#x2F;p&gt;
+&lt;p&gt;Design patterns can speed up the development process by providing tried and
+tested paradigms. Using design patterns creates a &lt;strong&gt;common language.&lt;&#x2F;strong&gt; It makes
+the code more readable and prevents subtle issues that might become visible much
+later. It’ll be much harder to modify and refactor the code.&lt;&#x2F;p&gt;
+&lt;p&gt;We can split design patterns into three categories:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Creational design patterns,&lt;&#x2F;li&gt;
+&lt;li&gt;Structural design patterns,&lt;&#x2F;li&gt;
+&lt;li&gt;And behavioral design pattern.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;This article summarizes the most commonly used design patterns, with links that
+discuss each pattern more deeply.&lt;&#x2F;p&gt;
+&lt;p&gt;So, without further ado, let’s dig in.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;creational-design-patterns&quot;&gt;Creational Design Patterns&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Abstract_factory_pattern&quot;&gt;Abstract Factory&lt;&#x2F;a&gt;:
+Create instances of several kinds of objects.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Builder_pattern&quot;&gt;Builder&lt;&#x2F;a&gt;: You have a common
+source of truth, and you want different representations of it.&lt;&#x2F;li&gt;
+&lt;li&gt;[Factory Method]((https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Factory_method_pattern): A (
+&lt;em&gt;mostly&lt;&#x2F;em&gt;) static method to let a class defer the instantiation to subclasses.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Object_pool_pattern&quot;&gt;Object Pool&lt;&#x2F;a&gt;: Avoid
+expensive object initialization by maintaining a pool of reusable objects.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Prototype_pattern&quot;&gt;Prototype&lt;&#x2F;a&gt;: A fully
+initialized instance that can be cloned elsewhere.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Singleton_pattern&quot;&gt;Singleton&lt;&#x2F;a&gt;: A class that
+only has a single instance.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;structural-design-patterns&quot;&gt;Structural Design Patterns&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Adapter_pattern&quot;&gt;Adapter&lt;&#x2F;a&gt;: Convert an interface
+into another interface that the client expects.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Bridge_pattern&quot;&gt;Bridge&lt;&#x2F;a&gt;: Segregate interfaces
+from their implementations.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Composite_pattern&quot;&gt;Composite&lt;&#x2F;a&gt;: A glorified tree
+structure of objects.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Decorator_pattern&quot;&gt;Decorator&lt;&#x2F;a&gt;: Monkey-patch
+additional responsibilities to an object.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Facade_pattern&quot;&gt;Façade&lt;&#x2F;a&gt;: There’s a mess behind
+the doors, but the building looks beautiful.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Flyweight_pattern&quot;&gt;Flyweight&lt;&#x2F;a&gt;: Share as much
+common data as possible to reduce the memory footprints of instantiated
+objects.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Proxy_pattern&quot;&gt;Proxy&lt;&#x2F;a&gt;: An object acting on
+behalf of another object.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;behavioral-design-patterns&quot;&gt;Behavioral Design Patterns&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Chain-of-responsibility_pattern&quot;&gt;Chain of Responsibility&lt;&#x2F;a&gt;:
+A way to pass the request between a pipeline of middlewares.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Command%E2%80%93query_separation&quot;&gt;Command-Query Separation Principle&lt;&#x2F;a&gt;:
+Things that modify state and things that query state should be isolated.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Command_pattern&quot;&gt;Command&lt;&#x2F;a&gt;): Encapsulate a
+request and its parameters and context to be run later.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Iterator_pattern&quot;&gt;Iterator&lt;&#x2F;a&gt;: Access a list of
+items sequentially without exposing their underlying representations.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Mediator_pattern&quot;&gt;Mediator&lt;&#x2F;a&gt;: The best analogy
+is planes talking to the control tower (&lt;em&gt;the mediator&lt;&#x2F;em&gt;) instead of talking to
+each other, thus reducing exponentially-increasing communication overhead.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Memento_pattern&quot;&gt;Memento&lt;&#x2F;a&gt;: Capture an object’s
+internal state so that it can be re-initialized later, faster.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Null_object_pattern&quot;&gt;Null Object&lt;&#x2F;a&gt;: Provide a
+helpful default value of an object.
+The &lt;a href=&quot;https:&#x2F;&#x2F;go.dev&#x2F;&quot;&gt;go programming language&lt;&#x2F;a&gt; leaves and breathes by this.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Observer_pattern&quot;&gt;Observer&lt;&#x2F;a&gt;: When one object
+changes state, all of the interested objects get notified.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;State_pattern&quot;&gt;State&lt;&#x2F;a&gt;: A &lt;strong&gt;state machine&lt;&#x2F;strong&gt;; the
+object’s behavior changes (&lt;em&gt;as if its type has changed&lt;&#x2F;em&gt;) when its state
+changes.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Strategy_pattern&quot;&gt;Strategy&lt;&#x2F;a&gt;: Define a family of
+algorithms and make them interchangeable.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Template_method_pattern&quot;&gt;Template Method&lt;&#x2F;a&gt;:
+Delegate how the method is implemented to the subclass of an object.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Visitor_pattern&quot;&gt;Visitor&lt;&#x2F;a&gt;: Represent an
+operation to be performed on the elements of a graph of objects.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;&#x2F;h2&gt;
+&lt;p&gt;One thing to keep in mind is that design patterns are just &lt;strong&gt;guidelines&lt;&#x2F;strong&gt;. They
+are rules that are set in stone to follow religiously. So the more you use them,
+the more you’ll realize when it makes to deviate from them.&lt;&#x2F;p&gt;
+&lt;p&gt;In addition, not every problem has an exactly matching design pattern.
+Similarly, not every situation needs to be solved with a design pattern. When in
+doubt, keep things simple.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2021&amp;#x2F;11&amp;#x2F;guidelines.jpeg&quot; alt=&quot;Design patterns are what you&amp;#x27;d call &amp;#x27;guidelines&amp;#x27; than actual &amp;#x27;rules.&amp;#x27;&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Design patterns are what you&amp;#x27;d call &amp;#x27;guidelines&amp;#x27; than actual &amp;#x27;rules.&amp;#x27;&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;One last thing: People, especially when learning design patterns for the first
+time, don’t consider the tradeoffs of using a certain pattern. Each design
+pattern comes with its benefits and liabilities. And it’s up to you as the
+software engineer to use your experience and judgement to decide what to use
+when.&lt;&#x2F;p&gt;
+&lt;p&gt;That being said, that’s all there is about common software design patterns.&lt;&#x2F;p&gt;
+&lt;p&gt;Until next time… May the source be with you 🦄.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;roadmap&#x2F;&quot;&gt;Be the Next Version of Yourself&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;hack-the-system&#x2F;&quot;&gt;Who Else is Ready to Hack?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;chisel&#x2F;&quot;&gt;Grab Your Chisel and Start Pounding&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learn-fast-remember-more&#x2F;&quot;&gt;Unlock Your Brain’s Power: Learn Fast, Remember More&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;the-art-of-learning&#x2F;&quot;&gt;Master Your Mind: Unleash the Power of Learning&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;bedtime-reading&#x2F;&quot;&gt;Resources Every Developer Must Read: No Exceptions&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;knowing-javascript-is-not-good-enough&#x2F;&quot;&gt;Knowing JavaScript Is Not Good Enough&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learn-javascript-the-unconventional-way&#x2F;&quot;&gt;Learn JavaScript the Unconventional Way&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learn-haskell&#x2F;&quot;&gt;Want to Learn JavaScript? Learn Haskell First&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;glossary&#x2F;&quot;&gt;A Glossary of Mostly Developer-Related Things&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;git&#x2F;&quot;&gt;Git Comfortable&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;vim&#x2F;&quot;&gt;Master Your Vim-Fu&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;one-does-not-simply-terminal&#x2F;&quot;&gt;One Does Not Simply Terminal 👌&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Paint Me Like One of Your French Design Patterns&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;regexp&#x2F;&quot;&gt;Tame Your Regular Expressions&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;security&#x2F;&quot;&gt;Security Is Not Optional&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;you-need-testing&#x2F;&quot;&gt;You Need Testing&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;a-startup-founders-bedtime-reading-list&#x2F;&quot;&gt;A Startup Founder’s Bedtime Reading List&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;color-theory&#x2F;&quot;&gt;Orange Is the New Purple&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;ramp-up-in-user-experience-design&#x2F;&quot;&gt;Ramp Up in User Experience Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;typography&#x2F;&quot;&gt;Get Better at Typography&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learning-rust&#x2F;&quot;&gt;Exploring Rust as a Go Developer&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+</feed>

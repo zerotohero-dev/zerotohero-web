@@ -1,0 +1,20 @@
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
+- name: "Every Saga Has a Beginning"
+  url: "@/about/a-new-hope.md"
+- name: "Volkan Özçelik"
+  url: "@/about/volkan.md"
+- name: "Volkan Uses"
+  url: "@/about/volkan-uses.md"
+- name: "Contact"
+  url: "@/about/contact.md"
+- name: "Privacy Policy"
+  url: "@/about/privacy.md"
+

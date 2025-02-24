@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Zero to Hero - cloud-foundation</title>
+    <link rel="self" type="application/atom+xml" href="https://zerotohero.dev/tags/cloud-foundation/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://zerotohero.dev"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2024-12-12T00:00:00+00:00</updated>
+    <id>https://zerotohero.dev/tags/cloud-foundation/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Adding vSphere Clusters in VMware Cloud Foundation: A Detailed Guide</title>
+        <published>2024-12-12T00:00:00+00:00</published>
+        <updated>2024-12-12T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/add-vsphere-clusters-in-vcf/"/>
+        <id>https://zerotohero.dev/inbox/add-vsphere-clusters-in-vcf/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/add-vsphere-clusters-in-vcf/">&lt;p&gt;VMware Cloud Foundation (VCF) provides two methods for adding capacity to deployed workload domains:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Adding hosts to existing clusters&lt;&#x2F;li&gt;
+&lt;li&gt;Adding new clusters to existing workload domains&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;This guide focuses on the process of adding a new cluster to an existing workload domain.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;process-overview&quot;&gt;Process Overview&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;initial-navigation&quot;&gt;Initial Navigation&lt;&#x2F;h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Access SDDC Manager dashboard&lt;&#x2F;li&gt;
+&lt;li&gt;Navigate to Workload Domains&lt;&#x2F;li&gt;
+&lt;li&gt;Select target domain&lt;&#x2F;li&gt;
+&lt;li&gt;Click Actions &amp;gt; Add Cluster&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h3 id=&quot;configuration-steps&quot;&gt;Configuration Steps&lt;&#x2F;h3&gt;
+&lt;h4 id=&quot;1-storage-configuration&quot;&gt;1. Storage Configuration&lt;&#x2F;h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Select principal storage type (e.g., vSAN)&lt;&#x2F;li&gt;
+&lt;li&gt;Configure vSAN settings if applicable:
+&lt;ul&gt;
+&lt;li&gt;Set failures to tolerate&lt;&#x2F;li&gt;
+&lt;li&gt;Enable&#x2F;disable deduplication and compression&lt;&#x2F;li&gt;
+&lt;li&gt;Option to mount remote vSAN datastore for compute-only clusters&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h4 id=&quot;2-cluster-settings&quot;&gt;2. Cluster Settings&lt;&#x2F;h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Assign cluster name&lt;&#x2F;li&gt;
+&lt;li&gt;Select VLCM (vSphere Lifecycle Manager) desired state image&lt;&#x2F;li&gt;
+&lt;li&gt;Choose hosts from free pool (minimum 3 for vSAN)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h4 id=&quot;3-network-configuration&quot;&gt;3. Network Configuration&lt;&#x2F;h4&gt;
+&lt;p&gt;Default switch configuration includes:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Single switch with two NICs&lt;&#x2F;li&gt;
+&lt;li&gt;Separate port groups for:
+&lt;ul&gt;
+&lt;li&gt;Management traffic&lt;&#x2F;li&gt;
+&lt;li&gt;vMotion traffic&lt;&#x2F;li&gt;
+&lt;li&gt;vSAN traffic&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;VLAN ID assignment for NSX overlay network&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h4 id=&quot;4-licensing&quot;&gt;4. Licensing&lt;&#x2F;h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Apply appropriate vSphere license keys&lt;&#x2F;li&gt;
+&lt;li&gt;Review configuration&lt;&#x2F;li&gt;
+&lt;li&gt;Initiate deployment&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;deployment-process&quot;&gt;Deployment Process&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;timeline&quot;&gt;Timeline&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Typical deployment: approximately 30 minutes&lt;&#x2F;li&gt;
+&lt;li&gt;Progress monitored through SDDC Manager workflow&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;automated-tasks&quot;&gt;Automated Tasks&lt;&#x2F;h3&gt;
+&lt;p&gt;SDDC Manager performs numerous operations:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Cluster creation&lt;&#x2F;li&gt;
+&lt;li&gt;Host configuration&lt;&#x2F;li&gt;
+&lt;li&gt;Storage setup&lt;&#x2F;li&gt;
+&lt;li&gt;Network configuration&lt;&#x2F;li&gt;
+&lt;li&gt;NSX fabric integration&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;verification-steps&quot;&gt;Verification Steps&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;1-sddc-manager&quot;&gt;1. SDDC Manager&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Verify new cluster appears in domain&lt;&#x2F;li&gt;
+&lt;li&gt;Check host assignments&lt;&#x2F;li&gt;
+&lt;li&gt;Review cluster status&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;2-vsphere-client&quot;&gt;2. vSphere Client&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Confirm cluster in vCenter inventory&lt;&#x2F;li&gt;
+&lt;li&gt;Verify host configuration&lt;&#x2F;li&gt;
+&lt;li&gt;Check storage and network settings&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;3-nsx-manager&quot;&gt;3. NSX Manager&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Navigate to System &amp;gt; Fabric &amp;gt; Host&lt;&#x2F;li&gt;
+&lt;li&gt;Verify cluster added to NSX fabric&lt;&#x2F;li&gt;
+&lt;li&gt;Check host preparation status&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;benefits&quot;&gt;Benefits&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Scalability&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Easy infrastructure expansion&lt;&#x2F;li&gt;
+&lt;li&gt;Flexible capacity management&lt;&#x2F;li&gt;
+&lt;li&gt;Response to application demands&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Automation&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Consistent deployment process&lt;&#x2F;li&gt;
+&lt;li&gt;Reduced manual intervention&lt;&#x2F;li&gt;
+&lt;li&gt;Integrated configuration&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Integration&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Automatic NSX fabric inclusion&lt;&#x2F;li&gt;
+&lt;li&gt;Coordinated networking setup&lt;&#x2F;li&gt;
+&lt;li&gt;Unified management&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;best-practices&quot;&gt;Best Practices&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Planning&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Verify resource availability&lt;&#x2F;li&gt;
+&lt;li&gt;Plan network configuration&lt;&#x2F;li&gt;
+&lt;li&gt;Prepare host inventory&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Implementation&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Follow standard naming conventions&lt;&#x2F;li&gt;
+&lt;li&gt;Document VLAN assignments&lt;&#x2F;li&gt;
+&lt;li&gt;Verify prerequisites&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Post-Deployment&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Validate all components&lt;&#x2F;li&gt;
+&lt;li&gt;Test connectivity&lt;&#x2F;li&gt;
+&lt;li&gt;Update documentation&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;Adding vSphere clusters through SDDC Manager provides a streamlined, automated approach to scaling your VCF infrastructure. The process ensures consistent deployment while maintaining integration with all necessary components, from storage to networking and security.&lt;&#x2F;p&gt;
+&lt;p&gt;The ability to easily add capacity through new clusters helps organizations maintain agility in responding to changing workload demands while ensuring standardization across the infrastructure.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

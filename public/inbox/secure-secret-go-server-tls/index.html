@@ -1,0 +1,166 @@
+<!doctype html><html dir=auto lang=en><head><meta charset=utf-8><meta content="IE=edge" http-equiv=X-UA-Compatible><meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name=viewport><meta content="index, follow" name=robots><title>Building a Secure Secrets Management Server in Go</title><meta content="keyword1, keyword2, keyword3" name=keywords><meta content="DBuilding a Secure Secrets Management Server in Go" name=description><meta content="Volkan Özçelik" name=author><link href=https://zerotohero.dev/inbox/secure-secret-go-server-tls/ rel=canonical><link href=https://zerotohero.dev/css/includes/scroll-bar.css rel=stylesheet><link href=https://zerotohero.dev/css/styles.css rel=stylesheet><link href=https://zerotohero.dev/css/override.css rel=stylesheet><link href=https://zerotohero.dev/atom.xml rel=alternate title=RSS type=application/atom+xml><noscript><style>#theme-toggle,.top-link{display:none}</style> <style>@media (prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:#dadadb;--secondary:#9b9c9d;--tertiary:#414244;--content:#c4c4c5;--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><body id=top><script>if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }</script><script src=https://player.vimeo.com/api/player.js></script><header class=header><nav class=nav><div class=logo><a title="Zero to Hero (Alt + H)" accesskey=h href=https://zerotohero.dev> <svg viewbox="-0.5 -0.5 32 32" height=32 id=High-Voltage--Streamline-Kawaii-Emoji style=position:relative;top:2px;left:4px width=32 xmlns=http://www.w3.org/2000/svg><desc>High Voltage Streamline Emoji: https://streamlinehq.com</desc><path d="M16.244 18.21002a56.048 56.048 0 0 1 -8.1313 -0.8853599999999999 3.3480000000000003 3.3480000000000003 0 0 1 -2.3374 -4.7802C6.500699999999999 11.097999999999999 16.04994 3.35854 21.79548 1.2059a1.14328 1.14328 0 0 1 1.36772 1.68392c-1.2183 1.8599999999999999 -3.5340000000000003 4.0641 -7.88702 8.56716 1.98772 0.124 4.207319999999999 -0.093 6.55216 -0.07688a3.66172 3.66172 0 0 1 3.0534999999999997 1.3813600000000001c0.6975 0.9734 0.97898 2.33058 0.32674000000000003 3.3356 -1.54504 2.37894 -9.10284 9.4054 -13.52468 12.80362 -1.5741800000000001 1.2096200000000001 -2.7565199999999996 1.27596 -3.41 0.26226 -0.39742 -0.6169 0.18166 -1.32618 0.5251399999999999 -1.8258999999999999C10.185979999999999 25.320800000000002 16.182000000000002 18.20754 16.244 18.21002z" fill=#ffe500 stroke-width=1></path><path d="M24.881839999999997 12.76146a3.66172 3.66172 0 0 0 -3.0534999999999997 -1.3813600000000001 52.95544 52.95544 0 0 0 -1.9734599999999998 0.03038 3.472 3.472 0 0 1 2.54696 1.3509799999999998c0.6975 0.9734 0.9796 2.33058 0.32674000000000003 3.3356 -1.5444200000000001 2.37894 -9.10284 9.40478 -13.52468 12.80362a6.66996 6.66996 0 0 1 -0.744 0.496c0.682 0.75144 1.78498 0.6107 3.2209000000000003 -0.496 4.424939999999999 -3.3988400000000003 11.98336 -10.42468 13.52778 -12.80362 0.65286 -1.00502 0.37076 -2.3622 -0.32674000000000003 -3.3356zM20.6832 2.88982c-1.16498 1.77816 -3.3368399999999996 3.87314 -7.33026 7.9918000000000005a0.35773999999999995 0.35773999999999995 0 0 0 0.248 0.60698c0.65596 0.01302 1.33486 0 2.0292600000000003 -0.02294 -0.11656 -0.00496 -0.23994000000000001 0 -0.35525999999999996 -0.00868 4.34 -4.495 6.66066 -6.700340000000001 7.88082 -8.556000000000001a1.1457600000000001 1.1457600000000001 0 0 0 -1.35904 -1.69446c-0.3565 0.1333 -0.7285 0.28892 -1.11104 0.46252a1.09802 1.09802 0 0 1 -0.00248 1.22078z" fill=#f2c100 stroke-width=1></path><path d="M16.244 18.21002a56.048 56.048 0 0 1 -8.1313 -0.8853599999999999 3.3480000000000003 3.3480000000000003 0 0 1 -2.3374 -4.7802C6.500699999999999 11.097999999999999 16.04994 3.35854 21.79548 1.2059a1.14328 1.14328 0 0 1 1.36772 1.68392c-1.2183 1.8599999999999999 -3.5340000000000003 4.0641 -7.88702 8.56716 1.98772 0.124 4.207319999999999 -0.093 6.55216 -0.07688a3.66172 3.66172 0 0 1 3.0534999999999997 1.3813600000000001c0.6975 0.9734 0.97898 2.33058 0.32674000000000003 3.3356 -1.54504 2.37894 -9.10284 9.4054 -13.52468 12.80362 -1.5741800000000001 1.2096200000000001 -2.7565199999999996 1.27596 -3.41 0.26226 -0.39742 -0.6169 0.18166 -1.32618 0.5251399999999999 -1.8258999999999999C10.185979999999999 25.320800000000002 16.182000000000002 18.20754 16.244 18.21002z" fill=none stroke=#45413c stroke-linecap=round stroke-linejoin=round stroke-width=1></path></svg> Zero to Hero </a><div class=logo-switches><button title="(Alt + T)" accesskey=t id=theme-toggle><svg viewbox="0 0 24 24" fill=none height=18 id=moon stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=24 xmlns=http://www.w3.org/2000/svg><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg> <svg viewbox="0 0 24 24" fill=none height=18 id=sun stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=24 xmlns=http://www.w3.org/2000/svg><circle cx=12 cy=12 r=5></circle><line x1=12 x2=12 y1=1 y2=3></line><line x1=12 x2=12 y1=21 y2=23></line><line x1=4.22 x2=5.64 y1=4.22 y2=5.64></line><line x1=18.36 x2=19.78 y1=18.36 y2=19.78></line><line x1=1 x2=3 y1=12 y2=12></line><line x1=21 x2=23 y1=12 y2=12></line><line x1=4.22 x2=5.64 y1=19.78 y2=18.36></line><line x1=18.36 x2=19.78 y1=5.64 y2=4.22></line></svg></button><ul class=lang-switch><li></ul></div></div><ul id=menu><li><a href=/about title=About> <span>About</span> </a><li><a href=/archive title=Archive> <span>Archive</span> </a><li><a href=/tags title=Tags> <span>Tags</span> </a><li><a title="Geyik TV" href=https://zerotohero.tv> <span>Geyik TV</span> <svg viewbox="0 0 24 24" fill=none height=12 shape-rendering=geometricPrecision stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2.5 width=12><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path><path d="M15 3h6v6"></path><path d="M10 14L21 3"></path></svg> </a><li><a title="Vadideki Geyik" href=https://vadidekigeyik.com> <span>Vadideki Geyik</span> <svg viewbox="0 0 24 24" fill=none height=12 shape-rendering=geometricPrecision stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2.5 width=12><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path><path d="M15 3h6v6"></path><path d="M10 14L21 3"></path></svg> </a><li><a href=https://discord.gg/kampus title=kamp.us> <span>kamp.us</span> <svg viewbox="0 0 24 24" fill=none height=12 shape-rendering=geometricPrecision stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2.5 width=12><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path><path d="M15 3h6v6"></path><path d="M10 14L21 3"></path></svg> </a><li><a href=https://github.com/spiffe/spike title=SPIKE> <span>SPIKE</span> <svg viewbox="0 0 24 24" fill=none height=12 shape-rendering=geometricPrecision stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2.5 width=12><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path><path d="M15 3h6v6"></path><path d="M10 14L21 3"></path></svg> </a><li><a href=https://github.com/vmware-tanzu/secrets-manager title=VSecM> <span>VSecM</span> <svg viewbox="0 0 24 24" fill=none height=12 shape-rendering=geometricPrecision stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2.5 width=12><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path><path d="M15 3h6v6"></path><path d="M10 14L21 3"></path></svg> </a></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://zerotohero.dev>Home</a> »  <a href=https://zerotohero.dev/>Posts</a> »  <a href=https://zerotohero.dev/inbox/secure-secret-go-server-tls/>Building a Secure Secrets Management Server in Go</a></div><h1 class=post-title>Building a Secure Secrets Management Server in Go</h1><div class=post-description>DBuilding a Secure Secrets Management Server in Go</div><div class=post-meta><span title="2024-12-10 00:00:00 +0000">2024-12-10</span> · 3 min · Volkan Özçelik</div></header><div class=toc><details><summary title="(Alt + C)" accesskey=c><span class=details>Table of Contents</span></summary> <div class=inner><ul><li><a aria-label=Overview href=#overview>Overview</a><li><a aria-label="Implementation Details" href=#implementation-details>Implementation Details</a> <ul><li><a aria-label="Secret Types and Storage" href=#secret-types-and-storage>Secret Types and Storage</a><li><a aria-label="Fetching and Processing Secrets" href=#fetching-and-processing-secrets>Fetching and Processing Secrets</a><li><a aria-label="TLS Configuration" href=#tls-configuration>TLS Configuration</a><li><a aria-label="API Implementation" href=#api-implementation>API Implementation</a><li><a aria-label="Path-Based Secret Access" href=#path-based-secret-access>Path-Based Secret Access</a></ul><li><a aria-label="Security Considerations" href=#security-considerations>Security Considerations</a><li><a aria-label="Usage Example" href=#usage-example>Usage Example</a><li><a aria-label="Future Improvements" href=#future-improvements>Future Improvements</a><li><a aria-label=Conclusion href=#conclusion>Conclusion</a></ul></div></details></div><div class=post-content><p>In modern cloud-native environments, managing secrets securely is crucial for maintaining the security of your infrastructure. This post walks through building a secure secrets management server in Go that handles TLS certificates and serves secrets via a REST API.<h2 id=overview>Overview</h2><p>Our server needs to:<ol><li>Fetch secrets from a secrets manager<li>Set up a TLS-enabled HTTP server<li>Serve specific secrets based on API requests<li>Handle secret paths and implement access control</ol><h2 id=implementation-details>Implementation Details</h2><h3 id=secret-types-and-storage>Secret Types and Storage</h3><p>The server handles two main types of secrets:<ol><li><p>Infrastructure secrets (prefixed with <code>raw:vsecm-scout</code>)</p> <ul><li>TLS certificates and keys<li>JWT signing keys<li>Other infrastructure-related secrets</ul><li><p>Application secrets (other <code>raw:</code> prefixed secrets)</p> <ul><li>Stored in a map for serving via the API<li>Can be accessed using path-based queries</ul></ol><p>Here’s how we organize these secrets:<pre class=language-go data-lang=go style=color:#fdf4c1aa;background-color:#282828><code class=language-go data-lang=go><span style=color:#fa5c4b>var </span><span>(
+</span><span>    </span><span style=color:#fdf4c1>jwtSecret      </span><span style=color:#fabd2f>string
+</span><span>    </span><span style=color:#fdf4c1>secretsToServe </span><span style=color:#fa5c4b>map</span><span>[</span><span style=color:#fabd2f>string</span><span>]</span><span style=color:#fabd2f>string
+</span><span>)
+</span></code></pre><h3 id=fetching-and-processing-secrets>Fetching and Processing Secrets</h3><p>The server starts by fetching secrets from the secrets manager:<pre class=language-go data-lang=go style=color:#fdf4c1aa;background-color:#282828><code class=language-go data-lang=go><span style=color:#fdf4c1>sfr</span><span>, </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>sentry</span><span>.</span><span style=color:#fdf4c1>Fetch</span><span>()
+</span><span style=color:#fa5c4b>if </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>!= </span><span style=color:#d3869b>nil </span><span>{
+</span><span>    </span><span style=color:#fdf4c1>log</span><span>.</span><span style=color:#fdf4c1>Fatalf</span><span>(</span><span style=color:#b8bb26>"Error fetching secrets: </span><span style=color:#fdf4c1>%v</span><span style=color:#b8bb26>"</span><span>, </span><span style=color:#fdf4c1>err</span><span>)
+</span><span>}
+</span></code></pre><p>It then processes these secrets, organizing them based on their prefix:<pre class=language-go data-lang=go style=color:#fdf4c1aa;background-color:#282828><code class=language-go data-lang=go><span style=color:#fa5c4b>for </span><span style=color:#fdf4c1>_</span><span>, </span><span style=color:#fdf4c1>secret </span><span style=color:#fe8019>:= </span><span style=color:#fa5c4b>range </span><span style=color:#fdf4c1>secrets </span><span>{
+</span><span>    </span><span style=color:#fdf4c1>name </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>secret</span><span>[</span><span style=color:#b8bb26>"Name"</span><span>].(</span><span style=color:#fabd2f>string</span><span>)
+</span><span>    </span><span style=color:#fdf4c1>value </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>secret</span><span>[</span><span style=color:#b8bb26>"value"</span><span>].(</span><span style=color:#fabd2f>string</span><span>)
+</span><span>
+</span><span>    </span><span style=color:#fa5c4b>switch </span><span style=color:#fdf4c1>name </span><span>{
+</span><span>    </span><span style=color:#fa5c4b>case </span><span style=color:#b8bb26>"raw:vsecm-scout-jwt-secret"</span><span>:
+</span><span>        </span><span style=color:#fdf4c1>jwtSecret </span><span style=color:#fe8019>= </span><span style=color:#fdf4c1>value
+</span><span>    </span><span style=color:#fa5c4b>case </span><span style=color:#b8bb26>"raw:vsecm-scout-crt"</span><span>:
+</span><span>        </span><span style=color:#fdf4c1>serverCert </span><span style=color:#fe8019>= </span><span style=color:#fdf4c1>value
+</span><span>    </span><span style=color:#928374;font-style:italic>// ... other cases
+</span><span>    </span><span style=color:#fa5c4b>default</span><span>:
+</span><span>        </span><span style=color:#fa5c4b>if </span><span style=color:#fdf4c1>strings</span><span>.</span><span style=color:#fdf4c1>HasPrefix</span><span>(</span><span style=color:#fdf4c1>name</span><span>, </span><span style=color:#b8bb26>"raw:"</span><span>) </span><span style=color:#fe8019>&& !</span><span style=color:#fdf4c1>strings</span><span>.</span><span style=color:#fdf4c1>HasPrefix</span><span>(</span><span style=color:#fdf4c1>name</span><span>, </span><span style=color:#b8bb26>"raw:vsecm-scout"</span><span>) {
+</span><span>            </span><span style=color:#fdf4c1>secretsToServe</span><span>[</span><span style=color:#fdf4c1>strings</span><span>.</span><span style=color:#fdf4c1>TrimPrefix</span><span>(</span><span style=color:#fdf4c1>name</span><span>, </span><span style=color:#b8bb26>"raw:"</span><span>)] </span><span style=color:#fe8019>= </span><span style=color:#fdf4c1>value
+</span><span>        }
+</span><span>    }
+</span><span>}
+</span></code></pre><h3 id=tls-configuration>TLS Configuration</h3><p>Security is paramount for a secrets management server. We use TLS to encrypt all communications:<pre class=language-go data-lang=go style=color:#fdf4c1aa;background-color:#282828><code class=language-go data-lang=go><span style=color:#fdf4c1>cert</span><span>, </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>tls</span><span>.</span><span style=color:#fdf4c1>X509KeyPair</span><span>([]</span><span style=color:#fabd2f>byte</span><span>(</span><span style=color:#fdf4c1>serverCert</span><span>), []</span><span style=color:#fabd2f>byte</span><span>(</span><span style=color:#fdf4c1>serverKey</span><span>))
+</span><span style=color:#fa5c4b>if </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>!= </span><span style=color:#d3869b>nil </span><span>{
+</span><span>    </span><span style=color:#fdf4c1>log</span><span>.</span><span style=color:#fdf4c1>Fatalf</span><span>(</span><span style=color:#b8bb26>"Error loading server certificate and key: </span><span style=color:#fdf4c1>%v</span><span style=color:#b8bb26>"</span><span>, </span><span style=color:#fdf4c1>err</span><span>)
+</span><span>}
+</span><span>
+</span><span style=color:#fdf4c1>tlsConfig </span><span style=color:#fe8019>:= &</span><span style=color:#fdf4c1>tls</span><span>.</span><span style=color:#fdf4c1>Config</span><span>{
+</span><span>    </span><span style=color:#fdf4c1>Certificates</span><span>: []</span><span style=color:#fdf4c1>tls</span><span>.</span><span style=color:#fdf4c1>Certificate</span><span>{</span><span style=color:#fdf4c1>cert</span><span>},
+</span><span>}
+</span><span>
+</span><span style=color:#fdf4c1>server </span><span style=color:#fe8019>:= &</span><span style=color:#fdf4c1>http</span><span>.</span><span style=color:#fdf4c1>Server</span><span>{
+</span><span>    </span><span style=color:#fdf4c1>Addr</span><span>:      </span><span style=color:#b8bb26>":8443"</span><span>,
+</span><span>    </span><span style=color:#fdf4c1>TLSConfig</span><span>: </span><span style=color:#fdf4c1>tlsConfig</span><span>,
+</span><span>}
+</span></code></pre><h3 id=api-implementation>API Implementation</h3><p>The server exposes a webhook endpoint that serves secrets based on a key and path:<pre class=language-go data-lang=go style=color:#fdf4c1aa;background-color:#282828><code class=language-go data-lang=go><span style=color:#fa5c4b>func </span><span style=color:#8ec07c>webhookHandler</span><span>(</span><span style=color:#fdf4c1>w http</span><span>.</span><span style=color:#fa5c4b>ResponseWriter</span><span>, </span><span style=color:#fdf4c1>r </span><span style=color:#fe8019>*</span><span style=color:#fdf4c1>http</span><span>.</span><span style=color:#fa5c4b>Request</span><span>) {
+</span><span>    </span><span style=color:#928374;font-style:italic>// ... request validation ...
+</span><span>
+</span><span>    </span><span style=color:#fdf4c1>key </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>values</span><span>.</span><span style=color:#fdf4c1>Get</span><span>(</span><span style=color:#b8bb26>"key"</span><span>)
+</span><span>    </span><span style=color:#fdf4c1>path </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>values</span><span>.</span><span style=color:#fdf4c1>Get</span><span>(</span><span style=color:#b8bb26>"path"</span><span>)
+</span><span>
+</span><span>    </span><span style=color:#fdf4c1>secretValue</span><span>, </span><span style=color:#fdf4c1>exists </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>secretsToServe</span><span>[</span><span style=color:#fdf4c1>key</span><span>]
+</span><span>    </span><span style=color:#fa5c4b>if </span><span style=color:#fe8019>!</span><span style=color:#fdf4c1>exists </span><span>{
+</span><span>        </span><span style=color:#fdf4c1>http</span><span>.</span><span style=color:#fdf4c1>Error</span><span>(</span><span style=color:#fdf4c1>w</span><span>, </span><span style=color:#b8bb26>"Invalid key"</span><span>, </span><span style=color:#fdf4c1>http</span><span>.</span><span style=color:#fdf4c1>StatusUnauthorized</span><span>)
+</span><span>        </span><span style=color:#fa5c4b>return
+</span><span>    }
+</span><span>
+</span><span>    </span><span style=color:#928374;font-style:italic>// ... process and return the secret ...
+</span><span>}
+</span></code></pre><h3 id=path-based-secret-access>Path-Based Secret Access</h3><p>The server implements a flexible path-based access system for secrets:<pre class=language-go data-lang=go style=color:#fdf4c1aa;background-color:#282828><code class=language-go data-lang=go><span style=color:#fa5c4b>func </span><span style=color:#8ec07c>getValueFromPath</span><span>(</span><span style=color:#fdf4c1>data </span><span style=color:#fa5c4b>interface</span><span>{}, </span><span style=color:#fdf4c1>path </span><span style=color:#fabd2f>string</span><span>) (</span><span style=color:#fa5c4b>interface</span><span>{}, </span><span style=color:#fabd2f>error</span><span>) {
+</span><span>    </span><span style=color:#fdf4c1>parts </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>strings</span><span>.</span><span style=color:#fdf4c1>Split</span><span>(</span><span style=color:#fdf4c1>path</span><span>, </span><span style=color:#b8bb26>"."</span><span>)
+</span><span>
+</span><span>    </span><span style=color:#fa5c4b>var </span><span style=color:#fdf4c1>current </span><span style=color:#fe8019>= </span><span style=color:#fdf4c1>data
+</span><span>    </span><span style=color:#fa5c4b>for </span><span style=color:#fdf4c1>_</span><span>, </span><span style=color:#fdf4c1>part </span><span style=color:#fe8019>:= </span><span style=color:#fa5c4b>range </span><span style=color:#fdf4c1>parts </span><span>{
+</span><span>        </span><span style=color:#fa5c4b>switch </span><span style=color:#fdf4c1>v </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>current</span><span>.(</span><span style=color:#fa5c4b>type</span><span>) {
+</span><span>        </span><span style=color:#fa5c4b>case map</span><span>[</span><span style=color:#fabd2f>string</span><span>]</span><span style=color:#fa5c4b>interface</span><span>{}:
+</span><span>            </span><span style=color:#fa5c4b>if </span><span style=color:#fdf4c1>val</span><span>, </span><span style=color:#fdf4c1>ok </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>v</span><span>[</span><span style=color:#fdf4c1>part</span><span>]; </span><span style=color:#fdf4c1>ok </span><span>{
+</span><span>                </span><span style=color:#fdf4c1>current </span><span style=color:#fe8019>= </span><span style=color:#fdf4c1>val
+</span><span>            } </span><span style=color:#fa5c4b>else </span><span>{
+</span><span>                </span><span style=color:#fa5c4b>return </span><span style=color:#d3869b>nil</span><span>, </span><span style=color:#fdf4c1>fmt</span><span>.</span><span style=color:#fdf4c1>Errorf</span><span>(</span><span style=color:#b8bb26>"key not found: </span><span style=color:#fdf4c1>%s</span><span style=color:#b8bb26>"</span><span>, </span><span style=color:#fdf4c1>part</span><span>)
+</span><span>            }
+</span><span>        </span><span style=color:#928374;font-style:italic>// ... handle other cases ...
+</span><span>        }
+</span><span>    }
+</span><span>
+</span><span>    </span><span style=color:#fa5c4b>return </span><span style=color:#fdf4c1>current</span><span>, </span><span style=color:#d3869b>nil
+</span><span>}
+</span></code></pre><p>This allows clients to access nested values within secrets using dot notation (e.g., “namespaces.cokeSystem.secrets.adminCredentials”).<h2 id=security-considerations>Security Considerations</h2><ol><li><strong>TLS</strong>: All communications are encrypted using TLS.<li><strong>Access Control</strong>: Secrets are only served to clients with valid keys.<li><strong>Path Validation</strong>: The server validates all path requests to prevent unauthorized access.<li><strong>Error Handling</strong>: Careful error handling prevents information leakage.</ol><h2 id=usage-example>Usage Example</h2><p>To request a secret, clients make a GET request to the webhook endpoint:<pre class=language-bash data-lang=bash style=color:#fdf4c1aa;background-color:#282828><code class=language-bash data-lang=bash><span style=color:#fdf4c1>curl -k </span><span style=color:#b8bb26>"https://localhost:8443/webhook?key=key=coca-cola.cluster-001&path=namespaces.cokeSystem.secrets.adminCredentials"
+</span></code></pre><p>The server will return the requested secret value if the key is valid and the path exists.<h2 id=future-improvements>Future Improvements</h2><ol><li><strong>JWT Validation</strong>: Implement JWT-based authentication using the stored JWT secret.<li><strong>Rate Limiting</strong>: Add rate limiting to prevent brute force attacks.<li><strong>Audit Logging</strong>: Implement detailed audit logging for all secret access.<li><strong>Secret Rotation</strong>: Add support for automatic secret rotation.<li><strong>Metrics</strong>: Add Prometheus metrics for monitoring.</ol><h2 id=conclusion>Conclusion</h2><p>Building a secure secrets management server requires careful attention to security details and proper handling of sensitive data. This implementation provides a solid foundation that can be extended based on specific requirements.<p>Remember that this is just one piece of a larger secrets management strategy. It should be combined with other security practices like:<ul><li>Regular secret rotation<li>Strict access controls<li>Comprehensive audit logging<li>Network security controls<li>Regular security audits</ul><p>The complete code provides a secure and flexible solution for serving secrets in a cloud-native environment while maintaining security best practices.</div><footer class=post-footer><ul class=post-tags><li><a href=https://zerotohero.dev/tags/inbox/>inbox</a><li><a href=https://zerotohero.dev/tags/go/>go</a><li><a href=https://zerotohero.dev/tags/security/>security</a><li><a href=https://zerotohero.dev/tags/secrets-management/>secrets-management</a><li><a href=https://zerotohero.dev/tags/tls/>tls</a><li><a href=https://zerotohero.dev/tags/rest-api/>rest-api</a></ul><nav class=paginav></nav></footer></article></main><footer class=footer><span>© <a href=https://zerotohero.dev>Volkan Özçelik</a> and <a href=/vadideki-geyik/team>Team Geyik</a></span><br><br> The content on this website is distributed under a <a href=https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en>CC-BY-NC-SA 4.0 license</a>.<br><br><a href=/about/privacy>Privacy Policy</a> | <a href=/about/contact>Contact</a><br><br><br></footer><a aria-label="go to top" title="Go to Top (Alt + G)" accesskey=g class=top-link href=#top id=top-link> <svg viewbox="0 0 12 6" fill=currentColor xmlns=http://www.w3.org/2000/svg><path d="M12 6H0l6-6z"/></svg> </a><script>let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });</script><script>var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };</script><script>document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })</script><script>document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                var content = codeblock.textContent;
+                if(codeblock.firstChild.tagName == 'TABLE') {
+                    content = Array(...codeblock.firstChild.getElementsByTagName('span')).map((span) => { return span.textContent; }).join('');
+                }
+                navigator.clipboard.writeText(content);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            // td containing LineNos
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            // table containing LineNos and code
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            // code blocks not having highlight as parent class
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });</script>

@@ -1,0 +1,793 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Zero to Hero - vcf</title>
+    <link rel="self" type="application/atom+xml" href="https://zerotohero.dev/tags/vcf/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://zerotohero.dev"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2024-12-12T00:00:00+00:00</updated>
+    <id>https://zerotohero.dev/tags/vcf/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Adding vSphere Clusters in VMware Cloud Foundation: A Detailed Guide</title>
+        <published>2024-12-12T00:00:00+00:00</published>
+        <updated>2024-12-12T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/add-vsphere-clusters-in-vcf/"/>
+        <id>https://zerotohero.dev/inbox/add-vsphere-clusters-in-vcf/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/add-vsphere-clusters-in-vcf/">&lt;p&gt;VMware Cloud Foundation (VCF) provides two methods for adding capacity to deployed workload domains:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Adding hosts to existing clusters&lt;&#x2F;li&gt;
+&lt;li&gt;Adding new clusters to existing workload domains&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;This guide focuses on the process of adding a new cluster to an existing workload domain.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;process-overview&quot;&gt;Process Overview&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;initial-navigation&quot;&gt;Initial Navigation&lt;&#x2F;h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Access SDDC Manager dashboard&lt;&#x2F;li&gt;
+&lt;li&gt;Navigate to Workload Domains&lt;&#x2F;li&gt;
+&lt;li&gt;Select target domain&lt;&#x2F;li&gt;
+&lt;li&gt;Click Actions &amp;gt; Add Cluster&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h3 id=&quot;configuration-steps&quot;&gt;Configuration Steps&lt;&#x2F;h3&gt;
+&lt;h4 id=&quot;1-storage-configuration&quot;&gt;1. Storage Configuration&lt;&#x2F;h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Select principal storage type (e.g., vSAN)&lt;&#x2F;li&gt;
+&lt;li&gt;Configure vSAN settings if applicable:
+&lt;ul&gt;
+&lt;li&gt;Set failures to tolerate&lt;&#x2F;li&gt;
+&lt;li&gt;Enable&#x2F;disable deduplication and compression&lt;&#x2F;li&gt;
+&lt;li&gt;Option to mount remote vSAN datastore for compute-only clusters&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h4 id=&quot;2-cluster-settings&quot;&gt;2. Cluster Settings&lt;&#x2F;h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Assign cluster name&lt;&#x2F;li&gt;
+&lt;li&gt;Select VLCM (vSphere Lifecycle Manager) desired state image&lt;&#x2F;li&gt;
+&lt;li&gt;Choose hosts from free pool (minimum 3 for vSAN)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h4 id=&quot;3-network-configuration&quot;&gt;3. Network Configuration&lt;&#x2F;h4&gt;
+&lt;p&gt;Default switch configuration includes:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Single switch with two NICs&lt;&#x2F;li&gt;
+&lt;li&gt;Separate port groups for:
+&lt;ul&gt;
+&lt;li&gt;Management traffic&lt;&#x2F;li&gt;
+&lt;li&gt;vMotion traffic&lt;&#x2F;li&gt;
+&lt;li&gt;vSAN traffic&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;VLAN ID assignment for NSX overlay network&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h4 id=&quot;4-licensing&quot;&gt;4. Licensing&lt;&#x2F;h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Apply appropriate vSphere license keys&lt;&#x2F;li&gt;
+&lt;li&gt;Review configuration&lt;&#x2F;li&gt;
+&lt;li&gt;Initiate deployment&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;deployment-process&quot;&gt;Deployment Process&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;timeline&quot;&gt;Timeline&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Typical deployment: approximately 30 minutes&lt;&#x2F;li&gt;
+&lt;li&gt;Progress monitored through SDDC Manager workflow&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;automated-tasks&quot;&gt;Automated Tasks&lt;&#x2F;h3&gt;
+&lt;p&gt;SDDC Manager performs numerous operations:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Cluster creation&lt;&#x2F;li&gt;
+&lt;li&gt;Host configuration&lt;&#x2F;li&gt;
+&lt;li&gt;Storage setup&lt;&#x2F;li&gt;
+&lt;li&gt;Network configuration&lt;&#x2F;li&gt;
+&lt;li&gt;NSX fabric integration&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;verification-steps&quot;&gt;Verification Steps&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;1-sddc-manager&quot;&gt;1. SDDC Manager&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Verify new cluster appears in domain&lt;&#x2F;li&gt;
+&lt;li&gt;Check host assignments&lt;&#x2F;li&gt;
+&lt;li&gt;Review cluster status&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;2-vsphere-client&quot;&gt;2. vSphere Client&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Confirm cluster in vCenter inventory&lt;&#x2F;li&gt;
+&lt;li&gt;Verify host configuration&lt;&#x2F;li&gt;
+&lt;li&gt;Check storage and network settings&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;3-nsx-manager&quot;&gt;3. NSX Manager&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Navigate to System &amp;gt; Fabric &amp;gt; Host&lt;&#x2F;li&gt;
+&lt;li&gt;Verify cluster added to NSX fabric&lt;&#x2F;li&gt;
+&lt;li&gt;Check host preparation status&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;benefits&quot;&gt;Benefits&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Scalability&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Easy infrastructure expansion&lt;&#x2F;li&gt;
+&lt;li&gt;Flexible capacity management&lt;&#x2F;li&gt;
+&lt;li&gt;Response to application demands&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Automation&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Consistent deployment process&lt;&#x2F;li&gt;
+&lt;li&gt;Reduced manual intervention&lt;&#x2F;li&gt;
+&lt;li&gt;Integrated configuration&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Integration&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Automatic NSX fabric inclusion&lt;&#x2F;li&gt;
+&lt;li&gt;Coordinated networking setup&lt;&#x2F;li&gt;
+&lt;li&gt;Unified management&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;best-practices&quot;&gt;Best Practices&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Planning&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Verify resource availability&lt;&#x2F;li&gt;
+&lt;li&gt;Plan network configuration&lt;&#x2F;li&gt;
+&lt;li&gt;Prepare host inventory&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Implementation&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Follow standard naming conventions&lt;&#x2F;li&gt;
+&lt;li&gt;Document VLAN assignments&lt;&#x2F;li&gt;
+&lt;li&gt;Verify prerequisites&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Post-Deployment&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Validate all components&lt;&#x2F;li&gt;
+&lt;li&gt;Test connectivity&lt;&#x2F;li&gt;
+&lt;li&gt;Update documentation&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;Adding vSphere clusters through SDDC Manager provides a streamlined, automated approach to scaling your VCF infrastructure. The process ensures consistent deployment while maintaining integration with all necessary components, from storage to networking and security.&lt;&#x2F;p&gt;
+&lt;p&gt;The ability to easily add capacity through new clusters helps organizations maintain agility in responding to changing workload demands while ensuring standardization across the infrastructure.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Deploying Application Virtual Networks (AVNs) in VMware Cloud Foundation: A Guide for Aria Suite</title>
+        <published>2024-12-12T00:00:00+00:00</published>
+        <updated>2024-12-12T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/deploying-application-virtual-networks/"/>
+        <id>https://zerotohero.dev/inbox/deploying-application-virtual-networks/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/deploying-application-virtual-networks/">&lt;p&gt;Application Virtual Networks (AVNs) are software-defined networking constructs built on overlay-backed virtual networks within NSX. When deploying the VMware Aria suite in Cloud Foundation, understanding AVN configuration is crucial for proper implementation.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;understanding-avn-types&quot;&gt;Understanding AVN Types&lt;&#x2F;h2&gt;
+&lt;p&gt;When deploying AVNs for the Aria suite, two distinct network segments are created:&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;1-region-segment-local-virtual-network&quot;&gt;1. Region Segment (Local Virtual Network)&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Purpose: Hosts components that run locally&lt;&#x2F;li&gt;
+&lt;li&gt;Characteristics: No failover requirement&lt;&#x2F;li&gt;
+&lt;li&gt;Example components: Aria Operations for Logs&lt;&#x2F;li&gt;
+&lt;li&gt;Local-only operations&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;2-cross-region-segment&quot;&gt;2. Cross-Region Segment&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Purpose: Hosts components requiring DR capabilities&lt;&#x2F;li&gt;
+&lt;li&gt;Supports failover to DR site during outages&lt;&#x2F;li&gt;
+&lt;li&gt;Hosts components such as:
+&lt;ul&gt;
+&lt;li&gt;Aria Suite Lifecycle Manager&lt;&#x2F;li&gt;
+&lt;li&gt;Workspace ONE Access&lt;&#x2F;li&gt;
+&lt;li&gt;Aria Automation&lt;&#x2F;li&gt;
+&lt;li&gt;Aria Operations&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;deployment-process&quot;&gt;Deployment Process&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;prerequisites&quot;&gt;Prerequisites&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;NSX edge cluster must be deployed in the management domain&lt;&#x2F;li&gt;
+&lt;li&gt;Tier-1 router must be available&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;configuration-steps&quot;&gt;Configuration Steps&lt;&#x2F;h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Initial Navigation&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Access SDDC Manager&lt;&#x2F;li&gt;
+&lt;li&gt;Navigate to AVNs tab&lt;&#x2F;li&gt;
+&lt;li&gt;Select management domain&lt;&#x2F;li&gt;
+&lt;li&gt;Choose Actions &amp;gt; Add AVNs&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Network Type Selection&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Choose between:
+&lt;ul&gt;
+&lt;li&gt;Overlay-backed NSX segments&lt;&#x2F;li&gt;
+&lt;li&gt;VLAN-backed NSX segments&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Note: DR capabilities require overlay-backed segments&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Edge Configuration&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Select NSX edge cluster&lt;&#x2F;li&gt;
+&lt;li&gt;Choose associated Tier-1 router&lt;&#x2F;li&gt;
+&lt;li&gt;Configure segment attachment&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h3 id=&quot;segment-configuration&quot;&gt;Segment Configuration&lt;&#x2F;h3&gt;
+&lt;h4 id=&quot;region-network-settings&quot;&gt;Region Network Settings&lt;&#x2F;h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Name specification (e.g., “region”)&lt;&#x2F;li&gt;
+&lt;li&gt;Subnet configuration (e.g., 192.168.11.0)&lt;&#x2F;li&gt;
+&lt;li&gt;Gateway assignment (e.g., 192.168.11.1)&lt;&#x2F;li&gt;
+&lt;li&gt;MTU setting (typically 8940)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h4 id=&quot;cross-region-network-settings&quot;&gt;Cross-Region Network Settings&lt;&#x2F;h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Name specification (e.g., “x-region”)&lt;&#x2F;li&gt;
+&lt;li&gt;Subnet configuration (e.g., 192.168.31.0)&lt;&#x2F;li&gt;
+&lt;li&gt;Gateway assignment (e.g., 192.168.31.1)&lt;&#x2F;li&gt;
+&lt;li&gt;MTU setting (typically 8940)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;deployment-verification&quot;&gt;Deployment Verification&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;nsx-manager&quot;&gt;NSX Manager&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Check network topology&lt;&#x2F;li&gt;
+&lt;li&gt;Verify segment creation&lt;&#x2F;li&gt;
+&lt;li&gt;Confirm routing configuration&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;vsphere-client&quot;&gt;vSphere Client&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;View segments as port groups&lt;&#x2F;li&gt;
+&lt;li&gt;Verify distributed switch integration&lt;&#x2F;li&gt;
+&lt;li&gt;Check network availability&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;implementation-considerations&quot;&gt;Implementation Considerations&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Design Planning&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Determine component placement&lt;&#x2F;li&gt;
+&lt;li&gt;Plan IP addressing scheme&lt;&#x2F;li&gt;
+&lt;li&gt;Consider DR requirements&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Network Architecture&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Review existing network topology&lt;&#x2F;li&gt;
+&lt;li&gt;Plan segment integration&lt;&#x2F;li&gt;
+&lt;li&gt;Consider bandwidth requirements&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Security Considerations&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Segment isolation&lt;&#x2F;li&gt;
+&lt;li&gt;Access controls&lt;&#x2F;li&gt;
+&lt;li&gt;Traffic patterns&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;benefits&quot;&gt;Benefits&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Software-Defined Networking&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Flexible network configuration&lt;&#x2F;li&gt;
+&lt;li&gt;Automated deployment&lt;&#x2F;li&gt;
+&lt;li&gt;Consistent implementation&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Disaster Recovery&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Built-in failover capability&lt;&#x2F;li&gt;
+&lt;li&gt;Site resilience&lt;&#x2F;li&gt;
+&lt;li&gt;Component protection&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Integration&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Seamless NSX integration&lt;&#x2F;li&gt;
+&lt;li&gt;vSphere compatibility&lt;&#x2F;li&gt;
+&lt;li&gt;Automated management&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;Deploying AVNs through SDDC Manager provides a streamlined approach to creating the necessary network infrastructure for the Aria suite. The automated process ensures consistent configuration while supporting both local operations and disaster recovery requirements.&lt;&#x2F;p&gt;
+&lt;p&gt;The separation between region and cross-region segments allows for flexible component placement while maintaining appropriate failover capabilities where needed. This architecture supports both operational efficiency and business continuity requirements.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Expanding vSphere Clusters in VMware Cloud Foundation: A Guide to Adding Hosts</title>
+        <published>2024-12-12T00:00:00+00:00</published>
+        <updated>2024-12-12T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/expanding-vsphere-clusters/"/>
+        <id>https://zerotohero.dev/inbox/expanding-vsphere-clusters/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/expanding-vsphere-clusters/">&lt;p&gt;While VMware Cloud Foundation (VCF) offers multiple ways to increase capacity, adding hosts to an existing cluster is one of the most straightforward methods. This guide walks through the process of expanding a vSphere cluster by adding new hosts.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;process-overview&quot;&gt;Process Overview&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;current-state-assessment&quot;&gt;Current State Assessment&lt;&#x2F;h3&gt;
+&lt;p&gt;Before adding hosts:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Check current cluster composition in vSphere client&lt;&#x2F;li&gt;
+&lt;li&gt;Review existing configuration in SDDC Manager&lt;&#x2F;li&gt;
+&lt;li&gt;Verify host count and configuration&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;navigation-path&quot;&gt;Navigation Path&lt;&#x2F;h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Access SDDC Manager&lt;&#x2F;li&gt;
+&lt;li&gt;Navigate to Workload Domains&lt;&#x2F;li&gt;
+&lt;li&gt;Select target domain&lt;&#x2F;li&gt;
+&lt;li&gt;View cluster details&lt;&#x2F;li&gt;
+&lt;li&gt;Access Hosts tab&lt;&#x2F;li&gt;
+&lt;li&gt;Select Actions &amp;gt; Add Host&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;host-selection-process&quot;&gt;Host Selection Process&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;key-considerations&quot;&gt;Key Considerations&lt;&#x2F;h3&gt;
+&lt;h4 id=&quot;network-pool-compatibility&quot;&gt;Network Pool Compatibility&lt;&#x2F;h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Hosts must be commissioned for the correct network pool&lt;&#x2F;li&gt;
+&lt;li&gt;Example: Management domain requires hosts from management network pool&lt;&#x2F;li&gt;
+&lt;li&gt;Different pools (like prod pool) are for different domains&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h4 id=&quot;configuration-inheritance&quot;&gt;Configuration Inheritance&lt;&#x2F;h4&gt;
+&lt;ul&gt;
+&lt;li&gt;New hosts automatically inherit:
+&lt;ul&gt;
+&lt;li&gt;Current switch configuration&lt;&#x2F;li&gt;
+&lt;li&gt;Network settings&lt;&#x2F;li&gt;
+&lt;li&gt;Cluster policies&lt;&#x2F;li&gt;
+&lt;li&gt;Security settings&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;implementation-steps&quot;&gt;Implementation Steps&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Host Selection&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Choose from available free pool&lt;&#x2F;li&gt;
+&lt;li&gt;Verify network pool compatibility&lt;&#x2F;li&gt;
+&lt;li&gt;Select appropriate number of hosts&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;License Assignment&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Apply vSphere license keys&lt;&#x2F;li&gt;
+&lt;li&gt;Verify license availability&lt;&#x2F;li&gt;
+&lt;li&gt;Ensure compliance&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Review and Deploy&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Confirm configuration settings&lt;&#x2F;li&gt;
+&lt;li&gt;Review inherited parameters&lt;&#x2F;li&gt;
+&lt;li&gt;Initiate addition workflow&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;deployment-process&quot;&gt;Deployment Process&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;timeline&quot;&gt;Timeline&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Typical deployment: approximately 15 minutes&lt;&#x2F;li&gt;
+&lt;li&gt;Progress tracked through workflow interface&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;automated-tasks&quot;&gt;Automated Tasks&lt;&#x2F;h3&gt;
+&lt;p&gt;SDDC Manager handles:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Host integration&lt;&#x2F;li&gt;
+&lt;li&gt;Network configuration&lt;&#x2F;li&gt;
+&lt;li&gt;Cluster policy application&lt;&#x2F;li&gt;
+&lt;li&gt;Storage setup&lt;&#x2F;li&gt;
+&lt;li&gt;Security configuration&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;verification-steps&quot;&gt;Verification Steps&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;1-sddc-manager-verification&quot;&gt;1. SDDC Manager Verification&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Check updated host count&lt;&#x2F;li&gt;
+&lt;li&gt;Verify cluster composition&lt;&#x2F;li&gt;
+&lt;li&gt;Review host status&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;2-vsphere-client-validation&quot;&gt;2. vSphere Client Validation&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Confirm host addition&lt;&#x2F;li&gt;
+&lt;li&gt;Check cluster configuration&lt;&#x2F;li&gt;
+&lt;li&gt;Verify resource availability&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;best-practices&quot;&gt;Best Practices&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Pre-expansion Planning&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Verify resource requirements&lt;&#x2F;li&gt;
+&lt;li&gt;Check network pool compatibility&lt;&#x2F;li&gt;
+&lt;li&gt;Ensure license availability&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Implementation&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add hosts during maintenance windows&lt;&#x2F;li&gt;
+&lt;li&gt;Verify configurations before proceeding&lt;&#x2F;li&gt;
+&lt;li&gt;Monitor workflow progress&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Post-expansion&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Validate cluster operations&lt;&#x2F;li&gt;
+&lt;li&gt;Check resource distribution&lt;&#x2F;li&gt;
+&lt;li&gt;Update documentation&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;benefits&quot;&gt;Benefits&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Scalability&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Easy capacity expansion&lt;&#x2F;li&gt;
+&lt;li&gt;Flexible resource management&lt;&#x2F;li&gt;
+&lt;li&gt;Quick response to demand&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Consistency&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Automated configuration inheritance&lt;&#x2F;li&gt;
+&lt;li&gt;Standardized deployment&lt;&#x2F;li&gt;
+&lt;li&gt;Reduced human error&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Efficiency&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Streamlined process&lt;&#x2F;li&gt;
+&lt;li&gt;Minimal manual intervention&lt;&#x2F;li&gt;
+&lt;li&gt;Quick implementation&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;Expanding vSphere clusters through SDDC Manager provides a reliable and efficient method for increasing capacity in your VCF environment. The automated inheritance of configurations ensures consistency while simplifying the expansion process.&lt;&#x2F;p&gt;
+&lt;p&gt;Remember to carefully consider network pool compatibility and existing configurations when selecting hosts for addition. The streamlined process helps organizations quickly respond to changing capacity needs while maintaining standardization across their infrastructure.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Software Bundle Management in VMware Cloud Foundation: A Complete Guide</title>
+        <published>2024-12-12T00:00:00+00:00</published>
+        <updated>2024-12-12T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/vcf-bundle/"/>
+        <id>https://zerotohero.dev/inbox/vcf-bundle/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/vcf-bundle/">&lt;p&gt;For VMware Cloud Foundation (VCF) administrators, understanding software bundle management is crucial for maintaining a healthy infrastructure. This guide explores the essentials of managing software bundles in VCF environments.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;understanding-software-bundles&quot;&gt;Understanding Software Bundles&lt;&#x2F;h2&gt;
+&lt;p&gt;Software bundles are the foundation of VCF lifecycle management, coming in two primary types:&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;patch-upgrade-bundles&quot;&gt;Patch&#x2F;Upgrade Bundles&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Used for existing infrastructure components&lt;&#x2F;li&gt;
+&lt;li&gt;Covers vCenter Server, NSX, and ESXi&lt;&#x2F;li&gt;
+&lt;li&gt;Applied to currently managed VCF components&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;install-bundles&quot;&gt;Install Bundles&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Used for new workload domain deployments&lt;&#x2F;li&gt;
+&lt;li&gt;Contains fresh installations of required components&lt;&#x2F;li&gt;
+&lt;li&gt;Essential for infrastructure expansion&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;bundle-management-methods&quot;&gt;Bundle Management Methods&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;online-deployment&quot;&gt;Online Deployment&lt;&#x2F;h3&gt;
+&lt;p&gt;For environments with internet access:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Configure Online Depot in SDDC Manager&lt;&#x2F;li&gt;
+&lt;li&gt;Provide VMware Customer Connect credentials&lt;&#x2F;li&gt;
+&lt;li&gt;Access bundles directly through the interface&lt;&#x2F;li&gt;
+&lt;li&gt;View available bundles and types in Bundle Management section&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h3 id=&quot;offline-deployment&quot;&gt;Offline Deployment&lt;&#x2F;h3&gt;
+&lt;p&gt;For air-gapped environments:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Use the offline bundle transfer utility from Customer Connect&lt;&#x2F;li&gt;
+&lt;li&gt;Download bundles on an internet-connected system&lt;&#x2F;li&gt;
+&lt;li&gt;Transfer to SDDC Manager&lt;&#x2F;li&gt;
+&lt;li&gt;Import bundles into the depot&lt;&#x2F;li&gt;
+&lt;li&gt;Validate bundles before use&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;download-management&quot;&gt;Download Management&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;flexible-scheduling-options&quot;&gt;Flexible Scheduling Options&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Schedule downloads during off-peak hours&lt;&#x2F;li&gt;
+&lt;li&gt;Initiate immediate downloads when needed&lt;&#x2F;li&gt;
+&lt;li&gt;Track progress in Download History tab&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;size-considerations&quot;&gt;Size Considerations&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Bundles can be several gigabytes&lt;&#x2F;li&gt;
+&lt;li&gt;Plan bandwidth usage accordingly&lt;&#x2F;li&gt;
+&lt;li&gt;Consider storage requirements&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;automation-capabilities&quot;&gt;Automation Capabilities&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;api-integration&quot;&gt;API Integration&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Manage bundles via API calls&lt;&#x2F;li&gt;
+&lt;li&gt;Enable infrastructure as code (IaC) workflows&lt;&#x2F;li&gt;
+&lt;li&gt;Support for scale operations&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;powercli-support&quot;&gt;PowerCLI Support&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Use PowerCLI Bundle Management Tool (KB Article 94760)&lt;&#x2F;li&gt;
+&lt;li&gt;Automate routine bundle operations&lt;&#x2F;li&gt;
+&lt;li&gt;Integrate with existing automation frameworks&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;release-management&quot;&gt;Release Management&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;version-control&quot;&gt;Version Control&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Access BOM (Bill of Materials) for each VCF release&lt;&#x2F;li&gt;
+&lt;li&gt;View release notes and documentation&lt;&#x2F;li&gt;
+&lt;li&gt;Track compatibility requirements&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;update-notifications&quot;&gt;Update Notifications&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Banner notifications for new bundles&lt;&#x2F;li&gt;
+&lt;li&gt;Easy access to bundle details&lt;&#x2F;li&gt;
+&lt;li&gt;Streamlined update process&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;best-practices&quot;&gt;Best Practices&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Preparation&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Download bundles before starting upgrades&lt;&#x2F;li&gt;
+&lt;li&gt;Verify storage capacity&lt;&#x2F;li&gt;
+&lt;li&gt;Check network bandwidth availability&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Validation&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Always validate bundles after import&lt;&#x2F;li&gt;
+&lt;li&gt;Verify bundle compatibility&lt;&#x2F;li&gt;
+&lt;li&gt;Review release notes&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Organization&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Maintain bundle inventory&lt;&#x2F;li&gt;
+&lt;li&gt;Track download history&lt;&#x2F;li&gt;
+&lt;li&gt;Document deployment patterns&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;workflow-integration&quot;&gt;Workflow Integration&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Updates&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Bundles available for immediate updates&lt;&#x2F;li&gt;
+&lt;li&gt;Compatible with existing infrastructure&lt;&#x2F;li&gt;
+&lt;li&gt;Automated validation checks&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;New Deployments&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ready for workload domain creation&lt;&#x2F;li&gt;
+&lt;li&gt;Consistent deployment process&lt;&#x2F;li&gt;
+&lt;li&gt;Validated configurations&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;Effective software bundle management is key to maintaining a healthy VCF environment. Whether working in connected or air-gapped environments, VCF provides flexible options for managing software bundles. The combination of automated tools, API support, and robust validation processes ensures administrators can maintain their infrastructure efficiently and securely.&lt;&#x2F;p&gt;
+&lt;p&gt;Remember to leverage available automation tools and follow best practices for bundle management to streamline operations and maintain consistency across your VCF deployment.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Host Commissioning in VMware C`loud Foundation: A Complete Guide</title>
+        <published>2024-12-12T00:00:00+00:00</published>
+        <updated>2024-12-12T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/vcf-host-comissioning/"/>
+        <id>https://zerotohero.dev/inbox/vcf-host-comissioning/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/vcf-host-comissioning/">&lt;p&gt;In VMware Cloud Foundation (VCF), adding cloud capacity is accomplished through a process called host commissioning, where physical servers are added to the SDDC Manager inventory. This guide walks through the process and key considerations.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;understanding-host-commissioning&quot;&gt;Understanding Host Commissioning&lt;&#x2F;h2&gt;
+&lt;p&gt;Host commissioning creates a “free pool” of available capacity from added servers. This pool serves as the foundation for:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Creating new workload domains&lt;&#x2F;li&gt;
+&lt;li&gt;Expanding existing clusters&lt;&#x2F;li&gt;
+&lt;li&gt;Managing overall cloud capacity&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;network-pool-configuration&quot;&gt;Network Pool Configuration&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;default-configuration&quot;&gt;Default Configuration&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Management pool created during initial bringup&lt;&#x2F;li&gt;
+&lt;li&gt;Serves as the baseline for management domain&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;creating-new-network-pools&quot;&gt;Creating New Network Pools&lt;&#x2F;h3&gt;
+&lt;p&gt;Network pools can support multiple network types:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;vSAN&lt;&#x2F;li&gt;
+&lt;li&gt;vMotion&lt;&#x2F;li&gt;
+&lt;li&gt;iSCSI&lt;&#x2F;li&gt;
+&lt;li&gt;NFS&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;network-pool-setup-process&quot;&gt;Network Pool Setup Process&lt;&#x2F;h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Navigate to Network Settings&lt;&#x2F;li&gt;
+&lt;li&gt;Click “Create Network Pool”&lt;&#x2F;li&gt;
+&lt;li&gt;Specify:
+&lt;ul&gt;
+&lt;li&gt;Pool name&lt;&#x2F;li&gt;
+&lt;li&gt;Network types to support&lt;&#x2F;li&gt;
+&lt;li&gt;VLAN details&lt;&#x2F;li&gt;
+&lt;li&gt;MTU settings&lt;&#x2F;li&gt;
+&lt;li&gt;IP subnet information&lt;&#x2F;li&gt;
+&lt;li&gt;IP address ranges for SDDC manager&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;host-commissioning-process&quot;&gt;Host Commissioning Process&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;prerequisites-checklist&quot;&gt;Prerequisites Checklist&lt;&#x2F;h3&gt;
+&lt;p&gt;Before commissioning hosts, verify:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;ESXi installation completed&lt;&#x2F;li&gt;
+&lt;li&gt;vSphere standard switch configured&lt;&#x2F;li&gt;
+&lt;li&gt;Pre-existing disk partitions removed&lt;&#x2F;li&gt;
+&lt;li&gt;DNS configuration completed&lt;&#x2F;li&gt;
+&lt;li&gt;Network connectivity established&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;adding-hosts&quot;&gt;Adding Hosts&lt;&#x2F;h3&gt;
+&lt;p&gt;Two methods are available:&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;individual-host-addition&quot;&gt;Individual Host Addition&lt;&#x2F;h4&gt;
+&lt;p&gt;Requires:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fully qualified hostname&lt;&#x2F;li&gt;
+&lt;li&gt;Principal storage type&lt;&#x2F;li&gt;
+&lt;li&gt;Network pool assignment&lt;&#x2F;li&gt;
+&lt;li&gt;Root user credentials&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h4 id=&quot;bulk-host-import&quot;&gt;Bulk Host Import&lt;&#x2F;h4&gt;
+&lt;p&gt;For multiple hosts:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Uses JSON file format&lt;&#x2F;li&gt;
+&lt;li&gt;Includes same information as individual addition&lt;&#x2F;li&gt;
+&lt;li&gt;More efficient for large-scale deployments&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;json-file-structure&quot;&gt;JSON File Structure&lt;&#x2F;h3&gt;
+&lt;p&gt;The import file must include:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Host details&lt;&#x2F;li&gt;
+&lt;li&gt;Storage configuration&lt;&#x2F;li&gt;
+&lt;li&gt;Network assignments&lt;&#x2F;li&gt;
+&lt;li&gt;Credentials&lt;&#x2F;li&gt;
+&lt;li&gt;Additional configuration parameters&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;validation-process&quot;&gt;Validation Process&lt;&#x2F;h2&gt;
+&lt;p&gt;After adding hosts:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;SDDC Manager connects to each host&lt;&#x2F;li&gt;
+&lt;li&gt;Verifies prerequisites&lt;&#x2F;li&gt;
+&lt;li&gt;Checks connectivity&lt;&#x2F;li&gt;
+&lt;li&gt;Validates configurations&lt;&#x2F;li&gt;
+&lt;li&gt;Reports success or failure&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;commissioning-workflow&quot;&gt;Commissioning Workflow&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;steps&quot;&gt;Steps&lt;&#x2F;h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Initial validation&lt;&#x2F;li&gt;
+&lt;li&gt;Host preparation&lt;&#x2F;li&gt;
+&lt;li&gt;Network configuration&lt;&#x2F;li&gt;
+&lt;li&gt;Storage setup&lt;&#x2F;li&gt;
+&lt;li&gt;Final verification&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h3 id=&quot;monitoring&quot;&gt;Monitoring&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;View workflow progress in SDDC Manager&lt;&#x2F;li&gt;
+&lt;li&gt;Monitor subtasks&lt;&#x2F;li&gt;
+&lt;li&gt;Access error details if needed&lt;&#x2F;li&gt;
+&lt;li&gt;Track completion status&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;best-practices&quot;&gt;Best Practices&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Pre-commissioning&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Verify all prerequisites&lt;&#x2F;li&gt;
+&lt;li&gt;Prepare network pools&lt;&#x2F;li&gt;
+&lt;li&gt;Document host information&lt;&#x2F;li&gt;
+&lt;li&gt;Test connectivity&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;During Commissioning&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Monitor workflow progress&lt;&#x2F;li&gt;
+&lt;li&gt;Address any validation errors&lt;&#x2F;li&gt;
+&lt;li&gt;Keep credentials secure&lt;&#x2F;li&gt;
+&lt;li&gt;Document any issues&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Post-commissioning&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Verify host availability&lt;&#x2F;li&gt;
+&lt;li&gt;Check network configurations&lt;&#x2F;li&gt;
+&lt;li&gt;Test connectivity&lt;&#x2F;li&gt;
+&lt;li&gt;Update documentation&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;Host commissioning is a critical process in expanding VCF capacity. By following these steps and best practices, administrators can ensure successful host addition and maintain a healthy cloud infrastructure. Remember to always verify prerequisites and monitor the commissioning process to ensure successful deployment.&lt;&#x2F;p&gt;
+&lt;p&gt;The ability to commission hosts both individually and in bulk provides flexibility for different deployment scenarios, while the comprehensive validation process helps ensure reliability and consistency in your VCF environment.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>
