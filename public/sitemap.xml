@@ -372,6 +372,10 @@
         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
+        <loc>https://zerotohero.dev/inbox/shiori/</loc>
+        <lastmod>2025-06-22</lastmod>
+    </url>
+    <url>
         <loc>https://zerotohero.dev/inbox/slog-levels/</loc>
         <lastmod>2024-11-28</lastmod>
     </url>
@@ -661,6 +665,9 @@
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/best-practices/</loc>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/tags/bookmarking/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/career/</loc>
@@ -1090,6 +1097,9 @@
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/shell/</loc>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/tags/shiori/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/simplicity/</loc>

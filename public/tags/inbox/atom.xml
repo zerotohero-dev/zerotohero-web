@@ -4,8 +4,301 @@
     <link rel="self" type="application/atom+xml" href="https://zerotohero.dev/tags/inbox/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://zerotohero.dev"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2024-12-22T00:00:00+00:00</updated>
+    <updated>2025-06-22T00:00:00+00:00</updated>
     <id>https://zerotohero.dev/tags/inbox/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Bulk Import Bookmarks to Shiori: A Simple Bash Script Solution</title>
+        <published>2025-06-22T00:00:00+00:00</published>
+        <updated>2025-06-22T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/shiori/"/>
+        <id>https://zerotohero.dev/inbox/shiori/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/shiori/">&lt;p&gt;If you’re like me and have accumulated hundreds of bookmarks across various
+services, migrating them to a self-hosted solution like
+&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;go-shiori&#x2F;shiori&quot;&gt;&lt;strong&gt;Shiori&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; can feel daunting. While
+&lt;strong&gt;Shiori&lt;&#x2F;strong&gt;’s simplicity is one of its strengths, importing bookmarks one by one
+through the web UI or CLI can be time-consuming.&lt;&#x2F;p&gt;
+&lt;p&gt;In this post, I’ll share a bash script that automates the bulk import process,
+making it easy to migrate your entire bookmark collection to &lt;strong&gt;Shiori&lt;&#x2F;strong&gt; in
+minutes and finally break free from the “social” bookmarking ecosystem.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-is-shiori&quot;&gt;What is Shiori?&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;go-shiori&#x2F;shiori&quot;&gt;Shiori&lt;&#x2F;a&gt; is a simple, self-hosted bookmark
+manager written in &lt;a href=&quot;https:&#x2F;&#x2F;go.dev&#x2F;&quot;&gt;Go&lt;&#x2F;a&gt;. I like to call it my
+“&lt;em&gt;antisocial bookmark manager&lt;&#x2F;em&gt;” because it’s the complete opposite of modern,
+social-media-influenced bookmarking services. There are no social features,
+no “trending” sections, no algorithmic recommendations, and definitely
+no tracking.&lt;&#x2F;p&gt;
+&lt;p&gt;It’s just you and your bookmarks, exactly how it should be.&lt;&#x2F;p&gt;
+&lt;p&gt;Think of Shiori as your personal library: A quiet, private space where you can
+save and organize content that matters to you, without the noise and
+distractions of the modern web.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;why-i-chose-shiori-over-traditional-services&quot;&gt;Why I Chose Shiori Over Traditional Services&lt;&#x2F;h2&gt;
+&lt;p&gt;After years of using various “&lt;em&gt;as a service&lt;&#x2F;em&gt;” bookmark managers
+(Pocket, Instapaper, Pinboard, and others), I made the switch to &lt;strong&gt;Shiori&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Here is “why” in a nutshell:&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;complete-privacy-and-control&quot;&gt;Complete Privacy and Control&lt;&#x2F;h3&gt;
+&lt;p&gt;Your bookmarks reveal a lot about your interests, research, and thought
+processes. With Shiori being self-hosted, your data never leaves your server,
+or your laptop, if you prefer to host your bookmarks locally.&lt;&#x2F;p&gt;
+&lt;p&gt;No company is analyzing your reading habits, selling your data, or using it to
+train AI models.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;true-offline-access&quot;&gt;True Offline Access&lt;&#x2F;h3&gt;
+&lt;p&gt;Shiori doesn’t just save links - it creates full offline archives of web pages.&lt;&#x2F;p&gt;
+&lt;p&gt;This means:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Content remains accessible even if the original site goes down&lt;&#x2F;li&gt;
+&lt;li&gt;No more “404 Page Not Found” disappointments&lt;&#x2F;li&gt;
+&lt;li&gt;Read your saved articles without an internet connection
+*Protection against content changes or removals&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;no-vendor-lock-in&quot;&gt;No Vendor Lock-in&lt;&#x2F;h3&gt;
+&lt;p&gt;With traditional services, you’re at the mercy of:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Pricing changes (&lt;em&gt;remember when Pocket introduced Pocket Premium?&lt;&#x2F;em&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;Feature removals (&lt;em&gt;RIP Google Reader&lt;&#x2F;em&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;Service shutdowns (&lt;em&gt;Delicious, anyone?&lt;&#x2F;em&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;API restrictions and rate limits&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;With &lt;strong&gt;Shiori&lt;&#x2F;strong&gt;, you own your data and the software. It’s open source, so even
+if development stops, your bookmarks remain accessible.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;clean-distraction-free-interface&quot;&gt;Clean, Distraction-Free Interface&lt;&#x2F;h3&gt;
+&lt;p&gt;Unlike modern services that push “recommended content” or “what’s trending,”
+&lt;strong&gt;Shiori&lt;&#x2F;strong&gt; presents only what you’ve saved. No algorithmic feed, no social
+features trying to increase engagement—just a clean, searchable list of
+your bookmarks.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;lightweight-and-fast&quot;&gt;Lightweight and Fast&lt;&#x2F;h3&gt;
+&lt;p&gt;Running on a simple SQLite database (&lt;em&gt;or, PostgreSQL&#x2F;MySQL, if you prefer&lt;&#x2F;em&gt;),
+&lt;strong&gt;Shiori&lt;&#x2F;strong&gt; is incredibly lightweight. It runs comfortably on a
+Raspberry Pi, doesn’t require complex infrastructure, and starts up in seconds.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;developer-friendly&quot;&gt;Developer-Friendly&lt;&#x2F;h3&gt;
+&lt;p&gt;With a proper CLI interface and straightforward database schema, &lt;strong&gt;Shiori&lt;&#x2F;strong&gt;
+plays well with scripts and automation. You can easily:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Bulk import&#x2F;export bookmarks&lt;&#x2F;li&gt;
+&lt;li&gt;Integrate with other tools&lt;&#x2F;li&gt;
+&lt;li&gt;Create custom workflows&lt;&#x2F;li&gt;
+&lt;li&gt;Automate bookmark management&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;the-migration-challenge&quot;&gt;The Migration Challenge&lt;&#x2F;h2&gt;
+&lt;p&gt;Shiori provides several ways to add bookmarks:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Through the web interface (&lt;em&gt;one at a time&lt;&#x2F;em&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;Using the CLI command &lt;code&gt;shiori add &amp;lt;url&amp;gt;&lt;&#x2F;code&gt; (&lt;em&gt;also one at a time&lt;&#x2F;em&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;Importing from browsers (&lt;em&gt;limited format support&lt;&#x2F;em&gt;)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;But what if you have a simple text file with hundreds of URLs? Or what if
+you’re migrating from another service that exports to a basic list format?&lt;&#x2F;p&gt;
+&lt;p&gt;That’s where automation comes in handy.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-solution-a-bulk-import-script&quot;&gt;The Solution: A Bulk Import Script&lt;&#x2F;h2&gt;
+&lt;p&gt;I’ve created a bash script that:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Reads URLs from a text file (&lt;em&gt;one URL per line&lt;&#x2F;em&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;Adds each bookmark to Shiori automatically&lt;&#x2F;li&gt;
+&lt;li&gt;Tracks success&#x2F;failure statistics&lt;&#x2F;li&gt;
+&lt;li&gt;Logs errors for troubleshooting&lt;&#x2F;li&gt;
+&lt;li&gt;Provides progress feedback during import&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Here’s the complete script:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;#!&#x2F;bin&#x2F;bash
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Script to bulk import links to Shiori
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Usage: .&#x2F;import.sh &amp;lt;links_file.txt&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;LINKS_FILE&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;.&#x2F;links.txt&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;[ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;$# -eq 0 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;]&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;then
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Usage: $&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt; &amp;lt;links_file.txt&amp;gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Defaulting to .&#x2F;links.txt&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;else 
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;LINKS_FILE&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;fi
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Check if the file exists
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;[ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;! &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;-f &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;LINKS_FILE&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;]&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;then
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Error: File &amp;#39;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;LINKS_FILE&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39; not found!&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;exit&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt; 1
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;fi
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Check if shiori is in PATH
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;! &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;command &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;-v shiori &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;&amp;amp;&amp;gt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt; &#x2F;dev&#x2F;null&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;then
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Error: shiori command not found in PATH!&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Please ensure shiori binary is accessible&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;exit&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt; 1
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;fi
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Counter variables
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;total&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;0
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;success&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;0
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;failed&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;0
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Log file for errors
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;ERROR_LOG&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;shiori_import_errors_$(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;date +%Y%m%d_%H%M%S&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;).log&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Starting Shiori import from: $&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;LINKS_FILE&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Errors will be logged to: $&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;ERROR_LOG&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;----------------------------------------&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Read the file line by line
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;while &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;IFS= read -r url &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;|| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;[ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;-n &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;url&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;]&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;do
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Skip empty lines and lines starting with #
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;[[ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;-z &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;url&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;]] &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;|| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;[[ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;url&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=~ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;^&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;[[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;:space:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;]]&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;# &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;]]&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;then
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;continue
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;fi
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Trim whitespace
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;url&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;$(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;url&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;xargs&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  ((total&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;++&lt;&#x2F;span&gt;&lt;span&gt;))
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;-n &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;[$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;total&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;] Adding: $&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;url&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt; ... &amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Add bookmark to Shiori
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;output&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;$(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;shiori add &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;url&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;2&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;&amp;gt;&amp;amp;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;then
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;SUCCESS&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;    ((success&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;++&lt;&#x2F;span&gt;&lt;span&gt;))
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Extract bookmark ID from output (macOS compatible)
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;bookmark_id&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;$(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;output&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;\
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;grep -o &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;ID:[[:space:]]*[0-9]*&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;grep -o &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;[0-9]*&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;|| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;\
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;output&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;grep -o &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;Added bookmark with ID [0-9]*&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;\
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;grep -o &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;[0-9]*$&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;|| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;\
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;output&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;grep -o &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;[0-9]\+&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;head -1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;[ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;-n &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;bookmark_id&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;]&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;then
+&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;   → Bookmark ID: $&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;bookmark_id&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;fi
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;else
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;FAILED&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;    ((failed&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;++&lt;&#x2F;span&gt;&lt;span&gt;))
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;[$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;total&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;] Failed to add: $&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;url&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;&amp;gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;ERROR_LOG&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Error: $&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;output&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;&amp;gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;ERROR_LOG&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;----------------------------------------&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;&amp;gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;ERROR_LOG&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;fi
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Small delay to avoid overwhelming the server
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;sleep 0.5
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;done &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;&amp;lt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;LINKS_FILE&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;----------------------------------------&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Import completed!&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Total processed: $&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;total&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Successful: $&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;success&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Failed: $&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;failed&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;[ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;$failed -gt 0 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;]&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;then
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Check $&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;ERROR_LOG&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt; for details on failed imports&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;fi
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;how-to-use-the-script&quot;&gt;How to Use the Script&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;1-prerequisites&quot;&gt;1. Prerequisites&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Shiori&lt;&#x2F;strong&gt; installed and accessible in your &lt;code&gt;$PATH&lt;&#x2F;code&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;A text file containing URLs (&lt;em&gt;one per line&lt;&#x2F;em&gt;).&lt;&#x2F;li&gt;
+&lt;li&gt;Bash shell (&lt;em&gt;works on Linux, macOS, and WSL&lt;&#x2F;em&gt;)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;2-prepare-your-url-list&quot;&gt;2. Prepare Your URL List&lt;&#x2F;h3&gt;
+&lt;p&gt;Create a file called &lt;code&gt;links.txt&lt;&#x2F;code&gt; with your bookmarks:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#282828;color:#fdf4c1aa;&quot;&gt;&lt;code&gt;&lt;span&gt;https:&#x2F;&#x2F;github.com&#x2F;go-shiori&#x2F;shiori
+&lt;&#x2F;span&gt;&lt;span&gt;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;
+&lt;&#x2F;span&gt;&lt;span&gt;https:&#x2F;&#x2F;example.com&#x2F;article
+&lt;&#x2F;span&gt;&lt;span&gt;# This is a comment - it will be skipped
+&lt;&#x2F;span&gt;&lt;span&gt;https:&#x2F;&#x2F;another-site.com&#x2F;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;# Empty lines are also skipped
+&lt;&#x2F;span&gt;&lt;span&gt;https:&#x2F;&#x2F;final-url.com&#x2F;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;3-run-the-script&quot;&gt;3. Run the Script&lt;&#x2F;h3&gt;
+&lt;p&gt;Save the script as &lt;code&gt;import.sh&lt;&#x2F;code&gt;, make it executable, and run:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;chmod +x import.sh
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;.&#x2F;import.sh links.txt
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Or use the default &lt;code&gt;links.txt&lt;&#x2F;code&gt; file:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;.&#x2F;import.sh
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;4-monitor-progress&quot;&gt;4. Monitor Progress&lt;&#x2F;h3&gt;
+&lt;p&gt;The script provides real-time feedback:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#282828;color:#fdf4c1aa;&quot;&gt;&lt;code&gt;&lt;span&gt;Starting Shiori import from: .&#x2F;links.txt
+&lt;&#x2F;span&gt;&lt;span&gt;Errors will be logged to: shiori_import_errors_20250622_184441.log
+&lt;&#x2F;span&gt;&lt;span&gt;----------------------------------------
+&lt;&#x2F;span&gt;&lt;span&gt;[1] Adding: https:&#x2F;&#x2F;github.com&#x2F;go-shiori&#x2F;shiori ... SUCCESS
+&lt;&#x2F;span&gt;&lt;span&gt;   → Bookmark ID: 1
+&lt;&#x2F;span&gt;&lt;span&gt;[2] Adding: https:&#x2F;&#x2F;news.ycombinator.com&#x2F; ... SUCCESS
+&lt;&#x2F;span&gt;&lt;span&gt;   → Bookmark ID: 2
+&lt;&#x2F;span&gt;&lt;span&gt;[3] Adding: https:&#x2F;&#x2F;invalid-url ... FAILED
+&lt;&#x2F;span&gt;&lt;span&gt;----------------------------------------
+&lt;&#x2F;span&gt;&lt;span&gt;Import completed!
+&lt;&#x2F;span&gt;&lt;span&gt;Total processed: 3
+&lt;&#x2F;span&gt;&lt;span&gt;Successful: 2
+&lt;&#x2F;span&gt;&lt;span&gt;Failed: 1
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;Check shiori_import_errors_20250622_184441.log \
+&lt;&#x2F;span&gt;&lt;span&gt;  for details on failed imports
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;key-features&quot;&gt;Key Features&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;error-handling&quot;&gt;Error Handling&lt;&#x2F;h3&gt;
+&lt;p&gt;The script creates a timestamped log file for any failures, making it easy to
+identify and retry problematic URLs.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;progress-tracking&quot;&gt;Progress Tracking&lt;&#x2F;h3&gt;
+&lt;p&gt;Real-time feedback shows exactly which URLs are being processed and their
+import status.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;comment-support&quot;&gt;Comment Support&lt;&#x2F;h3&gt;
+&lt;p&gt;Lines starting with &lt;code&gt;#&lt;&#x2F;code&gt; are treated as comments and skipped, allowing you to
+annotate your URL list.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;rate-limiting&quot;&gt;Rate Limiting&lt;&#x2F;h3&gt;
+&lt;p&gt;A 0.5-second delay between imports prevents overwhelming your Shiori instance.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;cross-platform-compatibility&quot;&gt;Cross-Platform Compatibility&lt;&#x2F;h3&gt;
+&lt;p&gt;The script uses POSIX-compliant commands and works on Linux, macOS,
+and Windows (&lt;em&gt;via WSL&lt;&#x2F;em&gt;).&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;extending-the-script&quot;&gt;Extending the Script&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;adding-tags&quot;&gt;Adding Tags&lt;&#x2F;h3&gt;
+&lt;p&gt;To add tags during import, modify the shiori command:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;shiori add &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;url&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt; -t &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;imported,to-read&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;2&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;&amp;gt;&amp;amp;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;1
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;creating-offline-archives&quot;&gt;Creating Offline Archives&lt;&#x2F;h3&gt;
+&lt;p&gt;Depending on your Shiori version, you might be able to create offline 4
+archives during import. Check available options with:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;shiori add --help
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;shiori update --help
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;parallel-processing&quot;&gt;Parallel Processing&lt;&#x2F;h3&gt;
+&lt;p&gt;For faster imports with large lists, you could modify the script to use
+GNU parallel:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cat links.txt &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;parallel -j 4 shiori add {}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;troubleshooting&quot;&gt;Troubleshooting&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;command-not-found&quot;&gt;Command Not Found&lt;&#x2F;h3&gt;
+&lt;p&gt;If you get “shiori: command not found”, ensure Shiori is in your &lt;code&gt;$PATH&lt;&#x2F;code&gt;:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;which shiori
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Should output something like: &#x2F;usr&#x2F;local&#x2F;bin&#x2F;shiori
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;permission-denied&quot;&gt;Permission Denied&lt;&#x2F;h3&gt;
+&lt;p&gt;Make sure the script is executable:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;chmod +x import.sh
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;special-characters-in-urls&quot;&gt;Special Characters in URLs&lt;&#x2F;h3&gt;
+&lt;p&gt;The script handles most URLs correctly, but if you have URLs with special
+characters, ensure they’re properly encoded.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;This simple bash script has saved me hours of manual work when migrating
+bookmarks to Shiori. It’s a great example of how a little automation can
+streamline repetitive tasks.&lt;&#x2F;p&gt;
+&lt;p&gt;The script is intentionally kept simple and focused on the core functionality.
+Feel free to modify it for your specific needs - perhaps adding custom titles,
+excerpts, or integrating with other tools in your workflow.&lt;&#x2F;p&gt;
+&lt;p&gt;Happy bookmarking 🔖.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>Understanding DEK and KEK in Encryption: A Practical Guide</title>
         <published>2024-12-22T00:00:00+00:00</published>
