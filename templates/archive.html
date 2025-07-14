@@ -36,6 +36,7 @@
 {% set posts_12 = get_section(path="tips/_index.md") %}
 {% set posts_13 = get_section(path="top-of-mind/_index.md") %}
 {% set posts_21 = get_section(path="zero-to-prod/_index.md") %}
+{% set posts_22 = get_section(path="inbox/_index.md") %}
 
 {% set combined_posts = posts_1.pages
 | concat(with=posts_2.pages)
@@ -46,6 +47,8 @@
 | concat(with=posts_12.pages)
 | concat(with=posts_13.pages)
 | concat(with=posts_21.pages)
+| concat(with=posts_22.pages)
+
 %}
 
 {% set yearly_posts = combined_posts | group_by(attribute="year") %}

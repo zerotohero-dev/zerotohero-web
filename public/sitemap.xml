@@ -380,6 +380,14 @@
         <lastmod>2024-11-28</lastmod>
     </url>
     <url>
+        <loc>https://zerotohero.dev/inbox/snippet-crypto-in-go/</loc>
+        <lastmod>2025-07-12</lastmod>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/inbox/snippet-systemd-network-wait-online-too-long/</loc>
+        <lastmod>2025-07-13</lastmod>
+    </url>
+    <url>
         <loc>https://zerotohero.dev/inbox/spiffe-acl/</loc>
         <lastmod>2024-11-24</lastmod>
     </url>
@@ -790,6 +798,9 @@
         <loc>https://zerotohero.dev/tags/documentation/</loc>
     </url>
     <url>
+        <loc>https://zerotohero.dev/tags/drafts/</loc>
+    </url>
+    <url>
         <loc>https://zerotohero.dev/tags/ecr/</loc>
     </url>
     <url>
@@ -1111,6 +1122,9 @@
         <loc>https://zerotohero.dev/tags/slog/</loc>
     </url>
     <url>
+        <loc>https://zerotohero.dev/tags/snippets/</loc>
+    </url>
+    <url>
         <loc>https://zerotohero.dev/tags/software-bundles/</loc>
     </url>
     <url>
@@ -1153,6 +1167,9 @@
         <loc>https://zerotohero.dev/tags/system-design/</loc>
     </url>
     <url>
+        <loc>https://zerotohero.dev/tags/systemd/</loc>
+    </url>
+    <url>
         <loc>https://zerotohero.dev/tags/tcp-ip/</loc>
     </url>
     <url>
@@ -1184,6 +1201,9 @@
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/typography/</loc>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/tags/ubuntu/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/unix/</loc>

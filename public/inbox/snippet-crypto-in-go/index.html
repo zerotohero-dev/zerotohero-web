@@ -1,0 +1,430 @@
+<!doctype html><html dir=auto lang=en><head><meta charset=utf-8><meta content="IE=edge" http-equiv=X-UA-Compatible><meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name=viewport><meta content="index, follow" name=robots><title>Snippet/Draft: Crypto in Go</title><meta content="keyword1, keyword2, keyword3" name=keywords><meta content="Snippet/Draft: Crypto in Go" name=description><meta content="Volkan Özçelik" name=author><link href=https://zerotohero.dev/inbox/snippet-crypto-in-go/ rel=canonical><link href=https://zerotohero.dev/css/includes/scroll-bar.css rel=stylesheet><link href=https://zerotohero.dev/css/styles.css rel=stylesheet><link href=https://zerotohero.dev/css/override.css rel=stylesheet><link href=https://zerotohero.dev/atom.xml rel=alternate title=RSS type=application/atom+xml><noscript><style>#theme-toggle,.top-link{display:none}</style> <style>@media (prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:#dadadb;--secondary:#9b9c9d;--tertiary:#414244;--content:#c4c4c5;--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><body id=top><script>if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }</script><script src=https://player.vimeo.com/api/player.js></script><header class=header><nav class=nav><div class=logo><a title="Zero to Hero (Alt + H)" accesskey=h href=https://zerotohero.dev> <svg viewbox="-0.5 -0.5 32 32" height=32 id=High-Voltage--Streamline-Kawaii-Emoji style=position:relative;top:2px;left:4px width=32 xmlns=http://www.w3.org/2000/svg><desc>High Voltage Streamline Emoji: https://streamlinehq.com</desc><path d="M16.244 18.21002a56.048 56.048 0 0 1 -8.1313 -0.8853599999999999 3.3480000000000003 3.3480000000000003 0 0 1 -2.3374 -4.7802C6.500699999999999 11.097999999999999 16.04994 3.35854 21.79548 1.2059a1.14328 1.14328 0 0 1 1.36772 1.68392c-1.2183 1.8599999999999999 -3.5340000000000003 4.0641 -7.88702 8.56716 1.98772 0.124 4.207319999999999 -0.093 6.55216 -0.07688a3.66172 3.66172 0 0 1 3.0534999999999997 1.3813600000000001c0.6975 0.9734 0.97898 2.33058 0.32674000000000003 3.3356 -1.54504 2.37894 -9.10284 9.4054 -13.52468 12.80362 -1.5741800000000001 1.2096200000000001 -2.7565199999999996 1.27596 -3.41 0.26226 -0.39742 -0.6169 0.18166 -1.32618 0.5251399999999999 -1.8258999999999999C10.185979999999999 25.320800000000002 16.182000000000002 18.20754 16.244 18.21002z" fill=#ffe500 stroke-width=1></path><path d="M24.881839999999997 12.76146a3.66172 3.66172 0 0 0 -3.0534999999999997 -1.3813600000000001 52.95544 52.95544 0 0 0 -1.9734599999999998 0.03038 3.472 3.472 0 0 1 2.54696 1.3509799999999998c0.6975 0.9734 0.9796 2.33058 0.32674000000000003 3.3356 -1.5444200000000001 2.37894 -9.10284 9.40478 -13.52468 12.80362a6.66996 6.66996 0 0 1 -0.744 0.496c0.682 0.75144 1.78498 0.6107 3.2209000000000003 -0.496 4.424939999999999 -3.3988400000000003 11.98336 -10.42468 13.52778 -12.80362 0.65286 -1.00502 0.37076 -2.3622 -0.32674000000000003 -3.3356zM20.6832 2.88982c-1.16498 1.77816 -3.3368399999999996 3.87314 -7.33026 7.9918000000000005a0.35773999999999995 0.35773999999999995 0 0 0 0.248 0.60698c0.65596 0.01302 1.33486 0 2.0292600000000003 -0.02294 -0.11656 -0.00496 -0.23994000000000001 0 -0.35525999999999996 -0.00868 4.34 -4.495 6.66066 -6.700340000000001 7.88082 -8.556000000000001a1.1457600000000001 1.1457600000000001 0 0 0 -1.35904 -1.69446c-0.3565 0.1333 -0.7285 0.28892 -1.11104 0.46252a1.09802 1.09802 0 0 1 -0.00248 1.22078z" fill=#f2c100 stroke-width=1></path><path d="M16.244 18.21002a56.048 56.048 0 0 1 -8.1313 -0.8853599999999999 3.3480000000000003 3.3480000000000003 0 0 1 -2.3374 -4.7802C6.500699999999999 11.097999999999999 16.04994 3.35854 21.79548 1.2059a1.14328 1.14328 0 0 1 1.36772 1.68392c-1.2183 1.8599999999999999 -3.5340000000000003 4.0641 -7.88702 8.56716 1.98772 0.124 4.207319999999999 -0.093 6.55216 -0.07688a3.66172 3.66172 0 0 1 3.0534999999999997 1.3813600000000001c0.6975 0.9734 0.97898 2.33058 0.32674000000000003 3.3356 -1.54504 2.37894 -9.10284 9.4054 -13.52468 12.80362 -1.5741800000000001 1.2096200000000001 -2.7565199999999996 1.27596 -3.41 0.26226 -0.39742 -0.6169 0.18166 -1.32618 0.5251399999999999 -1.8258999999999999C10.185979999999999 25.320800000000002 16.182000000000002 18.20754 16.244 18.21002z" fill=none stroke=#45413c stroke-linecap=round stroke-linejoin=round stroke-width=1></path></svg> Zero to Hero </a><div class=logo-switches><button title="(Alt + T)" accesskey=t id=theme-toggle><svg viewbox="0 0 24 24" fill=none height=18 id=moon stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=24 xmlns=http://www.w3.org/2000/svg><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg> <svg viewbox="0 0 24 24" fill=none height=18 id=sun stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=24 xmlns=http://www.w3.org/2000/svg><circle cx=12 cy=12 r=5></circle><line x1=12 x2=12 y1=1 y2=3></line><line x1=12 x2=12 y1=21 y2=23></line><line x1=4.22 x2=5.64 y1=4.22 y2=5.64></line><line x1=18.36 x2=19.78 y1=18.36 y2=19.78></line><line x1=1 x2=3 y1=12 y2=12></line><line x1=21 x2=23 y1=12 y2=12></line><line x1=4.22 x2=5.64 y1=19.78 y2=18.36></line><line x1=18.36 x2=19.78 y1=5.64 y2=4.22></line></svg></button><ul class=lang-switch><li></ul></div></div><ul id=menu><li><a href=/about title=About> <span>About</span> </a><li><a href=/archive title=Archive> <span>Archive</span> </a><li><a href=/tags title=Tags> <span>Tags</span> </a><li><a title="Geyik TV" href=https://zerotohero.tv> <span>Geyik TV</span> <svg viewbox="0 0 24 24" fill=none height=12 shape-rendering=geometricPrecision stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2.5 width=12><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path><path d="M15 3h6v6"></path><path d="M10 14L21 3"></path></svg> </a><li><a title="Vadideki Geyik" href=https://vadidekigeyik.com> <span>Vadideki Geyik</span> <svg viewbox="0 0 24 24" fill=none height=12 shape-rendering=geometricPrecision stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2.5 width=12><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path><path d="M15 3h6v6"></path><path d="M10 14L21 3"></path></svg> </a><li><a href=https://discord.gg/kampus title=kamp.us> <span>kamp.us</span> <svg viewbox="0 0 24 24" fill=none height=12 shape-rendering=geometricPrecision stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2.5 width=12><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path><path d="M15 3h6v6"></path><path d="M10 14L21 3"></path></svg> </a><li><a href=https://github.com/spiffe/spike title=SPIKE> <span>SPIKE</span> <svg viewbox="0 0 24 24" fill=none height=12 shape-rendering=geometricPrecision stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2.5 width=12><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path><path d="M15 3h6v6"></path><path d="M10 14L21 3"></path></svg> </a><li><a href=https://github.com/vmware-tanzu/secrets-manager title=VSecM> <span>VSecM</span> <svg viewbox="0 0 24 24" fill=none height=12 shape-rendering=geometricPrecision stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2.5 width=12><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path><path d="M15 3h6v6"></path><path d="M10 14L21 3"></path></svg> </a></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://zerotohero.dev>Home</a> »  <a href=https://zerotohero.dev/>Posts</a> »  <a href=https://zerotohero.dev/inbox/snippet-crypto-in-go/>Snippet/Draft: Crypto in Go</a></div><h1 class=post-title>Snippet/Draft: Crypto in Go</h1><div class=post-description>Snippet/Draft: Crypto in Go</div><div class=post-meta><span title="2025-07-12 00:00:00 +0000">2025-07-12</span> · 2 min · Volkan Özçelik</div></header><div class=toc><details><summary title="(Alt + C)" accesskey=c><span class=details>Table of Contents</span></summary> <div class=inner><ul><li><a aria-label="Encrypting and Decrypting with AES CBC" href=#encrypting-and-decrypting-with-aes-cbc>Encrypting and Decrypting with AES CBC</a><li><a aria-label="AES GCM Encryption and Decryption" href=#aes-gcm-encryption-and-decryption>AES GCM Encryption and Decryption</a><li><a aria-label="RSA Encryption and Decryption" href=#rsa-encryption-and-decryption>RSA Encryption and Decryption</a><li><a aria-label="Hashing versus Encryption" href=#hashing-versus-encryption>Hashing versus Encryption</a><li><a aria-label="SHA-256 Hash" href=#sha-256-hash>SHA-256 Hash</a><li><a aria-label="Generating a Secure Random Key" href=#generating-a-secure-random-key>Generating a Secure Random Key</a><li><a aria-label="Common Encryption Pitfalls" href=#common-encryption-pitfalls>Common Encryption Pitfalls</a><li><a aria-label="Hybrid Encryption" href=#hybrid-encryption>Hybrid Encryption</a><li><a aria-label="What to Use When" href=#what-to-use-when>What to Use When</a></ul></div></details></div><div class=post-content><h2 id=encrypting-and-decrypting-with-aes-cbc>Encrypting and Decrypting with AES CBC</h2><pre class=language-go data-lang=go style=color:#fdf4c1aa;background-color:#282828><code class=language-go data-lang=go><span style=color:#fa5c4b>package </span><span style=color:#fdf4c1>main
+</span><span>
+</span><span style=color:#fa5c4b>import </span><span>(
+</span><span>    </span><span style=color:#b8bb26>"crypto/aes"
+</span><span>    </span><span style=color:#b8bb26>"crypto/cipher"
+</span><span>    </span><span style=color:#b8bb26>"crypto/rand"
+</span><span>    </span><span style=color:#b8bb26>"encoding/base64"
+</span><span>    </span><span style=color:#b8bb26>"fmt"
+</span><span>    </span><span style=color:#b8bb26>"io"
+</span><span>)
+</span><span>
+</span><span style=color:#fa5c4b>func </span><span style=color:#8ec07c>main</span><span>() {
+</span><span>    </span><span style=color:#fdf4c1>plaintext </span><span style=color:#fe8019>:= </span><span>[]</span><span style=color:#fabd2f>byte</span><span>(</span><span style=color:#b8bb26>"Hello, Go encryption!"</span><span>)
+</span><span>    </span><span style=color:#fdf4c1>key </span><span style=color:#fe8019>:= </span><span>[]</span><span style=color:#fabd2f>byte</span><span>(</span><span style=color:#b8bb26>"32-byte-key-for-AES-256-!!!!!!!!"</span><span>) </span><span style=color:#928374;font-style:italic>// 32 bytes for AES-256
+</span><span>
+</span><span>    </span><span style=color:#928374;font-style:italic>// Encrypt
+</span><span>    </span><span style=color:#fdf4c1>ciphertext</span><span>, </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>encryptAES</span><span>(</span><span style=color:#fdf4c1>plaintext</span><span>, </span><span style=color:#fdf4c1>key</span><span>)
+</span><span>    </span><span style=color:#fa5c4b>if </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>!= </span><span style=color:#d3869b>nil </span><span>{
+</span><span>        </span><span style=color:#fdf4c1>fmt</span><span>.</span><span style=color:#fdf4c1>Println</span><span>(</span><span style=color:#b8bb26>"Encryption error:"</span><span>, </span><span style=color:#fdf4c1>err</span><span>)
+</span><span>        </span><span style=color:#fa5c4b>return
+</span><span>    }
+</span><span>    </span><span style=color:#fdf4c1>fmt</span><span>.</span><span style=color:#fdf4c1>Printf</span><span>(</span><span style=color:#b8bb26>"Ciphertext (base64): </span><span style=color:#fdf4c1>%s</span><span style=color:#b8bb26>\n"</span><span>, </span><span style=color:#fdf4c1>base64</span><span>.</span><span style=color:#fdf4c1>StdEncoding</span><span>.</span><span style=color:#fdf4c1>EncodeToString</span><span>(</span><span style=color:#fdf4c1>ciphertext</span><span>))
+</span><span>
+</span><span>    </span><span style=color:#928374;font-style:italic>// Decrypt
+</span><span>    </span><span style=color:#fdf4c1>decrypted</span><span>, </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>decryptAES</span><span>(</span><span style=color:#fdf4c1>ciphertext</span><span>, </span><span style=color:#fdf4c1>key</span><span>)
+</span><span>    </span><span style=color:#fa5c4b>if </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>!= </span><span style=color:#d3869b>nil </span><span>{
+</span><span>        </span><span style=color:#fdf4c1>fmt</span><span>.</span><span style=color:#fdf4c1>Println</span><span>(</span><span style=color:#b8bb26>"Decryption error:"</span><span>, </span><span style=color:#fdf4c1>err</span><span>)
+</span><span>        </span><span style=color:#fa5c4b>return
+</span><span>    }
+</span><span>    </span><span style=color:#fdf4c1>fmt</span><span>.</span><span style=color:#fdf4c1>Printf</span><span>(</span><span style=color:#b8bb26>"Decrypted: </span><span style=color:#fdf4c1>%s</span><span style=color:#b8bb26>\n"</span><span>, </span><span style=color:#fdf4c1>decrypted</span><span>)
+</span><span>}
+</span><span>
+</span><span style=color:#fa5c4b>func </span><span style=color:#8ec07c>encryptAES</span><span>(</span><span style=color:#fdf4c1>plaintext</span><span>, </span><span style=color:#fdf4c1>key </span><span>[]</span><span style=color:#fabd2f>byte</span><span>) ([]</span><span style=color:#fabd2f>byte</span><span>, </span><span style=color:#fabd2f>error</span><span>) {
+</span><span>    </span><span style=color:#fdf4c1>block</span><span>, </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>aes</span><span>.</span><span style=color:#fdf4c1>NewCipher</span><span>(</span><span style=color:#fdf4c1>key</span><span>)
+</span><span>    </span><span style=color:#fa5c4b>if </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>!= </span><span style=color:#d3869b>nil </span><span>{
+</span><span>        </span><span style=color:#fa5c4b>return </span><span style=color:#d3869b>nil</span><span>, </span><span style=color:#fdf4c1>err
+</span><span>    }
+</span><span>
+</span><span>    </span><span style=color:#928374;font-style:italic>// Pad plaintext to block size
+</span><span>    </span><span style=color:#fdf4c1>padding </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>aes</span><span>.</span><span style=color:#fdf4c1>BlockSize </span><span style=color:#fe8019>- </span><span style=color:#fabd2f>len</span><span>(</span><span style=color:#fdf4c1>plaintext</span><span>)</span><span style=color:#fe8019>%</span><span style=color:#fdf4c1>aes</span><span>.</span><span style=color:#fdf4c1>BlockSize
+</span><span>    </span><span style=color:#fdf4c1>padtext </span><span style=color:#fe8019>:= </span><span style=color:#fabd2f>append</span><span>(</span><span style=color:#fdf4c1>plaintext</span><span>, </span><span style=color:#fdf4c1>bytes</span><span>.</span><span style=color:#fdf4c1>Repeat</span><span>([]</span><span style=color:#fabd2f>byte</span><span>{</span><span style=color:#fabd2f>byte</span><span>(</span><span style=color:#fdf4c1>padding</span><span>)}, </span><span style=color:#fdf4c1>padding</span><span>)</span><span style=color:#fe8019>...</span><span>)
+</span><span>
+</span><span>    </span><span style=color:#fdf4c1>ciphertext </span><span style=color:#fe8019>:= </span><span style=color:#fabd2f>make</span><span>([]</span><span style=color:#fabd2f>byte</span><span>, </span><span style=color:#fdf4c1>aes</span><span>.</span><span style=color:#fdf4c1>BlockSize</span><span style=color:#fe8019>+</span><span style=color:#fabd2f>len</span><span>(</span><span style=color:#fdf4c1>padtext</span><span>))
+</span><span>    </span><span style=color:#fdf4c1>iv </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>ciphertext</span><span>[:</span><span style=color:#fdf4c1>aes</span><span>.</span><span style=color:#fdf4c1>BlockSize</span><span>]
+</span><span>    </span><span style=color:#fa5c4b>if </span><span style=color:#fdf4c1>_</span><span>, </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>io</span><span>.</span><span style=color:#fdf4c1>ReadFull</span><span>(</span><span style=color:#fdf4c1>rand</span><span>.</span><span style=color:#fdf4c1>Reader</span><span>, </span><span style=color:#fdf4c1>iv</span><span>); </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>!= </span><span style=color:#d3869b>nil </span><span>{
+</span><span>        </span><span style=color:#fa5c4b>return </span><span style=color:#d3869b>nil</span><span>, </span><span style=color:#fdf4c1>err
+</span><span>    }
+</span><span>
+</span><span>    </span><span style=color:#fdf4c1>mode </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>cipher</span><span>.</span><span style=color:#fdf4c1>NewCBCEncrypter</span><span>(</span><span style=color:#fdf4c1>block</span><span>, </span><span style=color:#fdf4c1>iv</span><span>)
+</span><span>    </span><span style=color:#fdf4c1>mode</span><span>.</span><span style=color:#fdf4c1>CryptBlocks</span><span>(</span><span style=color:#fdf4c1>ciphertext</span><span>[</span><span style=color:#fdf4c1>aes</span><span>.</span><span style=color:#fdf4c1>BlockSize</span><span>:], </span><span style=color:#fdf4c1>padtext</span><span>)
+</span><span>
+</span><span>    </span><span style=color:#fa5c4b>return </span><span style=color:#fdf4c1>ciphertext</span><span>, </span><span style=color:#d3869b>nil
+</span><span>}
+</span><span>
+</span><span style=color:#fa5c4b>func </span><span style=color:#8ec07c>decryptAES</span><span>(</span><span style=color:#fdf4c1>ciphertext</span><span>, </span><span style=color:#fdf4c1>key </span><span>[]</span><span style=color:#fabd2f>byte</span><span>) ([]</span><span style=color:#fabd2f>byte</span><span>, </span><span style=color:#fabd2f>error</span><span>) {
+</span><span>    </span><span style=color:#fdf4c1>block</span><span>, </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>aes</span><span>.</span><span style=color:#fdf4c1>NewCipher</span><span>(</span><span style=color:#fdf4c1>key</span><span>)
+</span><span>    </span><span style=color:#fa5c4b>if </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>!= </span><span style=color:#d3869b>nil </span><span>{
+</span><span>        </span><span style=color:#fa5c4b>return </span><span style=color:#d3869b>nil</span><span>, </span><span style=color:#fdf4c1>err
+</span><span>    }
+</span><span>
+</span><span>    </span><span style=color:#fa5c4b>if </span><span style=color:#fabd2f>len</span><span>(</span><span style=color:#fdf4c1>ciphertext</span><span>) </span><span style=color:#fe8019>< </span><span style=color:#fdf4c1>aes</span><span>.</span><span style=color:#fdf4c1>BlockSize </span><span>{
+</span><span>        </span><span style=color:#fa5c4b>return </span><span style=color:#d3869b>nil</span><span>, </span><span style=color:#fdf4c1>fmt</span><span>.</span><span style=color:#fdf4c1>Errorf</span><span>(</span><span style=color:#b8bb26>"ciphertext too short"</span><span>)
+</span><span>    }
+</span><span>
+</span><span>    </span><span style=color:#fdf4c1>iv </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>ciphertext</span><span>[:</span><span style=color:#fdf4c1>aes</span><span>.</span><span style=color:#fdf4c1>BlockSize</span><span>]
+</span><span>    </span><span style=color:#fdf4c1>ciphertext </span><span style=color:#fe8019>= </span><span style=color:#fdf4c1>ciphertext</span><span>[</span><span style=color:#fdf4c1>aes</span><span>.</span><span style=color:#fdf4c1>BlockSize</span><span>:]
+</span><span>
+</span><span>    </span><span style=color:#fdf4c1>mode </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>cipher</span><span>.</span><span style=color:#fdf4c1>NewCBCDecrypter</span><span>(</span><span style=color:#fdf4c1>block</span><span>, </span><span style=color:#fdf4c1>iv</span><span>)
+</span><span>    </span><span style=color:#fdf4c1>mode</span><span>.</span><span style=color:#fdf4c1>CryptBlocks</span><span>(</span><span style=color:#fdf4c1>ciphertext</span><span>, </span><span style=color:#fdf4c1>ciphertext</span><span>)
+</span><span>
+</span><span>    </span><span style=color:#928374;font-style:italic>// Unpad
+</span><span>    </span><span style=color:#fdf4c1>padding </span><span style=color:#fe8019>:= </span><span style=color:#fabd2f>int</span><span>(</span><span style=color:#fdf4c1>ciphertext</span><span>[</span><span style=color:#fabd2f>len</span><span>(</span><span style=color:#fdf4c1>ciphertext</span><span>)</span><span style=color:#fe8019>-</span><span style=color:#d3869b>1</span><span>])
+</span><span>    </span><span style=color:#fa5c4b>return </span><span style=color:#fdf4c1>ciphertext</span><span>[:</span><span style=color:#fabd2f>len</span><span>(</span><span style=color:#fdf4c1>ciphertext</span><span>)</span><span style=color:#fe8019>-</span><span style=color:#fdf4c1>padding</span><span>], </span><span style=color:#d3869b>nil
+</span><span>}
+</span><span>
+</span><span style=color:#928374;font-style:italic>// Output:
+</span><span style=color:#928374;font-style:italic>// Ciphertext (base64): [base64 string varies due to random IV]
+</span><span style=color:#928374;font-style:italic>// Decrypted: Hello, Go encryption!
+</span></code></pre><p>Important:<ul><li>Key length matters: Use 32 bytes for AES-256, 24 for AES-192, or 16 for AES-128.<li>IV is critical: It ensures each encryption is unique, even with the same key and plaintext.<li>Padding: AES requires data to be a multiple of the block size (16 bytes). The example uses <code>PKCS#5</code> padding.</ul><h2 id=aes-gcm-encryption-and-decryption>AES GCM Encryption and Decryption</h2><pre class=language-go data-lang=go style=color:#fdf4c1aa;background-color:#282828><code class=language-go data-lang=go><span style=color:#fa5c4b>package </span><span style=color:#fdf4c1>main
+</span><span>
+</span><span style=color:#fa5c4b>import </span><span>(
+</span><span>    </span><span style=color:#b8bb26>"crypto/aes"
+</span><span>    </span><span style=color:#b8bb26>"crypto/cipher"
+</span><span>    </span><span style=color:#b8bb26>"crypto/rand"
+</span><span>    </span><span style=color:#b8bb26>"encoding/base64"
+</span><span>    </span><span style=color:#b8bb26>"fmt"
+</span><span>    </span><span style=color:#b8bb26>"io"
+</span><span>)
+</span><span>
+</span><span style=color:#fa5c4b>func </span><span style=color:#8ec07c>main</span><span>() {
+</span><span>    </span><span style=color:#fdf4c1>plaintext </span><span style=color:#fe8019>:= </span><span>[]</span><span style=color:#fabd2f>byte</span><span>(</span><span style=color:#b8bb26>"Secure data with GCM!"</span><span>)
+</span><span>    </span><span style=color:#fdf4c1>key </span><span style=color:#fe8019>:= </span><span>[]</span><span style=color:#fabd2f>byte</span><span>(</span><span style=color:#b8bb26>"32-byte-key-for-AES-256-!!!!!!!!"</span><span>) </span><span style=color:#928374;font-style:italic>// 32 bytes for AES-256
+</span><span>
+</span><span>    </span><span style=color:#928374;font-style:italic>// Encrypt
+</span><span>    </span><span style=color:#fdf4c1>ciphertext</span><span>, </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>encryptGCM</span><span>(</span><span style=color:#fdf4c1>plaintext</span><span>, </span><span style=color:#fdf4c1>key</span><span>)
+</span><span>    </span><span style=color:#fa5c4b>if </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>!= </span><span style=color:#d3869b>nil </span><span>{
+</span><span>        </span><span style=color:#fdf4c1>fmt</span><span>.</span><span style=color:#fdf4c1>Println</span><span>(</span><span style=color:#b8bb26>"Encryption error:"</span><span>, </span><span style=color:#fdf4c1>err</span><span>)
+</span><span>        </span><span style=color:#fa5c4b>return
+</span><span>    }
+</span><span>    </span><span style=color:#fdf4c1>fmt</span><span>.</span><span style=color:#fdf4c1>Printf</span><span>(</span><span style=color:#b8bb26>"Ciphertext (base64): </span><span style=color:#fdf4c1>%s</span><span style=color:#b8bb26>\n"</span><span>, </span><span style=color:#fdf4c1>base64</span><span>.</span><span style=color:#fdf4c1>StdEncoding</span><span>.</span><span style=color:#fdf4c1>EncodeToString</span><span>(</span><span style=color:#fdf4c1>ciphertext</span><span>))
+</span><span>
+</span><span>    </span><span style=color:#928374;font-style:italic>// Decrypt
+</span><span>    </span><span style=color:#fdf4c1>decrypted</span><span>, </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>decryptGCM</span><span>(</span><span style=color:#fdf4c1>ciphertext</span><span>, </span><span style=color:#fdf4c1>key</span><span>)
+</span><span>    </span><span style=color:#fa5c4b>if </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>!= </span><span style=color:#d3869b>nil </span><span>{
+</span><span>        </span><span style=color:#fdf4c1>fmt</span><span>.</span><span style=color:#fdf4c1>Println</span><span>(</span><span style=color:#b8bb26>"Decryption error:"</span><span>, </span><span style=color:#fdf4c1>err</span><span>)
+</span><span>        </span><span style=color:#fa5c4b>return
+</span><span>    }
+</span><span>    </span><span style=color:#fdf4c1>fmt</span><span>.</span><span style=color:#fdf4c1>Printf</span><span>(</span><span style=color:#b8bb26>"Decrypted: </span><span style=color:#fdf4c1>%s</span><span style=color:#b8bb26>\n"</span><span>, </span><span style=color:#fdf4c1>decrypted</span><span>)
+</span><span>}
+</span><span>
+</span><span style=color:#fa5c4b>func </span><span style=color:#8ec07c>encryptGCM</span><span>(</span><span style=color:#fdf4c1>plaintext</span><span>, </span><span style=color:#fdf4c1>key </span><span>[]</span><span style=color:#fabd2f>byte</span><span>) ([]</span><span style=color:#fabd2f>byte</span><span>, </span><span style=color:#fabd2f>error</span><span>) {
+</span><span>    </span><span style=color:#fdf4c1>block</span><span>, </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>aes</span><span>.</span><span style=color:#fdf4c1>NewCipher</span><span>(</span><span style=color:#fdf4c1>key</span><span>)
+</span><span>    </span><span style=color:#fa5c4b>if </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>!= </span><span style=color:#d3869b>nil </span><span>{
+</span><span>        </span><span style=color:#fa5c4b>return </span><span style=color:#d3869b>nil</span><span>, </span><span style=color:#fdf4c1>err
+</span><span>    }
+</span><span>
+</span><span>    </span><span style=color:#fdf4c1>gcm</span><span>, </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>cipher</span><span>.</span><span style=color:#fdf4c1>NewGCM</span><span>(</span><span style=color:#fdf4c1>block</span><span>)
+</span><span>    </span><span style=color:#fa5c4b>if </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>!= </span><span style=color:#d3869b>nil </span><span>{
+</span><span>        </span><span style=color:#fa5c4b>return </span><span style=color:#d3869b>nil</span><span>, </span><span style=color:#fdf4c1>err
+</span><span>    }
+</span><span>
+</span><span>    </span><span style=color:#fdf4c1>nonce </span><span style=color:#fe8019>:= </span><span style=color:#fabd2f>make</span><span>([]</span><span style=color:#fabd2f>byte</span><span>, </span><span style=color:#fdf4c1>gcm</span><span>.</span><span style=color:#fdf4c1>NonceSize</span><span>())
+</span><span>    </span><span style=color:#fa5c4b>if </span><span style=color:#fdf4c1>_</span><span>, </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>io</span><span>.</span><span style=color:#fdf4c1>ReadFull</span><span>(</span><span style=color:#fdf4c1>rand</span><span>.</span><span style=color:#fdf4c1>Reader</span><span>, </span><span style=color:#fdf4c1>nonce</span><span>); </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>!= </span><span style=color:#d3869b>nil </span><span>{
+</span><span>        </span><span style=color:#fa5c4b>return </span><span style=color:#d3869b>nil</span><span>, </span><span style=color:#fdf4c1>err
+</span><span>    }
+</span><span>
+</span><span>    </span><span style=color:#fa5c4b>return </span><span style=color:#fdf4c1>gcm</span><span>.</span><span style=color:#fdf4c1>Seal</span><span>(</span><span style=color:#fdf4c1>nonce</span><span>, </span><span style=color:#fdf4c1>nonce</span><span>, </span><span style=color:#fdf4c1>plaintext</span><span>, </span><span style=color:#d3869b>nil</span><span>), </span><span style=color:#d3869b>nil
+</span><span>}
+</span><span>
+</span><span style=color:#fa5c4b>func </span><span style=color:#8ec07c>decryptGCM</span><span>(</span><span style=color:#fdf4c1>ciphertext</span><span>, </span><span style=color:#fdf4c1>key </span><span>[]</span><span style=color:#fabd2f>byte</span><span>) ([]</span><span style=color:#fabd2f>byte</span><span>, </span><span style=color:#fabd2f>error</span><span>) {
+</span><span>    </span><span style=color:#fdf4c1>block</span><span>, </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>aes</span><span>.</span><span style=color:#fdf4c1>NewCipher</span><span>(</span><span style=color:#fdf4c1>key</span><span>)
+</span><span>    </span><span style=color:#fa5c4b>if </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>!= </span><span style=color:#d3869b>nil </span><span>{
+</span><span>        </span><span style=color:#fa5c4b>return </span><span style=color:#d3869b>nil</span><span>, </span><span style=color:#fdf4c1>err
+</span><span>    }
+</span><span>
+</span><span>    </span><span style=color:#fdf4c1>gcm</span><span>, </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>cipher</span><span>.</span><span style=color:#fdf4c1>NewGCM</span><span>(</span><span style=color:#fdf4c1>block</span><span>)
+</span><span>    </span><span style=color:#fa5c4b>if </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>!= </span><span style=color:#d3869b>nil </span><span>{
+</span><span>        </span><span style=color:#fa5c4b>return </span><span style=color:#d3869b>nil</span><span>, </span><span style=color:#fdf4c1>err
+</span><span>    }
+</span><span>
+</span><span>    </span><span style=color:#fdf4c1>nonceSize </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>gcm</span><span>.</span><span style=color:#fdf4c1>NonceSize</span><span>()
+</span><span>    </span><span style=color:#fa5c4b>if </span><span style=color:#fabd2f>len</span><span>(</span><span style=color:#fdf4c1>ciphertext</span><span>) </span><span style=color:#fe8019>< </span><span style=color:#fdf4c1>nonceSize </span><span>{
+</span><span>        </span><span style=color:#fa5c4b>return </span><span style=color:#d3869b>nil</span><span>, </span><span style=color:#fdf4c1>fmt</span><span>.</span><span style=color:#fdf4c1>Errorf</span><span>(</span><span style=color:#b8bb26>"ciphertext too short"</span><span>)
+</span><span>    }
+</span><span>
+</span><span>    </span><span style=color:#fdf4c1>nonce</span><span>, </span><span style=color:#fdf4c1>ciphertext </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>ciphertext</span><span>[:</span><span style=color:#fdf4c1>nonceSize</span><span>], </span><span style=color:#fdf4c1>ciphertext</span><span>[</span><span style=color:#fdf4c1>nonceSize</span><span>:]
+</span><span>    </span><span style=color:#fa5c4b>return </span><span style=color:#fdf4c1>gcm</span><span>.</span><span style=color:#fdf4c1>Open</span><span>(</span><span style=color:#d3869b>nil</span><span>, </span><span style=color:#fdf4c1>nonce</span><span>, </span><span style=color:#fdf4c1>ciphertext</span><span>, </span><span style=color:#d3869b>nil</span><span>)
+</span><span>}
+</span><span>
+</span><span style=color:#928374;font-style:italic>// Output:
+</span><span style=color:#928374;font-style:italic>// Ciphertext (base64): [base64 string varies due to random nonce]
+</span><span style=color:#928374;font-style:italic>// Decrypted: Secure data with GCM!
+</span></code></pre><p>Important:<ul><li>Nonce: A unique value (like IV) for each encryption. GCM uses a 12-byte nonce by default.<li>Authentication: GCM verifies data integrity, rejecting tampered ciphertext.<li>No padding: GCM handles variable-length data natively.</ul><h2 id=rsa-encryption-and-decryption>RSA Encryption and Decryption</h2><pre class=language-go data-lang=go style=color:#fdf4c1aa;background-color:#282828><code class=language-go data-lang=go><span style=color:#fa5c4b>package </span><span style=color:#fdf4c1>main
+</span><span>
+</span><span style=color:#fa5c4b>import </span><span>(
+</span><span>    </span><span style=color:#b8bb26>"crypto/rand"
+</span><span>    </span><span style=color:#b8bb26>"crypto/rsa"
+</span><span>    </span><span style=color:#b8bb26>"crypto/sha256"
+</span><span>    </span><span style=color:#b8bb26>"encoding/base64"
+</span><span>    </span><span style=color:#b8bb26>"fmt"
+</span><span>)
+</span><span>
+</span><span style=color:#fa5c4b>func </span><span style=color:#8ec07c>main</span><span>() {
+</span><span>    </span><span style=color:#928374;font-style:italic>// Generate key pair
+</span><span>    </span><span style=color:#fdf4c1>privateKey</span><span>, </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>rsa</span><span>.</span><span style=color:#fdf4c1>GenerateKey</span><span>(</span><span style=color:#fdf4c1>rand</span><span>.</span><span style=color:#fdf4c1>Reader</span><span>, </span><span style=color:#d3869b>2048</span><span>)
+</span><span>    </span><span style=color:#fa5c4b>if </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>!= </span><span style=color:#d3869b>nil </span><span>{
+</span><span>        </span><span style=color:#fdf4c1>fmt</span><span>.</span><span style=color:#fdf4c1>Println</span><span>(</span><span style=color:#b8bb26>"Key generation error:"</span><span>, </span><span style=color:#fdf4c1>err</span><span>)
+</span><span>        </span><span style=color:#fa5c4b>return
+</span><span>    }
+</span><span>    </span><span style=color:#fdf4c1>publicKey </span><span style=color:#fe8019>:= &</span><span style=color:#fdf4c1>privateKey</span><span>.</span><span style=color:#fdf4c1>PublicKey
+</span><span>
+</span><span>    </span><span style=color:#928374;font-style:italic>// Encrypt
+</span><span>    </span><span style=color:#fdf4c1>plaintext </span><span style=color:#fe8019>:= </span><span>[]</span><span style=color:#fabd2f>byte</span><span>(</span><span style=color:#b8bb26>"RSA encryption in Go!"</span><span>)
+</span><span>    </span><span style=color:#fdf4c1>ciphertext</span><span>, </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>rsa</span><span>.</span><span style=color:#fdf4c1>EncryptOAEP</span><span>(</span><span style=color:#fdf4c1>sha256</span><span>.</span><span style=color:#fdf4c1>New</span><span>(), </span><span style=color:#fdf4c1>rand</span><span>.</span><span style=color:#fdf4c1>Reader</span><span>, </span><span style=color:#fdf4c1>publicKey</span><span>, </span><span style=color:#fdf4c1>plaintext</span><span>, </span><span style=color:#d3869b>nil</span><span>)
+</span><span>    </span><span style=color:#fa5c4b>if </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>!= </span><span style=color:#d3869b>nil </span><span>{
+</span><span>        </span><span style=color:#fdf4c1>fmt</span><span>.</span><span style=color:#fdf4c1>Println</span><span>(</span><span style=color:#b8bb26>"Encryption error:"</span><span>, </span><span style=color:#fdf4c1>err</span><span>)
+</span><span>        </span><span style=color:#fa5c4b>return
+</span><span>    }
+</span><span>    </span><span style=color:#fdf4c1>fmt</span><span>.</span><span style=color:#fdf4c1>Printf</span><span>(</span><span style=color:#b8bb26>"Ciphertext (base64): </span><span style=color:#fdf4c1>%s</span><span style=color:#b8bb26>\n"</span><span>, </span><span style=color:#fdf4c1>base64</span><span>.</span><span style=color:#fdf4c1>StdEncoding</span><span>.</span><span style=color:#fdf4c1>EncodeToString</span><span>(</span><span style=color:#fdf4c1>ciphertext</span><span>))
+</span><span>
+</span><span>    </span><span style=color:#928374;font-style:italic>// Decrypt
+</span><span>    </span><span style=color:#fdf4c1>decrypted</span><span>, </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>rsa</span><span>.</span><span style=color:#fdf4c1>DecryptOAEP</span><span>(</span><span style=color:#fdf4c1>sha256</span><span>.</span><span style=color:#fdf4c1>New</span><span>(), </span><span style=color:#fdf4c1>rand</span><span>.</span><span style=color:#fdf4c1>Reader</span><span>, </span><span style=color:#fdf4c1>privateKey</span><span>, </span><span style=color:#fdf4c1>ciphertext</span><span>, </span><span style=color:#d3869b>nil</span><span>)
+</span><span>    </span><span style=color:#fa5c4b>if </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>!= </span><span style=color:#d3869b>nil </span><span>{
+</span><span>        </span><span style=color:#fdf4c1>fmt</span><span>.</span><span style=color:#fdf4c1>Println</span><span>(</span><span style=color:#b8bb26>"Decryption error:"</span><span>, </span><span style=color:#fdf4c1>err</span><span>)
+</span><span>        </span><span style=color:#fa5c4b>return
+</span><span>    }
+</span><span>    </span><span style=color:#fdf4c1>fmt</span><span>.</span><span style=color:#fdf4c1>Printf</span><span>(</span><span style=color:#b8bb26>"Decrypted: </span><span style=color:#fdf4c1>%s</span><span style=color:#b8bb26>\n"</span><span>, </span><span style=color:#fdf4c1>decrypted</span><span>)
+</span><span>}
+</span><span>
+</span><span style=color:#928374;font-style:italic>// Output:
+</span><span style=color:#928374;font-style:italic>// Ciphertext (base64): [base64 string varies due to random padding]
+</span><span style=color:#928374;font-style:italic>// Decrypted: RSA encryption in Go!
+</span></code></pre><p>Important:<ul><li>Key size: Use at least 2048 bits for security.<li>OAEP padding: Go’s EncryptOAEP adds secure padding to prevent attacks.<li>Small data only: RSA can only encrypt data smaller than the key size.<li>Resource: Go’s crypto/rsa documentation</ul><h2 id=hashing-versus-encryption>Hashing versus Encryption</h2><table><thead><tr><th>Feature<th>Encryption<th>Hashing<tbody><tr><td>Purpose<td>Protect data confidentiality<td>Verify data integrity<tr><td>Reversible?<td>Yes (with key)<td>No (one-way)<tr><td>Go Package<td>crypto/aes, crypto/rsa<td>crypto/sha256, crypto/md5<tr><td>Example Use<td>Secure API payloads<td>Password storage</table><h2 id=sha-256-hash>SHA-256 Hash</h2><pre class=language-go data-lang=go style=color:#fdf4c1aa;background-color:#282828><code class=language-go data-lang=go><span style=color:#fa5c4b>package </span><span style=color:#fdf4c1>main
+</span><span>
+</span><span style=color:#fa5c4b>import </span><span>(
+</span><span>    </span><span style=color:#b8bb26>"crypto/sha256"
+</span><span>    </span><span style=color:#b8bb26>"encoding/hex"
+</span><span>    </span><span style=color:#b8bb26>"fmt"
+</span><span>)
+</span><span>
+</span><span style=color:#fa5c4b>func </span><span style=color:#8ec07c>main</span><span>() {
+</span><span>    </span><span style=color:#fdf4c1>data </span><span style=color:#fe8019>:= </span><span>[]</span><span style=color:#fabd2f>byte</span><span>(</span><span style=color:#b8bb26>"Hash this string!"</span><span>)
+</span><span>    </span><span style=color:#fdf4c1>hash </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>sha256</span><span>.</span><span style=color:#fdf4c1>Sum256</span><span>(</span><span style=color:#fdf4c1>data</span><span>)
+</span><span>    </span><span style=color:#fdf4c1>fmt</span><span>.</span><span style=color:#fdf4c1>Printf</span><span>(</span><span style=color:#b8bb26>"SHA-256 Hash: </span><span style=color:#fdf4c1>%s</span><span style=color:#b8bb26>\n"</span><span>, </span><span style=color:#fdf4c1>hex</span><span>.</span><span style=color:#fdf4c1>EncodeToString</span><span>(</span><span style=color:#fdf4c1>hash</span><span>[:]))
+</span><span>
+</span><span>    </span><span style=color:#928374;font-style:italic>// Output:
+</span><span>    </span><span style=color:#928374;font-style:italic>// SHA-256 Hash: 2c7a6e66323c8f7a0e205803c763eb8a4e8b6f8b0b2c3f8a7e8f9d0b1e2c3d4e
+</span><span>}
+</span></code></pre><h2 id=generating-a-secure-random-key>Generating a Secure Random Key</h2><pre class=language-go data-lang=go style=color:#fdf4c1aa;background-color:#282828><code class=language-go data-lang=go><span style=color:#fa5c4b>import </span><span>(
+</span><span>    </span><span style=color:#b8bb26>"crypto/rand"
+</span><span>    </span><span style=color:#b8bb26>"encoding/hex"
+</span><span>    </span><span style=color:#b8bb26>"fmt"
+</span><span>)
+</span><span>
+</span><span style=color:#fa5c4b>func </span><span style=color:#8ec07c>main</span><span>() {
+</span><span>    </span><span style=color:#fdf4c1>key </span><span style=color:#fe8019>:= </span><span style=color:#fabd2f>make</span><span>([]</span><span style=color:#fabd2f>byte</span><span>, </span><span style=color:#d3869b>32</span><span>) </span><span style=color:#928374;font-style:italic>// 32 bytes for AES-256
+</span><span>    </span><span style=color:#fdf4c1>_</span><span>, </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>rand</span><span>.</span><span style=color:#fdf4c1>Read</span><span>(</span><span style=color:#fdf4c1>key</span><span>)
+</span><span>    </span><span style=color:#fa5c4b>if </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>!= </span><span style=color:#d3869b>nil </span><span>{
+</span><span>        </span><span style=color:#fdf4c1>fmt</span><span>.</span><span style=color:#fdf4c1>Println</span><span>(</span><span style=color:#b8bb26>"Key generation error:"</span><span>, </span><span style=color:#fdf4c1>err</span><span>)
+</span><span>        </span><span style=color:#fa5c4b>return
+</span><span>    }
+</span><span>    </span><span style=color:#fdf4c1>fmt</span><span>.</span><span style=color:#fdf4c1>Printf</span><span>(</span><span style=color:#b8bb26>"Generated key: </span><span style=color:#fdf4c1>%s</span><span style=color:#b8bb26>\n"</span><span>, </span><span style=color:#fdf4c1>hex</span><span>.</span><span style=color:#fdf4c1>EncodeToString</span><span>(</span><span style=color:#fdf4c1>key</span><span>))
+</span><span>
+</span><span>    </span><span style=color:#928374;font-style:italic>// Output:
+</span><span>    </span><span style=color:#928374;font-style:italic>// Generated key: [random 64-character hex string]
+</span><span>}
+</span></code></pre><h2 id=common-encryption-pitfalls>Common Encryption Pitfalls</h2><table><thead><tr><th>Pitfall<th>Solution<tbody><tr><td>Reusing IV/nonce<td>Generate a unique IV/nonce per encryption<tr><td>Weak key generation<td>Use crypto/rand for keys and IVs<tr><td>Hardcoding keys<td>Store keys in secure storage<tr><td>Ignoring authentication<td>Use AES-GCM for authenticated encryption</table><h2 id=hybrid-encryption>Hybrid Encryption</h2><pre class=language-go data-lang=go style=color:#fdf4c1aa;background-color:#282828><code class=language-go data-lang=go><span style=color:#fa5c4b>package </span><span style=color:#fdf4c1>main
+</span><span>
+</span><span style=color:#fa5c4b>import </span><span>(
+</span><span>    </span><span style=color:#b8bb26>"crypto/aes"
+</span><span>    </span><span style=color:#b8bb26>"crypto/cipher"
+</span><span>    </span><span style=color:#b8bb26>"crypto/rand"
+</span><span>    </span><span style=color:#b8bb26>"crypto/rsa"
+</span><span>    </span><span style=color:#b8bb26>"crypto/sha256"
+</span><span>    </span><span style=color:#b8bb26>"encoding/base64"
+</span><span>    </span><span style=color:#b8bb26>"fmt"
+</span><span>    </span><span style=color:#b8bb26>"io"
+</span><span>)
+</span><span>
+</span><span style=color:#fa5c4b>func </span><span style=color:#8ec07c>main</span><span>() {
+</span><span>    </span><span style=color:#928374;font-style:italic>// Generate RSA key pair
+</span><span>    </span><span style=color:#fdf4c1>privateKey</span><span>, </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>rsa</span><span>.</span><span style=color:#fdf4c1>GenerateKey</span><span>(</span><span style=color:#fdf4c1>rand</span><span>.</span><span style=color:#fdf4c1>Reader</span><span>, </span><span style=color:#d3869b>2048</span><span>)
+</span><span>    </span><span style=color:#fa5c4b>if </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>!= </span><span style=color:#d3869b>nil </span><span>{
+</span><span>        </span><span style=color:#fdf4c1>fmt</span><span>.</span><span style=color:#fdf4c1>Println</span><span>(</span><span style=color:#b8bb26>"Key generation error:"</span><span>, </span><span style=color:#fdf4c1>err</span><span>)
+</span><span>        </span><span style=color:#fa5c4b>return
+</span><span>    }
+</span><span>    </span><span style=color:#fdf4c1>publicKey </span><span style=color:#fe8019>:= &</span><span style=color:#fdf4c1>privateKey</span><span>.</span><span style=color:#fdf4c1>PublicKey
+</span><span>
+</span><span>    </span><span style=color:#928374;font-style:italic>// Generate AES key
+</span><span>    </span><span style=color:#fdf4c1>aesKey </span><span style=color:#fe8019>:= </span><span style=color:#fabd2f>make</span><span>([]</span><span style=color:#fabd2f>byte</span><span>, </span><span style=color:#d3869b>32</span><span>)
+</span><span>    </span><span style=color:#fa5c4b>if </span><span style=color:#fdf4c1>_</span><span>, </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>rand</span><span>.</span><span style=color:#fdf4c1>Read</span><span>(</span><span style=color:#fdf4c1>aesKey</span><span>); </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>!= </span><span style=color:#d3869b>nil </span><span>{
+</span><span>        </span><span style=color:#fdf4c1>fmt</span><span>.</span><span style=color:#fdf4c1>Println</span><span>(</span><span style=color:#b8bb26>"AES key generation error:"</span><span>, </span><span style=color:#fdf4c1>err</span><span>)
+</span><span>        </span><span style=color:#fa5c4b>return
+</span><span>    }
+</span><span>
+</span><span>    </span><span style=color:#928374;font-style:italic>// Encrypt data with AES
+</span><span>    </span><span style=color:#fdf4c1>plaintext </span><span style=color:#fe8019>:= </span><span>[]</span><span style=color:#fabd2f>byte</span><span>(</span><span style=color:#b8bb26>"Hybrid encryption in Go!"</span><span>)
+</span><span>    </span><span style=color:#fdf4c1>ciphertext</span><span>, </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>encryptAES</span><span>(</span><span style=color:#fdf4c1>plaintext</span><span>, </span><span style=color:#fdf4c1>aesKey</span><span>)
+</span><span>    </span><span style=color:#fa5c4b>if </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>!= </span><span style=color:#d3869b>nil </span><span>{
+</span><span>        </span><span style=color:#fdf4c1>fmt</span><span>.</span><span style=color:#fdf4c1>Println</span><span>(</span><span style=color:#b8bb26>"AES encryption error:"</span><span>, </span><span style=color:#fdf4c1>err</span><span>)
+</span><span>        </span><span style=color:#fa5c4b>return
+</span><span>    }
+</span><span>
+</span><span>    </span><span style=color:#928374;font-style:italic>// Encrypt AES key with RSA
+</span><span>    </span><span style=color:#fdf4c1>encryptedKey</span><span>, </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>rsa</span><span>.</span><span style=color:#fdf4c1>EncryptOAEP</span><span>(</span><span style=color:#fdf4c1>sha256</span><span>.</span><span style=color:#fdf4c1>New</span><span>(), </span><span style=color:#fdf4c1>rand</span><span>.</span><span style=color:#fdf4c1>Reader</span><span>, </span><span style=color:#fdf4c1>publicKey</span><span>, </span><span style=color:#fdf4c1>aesKey</span><span>, </span><span style=color:#d3869b>nil</span><span>)
+</span><span>    </span><span style=color:#fa5c4b>if </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>!= </span><span style=color:#d3869b>nil </span><span>{
+</span><span>        </span><span style=color:#fdf4c1>fmt</span><span>.</span><span style=color:#fdf4c1>Println</span><span>(</span><span style=color:#b8bb26>"RSA encryption error:"</span><span>, </span><span style=color:#fdf4c1>err</span><span>)
+</span><span>        </span><span style=color:#fa5c4b>return
+</span><span>    }
+</span><span>
+</span><span>    </span><span style=color:#fdf4c1>fmt</span><span>.</span><span style=color:#fdf4c1>Printf</span><span>(</span><span style=color:#b8bb26>"Encrypted AES key (base64): </span><span style=color:#fdf4c1>%s</span><span style=color:#b8bb26>\n"</span><span>, </span><span style=color:#fdf4c1>base64</span><span>.</span><span style=color:#fdf4c1>StdEncoding</span><span>.</span><span style=color:#fdf4c1>EncodeToString</span><span>(</span><span style=color:#fdf4c1>encryptedKey</span><span>))
+</span><span>    </span><span style=color:#fdf4c1>fmt</span><span>.</span><span style=color:#fdf4c1>Printf</span><span>(</span><span style=color:#b8bb26>"Ciphertext (base64): </span><span style=color:#fdf4c1>%s</span><span style=color:#b8bb26>\n"</span><span>, </span><span style=color:#fdf4c1>base64</span><span>.</span><span style=color:#fdf4c1>StdEncoding</span><span>.</span><span style=color:#fdf4c1>EncodeToString</span><span>(</span><span style=color:#fdf4c1>ciphertext</span><span>))
+</span><span>
+</span><span>    </span><span style=color:#928374;font-style:italic>// Decrypt AES key with RSA
+</span><span>    </span><span style=color:#fdf4c1>decryptedKey</span><span>, </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>rsa</span><span>.</span><span style=color:#fdf4c1>DecryptOAEP</span><span>(</span><span style=color:#fdf4c1>sha256</span><span>.</span><span style=color:#fdf4c1>New</span><span>(), </span><span style=color:#fdf4c1>rand</span><span>.</span><span style=color:#fdf4c1>Reader</span><span>, </span><span style=color:#fdf4c1>privateKey</span><span>, </span><span style=color:#fdf4c1>encryptedKey</span><span>, </span><span style=color:#d3869b>nil</span><span>)
+</span><span>    </span><span style=color:#fa5c4b>if </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>!= </span><span style=color:#d3869b>nil </span><span>{
+</span><span>        </span><span style=color:#fdf4c1>fmt</span><span>.</span><span style=color:#fdf4c1>Println</span><span>(</span><span style=color:#b8bb26>"RSA decryption error:"</span><span>, </span><span style=color:#fdf4c1>err</span><span>)
+</span><span>        </span><span style=color:#fa5c4b>return
+</span><span>    }
+</span><span>
+</span><span>    </span><span style=color:#928374;font-style:italic>// Decrypt data with AES
+</span><span>    </span><span style=color:#fdf4c1>decrypted</span><span>, </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>decryptAES</span><span>(</span><span style=color:#fdf4c1>ciphertext</span><span>, </span><span style=color:#fdf4c1>decryptedKey</span><span>)
+</span><span>    </span><span style=color:#fa5c4b>if </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>!= </span><span style=color:#d3869b>nil </span><span>{
+</span><span>        </span><span style=color:#fdf4c1>fmt</span><span>.</span><span style=color:#fdf4c1>Println</span><span>(</span><span style=color:#b8bb26>"AES decryption error:"</span><span>, </span><span style=color:#fdf4c1>err</span><span>)
+</span><span>        </span><span style=color:#fa5c4b>return
+</span><span>    }
+</span><span>    </span><span style=color:#fdf4c1>fmt</span><span>.</span><span style=color:#fdf4c1>Printf</span><span>(</span><span style=color:#b8bb26>"Decrypted: </span><span style=color:#fdf4c1>%s</span><span style=color:#b8bb26>\n"</span><span>, </span><span style=color:#fdf4c1>decrypted</span><span>)
+</span><span>}
+</span><span>
+</span><span style=color:#fa5c4b>func </span><span style=color:#8ec07c>encryptAES</span><span>(</span><span style=color:#fdf4c1>plaintext</span><span>, </span><span style=color:#fdf4c1>key </span><span>[]</span><span style=color:#fabd2f>byte</span><span>) ([]</span><span style=color:#fabd2f>byte</span><span>, </span><span style=color:#fabd2f>error</span><span>) {
+</span><span>    </span><span style=color:#fdf4c1>block</span><span>, </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>aes</span><span>.</span><span style=color:#fdf4c1>NewCipher</span><span>(</span><span style=color:#fdf4c1>key</span><span>)
+</span><span>    </span><span style=color:#fa5c4b>if </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>!= </span><span style=color:#d3869b>nil </span><span>{
+</span><span>        </span><span style=color:#fa5c4b>return </span><span style=color:#d3869b>nil</span><span>, </span><span style=color:#fdf4c1>err
+</span><span>    }
+</span><span>
+</span><span>    </span><span style=color:#fdf4c1>padding </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>aes</span><span>.</span><span style=color:#fdf4c1>BlockSize </span><span style=color:#fe8019>- </span><span style=color:#fabd2f>len</span><span>(</span><span style=color:#fdf4c1>plaintext</span><span>)</span><span style=color:#fe8019>%</span><span style=color:#fdf4c1>aes</span><span>.</span><span style=color:#fdf4c1>BlockSize
+</span><span>    </span><span style=color:#fdf4c1>padtext </span><span style=color:#fe8019>:= </span><span style=color:#fabd2f>append</span><span>(</span><span style=color:#fdf4c1>plaintext</span><span>, </span><span style=color:#fdf4c1>bytes</span><span>.</span><span style=color:#fdf4c1>Repeat</span><span>([]</span><span style=color:#fabd2f>byte</span><span>{</span><span style=color:#fabd2f>byte</span><span>(</span><span style=color:#fdf4c1>padding</span><span>)}, </span><span style=color:#fdf4c1>padding</span><span>)</span><span style=color:#fe8019>...</span><span>)
+</span><span>
+</span><span>    </span><span style=color:#fdf4c1>ciphertext </span><span style=color:#fe8019>:= </span><span style=color:#fabd2f>make</span><span>([]</span><span style=color:#fabd2f>byte</span><span>, </span><span style=color:#fdf4c1>aes</span><span>.</span><span style=color:#fdf4c1>BlockSize</span><span style=color:#fe8019>+</span><span style=color:#fabd2f>len</span><span>(</span><span style=color:#fdf4c1>padtext</span><span>))
+</span><span>    </span><span style=color:#fdf4c1>iv </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>ciphertext</span><span>[:</span><span style=color:#fdf4c1>aes</span><span>.</span><span style=color:#fdf4c1>BlockSize</span><span>]
+</span><span>    </span><span style=color:#fa5c4b>if </span><span style=color:#fdf4c1>_</span><span>, </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>io</span><span>.</span><span style=color:#fdf4c1>ReadFull</span><span>(</span><span style=color:#fdf4c1>rand</span><span>.</span><span style=color:#fdf4c1>Reader</span><span>, </span><span style=color:#fdf4c1>iv</span><span>); </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>!= </span><span style=color:#d3869b>nil </span><span>{
+</span><span>        </span><span style=color:#fa5c4b>return </span><span style=color:#d3869b>nil</span><span>, </span><span style=color:#fdf4c1>err
+</span><span>    }
+</span><span>
+</span><span>    </span><span style=color:#fdf4c1>mode </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>cipher</span><span>.</span><span style=color:#fdf4c1>NewCBCEncrypter</span><span>(</span><span style=color:#fdf4c1>block</span><span>, </span><span style=color:#fdf4c1>iv</span><span>)
+</span><span>    </span><span style=color:#fdf4c1>mode</span><span>.</span><span style=color:#fdf4c1>CryptBlocks</span><span>(</span><span style=color:#fdf4c1>ciphertext</span><span>[</span><span style=color:#fdf4c1>aes</span><span>.</span><span style=color:#fdf4c1>BlockSize</span><span>:], </span><span style=color:#fdf4c1>padtext</span><span>)
+</span><span>
+</span><span>    </span><span style=color:#fa5c4b>return </span><span style=color:#fdf4c1>ciphertext</span><span>, </span><span style=color:#d3869b>nil
+</span><span>}
+</span><span>
+</span><span style=color:#fa5c4b>func </span><span style=color:#8ec07c>decryptAES</span><span>(</span><span style=color:#fdf4c1>ciphertext</span><span>, </span><span style=color:#fdf4c1>key </span><span>[]</span><span style=color:#fabd2f>byte</span><span>) ([]</span><span style=color:#fabd2f>byte</span><span>, </span><span style=color:#fabd2f>error</span><span>) {
+</span><span>    </span><span style=color:#fdf4c1>block</span><span>, </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>aes</span><span>.</span><span style=color:#fdf4c1>NewCipher</span><span>(</span><span style=color:#fdf4c1>key</span><span>)
+</span><span>    </span><span style=color:#fa5c4b>if </span><span style=color:#fdf4c1>err </span><span style=color:#fe8019>!= </span><span style=color:#d3869b>nil </span><span>{
+</span><span>        </span><span style=color:#fa5c4b>return </span><span style=color:#d3869b>nil</span><span>, </span><span style=color:#fdf4c1>err
+</span><span>    }
+</span><span>
+</span><span>    </span><span style=color:#fa5c4b>if </span><span style=color:#fabd2f>len</span><span>(</span><span style=color:#fdf4c1>ciphertext</span><span>) </span><span style=color:#fe8019>< </span><span style=color:#fdf4c1>aes</span><span>.</span><span style=color:#fdf4c1>BlockSize </span><span>{
+</span><span>        </span><span style=color:#fa5c4b>return </span><span style=color:#d3869b>nil</span><span>, </span><span style=color:#fdf4c1>fmt</span><span>.</span><span style=color:#fdf4c1>Errorf</span><span>(</span><span style=color:#b8bb26>"ciphertext too short"</span><span>)
+</span><span>    }
+</span><span>
+</span><span>    </span><span style=color:#fdf4c1>iv </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>ciphertext</span><span>[:</span><span style=color:#fdf4c1>aes</span><span>.</span><span style=color:#fdf4c1>BlockSize</span><span>]
+</span><span>    </span><span style=color:#fdf4c1>ciphertext </span><span style=color:#fe8019>= </span><span style=color:#fdf4c1>ciphertext</span><span>[</span><span style=color:#fdf4c1>aes</span><span>.</span><span style=color:#fdf4c1>BlockSize</span><span>:]
+</span><span>
+</span><span>    </span><span style=color:#fdf4c1>mode </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>cipher</span><span>.</span><span style=color:#fdf4c1>NewCBCDecrypter</span><span>(</span><span style=color:#fdf4c1>block</span><span>, </span><span style=color:#fdf4c1>iv</span><span>)
+</span><span>    </span><span style=color:#fdf4c1>mode</span><span>.</span><span style=color:#fdf4c1>CryptBlocks</span><span>(</span><span style=color:#fdf4c1>ciphertext</span><span>, </span><span style=color:#fdf4c1>ciphertext</span><span>)
+</span><span>
+</span><span>    </span><span style=color:#fdf4c1>padding </span><span style=color:#fe8019>:= </span><span style=color:#fabd2f>int</span><span>(</span><span style=color:#fdf4c1>ciphertext</span><span>[</span><span style=color:#fabd2f>len</span><span>(</span><span style=color:#fdf4c1>ciphertext</span><span>)</span><span style=color:#fe8019>-</span><span style=color:#d3869b>1</span><span>])
+</span><span>    </span><span style=color:#fa5c4b>return </span><span style=color:#fdf4c1>ciphertext</span><span>[:</span><span style=color:#fabd2f>len</span><span>(</span><span style=color:#fdf4c1>ciphertext</span><span>)</span><span style=color:#fe8019>-</span><span style=color:#fdf4c1>padding</span><span>], </span><span style=color:#d3869b>nil
+</span><span>}
+</span><span>
+</span><span style=color:#928374;font-style:italic>// Output:
+</span><span style=color:#928374;font-style:italic>// Encrypted AES key (base64): [base64 string varies]
+</span><span style=color:#928374;font-style:italic>// Ciphertext (base64): [base64 string varies]
+</span><span style=color:#928374;font-style:italic>// Decrypted: Hybrid encryption in Go!
+</span></code></pre><h2 id=what-to-use-when>What to Use When</h2><ul><li>AES-CBC: Good for general-purpose encryption with manual padding.<li>AES-GCM: Best for authenticated encryption in secure communications.<li>RSA: Ideal for key exchange or small data encryption.<li>Hybrid encryption: Combines AES and RSA for large-scale secure data transfer.</ul></div><footer class=post-footer><ul class=post-tags><li><a href=https://zerotohero.dev/tags/snippets/>snippets</a><li><a href=https://zerotohero.dev/tags/drafts/>drafts</a><li><a href=https://zerotohero.dev/tags/inbox/>inbox</a></ul><nav class=paginav></nav></footer></article></main><footer class=footer><span>© <a href=https://zerotohero.dev>Volkan Özçelik</a> and <a href=/vadideki-geyik/team>Team Geyik</a></span><br><br> The content on this website is distributed under a <a href=https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en>CC-BY-NC-SA 4.0 license</a>.<br><br><a href=/about/privacy>Privacy Policy</a> | <a href=/about/contact>Contact</a><br><br><br></footer><a aria-label="go to top" title="Go to Top (Alt + G)" accesskey=g class=top-link href=#top id=top-link> <svg viewbox="0 0 12 6" fill=currentColor xmlns=http://www.w3.org/2000/svg><path d="M12 6H0l6-6z"/></svg> </a><script>let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });</script><script>var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };</script><script>document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })</script><script>document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                var content = codeblock.textContent;
+                if(codeblock.firstChild.tagName == 'TABLE') {
+                    content = Array(...codeblock.firstChild.getElementsByTagName('span')).map((span) => { return span.textContent; }).join('');
+                }
+                navigator.clipboard.writeText(content);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            // td containing LineNos
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            // table containing LineNos and code
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            // code blocks not having highlight as parent class
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });</script>
