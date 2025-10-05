@@ -26,8 +26,8 @@ authorization, and service subscription.
 
 ## Lecture
 
-{{vimeo(
-  id="662146491",
+{{youtube(
+  id="VfIn8F31_kM?si=tu5pp4W2tPR5qgtc",
   title="Zero to Prod in Half an Hour: Part 10 --- Authentication and Subscription Middlewares"
 )}}
 

@@ -91,7 +91,7 @@
 </span><span>			</span><span style=color:#fa5c4b>return </span><span style=color:#d3869b>true
 </span><span>		})
 </span><span>
-</span><span>		</span><span style=color:#fa5c4b>if </span><span style=color:#fdf4c1>shardCount </span><span style=color:#fe8019>< </span><span style=color:#d3869b>3 </span><span>{
+</span><span>		</span><span style=color:#fa5c4b>if </span><span style=color:#fdf4c1>shardCount </span><span style=color:#fe8019>&lt; </span><span style=color:#d3869b>3 </span><span>{
 </span><span>			</span><span style=color:#fdf4c1>time</span><span>.</span><span style=color:#fdf4c1>Sleep</span><span>(</span><span style=color:#d3869b>2 </span><span style=color:#fe8019>* </span><span style=color:#fdf4c1>time</span><span>.</span><span style=color:#fdf4c1>Second</span><span>)
 </span><span>			</span><span style=color:#fa5c4b>continue
 </span><span>		}
@@ -125,7 +125,7 @@
 </span><span>	</span><span style=color:#fdf4c1>Shards</span><span>.</span><span style=color:#fdf4c1>Range</span><span>(</span><span style=color:#fa5c4b>func</span><span>(</span><span style=color:#fdf4c1>key</span><span>, </span><span style=color:#fdf4c1>value </span><span style=color:#fa5c4b>any</span><span>) </span><span style=color:#fabd2f>bool </span><span>{
 </span><span>		</span><span style=color:#fdf4c1>counter</span><span style=color:#fe8019>++
 </span><span>		</span><span style=color:#fdf4c1>shard </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>value</span><span>.([]</span><span style=color:#fabd2f>byte</span><span>)
-</span><span>		</span><span style=color:#fa5c4b>for </span><span style=color:#fdf4c1>i </span><span style=color:#fe8019>:= </span><span style=color:#d3869b>0</span><span>; </span><span style=color:#fdf4c1>i </span><span style=color:#fe8019>< </span><span style=color:#d3869b>32</span><span>; </span><span style=color:#fdf4c1>i</span><span style=color:#fe8019>++ </span><span>{
+</span><span>		</span><span style=color:#fa5c4b>for </span><span style=color:#fdf4c1>i </span><span style=color:#fe8019>:= </span><span style=color:#d3869b>0</span><span>; </span><span style=color:#fdf4c1>i </span><span style=color:#fe8019>&lt; </span><span style=color:#d3869b>32</span><span>; </span><span style=color:#fdf4c1>i</span><span style=color:#fe8019>++ </span><span>{
 </span><span>			</span><span style=color:#fdf4c1>finalKey</span><span>[</span><span style=color:#fdf4c1>i</span><span>] </span><span style=color:#fe8019>^= </span><span style=color:#fdf4c1>shard</span><span>[</span><span style=color:#fdf4c1>i</span><span>]
 </span><span>		}
 </span><span>		</span><span style=color:#fa5c4b>return </span><span style=color:#d3869b>true
@@ -245,7 +245,7 @@
 </span><span>  </span><span style=color:#fdf4c1>source </span><span style=color:#fe8019>*</span><span style=color:#fdf4c1>workloadapi</span><span>.</span><span style=color:#fa5c4b>X509Source</span><span>, </span><span style=color:#fdf4c1>ticker </span><span style=color:#fe8019>*</span><span style=color:#fdf4c1>time</span><span>.</span><span style=color:#fa5c4b>Ticker</span><span>) {
 </span><span>	</span><span style=color:#fa5c4b>for </span><span>{
 </span><span>		</span><span style=color:#fa5c4b>select </span><span>{
-</span><span>		</span><span style=color:#fa5c4b>case </span><span style=color:#fe8019>&LT-</span><span style=color:#fdf4c1>ticker</span><span>.</span><span style=color:#fdf4c1>C</span><span>:
+</span><span>		</span><span style=color:#fa5c4b>case </span><span style=color:#fe8019>&lt;-</span><span style=color:#fdf4c1>ticker</span><span>.</span><span style=color:#fdf4c1>C</span><span>:
 </span><span>			</span><span style=color:#fdf4c1>keepers </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>env</span><span>.</span><span style=color:#fdf4c1>Peers</span><span>()
 </span><span>			</span><span style=color:#fdf4c1>shardsCollected </span><span style=color:#fe8019>:= </span><span>[][]</span><span style=color:#fabd2f>byte</span><span>{}
 </span><span>
@@ -280,7 +280,7 @@
 </span><span>            </span><span style=color:#fdf4c1>state</span><span>.</span><span style=color:#fdf4c1>Initialize</span><span>(</span><span style=color:#fabd2f>string</span><span>(</span><span style=color:#fdf4c1>binaryRec</span><span>))
 </span><span>            </span><span style=color:#fa5c4b>return
 </span><span>			}
-</span><span>		</span><span style=color:#fa5c4b>case </span><span style=color:#fe8019>&LT-</span><span style=color:#fdf4c1>ctx</span><span>.</span><span style=color:#fdf4c1>Done</span><span>():
+</span><span>		</span><span style=color:#fa5c4b>case </span><span style=color:#fe8019>&lt;-</span><span style=color:#fdf4c1>ctx</span><span>.</span><span style=color:#fdf4c1>Done</span><span>():
 </span><span>			</span><span style=color:#fa5c4b>return
 </span><span>		}
 </span><span>	}

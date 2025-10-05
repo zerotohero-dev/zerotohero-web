@@ -25,8 +25,8 @@ and make sure that it's healthy, up, and running.
 
 ## Lecture
 
-{{vimeo(
-  id="662457596",
+{{youtube(
+  id="Ovj-iOIU8WQ?si=vggmDfdZaZPt0gH1",
   title="Zero to Prod in Half an Hour: Part 14 --- Onwards to Kubernetes"
 )}}
 

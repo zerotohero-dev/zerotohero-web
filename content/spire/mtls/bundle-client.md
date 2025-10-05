@@ -24,8 +24,8 @@ We'll continue creating creating container images and deploying the client app
 to the cluster too, then observe how the client and server communicate with each
 other within the pods.
 
-{{vimeo(
-  id="760885401", 
+{{youtube(
+  id="tpxRI7XuctE?si=_ao-WI6Hd3wAKdLm", 
   title="mTLS With SPIRE: Part 5: Containerizing the Client"
 )}}
 

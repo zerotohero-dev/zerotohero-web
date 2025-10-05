@@ -1632,9 +1632,12 @@ Manager&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 have to register the nodes and the workloads to &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt;. That’s what this
 section is all about.&lt;&#x2F;p&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;760885483?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;MsfArABWs9E?si=JHzL1tHkBc9e-XHe&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;mTLS With SPIRE: Part 7: Registering Nodes and Workloads to SPIRE&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;mTLS With SPIRE: Part 7: Registering Nodes and Workloads to SPIRE&lt;&#x2F;p&gt;
@@ -1713,9 +1716,12 @@ related articles and other helpful links.&lt;&#x2F;p&gt;
 &lt;p&gt;To establish an identity control plane, we’ll need &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt;. This section will
 deploy &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt; to the clusters.&lt;&#x2F;p&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;760885427?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;e4ZW022OBOE?si=B5cL8hs9e1WDAvl6&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;mTLS With SPIRE: Part 6: Rolling out SPIRE to the Clusters&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;mTLS With SPIRE: Part 6: Rolling out SPIRE to the Clusters&lt;&#x2F;p&gt;
@@ -1796,9 +1802,12 @@ related articles and other helpful links.&lt;&#x2F;p&gt;
 to the cluster too, then observe how the client and server communicate with each
 other within the pods.&lt;&#x2F;p&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;760885401?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;tpxRI7XuctE?si=_ao-WI6Hd3wAKdLm&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;mTLS With SPIRE: Part 5: Containerizing the Client&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;mTLS With SPIRE: Part 5: Containerizing the Client&lt;&#x2F;p&gt;
@@ -1869,9 +1878,12 @@ other within the pods.&lt;&#x2F;p&gt;
 &lt;p&gt;This section will bundle the server application, create and image out of it,
 create deployment manifests, and deploy it into the cluster.&lt;&#x2F;p&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;760885363?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;VuT5zaZwq2Y?si=9nVhMhb_QdzHWYyj&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;mTLS With SPIRE: Part 4: Containerizing the Server App&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;mTLS With SPIRE: Part 4: Containerizing the Server App&lt;&#x2F;p&gt;
@@ -1958,9 +1970,12 @@ in this video series&lt;&#x2F;em&gt;)&lt;&#x2F;li&gt;
 client and the server. The connectivity is insecure: There is no &lt;strong&gt;mTLS&lt;&#x2F;strong&gt;
 security yet—we’ll come to that later.&lt;&#x2F;p&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;760885310?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;zp1JiA2Kni8?si=XhDNihlicw7pJGFb&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;mTLS With SPIRE: Part 3: Creating the Client App&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;mTLS With SPIRE: Part 3: Creating the Client App&lt;&#x2F;p&gt;
@@ -2032,12 +2047,15 @@ security yet—we’ll come to that later.&lt;&#x2F;p&gt;
 &lt;em&gt;SPIRE&lt;&#x2F;em&gt;* servers to enable cross-cluster &lt;strong&gt;mTLS&lt;&#x2F;strong&gt; connectivity between workloads
 that reside in different clusters.&lt;&#x2F;p&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;760885671?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
-    title=&quot;mTLS With SPIRE: Part 8: Configuring the Server to User SPIRE mTLS&quot;&gt;&lt;&#x2F;iframe&gt;
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;YaRI-U8czBI?si=om4iKvw2rGHB6gCu&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
+    title=&quot;mTLS With SPIRE: Part 10: Establishing Cross-Cluster mTLS&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
-&lt;p style=&quot;text-align: center;&quot;&gt;mTLS With SPIRE: Part 8: Configuring the Server to User SPIRE mTLS&lt;&#x2F;p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;mTLS With SPIRE: Part 10: Establishing Cross-Cluster mTLS&lt;&#x2F;p&gt;
 &lt;hr &#x2F;&gt;
 &lt;h2 id=&quot;playlist&quot;&gt;Playlist&lt;&#x2F;h2&gt;
 &lt;ul&gt;
@@ -2104,13 +2122,6 @@ related articles and other helpful links.&lt;&#x2F;p&gt;
         <id>https://zerotohero.dev/spire/spire-rocks/</id>
         
         <content type="html" xml:base="https://zerotohero.dev/spire/spire-rocks/">&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;size&#x2F;w1200&#x2F;2024&#x2F;03&#x2F;trust.png&quot; alt=&quot;Setting Up SPIRE on EKS in Less Than Ten Minutes&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
-
-&lt;div class=&quot;z2h-image&quot;&gt;
-    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;trust.png&quot; alt=&quot;Trust ie hard to gain, easy to lose. Zero Trust is no different.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
-    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
-      margin-top: -1.125em;
-      font-size: 1em;&quot;&gt;Trust ie hard to gain, easy to lose. Zero Trust is no different.&lt;&#x2F;p&gt;
-&lt;&#x2F;div&gt;
 &lt;p&gt;Psst… 🔎 Looking for &lt;strong&gt;GopherCon, 2021, TR&lt;&#x2F;strong&gt; resources? Say no more:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;GopherCon TR, Dec, 2021: &lt;em&gt;Friends Don’t Let Friends Hard-Code Their Secrets&lt;&#x2F;em&gt;
@@ -2122,9 +2133,12 @@ related articles and other helpful links.&lt;&#x2F;p&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;Here is a video recording of the demo we made too:&lt;&#x2F;p&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;655594498?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;n-hXWL5BgHg?si=ymLdQTIJlid0v8QH&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;mTLS Using Spire Under Three Minutes&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;mTLS Using Spire Under Three Minutes&lt;&#x2F;p&gt;
@@ -2139,9 +2153,12 @@ first&lt;&#x2F;strong&gt; before watching the video.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;623755802?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;FUDsXgrnI2c?si=TAvLj-iXXmDDQWg0&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;Setting Up SPIRE on EKS in Less Than Ten Minutes&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;Setting Up SPIRE on EKS in Less Than Ten Minutes&lt;&#x2F;p&gt;
@@ -2456,7 +2473,7 @@ this document outlines the details of
 &lt;a href=&quot;https:&#x2F;&#x2F;spiffe.io&#x2F;docs&#x2F;latest&#x2F;deploying&#x2F;registering&#x2F;&quot;&gt;how workloads are registered with &lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt; IDs in the
 &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt; server&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
-&lt;h2 id=&quot;detectivefemale-spire-agents&quot;&gt;🕵️‍♀️ SPIRE Agents&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;detective-female-sign-spire-agents&quot;&gt;🕵️‍♀️ SPIRE Agents&lt;&#x2F;h2&gt;
 &lt;p&gt;There is a single &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt; &lt;strong&gt;Agent&lt;&#x2F;strong&gt; on each &lt;strong&gt;Node&lt;&#x2F;strong&gt;. The agents talk to the
 &lt;strong&gt;SPIRE Server&lt;&#x2F;strong&gt;. Multiple workloads on the node talk to the same agent using the
 &lt;strong&gt;SPIFFE Workload API&lt;&#x2F;strong&gt; to receive their &lt;strong&gt;SVID&lt;&#x2F;strong&gt;s.&lt;&#x2F;p&gt;
@@ -2912,9 +2929,12 @@ service &lt;strong&gt;mTLS&lt;&#x2F;strong&gt; communication channel in the foll
 &lt;p&gt;This video will introduce the cluster architecture and talk about what we are
 planning to achieve by the end of the video series.&lt;&#x2F;p&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;760885179?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;xvfjZpZtOdo?si=rl2EJYZLOucc0Ijc&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;mTLS With SPIRE: Part 1: Introduction&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;mTLS With SPIRE: Part 1: Introduction&lt;&#x2F;p&gt;
@@ -3004,9 +3024,12 @@ Than Ten Minutes&lt;&#x2F;a&gt; (&lt;em&gt;read this first&lt;&#x2F;em&gt;)&lt;&
 &lt;p&gt;We’ll start by creating a server application. Once the server is ready, we’ll
 continue with the client application on the next video.&lt;&#x2F;p&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;760885276?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;sNqJxFE7eR8?si=hFxATeHr6n1_OGPx&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;mTLS With SPIRE: Part 2: Creating the Server App&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;mTLS With SPIRE: Part 2: Creating the Server App&lt;&#x2F;p&gt;
@@ -3088,9 +3111,12 @@ client and the server can talk securely within a single cluster. In the
 following video, we’ll move the client to a different cluster and federate the
 &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt; servers to establish cross-clsuter &lt;strong&gt;mTLS&lt;&#x2F;strong&gt; too.&lt;&#x2F;p&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;760885615?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;5Onh7nR6xcs?si=q7SvMuDqZAxIhaRl&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;mTLS With SPIRE: Part 9: Configuring the Client to User SPIRE mTLS&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;mTLS With SPIRE: Part 9: Configuring the Client to User SPIRE mTLS&lt;&#x2F;p&gt;
@@ -3161,9 +3187,12 @@ following video, we’ll move the client to a different cluster and federate the
 &lt;p&gt;Now that we have &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt;, our server application can use it to establish an
 &lt;strong&gt;mTLS&lt;&#x2F;strong&gt; connectivity.&lt;&#x2F;p&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;760885555?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;8mbVPEl9iio?si=NI0rkjX-7mXX1AkB&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;mTLS With SPIRE: Part 8: Configuring the Server to User SPIRE mTLS&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;mTLS With SPIRE: Part 8: Configuring the Server to User SPIRE mTLS&lt;&#x2F;p&gt;

@@ -32,9 +32,12 @@
 &lt;p&gt;This quick video will create an &lt;a href=&quot;https:&#x2F;&#x2F;aws.amazon.com&#x2F;ecr&#x2F;&quot;&gt;&lt;strong&gt;AWS ECR&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; repo
 and set up our development environment to interact with it.&lt;&#x2F;p&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;564406841?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;domIOFhMjpI?si=9-ofptjrcT6arxoS&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;Creating ECR Repositories&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;Creating ECR Repositories&lt;&#x2F;p&gt;

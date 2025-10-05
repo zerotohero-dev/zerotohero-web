@@ -27,8 +27,8 @@ Since **FizzBuzz Pro** is a work in progress, anything can change anytime;
 however we have to start designing somewhere. So, without further ado, here
 comes the video that explains the initial design:
 
-{{vimeo(
-  id="578676419",
+{{youtube(
+  id="6DUrJrPyePo?si=4XQPv94j0TkxEGTv",
   title="FizzBuzz Pro High Level Design"
 )}}
 

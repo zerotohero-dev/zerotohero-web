@@ -68,8 +68,8 @@ Here are the slides and an the source code of [my recent GopherCon talk on
 
 Here is a video recording of the demo I made there too:
 
-{{vimeo(
-  id="623755802", 
+{{youtube(
+  id="SlK-NoR7gc4?si=usU3UAVZMV8WT48A", 
   title="🤘 SPIRE Rocks 🤘"
 )}}
 

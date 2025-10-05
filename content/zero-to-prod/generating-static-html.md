@@ -27,8 +27,8 @@ heavy-lifting.
 
 ## Lecture
 
-{{vimeo(
-  id="661262162",
+{{youtube(
+  id="c-3AI5x86jQ?si=6Q346nLpxImG74EQ",
   title="Zero to Prod in Half an Hour: Part 2 --- Generating Static HTML"
 )}}
 

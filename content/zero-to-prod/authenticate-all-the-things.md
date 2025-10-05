@@ -26,8 +26,8 @@ control plane.
 
 ## Lecture
 
-{{vimeo(
-  id="662068994",
+{{youtube(
+  id="8mbVPEl9iio?si=HtvukSA5xuQrNLvP",
   title="Zero to Prod in Half an Hour: Part 8 --- Authenticate All the Things"
 )}}
 

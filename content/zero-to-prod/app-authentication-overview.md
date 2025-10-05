@@ -27,8 +27,8 @@ be used in our **OAuth 2.0** authentication **login**, **callback**, and *
 
 ## Lecture
 
-{{vimeo(
-  id="661702567",
+{{youtube(
+  id="MJvtlWGiaC0?si=yBgEWt-28-O0Vn94",
   title="Zero to Prod in Half an Hour: Part 4 --- App Authentication Overview"
 )}}
 

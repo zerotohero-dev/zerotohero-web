@@ -27,8 +27,8 @@ identity management functionality of our app.
 
 # Lecture
 
-{{vimeo(
-  id="661765992",
+{{youtube(
+  id="gFbvD-U8kcI?si=rmUqt0eTj1IZSmZI",
   title="Zero to Prod in Half an Hour: Part 5 --- Implementing an OIDC Authenticator"
 )}}
 

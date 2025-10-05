@@ -35,15 +35,7 @@ But the highlight of the year was our trip to Hawaii. It was a week with
 near-zero technology and full of nature. It was utterly recharging.
 
 The beautiful landscapes and friendly locals made for a truly remarkable
-experience. While there, I even saw a cute little lizard that I just had to snap
-a video of. I call him Jerry, say "hi" to him 🙂:
-
-## Jerry the Lizard
-
-{{vimeo(
-  id="787450561", 
-  title="Jerry the Lizard"
-)}}
+experience. 
 
 ## Keep Your Secrets Secret With Aegis
 

@@ -25,8 +25,8 @@ OAuth0 callback, login, and logout handlers.
 
 ## Lecture
 
-{{vimeo(
-  id="662357647",
+{{youtube(
+  id="cvYx4AQa6TE?si=175ocra9Vv_9UPFe",
   title="Zero to Prod in Half an Hour: Part 11 --- Implementing Authentication Handlers"
 )}}
 

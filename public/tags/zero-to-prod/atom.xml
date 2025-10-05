@@ -68,20 +68,15 @@ higher-resolution version&lt;&#x2F;em&gt;):&lt;&#x2F;p&gt;
 &lt;p&gt;So, without further ado, here goes the video.&lt;&#x2F;p&gt;
 &lt;p&gt;Here’s a quick cut where I’m talking about &lt;strong&gt;FizzBuzz Pro&lt;&#x2F;strong&gt; in general:&lt;&#x2F;p&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;557079474?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;u_I5azPqgg4?si=W9BdGceygaOCYthm&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;A brief overview of FizzBuzz Pro.&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;A brief overview of FizzBuzz Pro.&lt;&#x2F;p&gt;
-&lt;p&gt;And here’s the entire raw &lt;strong&gt;uncut&lt;&#x2F;strong&gt; video for your viewing pleasure:&lt;&#x2F;p&gt;
-&lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;556452479?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
-    title=&quot;FizzBuzz Pro High Level Design&quot;&gt;&lt;&#x2F;iframe&gt;
-&lt;&#x2F;div&gt;
-&lt;p style=&quot;text-align: center;&quot;&gt;FizzBuzz Pro High Level Design&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;playlist&quot;&gt;Playlist&lt;&#x2F;h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -185,9 +180,12 @@ create another video that walks through the new login flow.&lt;&#x2F;p&gt;
 sample middleware to see it in action.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;661986834?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;-HbmAEjav4o?si=ESiOocPf5j9NiAwt&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;Zero to Prod in Half an Hour: Part 7: 
     A Mild Introduction to Middlewares&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
@@ -298,9 +296,12 @@ application in half an hour. Let’s look into what kind of an application we’
 build and what technologies we’ll use.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;661262113?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;u_I5azPqgg4?si=7S-wLlMvXCCMlN0l&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;Zero to Prod in Half an Hour: Part 1 --- An Overview of FizzBuzz Pro&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;Zero to Prod in Half an Hour: Part 1 --- An Overview of FizzBuzz Pro&lt;&#x2F;p&gt;
@@ -426,9 +427,12 @@ archive&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 authorization, and service subscription.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;662146491?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;VfIn8F31_kM?si=tu5pp4W2tPR5qgtc&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;Zero to Prod in Half an Hour: Part 10 --- Authentication and Subscription Middlewares&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;Zero to Prod in Half an Hour: Part 10 --- Authentication and Subscription Middlewares&lt;&#x2F;p&gt;
@@ -539,9 +543,12 @@ archive&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 yeet it out to a cluster. And that’s what we’ll do.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;662428552?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;FcHwCiVa04Q?si=0SDkDbxglful19yj&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;Zero to Prod in Half an Hour: Part 13 --- Containerizing Our Application&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;Zero to Prod in Half an Hour: Part 13 --- Containerizing Our Application&lt;&#x2F;p&gt;
@@ -654,9 +661,12 @@ archive&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 OAuth0 callback, login, and logout handlers.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;662357647?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;cvYx4AQa6TE?si=175ocra9Vv_9UPFe&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;Zero to Prod in Half an Hour: Part 11 --- Implementing Authentication Handlers&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;Zero to Prod in Half an Hour: Part 11 --- Implementing Authentication Handlers&lt;&#x2F;p&gt;
@@ -769,9 +779,12 @@ we’ll implement a MongoDB-backed session store to be used in our Auth0 identit
 control plane.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;662068994?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;8mbVPEl9iio?si=HtvukSA5xuQrNLvP&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;Zero to Prod in Half an Hour: Part 8 --- Authenticate All the Things&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;Zero to Prod in Half an Hour: Part 8 --- Authenticate All the Things&lt;&#x2F;p&gt;
@@ -890,9 +903,12 @@ archive&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 and make sure that it’s healthy, up, and running.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;662457596?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;Ovj-iOIU8WQ?si=vggmDfdZaZPt0gH1&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;Zero to Prod in Half an Hour: Part 14 --- Onwards to Kubernetes&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;Zero to Prod in Half an Hour: Part 14 --- Onwards to Kubernetes&lt;&#x2F;p&gt;
@@ -1022,9 +1038,12 @@ in essence, is a glorified file server with some path traversal protection for
 an added level of security.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;662405388?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;17OZdX1WOOw?si=g4rIEKOhDQ2txaOj&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;Zero to Prod in Half an Hour: Part 12 --- The Final Touches&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;Zero to Prod in Half an Hour: Part 12 --- The Final Touches&lt;&#x2F;p&gt;
@@ -1135,9 +1154,12 @@ We’ll register the middlewares in our routes as if they have already been
 implemented; and we’ll implement the missing pieces in the upcoming lectures.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;662112549?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;5Onh7nR6xcs?si=XEtDHJm4RhEw08G3&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;Zero to Prod in Half an Hour: Part 9 --- Thinking in Middlewares&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;Zero to Prod in Half an Hour: Part 9 --- Thinking in Middlewares&lt;&#x2F;p&gt;
@@ -1246,9 +1268,12 @@ and serve them in several routes. We will also use a Gumroad embed form and a
 very minimal dynamic templating in our subscription form.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;661883975?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;bfNJjviT47M?si=T-ha1j-GV8xKTc9R&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;Zero to Prod in Half an Hour: Part 6 --- Serving Web Pages&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;Zero to Prod in Half an Hour: Part 6 --- Serving Web Pages&lt;&#x2F;p&gt;
@@ -1369,9 +1394,12 @@ be used in our &lt;strong&gt;OAuth 2.0&lt;&#x2F;strong&gt; authentication &lt;st
 &lt;em&gt;logout&lt;&#x2F;em&gt;* routes.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;661702567?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;MJvtlWGiaC0?si=yBgEWt-28-O0Vn94&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;Zero to Prod in Half an Hour: Part 4 --- App Authentication Overview&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;Zero to Prod in Half an Hour: Part 4 --- App Authentication Overview&lt;&#x2F;p&gt;
@@ -1485,14 +1513,17 @@ archive&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
       margin-top: -1.125em;
       font-size: 1em;&quot;&gt;Zero to Prod in Half an Hour: Part 3 --- Mutating the Generated HTML Files&lt;&#x2F;p&gt;
 &lt;&#x2F;div&gt;
-&lt;p&gt;As it turns out, using pygmentize can only do so much for us and we’ll need to
+&lt;p&gt;As it turns out, using &lt;code&gt;pygmentize&lt;&#x2F;code&gt; can only do so much for us and we’ll need to
 extend the generated HTML files. This section will update the generated HTML
 files and implements custom mutations using Go programming language.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;661642565?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;Ovj-iOIU8WQ?si=vggmDfdZaZPt0gH1&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;Zero to Prod in Half an Hour: Part 3 --- Generating Static HTML&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;Zero to Prod in Half an Hour: Part 3 --- Generating Static HTML&lt;&#x2F;p&gt;
@@ -1608,9 +1639,12 @@ those files. In this process, Pygments Python Syntax Highlighter will do the
 heavy-lifting.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;661262162?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;c-3AI5x86jQ?si=6Q346nLpxImG74EQ&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;Zero to Prod in Half an Hour: Part 2 --- Generating Static HTML&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;Zero to Prod in Half an Hour: Part 2 --- Generating Static HTML&lt;&#x2F;p&gt;
@@ -1728,9 +1762,12 @@ s, &lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;concepts&#x2F
 es, and the like.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;581601867?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;xSUKS0MiElA?si=PsHgJAToCmTEFjK9&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;Deploying a Microservice to Kubernetes&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;Deploying a Microservice to Kubernetes&lt;&#x2F;p&gt;
@@ -1927,9 +1964,12 @@ APIs.&lt;&#x2F;p&gt;
 however we have to start designing somewhere. So, without further ado, here
 comes the video that explains the initial design:&lt;&#x2F;p&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;578676419?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;6DUrJrPyePo?si=4XQPv94j0TkxEGTv&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;FizzBuzz Pro High Level Design&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;FizzBuzz Pro High Level Design&lt;&#x2F;p&gt;
@@ -2045,9 +2085,12 @@ Ingress, networking and other magic.&lt;&#x2F;li&gt;
 &lt;p&gt;This quick video will create an &lt;a href=&quot;https:&#x2F;&#x2F;aws.amazon.com&#x2F;ecr&#x2F;&quot;&gt;&lt;strong&gt;AWS ECR&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; repo
 and set up our development environment to interact with it.&lt;&#x2F;p&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;564406841?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;domIOFhMjpI?si=9-ofptjrcT6arxoS&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;Creating ECR Repositories&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;Creating ECR Repositories&lt;&#x2F;p&gt;
@@ -2372,9 +2415,12 @@ Config. In the upcoming lectures we’ll use this Authenticator to implement
 identity management functionality of our app.&lt;&#x2F;p&gt;
 &lt;h1 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h1&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;661765992?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;gFbvD-U8kcI?si=rmUqt0eTj1IZSmZI&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;Zero to Prod in Half an Hour: Part 5 --- Implementing an OIDC Authenticator&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;Zero to Prod in Half an Hour: Part 5 --- Implementing an OIDC Authenticator&lt;&#x2F;p&gt;

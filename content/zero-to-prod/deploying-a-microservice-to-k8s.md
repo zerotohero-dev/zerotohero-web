@@ -35,8 +35,8 @@ es, and the like.
 
 ## Lecture
 
-{{vimeo(
-  id="581601867",
+{{youtube(
+  id="xSUKS0MiElA?si=PsHgJAToCmTEFjK9",
   title="Deploying a Microservice to Kubernetes"
 )}}
 

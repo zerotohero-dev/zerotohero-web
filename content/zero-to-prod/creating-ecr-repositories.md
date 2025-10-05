@@ -23,8 +23,8 @@ tags = ["zero-to-prod", "aws", "ecr"]
 This quick video will create an [**AWS ECR**](https://aws.amazon.com/ecr/) repo
 and set up our development environment to interact with it.
 
-{{vimeo(
-  id="564406841",
+{{youtube(
+  id="domIOFhMjpI?si=9-ofptjrcT6arxoS",
   title="Creating ECR Repositories"
 )}}
 

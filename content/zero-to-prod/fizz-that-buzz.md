@@ -65,16 +65,9 @@ So, without further ado, here goes the video.
 
 Here's a quick cut where I'm talking about **FizzBuzz Pro** in general:
 
-{{vimeo(
-  id="557079474",
+{{youtube(
+  id="u_I5azPqgg4?si=W9BdGceygaOCYthm",
   title="A brief overview of FizzBuzz Pro."
-)}}
-
-And here's the entire raw **uncut** video for your viewing pleasure:
-
-{{vimeo(
-  id="556452479",
-  title="FizzBuzz Pro High Level Design"
 )}}
 
 ## Playlist

@@ -26,8 +26,8 @@ build and what technologies we'll use.
 
 ## Lecture
 
-{{vimeo(
-  id="661262113",
+{{youtube(
+  id="u_I5azPqgg4?si=7S-wLlMvXCCMlN0l",
   title="Zero to Prod in Half an Hour: Part 1 --- An Overview of FizzBuzz Pro"
 )}}
 

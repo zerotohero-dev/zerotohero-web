@@ -23,8 +23,8 @@ tags = ["mtls", "spiffe", "spire"]
 Now that we have **SPIRE**, our server application can use it to establish an
 **mTLS** connectivity.
 
-{{vimeo(
-  id="760885555", 
+{{youtube(
+  id="8mbVPEl9iio?si=NI0rkjX-7mXX1AkB", 
   title="mTLS With SPIRE: Part 8: Configuring the Server to User SPIRE mTLS"
 )}}
 

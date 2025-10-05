@@ -22,14 +22,14 @@ tags = ["zero-to-prod"]
   alt="Zero to Prod in Half an Hour: Part 3 --- Mutating the Generated HTML Files"
 )}}
 
-As it turns out, using pygmentize can only do so much for us and we'll need to
+As it turns out, using `pygmentize` can only do so much for us and we'll need to
 extend the generated HTML files. This section will update the generated HTML
 files and implements custom mutations using Go programming language.
 
 ## Lecture
 
-{{vimeo(
-  id="661642565",
+{{youtube(
+  id="Ovj-iOIU8WQ?si=vggmDfdZaZPt0gH1",
   title="Zero to Prod in Half an Hour: Part 3 --- Generating Static HTML"
 )}}
 

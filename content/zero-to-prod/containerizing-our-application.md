@@ -25,8 +25,8 @@ yeet it out to a cluster. And that's what we'll do.
 
 ## Lecture
 
-{{vimeo(
-  id="662428552",
+{{youtube(
+  id="FcHwCiVa04Q?si=0SDkDbxglful19yj",
   title="Zero to Prod in Half an Hour: Part 13 --- Containerizing Our Application"
 )}}
 

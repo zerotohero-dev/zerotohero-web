@@ -25,8 +25,8 @@ tags = ["mtls", "spiffe", "spire"]
 We'll start by creating a server application. Once the server is ready, we'll
 continue with the client application on the next video.
 
-{{vimeo(
-  id="760885276", 
+{{youtube(
+  id="sNqJxFE7eR8?si=hFxATeHr6n1_OGPx", 
   title="mTLS With SPIRE: Part 2: Creating the Server App"
 )}}
 

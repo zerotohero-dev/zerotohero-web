@@ -23,8 +23,8 @@ tags = ["mtls", "spiffe", "spire", "zero-trust", "security"]
 This video will introduce the cluster architecture and talk about what we are
 planning to achieve by the end of the video series.
 
-{{vimeo(
-  id="760885179", 
+{{youtube(
+  id="xvfjZpZtOdo?si=rl2EJYZLOucc0Ijc", 
   title="mTLS With SPIRE: Part 1: Introduction"
 )}}
 

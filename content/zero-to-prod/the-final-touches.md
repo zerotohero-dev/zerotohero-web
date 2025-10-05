@@ -27,8 +27,8 @@ an added level of security.
 
 ## Lecture
 
-{{vimeo(
-  id="662405388",
+{{youtube(
+  id="17OZdX1WOOw?si=g4rIEKOhDQ2txaOj",
   title="Zero to Prod in Half an Hour: Part 12 --- The Final Touches"
 )}}
 

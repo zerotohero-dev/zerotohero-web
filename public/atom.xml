@@ -17542,7 +17542,7 @@ kind of a thing][bluemonday].&lt;&#x2F;li&gt;
 &lt;p&gt;[treesheets] :https:&#x2F;&#x2F;strlen.com&#x2F;treesheets&#x2F;
 [bluemonday]: https:&#x2F;&#x2F;github.com&#x2F;microcosm-cc&#x2F;bluemonday
 [count]: https:&#x2F;&#x2F;brunocalza.me&#x2F;there-are-many-ways-to-safely-count&#x2F;&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;thanks-a-lot-red-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
 &lt;p&gt;That’s all for this week. Next week, I’ll gather more unique content and
 resources.&lt;&#x2F;p&gt;
 &lt;p&gt;So, until next time… May the source be with you 🦄.&lt;&#x2F;p&gt;
@@ -17766,7 +17766,7 @@ moderation DevOps groups in telegram&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;AnyStatus&#x2F;AnyStatus&quot;&gt;&lt;strong&gt;AnyStatus&lt;&#x2F;strong&gt; is a remote control for your CI&#x2F;CD Pipeline&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;derailed&#x2F;popeye&quot;&gt;&lt;strong&gt;Popeye&lt;&#x2F;strong&gt; is a Kubernetes cluster resource sanitizer&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;thanks-a-lot-red-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
 &lt;p&gt;That’s all for this week. Next week, I’ll gather more unique content and
 resources.&lt;&#x2F;p&gt;
 &lt;p&gt;So, until next time… May the source be with you 🦄.&lt;&#x2F;p&gt;
@@ -18021,7 +18021,7 @@ docs&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;fluidtypography.com&#x2F;&quot;&gt;&lt;strong&gt;Fluid Typography&lt;&#x2F;strong&gt; is a technique to make the text scale based on the
 viewport size&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;thanks-a-lot-red-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
 &lt;p&gt;That’s all for this week. Next week, I’ll gather more unique content and
 resources.&lt;&#x2F;p&gt;
 &lt;p&gt;So, until next time… May the source be with you 🦄.&lt;&#x2F;p&gt;
@@ -18347,7 +18347,7 @@ K8s protocol-level visibility&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;esm.sh&#x2F;&quot;&gt;&lt;code&gt;esm.sh&lt;&#x2F;code&gt; is a modern CDN that allows you to import es6 modules from a
 URL&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;thanks-a-lot-red-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
 &lt;p&gt;That’s all for this week.&lt;&#x2F;p&gt;
 &lt;p&gt;Until next time… May the source be with you 🦄.&lt;&#x2F;p&gt;
 &lt;hr &#x2F;&gt;
@@ -19711,7 +19711,7 @@ mentees put their “&lt;em&gt;best foot forward&lt;&#x2F;em&gt;”. The article
 “&lt;em&gt;behavior smells&lt;&#x2F;em&gt;” mentees might manifest that can make the mentor-mentee
 relationship unsustainable.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;thanks-a-lot-red-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
 &lt;p&gt;That’s all for this week–hope you liked it.&lt;&#x2F;p&gt;
 &lt;p&gt;And until next time… May the source be with you 🦄.&lt;&#x2F;p&gt;
 &lt;hr &#x2F;&gt;
@@ -20800,20 +20800,15 @@ higher-resolution version&lt;&#x2F;em&gt;):&lt;&#x2F;p&gt;
 &lt;p&gt;So, without further ado, here goes the video.&lt;&#x2F;p&gt;
 &lt;p&gt;Here’s a quick cut where I’m talking about &lt;strong&gt;FizzBuzz Pro&lt;&#x2F;strong&gt; in general:&lt;&#x2F;p&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;557079474?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;u_I5azPqgg4?si=W9BdGceygaOCYthm&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;A brief overview of FizzBuzz Pro.&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;A brief overview of FizzBuzz Pro.&lt;&#x2F;p&gt;
-&lt;p&gt;And here’s the entire raw &lt;strong&gt;uncut&lt;&#x2F;strong&gt; video for your viewing pleasure:&lt;&#x2F;p&gt;
-&lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;556452479?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
-    title=&quot;FizzBuzz Pro High Level Design&quot;&gt;&lt;&#x2F;iframe&gt;
-&lt;&#x2F;div&gt;
-&lt;p style=&quot;text-align: center;&quot;&gt;FizzBuzz Pro High Level Design&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;playlist&quot;&gt;Playlist&lt;&#x2F;h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -21048,7 +21043,7 @@ time comes.&lt;&#x2F;p&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;plotly&#x2F;plotly.js&quot;&gt;&lt;strong&gt;Plotly&lt;&#x2F;strong&gt; is an awesome open-source JavaScript plotting and charting
 library&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;thanks-a-lot-red-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
 &lt;p&gt;That’s all for this week. Next week, I’ll gather more unique content and
 resources.&lt;&#x2F;p&gt;
 &lt;p&gt;So, until next time… May the source be with you 🦄.&lt;&#x2F;p&gt;
@@ -21733,16 +21728,7 @@ really amazing for me. Here are some of the highlights:&lt;&#x2F;p&gt;
 &lt;p&gt;But the highlight of the year was our trip to Hawaii. It was a week with
 near-zero technology and full of nature. It was utterly recharging.&lt;&#x2F;p&gt;
 &lt;p&gt;The beautiful landscapes and friendly locals made for a truly remarkable
-experience. While there, I even saw a cute little lizard that I just had to snap
-a video of. I call him Jerry, say “hi” to him 🙂:&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;jerry-the-lizard&quot;&gt;Jerry the Lizard&lt;&#x2F;h2&gt;
-&lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;787450561?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
-    title=&quot;Jerry the Lizard&quot;&gt;&lt;&#x2F;iframe&gt;
-&lt;&#x2F;div&gt;
-&lt;p style=&quot;text-align: center;&quot;&gt;Jerry the Lizard&lt;&#x2F;p&gt;
+experience.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;keep-your-secrets-secret-with-aegis&quot;&gt;Keep Your Secrets Secret With Aegis&lt;&#x2F;h2&gt;
 &lt;p&gt;I am excited to have released &lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;&quot;&gt;Aegis&lt;&#x2F;a&gt; this weekend.&lt;&#x2F;p&gt;
 
@@ -21805,7 +21791,7 @@ search it for scholarly articles&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;retool.com&#x2F;&quot;&gt;So you want a tool to build internal tools really fast. Say no more fam,
 and meet &lt;strong&gt;ReTool&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;thanks-a-lot-red-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
 &lt;p&gt;That’s all for this week. Next week, I’ll gather more unique content and
 resources.&lt;&#x2F;p&gt;
 &lt;p&gt;So, until next time… May the source be with you 🦄.&lt;&#x2F;p&gt;
@@ -22781,9 +22767,12 @@ creating &lt;strong&gt;valuable&lt;&#x2F;strong&gt; and &lt;strong&gt;meaningful
 sample middleware to see it in action.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;661986834?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;-HbmAEjav4o?si=ESiOocPf5j9NiAwt&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;Zero to Prod in Half an Hour: Part 7: 
     A Mild Introduction to Middlewares&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
@@ -25404,7 +25393,7 @@ index then &lt;strong&gt;Foxtrot Search&lt;&#x2F;strong&gt; maybe what you are l
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?app=desktop&amp;amp;v=VGdNrewDw3M&quot;&gt;&lt;strong&gt;The Art of Personal Failure&lt;&#x2F;strong&gt; from by no one but the most snarkiest
 person who yells into the cloud&lt;&#x2F;a&gt;]&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;thanks-a-lot-red-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
 &lt;p&gt;That’s all for this week. Next week, I’ll gather more unique content and
 resources.&lt;&#x2F;p&gt;
 &lt;p&gt;So, until next time… May the source be with you 🦄.&lt;&#x2F;p&gt;
@@ -26918,7 +26907,7 @@ alerting&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;0xax.gitbooks.io&#x2F;linux-insides&#x2F;content&#x2F;SysCall&#x2F;linux-syscall-4.htm&quot;&gt;In case you wonder how a unix kernel runs a program, here is a nice
 article about it&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;thanks-a-lot-red-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
 &lt;p&gt;That’s all for this week. Next week, I’ll gather more unique content and
 resources.&lt;&#x2F;p&gt;
 &lt;p&gt;So, until next time… May the source be with you 🦄.&lt;&#x2F;p&gt;
@@ -27174,9 +27163,12 @@ have is to &lt;strong&gt;be selective&lt;&#x2F;strong&gt; and &lt;strong&gt;do l
 have to register the nodes and the workloads to &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt;. That’s what this
 section is all about.&lt;&#x2F;p&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;760885483?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;MsfArABWs9E?si=JHzL1tHkBc9e-XHe&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;mTLS With SPIRE: Part 7: Registering Nodes and Workloads to SPIRE&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;mTLS With SPIRE: Part 7: Registering Nodes and Workloads to SPIRE&lt;&#x2F;p&gt;
@@ -27255,9 +27247,12 @@ related articles and other helpful links.&lt;&#x2F;p&gt;
 &lt;p&gt;To establish an identity control plane, we’ll need &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt;. This section will
 deploy &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt; to the clusters.&lt;&#x2F;p&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;760885427?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;e4ZW022OBOE?si=B5cL8hs9e1WDAvl6&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;mTLS With SPIRE: Part 6: Rolling out SPIRE to the Clusters&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;mTLS With SPIRE: Part 6: Rolling out SPIRE to the Clusters&lt;&#x2F;p&gt;
@@ -27339,9 +27334,12 @@ application in half an hour. Let’s look into what kind of an application we’
 build and what technologies we’ll use.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;661262113?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;u_I5azPqgg4?si=7S-wLlMvXCCMlN0l&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;Zero to Prod in Half an Hour: Part 1 --- An Overview of FizzBuzz Pro&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;Zero to Prod in Half an Hour: Part 1 --- An Overview of FizzBuzz Pro&lt;&#x2F;p&gt;
@@ -27467,9 +27465,12 @@ archive&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 to the cluster too, then observe how the client and server communicate with each
 other within the pods.&lt;&#x2F;p&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;760885401?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;tpxRI7XuctE?si=_ao-WI6Hd3wAKdLm&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;mTLS With SPIRE: Part 5: Containerizing the Client&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;mTLS With SPIRE: Part 5: Containerizing the Client&lt;&#x2F;p&gt;
@@ -27540,9 +27541,12 @@ other within the pods.&lt;&#x2F;p&gt;
 &lt;p&gt;This section will bundle the server application, create and image out of it,
 create deployment manifests, and deploy it into the cluster.&lt;&#x2F;p&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;760885363?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;VuT5zaZwq2Y?si=9nVhMhb_QdzHWYyj&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;mTLS With SPIRE: Part 4: Containerizing the Server App&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;mTLS With SPIRE: Part 4: Containerizing the Server App&lt;&#x2F;p&gt;
@@ -27629,9 +27633,12 @@ in this video series&lt;&#x2F;em&gt;)&lt;&#x2F;li&gt;
 client and the server. The connectivity is insecure: There is no &lt;strong&gt;mTLS&lt;&#x2F;strong&gt;
 security yet—we’ll come to that later.&lt;&#x2F;p&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;760885310?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;zp1JiA2Kni8?si=XhDNihlicw7pJGFb&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;mTLS With SPIRE: Part 3: Creating the Client App&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;mTLS With SPIRE: Part 3: Creating the Client App&lt;&#x2F;p&gt;
@@ -27703,12 +27710,15 @@ security yet—we’ll come to that later.&lt;&#x2F;p&gt;
 &lt;em&gt;SPIRE&lt;&#x2F;em&gt;* servers to enable cross-cluster &lt;strong&gt;mTLS&lt;&#x2F;strong&gt; connectivity between workloads
 that reside in different clusters.&lt;&#x2F;p&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;760885671?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
-    title=&quot;mTLS With SPIRE: Part 8: Configuring the Server to User SPIRE mTLS&quot;&gt;&lt;&#x2F;iframe&gt;
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;YaRI-U8czBI?si=om4iKvw2rGHB6gCu&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
+    title=&quot;mTLS With SPIRE: Part 10: Establishing Cross-Cluster mTLS&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
-&lt;p style=&quot;text-align: center;&quot;&gt;mTLS With SPIRE: Part 8: Configuring the Server to User SPIRE mTLS&lt;&#x2F;p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;mTLS With SPIRE: Part 10: Establishing Cross-Cluster mTLS&lt;&#x2F;p&gt;
 &lt;hr &#x2F;&gt;
 &lt;h2 id=&quot;playlist&quot;&gt;Playlist&lt;&#x2F;h2&gt;
 &lt;ul&gt;
@@ -27856,7 +27866,7 @@ source, collaborative API development environment&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;barthr&#x2F;redo&quot;&gt;With &lt;code&gt;redo&lt;&#x2F;code&gt; you can create reusable functions from your shell history in an
 interactive way&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;thanks-a-lot-red-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
 &lt;p&gt;That’s all for this week. Next week, I’ll gather more unique content and
 resources.&lt;&#x2F;p&gt;
 &lt;p&gt;So, until next time… May the source be with you 🦄.&lt;&#x2F;p&gt;
@@ -28086,7 +28096,7 @@ APIs together&lt;&#x2F;a&gt;j.&lt;&#x2F;li&gt;
 that matches them all? Say no more fam—Leave the job
 to &lt;strong&gt;&lt;code&gt;grex&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;thanks-a-lot-red-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
 &lt;p&gt;That’s all for this week. Next week, I’ll gather more unique content and resources.&lt;&#x2F;p&gt;
 &lt;p&gt;So, until next time… May the source be with you 🦄.&lt;&#x2F;p&gt;
 &lt;hr &#x2F;&gt;
@@ -28333,7 +28343,7 @@ to a significant shift in your perspective.&lt;&#x2F;p&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;trunk.io&#x2F;products&#x2F;check&quot;&gt;&lt;strong&gt;&lt;code&gt;trunk&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt; is a static analyzer to make your code better, faster,
 stronger&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;thanks-a-lot-red-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
 &lt;p&gt;That’s all for this week. Next week, I’ll gather more unique content and
 resources.&lt;&#x2F;p&gt;
 &lt;p&gt;So, until next time… May the source be with you 🦄.&lt;&#x2F;p&gt;
@@ -28452,9 +28462,12 @@ resources.&lt;&#x2F;p&gt;
 authorization, and service subscription.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;662146491?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;VfIn8F31_kM?si=tu5pp4W2tPR5qgtc&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;Zero to Prod in Half an Hour: Part 10 --- Authentication and Subscription Middlewares&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;Zero to Prod in Half an Hour: Part 10 --- Authentication and Subscription Middlewares&lt;&#x2F;p&gt;
@@ -28565,9 +28578,12 @@ archive&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 yeet it out to a cluster. And that’s what we’ll do.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;662428552?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;FcHwCiVa04Q?si=0SDkDbxglful19yj&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;Zero to Prod in Half an Hour: Part 13 --- Containerizing Our Application&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;Zero to Prod in Half an Hour: Part 13 --- Containerizing Our Application&lt;&#x2F;p&gt;
@@ -28680,9 +28696,12 @@ archive&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 OAuth0 callback, login, and logout handlers.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;662357647?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;cvYx4AQa6TE?si=175ocra9Vv_9UPFe&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;Zero to Prod in Half an Hour: Part 11 --- Implementing Authentication Handlers&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;Zero to Prod in Half an Hour: Part 11 --- Implementing Authentication Handlers&lt;&#x2F;p&gt;
@@ -28795,9 +28814,12 @@ we’ll implement a MongoDB-backed session store to be used in our Auth0 identit
 control plane.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;662068994?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;8mbVPEl9iio?si=HtvukSA5xuQrNLvP&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;Zero to Prod in Half an Hour: Part 8 --- Authenticate All the Things&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;Zero to Prod in Half an Hour: Part 8 --- Authenticate All the Things&lt;&#x2F;p&gt;
@@ -28916,9 +28938,12 @@ archive&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 and make sure that it’s healthy, up, and running.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;662457596?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;Ovj-iOIU8WQ?si=vggmDfdZaZPt0gH1&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;Zero to Prod in Half an Hour: Part 14 --- Onwards to Kubernetes&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;Zero to Prod in Half an Hour: Part 14 --- Onwards to Kubernetes&lt;&#x2F;p&gt;
@@ -29048,9 +29073,12 @@ in essence, is a glorified file server with some path traversal protection for
 an added level of security.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;662405388?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;17OZdX1WOOw?si=g4rIEKOhDQ2txaOj&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;Zero to Prod in Half an Hour: Part 12 --- The Final Touches&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;Zero to Prod in Half an Hour: Part 12 --- The Final Touches&lt;&#x2F;p&gt;
@@ -29161,9 +29189,12 @@ We’ll register the middlewares in our routes as if they have already been
 implemented; and we’ll implement the missing pieces in the upcoming lectures.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;662112549?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;5Onh7nR6xcs?si=XEtDHJm4RhEw08G3&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;Zero to Prod in Half an Hour: Part 9 --- Thinking in Middlewares&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;Zero to Prod in Half an Hour: Part 9 --- Thinking in Middlewares&lt;&#x2F;p&gt;
@@ -29272,9 +29303,12 @@ and serve them in several routes. We will also use a Gumroad embed form and a
 very minimal dynamic templating in our subscription form.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;661883975?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;bfNJjviT47M?si=T-ha1j-GV8xKTc9R&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;Zero to Prod in Half an Hour: Part 6 --- Serving Web Pages&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;Zero to Prod in Half an Hour: Part 6 --- Serving Web Pages&lt;&#x2F;p&gt;
@@ -29395,9 +29429,12 @@ be used in our &lt;strong&gt;OAuth 2.0&lt;&#x2F;strong&gt; authentication &lt;st
 &lt;em&gt;logout&lt;&#x2F;em&gt;* routes.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;661702567?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;MJvtlWGiaC0?si=yBgEWt-28-O0Vn94&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;Zero to Prod in Half an Hour: Part 4 --- App Authentication Overview&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;Zero to Prod in Half an Hour: Part 4 --- App Authentication Overview&lt;&#x2F;p&gt;
@@ -29511,14 +29548,17 @@ archive&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
       margin-top: -1.125em;
       font-size: 1em;&quot;&gt;Zero to Prod in Half an Hour: Part 3 --- Mutating the Generated HTML Files&lt;&#x2F;p&gt;
 &lt;&#x2F;div&gt;
-&lt;p&gt;As it turns out, using pygmentize can only do so much for us and we’ll need to
+&lt;p&gt;As it turns out, using &lt;code&gt;pygmentize&lt;&#x2F;code&gt; can only do so much for us and we’ll need to
 extend the generated HTML files. This section will update the generated HTML
 files and implements custom mutations using Go programming language.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;661642565?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;Ovj-iOIU8WQ?si=vggmDfdZaZPt0gH1&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;Zero to Prod in Half an Hour: Part 3 --- Generating Static HTML&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;Zero to Prod in Half an Hour: Part 3 --- Generating Static HTML&lt;&#x2F;p&gt;
@@ -29665,9 +29705,12 @@ Secrets&lt;&#x2F;em&gt;”) Source Code&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;Here is a video recording of the demo I made there too:&lt;&#x2F;p&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;623755802?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;SlK-NoR7gc4?si=usU3UAVZMV8WT48A&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;🤘 SPIRE Rocks 🤘&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;🤘 SPIRE Rocks 🤘&lt;&#x2F;p&gt;
@@ -29721,7 +29764,7 @@ site&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;tkellogg&#x2F;dura&quot;&gt;&lt;strong&gt;Dura&lt;&#x2F;strong&gt; is a background process that watches your Git repositories and
 commits your uncommitted changes without impacting &lt;code&gt;HEAD&lt;&#x2F;code&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;thanks-a-lot-red-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
 &lt;p&gt;That’s all for this week. Next week, I’ll gather more unique content and
 resources.&lt;&#x2F;p&gt;
 &lt;p&gt;So, until next time… May the source be with you 🦄.&lt;&#x2F;p&gt;
@@ -29842,9 +29885,12 @@ those files. In this process, Pygments Python Syntax Highlighter will do the
 heavy-lifting.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;661262162?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;c-3AI5x86jQ?si=6Q346nLpxImG74EQ&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;Zero to Prod in Half an Hour: Part 2 --- Generating Static HTML&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;Zero to Prod in Half an Hour: Part 2 --- Generating Static HTML&lt;&#x2F;p&gt;
@@ -29943,13 +29989,6 @@ archive&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
         <id>https://zerotohero.dev/spire/spire-rocks/</id>
         
         <content type="html" xml:base="https://zerotohero.dev/spire/spire-rocks/">&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;size&#x2F;w1200&#x2F;2024&#x2F;03&#x2F;trust.png&quot; alt=&quot;Setting Up SPIRE on EKS in Less Than Ten Minutes&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
-
-&lt;div class=&quot;z2h-image&quot;&gt;
-    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;trust.png&quot; alt=&quot;Trust ie hard to gain, easy to lose. Zero Trust is no different.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
-    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
-      margin-top: -1.125em;
-      font-size: 1em;&quot;&gt;Trust ie hard to gain, easy to lose. Zero Trust is no different.&lt;&#x2F;p&gt;
-&lt;&#x2F;div&gt;
 &lt;p&gt;Psst… 🔎 Looking for &lt;strong&gt;GopherCon, 2021, TR&lt;&#x2F;strong&gt; resources? Say no more:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;GopherCon TR, Dec, 2021: &lt;em&gt;Friends Don’t Let Friends Hard-Code Their Secrets&lt;&#x2F;em&gt;
@@ -29961,9 +30000,12 @@ archive&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;Here is a video recording of the demo we made too:&lt;&#x2F;p&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;655594498?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;n-hXWL5BgHg?si=ymLdQTIJlid0v8QH&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;mTLS Using Spire Under Three Minutes&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;mTLS Using Spire Under Three Minutes&lt;&#x2F;p&gt;
@@ -29978,9 +30020,12 @@ first&lt;&#x2F;strong&gt; before watching the video.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;623755802?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;FUDsXgrnI2c?si=TAvLj-iXXmDDQWg0&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;Setting Up SPIRE on EKS in Less Than Ten Minutes&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;Setting Up SPIRE on EKS in Less Than Ten Minutes&lt;&#x2F;p&gt;
@@ -30295,7 +30340,7 @@ this document outlines the details of
 &lt;a href=&quot;https:&#x2F;&#x2F;spiffe.io&#x2F;docs&#x2F;latest&#x2F;deploying&#x2F;registering&#x2F;&quot;&gt;how workloads are registered with &lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt; IDs in the
 &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt; server&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
-&lt;h2 id=&quot;detectivefemale-spire-agents&quot;&gt;🕵️‍♀️ SPIRE Agents&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;detective-female-sign-spire-agents&quot;&gt;🕵️‍♀️ SPIRE Agents&lt;&#x2F;h2&gt;
 &lt;p&gt;There is a single &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt; &lt;strong&gt;Agent&lt;&#x2F;strong&gt; on each &lt;strong&gt;Node&lt;&#x2F;strong&gt;. The agents talk to the
 &lt;strong&gt;SPIRE Server&lt;&#x2F;strong&gt;. Multiple workloads on the node talk to the same agent using the
 &lt;strong&gt;SPIFFE Workload API&lt;&#x2F;strong&gt; to receive their &lt;strong&gt;SVID&lt;&#x2F;strong&gt;s.&lt;&#x2F;p&gt;
@@ -33964,7 +34009,7 @@ editor&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;openbase.com&#x2F;&quot;&gt;&lt;strong&gt;Openbase&lt;&#x2F;strong&gt; helps you choose the right open-source package for your
 task&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;thanks-a-lot-red-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
 &lt;p&gt;That’s all for this week. Next week, I’ll gather more unique content and
 resources.&lt;&#x2F;p&gt;
 &lt;p&gt;So, until next time… May the source be with you 🦄.&lt;&#x2F;p&gt;
@@ -34900,7 +34945,7 @@ Goose—get it?&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;numpad.io&#x2F;&quot;&gt;Have you ever wanted to embed a calculator inside a text editor?
 Me neither. But &lt;strong&gt;NumPad&lt;&#x2F;strong&gt; has&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;thanks-a-lot-red-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
 &lt;p&gt;That’s all for this week. Next week, I’ll gather more unique content and
 resources.&lt;&#x2F;p&gt;
 &lt;p&gt;So, until next time… May the source be with you 🦄.&lt;&#x2F;p&gt;
@@ -35018,9 +35063,12 @@ resources.&lt;&#x2F;p&gt;
 &lt;p&gt;This video will introduce the cluster architecture and talk about what we are
 planning to achieve by the end of the video series.&lt;&#x2F;p&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;760885179?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;xvfjZpZtOdo?si=rl2EJYZLOucc0Ijc&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;mTLS With SPIRE: Part 1: Introduction&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;mTLS With SPIRE: Part 1: Introduction&lt;&#x2F;p&gt;
@@ -35110,9 +35158,12 @@ Than Ten Minutes&lt;&#x2F;a&gt; (&lt;em&gt;read this first&lt;&#x2F;em&gt;)&lt;&
 &lt;p&gt;We’ll start by creating a server application. Once the server is ready, we’ll
 continue with the client application on the next video.&lt;&#x2F;p&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;760885276?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;sNqJxFE7eR8?si=hFxATeHr6n1_OGPx&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;mTLS With SPIRE: Part 2: Creating the Server App&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;mTLS With SPIRE: Part 2: Creating the Server App&lt;&#x2F;p&gt;
@@ -35194,9 +35245,12 @@ client and the server can talk securely within a single cluster. In the
 following video, we’ll move the client to a different cluster and federate the
 &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt; servers to establish cross-clsuter &lt;strong&gt;mTLS&lt;&#x2F;strong&gt; too.&lt;&#x2F;p&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;760885615?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;5Onh7nR6xcs?si=q7SvMuDqZAxIhaRl&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;mTLS With SPIRE: Part 9: Configuring the Client to User SPIRE mTLS&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;mTLS With SPIRE: Part 9: Configuring the Client to User SPIRE mTLS&lt;&#x2F;p&gt;
@@ -35267,9 +35321,12 @@ following video, we’ll move the client to a different cluster and federate the
 &lt;p&gt;Now that we have &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt;, our server application can use it to establish an
 &lt;strong&gt;mTLS&lt;&#x2F;strong&gt; connectivity.&lt;&#x2F;p&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;760885555?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;8mbVPEl9iio?si=NI0rkjX-7mXX1AkB&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;mTLS With SPIRE: Part 8: Configuring the Server to User SPIRE mTLS&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;mTLS With SPIRE: Part 8: Configuring the Server to User SPIRE mTLS&lt;&#x2F;p&gt;
@@ -35423,7 +35480,7 @@ LAN, no need to use Instant Messaging anymore&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;hyper.is&#x2F;&quot;&gt;&lt;strong&gt;Hyper&lt;&#x2F;strong&gt; is an HTML-based. highly customizable terminal emulator that hit
 v3.1.4 recently&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;thanks-a-lot-red-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
 &lt;p&gt;That’s all for this week. Next week, I’ll gather more unique content and
 resources.&lt;&#x2F;p&gt;
 &lt;p&gt;So, until next time… May the source be with you 🦄.&lt;&#x2F;p&gt;
@@ -35624,7 +35681,7 @@ you’ll better understand how to proceed.&lt;&#x2F;p&gt;
 functions and monitors their execution status&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;sindresorhus&#x2F;globby&quot;&gt;&lt;strong&gt;globby&lt;&#x2F;strong&gt; is a user-friendly glob matcher&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;thanks-a-lot-red-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
 &lt;p&gt;That’s all for this week. Next week, I’ll gather more unique content and
 resources.&lt;&#x2F;p&gt;
 &lt;p&gt;So, until next time… May the source be with you 🦄.&lt;&#x2F;p&gt;
@@ -35894,7 +35951,7 @@ processing in the cloud&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 interface&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;changelog.com&#x2F;posts&#x2F;you-might-as-well-timestamp-it&quot;&gt;Have you considered using &lt;strong&gt;timestamp&lt;&#x2F;strong&gt;s instead of &lt;strong&gt;boolean&lt;&#x2F;strong&gt;s&lt;&#x2F;a&gt;?.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;thanks-a-lot-red-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
 &lt;p&gt;That’s all for this week. Next week, I’ll gather more unique content and
 resources.&lt;&#x2F;p&gt;
 &lt;p&gt;So, until next time… May the source be with you 🦄.&lt;&#x2F;p&gt;
@@ -36689,9 +36746,12 @@ s, &lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;concepts&#x2F
 es, and the like.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;581601867?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;xSUKS0MiElA?si=PsHgJAToCmTEFjK9&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;Deploying a Microservice to Kubernetes&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;Deploying a Microservice to Kubernetes&lt;&#x2F;p&gt;
@@ -36993,7 +37053,7 @@ session handling&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;nesslabs.com&#x2F;power-of-simplicity-complexity-bias&quot;&gt;&lt;strong&gt;Flash News&lt;&#x2F;strong&gt;: You can manage your complexity bias by… keeping things
 simple, who knew&lt;&#x2F;a&gt;!&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;thanks-a-lot-red-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
 &lt;p&gt;That’s all for this week. Next week, I’ll gather more unique content and resources.&lt;&#x2F;p&gt;
 &lt;p&gt;So, until next time… May the source be with you 🦄.&lt;&#x2F;p&gt;
 &lt;hr &#x2F;&gt;
@@ -37113,9 +37173,12 @@ APIs.&lt;&#x2F;p&gt;
 however we have to start designing somewhere. So, without further ado, here
 comes the video that explains the initial design:&lt;&#x2F;p&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;578676419?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;6DUrJrPyePo?si=4XQPv94j0TkxEGTv&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;FizzBuzz Pro High Level Design&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;FizzBuzz Pro High Level Design&lt;&#x2F;p&gt;
@@ -37637,9 +37700,12 @@ when the time comes.&lt;&#x2F;p&gt;
 &lt;p&gt;This quick video will create an &lt;a href=&quot;https:&#x2F;&#x2F;aws.amazon.com&#x2F;ecr&#x2F;&quot;&gt;&lt;strong&gt;AWS ECR&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; repo
 and set up our development environment to interact with it.&lt;&#x2F;p&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;564406841?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;domIOFhMjpI?si=9-ofptjrcT6arxoS&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;Creating ECR Repositories&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;Creating ECR Repositories&lt;&#x2F;p&gt;
@@ -37800,7 +37866,7 @@ spend&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;blog.codinghorror.com&#x2F;whats-worse-than-crashing&#x2F;&quot;&gt;An oldie but goldie for your bedtime reading: &lt;strong&gt;What’s Worse Than
 Crashing?&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;thanks-a-lot-red-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
 &lt;p&gt;That’s all for this week. Next week, I’ll gather more unique content and
 resources.&lt;&#x2F;p&gt;
 &lt;p&gt;So, until next time… May the source be with you 🦄.&lt;&#x2F;p&gt;
@@ -38862,7 +38928,7 @@ pleasure in the upcoming weeks.&lt;&#x2F;p&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;medium.com&#x2F;the-phi&#x2F;understanding-the-kubeconfig-3ef43e8716d&quot;&gt;Samarth Deyagond on understanding the .kubeconfig&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;karmab&#x2F;kcli&quot;&gt;&lt;code&gt;kcli&lt;&#x2F;code&gt; is a m anagement tool for libvirt&#x2F;aws&#x2F;gcp&#x2F;kubevirt&#x2F;openstack&#x2F;ovirt&#x2F;vsphere&#x2F;packet&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;thanks-a-lot-red-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
 &lt;p&gt;That’s all for this week. Next week, I’ll gather more unique content and
 resources.&lt;&#x2F;p&gt;
 &lt;p&gt;So, until next time… May the source be with you 🦄.&lt;&#x2F;p&gt;
@@ -39085,7 +39151,7 @@ Matt is writing about the “&lt;em&gt;serverless&lt;&#x2F;em&gt;” deployment 
 points&lt;&#x2F;em&gt; to your &lt;strong&gt;serverless&lt;&#x2F;strong&gt; architecture, &lt;strong&gt;serverless&lt;&#x2F;strong&gt; functions, and
 various patterns for serverless adoption.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;thanks-a-lot-red-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
 &lt;p&gt;That’s all for this week. Next week, I’ll gather more unique content and
 resources.&lt;&#x2F;p&gt;
 &lt;p&gt;So, until next time… May the source be with you 🦄.&lt;&#x2F;p&gt;
@@ -39256,7 +39322,7 @@ icons.&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;vimond&#x2F;replay&quot;&gt;Replay&lt;&#x2F;a&gt;: A React video player facilitating adaptive stream playback
 with custom UI and a React-friendly API.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;thanks-a-lot-red-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
 &lt;p&gt;That’s all for this week. Next week, I’ll gather more unique content and
 resources.&lt;&#x2F;p&gt;
 &lt;p&gt;So, until next time… May the source be with you 🦄.&lt;&#x2F;p&gt;
@@ -39419,7 +39485,7 @@ functionality baked in&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;purecss.io&#x2F;&quot;&gt;&lt;strong&gt;Pure.css&lt;&#x2F;strong&gt; is a robust, minimalist CSS framework that hit 2.0
 recently&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;thanks-a-lot-red-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
 &lt;p&gt;That’s all for this week. Next week, I’ll gather more unique content and
 resources.&lt;&#x2F;p&gt;
 &lt;p&gt;So, until next time… May the source be with you 🦄.&lt;&#x2F;p&gt;
@@ -39540,9 +39606,12 @@ Config. In the upcoming lectures we’ll use this Authenticator to implement
 identity management functionality of our app.&lt;&#x2F;p&gt;
 &lt;h1 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h1&gt;
 &lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
-  &lt;iframe src=&quot;https:&#x2F;&#x2F;player.vimeo.com&#x2F;video&#x2F;661765992?badge=0&amp;amp;autopause=0&amp;amp;player_id=0&amp;amp;app_id=58479&quot; 
-    frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture; clipboard-write&quot; 
-    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; 
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;gFbvD-U8kcI?si=rmUqt0eTj1IZSmZI&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
     title=&quot;Zero to Prod in Half an Hour: Part 5 --- Implementing an OIDC Authenticator&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;Zero to Prod in Half an Hour: Part 5 --- Implementing an OIDC Authenticator&lt;&#x2F;p&gt;

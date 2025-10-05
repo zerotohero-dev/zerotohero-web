@@ -24,8 +24,8 @@ This section will create the client app and establish connectivity between the
 client and the server. The connectivity is insecure: There is no **mTLS**
 security yet---we'll come to that later.
 
-{{vimeo(
-  id="760885310", 
+{{youtube(
+  id="zp1JiA2Kni8?si=XhDNihlicw7pJGFb", 
   title="mTLS With SPIRE: Part 3: Creating the Client App"
 )}}
 

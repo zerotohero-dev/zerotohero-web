@@ -26,8 +26,8 @@ implemented; and we'll implement the missing pieces in the upcoming lectures.
 
 ## Lecture
 
-{{vimeo(
-  id="662112549",
+{{youtube(
+  id="5Onh7nR6xcs?si=XEtDHJm4RhEw08G3",
   title="Zero to Prod in Half an Hour: Part 9 --- Thinking in Middlewares"
 )}}
 

@@ -26,8 +26,8 @@ very minimal dynamic templating in our subscription form.
 
 ## Lecture
 
-{{vimeo(
-  id="661883975",
+{{youtube(
+  id="bfNJjviT47M?si=T-ha1j-GV8xKTc9R",
   title="Zero to Prod in Half an Hour: Part 6 --- Serving Web Pages"
 )}}
 

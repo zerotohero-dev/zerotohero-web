@@ -23,8 +23,8 @@ tags = ["mtls", "spiffe", "spire"]
 This section will bundle the server application, create and image out of it,
 create deployment manifests, and deploy it into the cluster.
 
-{{vimeo(
-  id="760885363", 
+{{youtube(
+  id="VuT5zaZwq2Y?si=9nVhMhb_QdzHWYyj", 
   title="mTLS With SPIRE: Part 4: Containerizing the Server App"
 )}}
 

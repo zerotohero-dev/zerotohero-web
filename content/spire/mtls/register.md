@@ -24,8 +24,8 @@ For SPIRE to be able to attest workloads and distribute **SVID**s to them, we'll
 have to register the nodes and the workloads to **SPIRE**. That's what this
 section is all about.
 
-{{vimeo(
-  id="760885483", 
+{{youtube(
+  id="MsfArABWs9E?si=JHzL1tHkBc9e-XHe", 
   title="mTLS With SPIRE: Part 7: Registering Nodes and Workloads to SPIRE"
 )}}
 

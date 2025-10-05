@@ -17,11 +17,6 @@ tags = ["spiffe", "spire", "kubernetes", "zero-trust", "security"]
 
 ![Setting Up SPIRE on EKS in Less Than Ten Minutes](/images/size/w1200/2024/03/trust.png)
 
-{{img(
-  src="/images/size/w1200/2024/03/trust.png",
-  alt="Trust ie hard to gain, easy to lose. Zero Trust is no different."
-)}}
-
 Psst... 🔎 Looking for **GopherCon, 2021, TR** resources? Say no more:
 
 * GopherCon TR, Dec, 2021: _Friends Don't Let Friends Hard-Code Their Secrets_
@@ -30,8 +25,8 @@ Psst... 🔎 Looking for **GopherCon, 2021, TR** resources? Say no more:
 
 Here is a video recording of the demo we made too:
 
-{{vimeo(
-  id="655594498", 
+{{youtube(
+  id="n-hXWL5BgHg?si=ymLdQTIJlid0v8QH", 
   title="mTLS Using Spire Under Three Minutes"
 )}}
 
@@ -48,8 +43,8 @@ Enjoy, and may the source be with you 🦄.
 
 ## Lecture
 
-{{vimeo(
-  id="623755802", 
+{{youtube(
+  id="FUDsXgrnI2c?si=TAvLj-iXXmDDQWg0", 
   title="Setting Up SPIRE on EKS in Less Than Ten Minutes"
 )}}
 
