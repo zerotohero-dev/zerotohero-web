@@ -160,6 +160,25 @@ the user is busy as a bumblebee.&lt;&#x2F;p&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;When the right thing is also the easy thing, it is &lt;strong&gt;delightful&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;And I think that’s the whole point.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;bonus-grammarly-desktop-app&quot;&gt;Bonus: Grammarly Desktop App&lt;&#x2F;h2&gt;
+&lt;p&gt;This is &lt;strong&gt;not&lt;&#x2F;strong&gt; a promotional section: I am adding it because I regularly use
+and love &lt;a href=&quot;https:&#x2F;&#x2F;grammarly.com&quot; title=&quot;Grammarly&quot;&gt;Grammarly&lt;&#x2F;a&gt;, and in this particular case, it helps in my
+workflow too.&lt;&#x2F;p&gt;
+&lt;p&gt;When I install the &lt;a href=&quot;https:&#x2F;&#x2F;www.grammarly.com&#x2F;desktop&quot; title=&quot;Grammarly for your Desktop&quot;&gt;&lt;strong&gt;Grammarly Desktop App&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, I get
+instant feedback on the grammar, tone, and complexity of what I’m writing.
+Which means, I can fix my errors on the go, instead of having a separate
+“&lt;em&gt;spelling and grammar check&lt;&#x2F;em&gt;” round. That also saves time. Since it’s a
+desktop app, it’s integrated into &lt;strong&gt;all&lt;&#x2F;strong&gt; my applications, including the
+text editor that I use to write this
+blog post.&lt;&#x2F;p&gt;
+&lt;p&gt;And with the &lt;code&gt;CTRL+G&lt;&#x2F;code&gt; keyboard shortcut, it’s literally one click away.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2025&amp;#x2F;11&amp;#x2F;grammarly-in-action.png&quot; alt=&quot;Grammarly in action.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Grammarly in action.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
 &lt;h2 id=&quot;use-the-source-luke&quot;&gt;Use the Source, Luke&lt;&#x2F;h2&gt;
 &lt;p&gt;As I improve this script over time, the latest version will always be available
 in this blog’s repository:&lt;&#x2F;p&gt;
@@ -172,6 +191,7 @@ to adapt it to your own workflow.&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;&quot;&gt;Zola Static Site Generator&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.gnu.org&#x2F;software&#x2F;make&#x2F;manual&#x2F;make.html&quot;&gt;GNU Make Manual&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;grammarly.com&#x2F;&quot;&gt;Grammarly&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 </content>
         

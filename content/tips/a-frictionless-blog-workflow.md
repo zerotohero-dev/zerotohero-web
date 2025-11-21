@@ -188,6 +188,30 @@ When the right thing is also the easy thing, it is **delightful**.
 
 And I think that's the whole point.
 
+## Bonus: Grammarly Desktop App
+
+This is **not** a promotional section: I am adding it because I regularly use
+and love [Grammarly][grammarly], and in this particular case, it helps in my
+workflow too.
+
+When I install the [**Grammarly Desktop App**][grammarly-desktop], I get 
+instant feedback on the grammar, tone, and complexity of what I'm writing. 
+Which means, I can fix my errors on the go, instead of having a separate 
+"*spelling and grammar check*" round. That also saves time. Since it's a 
+desktop app, it's integrated into **all** my applications, including the 
+text editor that I use to write this 
+blog post.
+
+And with the `CTRL+G` keyboard shortcut, it's literally one click away.
+
+{{img(
+  src="/images/2025/11/grammarly-in-action.png",
+  alt="Grammarly in action."
+)}}
+
+[grammarly]: https://grammarly.com "Grammarly"
+[grammarly-desktop]: https://www.grammarly.com/desktop "Grammarly for your Desktop"
+
 ## Use the Source, Luke
 
 As I improve this script over time, the latest version will always be available 
@@ -202,3 +226,4 @@ to adapt it to your own workflow.
 
 * [Zola Static Site Generator](https://www.getzola.org/)
 * [GNU Make Manual](https://www.gnu.org/software/make/manual/make.html)
+* [Grammarly](https://grammarly.com/)
