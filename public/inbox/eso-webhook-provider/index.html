@@ -16,7 +16,7 @@
 </span><span>        </span><span style=color:#8ec07c;font-weight:700>jsonPath</span><span>: </span><span style=color:#b8bb26>"$.secrets[*]"
 </span><span>      </span><span style=color:#8ec07c;font-weight:700>headers</span><span>:
 </span><span>        - </span><span style=color:#8ec07c;font-weight:700>name</span><span>: </span><span style=color:#b8bb26>"Authorization"
-</span><span>          </span><span style=color:#8ec07c;font-weight:700>value</span><span>: </span><span style=color:#b8bb26>"Bearer &lt;your-token-here>"
+</span><span>          </span><span style=color:#8ec07c;font-weight:700>value</span><span>: </span><span style=color:#b8bb26>"Bearer &LTyour-token-here>"
 </span></code></pre><p>This configuration tells ESO:<ul><li>Which endpoint to call (<code>url</code>)<li>How to extract secrets from the response (<code>jsonPath</code>)<li>What headers to include in the request (<code>headers</code>)</ul><h3 id=2-creating-the-externalsecret>2. Creating the ExternalSecret</h3><p>Next, we define an ExternalSecret that specifies which secrets to fetch and how often to refresh them:<pre class=language-yaml data-lang=yaml style=color:#fdf4c1aa;background-color:#282828><code class=language-yaml data-lang=yaml><span style=color:#8ec07c;font-weight:700>apiVersion</span><span>: </span><span style=color:#b8bb26>external-secrets.io/v1beta1
 </span><span style=color:#8ec07c;font-weight:700>kind</span><span>: </span><span style=color:#b8bb26>ExternalSecret
 </span><span style=color:#8ec07c;font-weight:700>metadata</span><span>:

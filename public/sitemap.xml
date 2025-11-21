@@ -675,6 +675,9 @@
         <loc>https://zerotohero.dev/tags/best-practices/</loc>
     </url>
     <url>
+        <loc>https://zerotohero.dev/tags/blogging/</loc>
+    </url>
+    <url>
         <loc>https://zerotohero.dev/tags/bookmarking/</loc>
     </url>
     <url>
@@ -826,6 +829,9 @@
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/federation/</loc>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/tags/geyik/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/git-commands/</loc>
@@ -1284,6 +1290,10 @@
         <loc>https://zerotohero.dev/tips/</loc>
     </url>
     <url>
+        <loc>https://zerotohero.dev/tips/a-frictionless-blog-workflow/</loc>
+        <lastmod>2025-11-21</lastmod>
+    </url>
+    <url>
         <loc>https://zerotohero.dev/tips/base64-decoding-a-string-in-go/</loc>
         <lastmod>2024-03-01</lastmod>
     </url>
@@ -1397,6 +1407,10 @@
     <url>
         <loc>https://zerotohero.dev/top-of-mind/write-to-forget/</loc>
         <lastmod>2023-07-25</lastmod>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/vadideki-geyik/bol-mazemos/</loc>
+        <lastmod>2024-08-04</lastmod>
     </url>
     <url>
         <loc>https://zerotohero.dev/zero-to-prod/</loc>

@@ -64,7 +64,7 @@
 </span><span>        </span><span style=color:#fa5c4b>return </span><span style=color:#d3869b>nil</span><span>, </span><span style=color:#fdf4c1>err
 </span><span>    }
 </span><span>
-</span><span>    </span><span style=color:#fa5c4b>if </span><span style=color:#fabd2f>len</span><span>(</span><span style=color:#fdf4c1>ciphertext</span><span>) </span><span style=color:#fe8019>&lt; </span><span style=color:#fdf4c1>aes</span><span>.</span><span style=color:#fdf4c1>BlockSize </span><span>{
+</span><span>    </span><span style=color:#fa5c4b>if </span><span style=color:#fabd2f>len</span><span>(</span><span style=color:#fdf4c1>ciphertext</span><span>) </span><span style=color:#fe8019>< </span><span style=color:#fdf4c1>aes</span><span>.</span><span style=color:#fdf4c1>BlockSize </span><span>{
 </span><span>        </span><span style=color:#fa5c4b>return </span><span style=color:#d3869b>nil</span><span>, </span><span style=color:#fdf4c1>fmt</span><span>.</span><span style=color:#fdf4c1>Errorf</span><span>(</span><span style=color:#b8bb26>"ciphertext too short"</span><span>)
 </span><span>    }
 </span><span>
@@ -145,7 +145,7 @@
 </span><span>    }
 </span><span>
 </span><span>    </span><span style=color:#fdf4c1>nonceSize </span><span style=color:#fe8019>:= </span><span style=color:#fdf4c1>gcm</span><span>.</span><span style=color:#fdf4c1>NonceSize</span><span>()
-</span><span>    </span><span style=color:#fa5c4b>if </span><span style=color:#fabd2f>len</span><span>(</span><span style=color:#fdf4c1>ciphertext</span><span>) </span><span style=color:#fe8019>&lt; </span><span style=color:#fdf4c1>nonceSize </span><span>{
+</span><span>    </span><span style=color:#fa5c4b>if </span><span style=color:#fabd2f>len</span><span>(</span><span style=color:#fdf4c1>ciphertext</span><span>) </span><span style=color:#fe8019>< </span><span style=color:#fdf4c1>nonceSize </span><span>{
 </span><span>        </span><span style=color:#fa5c4b>return </span><span style=color:#d3869b>nil</span><span>, </span><span style=color:#fdf4c1>fmt</span><span>.</span><span style=color:#fdf4c1>Errorf</span><span>(</span><span style=color:#b8bb26>"ciphertext too short"</span><span>)
 </span><span>    }
 </span><span>
@@ -320,7 +320,7 @@
 </span><span>        </span><span style=color:#fa5c4b>return </span><span style=color:#d3869b>nil</span><span>, </span><span style=color:#fdf4c1>err
 </span><span>    }
 </span><span>
-</span><span>    </span><span style=color:#fa5c4b>if </span><span style=color:#fabd2f>len</span><span>(</span><span style=color:#fdf4c1>ciphertext</span><span>) </span><span style=color:#fe8019>&lt; </span><span style=color:#fdf4c1>aes</span><span>.</span><span style=color:#fdf4c1>BlockSize </span><span>{
+</span><span>    </span><span style=color:#fa5c4b>if </span><span style=color:#fabd2f>len</span><span>(</span><span style=color:#fdf4c1>ciphertext</span><span>) </span><span style=color:#fe8019>< </span><span style=color:#fdf4c1>aes</span><span>.</span><span style=color:#fdf4c1>BlockSize </span><span>{
 </span><span>        </span><span style=color:#fa5c4b>return </span><span style=color:#d3869b>nil</span><span>, </span><span style=color:#fdf4c1>fmt</span><span>.</span><span style=color:#fdf4c1>Errorf</span><span>(</span><span style=color:#b8bb26>"ciphertext too short"</span><span>)
 </span><span>    }
 </span><span>
