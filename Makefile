@@ -1,7 +1,7 @@
 # Zero to Hero Blog Makefile
 # Makes blogging frictionless!
 
-.PHONY: help new build serve deploy clean
+.PHONY: help new build serve deploy clean tags
 
 help: ## Show this help message
 	@echo "Zero to Hero Blog - Available Commands:"
@@ -32,6 +32,16 @@ deploy: build ## Build and deploy to production (git push)
 		echo "Deployed successfully!"; \
 	else \
 		echo "No changes to deploy"; \
+	fi
+
+tags: ## List all tags with usage frequency
+	@./list-tags.sh
+
+merge-tags: ## Merge/rename tags using tag-mappings.txt (use DRY_RUN=1 for preview)
+	@if [ "$(DRY_RUN)" = "1" ]; then \
+		./merge-tags.sh tag-mappings.txt --dry-run; \
+	else \
+		./merge-tags.sh tag-mappings.txt; \
 	fi
 
 clean: ## Clean the public directory

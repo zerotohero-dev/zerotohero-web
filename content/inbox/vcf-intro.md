@@ -13,7 +13,7 @@ description = "VMware Cloud Foundation: Building Your Private Cloud Experience"
 date = "2024-12-12"
 
 [taxonomies]
-tags = ["inbox", "vmware", "vcenter", "vcsa", "esxi", "virtualization", "configuration"]
+tags = ["inbox", "vmware", "vcenter", "vcf", "esxi", "virtualization", "configuration"]
 +++
 
 VMware Cloud Foundation (VCF) transforms traditional virtualization into a complete private cloud experience. Let's break down how it all works together.

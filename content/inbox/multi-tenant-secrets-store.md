@@ -13,7 +13,7 @@ description = "Designing a Multi-Tenant Secret Store for Kubernetes"
 date = "2024-12-12"
 
 [taxonomies]
-tags = ["inbox", "kubernetes", "secrets", "security"]
+tags = ["inbox", "kubernetes", "secrets-management", "security"]
 +++
 
 Managing secrets in a Kubernetes environment can be challenging, especially when dealing with multiple tenants, clusters, and different types of secrets. In this post, we'll explore how to design a flexible and secure secret store that can handle various secret types while integrating with existing tools like External Secrets Operator (ESO).

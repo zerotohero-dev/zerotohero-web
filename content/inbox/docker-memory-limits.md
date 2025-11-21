@@ -13,7 +13,7 @@ description = "Understanding Docker's 6MB Memory Limit: A Deep Dive"
 date = "2024-12-12"
 
 [taxonomies]
-tags = ["inbox", "docker", "kubernetes", "memory-management"]
+tags = ["inbox", "docker", "kubernetes", "memory"]
 +++
 
 Have you ever encountered this puzzling error message while working with Docker containers?

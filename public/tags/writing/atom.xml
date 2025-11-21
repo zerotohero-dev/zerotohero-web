@@ -4,8 +4,367 @@
     <link rel="self" type="application/atom+xml" href="https://zerotohero.dev/tags/writing/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://zerotohero.dev"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2023-07-25T00:00:00+00:00</updated>
+    <updated>2025-11-21T00:00:00+00:00</updated>
     <id>https://zerotohero.dev/tags/writing/atom.xml</id>
+    <entry xml:lang="en">
+        <title>A Frictionless Blog Workflow</title>
+        <published>2025-11-21T00:00:00+00:00</published>
+        <updated>2025-11-21T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/tips/a-frictionless-blog-workflow/"/>
+        <id>https://zerotohero.dev/tips/a-frictionless-blog-workflow/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/tips/a-frictionless-blog-workflow/">&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;&#x2F;h2&gt;
+&lt;p&gt;If you’re running a static blog with &lt;a href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;&quot;&gt;Zola&lt;&#x2F;a&gt;, you know
+the drill: create a markdown file, add the frontmatter, remember the correct
+TOML format, generate a slug from the title, put it in the proper directory,
+commit, build, and push.&lt;&#x2F;p&gt;
+&lt;p&gt;It’s not complicated, but it’s &lt;strong&gt;friction&lt;&#x2F;strong&gt;. And the last thing I need nowadays
+is friction: I have a lot of high-priority, high-impact tasks, and I
+seldom find enough time to create a blog post. So, even when I &lt;strong&gt;exactly&lt;&#x2F;strong&gt; know
+what to post, I procrastinate due to the very thought of “organizing” stuff.&lt;&#x2F;p&gt;
+&lt;p&gt;So, I wanted to make my blogging as frictionless as possible. Just run a
+command, answer a few questions, and start writing: No context switching,
+no remembering file formats, no manual slug generation.&lt;&#x2F;p&gt;
+&lt;p&gt;Here is my current workflow:&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;how-things-were-before&quot;&gt;How Things Were Before&lt;&#x2F;h2&gt;
+&lt;p&gt;Every time I wanted to write a blog post, I had to:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Manually create a markdown file with the correct naming convention&lt;&#x2F;li&gt;
+&lt;li&gt;Copy-paste the TOML frontmatter template&lt;&#x2F;li&gt;
+&lt;li&gt;Remember which category to put it in&lt;&#x2F;li&gt;
+&lt;li&gt;Manually generate a URL-friendly slug from the title&lt;&#x2F;li&gt;
+&lt;li&gt;Format tags correctly&lt;&#x2F;li&gt;
+&lt;li&gt;Remember the date format&lt;&#x2F;li&gt;
+&lt;li&gt;Build with Zola&lt;&#x2F;li&gt;
+&lt;li&gt;Commit and push to deploy&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;That’s too many steps. The barrier to entry was high enough that I’d almost
+always skip writing altogether.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;let-s-hack-this&quot;&gt;Let’s Hack This&lt;&#x2F;h2&gt;
+&lt;p&gt;So, I created a simple &lt;code&gt;Makefile&lt;&#x2F;code&gt; with a shell script that handles everything
+interactively. Now the workflow is:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;make new    &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Create a new post
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;make serve  &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Preview locally
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;make deploy &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Build and push to production
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;That’s it. Three commands for the entire workflow.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;creating-new-posts&quot;&gt;Creating New Posts&lt;&#x2F;h2&gt;
+&lt;p&gt;The &lt;code&gt;make new&lt;&#x2F;code&gt; command runs an interactive script that:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Asks for a title&lt;&#x2F;strong&gt;: And I just type naturally&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Shows category descriptions&lt;&#x2F;strong&gt;: So I know where it belongs&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Prompts for tags&lt;&#x2F;strong&gt;: Comma-separated, parsed automatically&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Generates everything&lt;&#x2F;strong&gt;: Slug, frontmatter, file structure&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;Here’s what the interaction looks like for this very blog post:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#282828;color:#fdf4c1aa;&quot;&gt;&lt;code&gt;&lt;span&gt;$ make new
+&lt;&#x2F;span&gt;&lt;span&gt;Creating a new blog post...
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;Title: A Frictionless Blog Workflow
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;Available categories:
+&lt;&#x2F;span&gt;&lt;span&gt;  1) top-of-mind    - Random thoughts and musings (brain dump)
+&lt;&#x2F;span&gt;&lt;span&gt;  2) inbox          - General content (default)
+&lt;&#x2F;span&gt;&lt;span&gt;  3) highlights     - Leadership and non-technical aspects
+&lt;&#x2F;span&gt;&lt;span&gt;  4) tips           - Useful tips, tricks, and code snippets
+&lt;&#x2F;span&gt;&lt;span&gt;  5) roadmap        - Career guidance, resources, life lessons
+&lt;&#x2F;span&gt;&lt;span&gt;  6) zero-to-prod   - Production-ready system tutorials
+&lt;&#x2F;span&gt;&lt;span&gt;  7) spire          - SPIFFE and SPIRE articles
+&lt;&#x2F;span&gt;&lt;span&gt;Choose category (1-7) [default: 2]: 4
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;Tags (comma-separated): blogging, workflow, content-creation
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;Created: &#x2F;Users&#x2F;volkan&#x2F;&amp;lt;truncated...&amp;gt;&#x2F;a-frictionless-blog-workflow.md
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The script automatically:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Converts the title to a URL-friendly slug (&lt;code&gt;a-frictionless-blog-workflow&lt;&#x2F;code&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;Generates today’s date in the correct format&lt;&#x2F;li&gt;
+&lt;li&gt;Creates the file in the correct directory&lt;&#x2F;li&gt;
+&lt;li&gt;Adds proper TOML frontmatter&lt;&#x2F;li&gt;
+&lt;li&gt;Includes the category as a default tag&lt;&#x2F;li&gt;
+&lt;li&gt;Outputs an absolute path that I can click to open&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Here is a list of all &lt;code&gt;make&lt;&#x2F;code&gt; targets so far:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;makefile&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-makefile &quot;&gt;&lt;code class=&quot;language-makefile&quot; data-lang=&quot;makefile&quot;&gt;&lt;span&gt;make help    &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Show all available commands
+&lt;&#x2F;span&gt;&lt;span&gt;make new     &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Create a new blog post interactively
+&lt;&#x2F;span&gt;&lt;span&gt;make build   &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Build the site with Zola
+&lt;&#x2F;span&gt;&lt;span&gt;make serve   &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Start local dev server
+&lt;&#x2F;span&gt;&lt;span&gt;make deploy  &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Build and push to production
+&lt;&#x2F;span&gt;&lt;span&gt;make clean   &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Remove build artifacts
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;publish&quot;&gt;Publish&lt;&#x2F;h3&gt;
+&lt;p&gt;I just do a &lt;code&gt;make deploy&lt;&#x2F;code&gt;… and done.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;$ make deploy
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Building site...
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Build complete! Output in .&#x2F;public&#x2F;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Deploying to production...
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Commit message: Add frictionless workflow post
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Deployed successfully!
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;It builds with &lt;code&gt;zola&lt;&#x2F;code&gt;, prompts for a commit message, and pushes everything
+in one command.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-implementation&quot;&gt;The Implementation&lt;&#x2F;h2&gt;
+&lt;p&gt;Here is the &lt;code&gt;new-post.sh&lt;&#x2F;code&gt; that handles all the logic:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;#!&#x2F;bin&#x2F;bash
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Interactive prompts
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;read &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;-p &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Title: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt; title
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;read &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;-p &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Choose category (1-7) [default: 2]: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt; category_num
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;read &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;-p &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Tags (comma-separated): &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt; tags
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Generate slug from title
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;slug&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;$(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;title&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;tr &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;[:upper:]&amp;#39; &amp;#39;[:lower:]&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;\
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;       &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;s&#x2F;[^a-z0-9]&#x2F;-&#x2F;g&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;\
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;       &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;s&#x2F;--*&#x2F;-&#x2F;g&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;\
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;       &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;s&#x2F;^-&#x2F;&#x2F;&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;s&#x2F;-$&#x2F;&#x2F;&amp;#39;)
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Create file with proper frontmatter
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cat &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;filename&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;&amp;lt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;EOF
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;+++
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;title = &amp;quot;$title&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;date = &amp;quot;$(date +%Y-%m-%d)&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;[taxonomies]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;tags = [$tag_list]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;+++
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;## Introduction
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Write your blog post here...
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;EOF
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The Makefile just delegates to the script:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;makefile&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-makefile &quot;&gt;&lt;code class=&quot;language-makefile&quot; data-lang=&quot;makefile&quot;&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;new&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;## Create a new blog post interactively
+&lt;&#x2F;span&gt;&lt;span&gt;	&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;@&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;.&#x2F;new-post.sh
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;benefits&quot;&gt;Benefits&lt;&#x2F;h2&gt;
+&lt;p&gt;Well, yes, it’s not rocket surgery, but anything that minimizes friction is
+a step towards better user experience. And that helps a lot, especially when
+the user is busy as a bumblebee.&lt;&#x2F;p&gt;
+&lt;p&gt;Automation ftw! The workflow gets out of my way and lets me focus on writing.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;No more “I’ll write it later” because setup is annoying&lt;&#x2F;li&gt;
+&lt;li&gt;No more typos in frontmatter&lt;&#x2F;li&gt;
+&lt;li&gt;No more forgotten tags or wrong categories&lt;&#x2F;li&gt;
+&lt;li&gt;No more manual slug generation&lt;&#x2F;li&gt;
+&lt;li&gt;Publishing is literally one command&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;When the right thing is also the easy thing, it is &lt;strong&gt;delightful&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;And I think that’s the whole point.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;bonus-grammarly-desktop-app&quot;&gt;Bonus: Grammarly Desktop App&lt;&#x2F;h2&gt;
+&lt;p&gt;This is &lt;strong&gt;not&lt;&#x2F;strong&gt; a promotional section: I am adding it because I regularly use
+and love &lt;a href=&quot;https:&#x2F;&#x2F;grammarly.com&quot; title=&quot;Grammarly&quot;&gt;Grammarly&lt;&#x2F;a&gt;, and in this particular case, it helps in my
+workflow too.&lt;&#x2F;p&gt;
+&lt;p&gt;When I install the &lt;a href=&quot;https:&#x2F;&#x2F;www.grammarly.com&#x2F;desktop&quot; title=&quot;Grammarly for your Desktop&quot;&gt;&lt;strong&gt;Grammarly Desktop App&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, I get
+instant feedback on the grammar, tone, and complexity of what I’m writing.
+Which means, I can fix my errors on the go, instead of having a separate
+“&lt;em&gt;spelling and grammar check&lt;&#x2F;em&gt;” round. That also saves time. Since it’s a
+desktop app, it’s integrated into &lt;strong&gt;all&lt;&#x2F;strong&gt; my applications, including the
+text editor that I use to write this
+blog post.&lt;&#x2F;p&gt;
+&lt;p&gt;And with the &lt;code&gt;CTRL+G&lt;&#x2F;code&gt; keyboard shortcut, it’s literally one click away.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2025&amp;#x2F;11&amp;#x2F;grammarly-in-action.png&quot; alt=&quot;Grammarly in action.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Grammarly in action.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;use-the-source-luke&quot;&gt;Use the Source, Luke&lt;&#x2F;h2&gt;
+&lt;p&gt;As I improve this script over time, the latest version will always be available
+in this blog’s repository:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;zerotohero-dev&#x2F;zerotohero-web&quot;&gt;&lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt; on GitHub&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Check out the &lt;code&gt;Makefile&lt;&#x2F;code&gt; and &lt;code&gt;new-post.sh&lt;&#x2F;code&gt; in the root directory, and feel free
+to adapt it to your own workflow.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;links-and-further-reference&quot;&gt;Links and Further Reference&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;&quot;&gt;Zola Static Site Generator&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.gnu.org&#x2F;software&#x2F;make&#x2F;manual&#x2F;make.html&quot;&gt;GNU Make Manual&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;grammarly.com&#x2F;&quot;&gt;Grammarly&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Psst... You Don&#x27;t Have to Use Medium: Discover the Freedom of Owning Your Content</title>
+        <published>2024-03-06T00:00:00+00:00</published>
+        <updated>2024-03-06T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/top-of-mind/psst-you-dont-have-to-use-medium/"/>
+        <id>https://zerotohero.dev/top-of-mind/psst-you-dont-have-to-use-medium/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/top-of-mind/psst-you-dont-have-to-use-medium/">&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;size&#x2F;w1200&#x2F;2024&#x2F;03&#x2F;freedom.png&quot; alt=&quot;Psst… You Don’t Have to Use Medium: Discover the Freedom of Owning Your Content&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;wait-but-why&quot;&gt;Wait… But Why?&lt;&#x2F;h2&gt;
+&lt;p&gt;Medium has risen in popularity among writers, bloggers, and readers due to its
+user interface and community-centered features that have attracted a large
+following.&lt;&#x2F;p&gt;
+&lt;p&gt;Despite Medium’s appeal and ubiquity, the paywall approach and the authority it
+wields over content is worrisome at best. I cannot emphasize this enough: &lt;strong&gt;You
+must own your content as a creator&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;dear-medium-for-once-have-a-spine-will-you&quot;&gt;Dear Medium, for once, have a spine—will you?&lt;&#x2F;h2&gt;
+&lt;p&gt;Medium’s practice of blocking nonsubscribers from accessing content is
+dishonest: While it puts a paywall around the content, it fully enables search
+engines to index it.&lt;&#x2F;p&gt;
+&lt;p&gt;Let me make it clear: Had Medium made its entire content subscriber-only without
+intentionally leaking it to the search engines, I would have been one of the
+first to subscribe and support it.&lt;&#x2F;p&gt;
+&lt;p&gt;While it aims to monetize content and support writers financially, it also
+&lt;strong&gt;creates obstacles to information accessibility&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;This paywall can discourage readers and restrict the audience to emerging or
+specialized bloggers. Additionally, Medium’s method of displaying paywalled
+material on search engines but preventing access without a subscription is
+&lt;strong&gt;deceptive&lt;&#x2F;strong&gt;, leading to nothing but frustration among readers.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-predicament-of-platform-authority&quot;&gt;The Predicament of Platform Authority&lt;&#x2F;h2&gt;
+&lt;p&gt;A major issue with Medium revolves around its control over users’ content.&lt;&#x2F;p&gt;
+&lt;p&gt;You are a &lt;strong&gt;content creator&lt;&#x2F;strong&gt;. You should not give a flying care about “the
+algorithm.”—Your writing shall not be influenced by the platform’s evolving
+rules and algorithms.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Your content is yours&lt;&#x2F;strong&gt;; own it.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You are not and shall not be a puppet to make your content more engaging. Your
+voice should not be a slave to the algorithm. Don’t lose yourself.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;There’s also the concern that Medium could change its business&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-significance-of-ownership-and-control&quot;&gt;The Significance of Ownership and Control&lt;&#x2F;h2&gt;
+&lt;p&gt;Values like &lt;strong&gt;ownership&lt;&#x2F;strong&gt;, &lt;strong&gt;transparency&lt;&#x2F;strong&gt;, and &lt;strong&gt;control&lt;&#x2F;strong&gt; are important not
+only in your work but also in how you share knowledge and ideas (&lt;em&gt;including
+through blogging&lt;&#x2F;em&gt;).&lt;&#x2F;p&gt;
+&lt;p&gt;Ownership of your content allows you to &lt;strong&gt;choose&lt;&#x2F;strong&gt; how it is displayed and
+shared: If you want to monetize your content, it’s on your own terms; if you
+don’t, no external party can enforce it.&lt;&#x2F;p&gt;
+&lt;p&gt;That’s why I’m sharing my thoughts on this blog,
+using &lt;a href=&quot;https:&#x2F;&#x2F;ghost.org&#x2F;&quot;&gt;&lt;strong&gt;Ghost&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; as a platform. If you don’t prefer to
+use Ghost, there are many choices you can pick from. But please, pretty please,
+if you value your content, don’t post it to a place you don’t own.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Update: 2025-05-21&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;I started using &lt;a href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;&quot;&gt;Zola&lt;&#x2F;a&gt; for this blog instead
+of Ghost, but the main premise of owning your content remains the same.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;why-i-use-ghost&quot;&gt;Why I Use Ghost?&lt;&#x2F;h2&gt;
+&lt;p&gt;As I mentioned, the kind of platform you choose is of little importance. Still,
+this is a good point to segue into why I like &lt;strong&gt;Ghost&lt;&#x2F;strong&gt; as a blogging platform.&lt;&#x2F;p&gt;
+&lt;p&gt;Ghost is a notable &lt;strong&gt;open-source&lt;&#x2F;strong&gt; blogging platform. I like its &lt;strong&gt;speed&lt;&#x2F;strong&gt; and
+&lt;strong&gt;simplicity&lt;&#x2F;strong&gt;. Although I don’t care too much about SEO, it’s good to know that
+Ghost also offers robust SEO capabilities built-in.&lt;&#x2F;p&gt;
+&lt;p&gt;As a Ghost user, I have full ownership of my content and the freedom to
+personalize the site’s appearance and functionality. I can use an existing
+theme, purchase a theme, and tweak it, or, if I so want, build my own Ghost
+theme with its unique functionality. Literally, the Sky is the limit there!&lt;&#x2F;p&gt;
+&lt;p&gt;If I want, Ghost offers features like memberships and subscriptions built into
+the platform, allowing me to monetize my content directly without anyone in the
+middle.&lt;&#x2F;p&gt;
+&lt;p&gt;In today’s world, the ability to innovate, customize, and communicate freely is
+not a choice but a &lt;strong&gt;fundamental principle&lt;&#x2F;strong&gt; that should be honored.&lt;&#x2F;p&gt;
+&lt;p&gt;And, I don’t even have to host Ghost. Because I value my time, I
+use &lt;a href=&quot;https:&#x2F;&#x2F;ghost.org&#x2F;pricing&#x2F;&quot;&gt;Ghost’s managed solution&lt;&#x2F;a&gt;. This eases the
+responsibilities of server maintenance, updates, and security management. It’s a
+perfect option because I want to prioritize content creation to infrastructure
+management.&lt;&#x2F;p&gt;
+&lt;p&gt;Yet, despite the managed nature, I have full ownership. I can even streamline my
+backups through Ghost API. I can back up my entire blog periodically to a
+storage solution of my preference, which will give me further peace of mind.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;In this new world of AI-generated copycats, high-quality content reigns supreme,
+and having the ability to manage and possess your own voice is more important
+than ever.&lt;&#x2F;p&gt;
+&lt;p&gt;While platforms such as Medium have made it easier for writers to reach
+audiences they also come with restrictions that can hinder creativity and
+restrict engagement with readers.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Taking ownership of your content goes beyond independence&lt;&#x2F;strong&gt;—it’s about
+safeguarding your heritage and ensuring that your voice remains genuine and
+unfiltered.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Self-publishing&lt;&#x2F;strong&gt; is about crafting a space that truly mirrors your vision and
+evolves alongside your audience free from the changing rules and priorities of
+platforms.&lt;&#x2F;p&gt;
+&lt;p&gt;Self-publishing is an investment in &lt;strong&gt;building your brand&lt;&#x2F;strong&gt; and &lt;strong&gt;advancing
+professionally&lt;&#x2F;strong&gt;. It gives you the freedom to &lt;strong&gt;experiment&lt;&#x2F;strong&gt;, &lt;strong&gt;innovate&lt;&#x2F;strong&gt;, and
+&lt;strong&gt;customize&lt;&#x2F;strong&gt; your content strategy to suit the needs and preferences of your
+audience—a &lt;strong&gt;priceless&lt;&#x2F;strong&gt; experience.&lt;&#x2F;p&gt;
+&lt;p&gt;With tools and platforms tailored for creators, the barriers to getting started
+have never been lower. You don’t have to use Ghost; use
+something, &lt;a href=&quot;https:&#x2F;&#x2F;jekyllrb.com&#x2F;&quot;&gt;Jekyll&lt;&#x2F;a&gt;,
+&lt;a href=&quot;https:&#x2F;&#x2F;wordpress.org&#x2F;&quot;&gt;WordPress&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;www.drupal.org&#x2F;&quot;&gt;Drupal&lt;&#x2F;a&gt;,
+&lt;a href=&quot;https:&#x2F;&#x2F;www.gatsbyjs.com&#x2F;&quot;&gt;Gatsby&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;nextjs.org&#x2F;&quot;&gt;Next&lt;&#x2F;a&gt;…
+Your options are countless. I’m sure you can find one that fits your unique
+needs.&lt;&#x2F;p&gt;
+&lt;p&gt;Owning your platform allows you to focus on what counts;
+creating &lt;strong&gt;valuable&lt;&#x2F;strong&gt; and &lt;strong&gt;meaningful&lt;&#x2F;strong&gt; content.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Own your content&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;catch-22&#x2F;&quot;&gt;Catch 22&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;consume-less&#x2F;&quot;&gt;Consume Less&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;craft-captivating-documentation&#x2F;&quot;&gt;Craft Captivating Documentation&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;keep-your-secrets&#x2F;&quot;&gt;Keep Your Secrets… Secret&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;later-does-not-exist&#x2F;&quot;&gt;‘Later’ Does Not Exist&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;perception-pivot&#x2F;&quot;&gt;Transform Feedback into Professional Mastery&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;probing-questions&#x2F;&quot;&gt;Embracing Daily Reflection&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Psst… You Don’t Have to Use Medium&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;reshape-your-workspace&#x2F;&quot;&gt;Reshape Your Workspace, Reshape Your Future&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;secrets&#x2F;&quot;&gt;Secrets&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;the-dream-job&#x2F;&quot;&gt;Build Strong Connections to Land Your Dream Job&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;trust&#x2F;&quot;&gt;Trust Cultivates a Cohesive Team&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;vmware-secrets-manager&#x2F;&quot;&gt;Long Live Aegis!&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;write-to-forget&#x2F;&quot;&gt;Write to Forget&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;closure&#x2F;&quot;&gt;Closure&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;new-z2h-design&#x2F;&quot;&gt;The New Zero to Hero Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>Write to Forget</title>
         <published>2023-07-25T00:00:00+00:00</published>

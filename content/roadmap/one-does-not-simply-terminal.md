@@ -12,7 +12,7 @@ title = 'One Does Not Simply "Terminal" 👌'
 date = "2021-11-07"
 
 [taxonomies]
-tags = ["roadmap", "terminal", "command-line", "shell"]
+tags = ["roadmap", "shell", "shell", "shell"]
 +++
 
 {{img(

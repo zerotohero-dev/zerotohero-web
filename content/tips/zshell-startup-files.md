@@ -12,7 +12,7 @@ title = ".zprofile, .zshrc, .zenv, OMG! What Do I Put Where?!"
 date = "2021-08-09"
 
 [taxonomies]
-tags = ["linux", "tips", "zsh", "shell"]
+tags = ["linux", "tips", "shell", "shell"]
 +++
 
 {{img(

@@ -12,7 +12,7 @@ title = "Every Saga Has a Beginning"
 date = "2024-05-18"
 
 [taxonomies]
-tags = ["about", "backstory"]
+tags = ["about", "about"]
 +++
 
 {{img(

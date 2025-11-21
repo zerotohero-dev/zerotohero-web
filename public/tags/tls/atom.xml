@@ -4,8 +4,132 @@
     <link rel="self" type="application/atom+xml" href="https://zerotohero.dev/tags/tls/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://zerotohero.dev"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2024-12-10T00:00:00+00:00</updated>
+    <updated>2024-12-12T00:00:00+00:00</updated>
     <id>https://zerotohero.dev/tags/tls/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Understanding SSL Certificates: From Public CAs to Custom Root Certificates in Kubernetes</title>
+        <published>2024-12-12T00:00:00+00:00</published>
+        <updated>2024-12-12T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/custom-ca/"/>
+        <id>https://zerotohero.dev/inbox/custom-ca/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/custom-ca/">&lt;p&gt;As organizations scale their Kubernetes infrastructure, managing SSL certificates becomes increasingly complex. Let’s dive into some common misconceptions and explore how certificate management really works, especially when dealing with custom Certificate Authorities (CAs).&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-common-misconception&quot;&gt;The Common Misconception&lt;&#x2F;h2&gt;
+&lt;p&gt;Many developers initially believe that having an SSL certificate for a domain (let’s say example.com) allows them to create new certificates for its subdomains. This seems logical but isn’t how SSL certificates actually work.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;understanding-certificate-types&quot;&gt;Understanding Certificate Types&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;standard-ssl-certificates&quot;&gt;Standard SSL Certificates&lt;&#x2F;h3&gt;
+&lt;p&gt;A standard SSL certificate from a provider like Verisign is an end-entity certificate. Think of it as a leaf node in a tree - it can prove its own identity but can’t vouch for others. This means:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;It works for the specific domain it was issued for&lt;&#x2F;li&gt;
+&lt;li&gt;It might cover www.example.com if included&lt;&#x2F;li&gt;
+&lt;li&gt;It cannot create or sign other certificates&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;wildcard-certificates&quot;&gt;Wildcard Certificates&lt;&#x2F;h3&gt;
+&lt;p&gt;Wildcard certificates (*.example.com) are more flexible but still have limitations:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Cover all first-level subdomains&lt;&#x2F;li&gt;
+&lt;li&gt;Don’t cover the root domain or multi-level subdomains&lt;&#x2F;li&gt;
+&lt;li&gt;Cannot create new certificates&lt;&#x2F;li&gt;
+&lt;li&gt;Share the same private key across all subdomains&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;the-custom-ca-approach&quot;&gt;The Custom CA Approach&lt;&#x2F;h2&gt;
+&lt;p&gt;This is where things get interesting. Organizations sometimes opt for a custom Root CA, which provides maximum flexibility but comes with its own challenges.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;how-it-works&quot;&gt;How It Works&lt;&#x2F;h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Create or obtain a Root CA certificate and private key&lt;&#x2F;li&gt;
+&lt;li&gt;Configure cert-manager to use this CA for signing certificates&lt;&#x2F;li&gt;
+&lt;li&gt;Install the Root CA certificate in user browsers&lt;&#x2F;li&gt;
+&lt;li&gt;Deploy services with automatically generated certificates&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h3 id=&quot;advantages&quot;&gt;Advantages&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Complete control over certificate issuance&lt;&#x2F;li&gt;
+&lt;li&gt;Automated certificate management with cert-manager&lt;&#x2F;li&gt;
+&lt;li&gt;No external CA dependencies&lt;&#x2F;li&gt;
+&lt;li&gt;Cost-effective for large deployments&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;challenges&quot;&gt;Challenges&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Requires careful private key management&lt;&#x2F;li&gt;
+&lt;li&gt;Must distribute and maintain Root CA trust in browsers&lt;&#x2F;li&gt;
+&lt;li&gt;Not practical for public-facing websites&lt;&#x2F;li&gt;
+&lt;li&gt;Increased security responsibility&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;implementation-in-kubernetes&quot;&gt;Implementation in Kubernetes&lt;&#x2F;h2&gt;
+&lt;p&gt;Here’s where tools like cert-manager shine. With a custom Root CA, you can:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Automatically generate certificates for new services&lt;&#x2F;li&gt;
+&lt;li&gt;Handle certificate rotation&lt;&#x2F;li&gt;
+&lt;li&gt;Manage different certificate types for different environments&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;pre data-lang=&quot;yaml&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-yaml &quot;&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;apiVersion&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;cert-manager.io&#x2F;v1
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;kind&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;Certificate
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;metadata&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;name&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;store-example-com
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;spec&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;secretName&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;store-tls
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;issuerRef&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;name&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;custom-ca-issuer
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;kind&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;ClusterIssuer
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;dnsNames&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;  - &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;store.example.com
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;best-practices-and-considerations&quot;&gt;Best Practices and Considerations&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Security First&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Store the Root CA private key securely&lt;&#x2F;li&gt;
+&lt;li&gt;Use separate CAs for different environments&lt;&#x2F;li&gt;
+&lt;li&gt;Implement proper access controls&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Automation&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use cert-manager for certificate lifecycle management&lt;&#x2F;li&gt;
+&lt;li&gt;Automate CA trust distribution&lt;&#x2F;li&gt;
+&lt;li&gt;Monitor certificate expiration&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Environment-Specific Approaches&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Development: Custom CA is perfect&lt;&#x2F;li&gt;
+&lt;li&gt;Internal tools: Custom CA works well&lt;&#x2F;li&gt;
+&lt;li&gt;Public websites: Stick to public CAs&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;when-to-use-what&quot;&gt;When to Use What&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;use-public-cas-when&quot;&gt;Use Public CAs When:&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Building public-facing websites&lt;&#x2F;li&gt;
+&lt;li&gt;Can’t control client environments&lt;&#x2F;li&gt;
+&lt;li&gt;Need universal trust&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;use-custom-ca-when&quot;&gt;Use Custom CA When:&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Operating in controlled environments&lt;&#x2F;li&gt;
+&lt;li&gt;Managing many internal services&lt;&#x2F;li&gt;
+&lt;li&gt;Need complete control over certificate lifecycle&lt;&#x2F;li&gt;
+&lt;li&gt;Have proper security measures in place&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;While custom Root CAs provide powerful capabilities for certificate management in Kubernetes, they’re not a silver bullet. The choice between public CAs and custom CAs should be based on your specific use case, security requirements, and operational capabilities.&lt;&#x2F;p&gt;
+&lt;p&gt;Remember: The power to create certificates for any domain comes with great responsibility. Ensure your team is prepared for the security implications before implementing a custom CA solution.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>Implementing Flexible Authentication Strategies in Go: A Real-World Example with External Secrets Operator</title>
         <published>2024-12-10T00:00:00+00:00</published>

@@ -1,0 +1,70 @@
+# Tag Consolidation Mappings
+# Format: old-tag -> new-tag
+#
+# Case Inconsistencies (Easy Fixes)
+SPIFFE -> spiffe
+spiffeid -> spiffe
+ESO -> eso
+
+# Secrets-related
+secrets -> secrets-management
+secret-management -> secrets-management
+secret-sharing -> secrets-management
+
+# Memory-related
+memory-management -> memory
+memory-retention -> memory
+
+# Identity-related
+identity-management -> identity
+
+# Encryption/Crypto
+ssl -> tls
+decoding -> encoding
+url-encoding -> encoding
+decryption -> encryption
+data-encryption -> encryption
+
+# Hashing
+sha256 -> hashing
+
+# Keys (keep specific acronyms commented out - uncomment if you want to merge)
+# KEK -> key-management
+# DEK -> key-management
+
+# UX
+user-experience -> ux
+
+# Development
+developer -> development
+
+# Hacker culture
+hacker-ethic -> hacker-culture
+hackers -> hacker-culture
+hacking -> hacker-culture
+
+# Workload domains
+workload-domain -> workload-domains
+
+# Git/Version Control
+git-commands -> git
+commit -> git
+
+# Shell/Terminal
+zsh -> shell
+terminal -> shell
+command-line -> shell
+
+# Content/Writing
+content -> writing
+blogging -> writing
+
+# VMware
+vcsa -> vcf
+
+# Meta tags to remove (map to empty or a generic tag)
+# Uncomment these if you want to remove them:
+volkan -> about
+geyik -> about
+backstory -> about
+contact -> about

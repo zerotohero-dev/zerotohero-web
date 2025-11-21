@@ -13,7 +13,7 @@ description = "Understanding DEK and KEK in Encryption: A Practical Guide"
 date = "2024-12-22"
 
 [taxonomies]
-tags = ["inbox", "encryption", "security", "key-management", "data-encryption", "DEK", "KEK"]
+tags = ["inbox", "encryption", "security", "key-management", "encryption", "DEK", "KEK"]
 +++
 
 Modern data encryption strategies often employ a two-layer model of key management to balance strong security with operational flexibility. Two commonly used concepts in this model are the Data Encryption Key (DEK) and the Key Encryption Key (KEK). In this post, we’ll unpack how these two keys work together, and how you might store and retrieve them effectively.

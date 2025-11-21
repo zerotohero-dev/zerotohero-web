@@ -12,7 +12,7 @@ title = "A Frictionless Blog Workflow"
 date = "2025-11-21"
 
 [taxonomies]
-tags = ["tips", "blogging", "workflow", "content-creation"]
+tags = ["tips", "writing", "workflow", "content-creation"]
 +++
 
 ## Introduction
