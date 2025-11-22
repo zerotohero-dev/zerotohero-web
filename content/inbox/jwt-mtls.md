@@ -13,7 +13,7 @@ description = "Implementing JWT Authentication with mTLS in Go"
 date = "2024-11-27"
 
 [taxonomies]
-tags = ["inbox", "jwt", "authentication", "security"]
+tags = ["inbox", "jwt", "security"]
 +++
 
 Mutual TLS (mTLS) and JSON Web Tokens (JWT) are both powerful security mechanisms that serve different purposes. While mTLS ensures secure bidirectional authentication between client and server at the transport layer, JWTs handle authentication and authorization at the application layer. Combining both provides a robust security model for sensitive operations.

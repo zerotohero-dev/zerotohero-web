@@ -10,6 +10,10 @@ SPIFFE -> spiffe
 spiffeid -> spiffe
 ESO -> eso
 
+# SPIFFE/SPIRE
+federation -> spiffe
+spire-agent -> spire
+
 # Go-specific
 cgo -> go
 concurrency -> go
@@ -18,6 +22,7 @@ defer -> go
 slog -> go
 slices -> go
 sdk -> go
+deadlocks -> go
 
 # Secrets-related
 secrets -> secrets-management
@@ -103,13 +108,21 @@ best-practices -> vcf
 software-bundles -> vcf
 sddc -> vcf
 sddc-manager -> vcf
+cloud -> vcf
+cluster-management -> vcf
+private-cloud -> vcf
 
 # Projects
 aegis -> spike
+architecture -> spike
+
+# External Secrets Operator
+debugging -> external-secrets-operator
 
 # Conditional removals (only remove if other tags exist)
 automation -> DELETE_IF_NOT_ALONE
 comparison -> DELETE_IF_NOT_ALONE
+authentication -> DELETE_IF_NOT_ALONE
 
 # Meta tags to consolidate
 volkan -> about

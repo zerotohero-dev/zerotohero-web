@@ -13,7 +13,7 @@ description = "VMware Cloud Foundation: A Modern Cloud Operating Model for vSphe
 date = "2024-12-12"
 
 [taxonomies]
-tags = ["inbox", "vmware", "cloud", "infrastructure", "vcf", "vcf", "vcf", "modernization"]
+tags = ["inbox", "vmware", "vcf", "infrastructure", "vcf", "vcf", "vcf", "modernization"]
 +++
 
 

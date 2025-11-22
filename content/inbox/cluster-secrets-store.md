@@ -13,7 +13,7 @@ description = "Understanding ClusterSecretStore with JWT Authentication in Kuber
 date = "2024-12-03"
 
 [taxonomies]
-tags = ["inbox", "kubernetes", "security", "external-secrets-operator", "eso", "jwt", "authentication"]
+tags = ["inbox", "kubernetes", "security", "external-secrets-operator", "eso", "jwt"]
 +++
 
 

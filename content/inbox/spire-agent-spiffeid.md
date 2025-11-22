@@ -13,7 +13,7 @@ description = "Customizing SPIRE Agent SPIFFE IDs: A Deep Dive"
 date = "2024-12-02"
 
 [taxonomies]
-tags = ["inbox", "spiffe", "spire", "spiffe", "spire-agent", "identity"]
+tags = ["inbox", "spiffe", "spire", "spiffe", "spire", "identity"]
 +++
 
 When working with SPIRE (the SPIFFE Runtime Environment), you might notice that your agent SPIFFE IDs follow a standard pattern like `spiffe://trust-domain/spire-agent`. But what if you need to customize this identifier? Let's explore how SPIRE handles agent SPIFFE ID assignment and how you can configure it to meet your needs.

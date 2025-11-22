@@ -642,12 +642,6 @@
         <loc>https://zerotohero.dev/tags/about/</loc>
     </url>
     <url>
-        <loc>https://zerotohero.dev/tags/architecture/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/authentication/</loc>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/tags/aws/</loc>
     </url>
     <url>
@@ -675,12 +669,6 @@
         <loc>https://zerotohero.dev/tags/closure/</loc>
     </url>
     <url>
-        <loc>https://zerotohero.dev/tags/cloud/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/cluster-management/</loc>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/tags/collaboration/</loc>
     </url>
     <url>
@@ -694,12 +682,6 @@
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/database/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/deadlocks/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/debugging/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/deployment/</loc>
@@ -748,9 +730,6 @@
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/external-secrets-operator/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/federation/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/git/</loc>
@@ -915,9 +894,6 @@
         <loc>https://zerotohero.dev/tags/privacy/</loc>
     </url>
     <url>
-        <loc>https://zerotohero.dev/tags/private-cloud/</loc>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/tags/productivity/</loc>
     </url>
     <url>
@@ -988,9 +964,6 @@
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/spike/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/spire-agent/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/spire/</loc>
