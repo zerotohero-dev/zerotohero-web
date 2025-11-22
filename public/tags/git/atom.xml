@@ -243,6 +243,432 @@
         
     </entry>
     <entry xml:lang="en">
+        <title>CSR vs Direct Public Key Exchange: When Do You Really Need a CSR?</title>
+        <published>2024-12-16T00:00:00+00:00</published>
+        <updated>2024-12-16T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/csr/"/>
+        <id>https://zerotohero.dev/inbox/csr/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/csr/">&lt;p&gt;When working with secure systems, a common scenario involves Server A obtaining a certificate signed by Server B (acting as a Certificate Authority, or CA). But if the ultimate goal is to exchange public keys so that JWTs (JSON Web Tokens) signed by Server A can be verified by Server B, you might wonder: &lt;em&gt;Do I really need to use a CSR (Certificate Signing Request)? Can’t I just send my public key directly?&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;The answer is: &lt;strong&gt;it depends on your use case and trust model&lt;&#x2F;strong&gt;. Here’s a breakdown of why you might still want to use a CSR, and when you can skip it.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;what-is-a-csr&quot;&gt;What Is a CSR?&lt;&#x2F;h2&gt;
+&lt;p&gt;A CSR (Certificate Signing Request) is a formal request for a certificate that includes:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;A Public Key&lt;&#x2F;strong&gt;: The key for which the certificate is requested.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Metadata&lt;&#x2F;strong&gt;: Information such as the organization name, domain, and other identifying details.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;A Digital Signature&lt;&#x2F;strong&gt;: The CSR is signed using the private key corresponding to the public key, proving ownership of the key pair.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;The CA (Server B in this case) validates the CSR and signs it, issuing a certificate that binds the public key to the metadata and ensures trustworthiness.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;key-differences-csr-vs-direct-public-key-exchange&quot;&gt;Key Differences: CSR vs Direct Public Key Exchange&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;1-csr-purpose&quot;&gt;&lt;strong&gt;1. CSR Purpose&lt;&#x2F;strong&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;A CSR isn’t just about sending a public key. It’s a mechanism to:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Verify the &lt;strong&gt;ownership&lt;&#x2F;strong&gt; of the private key.&lt;&#x2F;li&gt;
+&lt;li&gt;Attach additional &lt;strong&gt;identity information&lt;&#x2F;strong&gt; (e.g., the name or domain of the entity requesting the certificate).&lt;&#x2F;li&gt;
+&lt;li&gt;Enable a &lt;strong&gt;trusted certificate chain&lt;&#x2F;strong&gt;, which simplifies verification in distributed systems.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;2-direct-public-key-exchange&quot;&gt;&lt;strong&gt;2. Direct Public Key Exchange&lt;&#x2F;strong&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;You can directly send a public key to Server B without using a CSR. In this approach:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Server B can use the received public key to verify JWTs signed by Server A’s private key.&lt;&#x2F;li&gt;
+&lt;li&gt;There’s no built-in identity validation, certificate lifecycle management, or chain of trust.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;While this works in certain scenarios, it has limitations and security trade-offs.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;when-to-use-a-csr&quot;&gt;When to Use a CSR&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;advantages-of-using-a-csr&quot;&gt;&lt;strong&gt;Advantages of Using a CSR&lt;&#x2F;strong&gt;&lt;&#x2F;h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Identity Validation&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;The CSR ensures that the entity requesting the certificate (Server A) owns the corresponding private key and has been validated by a trusted CA (Server B).&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Certificate Lifecycle Management&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Certificates can be renewed, revoked, and managed systematically. In contrast, a direct public key exchange lacks this infrastructure.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Chain of Trust&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;A certificate issued via a CSR establishes a trusted relationship between Server A and Server B. This is especially important in environments with multiple parties or external systems.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Security Best Practices&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Using certificates aligns with widely accepted security standards, such as TLS and mutual authentication.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h3 id=&quot;use-case&quot;&gt;&lt;strong&gt;Use Case&lt;&#x2F;strong&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;If Server A and Server B are communicating in a public or distributed environment, or if Server B needs to validate Server A’s identity, &lt;strong&gt;using a CSR and signed certificate is the better choice&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;when-a-direct-public-key-exchange-is-enough&quot;&gt;When a Direct Public Key Exchange Is Enough&lt;&#x2F;h2&gt;
+&lt;p&gt;In simpler or controlled environments, you might not need the full CSR process. For example:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Closed Systems&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;If Server A and Server B are part of the same internal system, and there’s no need for third-party validation, you can directly exchange public keys.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Simplified Trust&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;If Server B already trusts Server A, sending the public key directly might be sufficient. Server B can store and use the key to verify JWTs without additional steps.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;No Metadata Needed&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;If no identity metadata (e.g., domain name or organization) is required, the CSR adds little value.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h3 id=&quot;trade-offs&quot;&gt;&lt;strong&gt;Trade-Offs&lt;&#x2F;strong&gt;&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;No Verification&lt;&#x2F;strong&gt;: Server B must blindly trust the received public key.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;No Revocation or Renewal&lt;&#x2F;strong&gt;: Directly exchanged public keys lack lifecycle management.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;No Chain of Trust&lt;&#x2F;strong&gt;: There’s no mechanism to validate the authenticity of the public key.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;summary-to-csr-or-not-to-csr&quot;&gt;Summary: To CSR or Not to CSR?&lt;&#x2F;h2&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;&lt;strong&gt;Scenario&lt;&#x2F;strong&gt;&lt;&#x2F;th&gt;&lt;th&gt;&lt;strong&gt;CSR Required?&lt;&#x2F;strong&gt;&lt;&#x2F;th&gt;&lt;th&gt;&lt;strong&gt;Why&lt;&#x2F;strong&gt;&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;Public or distributed systems&lt;&#x2F;td&gt;&lt;td&gt;Yes&lt;&#x2F;td&gt;&lt;td&gt;Need for identity validation, lifecycle management, and chain of trust.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Closed or internal systems&lt;&#x2F;td&gt;&lt;td&gt;No&lt;&#x2F;td&gt;&lt;td&gt;Trust is already established, and the CSR process adds unnecessary overhead.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Need for lifecycle management (renewal, etc.)&lt;&#x2F;td&gt;&lt;td&gt;Yes&lt;&#x2F;td&gt;&lt;td&gt;Certificates provide systematic management of trust material.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Minimalistic trust exchange&lt;&#x2F;td&gt;&lt;td&gt;No&lt;&#x2F;td&gt;&lt;td&gt;Direct public key exchange is simpler and sufficient for closed systems.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;While skipping the CSR and directly exchanging public keys can work in simpler or internal systems, the CSR process provides essential security, validation, and lifecycle benefits in more complex or public-facing environments. The decision ultimately depends on the &lt;strong&gt;trust model&lt;&#x2F;strong&gt;, &lt;strong&gt;security requirements&lt;&#x2F;strong&gt;, and &lt;strong&gt;operational context&lt;&#x2F;strong&gt; of your system.&lt;&#x2F;p&gt;
+&lt;p&gt;For secure systems, especially those that involve public networks or external parties, using a CSR to obtain a signed certificate is the more robust and widely accepted approach.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>CSR vs Direct Public Key Exchange: When Do You Really Need a CSR?</title>
+        <published>2024-12-16T00:00:00+00:00</published>
+        <updated>2024-12-16T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/csr/"/>
+        <id>https://zerotohero.dev/inbox/csr/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/csr/">&lt;p&gt;When working with secure systems, a common scenario involves Server A obtaining a certificate signed by Server B (acting as a Certificate Authority, or CA). But if the ultimate goal is to exchange public keys so that JWTs (JSON Web Tokens) signed by Server A can be verified by Server B, you might wonder: &lt;em&gt;Do I really need to use a CSR (Certificate Signing Request)? Can’t I just send my public key directly?&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;The answer is: &lt;strong&gt;it depends on your use case and trust model&lt;&#x2F;strong&gt;. Here’s a breakdown of why you might still want to use a CSR, and when you can skip it.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;what-is-a-csr&quot;&gt;What Is a CSR?&lt;&#x2F;h2&gt;
+&lt;p&gt;A CSR (Certificate Signing Request) is a formal request for a certificate that includes:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;A Public Key&lt;&#x2F;strong&gt;: The key for which the certificate is requested.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Metadata&lt;&#x2F;strong&gt;: Information such as the organization name, domain, and other identifying details.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;A Digital Signature&lt;&#x2F;strong&gt;: The CSR is signed using the private key corresponding to the public key, proving ownership of the key pair.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;The CA (Server B in this case) validates the CSR and signs it, issuing a certificate that binds the public key to the metadata and ensures trustworthiness.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;key-differences-csr-vs-direct-public-key-exchange&quot;&gt;Key Differences: CSR vs Direct Public Key Exchange&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;1-csr-purpose&quot;&gt;&lt;strong&gt;1. CSR Purpose&lt;&#x2F;strong&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;A CSR isn’t just about sending a public key. It’s a mechanism to:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Verify the &lt;strong&gt;ownership&lt;&#x2F;strong&gt; of the private key.&lt;&#x2F;li&gt;
+&lt;li&gt;Attach additional &lt;strong&gt;identity information&lt;&#x2F;strong&gt; (e.g., the name or domain of the entity requesting the certificate).&lt;&#x2F;li&gt;
+&lt;li&gt;Enable a &lt;strong&gt;trusted certificate chain&lt;&#x2F;strong&gt;, which simplifies verification in distributed systems.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;2-direct-public-key-exchange&quot;&gt;&lt;strong&gt;2. Direct Public Key Exchange&lt;&#x2F;strong&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;You can directly send a public key to Server B without using a CSR. In this approach:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Server B can use the received public key to verify JWTs signed by Server A’s private key.&lt;&#x2F;li&gt;
+&lt;li&gt;There’s no built-in identity validation, certificate lifecycle management, or chain of trust.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;While this works in certain scenarios, it has limitations and security trade-offs.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;when-to-use-a-csr&quot;&gt;When to Use a CSR&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;advantages-of-using-a-csr&quot;&gt;&lt;strong&gt;Advantages of Using a CSR&lt;&#x2F;strong&gt;&lt;&#x2F;h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Identity Validation&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;The CSR ensures that the entity requesting the certificate (Server A) owns the corresponding private key and has been validated by a trusted CA (Server B).&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Certificate Lifecycle Management&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Certificates can be renewed, revoked, and managed systematically. In contrast, a direct public key exchange lacks this infrastructure.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Chain of Trust&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;A certificate issued via a CSR establishes a trusted relationship between Server A and Server B. This is especially important in environments with multiple parties or external systems.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Security Best Practices&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Using certificates aligns with widely accepted security standards, such as TLS and mutual authentication.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h3 id=&quot;use-case&quot;&gt;&lt;strong&gt;Use Case&lt;&#x2F;strong&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;If Server A and Server B are communicating in a public or distributed environment, or if Server B needs to validate Server A’s identity, &lt;strong&gt;using a CSR and signed certificate is the better choice&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;when-a-direct-public-key-exchange-is-enough&quot;&gt;When a Direct Public Key Exchange Is Enough&lt;&#x2F;h2&gt;
+&lt;p&gt;In simpler or controlled environments, you might not need the full CSR process. For example:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Closed Systems&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;If Server A and Server B are part of the same internal system, and there’s no need for third-party validation, you can directly exchange public keys.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Simplified Trust&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;If Server B already trusts Server A, sending the public key directly might be sufficient. Server B can store and use the key to verify JWTs without additional steps.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;No Metadata Needed&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;If no identity metadata (e.g., domain name or organization) is required, the CSR adds little value.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h3 id=&quot;trade-offs&quot;&gt;&lt;strong&gt;Trade-Offs&lt;&#x2F;strong&gt;&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;No Verification&lt;&#x2F;strong&gt;: Server B must blindly trust the received public key.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;No Revocation or Renewal&lt;&#x2F;strong&gt;: Directly exchanged public keys lack lifecycle management.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;No Chain of Trust&lt;&#x2F;strong&gt;: There’s no mechanism to validate the authenticity of the public key.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;summary-to-csr-or-not-to-csr&quot;&gt;Summary: To CSR or Not to CSR?&lt;&#x2F;h2&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;&lt;strong&gt;Scenario&lt;&#x2F;strong&gt;&lt;&#x2F;th&gt;&lt;th&gt;&lt;strong&gt;CSR Required?&lt;&#x2F;strong&gt;&lt;&#x2F;th&gt;&lt;th&gt;&lt;strong&gt;Why&lt;&#x2F;strong&gt;&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;Public or distributed systems&lt;&#x2F;td&gt;&lt;td&gt;Yes&lt;&#x2F;td&gt;&lt;td&gt;Need for identity validation, lifecycle management, and chain of trust.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Closed or internal systems&lt;&#x2F;td&gt;&lt;td&gt;No&lt;&#x2F;td&gt;&lt;td&gt;Trust is already established, and the CSR process adds unnecessary overhead.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Need for lifecycle management (renewal, etc.)&lt;&#x2F;td&gt;&lt;td&gt;Yes&lt;&#x2F;td&gt;&lt;td&gt;Certificates provide systematic management of trust material.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Minimalistic trust exchange&lt;&#x2F;td&gt;&lt;td&gt;No&lt;&#x2F;td&gt;&lt;td&gt;Direct public key exchange is simpler and sufficient for closed systems.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;While skipping the CSR and directly exchanging public keys can work in simpler or internal systems, the CSR process provides essential security, validation, and lifecycle benefits in more complex or public-facing environments. The decision ultimately depends on the &lt;strong&gt;trust model&lt;&#x2F;strong&gt;, &lt;strong&gt;security requirements&lt;&#x2F;strong&gt;, and &lt;strong&gt;operational context&lt;&#x2F;strong&gt; of your system.&lt;&#x2F;p&gt;
+&lt;p&gt;For secure systems, especially those that involve public networks or external parties, using a CSR to obtain a signed certificate is the more robust and widely accepted approach.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Understanding `git push origin main`</title>
+        <published>2024-12-16T00:00:00+00:00</published>
+        <updated>2024-12-16T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/git-push-origin-main/"/>
+        <id>https://zerotohero.dev/inbox/git-push-origin-main/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/git-push-origin-main/">&lt;p&gt;When working with Git, you might frequently encounter the command &lt;code&gt;git push origin main&lt;&#x2F;code&gt;. But what do &lt;code&gt;origin&lt;&#x2F;code&gt; and &lt;code&gt;main&lt;&#x2F;code&gt; actually mean? In this post, we will break down this command and explain its components.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-is-git-push-origin-main&quot;&gt;What is &lt;code&gt;git push origin main&lt;&#x2F;code&gt;?&lt;&#x2F;h2&gt;
+&lt;p&gt;The command &lt;code&gt;git push origin main&lt;&#x2F;code&gt; is used to push changes from your local repository to a remote repository. It consists of three main parts:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;git push&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt;: The Git command that initiates the process of sending your commits to a remote repository.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;origin&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt;: The name of the remote repository.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;main&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt;: The name of the branch in the remote repository where the changes should be pushed.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;Let’s explore each component in detail.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;understanding-origin&quot;&gt;Understanding &lt;code&gt;origin&lt;&#x2F;code&gt;&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;what-is-origin&quot;&gt;What is &lt;code&gt;origin&lt;&#x2F;code&gt;?&lt;&#x2F;h3&gt;
+&lt;p&gt;&lt;code&gt;origin&lt;&#x2F;code&gt; is the default name given to the remote repository when you clone a repository. It acts as a shorthand for the remote repository’s URL (e.g., a repository hosted on GitHub, GitLab, or another Git server).&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;why-is-origin-needed&quot;&gt;Why is &lt;code&gt;origin&lt;&#x2F;code&gt; needed?&lt;&#x2F;h3&gt;
+&lt;p&gt;When you execute a command like &lt;code&gt;git push&lt;&#x2F;code&gt;, Git needs to know where to send the changes. &lt;code&gt;origin&lt;&#x2F;code&gt; specifies the remote repository that should receive the changes.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;example&quot;&gt;Example&lt;&#x2F;h3&gt;
+&lt;p&gt;If you clone a repository using the following command:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;git clone https:&#x2F;&#x2F;github.com&#x2F;user&#x2F;repo.git
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Git automatically sets up &lt;code&gt;origin&lt;&#x2F;code&gt; to point to the repository at &lt;code&gt;https:&#x2F;&#x2F;github.com&#x2F;user&#x2F;repo.git&lt;&#x2F;code&gt;. You can verify this using:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;git remote -v
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;You might see output like this:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#282828;color:#fdf4c1aa;&quot;&gt;&lt;code&gt;&lt;span&gt;origin  https:&#x2F;&#x2F;github.com&#x2F;user&#x2F;repo.git (fetch)
+&lt;&#x2F;span&gt;&lt;span&gt;origin  https:&#x2F;&#x2F;github.com&#x2F;user&#x2F;repo.git (push)
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;understanding-main&quot;&gt;Understanding &lt;code&gt;main&lt;&#x2F;code&gt;&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;what-is-main&quot;&gt;What is &lt;code&gt;main&lt;&#x2F;code&gt;?&lt;&#x2F;h3&gt;
+&lt;p&gt;&lt;code&gt;main&lt;&#x2F;code&gt; is the name of a branch in your Git repository. By convention, &lt;code&gt;main&lt;&#x2F;code&gt; often serves as the default branch for a repository. It typically contains the latest stable version of the code.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;why-is-main-needed&quot;&gt;Why is &lt;code&gt;main&lt;&#x2F;code&gt; needed?&lt;&#x2F;h3&gt;
+&lt;p&gt;The branch name specifies which branch in the remote repository should receive the changes. Without specifying the branch, Git might use a default branch or require additional configuration.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;custom-branch-names&quot;&gt;Custom Branch Names&lt;&#x2F;h3&gt;
+&lt;p&gt;Branches in Git are highly customizable, so your repository might use names like &lt;code&gt;master&lt;&#x2F;code&gt;, &lt;code&gt;development&lt;&#x2F;code&gt;, or &lt;code&gt;feature-branch&lt;&#x2F;code&gt; instead of &lt;code&gt;main&lt;&#x2F;code&gt;. In modern Git repositories, &lt;code&gt;main&lt;&#x2F;code&gt; has become the standard default branch name.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;breaking-down-the-command&quot;&gt;Breaking Down the Command&lt;&#x2F;h2&gt;
+&lt;p&gt;Here’s what happens when you run &lt;code&gt;git push origin main&lt;&#x2F;code&gt;:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;git push&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt;: Git starts the process of uploading your commits.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;origin&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt;: Git identifies the remote repository to push to.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;main&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt;: Git pushes the commits from your local &lt;code&gt;main&lt;&#x2F;code&gt; branch to the &lt;code&gt;main&lt;&#x2F;code&gt; branch on the remote repository.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;If you’re currently on the &lt;code&gt;main&lt;&#x2F;code&gt; branch locally, the command pushes the changes to the corresponding &lt;code&gt;main&lt;&#x2F;code&gt; branch on the remote repository.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;example-workflow&quot;&gt;Example Workflow&lt;&#x2F;h2&gt;
+&lt;p&gt;Here’s a practical example to put it all together:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Clone a repository:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;git clone https:&#x2F;&#x2F;github.com&#x2F;user&#x2F;repo.git
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This sets up &lt;code&gt;origin&lt;&#x2F;code&gt; to point to the remote repository.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Make changes locally:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Hello, Git!&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;&amp;gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt; file.txt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;git add file.txt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;git commit -m &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Added a greeting to file.txt&amp;quot;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Push changes to the remote repository:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;git push origin main
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This sends your commits to the &lt;code&gt;main&lt;&#x2F;code&gt; branch of the remote repository.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;&#x2F;h2&gt;
+&lt;p&gt;The command &lt;code&gt;git push origin main&lt;&#x2F;code&gt; can be broken down as follows:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;git push&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt;: Initiates the process of sending changes to a remote repository.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;origin&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt;: Specifies the remote repository (default name for the remote created when cloning).&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;main&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt;: Indicates the branch in the remote repository where the changes should be pushed.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Understanding these components helps you use Git more effectively and troubleshoot common issues related to pushing changes.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Understanding `git push origin main`</title>
+        <published>2024-12-16T00:00:00+00:00</published>
+        <updated>2024-12-16T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/git-push-origin-main/"/>
+        <id>https://zerotohero.dev/inbox/git-push-origin-main/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/git-push-origin-main/">&lt;p&gt;When working with Git, you might frequently encounter the command &lt;code&gt;git push origin main&lt;&#x2F;code&gt;. But what do &lt;code&gt;origin&lt;&#x2F;code&gt; and &lt;code&gt;main&lt;&#x2F;code&gt; actually mean? In this post, we will break down this command and explain its components.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-is-git-push-origin-main&quot;&gt;What is &lt;code&gt;git push origin main&lt;&#x2F;code&gt;?&lt;&#x2F;h2&gt;
+&lt;p&gt;The command &lt;code&gt;git push origin main&lt;&#x2F;code&gt; is used to push changes from your local repository to a remote repository. It consists of three main parts:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;git push&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt;: The Git command that initiates the process of sending your commits to a remote repository.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;origin&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt;: The name of the remote repository.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;main&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt;: The name of the branch in the remote repository where the changes should be pushed.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;Let’s explore each component in detail.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;understanding-origin&quot;&gt;Understanding &lt;code&gt;origin&lt;&#x2F;code&gt;&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;what-is-origin&quot;&gt;What is &lt;code&gt;origin&lt;&#x2F;code&gt;?&lt;&#x2F;h3&gt;
+&lt;p&gt;&lt;code&gt;origin&lt;&#x2F;code&gt; is the default name given to the remote repository when you clone a repository. It acts as a shorthand for the remote repository’s URL (e.g., a repository hosted on GitHub, GitLab, or another Git server).&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;why-is-origin-needed&quot;&gt;Why is &lt;code&gt;origin&lt;&#x2F;code&gt; needed?&lt;&#x2F;h3&gt;
+&lt;p&gt;When you execute a command like &lt;code&gt;git push&lt;&#x2F;code&gt;, Git needs to know where to send the changes. &lt;code&gt;origin&lt;&#x2F;code&gt; specifies the remote repository that should receive the changes.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;example&quot;&gt;Example&lt;&#x2F;h3&gt;
+&lt;p&gt;If you clone a repository using the following command:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;git clone https:&#x2F;&#x2F;github.com&#x2F;user&#x2F;repo.git
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Git automatically sets up &lt;code&gt;origin&lt;&#x2F;code&gt; to point to the repository at &lt;code&gt;https:&#x2F;&#x2F;github.com&#x2F;user&#x2F;repo.git&lt;&#x2F;code&gt;. You can verify this using:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;git remote -v
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;You might see output like this:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#282828;color:#fdf4c1aa;&quot;&gt;&lt;code&gt;&lt;span&gt;origin  https:&#x2F;&#x2F;github.com&#x2F;user&#x2F;repo.git (fetch)
+&lt;&#x2F;span&gt;&lt;span&gt;origin  https:&#x2F;&#x2F;github.com&#x2F;user&#x2F;repo.git (push)
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;understanding-main&quot;&gt;Understanding &lt;code&gt;main&lt;&#x2F;code&gt;&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;what-is-main&quot;&gt;What is &lt;code&gt;main&lt;&#x2F;code&gt;?&lt;&#x2F;h3&gt;
+&lt;p&gt;&lt;code&gt;main&lt;&#x2F;code&gt; is the name of a branch in your Git repository. By convention, &lt;code&gt;main&lt;&#x2F;code&gt; often serves as the default branch for a repository. It typically contains the latest stable version of the code.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;why-is-main-needed&quot;&gt;Why is &lt;code&gt;main&lt;&#x2F;code&gt; needed?&lt;&#x2F;h3&gt;
+&lt;p&gt;The branch name specifies which branch in the remote repository should receive the changes. Without specifying the branch, Git might use a default branch or require additional configuration.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;custom-branch-names&quot;&gt;Custom Branch Names&lt;&#x2F;h3&gt;
+&lt;p&gt;Branches in Git are highly customizable, so your repository might use names like &lt;code&gt;master&lt;&#x2F;code&gt;, &lt;code&gt;development&lt;&#x2F;code&gt;, or &lt;code&gt;feature-branch&lt;&#x2F;code&gt; instead of &lt;code&gt;main&lt;&#x2F;code&gt;. In modern Git repositories, &lt;code&gt;main&lt;&#x2F;code&gt; has become the standard default branch name.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;breaking-down-the-command&quot;&gt;Breaking Down the Command&lt;&#x2F;h2&gt;
+&lt;p&gt;Here’s what happens when you run &lt;code&gt;git push origin main&lt;&#x2F;code&gt;:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;git push&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt;: Git starts the process of uploading your commits.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;origin&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt;: Git identifies the remote repository to push to.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;main&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt;: Git pushes the commits from your local &lt;code&gt;main&lt;&#x2F;code&gt; branch to the &lt;code&gt;main&lt;&#x2F;code&gt; branch on the remote repository.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;If you’re currently on the &lt;code&gt;main&lt;&#x2F;code&gt; branch locally, the command pushes the changes to the corresponding &lt;code&gt;main&lt;&#x2F;code&gt; branch on the remote repository.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;example-workflow&quot;&gt;Example Workflow&lt;&#x2F;h2&gt;
+&lt;p&gt;Here’s a practical example to put it all together:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Clone a repository:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;git clone https:&#x2F;&#x2F;github.com&#x2F;user&#x2F;repo.git
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This sets up &lt;code&gt;origin&lt;&#x2F;code&gt; to point to the remote repository.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Make changes locally:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Hello, Git!&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;&amp;gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt; file.txt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;git add file.txt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;git commit -m &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Added a greeting to file.txt&amp;quot;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Push changes to the remote repository:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;git push origin main
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This sends your commits to the &lt;code&gt;main&lt;&#x2F;code&gt; branch of the remote repository.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;&#x2F;h2&gt;
+&lt;p&gt;The command &lt;code&gt;git push origin main&lt;&#x2F;code&gt; can be broken down as follows:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;git push&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt;: Initiates the process of sending changes to a remote repository.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;origin&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt;: Specifies the remote repository (default name for the remote created when cloning).&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;main&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt;: Indicates the branch in the remote repository where the changes should be pushed.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Understanding these components helps you use Git more effectively and troubleshoot common issues related to pushing changes.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
         <title>Understanding `git push origin main`</title>
         <published>2024-12-16T00:00:00+00:00</published>
         <updated>2024-12-16T00:00:00+00:00</updated>
@@ -591,6 +1017,180 @@
 &lt;p&gt;This way, you won’t need to add the &lt;code&gt;-S&lt;&#x2F;code&gt; flag to every commit command.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
 &lt;p&gt;GPG signing issues in Git are usually straightforward to fix once you understand the relationship between your GPG keys and Git configuration. The key is to ensure that Git knows which GPG key to use and that the key is properly set up with your correct email address.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Creating GitHub Releases with Binary Artifacts: A Complete Guide</title>
+        <published>2024-11-27T00:00:00+00:00</published>
+        <updated>2024-11-27T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/github-releases/"/>
+        <id>https://zerotohero.dev/inbox/github-releases/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/github-releases/">&lt;p&gt;Whether you’re distributing compiled binaries, executables, or any other release artifacts, GitHub provides two convenient methods to create releases and share your builds. In this guide, we’ll explore both the manual UI approach and automated workflows for creating GitHub releases.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;method-1-using-github-s-web-interface&quot;&gt;Method 1: Using GitHub’s Web Interface&lt;&#x2F;h2&gt;
+&lt;p&gt;The simplest way to create a release is directly through GitHub’s user interface. Here’s a step-by-step guide:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Navigate to Releases&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Go to your repository&lt;&#x2F;li&gt;
+&lt;li&gt;Click on “Releases” in the right sidebar&lt;&#x2F;li&gt;
+&lt;li&gt;If you don’t see it, you can also access it via “Tags” → “Releases”&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Create the Release&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Click the “Create a new release” button&lt;&#x2F;li&gt;
+&lt;li&gt;If you have no releases yet, look for “Draft a new release”&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Configure Release Details&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Tag&lt;&#x2F;strong&gt;: Either choose an existing tag or create a new one (e.g., &lt;code&gt;v1.0.0&lt;&#x2F;code&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Release title&lt;&#x2F;strong&gt;: Give your release a descriptive name&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Description&lt;&#x2F;strong&gt;: Add release notes, changelog, or any relevant documentation&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Upload Binary Artifacts&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Look for the “Attach binaries” section&lt;&#x2F;li&gt;
+&lt;li&gt;Either drag and drop your files directly onto this area&lt;&#x2F;li&gt;
+&lt;li&gt;Or use the “Choose files” button to select them from your computer&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Set Release Type&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Regular release: For stable versions&lt;&#x2F;li&gt;
+&lt;li&gt;Pre-release: For beta or testing versions&lt;&#x2F;li&gt;
+&lt;li&gt;Draft: To save without publishing&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Publish&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Click “Publish release” to make it public&lt;&#x2F;li&gt;
+&lt;li&gt;Or “Save draft” to continue editing later&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;method-2-automated-releases-with-github-actions&quot;&gt;Method 2: Automated Releases with GitHub Actions&lt;&#x2F;h2&gt;
+&lt;p&gt;For more consistent and automated releases, you can use GitHub Actions. This is particularly useful when you have:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Multiple binary artifacts&lt;&#x2F;li&gt;
+&lt;li&gt;Cross-platform builds&lt;&#x2F;li&gt;
+&lt;li&gt;Regular release cycles&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Here’s how to set it up:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Create Workflow File&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Create a &lt;code&gt;.github&#x2F;workflows&lt;&#x2F;code&gt; directory in your repository&lt;&#x2F;li&gt;
+&lt;li&gt;Add a file named &lt;code&gt;release.yml&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Configure the Workflow&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;yaml&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-yaml &quot;&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;name&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;Release Binaries
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;on&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;push&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;tags&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;      - &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;v*&amp;#39;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Define Build and Release Steps&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Set up your build environment&lt;&#x2F;li&gt;
+&lt;li&gt;Compile binaries for different platforms&lt;&#x2F;li&gt;
+&lt;li&gt;Upload artifacts to the release&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Trigger Release&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;git tag v1.0.0
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;git push origin v1.0.0
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;best-practices&quot;&gt;Best Practices&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Versioning&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use semantic versioning (e.g., v1.0.0)&lt;&#x2F;li&gt;
+&lt;li&gt;Be consistent with your version numbering&lt;&#x2F;li&gt;
+&lt;li&gt;Include build numbers if needed&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Documentation&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Always include release notes&lt;&#x2F;li&gt;
+&lt;li&gt;Document breaking changes&lt;&#x2F;li&gt;
+&lt;li&gt;List new features and bug fixes&lt;&#x2F;li&gt;
+&lt;li&gt;Add installation instructions&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Binary Organization&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use clear naming conventions&lt;&#x2F;li&gt;
+&lt;li&gt;Include architecture information in filenames&lt;&#x2F;li&gt;
+&lt;li&gt;Consider adding checksums for verification&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Post-Release&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Test download links&lt;&#x2F;li&gt;
+&lt;li&gt;Verify binary artifacts&lt;&#x2F;li&gt;
+&lt;li&gt;Update documentation references&lt;&#x2F;li&gt;
+&lt;li&gt;Announce the release in relevant channels&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;managing-existing-releases&quot;&gt;Managing Existing Releases&lt;&#x2F;h2&gt;
+&lt;p&gt;You can also manage releases after publication:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Editing Releases&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Navigate to the release page&lt;&#x2F;li&gt;
+&lt;li&gt;Click “Edit release”&lt;&#x2F;li&gt;
+&lt;li&gt;Modify description, title, or binary artifacts&lt;&#x2F;li&gt;
+&lt;li&gt;Save changes&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Deleting Releases&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use with caution&lt;&#x2F;li&gt;
+&lt;li&gt;Can remove individual artifacts&lt;&#x2F;li&gt;
+&lt;li&gt;Or delete entire releases&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;GitHub Releases provide a robust platform for distributing your binary artifacts. Whether you choose the manual UI approach or automated workflows, following these guidelines will help you create professional and well-organized releases for your users.&lt;&#x2F;p&gt;
+&lt;p&gt;Remember that releases serve as important historical markers for your project, so take time to document them properly and ensure all artifacts are properly tested before publishing.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;p&gt;&lt;em&gt;Last updated: November 2024&lt;&#x2F;em&gt;&lt;br &#x2F;&gt;
+&lt;em&gt;Feel free to share and adapt this guide with attribution.&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
 </content>
         
     </entry>

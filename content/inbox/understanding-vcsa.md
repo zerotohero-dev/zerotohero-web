@@ -13,7 +13,7 @@ description = "Understanding VMware vCenter Server Appliance (vCSA): The Central
 date = "2024-12-12"
 
 [taxonomies]
-tags = ["inbox", "vmware", "vcf", "vcf", "esxi", "virtualization", "configuration"]
+tags = ["inbox", "vmware", "vcf", "vcf", "vcf", "virtualization", "configuration"]
 +++
 
 Managing multiple ESXi hosts individually can quickly become overwhelming as your infrastructure grows. This is where VMware's vCenter Server Appliance (vCSA) comes into play, offering a centralized management solution that streamlines your virtual infrastructure operations.

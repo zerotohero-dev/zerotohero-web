@@ -43,6 +43,7 @@ user-experience -> ux
 # Development
 developer -> development
 design-patterns -> development
+error-handling -> development
 
 # Hacker culture
 hacker-ethic -> hacker-culture
@@ -55,6 +56,8 @@ workload-domain -> workload-domains
 # Git/Version Control
 git-commands -> git
 commit -> git
+github -> git
+gitlab -> git
 
 # Shell/Terminal
 zsh -> shell
@@ -69,9 +72,14 @@ unix -> linux
 content -> writing
 blogging -> writing
 
+# Design
+color-theory -> design
+
 # VMware
 vcsa -> vcf
 vcenter -> vcf
+esxi -> vcf
+cloud-foundation -> vcf
 
 # Projects
 aegis -> spike

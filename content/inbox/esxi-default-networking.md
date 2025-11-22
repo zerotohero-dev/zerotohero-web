@@ -13,7 +13,7 @@ description = "Understanding ESXi's Default Virtual Switch Configuration"
 date = "2024-12-10"
 
 [taxonomies]
-tags = ["inbox", "esxi", "vmware", "server", "networking"]
+tags = ["inbox", "vcf", "vmware", "server", "networking"]
 +++
 
 ## Video

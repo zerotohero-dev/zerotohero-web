@@ -13,7 +13,7 @@ description = "CSR vs Direct Public Key Exchange: When Do You Really Need a CSR?
 date = "2024-12-16"
 
 [taxonomies]
-tags = ["inbox", "git", "version-control", "github", "gitlab", "git"]
+tags = ["inbox", "git", "version-control", "git", "git", "git"]
 +++
 
 When working with secure systems, a common scenario involves Server A obtaining a certificate signed by Server B (acting as a Certificate Authority, or CA). But if the ultimate goal is to exchange public keys so that JWTs (JSON Web Tokens) signed by Server A can be verified by Server B, you might wonder: _Do I really need to use a CSR (Certificate Signing Request)? Can't I just send my public key directly?_

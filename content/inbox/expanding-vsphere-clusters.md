@@ -13,7 +13,7 @@ description = "Expanding vSphere Clusters in VMware Cloud Foundation: A Guide to
 date = "2024-12-12"
 
 [taxonomies]
-tags = ["inbox", "vmware", "vcf", "vcf", "vcf", "esxi", "virtualization", "sddc-manager", "host-expansion", "cluster-management"]
+tags = ["inbox", "vmware", "vcf", "vcf", "vcf", "vcf", "virtualization", "sddc-manager", "host-expansion", "cluster-management"]
 +++
 
 While VMware Cloud Foundation (VCF) offers multiple ways to increase capacity, adding hosts to an existing cluster is one of the most straightforward methods. This guide walks through the process of expanding a vSphere cluster by adding new hosts.

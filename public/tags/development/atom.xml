@@ -169,6 +169,429 @@
         
     </entry>
     <entry xml:lang="en">
+        <title>Understanding Error Handling with Defer in Go: A Deep Dive</title>
+        <published>2024-12-01T00:00:00+00:00</published>
+        <updated>2024-12-01T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/go-deferred/"/>
+        <id>https://zerotohero.dev/inbox/go-deferred/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/go-deferred/">&lt;p&gt;When working with Go, proper error handling is crucial for writing robust applications. Today, we’ll explore an interesting pattern involving deferred functions and named return values, specifically in the context of handling multiple potential error sources.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-problem&quot;&gt;The Problem&lt;&#x2F;h2&gt;
+&lt;p&gt;Consider a common scenario: you need to read a request body and ensure it’s properly closed afterward. You want to capture both any read errors and any close errors. Here’s what many developers might write initially:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;body&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;r &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;http&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;Request&lt;&#x2F;span&gt;&lt;span&gt;) ([]&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;byte&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;error&lt;&#x2F;span&gt;&lt;span&gt;) {
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;b&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;io&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;ReadAll&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;r&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Body&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;defer &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;r&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Body&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Close&lt;&#x2F;span&gt;&lt;span&gt;()  &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Potential error ignored!
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;b&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This code has a subtle issue: we’re ignoring any error that might occur when closing the body. While &lt;code&gt;Close()&lt;&#x2F;code&gt; errors are often less critical than read errors, they can indicate resource leaks or other problems that we should at least be aware of.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;a-better-solution&quot;&gt;A Better Solution&lt;&#x2F;h2&gt;
+&lt;p&gt;Here’s an improved version that captures both types of errors:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;body&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;r &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;http&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;Request&lt;&#x2F;span&gt;&lt;span&gt;) (&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;bod &lt;&#x2F;span&gt;&lt;span&gt;[]&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;byte&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;error&lt;&#x2F;span&gt;&lt;span&gt;) {
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;b&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;io&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;ReadAll&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;r&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Body&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;defer func&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;b io&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;ReadCloser&lt;&#x2F;span&gt;&lt;span&gt;) {
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;b &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;== &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return
+&lt;&#x2F;span&gt;&lt;span&gt;        }
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;errors&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Join&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;b&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Close&lt;&#x2F;span&gt;&lt;span&gt;())
+&lt;&#x2F;span&gt;&lt;span&gt;    }(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;r&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Body&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;b&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Let’s break down why this works and what’s happening behind the scenes.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;understanding-the-magic&quot;&gt;Understanding the Magic&lt;&#x2F;h2&gt;
+&lt;p&gt;Several key Go concepts come together to make this work:&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;1-named-return-values&quot;&gt;1. Named Return Values&lt;&#x2F;h3&gt;
+&lt;p&gt;The function signature uses named return values: &lt;code&gt;(bod []byte, err error)&lt;&#x2F;code&gt;. This creates variables that are initialized to their zero values at function start and can be accessed throughout the function, including in deferred functions.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;2-defer-execution-order&quot;&gt;2. Defer Execution Order&lt;&#x2F;h3&gt;
+&lt;p&gt;Deferred functions execute after the &lt;code&gt;return&lt;&#x2F;code&gt; statement is evaluated but before the function returns to its caller. This means:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;The return values are evaluated&lt;&#x2F;li&gt;
+&lt;li&gt;Deferred functions execute in LIFO order&lt;&#x2F;li&gt;
+&lt;li&gt;The function returns to its caller&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h3 id=&quot;3-variable-capture-vs-shadowing&quot;&gt;3. Variable Capture vs Shadowing&lt;&#x2F;h3&gt;
+&lt;p&gt;When we write:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;b&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;io&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;ReadAll&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;r&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Body&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This isn’t creating a new &lt;code&gt;err&lt;&#x2F;code&gt; variable - it’s assigning to our named return parameter. The &lt;code&gt;:=&lt;&#x2F;code&gt; operator only creates new variables for names that haven’t been declared in the current scope.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;behavior-analysis&quot;&gt;Behavior Analysis&lt;&#x2F;h2&gt;
+&lt;p&gt;Let’s examine what happens in different scenarios:&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;scenario-1-everything-succeeds&quot;&gt;Scenario 1: Everything Succeeds&lt;&#x2F;h3&gt;
+&lt;pre style=&quot;background-color:#282828;color:#fdf4c1aa;&quot;&gt;&lt;code&gt;&lt;span&gt;- ReadAll succeeds (err = nil)
+&lt;&#x2F;span&gt;&lt;span&gt;- Close succeeds (Close() returns nil)
+&lt;&#x2F;span&gt;&lt;span&gt;- Final result: err = nil
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;scenario-2-readall-fails&quot;&gt;Scenario 2: ReadAll Fails&lt;&#x2F;h3&gt;
+&lt;pre style=&quot;background-color:#282828;color:#fdf4c1aa;&quot;&gt;&lt;code&gt;&lt;span&gt;- ReadAll fails (err = ReadAll error)
+&lt;&#x2F;span&gt;&lt;span&gt;- Function returns early with ReadAll error
+&lt;&#x2F;span&gt;&lt;span&gt;- Close still happens via defer
+&lt;&#x2F;span&gt;&lt;span&gt;- Final result: err = joined errors (if Close also failed)
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;scenario-3-only-close-fails&quot;&gt;Scenario 3: Only Close Fails&lt;&#x2F;h3&gt;
+&lt;pre style=&quot;background-color:#282828;color:#fdf4c1aa;&quot;&gt;&lt;code&gt;&lt;span&gt;- ReadAll succeeds (err = nil)
+&lt;&#x2F;span&gt;&lt;span&gt;- Close fails
+&lt;&#x2F;span&gt;&lt;span&gt;- Final result: err = Close error
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;alternative-approaches&quot;&gt;Alternative Approaches&lt;&#x2F;h2&gt;
+&lt;p&gt;Sometimes you might want more control over error handling. Here’s an alternative approach that handles errors more explicitly:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;body&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;r &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;http&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;Request&lt;&#x2F;span&gt;&lt;span&gt;) ([]&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;byte&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;error&lt;&#x2F;span&gt;&lt;span&gt;) {
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;b&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;readErr &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;io&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;ReadAll&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;r&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Body&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;readErr &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;r&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Body&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Close&lt;&#x2F;span&gt;&lt;span&gt;() &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Best effort close
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;readErr
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;closeErr &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;r&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Body&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Close&lt;&#x2F;span&gt;&lt;span&gt;(); &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;closeErr &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;b&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;closeErr
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;b&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This version gives you more control but loses some of the elegance of using defer for cleanup.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;best-practices&quot;&gt;Best Practices&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Use named return values when you need to modify return values in deferred functions&lt;&#x2F;li&gt;
+&lt;li&gt;Be conscious of error priority - sometimes you want to preserve the original error&lt;&#x2F;li&gt;
+&lt;li&gt;Consider using &lt;code&gt;errors.Join&lt;&#x2F;code&gt; when both errors are meaningful&lt;&#x2F;li&gt;
+&lt;li&gt;Document your error handling strategy, especially when using defer&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;Go’s defer mechanism, combined with named return values and error joining, provides a powerful way to handle multiple error sources. While it might seem magical at first, understanding how these pieces work together helps us write more robust code.&lt;&#x2F;p&gt;
+&lt;p&gt;The pattern we explored today is particularly useful when dealing with resources that need cleanup, like file handles, network connections, or database transactions. Just remember that with great power comes great responsibility - make sure your error handling strategy is clear and well-documented.&lt;&#x2F;p&gt;
+&lt;p&gt;Happy coding!&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Better Error Handling Patterns for Go SDKs</title>
+        <published>2024-12-01T00:00:00+00:00</published>
+        <updated>2024-12-01T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/sdk-error-handling/"/>
+        <id>https://zerotohero.dev/inbox/sdk-error-handling/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/sdk-error-handling/">&lt;p&gt;When building SDKs in Go, one common challenge is balancing transparency and debuggability with clean error handling. This becomes particularly evident when implementing retry mechanisms, where we need to track multiple attempts, delays, and error states.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-common-approach-logging&quot;&gt;The Common Approach: Logging&lt;&#x2F;h2&gt;
+&lt;p&gt;Many SDKs resort to internal logging for debugging:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;Retry&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;scope &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;string&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;f &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func&lt;&#x2F;span&gt;&lt;span&gt;() &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;error&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;s &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;Strategy&lt;&#x2F;span&gt;&lt;span&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;error &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;correlationID &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;crypto&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Id&lt;&#x2F;span&gt;&lt;span&gt;()
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;log&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;TraceLn&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;correlationID&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Starting retry loop&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; ... retry logic with logging
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;While this provides visibility, it has several drawbacks:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Forces a logging implementation on SDK users&lt;&#x2F;li&gt;
+&lt;li&gt;Mixes concerns between error handling and logging&lt;&#x2F;li&gt;
+&lt;li&gt;Makes testing more complicated&lt;&#x2F;li&gt;
+&lt;li&gt;Can pollute user logs with SDK internals&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;better-patterns-for-sdk-error-handling&quot;&gt;Better Patterns for SDK Error Handling&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;1-rich-error-types&quot;&gt;1. Rich Error Types&lt;&#x2F;h3&gt;
+&lt;p&gt;Instead of logging, return structured error information:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;type &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;RetryError &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;struct &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;OriginalError &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;error
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Attempts     &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;int
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;TotalTime    time&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;Duration
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Scope        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;string
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;CorrelationID &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;string
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func &lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;e &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;RetryError&lt;&#x2F;span&gt;&lt;span&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;Error&lt;&#x2F;span&gt;&lt;span&gt;() &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;string &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;fmt&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Sprintf&lt;&#x2F;span&gt;&lt;span&gt;(
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;failed after &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;%d&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt; attempts over &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;%v&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt; in scope &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;%s&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39; (correlation_id: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;%s&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;): &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;%v&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;e&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Attempts&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;e&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;TotalTime&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;e&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Scope&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;e&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;CorrelationID&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;e&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;OriginalError&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;    )
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Benefits:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Users can extract detailed information when needed&lt;&#x2F;li&gt;
+&lt;li&gt;Follows Go’s error handling patterns&lt;&#x2F;li&gt;
+&lt;li&gt;Makes testing straightforward&lt;&#x2F;li&gt;
+&lt;li&gt;Keeps separation of concerns&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;2-event-callbacks&quot;&gt;2. Event Callbacks&lt;&#x2F;h3&gt;
+&lt;p&gt;Allow users to plug in their own handling:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;type &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;RetryCallback &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;attempt &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;int&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;delay time&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;Duration&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;error&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;Retry&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;f &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func&lt;&#x2F;span&gt;&lt;span&gt;() &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;error&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;s &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;Strategy&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;onRetry &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;RetryCallback&lt;&#x2F;span&gt;&lt;span&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;error &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Call onRetry for each attempt
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This approach:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Gives users complete control over instrumentation&lt;&#x2F;li&gt;
+&lt;li&gt;Enables custom metrics collection&lt;&#x2F;li&gt;
+&lt;li&gt;Supports different logging implementations&lt;&#x2F;li&gt;
+&lt;li&gt;Maintains flexibility&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;3-optional-debug-mode&quot;&gt;3. Optional Debug Mode&lt;&#x2F;h3&gt;
+&lt;p&gt;Configure debug behavior through options:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;type &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;Config &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;struct &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Logger &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;Logger
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Debug  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;bool
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;Retry&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;f &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func&lt;&#x2F;span&gt;&lt;span&gt;() &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;error&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;s &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;Strategy&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cfg &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;Config&lt;&#x2F;span&gt;&lt;span&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;error &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cfg &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;&amp;amp;&amp;amp; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cfg&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Debug &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;&amp;amp;&amp;amp; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cfg&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Logger &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Log debug information
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This pattern:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Makes debugging optional&lt;&#x2F;li&gt;
+&lt;li&gt;Allows users to choose their logging implementation&lt;&#x2F;li&gt;
+&lt;li&gt;Keeps debug information out of production logs&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;best-practices&quot;&gt;Best Practices&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Return, Don’t Log&lt;&#x2F;strong&gt;: SDKs should return rich error information rather than logging internally.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Structured Errors&lt;&#x2F;strong&gt;: Use custom error types with fields that capture important debugging details.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Error Wrapping&lt;&#x2F;strong&gt;: Preserve error context through the chain:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;fmt&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Errorf&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;retry failed: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;%w&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;originalError&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Flexible Instrumentation&lt;&#x2F;strong&gt;: Provide hooks for users to implement their own logging&#x2F;metrics.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Clear Documentation&lt;&#x2F;strong&gt;: Document error types and their fields thoroughly.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;implementation-example&quot;&gt;Implementation Example&lt;&#x2F;h2&gt;
+&lt;p&gt;Here’s a complete implementation combining these patterns:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;type &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;RetryInfo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;struct &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;CorrelationID &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;string
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Events        &lt;&#x2F;span&gt;&lt;span&gt;[]&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;RetryEvent
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;StartTime     time&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;Time
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;type &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;RetryEvent &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;struct &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Attempt   &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;int
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Delay     time&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;Duration
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Error     &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;error
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;TimeStamp time&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;Time
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;Retry&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;f &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func&lt;&#x2F;span&gt;&lt;span&gt;() &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;error&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;s &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;Strategy&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;onRetry &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;RetryCallback&lt;&#x2F;span&gt;&lt;span&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;error &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;info &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &amp;amp;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;RetryInfo&lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;CorrelationID&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;crypto&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Id&lt;&#x2F;span&gt;&lt;span&gt;(),
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;StartTime&lt;&#x2F;span&gt;&lt;span&gt;:    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;time&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Now&lt;&#x2F;span&gt;&lt;span&gt;(),
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;    
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;for &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;i &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;i &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;&amp;lt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;int&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;s&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;MaxRetries&lt;&#x2F;span&gt;&lt;span&gt;); &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;i&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;++ &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;f&lt;&#x2F;span&gt;&lt;span&gt;()
+&lt;&#x2F;span&gt;&lt;span&gt;        
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;== &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil
+&lt;&#x2F;span&gt;&lt;span&gt;        }
+&lt;&#x2F;span&gt;&lt;span&gt;        
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;event &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;RetryEvent&lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Attempt&lt;&#x2F;span&gt;&lt;span&gt;:   &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;i &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;+ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;TimeStamp&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;time&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Now&lt;&#x2F;span&gt;&lt;span&gt;(),
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Error&lt;&#x2F;span&gt;&lt;span&gt;:     &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;        }
+&lt;&#x2F;span&gt;&lt;span&gt;        
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;onRetry &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;onRetry&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;event&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Attempt&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;event&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Delay&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;        }
+&lt;&#x2F;span&gt;&lt;span&gt;        
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;info&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Events &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;append&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;info&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Events&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;event&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; ... retry logic
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;    
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;&amp;amp;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;RetryError&lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Info&lt;&#x2F;span&gt;&lt;span&gt;:    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;info&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;LastErr&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;info&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Events&lt;&#x2F;span&gt;&lt;span&gt;[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;len&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;info&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Events&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;].&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Error&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;By following these patterns, we can build SDKs that:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Provide rich debugging information&lt;&#x2F;li&gt;
+&lt;li&gt;Respect separation of concerns&lt;&#x2F;li&gt;
+&lt;li&gt;Give users control over logging and instrumentation&lt;&#x2F;li&gt;
+&lt;li&gt;Maintain clean, idiomatic Go code&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Remember: good SDK design is about enabling users while staying out of their way. Return errors, don’t log them, and give users the tools they need to handle errors appropriately in their context.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>log.Fatalf() vs panic in Go: Choosing the Right Way to Fail</title>
+        <published>2024-11-28T00:00:00+00:00</published>
+        <updated>2024-11-28T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/go-error-handling/"/>
+        <id>https://zerotohero.dev/inbox/go-error-handling/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/go-error-handling/">&lt;p&gt;When writing Go applications, developers often need to handle catastrophic errors that prevent the program from continuing. Go provides two primary mechanisms for handling such situations: &lt;code&gt;log.Fatalf()&lt;&#x2F;code&gt; and &lt;code&gt;panic&lt;&#x2F;code&gt;. While both can terminate program execution, they serve different purposes and come with their own sets of trade-offs.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;understanding-log-fatalf&quot;&gt;Understanding log.Fatalf()&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;code&gt;log.Fatalf()&lt;&#x2F;code&gt; is part of Go’s standard logging package and provides a way to log a message before terminating the program. When called, it:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Formats and writes the error message&lt;&#x2F;li&gt;
+&lt;li&gt;Calls &lt;code&gt;os.Exit(1)&lt;&#x2F;code&gt; to terminate the program&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h3 id=&quot;advantages&quot;&gt;Advantages&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Clean Logging&lt;&#x2F;strong&gt;: Allows you to provide a meaningful error message before exit&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Controlled Shutdown&lt;&#x2F;strong&gt;: Predictably exits with status code 1&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Application-Friendly&lt;&#x2F;strong&gt;: Ideal for application-level fatal errors&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Testing Friendly&lt;&#x2F;strong&gt;: Being a standard library function makes it easier to test&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;User-Friendly&lt;&#x2F;strong&gt;: Error messages are typically more readable for end users&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;disadvantages&quot;&gt;Disadvantages&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;No Deferred Functions&lt;&#x2F;strong&gt;: Bypasses deferred function calls&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Limited Debug Info&lt;&#x2F;strong&gt;: Doesn’t automatically provide stack traces&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;No Recovery&lt;&#x2F;strong&gt;: Once called, the program will exit without possibility of recovery&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Scope Limited&lt;&#x2F;strong&gt;: Only affects the current program&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;understanding-panic&quot;&gt;Understanding panic&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;code&gt;panic&lt;&#x2F;code&gt; is a built-in Go function designed to handle exceptional conditions that shouldn’t occur during normal operation. When called, it:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Immediately stops normal execution&lt;&#x2F;li&gt;
+&lt;li&gt;Runs all deferred functions in the current goroutine&lt;&#x2F;li&gt;
+&lt;li&gt;Prints a stack trace&lt;&#x2F;li&gt;
+&lt;li&gt;Terminates the program (unless recovered)&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h3 id=&quot;advantages-1&quot;&gt;Advantages&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Deferred Function Handling&lt;&#x2F;strong&gt;: Executes all deferred functions before terminating&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Rich Debug Information&lt;&#x2F;strong&gt;: Provides detailed stack traces by default&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Recoverable&lt;&#x2F;strong&gt;: Can be caught and handled using &lt;code&gt;recover()&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Programming Error Detection&lt;&#x2F;strong&gt;: Excellent for catching logical errors and invariant violations&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Library-Friendly&lt;&#x2F;strong&gt;: Allows calling code to handle the panic if desired&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;disadvantages-1&quot;&gt;Disadvantages&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Abrupt Termination&lt;&#x2F;strong&gt;: Less graceful than logging and exiting&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Potentially Confusing&lt;&#x2F;strong&gt;: Can be misused for normal error conditions&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Verbose Stack Traces&lt;&#x2F;strong&gt;: Can overwhelm users with technical details&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Unpredictable Propagation&lt;&#x2F;strong&gt;: May bubble up through multiple function calls&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;when-to-use-each&quot;&gt;When to Use Each&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;use-log-fatalf-when&quot;&gt;Use log.Fatalf() when:&lt;&#x2F;h3&gt;
+&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Application startup failures
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;initDatabase&lt;&#x2F;span&gt;&lt;span&gt;(); &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;log&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Fatalf&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Failed to initialize database: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;%v&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Configuration errors
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;config&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;APIKey &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;== &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;&amp;quot; &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;log&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Fatalf&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;API key not provided in configuration&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Critical resource unavailability
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;file&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;os&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Open&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;critical-data.json&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;log&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Fatalf&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Cannot proceed without critical data: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;%v&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;use-panic-when&quot;&gt;Use panic when:&lt;&#x2F;h3&gt;
+&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Programming errors
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;divide&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;a&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;b &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;int&lt;&#x2F;span&gt;&lt;span&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;int &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;b &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;== &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;0 &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;panic&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;division by zero&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;a &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;&#x2F; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;b
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Invariant violations
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;processUser&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;u &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;User&lt;&#x2F;span&gt;&lt;span&gt;) {
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;u &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;== &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;panic&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;user cannot be nil&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Process user...
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Unrecoverable state corruption
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func &lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;s &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;Stack&lt;&#x2F;span&gt;&lt;span&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;Pop&lt;&#x2F;span&gt;&lt;span&gt;() &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;interface&lt;&#x2F;span&gt;&lt;span&gt;{} {
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;s&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;IsEmpty&lt;&#x2F;span&gt;&lt;span&gt;() {
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;panic&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;pop from empty stack&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Pop item...
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;best-practices&quot;&gt;Best Practices&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Library Code&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Prefer returning errors over either &lt;code&gt;log.Fatalf()&lt;&#x2F;code&gt; or &lt;code&gt;panic&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Use &lt;code&gt;panic&lt;&#x2F;code&gt; only for programming errors&lt;&#x2F;li&gt;
+&lt;li&gt;Never use &lt;code&gt;log.Fatalf()&lt;&#x2F;code&gt; in libraries&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Application Code&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use &lt;code&gt;log.Fatalf()&lt;&#x2F;code&gt; for application-level fatal errors&lt;&#x2F;li&gt;
+&lt;li&gt;Reserve &lt;code&gt;panic&lt;&#x2F;code&gt; for truly exceptional conditions&lt;&#x2F;li&gt;
+&lt;li&gt;Consider using custom logging solutions for better control&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Error Handling Strategy&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Document your error handling strategy&lt;&#x2F;li&gt;
+&lt;li&gt;Be consistent across your codebase&lt;&#x2F;li&gt;
+&lt;li&gt;Consider your users when choosing between the two&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;The choice between &lt;code&gt;log.Fatalf()&lt;&#x2F;code&gt; and &lt;code&gt;panic&lt;&#x2F;code&gt; depends largely on your specific use case. For application-level fatal errors where you want to log clearly and exit cleanly, &lt;code&gt;log.Fatalf()&lt;&#x2F;code&gt; is the better choice. For programming errors or invariant violations that should never happen in correct code, &lt;code&gt;panic&lt;&#x2F;code&gt; is more appropriate.&lt;&#x2F;p&gt;
+&lt;p&gt;Remember that in many cases, especially in library code, returning an error is preferable to either option, as it gives callers more control over error handling and program flow.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
         <title>Paint Me Like One of Your French Design Patterns</title>
         <published>2021-11-26T00:00:00+00:00</published>
         <updated>2021-11-26T00:00:00+00:00</updated>
