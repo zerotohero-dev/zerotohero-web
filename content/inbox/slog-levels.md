@@ -13,7 +13,7 @@ description = "Understanding Go's slog Log Levels: A Practical Guide"
 date = "2024-11-28"
 
 [taxonomies]
-tags = ["inbox", "go", "slog", "logging"]
+tags = ["inbox", "go", "go", "logging"]
 +++
 
 

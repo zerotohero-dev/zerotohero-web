@@ -10,6 +10,14 @@ SPIFFE -> spiffe
 spiffeid -> spiffe
 ESO -> eso
 
+# Go-specific
+cgo -> go
+concurrency -> go
+cross-compilation -> go
+defer -> go
+slog -> go
+slices -> go
+
 # Secrets-related
 secrets -> secrets-management
 secret-management -> secrets-management
@@ -44,6 +52,7 @@ user-experience -> ux
 developer -> development
 design-patterns -> development
 error-handling -> development
+refactoring -> development
 
 # Hacker culture
 hacker-ethic -> hacker-culture
@@ -80,12 +89,16 @@ vcsa -> vcf
 vcenter -> vcf
 esxi -> vcf
 cloud-foundation -> vcf
+aria-suite -> vcf
+vsphere -> vcf
+best-practices -> vcf
 
 # Projects
 aegis -> spike
 
 # Conditional removals (only remove if other tags exist)
 automation -> DELETE_IF_NOT_ALONE
+comparison -> DELETE_IF_NOT_ALONE
 
 # Meta tags to consolidate
 volkan -> about

@@ -13,7 +13,7 @@ description = "Understanding Lock Upgrading Deadlocks in Go: A Common Concurrenc
 date = "2024-11-27"
 
 [taxonomies]
-tags = ["inbox", "concurrency", "deadlocks", "go", "programming", "mutexes"]
+tags = ["inbox", "go", "deadlocks", "go", "programming", "mutexes"]
 +++
 
 

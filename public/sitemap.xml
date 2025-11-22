@@ -645,9 +645,6 @@
         <loc>https://zerotohero.dev/tags/architecture/</loc>
     </url>
     <url>
-        <loc>https://zerotohero.dev/tags/aria-suite/</loc>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/tags/authentication/</loc>
     </url>
     <url>
@@ -660,9 +657,6 @@
         <loc>https://zerotohero.dev/tags/bash/</loc>
     </url>
     <url>
-        <loc>https://zerotohero.dev/tags/best-practices/</loc>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/tags/bookmarking/</loc>
     </url>
     <url>
@@ -673,9 +667,6 @@
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/certificates/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/cgo/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/cli/</loc>
@@ -693,12 +684,6 @@
         <loc>https://zerotohero.dev/tags/collaboration/</loc>
     </url>
     <url>
-        <loc>https://zerotohero.dev/tags/comparison/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/concurrency/</loc>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/tags/configuration/</loc>
     </url>
     <url>
@@ -708,9 +693,6 @@
         <loc>https://zerotohero.dev/tags/creativity/</loc>
     </url>
     <url>
-        <loc>https://zerotohero.dev/tags/cross-compilation/</loc>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/tags/database/</loc>
     </url>
     <url>
@@ -718,9 +700,6 @@
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/debugging/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/defer/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/deployment/</loc>
@@ -954,9 +933,6 @@
         <loc>https://zerotohero.dev/tags/redirect/</loc>
     </url>
     <url>
-        <loc>https://zerotohero.dev/tags/refactoring/</loc>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/tags/reflection/</loc>
     </url>
     <url>
@@ -1018,12 +994,6 @@
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/simplicity/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/slices/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/slog/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/snippets/</loc>
@@ -1123,9 +1093,6 @@
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/vsecm/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/vsphere/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/webhooks/</loc>

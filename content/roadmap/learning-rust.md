@@ -12,7 +12,7 @@ title = "Exploring Rust as a Go Developer"
 date = "2024-07-21"
 
 [taxonomies]
-tags = ["tips", "rust", "go", "learning", "comparison", "programming"]
+tags = ["tips", "rust", "go", "learning", "programming"]
 +++
 
 {{img(
