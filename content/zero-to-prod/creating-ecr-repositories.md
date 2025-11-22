@@ -12,7 +12,7 @@ title = "Creating ECR Repositories"
 date = "2021-06-18"
 
 [taxonomies]
-tags = ["zero-to-prod", "aws", "ecr"]
+tags = ["zero-to-prod", "aws", "aws"]
 +++
 
 {{img(

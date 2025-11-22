@@ -12,7 +12,7 @@ title = "Craft Captivating Documentation"
 date = "2023-07-21"
 
 [taxonomies]
-tags = ["top-of-mind", "documentation", "writing"]
+tags = ["top-of-mind", "content-creation", "writing"]
 +++
 
 ![Craft Captivating Documentation](/images/size/w1200/2024/03/docs.png)

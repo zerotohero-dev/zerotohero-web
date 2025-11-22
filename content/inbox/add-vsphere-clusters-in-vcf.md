@@ -13,7 +13,7 @@ description = "Adding vSphere Clusters in VMware Cloud Foundation: A Detailed Gu
 date = "2024-12-12"
 
 [taxonomies]
-tags = ["inbox", "vmware", "vcf", "vcf", "vcf", "vcf", "infrastructure", "deployment"]
+tags = ["inbox", "vmware", "vcf", "vcf", "vcf", "vcf", "infrastructure", "vcf"]
 +++
 
 VMware Cloud Foundation (VCF) provides two methods for adding capacity to deployed workload domains:

@@ -681,12 +681,6 @@
         <loc>https://zerotohero.dev/tags/creativity/</loc>
     </url>
     <url>
-        <loc>https://zerotohero.dev/tags/database/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/deployment/</loc>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/tags/design/</loc>
     </url>
     <url>
@@ -708,22 +702,13 @@
         <loc>https://zerotohero.dev/tags/docker/</loc>
     </url>
     <url>
-        <loc>https://zerotohero.dev/tags/documentation/</loc>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/tags/drafts/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/ecr/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/encoding/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/encryption/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/environment-variables/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/eso/</loc>
@@ -988,9 +973,6 @@
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/system-design/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/systemd/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/tcp-ip/</loc>

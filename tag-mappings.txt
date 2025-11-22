@@ -59,6 +59,7 @@ developer -> development
 design-patterns -> development
 error-handling -> development
 refactoring -> development
+database -> development
 
 # Hacker culture
 hacker-ethic -> hacker-culture
@@ -86,6 +87,7 @@ unix -> linux
 # Content/Writing
 content -> writing
 blogging -> writing
+documentation -> content-creation
 
 # Design
 color-theory -> design
@@ -96,6 +98,12 @@ network-communication -> networking
 
 # Creativity
 reinvent -> creativity
+
+# AWS
+ecr -> aws
+
+# Tips
+environment-variables -> tips
 
 # VMware
 vcsa -> vcf
@@ -111,6 +119,7 @@ sddc-manager -> vcf
 cloud -> vcf
 cluster-management -> vcf
 private-cloud -> vcf
+deployment -> vcf
 
 # Projects
 aegis -> spike
@@ -123,6 +132,7 @@ debugging -> external-secrets-operator
 automation -> DELETE_IF_NOT_ALONE
 comparison -> DELETE_IF_NOT_ALONE
 authentication -> DELETE_IF_NOT_ALONE
+systemd -> DELETE_IF_NOT_ALONE
 
 # Meta tags to consolidate
 volkan -> about
