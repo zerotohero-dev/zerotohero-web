@@ -24,6 +24,7 @@ decoding -> encoding
 url-encoding -> encoding
 decryption -> encryption
 data-encryption -> encryption
+age -> encryption
 
 # Hashing
 sha256 -> hashing
@@ -55,12 +56,17 @@ zsh -> shell
 terminal -> shell
 command-line -> shell
 
+# Unix/Linux
+ubuntu -> linux
+unix -> linux
+
 # Content/Writing
 content -> writing
 blogging -> writing
 
 # VMware
 vcsa -> vcf
+vcenter -> vcf
 
 # Meta tags to remove (map to empty or a generic tag)
 # Uncomment these if you want to remove them:

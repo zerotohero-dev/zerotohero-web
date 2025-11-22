@@ -4,8 +4,252 @@
     <link rel="self" type="application/atom+xml" href="https://zerotohero.dev/tags/linux/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://zerotohero.dev"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2021-08-09T00:00:00+00:00</updated>
+    <updated>2025-07-13T00:00:00+00:00</updated>
     <id>https://zerotohero.dev/tags/linux/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Snippet&#x2F;Draft: systemd-networkd-wait-online.service Waits Too Long During Ubuntu Startup</title>
+        <published>2025-07-13T00:00:00+00:00</published>
+        <updated>2025-07-13T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/snippet-systemd-network-wait-online-too-long/"/>
+        <id>https://zerotohero.dev/inbox/snippet-systemd-network-wait-online-too-long/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/snippet-systemd-network-wait-online-too-long/">&lt;p&gt;Quick fix: Disable the service (if you don’t need to wait for network at boot):&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;sudo systemctl disable systemd-networkd-wait-online.service
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Better fixes:&lt;&#x2F;p&gt;
+&lt;p&gt;Configure it to wait only for specific interfaces:&lt;&#x2F;p&gt;
+&lt;p&gt;Edit the service:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;sudo systemctl edit systemd-networkd-wait-online.service
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Add:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;txt&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-txt &quot;&gt;&lt;code class=&quot;language-txt&quot; data-lang=&quot;txt&quot;&gt;&lt;span&gt;ini[Service]
+&lt;&#x2F;span&gt;&lt;span&gt;ExecStart=
+&lt;&#x2F;span&gt;&lt;span&gt;ExecStart=&#x2F;lib&#x2F;systemd&#x2F;systemd-networkd-wait-online --interface=eth0
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Reduce the timeout:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ini&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-ini &quot;&gt;&lt;code class=&quot;language-ini&quot; data-lang=&quot;ini&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;[Service]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;ExecStart&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;ExecStart&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&#x2F;&lt;&#x2F;span&gt;&lt;span&gt;lib&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span&gt;systemd&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span&gt;systemd&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;networkd&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;wait&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;online &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;--&lt;&#x2F;span&gt;&lt;span&gt;timeout&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;10
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Check which interfaces are causing delays:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;hnetworkctl status
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Look for interfaces that are “configuring” or “pending”.&lt;&#x2F;p&gt;
+&lt;p&gt;If you’re using NetworkManager instead of &lt;code&gt;systemd-networkd&lt;&#x2F;code&gt;, you can disable
+this service and enable the NetworkManager equivalent:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;sudo systemctl disable systemd-networkd-wait-online.service
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;sudo systemctl enable NetworkManager-wait-online.service
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The most common cause is having network interfaces defined in &lt;code&gt;&#x2F;etc&#x2F;netplan&#x2F;&lt;&#x2F;code&gt; or
+&lt;code&gt;&#x2F;etc&#x2F;network&#x2F;interfaces&lt;&#x2F;code&gt; that aren’t actually connected, causing the service
+to wait for them unnecessarily.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Computing File Hashes in Unix Systems: A Complete Guide</title>
+        <published>2024-12-02T00:00:00+00:00</published>
+        <updated>2024-12-02T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/file-hashing/"/>
+        <id>https://zerotohero.dev/inbox/file-hashing/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/file-hashing/">&lt;p&gt;File hashing is an essential operation in software development, system administration, and security verification. This guide will walk you through the process of computing file hashes in Unix-like systems, with a focus on generating formatted SHA-256 hashes.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;basic-hash-computation&quot;&gt;Basic Hash Computation&lt;&#x2F;h2&gt;
+&lt;p&gt;The most straightforward way to compute a SHA-256 hash in Unix systems is using the &lt;code&gt;sha256sum&lt;&#x2F;code&gt; command:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;sha256sum filename
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This produces output in the format:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#282828;color:#fdf4c1aa;&quot;&gt;&lt;code&gt;&lt;span&gt;hash_value filename
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;formatted-hash-output&quot;&gt;Formatted Hash Output&lt;&#x2F;h2&gt;
+&lt;p&gt;Sometimes you need to format the hash output in a specific way, particularly when working with systems that expect a certain structure. Here’s how to generate a hash in this format:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#282828;color:#fdf4c1aa;&quot;&gt;&lt;code&gt;&lt;span&gt;type:&amp;quot;unix&amp;quot;  
+&lt;&#x2F;span&gt;&lt;span&gt;value:&amp;quot;sha256:HASH_VALUE&amp;quot;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;command-construction&quot;&gt;Command Construction&lt;&#x2F;h3&gt;
+&lt;p&gt;To achieve this format, we can combine several Unix commands:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;type:\&amp;quot;unix\&amp;quot;  
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;value:\&amp;quot;sha256:$(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;sha256sum .&#x2F;keeper &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cut -d&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39; &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt; -f1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;)\&amp;quot;&amp;quot;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Let’s break down this command:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;sha256sum .&#x2F;keeper&lt;&#x2F;code&gt;: Computes the SHA-256 hash of the file&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;cut -d&#x27; &#x27; -f1&lt;&#x2F;code&gt;: Extracts just the hash value, removing the filename&lt;&#x2F;li&gt;
+&lt;li&gt;Command substitution &lt;code&gt;$()&lt;&#x2F;code&gt;: Embeds the hash into our formatted string&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;echo&lt;&#x2F;code&gt;: Outputs the final formatted result&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h3 id=&quot;use-cases&quot;&gt;Use Cases&lt;&#x2F;h3&gt;
+&lt;p&gt;This formatting is particularly useful for:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Configuration management systems&lt;&#x2F;li&gt;
+&lt;li&gt;Version control systems&lt;&#x2F;li&gt;
+&lt;li&gt;Security verification processes&lt;&#x2F;li&gt;
+&lt;li&gt;Automated build systems&lt;&#x2F;li&gt;
+&lt;li&gt;Documentation purposes&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;alternative-hash-algorithms&quot;&gt;Alternative Hash Algorithms&lt;&#x2F;h2&gt;
+&lt;p&gt;While SHA-256 is commonly used, Unix systems support various other hashing algorithms:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;MD5 (using &lt;code&gt;md5sum&lt;&#x2F;code&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;SHA-1 (using &lt;code&gt;sha1sum&lt;&#x2F;code&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;SHA-224 (using &lt;code&gt;sha224sum&lt;&#x2F;code&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;SHA-384 (using &lt;code&gt;sha384sum&lt;&#x2F;code&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;SHA-512 (using &lt;code&gt;sha512sum&lt;&#x2F;code&gt;)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;best-practices&quot;&gt;Best Practices&lt;&#x2F;h2&gt;
+&lt;p&gt;When working with file hashes:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Always verify the file path before computing the hash&lt;&#x2F;li&gt;
+&lt;li&gt;Use appropriate hash algorithms for your security requirements&lt;&#x2F;li&gt;
+&lt;li&gt;Consider using multiple hash algorithms for critical files&lt;&#x2F;li&gt;
+&lt;li&gt;Document the hashing process in your system documentation&lt;&#x2F;li&gt;
+&lt;li&gt;Implement verification steps in your deployment pipeline&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;error-handling&quot;&gt;Error Handling&lt;&#x2F;h2&gt;
+&lt;p&gt;When implementing hash computation in scripts, consider handling these common issues:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;File not found&lt;&#x2F;li&gt;
+&lt;li&gt;Insufficient permissions&lt;&#x2F;li&gt;
+&lt;li&gt;Corrupted files&lt;&#x2F;li&gt;
+&lt;li&gt;System command availability&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;Example error handling in a shell script:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;#!&#x2F;bin&#x2F;bash
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;file&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;.&#x2F;keeper&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;[ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;! &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;-f &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;file&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;]&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;then
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Error: File not found&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;exit&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt; 1
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;fi
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;[ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;! &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;-r &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;file&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;]&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;then
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Error: Cannot read file (check permissions)&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;exit&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt; 1
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;fi
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;hash_output&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;$(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;sha256sum &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;file&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;2&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;&#x2F;dev&#x2F;null&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;[ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;$? -ne 0 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;]&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;then
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Error: Hash computation failed&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;exit&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt; 1
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;fi
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;type:\&amp;quot;unix\&amp;quot;  
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;value:\&amp;quot;sha256:$(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;hash_output&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cut -d&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39; &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt; -f1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;)\&amp;quot;&amp;quot;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;File hashing is a critical operation in many systems. By understanding how to compute and format hashes correctly, you can ensure your systems maintain security and integrity while meeting specific format requirements.&lt;&#x2F;p&gt;
+&lt;p&gt;Remember to always validate your hash computations and keep your hashing tools updated to maintain security standards.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Understanding Unix Directory Permissions: A Common Pitfall</title>
+        <published>2024-11-24T00:00:00+00:00</published>
+        <updated>2024-11-24T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/file-permission/"/>
+        <id>https://zerotohero.dev/inbox/file-permission/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/file-permission/">&lt;p&gt;When working with Unix-like systems, you might occasionally encounter situations where you can’t create files in a directory even though you own it. This usually happens because of a common misunderstanding about how directory permissions work in Unix systems.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-problem&quot;&gt;The Problem&lt;&#x2F;h2&gt;
+&lt;p&gt;Let’s look at a real-world example. Consider this output from &lt;code&gt;ls -al&lt;&#x2F;code&gt;:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;drw-------  2 volkan volkan  4096 Nov 15 15:22 .spike
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;At first glance, this might seem fine - the owner has read and write permissions (&lt;code&gt;rw-&lt;&#x2F;code&gt;). However, trying to create a file in this directory will fail. Why?&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;understanding-directory-permissions&quot;&gt;Understanding Directory Permissions&lt;&#x2F;h2&gt;
+&lt;p&gt;In Unix systems, directory permissions work differently than file permissions. The permission bits have different meanings when applied to directories:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Read (r)&lt;&#x2F;strong&gt;: Allows listing directory contents&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Write (w)&lt;&#x2F;strong&gt;: Allows creating and deleting files within the directory&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Execute (x)&lt;&#x2F;strong&gt;: Allows accessing the directory and its contents&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;The crucial detail here is that the &lt;strong&gt;execute&lt;&#x2F;strong&gt; permission is required to use a directory effectively. Without it, you can’t:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Enter the directory (&lt;code&gt;cd&lt;&#x2F;code&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;Access files within it&lt;&#x2F;li&gt;
+&lt;li&gt;Create new files&lt;&#x2F;li&gt;
+&lt;li&gt;Delete existing files&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;breaking-down-the-permission-string&quot;&gt;Breaking Down the Permission String&lt;&#x2F;h2&gt;
+&lt;p&gt;Let’s decode &lt;code&gt;drw-------&lt;&#x2F;code&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;d&lt;&#x2F;code&gt;: This is a directory&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;rw-&lt;&#x2F;code&gt;: Owner has read and write permissions, but no execute&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;---&lt;&#x2F;code&gt;: Group has no permissions&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;---&lt;&#x2F;code&gt;: Others have no permissions&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;This translates to mode &lt;code&gt;600&lt;&#x2F;code&gt; in octal notation. However, this is rarely what you want for a directory.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-solution&quot;&gt;The Solution&lt;&#x2F;h2&gt;
+&lt;p&gt;To fix this, you need to add the execute permission for the owner. There are two ways to do this:&lt;&#x2F;p&gt;
+&lt;p&gt;Using symbolic mode:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;chmod u+x ~&#x2F;.spike
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Or using octal mode (more common):&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;chmod 700 ~&#x2F;.spike
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;After this change, the permission string will show as &lt;code&gt;drwx------&lt;&#x2F;code&gt;, giving you full control over the directory.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;best-practices&quot;&gt;Best Practices&lt;&#x2F;h2&gt;
+&lt;p&gt;For private directories that only you should access:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use mode &lt;code&gt;700&lt;&#x2F;code&gt; (&lt;code&gt;rwx------&lt;&#x2F;code&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;This gives you full permissions while keeping the directory private&lt;&#x2F;li&gt;
+&lt;li&gt;It’s more secure than &lt;code&gt;777&lt;&#x2F;code&gt; which would allow anyone to access the directory&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;For shared directories:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Consider who needs access and adjust group permissions accordingly&lt;&#x2F;li&gt;
+&lt;li&gt;Common modes include &lt;code&gt;750&lt;&#x2F;code&gt; (&lt;code&gt;rwxr-x---&lt;&#x2F;code&gt;) for group-readable directories&lt;&#x2F;li&gt;
+&lt;li&gt;Always be cautious with world-readable&#x2F;writable permissions&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;command-reference&quot;&gt;Command Reference&lt;&#x2F;h2&gt;
+&lt;p&gt;Useful commands for managing directory permissions:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# View permissions in human-readable format
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;ls -al directory_name
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# View permissions in numeric format
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;stat -c &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;%a&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt; directory_name
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Change permissions using symbolic notation
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;chmod u+x directory_name  &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Add execute for user
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;chmod g+rx directory_name &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Add read and execute for group
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Change permissions using octal notation
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;chmod 700 directory_name  &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# rwx------ (private)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;chmod 750 directory_name  &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# rwxr-x--- (group readable)
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Remember: when working with directories, the execute permission is essential for basic operations. Always ensure it’s set appropriately for your use case.&lt;&#x2F;p&gt;
+&lt;p&gt;Happy permissions managing! 🐧&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>.zprofile, .zshrc, .zenv, OMG! What Do I Put Where?!</title>
         <published>2021-08-09T00:00:00+00:00</published>
