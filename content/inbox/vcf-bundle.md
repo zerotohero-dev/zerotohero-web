@@ -13,7 +13,7 @@ description = "Software Bundle Management in VMware Cloud Foundation: A Complete
 date = "2024-12-12"
 
 [taxonomies]
-tags = ["inbox", "vmware", "vcf", "software-bundles", "lifecycle-management", "automation"]
+tags = ["inbox", "vmware", "vcf", "software-bundles", "lifecycle-management"]
 +++
 
 For VMware Cloud Foundation (VCF) administrators, understanding software bundle management is crucial for maintaining a healthy infrastructure. This guide explores the essentials of managing software bundles in VCF environments.

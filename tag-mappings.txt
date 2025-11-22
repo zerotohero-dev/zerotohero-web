@@ -1,6 +1,10 @@
 # Tag Consolidation Mappings
 # Format: old-tag -> new-tag
 #
+# Special operations:
+#   tag -> DELETE                  (always remove the tag)
+#   tag -> DELETE_IF_NOT_ALONE     (remove only if other tags exist)
+#
 # Case Inconsistencies (Easy Fixes)
 SPIFFE -> spiffe
 spiffeid -> spiffe
@@ -29,15 +33,16 @@ age -> encryption
 # Hashing
 sha256 -> hashing
 
-# Keys (keep specific acronyms commented out - uncomment if you want to merge)
-# KEK -> key-management
-# DEK -> key-management
+# Keys
+KEK -> key-management
+DEK -> key-management
 
 # UX
 user-experience -> ux
 
 # Development
 developer -> development
+design-patterns -> development
 
 # Hacker culture
 hacker-ethic -> hacker-culture
@@ -68,8 +73,13 @@ blogging -> writing
 vcsa -> vcf
 vcenter -> vcf
 
-# Meta tags to remove (map to empty or a generic tag)
-# Uncomment these if you want to remove them:
+# Projects
+aegis -> spike
+
+# Conditional removals (only remove if other tags exist)
+automation -> DELETE_IF_NOT_ALONE
+
+# Meta tags to consolidate
 volkan -> about
 geyik -> about
 backstory -> about

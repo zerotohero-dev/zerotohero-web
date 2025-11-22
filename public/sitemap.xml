@@ -642,9 +642,6 @@
         <loc>https://zerotohero.dev/tags/about/</loc>
     </url>
     <url>
-        <loc>https://zerotohero.dev/tags/aegis/</loc>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/tags/architecture/</loc>
     </url>
     <url>
@@ -652,9 +649,6 @@
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/authentication/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/automation/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/aws/</loc>
@@ -735,13 +729,7 @@
         <loc>https://zerotohero.dev/tags/defer/</loc>
     </url>
     <url>
-        <loc>https://zerotohero.dev/tags/dek/</loc>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/tags/deployment/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/design-patterns/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/design/</loc>
@@ -871,9 +859,6 @@
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/jwt/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/kek/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/key-management/</loc>

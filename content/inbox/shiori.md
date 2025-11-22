@@ -13,7 +13,7 @@ description = "Bulk Import Bookmarks to Shiori: A Simple Bash Script Solution"
 date = "2025-06-22"
 
 [taxonomies]
-tags = ["inbox", "shiori", "bookmarking", "cli", "bash", "automation"]
+tags = ["inbox", "shiori", "bookmarking", "cli", "bash"]
 +++
 
 If you're like me and have accumulated hundreds of bookmarks across various

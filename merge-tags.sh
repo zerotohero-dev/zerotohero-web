@@ -106,11 +106,34 @@ find content -name "*.md" -type f | while read file; do
 
     # Read each mapping and apply it
     while IFS='|' read -r old_tag new_tag; do
-        # Try to replace "old_tag" in the tags line
+        # Check if tag exists in the line
         if echo "$new_tags_line" | grep -q "\"$old_tag\""; then
-            new_tags_line=$(echo "$new_tags_line" | sed "s/\"$old_tag\"/\"$new_tag\"/g")
-            file_modified=true
-            file_replacements=$((file_replacements + 1))
+
+            # Handle special DELETE operations
+            if [ "$new_tag" = "DELETE_IF_NOT_ALONE" ]; then
+                # Count total tags in the line
+                tag_count=$(echo "$new_tags_line" | grep -o '"[^"]*"' | wc -l | xargs)
+
+                if [ "$tag_count" -gt 1 ]; then
+                    # Remove the tag (and handle comma cleanup)
+                    new_tags_line=$(echo "$new_tags_line" | sed "s/, *\"$old_tag\"//; s/\"$old_tag\" *, *//")
+                    file_modified=true
+                    file_replacements=$((file_replacements + 1))
+                fi
+                # If only one tag, keep it (do nothing)
+
+            elif [ "$new_tag" = "DELETE" ]; then
+                # Always remove the tag
+                new_tags_line=$(echo "$new_tags_line" | sed "s/, *\"$old_tag\"//; s/\"$old_tag\" *, *//")
+                file_modified=true
+                file_replacements=$((file_replacements + 1))
+
+            else
+                # Normal replacement
+                new_tags_line=$(echo "$new_tags_line" | sed "s/\"$old_tag\"/\"$new_tag\"/g")
+                file_modified=true
+                file_replacements=$((file_replacements + 1))
+            fi
         fi
     done < "$TEMP_MAPPINGS"
 
