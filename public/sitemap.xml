@@ -876,9 +876,6 @@
         <loc>https://zerotohero.dev/tags/namespaces/</loc>
     </url>
     <url>
-        <loc>https://zerotohero.dev/tags/network-communication/</loc>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/tags/networking/</loc>
     </url>
     <url>
@@ -939,9 +936,6 @@
         <loc>https://zerotohero.dev/tags/regexp/</loc>
     </url>
     <url>
-        <loc>https://zerotohero.dev/tags/reinvent/</loc>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/tags/releases/</loc>
     </url>
     <url>
@@ -958,15 +952,6 @@
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/scalability/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/sddc-manager/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/sddc/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/sdk/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/secrets-management/</loc>
@@ -997,9 +982,6 @@
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/snippets/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/software-bundles/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/spiffe/</loc>

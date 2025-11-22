@@ -13,7 +13,7 @@ description = "Understanding the OSI Model: A Practical Guide to Network Communi
 date = "2024-12-12"
 
 [taxonomies]
-tags = ["inbox", "networking", "osi-model", "tcp/ip", "network-communication"]
+tags = ["inbox", "networking", "osi-model", "tcp/ip", "networking"]
 +++
 
 Every day, millions of people access resources on the public internet without giving it a second thought. But have you ever wondered what actually happens when you type a website address into your browser? Behind that simple action lies a complex series of processes that make network communication possible. Let's break it down using one of the most fundamental frameworks in networking: the OSI Model.

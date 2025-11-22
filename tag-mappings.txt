@@ -17,6 +17,7 @@ cross-compilation -> go
 defer -> go
 slog -> go
 slices -> go
+sdk -> go
 
 # Secrets-related
 secrets -> secrets-management
@@ -84,6 +85,13 @@ blogging -> writing
 # Design
 color-theory -> design
 
+# Networking
+tcp-ip -> networking
+network-communication -> networking
+
+# Creativity
+reinvent -> creativity
+
 # VMware
 vcsa -> vcf
 vcenter -> vcf
@@ -92,6 +100,9 @@ cloud-foundation -> vcf
 aria-suite -> vcf
 vsphere -> vcf
 best-practices -> vcf
+software-bundles -> vcf
+sddc -> vcf
+sddc-manager -> vcf
 
 # Projects
 aegis -> spike
