@@ -13,7 +13,7 @@ description = "Pragmatic Audit Logging in Go: Starting Small and Growing Smart"
 date = "2024-11-28"
 
 [taxonomies]
-tags = ["inbox","go","strategy","logging"]
+tags = ["development","go","inbox","strategy"]
 +++
 
 When building web services, audit logging is often approached in one of two extremes: either skipped entirely for "later" or over-engineered from the start. Let's explore a pragmatic middle ground, starting with a simple HTTP router factory.

@@ -13,7 +13,7 @@ description = "Secure Root Key Encryption in Go: A Practical Guideo"
 date = "2024-11-27"
 
 [taxonomies]
-tags = ["inbox","go","encryption","security"]
+tags = ["go","inbox","security"]
 +++
 
 

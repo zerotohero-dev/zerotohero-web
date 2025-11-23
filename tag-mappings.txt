@@ -39,6 +39,7 @@ secret-sharing -> secrets-management
 
 # Security
 certificates -> security
+encryption -> security
 
 # Memory-related
 memory-management -> memory
@@ -77,6 +78,8 @@ haskell -> development
 rust -> development
 destructuring -> development
 hashing -> development
+javascript -> development
+logging -> development
 
 # Hacker culture
 hacker-ethic -> hacker-culture
@@ -125,6 +128,7 @@ ecr -> aws
 # Tips
 environment-variables -> tips
 bookmarking -> tips
+loc -> tips
 
 # VMware
 vcsa -> vcf

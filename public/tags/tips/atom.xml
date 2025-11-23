@@ -490,6 +490,143 @@ excerpts, or integrating with other tools in your workflow.&lt;&#x2F;p&gt;
         
     </entry>
     <entry xml:lang="en">
+        <title>How to Count Lines in Your Source Code Projects: A Comprehensive Guide</title>
+        <published>2024-11-27T00:00:00+00:00</published>
+        <updated>2024-11-27T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/counting-lines-of-code/"/>
+        <id>https://zerotohero.dev/inbox/counting-lines-of-code/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/counting-lines-of-code/">&lt;p&gt;As software projects grow, tracking their size becomes increasingly important for maintenance, documentation, and planning. One fundamental metric is the line count of your source code. In this article, we’ll explore different methods to count lines in your codebase, from quick command-line solutions to more sophisticated tools.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-quick-and-simple-using-wc&quot;&gt;The Quick and Simple: Using &lt;code&gt;wc&lt;&#x2F;code&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;For Unix-like systems (Linux, macOS), the &lt;code&gt;wc&lt;&#x2F;code&gt; (word count) command provides a straightforward way to count lines. Here’s how you can use it:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Count lines in a single file
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;wc -l file.py
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;To count lines across multiple files, you can combine &lt;code&gt;wc&lt;&#x2F;code&gt; with other Unix commands:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Count lines in all Python files in a directory
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;find . -type f -name &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;*.py&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;xargs wc -l
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Count lines recursively for all files
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;find . -type f -exec wc -l {} &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;\;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;While &lt;code&gt;wc&lt;&#x2F;code&gt; is fast and readily available, it’s rather basic - it counts all lines, including empty lines and comments.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-professional-solution-cloc&quot;&gt;The Professional Solution: CLOC&lt;&#x2F;h2&gt;
+&lt;p&gt;CLOC (Count Lines of Code) is a specialized tool that provides detailed statistics about your codebase. It’s more intelligent than &lt;code&gt;wc&lt;&#x2F;code&gt; as it can:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Exclude blank lines and comments&lt;&#x2F;li&gt;
+&lt;li&gt;Recognize dozens of programming languages&lt;&#x2F;li&gt;
+&lt;li&gt;Provide detailed breakdowns by language&lt;&#x2F;li&gt;
+&lt;li&gt;Generate reports in various formats&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;installing-cloc&quot;&gt;Installing CLOC&lt;&#x2F;h3&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Ubuntu&#x2F;Debian
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;sudo apt install cloc
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# macOS via Homebrew
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;brew install cloc
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Windows via Chocolatey
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;choco install cloc
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;using-cloc&quot;&gt;Using CLOC&lt;&#x2F;h3&gt;
+&lt;p&gt;Basic usage is as simple as:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cloc .
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This will scan your current directory and provide a detailed breakdown. For more specific analysis:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Count specific languages
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cloc --include-lang&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Python,JavaScript&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt; .
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Generate XML report
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cloc --xml --out&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;results.xml .
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Count lines in a Git repository
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;git clone --depth 1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;repository&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;url&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cloc .
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;custom-python-solution&quot;&gt;Custom Python Solution&lt;&#x2F;h2&gt;
+&lt;p&gt;Sometimes you need more control over what and how you count. Here’s a Python script that you can customize for your specific needs:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;python&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-python &quot;&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;import &lt;&#x2F;span&gt;&lt;span&gt;os
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;from &lt;&#x2F;span&gt;&lt;span&gt;pathlib &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;import &lt;&#x2F;span&gt;&lt;span&gt;Path
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;def &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;count_lines&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;directory&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;extensions&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;None&lt;&#x2F;span&gt;&lt;span&gt;):
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&amp;quot;&amp;quot;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;    Count lines in files within a directory, optionally filtering by extension.
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;    
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;    Args:
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;        directory (str): Path to the directory to scan
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;        extensions (list): List of file extensions to include (e.g., [&amp;#39;.py&amp;#39;, &amp;#39;.js&amp;#39;])
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;    
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;    Returns:
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;        dict: Dictionary containing line counts and file statistics
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;    &amp;quot;&amp;quot;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;    stats &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;total_lines&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;total_files&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;files_by_extension&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;: {}
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;    
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;for &lt;&#x2F;span&gt;&lt;span&gt;path &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;in &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Path(directory).rglob(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;*&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;)&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;path.is_file()&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span&gt;extensions &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;and not &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;any&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;str&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;(path).endswith(ext) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;for &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;ext &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;in &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;extensions)&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;continue
+&lt;&#x2F;span&gt;&lt;span&gt;                
+&lt;&#x2F;span&gt;&lt;span&gt;            ext &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span&gt;path.suffix
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;try&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;with &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;open&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;(path, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;r&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;, encoding&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;utf-8&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;as &lt;&#x2F;span&gt;&lt;span&gt;f:
+&lt;&#x2F;span&gt;&lt;span&gt;                    line_count &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;sum&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;for &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;_ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;in &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;f)
+&lt;&#x2F;span&gt;&lt;span&gt;                    
+&lt;&#x2F;span&gt;&lt;span&gt;                stats[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;total_lines&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;] &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;+= &lt;&#x2F;span&gt;&lt;span&gt;line_count
+&lt;&#x2F;span&gt;&lt;span&gt;                stats[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;total_files&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;] &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;+= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;1
+&lt;&#x2F;span&gt;&lt;span&gt;                
+&lt;&#x2F;span&gt;&lt;span&gt;                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span&gt;ext &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;not in &lt;&#x2F;span&gt;&lt;span&gt;stats[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;files_by_extension&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;]:
+&lt;&#x2F;span&gt;&lt;span&gt;                    stats[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;files_by_extension&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;][ext] &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;                        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;files&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;                        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;lines&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;0
+&lt;&#x2F;span&gt;&lt;span&gt;                    }
+&lt;&#x2F;span&gt;&lt;span&gt;                
+&lt;&#x2F;span&gt;&lt;span&gt;                stats[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;files_by_extension&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;][ext][&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;files&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;] &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;+= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;1
+&lt;&#x2F;span&gt;&lt;span&gt;                stats[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;files_by_extension&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;][ext][&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;lines&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;] &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;+= &lt;&#x2F;span&gt;&lt;span&gt;line_count
+&lt;&#x2F;span&gt;&lt;span&gt;                    
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;except &lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;UnicodeDecodeError&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;PermissionError&lt;&#x2F;span&gt;&lt;span&gt;):
+&lt;&#x2F;span&gt;&lt;span&gt;                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;continue
+&lt;&#x2F;span&gt;&lt;span&gt;    
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span&gt;stats
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This script provides more detailed statistics and can be easily modified to:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Exclude certain directories (like &lt;code&gt;node_modules&lt;&#x2F;code&gt; or &lt;code&gt;.git&lt;&#x2F;code&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;Count only specific types of lines&lt;&#x2F;li&gt;
+&lt;li&gt;Generate custom reports&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;best-practices&quot;&gt;Best Practices&lt;&#x2F;h2&gt;
+&lt;p&gt;When counting lines in your source code, consider:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Consistency&lt;&#x2F;strong&gt;: Use the same tool and settings across your project for meaningful comparisons over time.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Documentation&lt;&#x2F;strong&gt;: Document which tool and settings you use for line counting in your project documentation.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Automation&lt;&#x2F;strong&gt;: Integrate line counting into your CI&#x2F;CD pipeline to track changes over time.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Context&lt;&#x2F;strong&gt;: Remember that line count is just one metric - it doesn’t necessarily correlate with complexity or quality.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;While line count isn’t a perfect metric for code complexity or project size, it’s a useful baseline metric that’s easy to track. Whether you choose the simple &lt;code&gt;wc&lt;&#x2F;code&gt; command, the comprehensive CLOC tool, or a custom solution depends on your specific needs:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use &lt;code&gt;wc&lt;&#x2F;code&gt; for quick, rough estimates&lt;&#x2F;li&gt;
+&lt;li&gt;Use CLOC for detailed analysis and reporting&lt;&#x2F;li&gt;
+&lt;li&gt;Create a custom solution when you need specific features or integration with your workflow&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Remember that the goal isn’t just to count lines, but to gain insights that help you better understand and manage your codebase.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
         <title>Exploring Rust as a Go Developer</title>
         <published>2024-07-21T00:00:00+00:00</published>
         <updated>2024-07-21T00:00:00+00:00</updated>

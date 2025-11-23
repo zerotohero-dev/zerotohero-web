@@ -12,7 +12,7 @@ title = "Use Destructuring to Remove Attributes "
 date = "2023-03-07"
 
 [taxonomies]
-tags = ["development","javascript","tips"]
+tags = ["development","tips"]
 +++
 
 {{img(
