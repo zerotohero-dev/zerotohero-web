@@ -1,0 +1,70 @@
+{#
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+#}
+{% import "macros/social_icon.svg.html" as macro_social -%}
+<!DOCTYPE html>
+<html lang="{{ lang }}" dir="{{ config.extra.papermod.language_direction }}">
+<head>
+    {% block head %}
+    {% include "partials/head.html" %}
+    {% endblock %}
+</head>
+<body class="{% if section or term or taxonomy %}list {% endif %}{% if config.extra.papermod.theme == 'dark' %} dark{% endif %}" id="top">
+    {% block header %}
+    {% include "partials/header.html" %}
+    {% endblock %}
+    <main class="main">
+        <h1>{{ section.title }}</h1>
+        {% block main %}
+
+        {# Show section content if it exists #}
+        {% if section.content %}
+        <div class="post-content">
+            {{ section.content | safe }}
+        </div>
+        {% endif %}
+
+        {# Auto-list all pages in this section #}
+        {% set pages = section.pages | sort(attribute="date") | reverse %}
+        {% if pages %}
+        <div class="post-list">
+            {% for page in pages %}
+            <article class="post-entry">
+                <header class="entry-header">
+                    <h2><a href="{{ page.permalink }}">{{ page.title }}</a></h2>
+                </header>
+                {% if page.summary %}
+                <div class="entry-content">
+                    <p>{{ page.summary | safe }}</p>
+                </div>
+                {% endif %}
+                <footer class="entry-footer">
+                    <time>{{ page.date | date(format="%Y-%m-%d") }}</time>
+                    {% if page.taxonomies.tags %}
+                    <span class="post-tags">
+                        {% for tag in page.taxonomies.tags %}
+                        <a href="{{ get_taxonomy_url(kind='tags', name=tag) }}">#{{ tag }}</a>{% if not loop.last %}, {% endif %}
+                        {% endfor %}
+                    </span>
+                    {% endif %}
+                </footer>
+                <a class="entry-link" aria-label="post link to {{ page.title }}" href="{{ page.permalink }}"></a>
+            </article>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        {% endblock %}
+    </main>
+    {% block footer %}
+    {% include "partials/footer.html" %}
+    {% endblock %}
+</body>
+</html>

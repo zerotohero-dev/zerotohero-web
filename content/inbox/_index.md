@@ -10,7 +10,7 @@
 
 title = "Inbox"
 description = "A collection of technical articles, tutorials, and how-to guides."
-template = "series-index.html"
+template = "auto-section.html"
 +++
 
 This is the **inbox** — a temporary holding area for articles that haven't been
