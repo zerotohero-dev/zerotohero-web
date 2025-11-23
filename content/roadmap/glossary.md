@@ -12,7 +12,7 @@ title = "A Glossary of Mostly Developer-Related Things"
 date = "2021-11-27"
 
 [taxonomies]
-tags = ["roadmap","glossary"]
+tags = ["development","roadmap"]
 +++
 
 {{img(

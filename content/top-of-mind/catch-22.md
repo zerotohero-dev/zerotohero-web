@@ -12,7 +12,7 @@ title = "Catch 22"
 date = "2024-03-08"
 
 [taxonomies]
-tags = ["top-of-mind","catch-22"]
+tags = ["top-of-mind"]
 +++
 
 ![Catch 22](/images/size/w1200/2024/03/catch22.png)

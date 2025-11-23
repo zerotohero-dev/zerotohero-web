@@ -13,7 +13,7 @@ description = "log.Fatalf() vs panic in Go: Choosing the Right Way to Fail"
 date = "2024-11-28"
 
 [taxonomies]
-tags = ["inbox","go","development","programming"]
+tags = ["development","go","inbox"]
 +++
 
 When writing Go applications, developers often need to handle catastrophic errors that prevent the program from continuing. Go provides two primary mechanisms for handling such situations: `log.Fatalf()` and `panic`. While both can terminate program execution, they serve different purposes and come with their own sets of trade-offs.

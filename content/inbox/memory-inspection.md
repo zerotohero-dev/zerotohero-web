@@ -13,7 +13,7 @@ description = "Reading Process Memory: A Deep Dive into Runtime Variable Inspect
 date = "2024-11-27"
 
 [taxonomies]
-tags = ["inbox","programming","security","memory"]
+tags = ["inbox","memory","security"]
 +++
 
 # 

@@ -67,6 +67,7 @@ error-handling -> development
 refactoring -> development
 database -> development
 html -> development
+glossary -> development
 
 # Hacker culture
 hacker-ethic -> hacker-culture
@@ -146,10 +147,15 @@ comparison -> DELETE_IF_NOT_ALONE
 authentication -> DELETE_IF_NOT_ALONE
 systemd -> DELETE_IF_NOT_ALONE
 closure -> DELETE_IF_NOT_ALONE
+programming -> DELETE_IF_NOT_ALONE
 
 # DevOps/Kubernetes
 devops -> kubernetes
 performance -> kubernetes
+
+# Category tags
+catch-22 -> top-of-mind
+drafts -> inbox
 
 # Meta tags to consolidate
 volkan -> about
