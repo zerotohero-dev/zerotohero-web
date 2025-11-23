@@ -264,10 +264,6 @@
         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
-        <loc>https://zerotohero.dev/inbox/git-push-origin-main/</loc>
-        <lastmod>2024-12-16</lastmod>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/inbox/github-releases/</loc>
         <lastmod>2024-11-27</lastmod>
     </url>
@@ -959,6 +955,10 @@
     <url>
         <loc>https://zerotohero.dev/tips/getting-the-body-of-an-http-request-with-go/</loc>
         <lastmod>2023-03-01</lastmod>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/tips/git-push-origin-main/</loc>
+        <lastmod>2025-11-23</lastmod>
     </url>
     <url>
         <loc>https://zerotohero.dev/tips/lets-create-a-syslog-logger/</loc>

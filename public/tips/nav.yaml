@@ -30,3 +30,5 @@
 - name: "Redirecting a Static Web Page"
   url: "@/tips/redirect-index-page.md"
 
+- name: "Understanding `git push origin main`"
+  url: "@/tips/git-push-origin-main.md"
