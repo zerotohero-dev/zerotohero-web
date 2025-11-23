@@ -12,7 +12,7 @@ title = "Closure"
 date = "2024-05-21"
 
 [taxonomies]
-tags = ["top-of-mind", "closure"]
+tags = ["top-of-mind"]
 +++
 
 ![Closure](/images/size/w1200/2024/03/recon.png)

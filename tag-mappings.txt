@@ -83,6 +83,7 @@ command-line -> shell
 # Unix/Linux
 ubuntu -> linux
 unix -> linux
+bash -> linux
 
 # Content/Writing
 content -> writing
@@ -104,6 +105,7 @@ ecr -> aws
 
 # Tips
 environment-variables -> tips
+bookmarking -> tips
 
 # VMware
 vcsa -> vcf
@@ -120,6 +122,7 @@ cloud -> vcf
 cluster-management -> vcf
 private-cloud -> vcf
 deployment -> vcf
+disaster-recovery -> vcf
 
 # Projects
 aegis -> spike
@@ -133,6 +136,7 @@ automation -> DELETE_IF_NOT_ALONE
 comparison -> DELETE_IF_NOT_ALONE
 authentication -> DELETE_IF_NOT_ALONE
 systemd -> DELETE_IF_NOT_ALONE
+closure -> DELETE_IF_NOT_ALONE
 
 # Meta tags to consolidate
 volkan -> about
