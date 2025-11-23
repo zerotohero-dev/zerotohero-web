@@ -642,15 +642,6 @@
         <loc>https://zerotohero.dev/tags/about/</loc>
     </url>
     <url>
-        <loc>https://zerotohero.dev/tags/aws/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/cli/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/collaboration/</loc>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/tags/configuration/</loc>
     </url>
     <url>
@@ -706,9 +697,6 @@
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/hashing/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/haskell/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/highlights/</loc>
@@ -847,9 +835,6 @@
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/roadmap/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/rust/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/scalability/</loc>
