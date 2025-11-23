@@ -10,6 +10,10 @@ SPIFFE -> spiffe
 spiffeid -> spiffe
 ESO -> eso
 
+# External Secrets Operator
+eso -> external-secrets-operator
+external-secrets-operator -> external-secret-operator
+
 # SPIFFE/SPIRE
 federation -> spiffe
 spire-agent -> spire
@@ -123,13 +127,15 @@ cluster-management -> vcf
 private-cloud -> vcf
 deployment -> vcf
 disaster-recovery -> vcf
+host-comissioning -> vcf
+host-expansion -> vcf
 
 # Projects
 aegis -> spike
 architecture -> spike
 
-# External Secrets Operator
-debugging -> external-secrets-operator
+# External Secrets Operator (continued)
+debugging -> external-secret-operator
 
 # Conditional removals (only remove if other tags exist)
 automation -> DELETE_IF_NOT_ALONE

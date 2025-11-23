@@ -699,10 +699,7 @@
         <loc>https://zerotohero.dev/tags/encryption/</loc>
     </url>
     <url>
-        <loc>https://zerotohero.dev/tags/eso/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/external-secrets-operator/</loc>
+        <loc>https://zerotohero.dev/tags/external-secret-operator/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/git/</loc>
@@ -739,9 +736,6 @@
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/host-commissioning/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/host-expansion/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/html/</loc>
