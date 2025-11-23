@@ -13,7 +13,7 @@ description = "Modernizing TLS Certificates in Kubernetes: From CN to SAN"
 date = "2024-12-10"
 
 [taxonomies]
-tags = ["inbox","kubernetes","tls","certificates","security"]
+tags = ["inbox","kubernetes","security","tls"]
 +++
 
 When working with Kubernetes and TLS certificates, you might encounter an error message that looks something like this:

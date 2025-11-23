@@ -29,11 +29,15 @@ sdk -> go
 deadlocks -> go
 http -> go
 mutexes -> go
+base64 -> go
 
 # Secrets-related
 secrets -> secrets-management
 secret-management -> secrets-management
 secret-sharing -> secrets-management
+
+# Security
+certificates -> security
 
 # Memory-related
 memory-management -> memory
@@ -132,6 +136,7 @@ private-cloud -> vcf
 deployment -> vcf
 disaster-recovery -> vcf
 host-comissioning -> vcf
+host-commissioning -> vcf
 host-expansion -> vcf
 
 # Projects
@@ -156,6 +161,7 @@ performance -> kubernetes
 # Category tags
 catch-22 -> top-of-mind
 drafts -> inbox
+career -> top-of-mind
 
 # Meta tags to consolidate
 volkan -> about
