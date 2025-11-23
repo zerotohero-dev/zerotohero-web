@@ -63,6 +63,32 @@
 </article>
 {% endfor %}
 
+<h2>Inbox</h2>
+
+<p>A collection of technical articles, tutorials, and how-to guides.
+  A temporary holding area for unsorted content covering a wide range of topics.</p>
+<p>&nbsp;</p>
+
+{% set inbox_section = get_section(path="inbox/_index.md") %}
+
+<article class="post-entry">
+  <header class="entry-header">
+    <h2>
+      <svg
+          style="position: relative; top: 6px;"
+          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" height="32" width="32">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859m-19.5.375h21m-21 3h21M2.25 21h19.5a2.25 2.25 0 002.25-2.25V5.25A2.25 2.25 0 0021.75 3H2.25A2.25 2.25 0 000 5.25v13.5A2.25 2.25 0 002.25 21z" />
+      </svg>
+      {{ inbox_section.title }}
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>{{ inbox_section.description }}</p>
+  </div>
+  <a class="entry-link" aria-label="post link to {{ inbox_section.title }}"
+     href="{{ inbox_section.permalink }}"></a>
+</article>
+
 <h2>Roadmap</h2>
 
 <p>A special selection of articles aimed at helping you navigate the world of
