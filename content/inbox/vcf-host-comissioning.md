@@ -13,7 +13,7 @@ description = "Host Commissioning in VMware C`loud Foundation: A Complete Guide"
 date = "2024-12-12"
 
 [taxonomies]
-tags = ["inbox", "vmware", "vcf", "host-commissioning", "vcf", "networking", "storage", "vcf"]
+tags = ["inbox","vmware","vcf","host-commissioning","networking","storage"]
 +++
 
 In VMware Cloud Foundation (VCF), adding cloud capacity is accomplished through a process called host commissioning, where physical servers are added to the SDDC Manager inventory. This guide walks through the process and key considerations.

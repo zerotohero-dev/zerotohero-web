@@ -13,7 +13,7 @@ description = "Better Error Handling Patterns for Go SDKse"
 date = "2024-12-01"
 
 [taxonomies]
-tags = ["inbox", "go", "go", "development"]
+tags = ["inbox","go","development"]
 +++
 
 When building SDKs in Go, one common challenge is balancing transparency and debuggability with clean error handling. This becomes particularly evident when implementing retry mechanisms, where we need to track multiple attempts, delays, and error states.

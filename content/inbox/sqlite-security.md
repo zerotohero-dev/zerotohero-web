@@ -13,7 +13,7 @@ description = "SQLite Security: Understanding Authentication and Protection"
 date = "2024-11-27"
 
 [taxonomies]
-tags = ["inbox", "sqlite", "development", "security"]
+tags = ["inbox","sqlite","development","security"]
 +++
 
 SQLite is unique among database management systems in that it doesn't come with built-in password protection or user authentication. This might seem strange at first, especially if you're familiar with other databases like MySQL or PostgreSQL. However, understanding how SQLite handles security is crucial for developers building applications with this popular database.

@@ -13,7 +13,7 @@ description = "Understanding `git push origin main`"
 date = "2024-12-16"
 
 [taxonomies]
-tags = ["inbox", "git", "version-control", "git", "git", "git"]
+tags = ["inbox","git","version-control"]
 +++
 
 When working with Git, you might frequently encounter the command `git push origin main`. But what do `origin` and `main` actually mean? In this post, we will break down this command and explain its components.

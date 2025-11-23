@@ -12,7 +12,7 @@ title = "Grab Your Chisel and Start Pounding"
 date = "2021-11-01"
 
 [taxonomies]
-tags = ["roadmap", "creativity", "creativity"]
+tags = ["roadmap","creativity"]
 +++
 
 {{img(

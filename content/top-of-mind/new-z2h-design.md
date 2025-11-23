@@ -12,7 +12,7 @@ title = 'The New "Zero to Hero" Design'
 date = "2024-03-04"
 
 [taxonomies]
-tags = ["top-of-mind", "design"]
+tags = ["top-of-mind","design"]
 +++
 
 ![The New "Zero to Hero" Design](/images/size/w1200/2024/03/bob-ross.png)

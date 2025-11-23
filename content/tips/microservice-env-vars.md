@@ -12,7 +12,7 @@ title = "Here's a Technique to Ensure Environment Variables Are Set Before Start
 date = "2021-06-06"
 
 [taxonomies]
-tags = ["tips", "go", "tips", "microservices"]
+tags = ["tips","go","microservices"]
 +++
 
 ![Environment Variables](/content/images/size/w1200/2024/03/pipes.png)

@@ -12,7 +12,7 @@ title = "Knowing JavaScript Is Not Good Enough"
 date = "2021-11-21"
 
 [taxonomies]
-tags = ["roadmap", "javascript"]
+tags = ["roadmap","javascript"]
 +++
 
 

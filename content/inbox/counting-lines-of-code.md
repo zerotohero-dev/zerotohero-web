@@ -13,7 +13,7 @@ description = "How to Count Lines in Your Source Code Projects: A Comprehensive 
 date = "2024-11-27"
 
 [taxonomies]
-tags = ["inbox", "loc", "programming"]
+tags = ["inbox","loc","programming"]
 +++
 
 As software projects grow, tracking their size becomes increasingly important for maintenance, documentation, and planning. One fundamental metric is the line count of your source code. In this article, we'll explore different methods to count lines in your codebase, from quick command-line solutions to more sophisticated tools.

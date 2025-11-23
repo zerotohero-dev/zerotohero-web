@@ -44,6 +44,13 @@ merge-tags: ## Merge/rename tags using tag-mappings.txt (use DRY_RUN=1 for previ
 		./merge-tags.sh tag-mappings.txt; \
 	fi
 
+normalize-tags: ## Remove duplicate tags from all posts (use DRY_RUN=1 for preview)
+	@if [ "$(DRY_RUN)" = "1" ]; then \
+		./normalize-tags.sh --dry-run; \
+	else \
+		./normalize-tags.sh; \
+	fi
+
 clean: ## Clean the public directory
 	@echo "Cleaning build artifacts..."
 	rm -rf public

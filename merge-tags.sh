@@ -138,6 +138,11 @@ find content -name "*.md" -type f | while read file; do
     done < "$TEMP_MAPPINGS"
 
     if [ "$file_modified" = "true" ]; then
+        # Deduplicate tags in the new tags line
+        # Extract tags, deduplicate, and reconstruct
+        tag_list=$(echo "$new_tags_line" | grep -o '"[^"]*"' | sort -u | paste -sd, -)
+        new_tags_line="tags = [$tag_list]"
+
         modified_files=$((modified_files + 1))
         total_replacements=$((total_replacements + file_replacements))
 

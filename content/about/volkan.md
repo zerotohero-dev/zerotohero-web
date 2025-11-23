@@ -12,7 +12,7 @@ title = "Volkan Özçelik"
 date = "2024-05-18"
 
 [taxonomies]
-tags = ["about", "about"]
+tags = ["about"]
 +++
 
 {{img(

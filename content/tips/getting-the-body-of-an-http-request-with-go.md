@@ -12,7 +12,7 @@ title = "Getting the Body of an HTTP Request With Go"
 date = "2023-03-01"
 
 [taxonomies]
-tags = ["tips", "go", "http", "request"]
+tags = ["go","request","tips"]
 +++
 
 {{img(

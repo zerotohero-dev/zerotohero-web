@@ -12,7 +12,7 @@ title = "Resources Every Developer Must Read: No Exceptions"
 date = "2021-10-25"
 
 [taxonomies]
-tags = ["roadmap", "reading-list", "design", "development"]
+tags = ["roadmap","reading-list","design","development"]
 +++
 
 ![Resources Every Developer Must Read---No Exceptions]()

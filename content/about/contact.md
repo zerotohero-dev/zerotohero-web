@@ -12,7 +12,7 @@ title = "Contact 🤙"
 date = "2024-05-18"
 
 [taxonomies]
-tags = ["about", "about", "about"]
+tags = ["about"]
 +++
 
 {{img(

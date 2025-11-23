@@ -12,7 +12,7 @@ title = "Base64 Decoding a String in Go"
 date = "2024-03-01"
 
 [taxonomies]
-tags = ["tips", "go", "base64", "encoding", "encoding"]
+tags = ["tips","go","base64","encoding"]
 +++
 
 {{img(

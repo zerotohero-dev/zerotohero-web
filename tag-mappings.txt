@@ -27,6 +27,8 @@ slog -> go
 slices -> go
 sdk -> go
 deadlocks -> go
+http -> go
+mutexes -> go
 
 # Secrets-related
 secrets -> secrets-management
@@ -64,6 +66,7 @@ design-patterns -> development
 error-handling -> development
 refactoring -> development
 database -> development
+html -> development
 
 # Hacker culture
 hacker-ethic -> hacker-culture
@@ -144,8 +147,13 @@ authentication -> DELETE_IF_NOT_ALONE
 systemd -> DELETE_IF_NOT_ALONE
 closure -> DELETE_IF_NOT_ALONE
 
+# DevOps/Kubernetes
+devops -> kubernetes
+performance -> kubernetes
+
 # Meta tags to consolidate
 volkan -> about
 geyik -> about
 backstory -> about
 contact -> about
+privacy -> about

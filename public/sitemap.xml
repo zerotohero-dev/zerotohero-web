@@ -681,9 +681,6 @@
         <loc>https://zerotohero.dev/tags/development/</loc>
     </url>
     <url>
-        <loc>https://zerotohero.dev/tags/devops/</loc>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/tags/dns/</loc>
     </url>
     <url>
@@ -736,12 +733,6 @@
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/host-commissioning/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/html/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/http/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/identity/</loc>
@@ -816,9 +807,6 @@
         <loc>https://zerotohero.dev/tags/mtls/</loc>
     </url>
     <url>
-        <loc>https://zerotohero.dev/tags/mutexes/</loc>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/tags/namespaces/</loc>
     </url>
     <url>
@@ -849,16 +837,10 @@
         <loc>https://zerotohero.dev/tags/perception/</loc>
     </url>
     <url>
-        <loc>https://zerotohero.dev/tags/performance/</loc>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/tags/permissions/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/platform-development/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/privacy/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/productivity/</loc>

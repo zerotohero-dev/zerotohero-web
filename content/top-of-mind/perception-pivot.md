@@ -12,7 +12,7 @@ title = "Transform Feedback into Professional Mastery"
 date = "2024-03-08"
 
 [taxonomies]
-tags = ["top-of-mind", "perception"]
+tags = ["top-of-mind","perception"]
 +++
 
 ![Transform Feedback into Professional Mastery](/images/size/w1200/2024/03/perception.png)

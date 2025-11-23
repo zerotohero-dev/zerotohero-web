@@ -1937,6 +1937,110 @@ Modify your webhook service to handle token fetching differently:&lt;&#x2F;p&gt;
         
     </entry>
     <entry xml:lang="en">
+        <title>Understanding TLS Renegotiation in Go: When and Why to Use RenegotiateNever</title>
+        <published>2024-12-03T00:00:00+00:00</published>
+        <updated>2024-12-03T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/tls-renogatiation/"/>
+        <id>https://zerotohero.dev/inbox/tls-renogatiation/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/tls-renogatiation/">&lt;p&gt;When configuring TLS in Go applications, you’ll often come across the recommendation to set &lt;code&gt;Renegotiation: tls.RenegotiateNever&lt;&#x2F;code&gt; in your TLS configuration. But what exactly does this mean, and why is it recommended? Let’s dive deep into TLS renegotiation, its implications, and when you might want to use different settings.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-is-tls-renegotiation&quot;&gt;What is TLS Renegotiation?&lt;&#x2F;h2&gt;
+&lt;p&gt;TLS renegotiation is a feature that allows clients and servers to update their TLS session parameters (like cipher suites or client certificates) without interrupting the existing connection. While this sounds useful, it comes with its own set of challenges.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-three-options-in-go&quot;&gt;The Three Options in Go&lt;&#x2F;h2&gt;
+&lt;p&gt;Go’s crypto&#x2F;tls package provides three options for handling TLS renegotiation:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;tlsConfig &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &amp;amp;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;tls&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Config&lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Renegotiation&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;tls&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;RenegotiateNever&lt;&#x2F;span&gt;&lt;span&gt;,  &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Option 1
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; or tls.RenegotiateOnceAsClient     &#x2F;&#x2F; Option 2
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; or tls.RenegotiateFreelyAsClient   &#x2F;&#x2F; Option 3
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;1-renegotiatenever&quot;&gt;1. RenegotiateNever&lt;&#x2F;h3&gt;
+&lt;p&gt;This option completely disables renegotiation. It’s often the recommended choice for modern systems.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;2-renegotiateonceasclient&quot;&gt;2. RenegotiateOnceAsClient&lt;&#x2F;h3&gt;
+&lt;p&gt;This is Go’s default setting. It allows a single renegotiation per connection.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;3-renegotiatefreelyasclient&quot;&gt;3. RenegotiateFreelyAsClient&lt;&#x2F;h3&gt;
+&lt;p&gt;This allows unlimited renegotiations, but it’s generally not recommended.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;why-choose-renegotiatenever&quot;&gt;Why Choose RenegotiateNever?&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;security-benefits&quot;&gt;Security Benefits&lt;&#x2F;h3&gt;
+&lt;p&gt;TLS renegotiation has a history of security vulnerabilities. The most notable was discovered in 2009, leading to the TLS Renegotiation Attack. While modern TLS implementations have addressed these specific vulnerabilities, disabling renegotiation altogether eliminates an entire class of potential security risks.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;performance-advantages&quot;&gt;Performance Advantages&lt;&#x2F;h3&gt;
+&lt;p&gt;TLS renegotiation is computationally expensive. Each renegotiation requires:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;New key exchange&lt;&#x2F;li&gt;
+&lt;li&gt;New cryptographic computations&lt;&#x2F;li&gt;
+&lt;li&gt;Additional network roundtrips&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;By disabling renegotiation, you avoid these performance impacts.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;simplified-security-model&quot;&gt;Simplified Security Model&lt;&#x2F;h3&gt;
+&lt;p&gt;With renegotiation disabled, the TLS connection model becomes simpler and more predictable. This makes it easier to:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Reason about security properties&lt;&#x2F;li&gt;
+&lt;li&gt;Debug connection issues&lt;&#x2F;li&gt;
+&lt;li&gt;Maintain consistent behavior&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;when-might-you-need-renegotiation&quot;&gt;When Might You Need Renegotiation?&lt;&#x2F;h2&gt;
+&lt;p&gt;Despite the advantages of &lt;code&gt;RenegotiateNever&lt;&#x2F;code&gt;, there are legitimate use cases for TLS renegotiation:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Legacy System Integration&lt;&#x2F;strong&gt;: Some older systems require renegotiation for certain operations.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Client Certificate Updates&lt;&#x2F;strong&gt;: In systems where client certificates need to be updated mid-session.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Long-lived Connections&lt;&#x2F;strong&gt;: When security parameters need to be updated without dropping the connection.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;best-practices&quot;&gt;Best Practices&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Default to RenegotiateNever&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Start with renegotiation disabled&lt;&#x2F;li&gt;
+&lt;li&gt;Only enable it if you have a specific need&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Monitor for Issues&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Watch for connection failures with legacy systems&lt;&#x2F;li&gt;
+&lt;li&gt;Be prepared to adjust if needed&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Consider Alternatives&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Instead of renegotiation, consider establishing new connections&lt;&#x2F;li&gt;
+&lt;li&gt;Use modern protocols that handle parameter updates differently&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;example-configuration&quot;&gt;Example Configuration&lt;&#x2F;h2&gt;
+&lt;p&gt;Here’s a modern, secure TLS configuration in Go:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;tlsConfig &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &amp;amp;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;tls&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Config&lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Certificates&lt;&#x2F;span&gt;&lt;span&gt;: []&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;tls&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Certificate&lt;&#x2F;span&gt;&lt;span&gt;{&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cert&lt;&#x2F;span&gt;&lt;span&gt;},
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;MinVersion&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;tls&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;VersionTLS12&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;CipherSuites&lt;&#x2F;span&gt;&lt;span&gt;: []&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;uint16&lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;tls&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;tls&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;tls&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;tls&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;    },
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Renegotiation&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;tls&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;RenegotiateNever&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;NextProtos&lt;&#x2F;span&gt;&lt;span&gt;: []&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;string&lt;&#x2F;span&gt;&lt;span&gt;{&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;h2&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;http&#x2F;1.1&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;},
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;CurvePreferences&lt;&#x2F;span&gt;&lt;span&gt;: []&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;tls&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;CurveID&lt;&#x2F;span&gt;&lt;span&gt;{&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;tls&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;X25519&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;tls&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;CurveP256&lt;&#x2F;span&gt;&lt;span&gt;},
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;While TLS renegotiation can be useful in specific scenarios, disabling it with &lt;code&gt;RenegotiateNever&lt;&#x2F;code&gt; is often the right choice for modern applications. It provides better security, performance, and simplicity. However, always consider your specific use case and requirements when making this decision.&lt;&#x2F;p&gt;
+&lt;p&gt;Remember that security is never one-size-fits-all. While &lt;code&gt;RenegotiateNever&lt;&#x2F;code&gt; is a good default, the best configuration for your application depends on your specific requirements, constraints, and the systems you need to interact with.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
         <title>Setting Up SPIRE on EKS in Less Than Ten Minutes</title>
         <published>2021-12-18T00:00:00+00:00</published>
         <updated>2021-12-18T00:00:00+00:00</updated>
@@ -2729,6 +2833,87 @@ service &lt;strong&gt;mTLS&lt;&#x2F;strong&gt; communication channel in the foll
 &lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;spire&#x2F;mtls&#x2F;&quot;&gt;mTLS with SPIRE&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Scaling Your Node.js API Like a Boss</title>
+        <published>2021-09-27T00:00:00+00:00</published>
+        <updated>2021-09-27T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/tips/scaling-your-node-api-like-a-boss/"/>
+        <id>https://zerotohero.dev/tips/scaling-your-node-api-like-a-boss/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/tips/scaling-your-node-api-like-a-boss/">
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;scalability.png&quot; alt=&quot;Scaling Your Node.js API Like a Boss.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Scaling Your Node.js API Like a Boss.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is a 90-minute tech talk that I’ve given several years ago.&lt;&#x2F;p&gt;
+&lt;p&gt;Having seen that the patterns and practices I mentioned there still apply, I
+believe it’s still worthwhile to have it here.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;It’s one thing to create a sample RESTful API using Node.js (maybe utilizing the
+cluster module to distribute the load), but it’s quite another to horizontally
+scale your architecture to hundreds of thousands of concurrent connections while
+trying to ensure redundancy and high availability.&lt;&#x2F;p&gt;
+&lt;p&gt;Knowing how to scale is important, but more important than that is knowing when
+to scale. In this two-part tutorial, I will explore what it takes to create a
+real-life, scalable, highly available, and highly responsive Node.js
+application.&lt;&#x2F;p&gt;
+&lt;p&gt;Here is the first part:&lt;&#x2F;p&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;Ogjb60Fg10A?si=FBu0Kn4aBhbEc8UR&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; referrerpolicy=&quot;strict-origin-when-cross-origin&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;
+&lt;p&gt;Here is the second part:&lt;&#x2F;p&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;f5phsX4VUOU?si=C0oatuzskeT5eq5G&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; referrerpolicy=&quot;strict-origin-when-cross-origin&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;
+&lt;p&gt;Enjoy… And until next time… May the source be with you 🦄.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;base64-decoding-a-string-in-go&#x2F;&quot;&gt;Base64 Decoding a String in Go&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;destructure&#x2F;&quot;&gt;Use Destructuring to Remove Attributes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;getting-the-body-of-an-http-request-with-go&#x2F;&quot;&gt;Getting the Body of an HTTP Request With Go&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;lets-create-a-syslog-logger&#x2F;&quot;&gt;Let’s Create a Syslog Logger&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;make-your-code-leaner&#x2F;&quot;&gt;Make Your Code Leaner By Extracting Method&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;mastodon-101&#x2F;&quot;&gt;Who Else Wants to Have Their Own Mastodon Server?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;microservice-env-vars&#x2F;&quot;&gt;How to Ensure Environment Variables Are Set&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Scaling Your Node.js API Like a Boss&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;talkspiffe-stream-setup&#x2F;&quot;&gt;The Live Stream Dream&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;zshell-startup-files&#x2F;&quot;&gt;.zprofile, .zshrc, .zenv, OMG! What Do I Put Where?!&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;redirect-index-page&#x2F;&quot;&gt;Redirecting a Static Web Page&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 </content>

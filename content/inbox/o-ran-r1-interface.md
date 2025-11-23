@@ -13,7 +13,7 @@ description = "O-RAN R1 Interface"
 date = "2024-11-24"
 
 [taxonomies]
-tags = ["inbox", "o-ran"]
+tags = ["inbox","o-ran"]
 +++
 
 Here is a brief explanation of the O-RAN R1 Interface:

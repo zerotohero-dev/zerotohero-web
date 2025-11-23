@@ -12,7 +12,7 @@ title = "Who Else Wants to Have Their Own Mastodon Server?"
 date = "2023-05-27"
 
 [taxonomies]
-tags = ["tips", "setups", "mastodon"]
+tags = ["tips","setups","mastodon"]
 +++
 
 {{img(

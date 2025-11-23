@@ -12,7 +12,7 @@ title = "Orange Is the New Purple"
 date = "2021-11-26"
 
 [taxonomies]
-tags = ["roadmap", "design", "design"]
+tags = ["roadmap","design"]
 +++
 
 ![Orange Is the New Purple](

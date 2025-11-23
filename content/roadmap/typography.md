@@ -12,7 +12,7 @@ title = "Get Better at Typography"
 date = "2021-11-26"
 
 [taxonomies]
-tags = ["roadmap", "typography", "design"]
+tags = ["roadmap","typography","design"]
 +++
 
 ![Get Better at Typography](/images/size/w1200/2024/03/typo.png)

@@ -13,7 +13,7 @@ description = "Understanding Error Handling with Defer in Go: A Deep Dive"
 date = "2024-12-01"
 
 [taxonomies]
-tags = ["inbox", "go", "go", "development"]
+tags = ["inbox","go","development"]
 +++
 
 When working with Go, proper error handling is crucial for writing robust applications. Today, we'll explore an interesting pattern involving deferred functions and named return values, specifically in the context of handling multiple potential error sources.

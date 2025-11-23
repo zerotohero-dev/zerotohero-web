@@ -13,7 +13,7 @@ description = "Understanding Kubernetes Services and Namespaces: A Practical Gui
 date = "2024-12-10"
 
 [taxonomies]
-tags = ["inbox", "kubernetes", "services", "namespaces", "devops", "platform-development"]
+tags = ["inbox","kubernetes","namespaces","platform-development","services"]
 +++
 
 

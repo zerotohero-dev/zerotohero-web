@@ -12,7 +12,7 @@ title = "Keep Your Secrets... Secret: Introducing VMware Secrets Manager"
 date = "2023-08-16"
 
 [taxonomies]
-tags = ["top-of-mind", "vsecm", "secrets-management", "spiffe", "spire"]
+tags = ["top-of-mind","vsecm","secrets-management","spiffe","spire"]
 +++
 
 ![Keep Your Secrets... Secret: Introducing VMware Secrets Manager](/images/size/w1200/2024/03/VSecM-1.png)

@@ -13,7 +13,7 @@ description = "Building a Kubernetes Operator for VSecM Secret Management"
 date = "2024-12-12"
 
 [taxonomies]
-tags = ["inbox", "kubernetes", "secrets-management", "security"]
+tags = ["inbox","kubernetes","secrets-management","security"]
 +++
 
 Managing secrets in Kubernetes can be challenging, especially when integrating with external secret management systems. In this post, we'll explore how to build a Kubernetes Operator that integrates with VMware Secrets Manager (VSecM) to automatically sync and manage secrets in your cluster.

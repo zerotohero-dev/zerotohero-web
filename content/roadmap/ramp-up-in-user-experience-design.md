@@ -12,7 +12,7 @@ title = "Don't Make the User Think"
 date = "2021-08-28"
 
 [taxonomies]
-tags = ["roadmap", "ux", "ux", "design"]
+tags = ["roadmap","ux","design"]
 +++
 
 {{img(

@@ -12,7 +12,7 @@ title = "mTLS With SPIRE: Part 2: Creating the Server App"
 date = "2021-10-19"
 
 [taxonomies]
-tags = ["mtls", "spiffe", "spire"]
+tags = ["mtls","spiffe","spire"]
 +++
 
 ## mTLS With SPIRE: Part 2 --- Creating the Server App

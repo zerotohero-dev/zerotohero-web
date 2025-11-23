@@ -13,7 +13,7 @@ description = "Creating GitHub Releases with Binary Artifacts: A Complete Guides
 date = "2024-11-27"
 
 [taxonomies]
-tags = ["inbox", "git", "releases", "workflow"]
+tags = ["inbox","git","releases","workflow"]
 +++
 
 Whether you're distributing compiled binaries, executables, or any other release artifacts, GitHub provides two convenient methods to create releases and share your builds. In this guide, we'll explore both the manual UI approach and automated workflows for creating GitHub releases.

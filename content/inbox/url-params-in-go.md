@@ -13,7 +13,7 @@ description = "Properly Handling URL Query Parameters in Go"
 date = "2024-11-24"
 
 [taxonomies]
-tags = ["inbox", "go"]
+tags = ["inbox","go"]
 +++
 
 

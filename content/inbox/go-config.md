@@ -13,7 +13,7 @@ description = "Type-Safe Configuration Keys in Go: Finding the Right Balance"
 date = "2024-11-24"
 
 [taxonomies]
-tags = ["inbox", "go"]
+tags = ["inbox","go"]
 +++
 
 When working with configuration in Go applications, we often face the challenge of managing configuration keys in a type-safe and maintainable way. Should we use simple strings? Create custom types? How do we balance type safety with readability? Let's explore these questions through a real-world example.

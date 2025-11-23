@@ -12,7 +12,7 @@ title = "Paint Me Like One of Your French Design Patterns"
 date = "2021-11-26"
 
 [taxonomies]
-tags = ["roadmap", "development"]
+tags = ["roadmap","development"]
 +++
 
 ![Paint Me Like One of Your French Design Patterns](

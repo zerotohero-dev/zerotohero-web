@@ -13,7 +13,7 @@ description = "Designing a Reusable Retry Package in Go: Beyond the Logger Antip
 date = "2024-11-24"
 
 [taxonomies]
-tags = ["inbox", "go"]
+tags = ["inbox","go"]
 +++
 
 

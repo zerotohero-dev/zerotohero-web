@@ -13,7 +13,7 @@ description = "Migrating from vSphere to VMware Cloud Foundation: A Comprehensiv
 date = "2024-12-12"
 
 [taxonomies]
-tags = ["inbox", "vmware", "vcf", "infrastructure", "vcf", "migration", "vcf"] 
+tags = ["inbox","vmware","vcf","infrastructure","migration"]
 +++
 
 Many organizations are looking to transform their traditional vSphere environments into a full private cloud experience with VMware Cloud Foundation (VCF). This guide explores the migration process and key benefits.

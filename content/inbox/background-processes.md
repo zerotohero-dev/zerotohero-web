@@ -13,7 +13,7 @@ description = "Managing Background Processes in Bash: A Complete Guide"
 date = "2024-11-24"
 
 [taxonomies]
-tags = ["inbox", "linux"]
+tags = ["inbox","linux"]
 +++
 
 When developing applications or running multiple services locally, you often need to run several scripts simultaneously. While you could open multiple terminal windows, a more elegant solution is to manage these processes programmatically. In this post, I'll show you how to create a robust script that can run multiple processes in the background, manage their logs, and clean up properly when shutting down.

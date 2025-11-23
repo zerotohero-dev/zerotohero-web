@@ -12,7 +12,7 @@ title = "Unlock Your Brain's Power: Learn Fast, Remember More"
 date = "2024-01-14"
 
 [taxonomies]
-tags = ["roadmap", "learning", "memory", "memory"]
+tags = ["roadmap","learning","memory"]
 +++
 
 {{img(

@@ -13,7 +13,7 @@ description = "Understanding Unix Directory Permissions: A Common Pitfall"
 date = "2024-11-24"
 
 [taxonomies]
-tags = ["inbox", "linux", "permissions"]
+tags = ["inbox","linux","permissions"]
 +++
 
 When working with Unix-like systems, you might occasionally encounter situations where you can't create files in a directory even though you own it. This usually happens because of a common misunderstanding about how directory permissions work in Unix systems.

@@ -12,7 +12,7 @@ title = "Build Strong Connections to Land Your Dream Job"
 date = "2023-08-18"
 
 [taxonomies]
-tags = ["top-of-mind", "career", "networking"]
+tags = ["top-of-mind","career","networking"]
 +++
 
 ![Build Strong Connections to Land Your Dream Job](/images/size/w1200/2024/03/dream-job.png)
