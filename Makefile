@@ -51,6 +51,9 @@ normalize-tags: ## Remove duplicate tags from all posts (use DRY_RUN=1 for previ
 		./normalize-tags.sh; \
 	fi
 
+find-no-images: ## Find blog posts without header images
+	@./find-posts-without-images.sh
+
 clean: ## Clean the public directory
 	@echo "Cleaning build artifacts..."
 	rm -rf public
