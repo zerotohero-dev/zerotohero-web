@@ -654,13 +654,7 @@
         <loc>https://zerotohero.dev/tags/design/</loc>
     </url>
     <url>
-        <loc>https://zerotohero.dev/tags/destructuring/</loc>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/tags/development/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/dns/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/docker/</loc>
@@ -678,25 +672,10 @@
         <loc>https://zerotohero.dev/tags/git/</loc>
     </url>
     <url>
-        <loc>https://zerotohero.dev/tags/go-spiffe/</loc>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/tags/go/</loc>
     </url>
     <url>
-        <loc>https://zerotohero.dev/tags/gpg/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/gpu/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/guide/</loc>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/tags/hacker-culture/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/hashing/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/highlights/</loc>
@@ -754,9 +733,6 @@
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/mastodon/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/memory/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/method-extraction/</loc>

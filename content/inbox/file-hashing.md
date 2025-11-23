@@ -13,7 +13,7 @@ description = "Computing File Hashes in Unix Systems: A Complete Guide"
 date = "2024-12-02"
 
 [taxonomies]
-tags = ["inbox","hashing","linux","security"]
+tags = ["development","inbox","linux","security"]
 +++
 
 File hashing is an essential operation in software development, system administration, and security verification. This guide will walk you through the process of computing file hashes in Unix-like systems, with a focus on generating formatted SHA-256 hashes.

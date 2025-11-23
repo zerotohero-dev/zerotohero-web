@@ -17,6 +17,7 @@ external-secrets-operator -> external-secret-operator
 # SPIFFE/SPIRE
 federation -> spiffe
 spire-agent -> spire
+go-spiffe -> spiffe
 
 # Go-specific
 cgo -> go
@@ -74,11 +75,14 @@ html -> development
 glossary -> development
 haskell -> development
 rust -> development
+destructuring -> development
+hashing -> development
 
 # Hacker culture
 hacker-ethic -> hacker-culture
 hackers -> hacker-culture
 hacking -> hacker-culture
+guide -> hacker-culture
 
 # Workload domains
 workload-domain -> workload-domains
@@ -88,6 +92,7 @@ git-commands -> git
 commit -> git
 github -> git
 gitlab -> git
+gpg -> git
 
 # Shell/Terminal
 zsh -> shell
@@ -140,6 +145,8 @@ disaster-recovery -> vcf
 host-comissioning -> vcf
 host-commissioning -> vcf
 host-expansion -> vcf
+dns -> vcf
+gpu -> vcf
 
 # Projects
 aegis -> spike
@@ -156,6 +163,7 @@ systemd -> DELETE_IF_NOT_ALONE
 closure -> DELETE_IF_NOT_ALONE
 programming -> DELETE_IF_NOT_ALONE
 cli -> DELETE_IF_NOT_ALONE
+memory -> DELETE_IF_NOT_ALONE
 
 # DevOps/Kubernetes
 devops -> kubernetes

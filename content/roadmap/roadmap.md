@@ -12,7 +12,7 @@ title = "Be the Next Version of Yourself"
 date = "2024-05-21"
 
 [taxonomies]
-tags = ["guide","learning","roadmap","top-of-mind"]
+tags = ["hacker-culture","learning","roadmap","top-of-mind"]
 +++
 
 {{img(

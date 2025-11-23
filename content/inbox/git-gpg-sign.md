@@ -13,7 +13,7 @@ description = "Debugging Git GPG Signing Issues"
 date = "2024-11-27"
 
 [taxonomies]
-tags = ["inbox","gpg","git","security"]
+tags = ["git","inbox","security"]
 +++
 
 When working with signed Git commits, you might encounter this error:
