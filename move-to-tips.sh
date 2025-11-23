@@ -74,10 +74,18 @@ else
     echo "Warning: No tags line found in frontmatter"
 fi
 
-# Append to nav.yaml
+# Add to top of nav.yaml (after header)
 echo "Updating $nav_file..."
-echo "- name: \"$title\"" >> "$nav_file"
-echo "  url: \"@/tips/${slug}.md\"" >> "$nav_file"
+{
+  # Copy the header (first 9 lines: ASCII art + blank line)
+  head -n 9 "$nav_file"
+  # Add the new entry at the top
+  echo "- name: \"$title\""
+  echo "  url: \"@/tips/${slug}.md\""
+  # Copy the rest of the file
+  tail -n +10 "$nav_file"
+} > "${nav_file}.tmp"
+mv "${nav_file}.tmp" "$nav_file"
 
 # Move the file
 echo "Moving file..."
