@@ -4,8 +4,205 @@
     <link rel="self" type="application/atom+xml" href="https://zerotohero.dev/tags/productivity/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://zerotohero.dev"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2023-07-12T00:00:00+00:00</updated>
+    <updated>2025-11-21T00:00:00+00:00</updated>
     <id>https://zerotohero.dev/tags/productivity/atom.xml</id>
+    <entry xml:lang="en">
+        <title>A Frictionless Blog Workflow</title>
+        <published>2025-11-21T00:00:00+00:00</published>
+        <updated>2025-11-21T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/tips/a-frictionless-blog-workflow/"/>
+        <id>https://zerotohero.dev/tips/a-frictionless-blog-workflow/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/tips/a-frictionless-blog-workflow/">
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2025&amp;#x2F;11&amp;#x2F;blog-workflow.png&quot; alt=&quot;Less Friction. More productivity&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Less Friction. More productivity&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;&#x2F;h2&gt;
+&lt;p&gt;If you’re running a static blog with &lt;a href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;&quot;&gt;Zola&lt;&#x2F;a&gt;, you know
+the drill: create a markdown file, add the frontmatter, remember the correct
+TOML format, generate a slug from the title, put it in the proper directory,
+commit, build, and push.&lt;&#x2F;p&gt;
+&lt;p&gt;It’s not complicated, but it’s &lt;strong&gt;friction&lt;&#x2F;strong&gt;. And the last thing I need nowadays
+is friction: I have a lot of high-priority, high-impact tasks, and I
+seldom find enough time to create a blog post. So, even when I &lt;strong&gt;exactly&lt;&#x2F;strong&gt; know
+what to post, I procrastinate due to the very thought of “organizing” stuff.&lt;&#x2F;p&gt;
+&lt;p&gt;So, I wanted to make my blogging as frictionless as possible. Just run a
+command, answer a few questions, and start writing: No context switching,
+no remembering file formats, no manual slug generation.&lt;&#x2F;p&gt;
+&lt;p&gt;Here is my current workflow:&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;how-things-were-before&quot;&gt;How Things Were Before&lt;&#x2F;h2&gt;
+&lt;p&gt;Every time I wanted to write a blog post, I had to:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Manually create a markdown file with the correct naming convention&lt;&#x2F;li&gt;
+&lt;li&gt;Copy-paste the TOML frontmatter template&lt;&#x2F;li&gt;
+&lt;li&gt;Remember which category to put it in&lt;&#x2F;li&gt;
+&lt;li&gt;Manually generate a URL-friendly slug from the title&lt;&#x2F;li&gt;
+&lt;li&gt;Format tags correctly&lt;&#x2F;li&gt;
+&lt;li&gt;Remember the date format&lt;&#x2F;li&gt;
+&lt;li&gt;Build with Zola&lt;&#x2F;li&gt;
+&lt;li&gt;Commit and push to deploy&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;That’s too many steps. The barrier to entry was high enough that I’d almost
+always skip writing altogether.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;let-s-hack-this&quot;&gt;Let’s Hack This&lt;&#x2F;h2&gt;
+&lt;p&gt;So, I created a simple &lt;code&gt;Makefile&lt;&#x2F;code&gt; with a shell script that handles everything
+interactively. Now the workflow is:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;make new    &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Create a new post
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;make serve  &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Preview locally
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;make deploy &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Build and push to production
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;That’s it. Three commands for the entire workflow.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;creating-new-posts&quot;&gt;Creating New Posts&lt;&#x2F;h2&gt;
+&lt;p&gt;The &lt;code&gt;make new&lt;&#x2F;code&gt; command runs an interactive script that:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Asks for a title&lt;&#x2F;strong&gt;: And I just type naturally&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Shows category descriptions&lt;&#x2F;strong&gt;: So I know where it belongs&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Prompts for tags&lt;&#x2F;strong&gt;: Comma-separated, parsed automatically&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Generates everything&lt;&#x2F;strong&gt;: Slug, frontmatter, file structure&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;Here’s what the interaction looks like for this very blog post:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#282828;color:#fdf4c1aa;&quot;&gt;&lt;code&gt;&lt;span&gt;$ make new
+&lt;&#x2F;span&gt;&lt;span&gt;Creating a new blog post...
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;Title: A Frictionless Blog Workflow
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;Available categories:
+&lt;&#x2F;span&gt;&lt;span&gt;  1) top-of-mind    - Random thoughts and musings (brain dump)
+&lt;&#x2F;span&gt;&lt;span&gt;  2) inbox          - General content (default)
+&lt;&#x2F;span&gt;&lt;span&gt;  3) highlights     - Leadership and non-technical aspects
+&lt;&#x2F;span&gt;&lt;span&gt;  4) tips           - Useful tips, tricks, and code snippets
+&lt;&#x2F;span&gt;&lt;span&gt;  5) roadmap        - Career guidance, resources, life lessons
+&lt;&#x2F;span&gt;&lt;span&gt;  6) zero-to-prod   - Production-ready system tutorials
+&lt;&#x2F;span&gt;&lt;span&gt;  7) spire          - SPIFFE and SPIRE articles
+&lt;&#x2F;span&gt;&lt;span&gt;Choose category (1-7) [default: 2]: 4
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;Tags (comma-separated): blogging, workflow, content-creation
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;Created: &#x2F;Users&#x2F;volkan&#x2F;&amp;lt;truncated...&amp;gt;&#x2F;a-frictionless-blog-workflow.md
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The script automatically:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Converts the title to a URL-friendly slug (&lt;code&gt;a-frictionless-blog-workflow&lt;&#x2F;code&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;Generates today’s date in the correct format&lt;&#x2F;li&gt;
+&lt;li&gt;Creates the file in the correct directory&lt;&#x2F;li&gt;
+&lt;li&gt;Adds proper TOML frontmatter&lt;&#x2F;li&gt;
+&lt;li&gt;Includes the category as a default tag&lt;&#x2F;li&gt;
+&lt;li&gt;Outputs an absolute path that I can click to open&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Here is a list of all &lt;code&gt;make&lt;&#x2F;code&gt; targets so far:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;makefile&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-makefile &quot;&gt;&lt;code class=&quot;language-makefile&quot; data-lang=&quot;makefile&quot;&gt;&lt;span&gt;make help    &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Show all available commands
+&lt;&#x2F;span&gt;&lt;span&gt;make new     &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Create a new blog post interactively
+&lt;&#x2F;span&gt;&lt;span&gt;make build   &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Build the site with Zola
+&lt;&#x2F;span&gt;&lt;span&gt;make serve   &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Start local dev server
+&lt;&#x2F;span&gt;&lt;span&gt;make deploy  &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Build and push to production
+&lt;&#x2F;span&gt;&lt;span&gt;make clean   &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Remove build artifacts
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;publish&quot;&gt;Publish&lt;&#x2F;h3&gt;
+&lt;p&gt;I just do a &lt;code&gt;make deploy&lt;&#x2F;code&gt;… and done.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;$ make deploy
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Building site...
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Build complete! Output in .&#x2F;public&#x2F;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Deploying to production...
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Commit message: Add frictionless workflow post
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Deployed successfully!
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;It builds with &lt;code&gt;zola&lt;&#x2F;code&gt;, prompts for a commit message, and pushes everything
+in one command.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-implementation&quot;&gt;The Implementation&lt;&#x2F;h2&gt;
+&lt;p&gt;Here is the &lt;code&gt;new-post.sh&lt;&#x2F;code&gt; that handles all the logic:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;#!&#x2F;bin&#x2F;bash
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Interactive prompts
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;read &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;-p &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Title: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt; title
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;read &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;-p &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Choose category (1-7) [default: 2]: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt; category_num
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;read &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;-p &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Tags (comma-separated): &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt; tags
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Generate slug from title
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;slug&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;$(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;title&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;tr &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;[:upper:]&amp;#39; &amp;#39;[:lower:]&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;\
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;       &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;s&#x2F;[^a-z0-9]&#x2F;-&#x2F;g&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;\
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;       &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;s&#x2F;--*&#x2F;-&#x2F;g&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;\
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;       &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;s&#x2F;^-&#x2F;&#x2F;&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;s&#x2F;-$&#x2F;&#x2F;&amp;#39;)
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Create file with proper frontmatter
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cat &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;filename&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;&amp;lt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;EOF
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;+++
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;title = &amp;quot;$title&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;date = &amp;quot;$(date +%Y-%m-%d)&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;[taxonomies]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;tags = [$tag_list]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;+++
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;## Introduction
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Write your blog post here...
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;EOF
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The Makefile just delegates to the script:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;makefile&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-makefile &quot;&gt;&lt;code class=&quot;language-makefile&quot; data-lang=&quot;makefile&quot;&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;new&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;## Create a new blog post interactively
+&lt;&#x2F;span&gt;&lt;span&gt;	&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;@&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;.&#x2F;new-post.sh
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;benefits&quot;&gt;Benefits&lt;&#x2F;h2&gt;
+&lt;p&gt;Well, yes, it’s not rocket surgery, but anything that minimizes friction is
+a step towards better user experience. And that helps a lot, especially when
+the user is busy as a bumblebee.&lt;&#x2F;p&gt;
+&lt;p&gt;Automation ftw! The workflow gets out of my way and lets me focus on writing.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;No more “I’ll write it later” because setup is annoying&lt;&#x2F;li&gt;
+&lt;li&gt;No more typos in frontmatter&lt;&#x2F;li&gt;
+&lt;li&gt;No more forgotten tags or wrong categories&lt;&#x2F;li&gt;
+&lt;li&gt;No more manual slug generation&lt;&#x2F;li&gt;
+&lt;li&gt;Publishing is literally one command&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;When the right thing is also the easy thing, it is &lt;strong&gt;delightful&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;And I think that’s the whole point.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;bonus-grammarly-desktop-app&quot;&gt;Bonus: Grammarly Desktop App&lt;&#x2F;h2&gt;
+&lt;p&gt;This is &lt;strong&gt;not&lt;&#x2F;strong&gt; a promotional section: I am adding it because I regularly use
+and love &lt;a href=&quot;https:&#x2F;&#x2F;grammarly.com&quot; title=&quot;Grammarly&quot;&gt;Grammarly&lt;&#x2F;a&gt;, and in this particular case, it helps in my
+workflow too.&lt;&#x2F;p&gt;
+&lt;p&gt;When I install the &lt;a href=&quot;https:&#x2F;&#x2F;www.grammarly.com&#x2F;desktop&quot; title=&quot;Grammarly for your Desktop&quot;&gt;&lt;strong&gt;Grammarly Desktop App&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, I get
+instant feedback on the grammar, tone, and complexity of what I’m writing.
+Which means, I can fix my errors on the go, instead of having a separate
+“&lt;em&gt;spelling and grammar check&lt;&#x2F;em&gt;” round. That also saves time. Since it’s a
+desktop app, it’s integrated into &lt;strong&gt;all&lt;&#x2F;strong&gt; my applications, including the
+text editor that I use to write this
+blog post.&lt;&#x2F;p&gt;
+&lt;p&gt;And with the &lt;code&gt;CTRL+G&lt;&#x2F;code&gt; keyboard shortcut, it’s literally one click away.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2025&amp;#x2F;11&amp;#x2F;grammarly-in-action.png&quot; alt=&quot;Grammarly in action.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Grammarly in action.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;use-the-source-luke&quot;&gt;Use the Source, Luke&lt;&#x2F;h2&gt;
+&lt;p&gt;As I improve this script over time, the latest version will always be available
+in this blog’s repository:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;zerotohero-dev&#x2F;zerotohero-web&quot;&gt;&lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt; on GitHub&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Check out the &lt;code&gt;Makefile&lt;&#x2F;code&gt; and &lt;code&gt;new-post.sh&lt;&#x2F;code&gt; in the root directory, and feel free
+to adapt it to your own workflow.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;links-and-further-reference&quot;&gt;Links and Further Reference&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;&quot;&gt;Zola Static Site Generator&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.gnu.org&#x2F;software&#x2F;make&#x2F;manual&#x2F;make.html&quot;&gt;GNU Make Manual&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;grammarly.com&#x2F;&quot;&gt;Grammarly&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>Reshape Your Workspace, Reshape Your Future</title>
         <published>2023-07-12T00:00:00+00:00</published>

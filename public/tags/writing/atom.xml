@@ -22,7 +22,14 @@
         <link rel="alternate" type="text/html" href="https://zerotohero.dev/tips/a-frictionless-blog-workflow/"/>
         <id>https://zerotohero.dev/tips/a-frictionless-blog-workflow/</id>
         
-        <content type="html" xml:base="https://zerotohero.dev/tips/a-frictionless-blog-workflow/">&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;&#x2F;h2&gt;
+        <content type="html" xml:base="https://zerotohero.dev/tips/a-frictionless-blog-workflow/">
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2025&amp;#x2F;11&amp;#x2F;blog-workflow.png&quot; alt=&quot;Less Friction. More productivity&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Less Friction. More productivity&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;&#x2F;h2&gt;
 &lt;p&gt;If you’re running a static blog with &lt;a href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;&quot;&gt;Zola&lt;&#x2F;a&gt;, you know
 the drill: create a markdown file, add the frontmatter, remember the correct
 TOML format, generate a slug from the title, put it in the proper directory,
