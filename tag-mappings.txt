@@ -38,6 +38,7 @@ microservices -> go
 secrets -> secrets-management
 secret-management -> secrets-management
 secret-sharing -> secrets-management
+oidc -> secrets-management
 
 # Security
 certificates -> security
@@ -125,6 +126,7 @@ typography -> design
 # Networking
 tcp-ip -> networking
 network-communication -> networking
+osi-model -> networking
 
 # Creativity
 reinvent -> creativity
@@ -138,6 +140,7 @@ environment-variables -> tips
 bookmarking -> tips
 loc -> tips
 journaling -> {ponderings;tips;productivity}
+redirect -> {tips;development}
 
 # VMware
 vcsa -> vcf
@@ -165,6 +168,7 @@ installation -> vcf
 workload-domains -> vcf
 lifecycle-management -> vcf
 virtual -> vcf
+modernization -> vcf
 
 # Projects
 aegis -> spike

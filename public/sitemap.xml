@@ -683,9 +683,6 @@
         <loc>https://zerotohero.dev/tags/migration/</loc>
     </url>
     <url>
-        <loc>https://zerotohero.dev/tags/modernization/</loc>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/tags/mtls/</loc>
     </url>
     <url>
@@ -699,12 +696,6 @@
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/o-ran/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/oidc/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/osi-model/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/papertrail/</loc>
@@ -726,9 +717,6 @@
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/reading-list/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/redirect/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/reflection/</loc>

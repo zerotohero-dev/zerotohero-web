@@ -13,7 +13,7 @@ description = "Securing CI/CD Access to Your Secrets Management System: An Archi
 date = "2024-11-27"
 
 [taxonomies]
-tags = ["inbox","spike","oidc","security"]
+tags = ["inbox","secrets-management","security","spike"]
 +++
 
 When building a secrets management system, one of the key challenges is providing secure automated access for CI/CD pipelines while maintaining strong security boundaries. In this post, we'll explore different architectural approaches to solving this problem, analyzing their trade-offs and providing recommendations.

@@ -12,7 +12,7 @@ title = "Redirecting a Static Web Page"
 date = "2024-05-23"
 
 [taxonomies]
-tags = ["development","redirect","tips"]
+tags = ["development","tips"]
 +++
 
 {{img(
