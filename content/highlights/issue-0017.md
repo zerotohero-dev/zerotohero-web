@@ -12,7 +12,7 @@ title = "'Following Your Passion' Is Hardly Enough"
 date = "2024-05-10"
 
 [taxonomies]
-tags = ["highlights"]
+tags = ["highlights","kubernetes"]
 +++
 
 {{img(

@@ -12,7 +12,7 @@ title = "Zero to Prod in Half an Hour: Part 12 --- The Final Touches"
 date = "2022-02-09"
 
 [taxonomies]
-tags = []
+tags = ["authentication","git","go"]
 +++
 
 {{img(

@@ -13,7 +13,7 @@ description = "O-RAN R1 Interface"
 date = "2024-11-24"
 
 [taxonomies]
-tags = ["VCF","inbox"]
+tags = ["VCF","inbox","architecture"]
 +++
 
 Here is a brief explanation of the O-RAN R1 Interface:

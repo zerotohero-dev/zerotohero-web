@@ -13,7 +13,7 @@ description = "Accessing and Configuring VMware vCenter: A Complete Guide to GUI
 date = "2024-12-12"
 
 [taxonomies]
-tags = ["VCF","inbox"]
+tags = ["VCF","inbox","authentication","infrastructure"]
 +++
 
 After deploying vCenter Server Appliance (vCSA), you have two primary graphical interfaces for management. This guide walks through both interfaces and the initial environment setup process.

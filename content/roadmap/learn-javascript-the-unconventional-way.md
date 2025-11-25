@@ -12,7 +12,7 @@ title = "Learn Your JavaScript the Unconventional Way"
 date = "2021-11-27"
 
 [taxonomies]
-tags = ["development","roadmap"]
+tags = ["development","roadmap","git"]
 +++
 
 {{img(

@@ -12,7 +12,7 @@ title = "mTLS With SPIRE: Part 3: Creating the Client Appp"
 date = "2022-08-19"
 
 [taxonomies]
-tags = ["SPIFFE","SPIRE"]
+tags = ["SPIFFE","SPIRE","git"]
 +++
 
 {{img(

@@ -12,7 +12,7 @@ title = "Zero to Prod in Half an Hour: Part 11 --- Implementing Authentication H
 date = "2022-02-10"
 
 [taxonomies]
-tags = []
+tags = ["authentication","git","go","security"]
 +++
 
 {{img(

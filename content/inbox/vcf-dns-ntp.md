@@ -13,7 +13,7 @@ description = "Essential DNS and NTP Prerequisites for VMware Cloud Foundation D
 date = "2024-12-12"
 
 [taxonomies]
-tags = ["VCF","inbox"]
+tags = ["VCF","inbox","infrastructure","kubernetes"]
 +++
 
 When deploying VMware Cloud Foundation (VCF), proper setup of DNS and NTP services is crucial for success. These fundamental infrastructure components often seem simple, but they're frequently the source of deployment issues and troubleshooting headaches. Here's what you need to know before starting your VCF deployment.

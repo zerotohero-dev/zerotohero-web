@@ -12,7 +12,7 @@ title = "Pivoting Your Career?"
 date = "2021-10-02"
 
 [taxonomies]
-tags = ["highlights"]
+tags = ["highlights","cloud-native"]
 +++
 
 {{img(

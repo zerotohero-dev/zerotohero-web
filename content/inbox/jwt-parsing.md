@@ -13,7 +13,7 @@ description = "Parsing JWT Claims in Go: A Practical Guidee"
 date = "2024-12-10"
 
 [taxonomies]
-tags = ["go","inbox","security"]
+tags = ["go","inbox","security","shell-scripting","git","authentication"]
 +++
 
 

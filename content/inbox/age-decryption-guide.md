@@ -13,7 +13,7 @@ description = "How to Decrypt Files Using age - A Quick Guideg"
 date = "2024-12-03"
 
 [taxonomies]
-tags = ["inbox","security"]
+tags = ["inbox","security","shell-scripting","encryption","git"]
 +++
 
 Age is a modern file encryption tool that's simple yet powerful. Here's how to decrypt age-encrypted files using a secret key.

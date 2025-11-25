@@ -12,7 +12,7 @@ title = "What's Your Plan?"
 date = "2021-04-13"
 
 [taxonomies]
-tags = ["highlights"]
+tags = ["highlights","authentication","infrastructure","kubernetes"]
 +++
 
 {{img(

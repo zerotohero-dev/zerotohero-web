@@ -1,0 +1,13 @@
+configuring-vcsa-stage-2
+deploying-vcsa
+installing-vcsa-stage-1
+understanding-vcsa
+vcenter-backup
+vcenter-gui-setup-guide
+vcf-bundle
+vcf-dns-ntp
+vcf-intro
+vcf-workload-domain-create
+vcf-workload-domains
+vsphere-to-vcf-migration
+whats-new-in-vsphere-8

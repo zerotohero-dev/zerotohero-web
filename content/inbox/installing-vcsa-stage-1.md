@@ -13,7 +13,7 @@ description = "Installing VMware vCenter Server Appliance (vCSA): Stage 1 Deploy
 date = "2024-12-12"
 
 [taxonomies]
-tags = ["VCF","inbox"]
+tags = ["VCF","inbox","shell-scripting","infrastructure","kubernetes"]
 +++
 
 This guide walks through the first stage of deploying vCenter Server Appliance (vCSA) on an ESXi host. Like any critical infrastructure deployment, proper preparation and verification at each step is essential for success.

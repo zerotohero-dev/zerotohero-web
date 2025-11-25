@@ -13,7 +13,7 @@ description = "Implementing Flexible Authentication Strategies in Go: A Real-Wor
 date = "2024-12-10"
 
 [taxonomies]
-tags = ["go","inbox","secrets-management","security","tls"]
+tags = ["go","inbox","secrets-management","security","tls","authentication","development","cloud-native","infrastructure","kubernetes"]
 +++
 
 In modern cloud-native applications, authentication requirements can vary significantly across different environments and use cases. In this post, I'll share how we implemented a flexible authentication system for a webhook server that integrates with Kubernetes External Secrets Operator (ESO).

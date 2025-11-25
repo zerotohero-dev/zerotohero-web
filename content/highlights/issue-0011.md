@@ -12,7 +12,7 @@ title = "Assemble Your Personal Board of Advisors"
 date = "2021-07-31"
 
 [taxonomies]
-tags = ["highlights"]
+tags = ["highlights","shell-scripting","encryption","infrastructure","kubernetes"]
 +++
 
 {{img(

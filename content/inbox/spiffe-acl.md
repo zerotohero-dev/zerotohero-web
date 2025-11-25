@@ -13,7 +13,7 @@ description = "Building an ACL System for SPIFFE-based Secrets Store"
 date = "2024-11-24"
 
 [taxonomies]
-tags = ["SPIFFE","go","inbox"]
+tags = ["SPIFFE","go","inbox","authentication","infrastructure","kubernetes"]
 +++
 
 Managing secrets in a microservices environment is challenging. While tools like HashiCorp Vault are excellent, sometimes you need a lighter solution that integrates deeply with your existing SPIFFE-based identity system. In this post, we'll build an ACL (Access Control List) system for a SPIFFE-aware secrets store.

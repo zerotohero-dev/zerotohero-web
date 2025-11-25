@@ -13,7 +13,7 @@ description = "Snippet/Draft: systemd-networkd-wait-online.service Waits Too Lon
 date = "2025-07-13"
 
 [taxonomies]
-tags = ["inbox","linux"]
+tags = ["inbox","linux","shell-scripting"]
 +++
 
 Quick fix: Disable the service (if you don't need to wait for network at boot):

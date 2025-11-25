@@ -12,7 +12,7 @@ title = "Attention, Intention: Compassion"
 date = "2022-01-07"
 
 [taxonomies]
-tags = ["highlights"]
+tags = ["highlights","infrastructure"]
 +++
 
 {{img(

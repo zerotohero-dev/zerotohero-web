@@ -1015,6 +1015,124 @@ The External Secrets Operator continuously reconciles resources. When it sees yo
         
     </entry>
     <entry xml:lang="en">
+        <title>CSR vs Direct Public Key Exchange: When Do You Really Need a CSR?</title>
+        <published>2024-12-16T00:00:00+00:00</published>
+        <updated>2024-12-16T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/csr/"/>
+        <id>https://zerotohero.dev/inbox/csr/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/csr/">&lt;p&gt;When working with secure systems, a common scenario involves Server A obtaining a certificate signed by Server B (acting as a Certificate Authority, or CA). But if the ultimate goal is to exchange public keys so that JWTs (JSON Web Tokens) signed by Server A can be verified by Server B, you might wonder: &lt;em&gt;Do I really need to use a CSR (Certificate Signing Request)? Can’t I just send my public key directly?&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;The answer is: &lt;strong&gt;it depends on your use case and trust model&lt;&#x2F;strong&gt;. Here’s a breakdown of why you might still want to use a CSR, and when you can skip it.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;what-is-a-csr&quot;&gt;What Is a CSR?&lt;&#x2F;h2&gt;
+&lt;p&gt;A CSR (Certificate Signing Request) is a formal request for a certificate that includes:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;A Public Key&lt;&#x2F;strong&gt;: The key for which the certificate is requested.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Metadata&lt;&#x2F;strong&gt;: Information such as the organization name, domain, and other identifying details.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;A Digital Signature&lt;&#x2F;strong&gt;: The CSR is signed using the private key corresponding to the public key, proving ownership of the key pair.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;The CA (Server B in this case) validates the CSR and signs it, issuing a certificate that binds the public key to the metadata and ensures trustworthiness.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;key-differences-csr-vs-direct-public-key-exchange&quot;&gt;Key Differences: CSR vs Direct Public Key Exchange&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;1-csr-purpose&quot;&gt;&lt;strong&gt;1. CSR Purpose&lt;&#x2F;strong&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;A CSR isn’t just about sending a public key. It’s a mechanism to:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Verify the &lt;strong&gt;ownership&lt;&#x2F;strong&gt; of the private key.&lt;&#x2F;li&gt;
+&lt;li&gt;Attach additional &lt;strong&gt;identity information&lt;&#x2F;strong&gt; (e.g., the name or domain of the entity requesting the certificate).&lt;&#x2F;li&gt;
+&lt;li&gt;Enable a &lt;strong&gt;trusted certificate chain&lt;&#x2F;strong&gt;, which simplifies verification in distributed systems.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;2-direct-public-key-exchange&quot;&gt;&lt;strong&gt;2. Direct Public Key Exchange&lt;&#x2F;strong&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;You can directly send a public key to Server B without using a CSR. In this approach:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Server B can use the received public key to verify JWTs signed by Server A’s private key.&lt;&#x2F;li&gt;
+&lt;li&gt;There’s no built-in identity validation, certificate lifecycle management, or chain of trust.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;While this works in certain scenarios, it has limitations and security trade-offs.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;when-to-use-a-csr&quot;&gt;When to Use a CSR&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;advantages-of-using-a-csr&quot;&gt;&lt;strong&gt;Advantages of Using a CSR&lt;&#x2F;strong&gt;&lt;&#x2F;h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Identity Validation&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;The CSR ensures that the entity requesting the certificate (Server A) owns the corresponding private key and has been validated by a trusted CA (Server B).&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Certificate Lifecycle Management&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Certificates can be renewed, revoked, and managed systematically. In contrast, a direct public key exchange lacks this infrastructure.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Chain of Trust&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;A certificate issued via a CSR establishes a trusted relationship between Server A and Server B. This is especially important in environments with multiple parties or external systems.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Security Best Practices&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Using certificates aligns with widely accepted security standards, such as TLS and mutual authentication.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h3 id=&quot;use-case&quot;&gt;&lt;strong&gt;Use Case&lt;&#x2F;strong&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;If Server A and Server B are communicating in a public or distributed environment, or if Server B needs to validate Server A’s identity, &lt;strong&gt;using a CSR and signed certificate is the better choice&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;when-a-direct-public-key-exchange-is-enough&quot;&gt;When a Direct Public Key Exchange Is Enough&lt;&#x2F;h2&gt;
+&lt;p&gt;In simpler or controlled environments, you might not need the full CSR process. For example:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Closed Systems&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;If Server A and Server B are part of the same internal system, and there’s no need for third-party validation, you can directly exchange public keys.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Simplified Trust&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;If Server B already trusts Server A, sending the public key directly might be sufficient. Server B can store and use the key to verify JWTs without additional steps.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;No Metadata Needed&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;If no identity metadata (e.g., domain name or organization) is required, the CSR adds little value.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h3 id=&quot;trade-offs&quot;&gt;&lt;strong&gt;Trade-Offs&lt;&#x2F;strong&gt;&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;No Verification&lt;&#x2F;strong&gt;: Server B must blindly trust the received public key.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;No Revocation or Renewal&lt;&#x2F;strong&gt;: Directly exchanged public keys lack lifecycle management.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;No Chain of Trust&lt;&#x2F;strong&gt;: There’s no mechanism to validate the authenticity of the public key.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;summary-to-csr-or-not-to-csr&quot;&gt;Summary: To CSR or Not to CSR?&lt;&#x2F;h2&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;&lt;strong&gt;Scenario&lt;&#x2F;strong&gt;&lt;&#x2F;th&gt;&lt;th&gt;&lt;strong&gt;CSR Required?&lt;&#x2F;strong&gt;&lt;&#x2F;th&gt;&lt;th&gt;&lt;strong&gt;Why&lt;&#x2F;strong&gt;&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;Public or distributed systems&lt;&#x2F;td&gt;&lt;td&gt;Yes&lt;&#x2F;td&gt;&lt;td&gt;Need for identity validation, lifecycle management, and chain of trust.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Closed or internal systems&lt;&#x2F;td&gt;&lt;td&gt;No&lt;&#x2F;td&gt;&lt;td&gt;Trust is already established, and the CSR process adds unnecessary overhead.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Need for lifecycle management (renewal, etc.)&lt;&#x2F;td&gt;&lt;td&gt;Yes&lt;&#x2F;td&gt;&lt;td&gt;Certificates provide systematic management of trust material.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Minimalistic trust exchange&lt;&#x2F;td&gt;&lt;td&gt;No&lt;&#x2F;td&gt;&lt;td&gt;Direct public key exchange is simpler and sufficient for closed systems.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;While skipping the CSR and directly exchanging public keys can work in simpler or internal systems, the CSR process provides essential security, validation, and lifecycle benefits in more complex or public-facing environments. The decision ultimately depends on the &lt;strong&gt;trust model&lt;&#x2F;strong&gt;, &lt;strong&gt;security requirements&lt;&#x2F;strong&gt;, and &lt;strong&gt;operational context&lt;&#x2F;strong&gt; of your system.&lt;&#x2F;p&gt;
+&lt;p&gt;For secure systems, especially those that involve public networks or external parties, using a CSR to obtain a signed certificate is the more robust and widely accepted approach.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
         <title>Establishing SPIFFE Federation Between Kubernetes Clusters</title>
         <published>2024-12-16T00:00:00+00:00</published>
         <updated>2024-12-16T00:00:00+00:00</updated>
@@ -4466,6 +4584,484 @@ Use the file properties dialog or NTFS permissions to restrict access to specifi
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
 &lt;p&gt;SQLite’s approach to security might be different from what you’re used to, but it’s not inherently less secure. By understanding its serverless nature and implementing appropriate security measures at the file system and application levels, you can build robust and secure applications with SQLite. The key is choosing the right security measures for your specific use case and implementing them correctly.&lt;&#x2F;p&gt;
 &lt;p&gt;Remember: security is only as strong as its weakest link. Always consider your entire application’s security architecture, not just database access control.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Understanding the &#x27;Superfluous Response.WriteHeader&#x27; Error in Go</title>
+        <published>2024-11-24T00:00:00+00:00</published>
+        <updated>2024-11-24T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/go-http-headers/"/>
+        <id>https://zerotohero.dev/inbox/go-http-headers/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/go-http-headers/">&lt;p&gt;When working with Go’s HTTP server, you might encounter the cryptic error message “http: superfluous response.WriteHeader”. This error occurs when your code attempts to modify response headers after the response has already been written. Let’s dive into what causes this and how to fix it.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-problem&quot;&gt;The Problem&lt;&#x2F;h2&gt;
+&lt;p&gt;Consider this seemingly straightforward JWT validation middleware:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;ValidateJwt&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;w http&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;ResponseWriter&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;r &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;http&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;Request&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;adminToken &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;string&lt;&#x2F;span&gt;&lt;span&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;bool &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;ensureValidJwt&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;w&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;r&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;adminToken&lt;&#x2F;span&gt;&lt;span&gt;) {
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;true
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Error occurs here
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;w&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Header&lt;&#x2F;span&gt;&lt;span&gt;().&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Set&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Content-Type&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;application&#x2F;json&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;w&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;WriteHeader&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;http&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;StatusUnauthorized&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;    
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;_&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;io&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;WriteString&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;w&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;`{&amp;quot;status&amp;quot;: &amp;quot;unauthorized&amp;quot;}`&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;log&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Log&lt;&#x2F;span&gt;&lt;span&gt;().&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Error&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;routeDeleteSecret&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;msg&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Problem writing response&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;err&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;errorString&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;false
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;At first glance, this code looks correct. We’re:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Validating the JWT&lt;&#x2F;li&gt;
+&lt;li&gt;Setting the content type header&lt;&#x2F;li&gt;
+&lt;li&gt;Setting the status code&lt;&#x2F;li&gt;
+&lt;li&gt;Writing the response body&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;However, if you’re getting the “superfluous response.WriteHeader” error, it means something is already writing to the response before these lines execute.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;understanding-the-http-response-lifecycle&quot;&gt;Understanding the HTTP Response Lifecycle&lt;&#x2F;h2&gt;
+&lt;p&gt;In Go’s HTTP server, there’s a specific order of operations when sending responses:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Set headers (&lt;code&gt;w.Header().Set()&lt;&#x2F;code&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;Set status code (&lt;code&gt;w.WriteHeader()&lt;&#x2F;code&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;Write body (&lt;code&gt;w.Write()&lt;&#x2F;code&gt; or &lt;code&gt;io.WriteString()&lt;&#x2F;code&gt;)&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;Once you perform step 2 or 3, you can’t go back and modify headers or status codes. It’s a one-way street.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;common-causes&quot;&gt;Common Causes&lt;&#x2F;h2&gt;
+&lt;p&gt;The most frequent cause of this error is middleware or helper functions that write to the response writer before returning. In our example, the likely culprit is &lt;code&gt;ensureValidJwt()&lt;&#x2F;code&gt;. It’s probably writing its own response before returning &lt;code&gt;false&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;solutions&quot;&gt;Solutions&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;option-1-single-point-of-response&quot;&gt;Option 1: Single Point of Response&lt;&#x2F;h3&gt;
+&lt;p&gt;Modify your validation function to only handle validation, not responses:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;validateJwtToken&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;r &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;http&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;Request&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;adminToken &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;string&lt;&#x2F;span&gt;&lt;span&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;bool &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Only validate the token, don&amp;#39;t write responses
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Return true if valid, false if invalid
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;ValidateJwt&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;w http&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;ResponseWriter&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;r &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;http&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;Request&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;adminToken &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;string&lt;&#x2F;span&gt;&lt;span&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;bool &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;validateJwtToken&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;r&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;adminToken&lt;&#x2F;span&gt;&lt;span&gt;) {
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;true
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;w&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Header&lt;&#x2F;span&gt;&lt;span&gt;().&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Set&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Content-Type&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;application&#x2F;json&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;w&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;WriteHeader&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;http&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;StatusUnauthorized&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;_&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;io&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;WriteString&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;w&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;`{&amp;quot;status&amp;quot;: &amp;quot;unauthorized&amp;quot;}`&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;log&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Log&lt;&#x2F;span&gt;&lt;span&gt;().&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Error&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;routeDeleteSecret&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;msg&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Problem writing response&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;err&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;errorString&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;false
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;option-2-consistent-response-handling&quot;&gt;Option 2: Consistent Response Handling&lt;&#x2F;h3&gt;
+&lt;p&gt;If you need the helper function to handle responses, make it responsible for all response writing:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;ensureValidJwt&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;w http&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;ResponseWriter&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;r &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;http&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;Request&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;adminToken &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;string&lt;&#x2F;span&gt;&lt;span&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;bool &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; If invalid, handle the entire response here
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;isValid &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;w&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Header&lt;&#x2F;span&gt;&lt;span&gt;().&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Set&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Content-Type&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;application&#x2F;json&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;w&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;WriteHeader&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;http&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;StatusUnauthorized&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;_&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;io&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;WriteString&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;w&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;`{&amp;quot;status&amp;quot;: &amp;quot;unauthorized&amp;quot;}`&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;false
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;true
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;ValidateJwt&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;w http&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;ResponseWriter&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;r &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;http&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;Request&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;adminToken &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;string&lt;&#x2F;span&gt;&lt;span&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;bool &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Let ensureValidJwt handle all response writing
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;ensureValidJwt&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;w&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;r&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;adminToken&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;best-practices&quot;&gt;Best Practices&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Single Responsibility&lt;&#x2F;strong&gt;: Decide whether a function validates or writes responses, not both&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Clear Documentation&lt;&#x2F;strong&gt;: Document whether your functions write to the response writer&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Consistent Patterns&lt;&#x2F;strong&gt;: Stick to one pattern throughout your codebase&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Early Returns&lt;&#x2F;strong&gt;: Handle error cases early and return to avoid nested conditions&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;The “superfluous response.WriteHeader” error is Go’s way of telling you that you’re trying to modify a response that’s already been sent. By understanding the HTTP response lifecycle and maintaining clear responsibilities in your functions, you can avoid this error and write more maintainable code.&lt;&#x2F;p&gt;
+&lt;p&gt;Remember: Headers → Status → Body. Once you start writing the response, there’s no going back to modify headers or status codes.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Zero to Prod in Half an Hour: Part 11 --- Implementing Authentication Handlers</title>
+        <published>2022-02-10T00:00:00+00:00</published>
+        <updated>2022-02-10T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/zero-to-prod/implementing-authentication-handlers/"/>
+        <id>https://zerotohero.dev/zero-to-prod/implementing-authentication-handlers/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/zero-to-prod/implementing-authentication-handlers/">
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;authz.png&quot; alt=&quot;Zero to Prod in Half an Hour: Part 11 --- Implementing Authentication Handlers&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Zero to Prod in Half an Hour: Part 11 --- Implementing Authentication Handlers&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;Having implemented our middlewares, now it’s time to implement the missing
+OAuth0 callback, login, and logout handlers.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
+&lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;cvYx4AQa6TE?si=175ocra9Vv_9UPFe&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
+    title=&quot;Zero to Prod in Half an Hour: Part 11 --- Implementing Authentication Handlers&quot;&gt;&lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;Zero to Prod in Half an Hour: Part 11 --- Implementing Authentication Handlers&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;playlist&quot;&gt;Playlist&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;an-overview-of-fizzbuzz-pro&#x2F;&quot;&gt;Part 1: An Overview of FizzBuzz Pro&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;generating-static-html&#x2F;&quot;&gt;Part 2: Generating Static HTML&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;mutating-the-generated-html-files&#x2F;&quot;&gt;Part 3: Mutating the Generated HTML Files&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;app-authentication-overview&#x2F;&quot;&gt;Part 4: App Authentication Overview&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;implementing-an-oidc-authenticator&#x2F;&quot;&gt;Part 5: Implementing an OIDC Authenticator&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;serving-web-pages&#x2F;&quot;&gt;Part 6: Serving Web Pages&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;a-mild-introduction-to-middlewares&#x2F;&quot;&gt;Part 7: A Mild Introduction to Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;authenticate-all-the-things&#x2F;&quot;&gt;Part 8: Authenticate All the Things&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;thinking-in-middlewares&#x2F;&quot;&gt;Part 9: Thinking in Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;authentication-and-subscription-middlewares&#x2F;&quot;&gt;Part 10: Authentication and Subscription Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Part 11: Implementing Authentication Handlers&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;the-final-touches&#x2F;&quot;&gt;Part 12: The Final Touches&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;containerizing-our-application&#x2F;&quot;&gt;Part 13: Containerizing Our Application&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;onwards-to-kubernetes&#x2F;&quot;&gt;Part 14: Onwards to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;creating-ecr-repositories&#x2F;&quot;&gt;Creating ECR Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;deploying-a-microservice-to-k8s&#x2F;&quot;&gt;Deploying a Microservice to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizz-that-buzz&#x2F;&quot;&gt;Fizz that Buzz&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-hla&#x2F;&quot;&gt;FizzBuzz Pro High-Level Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-repos&#x2F;&quot;&gt;FizzBuzz Pro Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;tools-and-technologies-mentioned&quot;&gt;Tools and Technologies Mentioned&lt;&#x2F;h2&gt;
+&lt;p&gt;Here are the tools and technologies that were mentioned in the video, along with
+related articles and other helpful links.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;pkg.go.dev&#x2F;github.com&#x2F;gin-gonic&#x2F;gin#HandlerFunc&quot;&gt;Gin.HandlerFunc&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;auth0.com&#x2F;&quot;&gt;Auth0&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;auth0.com&#x2F;docs&#x2F;get-started&#x2F;authentication-and-authorization-flow&#x2F;which-oauth-2-0-flow-should-i-use&quot;&gt;Which OAuth 2.0 Flow Should I Use?&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Higher-order_function&quot;&gt;Higher-Order Function&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jwt.io&#x2F;introduction&quot;&gt;JSON Web Token Introduction&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;datatracker.ietf.org&#x2F;doc&#x2F;html&#x2F;rfc7519&quot;&gt;RFC 7519 — JSON Web Token (JWT)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;read-the-source&quot;&gt;Read The Source&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;assets.zerotohero.dev&#x2F;zero-to-prod-in-30&#x2F;zero-to-prod-in-30.zip&quot;&gt;Download the source code (&lt;em&gt;114kb zip
+archive&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;hr &#x2F;&gt;
+&lt;p&gt;Until the next lecture… May the source be with you 🦄.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Zero to Prod in Half an Hour: Part 8 --- Authenticate All the Things</title>
+        <published>2022-02-09T00:00:00+00:00</published>
+        <updated>2022-02-09T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/zero-to-prod/authenticate-all-the-things/"/>
+        <id>https://zerotohero.dev/zero-to-prod/authenticate-all-the-things/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/zero-to-prod/authenticate-all-the-things/">
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;locket.png&quot; alt=&quot;Zero to Prod in Half an Hour: Part 8 --- Authenticate All the Things&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Zero to Prod in Half an Hour: Part 8 --- Authenticate All the Things&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;We’ll define placeholders for the routes we want to implement later. And then
+we’ll implement a MongoDB-backed session store to be used in our Auth0 identity
+control plane.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
+&lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;8mbVPEl9iio?si=HtvukSA5xuQrNLvP&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
+    title=&quot;Zero to Prod in Half an Hour: Part 8 --- Authenticate All the Things&quot;&gt;&lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;Zero to Prod in Half an Hour: Part 8 --- Authenticate All the Things&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;playlist&quot;&gt;Playlist&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;an-overview-of-fizzbuzz-pro&#x2F;&quot;&gt;Part 1: An Overview of FizzBuzz Pro&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;generating-static-html&#x2F;&quot;&gt;Part 2: Generating Static HTML&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;mutating-the-generated-html-files&#x2F;&quot;&gt;Part 3: Mutating the Generated HTML Files&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;app-authentication-overview&#x2F;&quot;&gt;Part 4: App Authentication Overview&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;implementing-an-oidc-authenticator&#x2F;&quot;&gt;Part 5: Implementing an OIDC Authenticator&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;serving-web-pages&#x2F;&quot;&gt;Part 6: Serving Web Pages&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;a-mild-introduction-to-middlewares&#x2F;&quot;&gt;Part 7: A Mild Introduction to Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Part 8: Authenticate All the Things&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;thinking-in-middlewares&#x2F;&quot;&gt;Part 9: Thinking in Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;authentication-and-subscription-middlewares&#x2F;&quot;&gt;Part 10: Authentication and Subscription Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;implementing-authentication-handlers&#x2F;&quot;&gt;Part 11: Implementing Authentication Handlers&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;the-final-touches&#x2F;&quot;&gt;Part 12: The Final Touches&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;containerizing-our-application&#x2F;&quot;&gt;Part 13: Containerizing Our Application&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;onwards-to-kubernetes&#x2F;&quot;&gt;Part 14: Onwards to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;creating-ecr-repositories&#x2F;&quot;&gt;Creating ECR Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;deploying-a-microservice-to-k8s&#x2F;&quot;&gt;Deploying a Microservice to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizz-that-buzz&#x2F;&quot;&gt;Fizz that Buzz&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-hla&#x2F;&quot;&gt;FizzBuzz Pro High-Level Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-repos&#x2F;&quot;&gt;FizzBuzz Pro Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;tools-and-technologies-mentioned&quot;&gt;Tools and Technologies Mentioned&lt;&#x2F;h2&gt;
+&lt;p&gt;Here are the tools and technologies that were mentioned in the video, along with
+related articles and other helpful links.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;auth0.com&#x2F;&quot;&gt;Auth0&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;oauth.net&#x2F;2&#x2F;&quot;&gt;OAuth 2.0&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;gumroad.com&#x2F;&quot;&gt;Gumroad&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;app.gumroad.com&#x2F;api&quot;&gt;Gumroad API&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;pkg.go.dev&#x2F;encoding&#x2F;gob&quot;&gt;gob Package&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jwt.io&#x2F;&quot;&gt;JSON Web Tokens&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;auth0.com&#x2F;docs&#x2F;secure&#x2F;tokens&#x2F;json-web-tokens&#x2F;json-web-token-claims&quot;&gt;Json Web Token Claims&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.mongodb.com&#x2F;&quot;&gt;MongoDB&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.mongodb.com&#x2F;cloud&#x2F;atlas&quot;&gt;MongoDB Atlas&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.mongodb.com&#x2F;try&#x2F;download&#x2F;community&quot;&gt;MongoDB Community Server&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;pkg.go.dev&#x2F;github.com&#x2F;globalsign&#x2F;mgo&quot;&gt;mgo Package&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;gin-contrib&#x2F;sessions&quot;&gt;Gin Middleware for Session Management&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;read-the-source&quot;&gt;Read The Source&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;assets.zerotohero.dev&#x2F;zero-to-prod-in-30&#x2F;zero-to-prod-in-30.zip&quot;&gt;Download the source code (&lt;em&gt;114kb zip
+archive&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;hr &#x2F;&gt;
+&lt;p&gt;Until the next lecture… May the source be with you 🦄.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Zero to Prod in Half an Hour: Part 4 --- App Authentication Overview</title>
+        <published>2022-01-11T00:00:00+00:00</published>
+        <updated>2022-01-11T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/zero-to-prod/app-authentication-overview/"/>
+        <id>https://zerotohero.dev/zero-to-prod/app-authentication-overview/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/zero-to-prod/app-authentication-overview/">
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;papers.png&quot; alt=&quot;Zero to Prod in Half an Hour: Part 4 --- App Authentication Overview&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Zero to Prod in Half an Hour: Part 4 --- App Authentication Overview&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;In this section, we’ll create a blank project for your web application, then
+overview how we can implement an &lt;strong&gt;Auth0&lt;&#x2F;strong&gt; Authenticator for our application to
+be used in our &lt;strong&gt;OAuth 2.0&lt;&#x2F;strong&gt; authentication &lt;strong&gt;login&lt;&#x2F;strong&gt;, &lt;strong&gt;callback&lt;&#x2F;strong&gt;, and *
+&lt;em&gt;logout&lt;&#x2F;em&gt;* routes.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
+&lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;MJvtlWGiaC0?si=yBgEWt-28-O0Vn94&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
+    title=&quot;Zero to Prod in Half an Hour: Part 4 --- App Authentication Overview&quot;&gt;&lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;Zero to Prod in Half an Hour: Part 4 --- App Authentication Overview&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;playlist&quot;&gt;Playlist&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;an-overview-of-fizzbuzz-pro&#x2F;&quot;&gt;Part 1: An Overview of FizzBuzz Pro&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;generating-static-html&#x2F;&quot;&gt;Part 2: Generating Static HTML&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;mutating-the-generated-html-files&#x2F;&quot;&gt;Part 3: Mutating the Generated HTML Files&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Part 4: App Authentication Overview&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;implementing-an-oidc-authenticator&#x2F;&quot;&gt;Part 5: Implementing an OIDC Authenticator&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;serving-web-pages&#x2F;&quot;&gt;Part 6: Serving Web Pages&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;a-mild-introduction-to-middlewares&#x2F;&quot;&gt;Part 7: A Mild Introduction to Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;authenticate-all-the-things&#x2F;&quot;&gt;Part 8: Authenticate All the Things&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;thinking-in-middlewares&#x2F;&quot;&gt;Part 9: Thinking in Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;authentication-and-subscription-middlewares&#x2F;&quot;&gt;Part 10: Authentication and Subscription Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;implementing-authentication-handlers&#x2F;&quot;&gt;Part 11: Implementing Authentication Handlers&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;the-final-touches&#x2F;&quot;&gt;Part 12: The Final Touches&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;containerizing-our-application&#x2F;&quot;&gt;Part 13: Containerizing Our Application&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;onwards-to-kubernetes&#x2F;&quot;&gt;Part 14: Onwards to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;creating-ecr-repositories&#x2F;&quot;&gt;Creating ECR Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;deploying-a-microservice-to-k8s&#x2F;&quot;&gt;Deploying a Microservice to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizz-that-buzz&#x2F;&quot;&gt;Fizz that Buzz&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-hla&#x2F;&quot;&gt;FizzBuzz Pro High-Level Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-repos&#x2F;&quot;&gt;FizzBuzz Pro Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;tools-and-technologies-mentioned&quot;&gt;Tools and Technologies Mentioned&lt;&#x2F;h2&gt;
+&lt;p&gt;Here are the tools and technologies that were mentioned in the video, along with
+related articles and other helpful links.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;oauth.net&#x2F;2&#x2F;&quot;&gt;OAuth 2.0&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.digitalocean.com&#x2F;community&#x2F;tutorials&#x2F;an-introduction-to-oauth-2&quot;&gt;How Does OAuth 2.0 Work?&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;auth0.com&#x2F;&quot;&gt;Auth0&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jwt.io&#x2F;&quot;&gt;JSON Web Tokens (&lt;em&gt;JWT&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;openid.net&#x2F;connect&#x2F;&quot;&gt;OpenID Connect (&lt;em&gt;OIDC&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;coreos&#x2F;go-oidc&quot;&gt;Go OIDC&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;golang&#x2F;oauth2&quot;&gt;Go OAuth2 Package&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;oauth2-authentication-sequence-diagram&quot;&gt;OAuth2 Authentication Sequence Diagram&lt;&#x2F;h2&gt;
+&lt;p&gt;Here’s the sequence diagram that the video talked about:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;2022&#x2F;01&#x2F;Screen-Shot-2022-01-10-at-5.00.04-PM.png&quot; alt=&quot;OAuth2 Authentication Sequence Diagram&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;read-the-source&quot;&gt;Read The Source&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;assets.zerotohero.dev&#x2F;zero-to-prod-in-30&#x2F;zero-to-prod-in-30.zip&quot;&gt;Download the source code (&lt;em&gt;114kb zip
+archive&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;hr &#x2F;&gt;
+&lt;p&gt;Until the next lecture… May the source be with you 🦄.&lt;&#x2F;p&gt;
 </content>
         
     </entry>

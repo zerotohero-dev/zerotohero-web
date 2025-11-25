@@ -12,7 +12,7 @@ title = "Here Are the Repositories, Tools, and Services We'll Use for FizzBuzz P
 date = "2021-06-05"
 
 [taxonomies]
-tags = []
+tags = ["architecture","git"]
 +++
 
 {{img(

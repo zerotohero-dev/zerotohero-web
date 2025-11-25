@@ -12,7 +12,7 @@ title = "Who Else Journals Daily?"
 date = "2021-06-26"
 
 [taxonomies]
-tags = ["highlights"]
+tags = ["highlights","cloud-native","infrastructure"]
 +++
 
 {{img(

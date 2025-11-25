@@ -12,7 +12,7 @@ title = "Make Your Code Leaner By Extracting Methods"
 date = "2021-06-06"
 
 [taxonomies]
-tags = ["development","go","tips"]
+tags = ["development","go","tips","encryption"]
 +++
 
 {{img(

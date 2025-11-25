@@ -12,7 +12,7 @@ title = "Earn the Promotion You Deserve"
 date = "2021-06-18"
 
 [taxonomies]
-tags = ["highlights"]
+tags = ["highlights","architecture"]
 +++
 
 {{img(

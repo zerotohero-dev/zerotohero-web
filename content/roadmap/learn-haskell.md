@@ -12,7 +12,7 @@ title = "Want to Learn JavaScript? Learn Haskell First"
 date = "2021-11-09"
 
 [taxonomies]
-tags = ["development","roadmap"]
+tags = ["development","roadmap","git"]
 +++
 
 ![Want to Learn JavaScript? Learn Haskell First](/images/size/w1200/2024/03/functinal.png)

@@ -12,7 +12,7 @@ title = "Scaling Your Node.js API Like a Boss"
 date = "2021-09-27"
 
 [taxonomies]
-tags = ["kubernetes","tips"]
+tags = ["kubernetes","tips","architecture","encryption"]
 +++
 
 {{img(

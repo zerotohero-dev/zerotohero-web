@@ -13,7 +13,7 @@ description = "How to Export Kubernetes Secrets as JSON: A Complete Guide"
 date = "2024-12-12"
 
 [taxonomies]
-tags = ["inbox","kubernetes","secrets-management","security"]
+tags = ["inbox","kubernetes","secrets-management","security","shell-scripting","git"]
 +++
 
 When working with Kubernetes secrets, you may need to export them in a format that can be version controlled or transferred between clusters. This guide will show you how to export Kubernetes secrets as JSON while preserving important metadata like labels and annotations.

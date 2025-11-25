@@ -13,7 +13,7 @@ description = "Working with User Home Directory in Go: A Security-First Approach
 date = "2024-11-24"
 
 [taxonomies]
-tags = ["inbox","go"]
+tags = ["inbox","go","linux"]
 +++
 
 # 

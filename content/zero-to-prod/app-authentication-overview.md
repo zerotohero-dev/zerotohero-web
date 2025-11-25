@@ -12,7 +12,7 @@ title = "Zero to Prod in Half an Hour: Part 4 --- App Authentication Overview"
 date = "2022-01-11"
 
 [taxonomies]
-tags = []
+tags = ["authentication","security"]
 +++
 
 {{img(

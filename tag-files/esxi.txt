@@ -1,0 +1,13 @@
+deploying-vcsa
+esxi-default-networking
+esxi-initial-configuration
+esxi-installation
+esxi-web-config
+installing-vcsa-stage-1
+understanding-vcsa
+vcenter-gui-setup-guide
+vcf-bundle
+vcf-dns-ntp
+vcf-intro
+vcf-workload-domains
+whats-new-in-vsphere-8

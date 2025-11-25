@@ -1,0 +1,7 @@
+cluster-secrets-store
+issue-0025
+keep-your-secrets
+secure-secret-go-server-tls
+tls-san
+vmware-secrets-manager
+vsecm-operator

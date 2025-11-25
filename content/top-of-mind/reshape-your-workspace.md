@@ -12,7 +12,7 @@ title = "Reshape Your Workspace, Reshape Your Future"
 date = "2023-07-12"
 
 [taxonomies]
-tags = ["productivity","top-of-mind"]
+tags = ["productivity","top-of-mind","setups"]
 +++
 
 ![Reshape Your Workspace, Reshape Your Future](/images/size/w1200/2024/03/worspace.png)

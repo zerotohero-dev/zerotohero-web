@@ -12,7 +12,7 @@ title = "mTLS With SPIRE: Part 5: Containerizing the Client App"
 date = "2022-08-19"
 
 [taxonomies]
-tags = ["SPIFFE","SPIRE"]
+tags = ["SPIFFE","SPIRE","cloud-native","git","kubernetes"]
 +++
 
 {{img(

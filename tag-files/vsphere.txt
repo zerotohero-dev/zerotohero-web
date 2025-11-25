@@ -1,0 +1,12 @@
+add-vsphere-clusters-in-vcf
+configuring-vcsa-stage-2
+expanding-vsphere-clusters
+sddc-manager-in-vcf
+understanding-vcsa
+vcenter-gui-setup-guide
+vcf-for-vsphere-admins
+vcf-intro
+vcf-workload-domain-create
+vcf-workload-domains
+vsphere-to-vcf-migration
+whats-new-in-vsphere-8

@@ -12,7 +12,7 @@ title = "Master Your vim"
 date = "2021-11-27"
 
 [taxonomies]
-tags = ["development","productivity","roadmap"]
+tags = ["development","productivity","roadmap","linux"]
 +++
 
 {{img(

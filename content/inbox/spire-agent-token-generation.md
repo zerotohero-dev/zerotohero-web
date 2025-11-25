@@ -13,7 +13,7 @@ description = "Securely Generating and Storing SPIRE Agent Tokens"
 date = "2024-12-02"
 
 [taxonomies]
-tags = ["SPIFFE","SPIRE","inbox","security"]
+tags = ["SPIFFE","SPIRE","inbox","security","authentication","shell-scripting"]
 +++
 
 SPIRE (the SPIFFE Runtime Environment) requires tokens for agent authentication. Here's a secure way to generate and store these tokens using bash scripting.

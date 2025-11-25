@@ -12,7 +12,7 @@ title = "mTLS With SPIRE: Part 6: Rolling out SPIRE to the Cluster"
 date = "2022-10-19"
 
 [taxonomies]
-tags = ["SPIFFE","SPIRE"]
+tags = ["SPIFFE","SPIRE","git","kubernetes"]
 +++
 
 {{img(

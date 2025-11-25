@@ -13,7 +13,7 @@ description = "Computing SHA256 Hashes for Binary Files: A Quick Guide"
 date = "2024-11-27"
 
 [taxonomies]
-tags = ["development","inbox","linux","security"]
+tags = ["development","inbox","linux","security","architecture","shell-scripting","encryption"]
 +++
 
 When distributing binary files, it's crucial to provide cryptographic hashes so users can verify the integrity of their downloads. This guide shows how to generate SHA256 hashes for multiple binary files across different platforms.

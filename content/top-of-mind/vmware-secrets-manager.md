@@ -12,7 +12,7 @@ title = "Long Live Aegis!"
 date = "2023-08-03"
 
 [taxonomies]
-tags = ["SPIFFE","SPIKE","SPIRE","VCF"]
+tags = ["SPIFFE","SPIKE","SPIRE","VCF","cloud-native","git"]
 +++
 
 ![Long Live Aegis!](/images/size/w1200/2024/03/aegis.png)

@@ -12,7 +12,7 @@ title = "It's Time to Fizz that Buzz"
 date = "2024-05-21"
 
 [taxonomies]
-tags = []
+tags = ["architecture","authentication","top-of-mind"]
 +++
 
 {{img(

@@ -12,7 +12,7 @@ title = "Unleash Your Curiosity: Unlock Your Potential as a Leader"
 date = "2024-05-27"
 
 [taxonomies]
-tags = ["highlights"]
+tags = ["highlights","git"]
 +++
 
 {{img(

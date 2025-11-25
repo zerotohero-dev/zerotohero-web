@@ -638,6 +638,15 @@
         <loc>https://zerotohero.dev/tags/about/</loc>
     </url>
     <url>
+        <loc>https://zerotohero.dev/tags/architecture/</loc>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/tags/authentication/</loc>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/tags/cloud-native/</loc>
+    </url>
+    <url>
         <loc>https://zerotohero.dev/tags/content-creation/</loc>
     </url>
     <url>
@@ -645,6 +654,9 @@
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/development/</loc>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/tags/encryption/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/external-secret-operator/</loc>
@@ -663,6 +675,9 @@
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/inbox/</loc>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/tags/infrastructure/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/kubernetes/</loc>
@@ -687,6 +702,9 @@
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/setups/</loc>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/tags/shell-scripting/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/spiffe/</loc>

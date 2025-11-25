@@ -943,6 +943,153 @@ purpose in my existence:&lt;&#x2F;p&gt;
         
     </entry>
     <entry xml:lang="en">
+        <title>It&#x27;s Time to Fizz that Buzz</title>
+        <published>2024-05-21T00:00:00+00:00</published>
+        <updated>2024-05-21T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/zero-to-prod/fizz-that-buzz/"/>
+        <id>https://zerotohero.dev/zero-to-prod/fizz-that-buzz/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/zero-to-prod/fizz-that-buzz/">
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;Volkan_zelik_data_structures_and_algorithms_but_they_are_alive_c53953fa-c2af-4acf-8494-e5d209cc1029.png&quot; alt=&quot;Technical interviews in the valley require a weird mindset.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Technical interviews in the valley require a weird mindset.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;&#x2F;h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Update 2024-05-21&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;I have archived &lt;strong&gt;FizzBuzz Pro&lt;&#x2F;strong&gt; project for a while. I still have plans
+to repurpose it, but it’s not a priority right now. I’ll keep you posted
+when I start working on it again, or when I reuse some of its content
+and components in other projects.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;In the video at the end of this post, I’m talking about &lt;strong&gt;FizzBuzz Pro&lt;&#x2F;strong&gt;—a
+sister project of &lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;In the video, I’m outlining a high-level architecture of the login flow of the
+project, how it integrates with the &lt;strong&gt;Ghost&lt;&#x2F;strong&gt; content publishing platform as a
+membership provider, and how I’m going to proceed.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;FizzBuzz Pro&lt;&#x2F;strong&gt; is a greenfield project, and as I continue developing and
+productizing it, I will be sharing the entire process with y’all with more
+videos and articles.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The video that I’m sharing here is a ~30min &lt;strong&gt;uncut&lt;&#x2F;strong&gt; recording: It’s as raw
+as it gets.&lt;&#x2F;p&gt;
+&lt;p&gt;I wanted to share it in its entirety, before post-production, where I usually
+relentlessly cut out at least two-third of the video to increase the
+signal-to-noise ratio of it and provide as much value for the time you spend as
+I possibly can.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;the-high-level-overview&quot;&gt;The High Level Overview&lt;&#x2F;h2&gt;
+&lt;p&gt;Here’s the high-level authentication and identity management architecture that
+I’ll be talking about (&lt;em&gt;you can open the image in another tab for a
+higher-resolution version&lt;&#x2F;em&gt;):&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2021&amp;#x2F;05&amp;#x2F;fizzbuzz-pro-verification-flow-2.png&quot; alt=&quot;FizzBuzz Pro authentication high-level overview.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;FizzBuzz Pro authentication high-level overview.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;video-discussion&quot;&gt;Video Discussion&lt;&#x2F;h2&gt;
+&lt;p&gt;So, without further ado, here goes the video.&lt;&#x2F;p&gt;
+&lt;p&gt;Here’s a quick cut where I’m talking about &lt;strong&gt;FizzBuzz Pro&lt;&#x2F;strong&gt; in general:&lt;&#x2F;p&gt;
+&lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;u_I5azPqgg4?si=W9BdGceygaOCYthm&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
+    title=&quot;A brief overview of FizzBuzz Pro.&quot;&gt;&lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;A brief overview of FizzBuzz Pro.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;playlist&quot;&gt;Playlist&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;an-overview-of-fizzbuzz-pro&#x2F;&quot;&gt;Part 1: An Overview of FizzBuzz Pro&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;generating-static-html&#x2F;&quot;&gt;Part 2: Generating Static HTML&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;mutating-the-generated-html-files&#x2F;&quot;&gt;Part 3: Mutating the Generated HTML Files&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;app-authentication-overview&#x2F;&quot;&gt;Part 4: App Authentication Overview&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;implementing-an-oidc-authenticator&#x2F;&quot;&gt;Part 5: Implementing an OIDC Authenticator&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;serving-web-pages&#x2F;&quot;&gt;Part 6: Serving Web Pages&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;a-mild-introduction-to-middlewares&#x2F;&quot;&gt;Part 7: A Mild Introduction to Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;authenticate-all-the-things&#x2F;&quot;&gt;Part 8: Authenticate All the Things&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;thinking-in-middlewares&#x2F;&quot;&gt;Part 9: Thinking in Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;authentication-and-subscription-middlewares&#x2F;&quot;&gt;Part 10: Authentication and Subscription Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;implementing-authentication-handlers&#x2F;&quot;&gt;Part 11: Implementing Authentication Handlers&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;the-final-touches&#x2F;&quot;&gt;Part 12: The Final Touches&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;containerizing-our-application&#x2F;&quot;&gt;Part 13: Containerizing Our Application&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;onwards-to-kubernetes&#x2F;&quot;&gt;Part 14: Onwards to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;creating-ecr-repositories&#x2F;&quot;&gt;Creating ECR Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;deploying-a-microservice-to-k8s&#x2F;&quot;&gt;Deploying a Microservice to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Fizz that Buzz&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-hla&#x2F;&quot;&gt;FizzBuzz Pro High-Level Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-repos&#x2F;&quot;&gt;FizzBuzz Pro Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;on-keeping-things-simple&quot;&gt;On Keeping Things Simple&lt;&#x2F;h2&gt;
+&lt;p&gt;After recording the video, I’ve realized that maybe coupling &lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt; (
+&lt;em&gt;ghost&lt;&#x2F;em&gt;) user accounts with the &lt;strong&gt;FizzBuzz Pro&lt;&#x2F;strong&gt; user accounts is not the best
+way to proceed.&lt;&#x2F;p&gt;
+&lt;p&gt;The architecture I outlined above complicates things without providing any real
+business value. It’s better (&lt;em&gt;and simpler, and easier to maintain&lt;&#x2F;em&gt;) to keep *
+&lt;em&gt;FizzBuzz Pro&lt;&#x2F;em&gt;* as a separate service, and maybe provide a discounted enrollment
+option (&lt;em&gt;using a zero-to-hero-generated discount coupon&lt;&#x2F;em&gt;) to &lt;strong&gt;FizzBuzz Pro&lt;&#x2F;strong&gt;
+for the &lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt; premium members. To do that, we can create a separate
+premium-member-only page where they can copy a discount coupon.&lt;&#x2F;p&gt;
+&lt;p&gt;I’ll update the diagram accordingly, create a follow-up articles, and also
+create another video that walks through the new login flow.&lt;&#x2F;p&gt;
+&lt;p&gt;And until then, enjoy… And may the source be with you 🦄.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
         <title>Consume Less</title>
         <published>2024-03-10T00:00:00+00:00</published>
         <updated>2024-03-10T00:00:00+00:00</updated>
@@ -2588,6 +2735,330 @@ have is to &lt;strong&gt;be selective&lt;&#x2F;strong&gt; and &lt;strong&gt;do l
 &lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;new-z2h-design&#x2F;&quot;&gt;The New Zero to Hero Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Security Is Not Optional</title>
+        <published>2021-11-26T00:00:00+00:00</published>
+        <updated>2021-11-26T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/roadmap/security/"/>
+        <id>https://zerotohero.dev/roadmap/security/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/roadmap/security/">&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;size&#x2F;w1200&#x2F;2024&#x2F;03&#x2F;securu.png&quot; alt=&quot;Security Is Not Optional&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;securu.png&quot; alt=&quot;All your base are belong to us.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;All your base are belong to us.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;&#x2F;h2&gt;
+&lt;p&gt;No matter what you develop, application security, infrastructure security, and
+having proper authorization and authentication mechanisms are critical. The
+earlier you learn about them in your development career, the better. In
+addition, you should keep an eye on the latest public vulnerabilities and
+exploits to harden your apps and infrastructure.&lt;&#x2F;p&gt;
+&lt;p&gt;Without adequately securing your apps and hardening the infrastructure that your
+apps are running on, you risk having vulnerabilities that will be exploited
+within a few minutes, if not seconds, as soon as your app is publicly available.&lt;&#x2F;p&gt;
+&lt;p&gt;Here, you’ll find some bedtime reading to help you dive into the security rabbit
+hole.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;security-fundamentals&quot;&gt;Security Fundamentals&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;martinfowler.com&#x2F;articles&#x2F;web-security-basics.html&quot;&gt;Web Security Basics&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Web_application_security&quot;&gt;Web Application Security&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;martinfowler.com&#x2F;articles&#x2F;web-security-basics.html&quot;&gt;The Basics of Web Application Security&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;books-to-read&quot;&gt;Books To Read&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;48816583-container-security&quot;&gt;Container Security: Fundamental Technology Concepts That Protect Containerized Applications&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;11553604-the-tangled-web&quot;&gt;The Tangled Web: A Guide to Securing Web Applications&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;authentication-schemes&quot;&gt;Authentication Schemes&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;HTTP&#x2F;Authentication&quot;&gt;HTTP Authentication&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.iana.org&#x2F;assignments&#x2F;http-authschemes&#x2F;http-authschemes.xhtml&quot;&gt;HTTP Security Auth Schemes&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Security_Assertion_Markup_Language&quot;&gt;SAML&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jwt.io&#x2F;introduction&#x2F;&quot;&gt;Introduction to JSON Web Tokens&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.digitalocean.com&#x2F;community&#x2F;tutorials&#x2F;an-introduction-to-oauth-2&quot;&gt;An Introduction to OAuth 2&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;openid.net&#x2F;connect&#x2F;&quot;&gt;OpenID Connect&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;swagger.io&#x2F;docs&#x2F;specification&#x2F;authentication&#x2F;&quot;&gt;Swagger Authentication&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;common-vulnerabilities&quot;&gt;Common Vulnerabilities&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;cwe.mitre.org&#x2F;&quot;&gt;CVE: Common Vulnerability Enumeration&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;cwe.mitre.org&#x2F;&quot;&gt;CWE: Common Weakness Enumeration&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;checklists-and-best-practices&quot;&gt;Checklists and Best Practices&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;eoftedal&#x2F;writings&#x2F;blob&#x2F;master&#x2F;published&#x2F;javascript-security-cheat-sheet.md&quot;&gt;Single Page Web Application Security Cheat Sheet&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;owasp.org&#x2F;www-project-top-ten&#x2F;&quot;&gt;OWASP Top Ten&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.owasp.org&#x2F;index.php&#x2F;Authentication_Cheat_Sheet&quot;&gt;OWASP Authentication Cheat Sheet&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.owasp.org&#x2F;index.php&#x2F;Session_Management_Cheat_Sheet&quot;&gt;OWASP Session Management Cheat Sheet&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;cheatsheetseries.owasp.org&#x2F;cheatsheets&#x2F;Authentication_Cheat_Sheet.html&quot;&gt;HTTP Authentication Cheat Sheet&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;cheatsheetseries.owasp.org&#x2F;cheatsheets&#x2F;Session_Management_Cheat_Sheet.html&quot;&gt;Session Management Cheat Sheet&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;blog.teamtreehouse.com&#x2F;how-to-create-bulletproof-sessions&quot;&gt;How to Create Bulletproof Sessions&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;strong&gt;Security&lt;&#x2F;strong&gt;, &lt;strong&gt;authentication&lt;&#x2F;strong&gt;, &lt;strong&gt;authorization&lt;&#x2F;strong&gt;, and &lt;strong&gt;identity federation&lt;&#x2F;strong&gt;
+are vast subjects. This article provided you with some links and pointers that
+you might want to read to drill down further; however, it’s by no means a
+definitive list. That said, after consuming the material here, you’ll have
+adequate knowledge to do your research and build upon what you have learned
+here.&lt;&#x2F;p&gt;
+&lt;p&gt;That’s all for now. I’ll update this page and add more to the list as I see more
+tools, resources, and techniques.&lt;&#x2F;p&gt;
+&lt;p&gt;Until next time… May the source be with you 🦄.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;roadmap&#x2F;&quot;&gt;Be the Next Version of Yourself&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;hack-the-system&#x2F;&quot;&gt;Who Else is Ready to Hack?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;chisel&#x2F;&quot;&gt;Grab Your Chisel and Start Pounding&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learn-fast-remember-more&#x2F;&quot;&gt;Unlock Your Brain’s Power: Learn Fast, Remember More&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;the-art-of-learning&#x2F;&quot;&gt;Master Your Mind: Unleash the Power of Learning&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;bedtime-reading&#x2F;&quot;&gt;Resources Every Developer Must Read: No Exceptions&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;knowing-javascript-is-not-good-enough&#x2F;&quot;&gt;Knowing JavaScript Is Not Good Enough&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learn-javascript-the-unconventional-way&#x2F;&quot;&gt;Learn JavaScript the Unconventional Way&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learn-haskell&#x2F;&quot;&gt;Want to Learn JavaScript? Learn Haskell First&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;glossary&#x2F;&quot;&gt;A Glossary of Mostly Developer-Related Things&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;git&#x2F;&quot;&gt;Git Comfortable&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;vim&#x2F;&quot;&gt;Master Your Vim-Fu&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;one-does-not-simply-terminal&#x2F;&quot;&gt;One Does Not Simply Terminal 👌&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;design-patterns&#x2F;&quot;&gt;Paint Me Like One of Your French Design Patterns&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;regexp&#x2F;&quot;&gt;Tame Your Regular Expressions&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Security Is Not Optional&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;you-need-testing&#x2F;&quot;&gt;You Need Testing&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;a-startup-founders-bedtime-reading-list&#x2F;&quot;&gt;A Startup Founder’s Bedtime Reading List&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;color-theory&#x2F;&quot;&gt;Orange Is the New Purple&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;ramp-up-in-user-experience-design&#x2F;&quot;&gt;Ramp Up in User Experience Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;typography&#x2F;&quot;&gt;Get Better at Typography&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learning-rust&#x2F;&quot;&gt;Exploring Rust as a Go Developer&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Knowing JavaScript Is Not Good Enough</title>
+        <published>2021-11-21T00:00:00+00:00</published>
+        <updated>2021-11-21T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/roadmap/knowing-javascript-is-not-good-enough/"/>
+        <id>https://zerotohero.dev/roadmap/knowing-javascript-is-not-good-enough/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/roadmap/knowing-javascript-is-not-good-enough/">
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;Volkan_zelik_the_most_buoyant_girl_in_the_known_universe_c92b2c3b-d6d5-4142-8b1b-7dcafcf07e14.png&quot; alt=&quot;Elevate yourself beyond.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Elevate yourself beyond.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;expand-your-vision&quot;&gt;Expand Your Vision&lt;&#x2F;h2&gt;
+&lt;p&gt;Especially on social media, I see and read this preached a lot:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“Learn JavaScript, and you won’t need to learn anything else; you can do
+everything with JavaScript, from front-end to back-end, to AI&#x2F;ML, to game
+development… It is the best investment you’ll ever make!”&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;That’s a codswallop! Complete and utter 🐴💩.&lt;&#x2F;p&gt;
+&lt;p&gt;Don’t believe me? Check the profiles of these preaches. You’ll see that they are
+highly likely selling a JavaScript course, book, newsletter, or something along
+those lines. However, be aware that that advice is targeted more towards the
+preacher’s benefit rather than yours.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;learning-javascript-is-a-great-starting-point&quot;&gt;Learning JavaScript is a Great Starting Point&lt;&#x2F;h2&gt;
+&lt;p&gt;And if you want to stay there for the rest of your career, that’s totally okay.
+Just do this knowingly. Do it because you know that it is the right decision for
+you. Don’t do that because some figure with many followers on social media told
+you you should do it.&lt;&#x2F;p&gt;
+&lt;p&gt;Yes, learning JavaScript and related front-end technologies will take you
+places. But that will only take you so far. It is okay, as long as you and &lt;strong&gt;you
+only&lt;&#x2F;strong&gt; realize that that’s only part of the journey, and that’s where you want
+to be for the time being.&lt;&#x2F;p&gt;
+&lt;p&gt;However, if someone claims that only knowing &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt; is good enough for
+you because you can get whatever you need out of it. Or, worse, they tell you
+that you’ll be a (quote&#x2F;unquote) “&lt;em&gt;full stack developer&lt;&#x2F;em&gt;” once you master
+JavaScript, then approach that person’s “&lt;em&gt;thought leadership&lt;&#x2F;em&gt;” with a grain of
+salt.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;there-is-no-spoon&quot;&gt;There is No Spoon&lt;&#x2F;h2&gt;
+&lt;p&gt;On top of all these, people who preach these things intentionally ignore that
+there is no such thing as “&lt;em&gt;the stack&lt;&#x2F;em&gt;”. The term “full-stack” is redundant at
+least, useless at worst.&lt;&#x2F;p&gt;
+&lt;p&gt;The boundaries between the layers of “&lt;em&gt;the stack&lt;&#x2F;em&gt;” vanished a long time ago. It
+is a “&lt;strong&gt;mesh&lt;&#x2F;strong&gt;”—if anything—rather than a stack. Nowadays, the things one
+needs to know to manage an application end-to-end are so broad and wide that
+nobody can claim to know it all.&lt;&#x2F;p&gt;
+&lt;p&gt;Think about it.&lt;&#x2F;p&gt;
+&lt;p&gt;Can anyone claim to be an expert from Orchestration, to InfoSec, to performance
+optimization and SRE, to supply chain management, to Flexbox, to Edge networking
+and Serverless Compute, to CSS, sass and friends, to Accessibility and
+Usability, to Message Queues, Streams, Consensus Algorithms, Rate Limiting
+Distributed Tracing, to front end frameworks, to Databases, Sharding,
+Clustering, Distributed system design…?&lt;&#x2F;p&gt;
+&lt;p&gt;☝️ The list can go on and on… No one on earth can assume to know the entire
+stack of things.&lt;&#x2F;p&gt;
+&lt;p&gt;If one considers
+understanding &lt;a href=&quot;https:&#x2F;&#x2F;blog.logrocket.com&#x2F;mern-stack-tutorial&#x2F;&quot;&gt;the MERN Stack&lt;&#x2F;a&gt; inside out as a sufficient prerequisite
+to adding the term “full-stack engineer” to their résumé, they likely don’t
+know how much they don’t know yet.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;is-there-such-thing-as-a-half-stack-anyway&quot;&gt;Is There Such Thing as a “Half-Stack” Anyway?&lt;&#x2F;h2&gt;
+&lt;p&gt;The curios thing is, there is no such thing as &lt;strong&gt;half-stack&lt;&#x2F;strong&gt; either.&lt;&#x2F;p&gt;
+&lt;p&gt;To be a great software engineer, you’ll have to know &lt;strong&gt;both&lt;&#x2F;strong&gt; front-end and
+back-end anyway. Why? Because to be a great front-end developer, you first have
+to be a great back-end developer and vice versa. So if you think otherwise, you
+are deceiving yourself.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;There Are No Boundaries&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+The stack is not layered. You cannot isolate the stack. Nor can you restrict
+the stack. Without knowing about one part of the stack, you cannot be productive
+in the other parts either.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Ergo, any qualified developer has no other choice to work across the stack.
+Calling a developer a “&lt;em&gt;full-stack&lt;&#x2F;em&gt;” developer is akin to calling a car a
+“&lt;em&gt;horseless carriage&lt;&#x2F;em&gt;”—It is &lt;strong&gt;redundant&lt;&#x2F;strong&gt;, outdated, and a &lt;strong&gt;tautology&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;Know your path. Know where you want to go. And walk your path knowingly.&lt;&#x2F;p&gt;
+&lt;p&gt;If you claim to work on the entire stack with a single language under your tool
+belt, it only proves that you are afraid of and closed to learning new
+things—None of these are good attributes to have in a developer who wants to
+get better at what they do.&lt;&#x2F;p&gt;
+&lt;p&gt;Everything changes. And everything starts by knowing yourself.&lt;&#x2F;p&gt;
+&lt;p&gt;Knowing one’s self, in itself, is a lifelong journey. A Twitter thread cannot
+show you that. Ironically, neither this article can show it to you. Though, I
+humbly hope it shed some light on the “why“s and “how” of expanding your
+horizon.&lt;&#x2F;p&gt;
+&lt;p&gt;Until the next one… May the source be with you 🦄.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;roadmap&#x2F;&quot;&gt;Be the Next Version of Yourself&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;hack-the-system&#x2F;&quot;&gt;Who Else is Ready to Hack?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;chisel&#x2F;&quot;&gt;Grab Your Chisel and Start Pounding&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learn-fast-remember-more&#x2F;&quot;&gt;Unlock Your Brain’s Power: Learn Fast, Remember More&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;the-art-of-learning&#x2F;&quot;&gt;Master Your Mind: Unleash the Power of Learning&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;bedtime-reading&#x2F;&quot;&gt;Resources Every Developer Must Read: No Exceptions&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Knowing JavaScript Is Not Good Enough&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learn-javascript-the-unconventional-way&#x2F;&quot;&gt;Learn JavaScript the Unconventional Way&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learn-haskell&#x2F;&quot;&gt;Want to Learn JavaScript? Learn Haskell First&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;glossary&#x2F;&quot;&gt;A Glossary of Mostly Developer-Related Things&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;git&#x2F;&quot;&gt;Git Comfortable&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;vim&#x2F;&quot;&gt;Master Your Vim-Fu&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;one-does-not-simply-terminal&#x2F;&quot;&gt;One Does Not Simply Terminal 👌&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;design-patterns&#x2F;&quot;&gt;Paint Me Like One of Your French Design Patterns&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;regexp&#x2F;&quot;&gt;Tame Your Regular Expressions&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;security&#x2F;&quot;&gt;Security Is Not Optional&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;you-need-testing&#x2F;&quot;&gt;You Need Testing&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;a-startup-founders-bedtime-reading-list&#x2F;&quot;&gt;A Startup Founder’s Bedtime Reading List&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;color-theory&#x2F;&quot;&gt;Orange Is the New Purple&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;ramp-up-in-user-experience-design&#x2F;&quot;&gt;Ramp Up in User Experience Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;typography&#x2F;&quot;&gt;Get Better at Typography&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learning-rust&#x2F;&quot;&gt;Exploring Rust as a Go Developer&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 </content>

@@ -13,7 +13,7 @@ description = "Understanding the 'Superfluous Response.WriteHeader' Error in G"
 date = "2024-11-24"
 
 [taxonomies]
-tags = ["inbox","go"]
+tags = ["inbox","go","security","authentication"]
 +++
 
 When working with Go's HTTP server, you might encounter the cryptic error message "http: superfluous response.WriteHeader". This error occurs when your code attempts to modify response headers after the response has already been written. Let's dive into what causes this and how to fix it.

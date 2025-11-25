@@ -1,0 +1,7 @@
+esxi-default-networking
+esxi-initial-configuration
+esxi-installation
+esxi-web-config
+issue-0003
+shamir-secrets-sharing
+vim

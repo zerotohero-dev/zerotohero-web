@@ -12,7 +12,7 @@ title = "Unlock Your True Potential: Make Your Hard Work Visible"
 date = "2023-01-16"
 
 [taxonomies]
-tags = ["highlights"]
+tags = ["highlights","cloud-native","git","kubernetes"]
 +++
 
 ![]()

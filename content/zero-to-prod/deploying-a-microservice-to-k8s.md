@@ -12,7 +12,7 @@ title = "The Journey of a Microservice: From Source Code to a Full-Blown Kuberne
 date = "2021-08-09"
 
 [taxonomies]
-tags = []
+tags = ["cloud-native","infrastructure","kubernetes"]
 +++
 
 {{img(

@@ -12,7 +12,7 @@ title = "Zero to Prod in Half an Hour: Part 9 --- Thinking in Middlewares"
 date = "2022-02-09"
 
 [taxonomies]
-tags = []
+tags = ["authentication"]
 +++
 
 {{img(

@@ -349,6 +349,249 @@ excerpts, or integrating with other tools in your workflow.&lt;&#x2F;p&gt;
         
     </entry>
     <entry xml:lang="en">
+        <title>Understanding VMware vCenter Server Appliance (vCSA): The Central Management Solution</title>
+        <published>2024-12-12T00:00:00+00:00</published>
+        <updated>2024-12-12T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/understanding-vcsa/"/>
+        <id>https://zerotohero.dev/inbox/understanding-vcsa/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/understanding-vcsa/">&lt;p&gt;Managing multiple ESXi hosts individually can quickly become overwhelming as your infrastructure grows. This is where VMware’s vCenter Server Appliance (vCSA) comes into play, offering a centralized management solution that streamlines your virtual infrastructure operations.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-is-vcenter-server-appliance&quot;&gt;What is vCenter Server Appliance?&lt;&#x2F;h2&gt;
+&lt;p&gt;vCSA serves as a central management platform for your ESXi hosts. Instead of managing each host individually, administrators can use vCSA as a single pane of glass to oversee and control their entire VMware infrastructure. This approach significantly reduces management overhead and improves operational efficiency.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;key-components-and-interfaces&quot;&gt;Key Components and Interfaces&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;vsphere-client&quot;&gt;vSphere Client&lt;&#x2F;h3&gt;
+&lt;p&gt;The primary way to interact with vCSA is through the vSphere Client. This web-based interface allows administrators to:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Connect to the vCenter server using standard HTTPS (port 443)&lt;&#x2F;li&gt;
+&lt;li&gt;Manage all connected ESXi hosts&lt;&#x2F;li&gt;
+&lt;li&gt;Configure virtual machines and infrastructure settings&lt;&#x2F;li&gt;
+&lt;li&gt;Monitor resource usage and performance&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;vami-vmware-appliance-management-interface&quot;&gt;VAMI (VMware Appliance Management Interface)&lt;&#x2F;h3&gt;
+&lt;p&gt;VAMI, accessible through port 5480, provides a secondary interface specifically for managing the vCSA itself. Through VAMI, administrators can:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Perform system updates&lt;&#x2F;li&gt;
+&lt;li&gt;Configure networking settings&lt;&#x2F;li&gt;
+&lt;li&gt;Manage appliance-specific configurations&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;deployment-prerequisites&quot;&gt;Deployment Prerequisites&lt;&#x2F;h2&gt;
+&lt;p&gt;Before deploying vCSA, you’ll need:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;At least one ESXi host with sufficient resources to run the vCSA virtual machine&lt;&#x2F;li&gt;
+&lt;li&gt;A management PC (Windows, Linux, or Mac) to run the vCSA installer&lt;&#x2F;li&gt;
+&lt;li&gt;Network connectivity between all components&lt;&#x2F;li&gt;
+&lt;li&gt;Proper DNS and Active Directory configuration (if using AD integration)&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;deployment-process&quot;&gt;Deployment Process&lt;&#x2F;h2&gt;
+&lt;p&gt;The vCSA deployment occurs in two distinct phases:&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;phase-1-initial-installation&quot;&gt;Phase 1: Initial Installation&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Deploy the virtual machine&lt;&#x2F;li&gt;
+&lt;li&gt;Configure basic system settings&lt;&#x2F;li&gt;
+&lt;li&gt;Initialize core services&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;phase-2-configuration&quot;&gt;Phase 2: Configuration&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Configure the appliance settings&lt;&#x2F;li&gt;
+&lt;li&gt;Set up authentication&lt;&#x2F;li&gt;
+&lt;li&gt;Configure networking options&lt;&#x2F;li&gt;
+&lt;li&gt;Establish service configurations&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;post-deployment-setup&quot;&gt;Post-Deployment Setup&lt;&#x2F;h2&gt;
+&lt;p&gt;After successful deployment, administrators should:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Create at least one datacenter object to organize resources&lt;&#x2F;li&gt;
+&lt;li&gt;Set up one or more clusters to enable advanced features&lt;&#x2F;li&gt;
+&lt;li&gt;Add ESXi hosts to the vCenter server&lt;&#x2F;li&gt;
+&lt;li&gt;Configure any additional features like vSAN or vMotion&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;benefits-of-centralized-management&quot;&gt;Benefits of Centralized Management&lt;&#x2F;h2&gt;
+&lt;p&gt;Using vCSA offers several advantages:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Simplified management of multiple hosts through a single interface&lt;&#x2F;li&gt;
+&lt;li&gt;Consistent configuration across all managed hosts&lt;&#x2F;li&gt;
+&lt;li&gt;Enhanced monitoring and reporting capabilities&lt;&#x2F;li&gt;
+&lt;li&gt;Ability to enable advanced features like vMotion and HA&lt;&#x2F;li&gt;
+&lt;li&gt;Streamlined updates and maintenance procedures&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;While individual host access remains possible through the ESXi host client, managing through vCenter provides a more efficient and feature-rich experience, especially in larger environments.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;vCenter Server Appliance is a crucial component in any scalable VMware infrastructure. By providing centralized management capabilities, it enables administrators to efficiently manage their virtual infrastructure while unlocking advanced features that aren’t available when managing hosts individually. Whether you’re managing a handful of hosts or hundreds, vCSA brings the control and visibility needed for effective infrastructure management.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>vSphere 8 Update 2: What&#x27;s New in VMware&#x27;s Latest Releasee</title>
+        <published>2024-12-12T00:00:00+00:00</published>
+        <updated>2024-12-12T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/whats-new-in-vsphere-8/"/>
+        <id>https://zerotohero.dev/inbox/whats-new-in-vsphere-8/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/whats-new-in-vsphere-8/">&lt;p&gt;VMware has announced significant updates to vSphere 8 with Update 2, along with new cloud services for vSphere Plus customers. These updates focus on three key areas: administrative efficiency, performance improvements, and developer enablement.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;enhanced-it-admin-efficiency&quot;&gt;Enhanced IT Admin Efficiency&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;new-lifecycle-management-service&quot;&gt;New Lifecycle Management Service&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;ESXi-Linux lifecycle management service for vSphere Plus customers&lt;&#x2F;li&gt;
+&lt;li&gt;Cloud console management for ESXi host fleet updates&lt;&#x2F;li&gt;
+&lt;li&gt;Dramatically reduced update operations for large environments&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;improved-vcenter-updates&quot;&gt;Improved vCenter Updates&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Reduced Downtime Upgrade technology now available to all vSphere customers&lt;&#x2F;li&gt;
+&lt;li&gt;Update downtime reduced from ~1 hour to just minutes&lt;&#x2F;li&gt;
+&lt;li&gt;Streamlined upgrade process&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;enhanced-identity-management&quot;&gt;Enhanced Identity Management&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Expanded identity provider support&lt;&#x2F;li&gt;
+&lt;li&gt;New support for Microsoft Azure AD (now Entra ID)&lt;&#x2F;li&gt;
+&lt;li&gt;Joins existing support for:
+&lt;ul&gt;
+&lt;li&gt;ADFS&lt;&#x2F;li&gt;
+&lt;li&gt;Okta&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Centralizes authentication&lt;&#x2F;li&gt;
+&lt;li&gt;Simplifies security audits&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;supercharged-performance&quot;&gt;Supercharged Performance&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;enhanced-gpu-support&quot;&gt;Enhanced GPU Support&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Increased GPU capacity up to 16 GPUs per VM&lt;&#x2F;li&gt;
+&lt;li&gt;Improved DRS (Distributed Resource Scheduler):
+&lt;ul&gt;
+&lt;li&gt;Smarter GPU workload distribution&lt;&#x2F;li&gt;
+&lt;li&gt;Enhanced GPU resource utilization&lt;&#x2F;li&gt;
+&lt;li&gt;Better load balancing for GPU-intensive workloads&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;expanded-dpu-ecosystem&quot;&gt;Expanded DPU Ecosystem&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;New hardware vendor support:
+&lt;ul&gt;
+&lt;li&gt;Lenovo&lt;&#x2F;li&gt;
+&lt;li&gt;Fujitsu&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Adds to existing partnerships with:
+&lt;ul&gt;
+&lt;li&gt;Dell&lt;&#x2F;li&gt;
+&lt;li&gt;HPE&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Enhanced CPU offloading capabilities&lt;&#x2F;li&gt;
+&lt;li&gt;Improved resource optimization&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;developer-and-devops-enhancements&quot;&gt;Developer and DevOps Enhancements&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;vm-management-improvements&quot;&gt;VM Management Improvements&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;New VM registry functionality&lt;&#x2F;li&gt;
+&lt;li&gt;Self-service VM provisioning&lt;&#x2F;li&gt;
+&lt;li&gt;Enhanced Windows VM support:
+&lt;ul&gt;
+&lt;li&gt;Independent Windows VM creation&lt;&#x2F;li&gt;
+&lt;li&gt;Removed previous restrictions&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;expanded-vm-service-capabilities&quot;&gt;Expanded VM Service Capabilities&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Support for all vSphere-compatible VM types&lt;&#x2F;li&gt;
+&lt;li&gt;Removed previous VM type limitations&lt;&#x2F;li&gt;
+&lt;li&gt;Improved self-service options&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;kubernetes-integration&quot;&gt;Kubernetes Integration&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Streamlined supervisor cluster setup&lt;&#x2F;li&gt;
+&lt;li&gt;New configuration export&#x2F;import capability&lt;&#x2F;li&gt;
+&lt;li&gt;Simplified cluster replication&lt;&#x2F;li&gt;
+&lt;li&gt;Faster deployment processes&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;key-benefits&quot;&gt;Key Benefits&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;For Administrators&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Reduced maintenance time&lt;&#x2F;li&gt;
+&lt;li&gt;Simplified updates&lt;&#x2F;li&gt;
+&lt;li&gt;Better security management&lt;&#x2F;li&gt;
+&lt;li&gt;Enhanced automation&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;For AI&#x2F;ML Workloads&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Improved GPU utilization&lt;&#x2F;li&gt;
+&lt;li&gt;Enhanced performance&lt;&#x2F;li&gt;
+&lt;li&gt;Better resource distribution&lt;&#x2F;li&gt;
+&lt;li&gt;Expanded hardware support&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;For Developers&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Greater autonomy&lt;&#x2F;li&gt;
+&lt;li&gt;Simplified workflows&lt;&#x2F;li&gt;
+&lt;li&gt;Improved self-service capabilities&lt;&#x2F;li&gt;
+&lt;li&gt;Enhanced Kubernetes management&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;best-practices-for-adoption&quot;&gt;Best Practices for Adoption&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Planning&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Review current environment&lt;&#x2F;li&gt;
+&lt;li&gt;Identify priority areas&lt;&#x2F;li&gt;
+&lt;li&gt;Plan GPU resource allocation&lt;&#x2F;li&gt;
+&lt;li&gt;Assess identity management needs&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Implementation&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Start with lifecycle management improvements&lt;&#x2F;li&gt;
+&lt;li&gt;Gradually expand GPU utilization&lt;&#x2F;li&gt;
+&lt;li&gt;Enable developer self-service features&lt;&#x2F;li&gt;
+&lt;li&gt;Document new processes&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Optimization&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Monitor GPU resource usage&lt;&#x2F;li&gt;
+&lt;li&gt;Fine-tune DRS settings&lt;&#x2F;li&gt;
+&lt;li&gt;Evaluate developer workflows&lt;&#x2F;li&gt;
+&lt;li&gt;Collect feedback from teams&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;vSphere 8 Update 2 represents a significant step forward in VMware’s commitment to enhancing administrative efficiency, supporting AI workloads, and enabling developer productivity. The combination of reduced maintenance overhead, improved performance capabilities, and expanded self-service options provides organizations with the tools needed to meet modern infrastructure demands while preparing for future innovations.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
         <title>Computing File Hashes in Unix Systems: A Complete Guide</title>
         <published>2024-12-02T00:00:00+00:00</published>
         <updated>2024-12-02T00:00:00+00:00</updated>
@@ -456,6 +699,254 @@ excerpts, or integrating with other tools in your workflow.&lt;&#x2F;p&gt;
         
     </entry>
     <entry xml:lang="en">
+        <title>How to Count Lines in Your Source Code Projects: A Comprehensive Guide</title>
+        <published>2024-11-27T00:00:00+00:00</published>
+        <updated>2024-11-27T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/counting-lines-of-code/"/>
+        <id>https://zerotohero.dev/inbox/counting-lines-of-code/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/counting-lines-of-code/">&lt;p&gt;As software projects grow, tracking their size becomes increasingly important for maintenance, documentation, and planning. One fundamental metric is the line count of your source code. In this article, we’ll explore different methods to count lines in your codebase, from quick command-line solutions to more sophisticated tools.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-quick-and-simple-using-wc&quot;&gt;The Quick and Simple: Using &lt;code&gt;wc&lt;&#x2F;code&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;For Unix-like systems (Linux, macOS), the &lt;code&gt;wc&lt;&#x2F;code&gt; (word count) command provides a straightforward way to count lines. Here’s how you can use it:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Count lines in a single file
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;wc -l file.py
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;To count lines across multiple files, you can combine &lt;code&gt;wc&lt;&#x2F;code&gt; with other Unix commands:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Count lines in all Python files in a directory
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;find . -type f -name &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;*.py&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;xargs wc -l
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Count lines recursively for all files
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;find . -type f -exec wc -l {} &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;\;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;While &lt;code&gt;wc&lt;&#x2F;code&gt; is fast and readily available, it’s rather basic - it counts all lines, including empty lines and comments.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-professional-solution-cloc&quot;&gt;The Professional Solution: CLOC&lt;&#x2F;h2&gt;
+&lt;p&gt;CLOC (Count Lines of Code) is a specialized tool that provides detailed statistics about your codebase. It’s more intelligent than &lt;code&gt;wc&lt;&#x2F;code&gt; as it can:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Exclude blank lines and comments&lt;&#x2F;li&gt;
+&lt;li&gt;Recognize dozens of programming languages&lt;&#x2F;li&gt;
+&lt;li&gt;Provide detailed breakdowns by language&lt;&#x2F;li&gt;
+&lt;li&gt;Generate reports in various formats&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;installing-cloc&quot;&gt;Installing CLOC&lt;&#x2F;h3&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Ubuntu&#x2F;Debian
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;sudo apt install cloc
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# macOS via Homebrew
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;brew install cloc
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Windows via Chocolatey
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;choco install cloc
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;using-cloc&quot;&gt;Using CLOC&lt;&#x2F;h3&gt;
+&lt;p&gt;Basic usage is as simple as:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cloc .
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This will scan your current directory and provide a detailed breakdown. For more specific analysis:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Count specific languages
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cloc --include-lang&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Python,JavaScript&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt; .
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Generate XML report
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cloc --xml --out&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;results.xml .
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Count lines in a Git repository
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;git clone --depth 1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;repository&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;url&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cloc .
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;custom-python-solution&quot;&gt;Custom Python Solution&lt;&#x2F;h2&gt;
+&lt;p&gt;Sometimes you need more control over what and how you count. Here’s a Python script that you can customize for your specific needs:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;python&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-python &quot;&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;import &lt;&#x2F;span&gt;&lt;span&gt;os
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;from &lt;&#x2F;span&gt;&lt;span&gt;pathlib &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;import &lt;&#x2F;span&gt;&lt;span&gt;Path
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;def &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;count_lines&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;directory&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;extensions&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;None&lt;&#x2F;span&gt;&lt;span&gt;):
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&amp;quot;&amp;quot;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;    Count lines in files within a directory, optionally filtering by extension.
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;    
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;    Args:
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;        directory (str): Path to the directory to scan
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;        extensions (list): List of file extensions to include (e.g., [&amp;#39;.py&amp;#39;, &amp;#39;.js&amp;#39;])
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;    
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;    Returns:
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;        dict: Dictionary containing line counts and file statistics
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;    &amp;quot;&amp;quot;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;    stats &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;total_lines&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;total_files&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;files_by_extension&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;: {}
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;    
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;for &lt;&#x2F;span&gt;&lt;span&gt;path &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;in &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Path(directory).rglob(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;*&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;)&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;path.is_file()&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span&gt;extensions &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;and not &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;any&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;str&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;(path).endswith(ext) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;for &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;ext &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;in &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;extensions)&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;continue
+&lt;&#x2F;span&gt;&lt;span&gt;                
+&lt;&#x2F;span&gt;&lt;span&gt;            ext &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span&gt;path.suffix
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;try&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;with &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;open&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;(path, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;r&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;, encoding&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;utf-8&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;as &lt;&#x2F;span&gt;&lt;span&gt;f:
+&lt;&#x2F;span&gt;&lt;span&gt;                    line_count &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;sum&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;for &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;_ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;in &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;f)
+&lt;&#x2F;span&gt;&lt;span&gt;                    
+&lt;&#x2F;span&gt;&lt;span&gt;                stats[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;total_lines&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;] &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;+= &lt;&#x2F;span&gt;&lt;span&gt;line_count
+&lt;&#x2F;span&gt;&lt;span&gt;                stats[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;total_files&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;] &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;+= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;1
+&lt;&#x2F;span&gt;&lt;span&gt;                
+&lt;&#x2F;span&gt;&lt;span&gt;                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span&gt;ext &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;not in &lt;&#x2F;span&gt;&lt;span&gt;stats[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;files_by_extension&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;]:
+&lt;&#x2F;span&gt;&lt;span&gt;                    stats[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;files_by_extension&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;][ext] &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;                        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;files&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;                        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;lines&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;0
+&lt;&#x2F;span&gt;&lt;span&gt;                    }
+&lt;&#x2F;span&gt;&lt;span&gt;                
+&lt;&#x2F;span&gt;&lt;span&gt;                stats[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;files_by_extension&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;][ext][&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;files&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;] &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;+= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;1
+&lt;&#x2F;span&gt;&lt;span&gt;                stats[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;files_by_extension&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;][ext][&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;lines&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;] &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;+= &lt;&#x2F;span&gt;&lt;span&gt;line_count
+&lt;&#x2F;span&gt;&lt;span&gt;                    
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;except &lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;UnicodeDecodeError&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;PermissionError&lt;&#x2F;span&gt;&lt;span&gt;):
+&lt;&#x2F;span&gt;&lt;span&gt;                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;continue
+&lt;&#x2F;span&gt;&lt;span&gt;    
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span&gt;stats
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This script provides more detailed statistics and can be easily modified to:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Exclude certain directories (like &lt;code&gt;node_modules&lt;&#x2F;code&gt; or &lt;code&gt;.git&lt;&#x2F;code&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;Count only specific types of lines&lt;&#x2F;li&gt;
+&lt;li&gt;Generate custom reports&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;best-practices&quot;&gt;Best Practices&lt;&#x2F;h2&gt;
+&lt;p&gt;When counting lines in your source code, consider:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Consistency&lt;&#x2F;strong&gt;: Use the same tool and settings across your project for meaningful comparisons over time.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Documentation&lt;&#x2F;strong&gt;: Document which tool and settings you use for line counting in your project documentation.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Automation&lt;&#x2F;strong&gt;: Integrate line counting into your CI&#x2F;CD pipeline to track changes over time.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Context&lt;&#x2F;strong&gt;: Remember that line count is just one metric - it doesn’t necessarily correlate with complexity or quality.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;While line count isn’t a perfect metric for code complexity or project size, it’s a useful baseline metric that’s easy to track. Whether you choose the simple &lt;code&gt;wc&lt;&#x2F;code&gt; command, the comprehensive CLOC tool, or a custom solution depends on your specific needs:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use &lt;code&gt;wc&lt;&#x2F;code&gt; for quick, rough estimates&lt;&#x2F;li&gt;
+&lt;li&gt;Use CLOC for detailed analysis and reporting&lt;&#x2F;li&gt;
+&lt;li&gt;Create a custom solution when you need specific features or integration with your workflow&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Remember that the goal isn’t just to count lines, but to gain insights that help you better understand and manage your codebase.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Cross-Compiling Go Applications on M3 Macs: A Practical Guide</title>
+        <published>2024-11-27T00:00:00+00:00</published>
+        <updated>2024-11-27T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/cross-compilation/"/>
+        <id>https://zerotohero.dev/inbox/cross-compilation/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/cross-compilation/">&lt;p&gt;Cross-compiling Go applications on Apple Silicon (M-series) Macs can be tricky, especially when dealing with CGO dependencies. In this guide, we’ll explore different approaches to building Go applications for multiple architectures, specifically targeting Linux (AMD64 and ARM64) and macOS (ARM64).&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-challenge&quot;&gt;The Challenge&lt;&#x2F;h2&gt;
+&lt;p&gt;When working with Go applications that use CGO, simple cross-compilation commands like &lt;code&gt;GOOS=linux GOARCH=amd64 go build&lt;&#x2F;code&gt; might not be sufficient. This is particularly true when:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Your application uses CGO-dependent packages&lt;&#x2F;li&gt;
+&lt;li&gt;You need to build for multiple architectures&lt;&#x2F;li&gt;
+&lt;li&gt;You’re working on an M-series Mac&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;initial-approach-local-cross-compilation&quot;&gt;Initial Approach: Local Cross-Compilation&lt;&#x2F;h2&gt;
+&lt;p&gt;My first attempt involved using traditional cross-compilation tools. Here’s what I initially tried:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Linux ARM64
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;CGO_ENABLED&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;0 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOEXPERIMENT&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;boringcrypto &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;go build -o keeper .&#x2F;app&#x2F;keeper&#x2F;cmd&#x2F;main.go
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;CGO_ENABLED&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOEXPERIMENT&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;boringcrypto &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;go build -o nexus .&#x2F;app&#x2F;nexus&#x2F;cmd&#x2F;main.go
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;CGO_ENABLED&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;0 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOEXPERIMENT&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;boringcrypto &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;go build -o spike .&#x2F;app&#x2F;spike&#x2F;cmd&#x2F;main.go
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;However, when trying to cross-compile for different architectures, I ran into issues:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOOS&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;linux &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOARCH&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;amd64 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;CGO_ENABLED&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOEXPERIMENT&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;boringcrypto &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;go build -o nexus-linux-amd64 .&#x2F;app&#x2F;nexus&#x2F;cmd&#x2F;main.go
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This approach failed because it needed proper cross-compilation toolchains.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-solution-docker-based-cross-compilation&quot;&gt;The Solution: Docker-Based Cross-Compilation&lt;&#x2F;h2&gt;
+&lt;p&gt;After exploring various options, I found that using Docker for cross-compilation provides the most reliable and reproducible solution. Here’s how to implement it:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;First, create a Dockerfile:&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;pre data-lang=&quot;dockerfile&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-dockerfile &quot;&gt;&lt;code class=&quot;language-dockerfile&quot; data-lang=&quot;dockerfile&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;FROM&lt;&#x2F;span&gt;&lt;span&gt; golang:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;1.21-alpine &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;AS &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;builder
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Install build tools
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;RUN &lt;&#x2F;span&gt;&lt;span&gt;apk add --no-cache gcc musl-dev
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Set working directory
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;WORKDIR &lt;&#x2F;span&gt;&lt;span&gt;&#x2F;app
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Copy go mod files
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;COPY&lt;&#x2F;span&gt;&lt;span&gt; go.mod go.sum .&#x2F;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;RUN &lt;&#x2F;span&gt;&lt;span&gt;go mod download
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Copy source code
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;COPY&lt;&#x2F;span&gt;&lt;span&gt; . .
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Build for different platforms
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;RUN &lt;&#x2F;span&gt;&lt;span&gt;GOOS=linux GOARCH=amd64 CGO_ENABLED=0 GOEXPERIMENT=boringcrypto go build -o keeper-linux-amd64 .&#x2F;app&#x2F;keeper&#x2F;cmd&#x2F;main.go &amp;amp;&amp;amp; \
+&lt;&#x2F;span&gt;&lt;span&gt;    GOOS=linux GOARCH=amd64 CGO_ENABLED=1 GOEXPERIMENT=boringcrypto go build -o nexus-linux-amd64 .&#x2F;app&#x2F;nexus&#x2F;cmd&#x2F;main.go &amp;amp;&amp;amp; \
+&lt;&#x2F;span&gt;&lt;span&gt;    GOOS=linux GOARCH=amd64 CGO_ENABLED=0 GOEXPERIMENT=boringcrypto go build -o spike-linux-amd64 .&#x2F;app&#x2F;spike&#x2F;cmd&#x2F;main.go &amp;amp;&amp;amp; \
+&lt;&#x2F;span&gt;&lt;span&gt;    GOOS=linux GOARCH=arm64 CGO_ENABLED=0 GOEXPERIMENT=boringcrypto go build -o keeper-linux-arm64 .&#x2F;app&#x2F;keeper&#x2F;cmd&#x2F;main.go &amp;amp;&amp;amp; \
+&lt;&#x2F;span&gt;&lt;span&gt;    GOOS=linux GOARCH=arm64 CGO_ENABLED=1 GOEXPERIMENT=boringcrypto go build -o nexus-linux-arm64 .&#x2F;app&#x2F;nexus&#x2F;cmd&#x2F;main.go &amp;amp;&amp;amp; \
+&lt;&#x2F;span&gt;&lt;span&gt;    GOOS=linux GOARCH=arm64 CGO_ENABLED=0 GOEXPERIMENT=boringcrypto go build -o spike-linux-arm64 .&#x2F;app&#x2F;spike&#x2F;cmd&#x2F;main.go
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;Create a build script:&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;#!&#x2F;bin&#x2F;bash
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Build the Docker image
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;docker build -t go-cross-compiler .
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Create a container and copy the binaries
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;docker create --name temp-container go-cross-compiler
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;docker cp temp-container:&#x2F;app&#x2F;keeper-linux-amd64 .
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;docker cp temp-container:&#x2F;app&#x2F;nexus-linux-amd64 .
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;docker cp temp-container:&#x2F;app&#x2F;spike-linux-amd64 .
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;docker cp temp-container:&#x2F;app&#x2F;keeper-linux-arm64 .
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;docker cp temp-container:&#x2F;app&#x2F;nexus-linux-arm64 .
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;docker cp temp-container:&#x2F;app&#x2F;spike-linux-arm64 .
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Clean up
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;docker rm temp-container
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;advantages-of-the-docker-approach&quot;&gt;Advantages of the Docker Approach&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Reproducibility&lt;&#x2F;strong&gt;: The build environment is consistent across different development machines&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;No Local Dependencies&lt;&#x2F;strong&gt;: No need to install cross-compilation tools locally&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Simplified Process&lt;&#x2F;strong&gt;: One command builds all targets&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Consistent Results&lt;&#x2F;strong&gt;: Binaries are built in a controlled environment&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Easy CI&#x2F;CD Integration&lt;&#x2F;strong&gt;: The Docker-based approach works well in automated pipelines&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;building-for-macos-arm64&quot;&gt;Building for macOS ARM64&lt;&#x2F;h2&gt;
+&lt;p&gt;For macOS ARM64 builds, you can still build natively on your M-series Mac:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOOS&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;darwin &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOARCH&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;arm64 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;CGO_ENABLED&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;0 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOEXPERIMENT&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;boringcrypto &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;go build -o keeper-darwin-arm64 .&#x2F;app&#x2F;keeper&#x2F;cmd&#x2F;main.go
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOOS&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;darwin &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOARCH&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;arm64 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;CGO_ENABLED&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOEXPERIMENT&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;boringcrypto &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;go build -o nexus-darwin-arm64 .&#x2F;app&#x2F;nexus&#x2F;cmd&#x2F;main.go
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOOS&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;darwin &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOARCH&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;arm64 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;CGO_ENABLED&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;0 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOEXPERIMENT&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;boringcrypto &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;go build -o spike-darwin-arm64 .&#x2F;app&#x2F;spike&#x2F;cmd&#x2F;main.go
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;common-pitfalls-and-solutions&quot;&gt;Common Pitfalls and Solutions&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;CGO Dependencies&lt;&#x2F;strong&gt;: When &lt;code&gt;CGO_ENABLED=1&lt;&#x2F;code&gt;, ensure your Docker container has the necessary build tools installed&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Architecture Mismatch&lt;&#x2F;strong&gt;: Double-check &lt;code&gt;GOOS&lt;&#x2F;code&gt; and &lt;code&gt;GOARCH&lt;&#x2F;code&gt; values match your target platforms&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Build Tags&lt;&#x2F;strong&gt;: Consider using build tags for platform-specific code&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Static Linking&lt;&#x2F;strong&gt;: For better portability, use &lt;code&gt;CGO_ENABLED=0&lt;&#x2F;code&gt; when possible&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;While cross-compilation on M-series Macs presents some challenges, using Docker provides a robust and maintainable solution. This approach simplifies the build process and ensures consistent results across different architectures.&lt;&#x2F;p&gt;
+&lt;p&gt;For projects that don’t require CGO, you might still use direct cross-compilation. However, for complex projects with CGO dependencies, the Docker-based approach is recommended.&lt;&#x2F;p&gt;
+&lt;p&gt;Remember to version your build scripts and Dockerfile alongside your project code to maintain build reproducibility across your team.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
         <title>Computing SHA256 Hashes for Binary Files: A Quick Guide</title>
         <published>2024-11-27T00:00:00+00:00</published>
         <updated>2024-11-27T00:00:00+00:00</updated>
@@ -524,6 +1015,80 @@ excerpts, or integrating with other tools in your workflow.&lt;&#x2F;p&gt;
 &lt;li&gt;Document which hashing algorithm was used (in this case, SHA256)&lt;&#x2F;li&gt;
 &lt;&#x2F;ol&gt;
 &lt;p&gt;This approach provides a secure way to distribute binaries while allowing users to verify their integrity through cryptographic hashes.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>SQLite Security: Understanding Authentication and Protectio</title>
+        <published>2024-11-27T00:00:00+00:00</published>
+        <updated>2024-11-27T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/sqlite-security/"/>
+        <id>https://zerotohero.dev/inbox/sqlite-security/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/sqlite-security/">&lt;p&gt;SQLite is unique among database management systems in that it doesn’t come with built-in password protection or user authentication. This might seem strange at first, especially if you’re familiar with other databases like MySQL or PostgreSQL. However, understanding how SQLite handles security is crucial for developers building applications with this popular database.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;why-doesn-t-sqlite-have-passwords&quot;&gt;Why Doesn’t SQLite Have Passwords?&lt;&#x2F;h2&gt;
+&lt;p&gt;SQLite is a serverless database, which means it operates quite differently from client-server database systems. Instead of running as a separate service that accepts connections from multiple clients, SQLite directly reads and writes to a single file on your disk. This fundamental architectural difference explains the absence of traditional authentication mechanisms.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;how-to-secure-your-sqlite-database&quot;&gt;How to Secure Your SQLite Database&lt;&#x2F;h2&gt;
+&lt;p&gt;Despite not having built-in password protection, there are several effective ways to secure your SQLite database:&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;1-file-system-permissions&quot;&gt;1. File System Permissions&lt;&#x2F;h3&gt;
+&lt;p&gt;The most basic and often most effective way to protect your SQLite database is through your operating system’s file permissions. Here’s how you can implement this:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;On Unix-like systems (Linux, macOS):&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;chmod 600 mydatabase.db
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This command restricts read and write access to only the file owner.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;On Windows:
+Use the file properties dialog or NTFS permissions to restrict access to specific users or groups.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;2-file-encryption&quot;&gt;2. File Encryption&lt;&#x2F;h3&gt;
+&lt;p&gt;For enhanced security, you can encrypt your entire SQLite database file. There are several approaches:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use SQLite Encryption Extension (SEE)&lt;&#x2F;li&gt;
+&lt;li&gt;Implement transparent disk encryption&lt;&#x2F;li&gt;
+&lt;li&gt;Use third-party encryption tools&lt;&#x2F;li&gt;
+&lt;li&gt;Create your own encryption wrapper&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;3-application-level-authentication&quot;&gt;3. Application-Level Authentication&lt;&#x2F;h3&gt;
+&lt;p&gt;Many developers implement security at the application level. This approach involves:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Building a user authentication system in your application&lt;&#x2F;li&gt;
+&lt;li&gt;Managing access control through your application’s code&lt;&#x2F;li&gt;
+&lt;li&gt;Creating middleware that checks user credentials before allowing database access&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;best-practices-for-sqlite-security&quot;&gt;Best Practices for SQLite Security&lt;&#x2F;h2&gt;
+&lt;p&gt;To maintain a secure SQLite implementation:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Never store your database file in a publicly accessible directory&lt;&#x2F;li&gt;
+&lt;li&gt;Regularly backup your database file&lt;&#x2F;li&gt;
+&lt;li&gt;Implement proper input validation to prevent SQL injection attacks&lt;&#x2F;li&gt;
+&lt;li&gt;Consider using prepared statements for all database queries&lt;&#x2F;li&gt;
+&lt;li&gt;Monitor file system permissions regularly&lt;&#x2F;li&gt;
+&lt;li&gt;Keep your SQLite library updated to the latest version&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;when-to-consider-alternative-databases&quot;&gt;When to Consider Alternative Databases&lt;&#x2F;h2&gt;
+&lt;p&gt;While SQLite’s security model works well for many use cases, you might want to consider a different database system if you need:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Built-in user authentication&lt;&#x2F;li&gt;
+&lt;li&gt;Fine-grained access control&lt;&#x2F;li&gt;
+&lt;li&gt;Multiple concurrent users with different permission levels&lt;&#x2F;li&gt;
+&lt;li&gt;Network-based access control&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;SQLite’s approach to security might be different from what you’re used to, but it’s not inherently less secure. By understanding its serverless nature and implementing appropriate security measures at the file system and application levels, you can build robust and secure applications with SQLite. The key is choosing the right security measures for your specific use case and implementing them correctly.&lt;&#x2F;p&gt;
+&lt;p&gt;Remember: security is only as strong as its weakest link. Always consider your entire application’s security architecture, not just database access control.&lt;&#x2F;p&gt;
 </content>
         
     </entry>
@@ -771,6 +1336,520 @@ excerpts, or integrating with other tools in your workflow.&lt;&#x2F;p&gt;
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;Remember: when working with directories, the execute permission is essential for basic operations. Always ensure it’s set appropriately for your use case.&lt;&#x2F;p&gt;
 &lt;p&gt;Happy permissions managing! 🐧&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Working with User Home Directory in Go: A Security-First Approachl</title>
+        <published>2024-11-24T00:00:00+00:00</published>
+        <updated>2024-11-24T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/home-dir-in-go/"/>
+        <id>https://zerotohero.dev/inbox/home-dir-in-go/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/home-dir-in-go/">&lt;h1 id=&quot;&quot;&gt;&lt;&#x2F;h1&gt;
+&lt;p&gt;When building command-line tools or applications that need to store configuration files, it’s common to use the user’s home directory. In this post, we’ll explore how to safely create and manage a hidden directory in the user’s home folder using Go, with a focus on security.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;getting-the-user-s-home-directory&quot;&gt;Getting the User’s Home Directory&lt;&#x2F;h2&gt;
+&lt;p&gt;Go provides a straightforward way to get the user’s home directory through the &lt;code&gt;os&lt;&#x2F;code&gt; package:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;homeDir&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;os&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;UserHomeDir&lt;&#x2F;span&gt;&lt;span&gt;()
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This works cross-platform, handling the differences between Windows (&lt;code&gt;C:\Users\username&lt;&#x2F;code&gt;), Unix (&lt;code&gt;&#x2F;home&#x2F;username&lt;&#x2F;code&gt;), and macOS (&lt;code&gt;&#x2F;Users&#x2F;username&lt;&#x2F;code&gt;).&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;creating-a-hidden-directory&quot;&gt;Creating a Hidden Directory&lt;&#x2F;h2&gt;
+&lt;p&gt;In Unix-like systems, directories starting with a dot (&lt;code&gt;.&lt;&#x2F;code&gt;) are hidden by default. Let’s create a &lt;code&gt;.spike&lt;&#x2F;code&gt; directory in the user’s home folder:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;package &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;main
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;import &lt;&#x2F;span&gt;&lt;span&gt;(
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;os&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;path&#x2F;filepath&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;main&lt;&#x2F;span&gt;&lt;span&gt;() {
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;homeDir&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;os&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;UserHomeDir&lt;&#x2F;span&gt;&lt;span&gt;()
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;panic&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;spikeDir &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;filepath&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Join&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;homeDir&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;.spike&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;    
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;os&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;MkdirAll&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;spikeDir&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;0600&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;panic&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;understanding-file-permissions&quot;&gt;Understanding File Permissions&lt;&#x2F;h2&gt;
+&lt;p&gt;The permission value &lt;code&gt;0600&lt;&#x2F;code&gt; in the code above is crucial for security:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;6&lt;&#x2F;code&gt; (owner): Read (4) + Write (2) = 6&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;0&lt;&#x2F;code&gt; (group): No permissions&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;0&lt;&#x2F;code&gt; (others): No permissions&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;This ensures that only the owner can read and write to the directory, while all other users on the system are denied access.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;handling-existing-directories&quot;&gt;Handling Existing Directories&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;code&gt;MkdirAll&lt;&#x2F;code&gt; has some interesting behavior when the directory already exists:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;If the directory doesn’t exist, it creates it with the specified permissions&lt;&#x2F;li&gt;
+&lt;li&gt;If the directory exists, it does nothing and returns &lt;code&gt;nil&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;It won’t modify permissions of an existing directory&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;To ensure consistent permissions, we should explicitly set them:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Create if doesn&amp;#39;t exist
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;os&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;MkdirAll&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;spikeDir&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;0600&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;panic&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Ensure correct permissions even if directory already existed
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;os&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Chmod&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;spikeDir&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;0600&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;panic&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;platform-considerations&quot;&gt;Platform Considerations&lt;&#x2F;h2&gt;
+&lt;p&gt;While Unix-style permissions (&lt;code&gt;0600&lt;&#x2F;code&gt;) work well on Unix-like systems, Windows handles permissions differently. Go will attempt to map these permissions to Windows Access Control Lists (ACLs), but the exact behavior might vary.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;best-practices&quot;&gt;Best Practices&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Always check for errors when dealing with file operations&lt;&#x2F;li&gt;
+&lt;li&gt;Use &lt;code&gt;filepath.Join()&lt;&#x2F;code&gt; instead of string concatenation for paths&lt;&#x2F;li&gt;
+&lt;li&gt;Set restrictive permissions for directories containing sensitive data&lt;&#x2F;li&gt;
+&lt;li&gt;Consider explicitly setting permissions after directory creation&lt;&#x2F;li&gt;
+&lt;li&gt;Use &lt;code&gt;os.UserHomeDir()&lt;&#x2F;code&gt; instead of environment variables for better cross-platform support&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;When creating directories in a user’s home folder, it’s crucial to consider security implications. By using appropriate permissions and handling existing directories correctly, we can ensure our application safely stores its data while preventing unauthorized access.&lt;&#x2F;p&gt;
+&lt;p&gt;Remember, security is not just about functionality—it’s about protecting user data and maintaining trust in your application.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>A Glossary of Mostly Developer-Related Things</title>
+        <published>2021-11-27T00:00:00+00:00</published>
+        <updated>2021-11-27T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/roadmap/glossary/"/>
+        <id>https://zerotohero.dev/roadmap/glossary/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/roadmap/glossary/">
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;acronym.png&quot; alt=&quot;The tech industry loves its TLAs.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;The tech industry loves its TLAs.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;We love our terms and acronyms, don’t we? They help us communicate complex
+notions with just a few characters; however, they can also be an obstacle when
+you are learning new stuff. This page covers a list of mostly developer-related
+terms and acronyms with links to further explanations about them.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;A&#x2F;B_testing&quot;&gt;A&#x2F;B Testing&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Application_programming_interface&quot;&gt;API&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.interaction-design.org&#x2F;literature&#x2F;topics&#x2F;adaptive-design&quot;&gt;Adaptive Design&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Agile_software_development&quot;&gt;Agile Software Development&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Algorithm&quot;&gt;Algorithm&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Automation&quot;&gt;Automation&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Scrum_(software_development)#Product_backlog&quot;&gt;Backlog&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Bash_(Unix_shell)&quot;&gt;bash&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Behavior-driven_development&quot;&gt;BDD (&lt;em&gt;Behavior-Driven
+Development&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Big_data&quot;&gt;Big Data&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;cloud.google.com&#x2F;bigquery&quot;&gt;Big Query&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.mozilla.org&#x2F;en-US&#x2F;firefox&#x2F;browsers&#x2F;what-is-a-browser&#x2F;&quot;&gt;Browser&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Software_bug&quot;&gt;Bug&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;dev.to&#x2F;tanhauhau&#x2F;what-is-module-bundler-and-how-does-it-work-3gp2&quot;&gt;Bundling&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Burn_rate&quot;&gt;Burn Rate&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;C_Sharp_(programming_language)&quot;&gt;C#&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;C%2B%2B&quot;&gt;C++&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Content_management_system&quot;&gt;CMS (&lt;em&gt;Content Management
+System&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.cncf.io&#x2F;&quot;&gt;CNCF (&lt;em&gt;Cloud Native Computing Foundation&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Central_processing_unit&quot;&gt;CPU (&lt;em&gt;Central Processing
+Unit&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;crm.org&#x2F;crmland&#x2F;what-is-a-crm&quot;&gt;CRM (&lt;em&gt;Customer Relationship
+Management&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Cascading_Style_Sheets&quot;&gt;CSS (&lt;em&gt;Cascading Style
+Sheet&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Call_to_action_(marketing)&quot;&gt;CTA (&lt;em&gt;Call to
+Action&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;C_(programming_language)&quot;&gt;C&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Cache_(computing)&quot;&gt;Cache&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Churn_rate&quot;&gt;Churn Rate&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Source-code_editor&quot;&gt;Code Editor&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;CommonJS&quot;&gt;CommonJS&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;OS-level_virtualization&quot;&gt;Container&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Continuous_integration&quot;&gt;CI (&lt;em&gt;Continuous
+Integration&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Cookie&quot;&gt;Cookie&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Web_crawler&quot;&gt;Crawl&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Domain_Name_System&quot;&gt;DNS (&lt;em&gt;Domain Name System&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;List_of_DNS_record_types&quot;&gt;DNS Record Types&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Dots_per_inch&quot;&gt;DPI (&lt;em&gt;Dots Per Inch&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Data_structure&quot;&gt;Data Structure&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Debugging&quot;&gt;Debugging&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Software_deployment&quot;&gt;Deployment&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Design&quot;&gt;Design&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;DevOps&quot;&gt;DevOps&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.docker.com&#x2F;&quot;&gt;Docker&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Domain_name&quot;&gt;Domain&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;ECMAScript&quot;&gt;ECMAScript&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.erlang.org&#x2F;&quot;&gt;Erlang&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;web.dev&#x2F;first-meaningful-paint&#x2F;&quot;&gt;FMP (&lt;em&gt;First Meaningful Paint&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Functional_programming&quot;&gt;FP (&lt;em&gt;Functional
+Programming&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;File_Transfer_Protocol&quot;&gt;FTP (&lt;em&gt;File Transfer
+Protocol&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Function_as_a_service&quot;&gt;FaaS&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Favicon&quot;&gt;Favicon&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Software_framework&quot;&gt;Framework&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Front_end_and_back_end&quot;&gt;Front End and Back End&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.blog&#x2F;2019&#x2F;10&#x2F;17&#x2F;imho-the-mythical-fullstack-engineer&#x2F;&quot;&gt;Full-Stack&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Graphical_user_interface&quot;&gt;GUI (&lt;em&gt;Graphical User
+Interface&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;&quot;&gt;GitHub&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;git-scm.com&#x2F;&quot;&gt;Git&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;golang.org&#x2F;&quot;&gt;Go&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;graphql.org&#x2F;&quot;&gt;GraphQL&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.haskell.org&#x2F;&quot;&gt;Haskell&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;HTML&quot;&gt;HTML (&lt;em&gt;Hypertext Markup Language&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;HTTP&#x2F;Status&quot;&gt;HTTP Response Status Codes&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;HTTP&quot;&gt;HTTP (&lt;em&gt;Hypertext Transfer
+Protocol&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;humanstxt.org&#x2F;&quot;&gt;humans.txt&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;ionicframework.com&#x2F;resources&#x2F;articles&#x2F;what-is-hybrid-app-development&quot;&gt;Hybrid App&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Hypervisor&quot;&gt;Hypervisor&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Infrastructure_as_a_service&quot;&gt;IaaS (&lt;em&gt;Infrastructure as a
+Service&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Inbound_marketing&quot;&gt;Inbound Marketing&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Information_architecture&quot;&gt;Information Architecture&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Integration_testing&quot;&gt;Integration Testing&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jamstack.org&#x2F;&quot;&gt;JAM Stack&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Learn&#x2F;JavaScript&#x2F;First_steps&#x2F;What_is_JavaScript&quot;&gt;JavaScript&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;go.java&#x2F;&quot;&gt;Java&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Kaizen&quot;&gt;Kaizen&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Kanban_(development)&quot;&gt;Kanban&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;&quot;&gt;Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;LAMP_(software_bundle)&quot;&gt;LAMP Stack&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Library_(computing)&quot;&gt;Library&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Lisp_(programming_language)&quot;&gt;Lisp&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;API&#x2F;Window&#x2F;localStorage&quot;&gt;Local Storage&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;MEAN_(solution_stack)&quot;&gt;MEAN Stack&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.educative.io&#x2F;edpresso&#x2F;what-is-mern-stack&quot;&gt;MERN Stack&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Mock_object&quot;&gt;Mocking&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;mqtt.org&#x2F;&quot;&gt;MQTT (&lt;em&gt;Message Queue Telemetry Transport&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Mean_time_to_repair&quot;&gt;MTTR (&lt;em&gt;Mean Time to
+Repair&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Minimum_viable_product&quot;&gt;MVP (&lt;em&gt;Minimum Viable
+Product&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Machine_learning&quot;&gt;Machine Learning&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Minification_(programming)&quot;&gt;Minification&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Mobile_app&quot;&gt;Mobile App&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Mockup#Software_engineering&quot;&gt;Mockup&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Modular_design&quot;&gt;Module&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Web_navigation&quot;&gt;Navigation&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Not_invented_here&quot;&gt;NIH (&lt;em&gt;Not Invented Here&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;NoSQL&quot;&gt;NoSQL&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;nodejs.org&#x2F;en&#x2F;&quot;&gt;Node.js&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Orchestration_(computing)&quot;&gt;Orchestration&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Object-oriented_programming&quot;&gt;OOP (&lt;em&gt;Object-Oriented
+Programming&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Out_of_the_box_(feature)&quot;&gt;OOTB (&lt;em&gt;Out of the
+Box&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;OSI_model&quot;&gt;OSI Model&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;owasp.org&#x2F;&quot;&gt;OWASP (&lt;em&gt;Open Web Application Security Project&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Operating_system&quot;&gt;Operating System&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Platform_as_a_service&quot;&gt;PaaS &lt;em&gt;_Platform as a
+Service&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Plug-in_(computing)&quot;&gt;Plugin&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;concepts&#x2F;workloads&#x2F;pods&#x2F;pod&#x2F;&quot;&gt;Pod&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;dev.to&#x2F;flippedcoding&#x2F;difference-between-development-stage-and-production-d0p&quot;&gt;Production&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developers.google.com&#x2F;protocol-buffers&quot;&gt;Protocol Buffers&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Prototype&quot;&gt;Prototype&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.python.org&#x2F;&quot;&gt;Python&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Random-access_memory&quot;&gt;RAM (&lt;em&gt;Random-Access
+Memory&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Representational_state_transfer&quot;&gt;REST (&lt;em&gt;Representational State
+Transfer&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;URL_redirection&quot;&gt;Redirect&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Registrar&quot;&gt;Registrar&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Image_resolution&quot;&gt;Resolution&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.smashingmagazine.com&#x2F;2011&#x2F;01&#x2F;guidelines-for-responsive-web-design&#x2F;&quot;&gt;Responsive Design&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Technology_roadmap&quot;&gt;Roadmap&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;support.google.com&#x2F;webmasters&#x2F;answer&#x2F;6062608&quot;&gt;robots.txt&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.ruby-lang.org&#x2F;en&#x2F;&quot;&gt;Ruby&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.rust-lang.org&#x2F;&quot;&gt;Rust&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Simple_Mail_Transfer_Protocol&quot;&gt;SMTP (&lt;em&gt;Simple Mail Transfer
+Protocol&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;SQL&quot;&gt;SQL (&lt;em&gt;Structured Query Language&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Solid-state_drive&quot;&gt;SSD (&lt;em&gt;Solid-State Drive&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Secure_Shell&quot;&gt;SSH (&lt;em&gt;Secure Shell&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Software_as_a_service&quot;&gt;SaaS (&lt;em&gt;Software as a
+Service&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Scheme_(programming_language)&quot;&gt;Scheme&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Web_scraping&quot;&gt;Scrape&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Scrum_(software_development)&quot;&gt;Scrum&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Server_(computing)&quot;&gt;Server&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Separation_of_concerns&quot;&gt;Separation of Concerns&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;thoughtbot.com&#x2F;blog&#x2F;a-closer-look-at-test-spies&quot;&gt;Spying&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Serverless_computing&quot;&gt;Serverless&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;API&#x2F;Window&#x2F;sessionStorage&quot;&gt;Session Storage&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Site_map&quot;&gt;Sitemap&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Smalltalk&quot;&gt;Smalltalk&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Solution_stack&quot;&gt;Software Stack&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Version_control&quot;&gt;Source Control&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;SOLID&quot;&gt;SOLID&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.atlassian.com&#x2F;agile&#x2F;scrum&#x2F;sprints&quot;&gt;Sprint&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Test-driven_development&quot;&gt;TDD (&lt;em&gt;Test-Driven
+Development&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Transport_Layer_Security&quot;&gt;TLS&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Time_to_first_byte&quot;&gt;TTFB (&lt;em&gt;Time to First
+Byte&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Tag_(metadata)&quot;&gt;Tags&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Web_template_system&quot;&gt;Template&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Test_stub&quot;&gt;Test Stub&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Text_editor&quot;&gt;Text Editor&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Acceptance_testing&quot;&gt;UAT (&lt;em&gt;User Acceptance
+Testing&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;User_interface_design&quot;&gt;UI Design&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;User_interface&quot;&gt;UI (&lt;em&gt;User Interface&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;User_experience_design&quot;&gt;UX Design&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;User_experience&quot;&gt;UX (&lt;em&gt;User Experience&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Unit_testing&quot;&gt;Unit Testing&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.usability.gov&#x2F;how-to-and-tools&#x2F;methods&#x2F;usability-testing.html&quot;&gt;Usability Testing&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;User_agent&quot;&gt;User Agent&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.interaction-design.org&#x2F;literature&#x2F;topics&#x2F;user-research&quot;&gt;User Research&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;WYSIWYG&quot;&gt;WYSIWYG (&lt;em&gt;What You See Is What You
+Get&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Waterfall_model&quot;&gt;Waterfall&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Web_application&quot;&gt;Web App&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Graphical_widget&quot;&gt;Widget&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.usability.gov&#x2F;how-to-and-tools&#x2F;methods&#x2F;wireframing.html&quot;&gt;Wireframe&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;You_aren%27t_gonna_need_it&quot;&gt;YAGNI&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Z_shell&quot;&gt;zsh&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Until next time… May the source be with you 🦄.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;roadmap&#x2F;&quot;&gt;Be the Next Version of Yourself&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;hack-the-system&#x2F;&quot;&gt;Who Else is Ready to Hack?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;chisel&#x2F;&quot;&gt;Grab Your Chisel and Start Pounding&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learn-fast-remember-more&#x2F;&quot;&gt;Unlock Your Brain’s Power: Learn Fast, Remember More&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;the-art-of-learning&#x2F;&quot;&gt;Master Your Mind: Unleash the Power of Learning&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;bedtime-reading&#x2F;&quot;&gt;Resources Every Developer Must Read: No Exceptions&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;knowing-javascript-is-not-good-enough&#x2F;&quot;&gt;Knowing JavaScript Is Not Good Enough&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learn-javascript-the-unconventional-way&#x2F;&quot;&gt;Learn JavaScript the Unconventional Way&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learn-haskell&#x2F;&quot;&gt;Want to Learn JavaScript? Learn Haskell First&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ A Glossary of Mostly Developer-Related Things&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;git&#x2F;&quot;&gt;Git Comfortable&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;vim&#x2F;&quot;&gt;Master Your Vim-Fu&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;one-does-not-simply-terminal&#x2F;&quot;&gt;One Does Not Simply Terminal 👌&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;design-patterns&#x2F;&quot;&gt;Paint Me Like One of Your French Design Patterns&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;regexp&#x2F;&quot;&gt;Tame Your Regular Expressions&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;security&#x2F;&quot;&gt;Security Is Not Optional&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;you-need-testing&#x2F;&quot;&gt;You Need Testing&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;a-startup-founders-bedtime-reading-list&#x2F;&quot;&gt;A Startup Founder’s Bedtime Reading List&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;color-theory&#x2F;&quot;&gt;Orange Is the New Purple&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;ramp-up-in-user-experience-design&#x2F;&quot;&gt;Ramp Up in User Experience Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;typography&#x2F;&quot;&gt;Get Better at Typography&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learning-rust&#x2F;&quot;&gt;Exploring Rust as a Go Developer&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Master Your vim</title>
+        <published>2021-11-27T00:00:00+00:00</published>
+        <updated>2021-11-27T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/roadmap/vim/"/>
+        <id>https://zerotohero.dev/roadmap/vim/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/roadmap/vim/">
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;vim.png&quot; alt=&quot;vim is powerful.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;vim is powerful.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.vim.org&#x2F;&quot;&gt;&lt;code&gt;vim&lt;&#x2F;code&gt;&lt;&#x2F;a&gt; is a highly configurable text editor built to make
+creating and changing any kind of text very efficient. It is included as &lt;code&gt;vi&lt;&#x2F;code&gt;
+with most UNIX systems and with Apple OS X. &lt;code&gt;vim&lt;&#x2F;code&gt; is famous for having a steep
+learning curve. But if you ask me, learning vim is not much different than
+learning touch typing. It all boils down to repetition, practice, and muscle
+memory.&lt;&#x2F;p&gt;
+&lt;p&gt;You don’t have to learn vim to be a developer; however, learning how to use vim
+well will certainly make you a more productive developer. Besides, if you are a
+developer, sooner or later, you’ll have to use &lt;code&gt;vim&lt;&#x2F;code&gt; in your career at least at
+a bare minimum level. So the earlier you begin learning it, the better.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;how-do-i-learn-vim&quot;&gt;How Do I Learn &lt;code&gt;vim&lt;&#x2F;code&gt;?&lt;&#x2F;h2&gt;
+&lt;p&gt;Here are a few resources that can help you speed up your &lt;code&gt;vim&lt;&#x2F;code&gt; learning:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;www.vimgenius.com&#x2F;&quot;&gt;Vim genius&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.openvim.com&#x2F;&quot;&gt;Open Vim&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;13607232-practical-vim&quot;&gt;Practical Vim: Edit Text at the Speed of Thought&lt;&#x2F;a&gt;
+(&lt;em&gt;this one is one of the best books I’ve read about &lt;code&gt;vim&lt;&#x2F;code&gt;; and it, indeed,
+is practical&lt;&#x2F;em&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;2403747.Learning_the_vi_and_Vim_Editors&quot;&gt;Learning &lt;code&gt;vi&lt;&#x2F;code&gt; and &lt;code&gt;vim&lt;&#x2F;code&gt; Editors&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;However, the only way to learn &lt;code&gt;vim&lt;&#x2F;code&gt; is to &lt;strong&gt;actively&lt;&#x2F;strong&gt; use it. Luckily
+enough, almost any code editor has a &lt;em&gt;vim emulation&lt;&#x2F;em&gt; mode or a &lt;em&gt;vim plugin&lt;&#x2F;em&gt; that
+you can download and install.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Most IDEs Have a &lt;code&gt;vim&lt;&#x2F;code&gt; Emulation Mode&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+When you learn &lt;code&gt;vim&lt;&#x2F;code&gt;, you can use the vim mode in your favorite IDE of your
+choice. Except for specific crazy macros, you could use it just like good
+old &lt;code&gt;vim&lt;&#x2F;code&gt;—it’s not exactly the same thing, but for most practical purposes
+it’ll be “close enough.”&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;If you use the “&lt;em&gt;vim mode&lt;&#x2F;em&gt;” in your editor of choice, then using &lt;code&gt;vim&lt;&#x2F;code&gt; on the
+terminal will be second-nature to you.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;When you master &lt;code&gt;vim&lt;&#x2F;code&gt;, you’ll see that it will have a &lt;strong&gt;positive&lt;&#x2F;strong&gt; impact on
+your development productivity.&lt;&#x2F;p&gt;
+&lt;p&gt;Yes, &lt;code&gt;vim&lt;&#x2F;code&gt; is an editor that has one of the &lt;strong&gt;steepest&lt;&#x2F;strong&gt; learning curves; and
+it’s &lt;strong&gt;worth&lt;&#x2F;strong&gt; your time to learn it. There are even people who claim “&lt;a href=&quot;https:&#x2F;&#x2F;robots.thoughtbot.com&#x2F;the-vim-learning-curve-is-a-myth&quot;&gt;&lt;em&gt;vim
+learning curve is a myth&lt;&#x2F;em&gt;&lt;&#x2F;a&gt;”, so
+maybe it is not that hard after all 😉.&lt;&#x2F;p&gt;
+&lt;p&gt;I hope you find the resources here useful in you &lt;code&gt;vim&lt;&#x2F;code&gt; learning journey.&lt;&#x2F;p&gt;
+&lt;p&gt;Until next time… May the source be with you 🦄.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;roadmap&#x2F;&quot;&gt;Be the Next Version of Yourself&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;hack-the-system&#x2F;&quot;&gt;Who Else is Ready to Hack?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;chisel&#x2F;&quot;&gt;Grab Your Chisel and Start Pounding&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learn-fast-remember-more&#x2F;&quot;&gt;Unlock Your Brain’s Power: Learn Fast, Remember More&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;the-art-of-learning&#x2F;&quot;&gt;Master Your Mind: Unleash the Power of Learning&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;bedtime-reading&#x2F;&quot;&gt;Resources Every Developer Must Read: No Exceptions&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;knowing-javascript-is-not-good-enough&#x2F;&quot;&gt;Knowing JavaScript Is Not Good Enough&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learn-javascript-the-unconventional-way&#x2F;&quot;&gt;Learn JavaScript the Unconventional Way&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learn-haskell&#x2F;&quot;&gt;Want to Learn JavaScript? Learn Haskell First&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;glossary&#x2F;&quot;&gt;A Glossary of Mostly Developer-Related Things&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;git&#x2F;&quot;&gt;Git Comfortable&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Master Your Vim-Fu&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;one-does-not-simply-terminal&#x2F;&quot;&gt;One Does Not Simply Terminal 👌&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;design-patterns&#x2F;&quot;&gt;Paint Me Like One of Your French Design Patterns&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;regexp&#x2F;&quot;&gt;Tame Your Regular Expressions&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;security&#x2F;&quot;&gt;Security Is Not Optional&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;you-need-testing&#x2F;&quot;&gt;You Need Testing&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;a-startup-founders-bedtime-reading-list&#x2F;&quot;&gt;A Startup Founder’s Bedtime Reading List&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;color-theory&#x2F;&quot;&gt;Orange Is the New Purple&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;ramp-up-in-user-experience-design&#x2F;&quot;&gt;Ramp Up in User Experience Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;typography&#x2F;&quot;&gt;Get Better at Typography&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learning-rust&#x2F;&quot;&gt;Exploring Rust as a Go Developer&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
 </content>
         
     </entry>
@@ -1121,6 +2200,92 @@ hope you find them useful.&lt;&#x2F;p&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learning-rust&#x2F;&quot;&gt;Exploring Rust as a Go Developer&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>mTLS With SPIRE: Part 2: Creating the Server App</title>
+        <published>2021-10-19T00:00:00+00:00</published>
+        <updated>2021-10-19T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/spire/mtls/server-app/"/>
+        <id>https://zerotohero.dev/spire/mtls/server-app/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/spire/mtls/server-app/">&lt;h2 id=&quot;mtls-with-spire-part-2-creating-the-server-app&quot;&gt;mTLS With SPIRE: Part 2 — Creating the Server App&lt;&#x2F;h2&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;server-app.png&quot; alt=&quot;mTLS With SPIRE: Part 2: Creating the Server App&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;mTLS With SPIRE: Part 2: Creating the Server App&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;We’ll start by creating a server application. Once the server is ready, we’ll
+continue with the client application on the next video.&lt;&#x2F;p&gt;
+&lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;sNqJxFE7eR8?si=hFxATeHr6n1_OGPx&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
+    title=&quot;mTLS With SPIRE: Part 2: Creating the Server App&quot;&gt;&lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;mTLS With SPIRE: Part 2: Creating the Server App&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;playlist&quot;&gt;Playlist&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;spire&#x2F;mtls&#x2F;intro&#x2F;&quot;&gt;mTLS With SPIRE: Part 1: Introduction&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ mTLS With SPIRE: Part 2: Creating the Server App&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;spire&#x2F;mtls&#x2F;client-app&#x2F;&quot;&gt;mTLS With SPIRE: Part 3: Creating the Client App&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;spire&#x2F;mtls&#x2F;bundle-server&#x2F;&quot;&gt;mTLS With SPIRE: Part 4: Containerizing the Server App&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;spire&#x2F;mtls&#x2F;bundle-client&#x2F;&quot;&gt;mTLS With SPIRE: Part 5: Containerizing the Client App&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;spire&#x2F;mtls&#x2F;rollout&#x2F;&quot;&gt;mTLS With SPIRE: Part 6: Rolling Out SPIRE to the Cluster&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;spire&#x2F;mtls&#x2F;register&#x2F;&quot;&gt;mTLS With SPIRE: Part 7: Registering Nodes and Workloads to SPIRE&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;spire&#x2F;mtls&#x2F;setup-server&#x2F;&quot;&gt;mTLS With SPIRE: Part 8: Configuring the Server to Use SPIRE mTLS&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;spire&#x2F;mtls&#x2F;setup-client&#x2F;&quot;&gt;mTLS With SPIRE: Part 9: Configuring the Client to Use SPIRE mTLS&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;spire&#x2F;mtls&#x2F;end-to-end&#x2F;&quot;&gt;mTLS With SPIRE: Part 10: Establishing Cross-Cluster mTLS&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;tools-and-technologies-mentioned&quot;&gt;Tools and Technologies Mentioned&lt;&#x2F;h2&gt;
+&lt;p&gt;Here are the tools and technologies that were mentioned in the video, along with
+related articles and other helpful links.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;go.dev&#x2F;&quot;&gt;&lt;strong&gt;Go&lt;&#x2F;strong&gt; Programming Language&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;go.dev&#x2F;blog&#x2F;using-go-modules&quot;&gt;Using &lt;strong&gt;Go&lt;&#x2F;strong&gt; Modules&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Bash_(Unix_shell)&quot;&gt;&lt;strong&gt;Bash&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;grpc.io&#x2F;&quot;&gt;&lt;strong&gt;gRPC&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;read-the-source&quot;&gt;Read the Source&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;zerotohero-dev&#x2F;spire-mtls&quot;&gt;Access the source code and other related assets from &lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt; GitHub&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 </content>
         

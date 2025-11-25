@@ -1,0 +1,13 @@
+dedicated-oidc-server
+dumb-quotes
+issue-0001
+issue-0014
+issue-0019
+issue-0026
+keep-your-secrets
+lets-create-a-syslog-logger
+osi-model
+perception-pivot
+shamir-secrets-sharing
+spiffe-federation
+trust
