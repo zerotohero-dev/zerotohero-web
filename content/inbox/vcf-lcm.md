@@ -13,7 +13,7 @@ description = "Simplifying Infrastructure Updates with VMware Cloud Foundation's
 date = "2024-12-12"
 
 [taxonomies]
-tags = ["inbox","vmware","vcf","virtualization","configuration"]
+tags = ["inbox","vcf","virtualization","vmware"]
 +++
 
 For organizations running VMware Cloud Foundation (VCF), one of the most powerful features is the centralized lifecycle management (LCM) through SDDC Manager. This capability transforms what was once a complex, manual process into an automated, orchestrated workflow. Let's explore how it works and why it matters.

@@ -638,9 +638,6 @@
         <loc>https://zerotohero.dev/tags/about/</loc>
     </url>
     <url>
-        <loc>https://zerotohero.dev/tags/configuration/</loc>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/tags/content-creation/</loc>
     </url>
     <url>
@@ -651,12 +648,6 @@
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/development/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/docker/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/encoding/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/external-secret-operator/</loc>

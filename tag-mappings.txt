@@ -151,6 +151,7 @@ host-commissioning -> vcf
 host-expansion -> vcf
 dns -> vcf
 gpu -> vcf
+configuration -> vcf
 
 # Projects
 aegis -> spike
@@ -168,8 +169,10 @@ closure -> DELETE_IF_NOT_ALONE
 programming -> DELETE_IF_NOT_ALONE
 cli -> DELETE_IF_NOT_ALONE
 memory -> DELETE_IF_NOT_ALONE
+encoding -> DELETE_IF_NOT_ALONE
 
 # DevOps/Kubernetes
+docker -> devops
 devops -> kubernetes
 performance -> kubernetes
 aws -> kubernetes
