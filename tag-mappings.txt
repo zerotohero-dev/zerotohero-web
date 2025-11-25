@@ -114,6 +114,7 @@ documentation -> content-creation
 
 # Design
 color-theory -> design
+ux -> design
 
 # Networking
 tcp-ip -> networking
@@ -121,6 +122,7 @@ network-communication -> networking
 
 # Creativity
 reinvent -> creativity
+creativity -> hacker-culture
 
 # AWS
 ecr -> aws
@@ -129,6 +131,7 @@ ecr -> aws
 environment-variables -> tips
 bookmarking -> tips
 loc -> tips
+journaling -> {ponderings;tips;productivity}
 
 # VMware
 vcsa -> vcf
@@ -152,6 +155,8 @@ host-expansion -> vcf
 dns -> vcf
 gpu -> vcf
 configuration -> vcf
+installation -> vcf
+workload-domains -> vcf
 
 # Projects
 aegis -> spike

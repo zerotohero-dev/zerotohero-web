@@ -12,7 +12,7 @@ title = "Consume Less"
 date = "2024-03-10"
 
 [taxonomies]
-tags = ["top-of-mind","creativity"]
+tags = ["hacker-culture","top-of-mind"]
 +++
 
 ![Consume Less](/images/size/w1200/2024/03/consume.png)

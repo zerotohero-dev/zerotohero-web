@@ -641,9 +641,6 @@
         <loc>https://zerotohero.dev/tags/content-creation/</loc>
     </url>
     <url>
-        <loc>https://zerotohero.dev/tags/creativity/</loc>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/tags/design/</loc>
     </url>
     <url>
@@ -672,12 +669,6 @@
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/infrastructure/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/installation/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/journaling/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/json/</loc>
@@ -759,6 +750,9 @@
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/platform-development/</loc>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/tags/ponderings/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/productivity/</loc>
@@ -881,9 +875,6 @@
         <loc>https://zerotohero.dev/tags/typography/</loc>
     </url>
     <url>
-        <loc>https://zerotohero.dev/tags/ux/</loc>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/tags/vault/</loc>
     </url>
     <url>
@@ -912,9 +903,6 @@
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/workflow/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/workload-domains/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/workspace/</loc>

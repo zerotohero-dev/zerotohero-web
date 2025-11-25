@@ -5,21 +5,24 @@
 #
 # Mapping file format (one per line):
 #   old-tag -> new-tag
+#   old-tag -> {tag1;tag2;tag3}  (expand to multiple tags)
 #
 # Example:
 #   SPIFFE -> spiffe
 #   secrets-management -> secrets
-#   secret-sharing -> secrets
+#   journaling -> {ponderings;tips;productivity}
 
 if [ $# -lt 1 ]; then
     echo "Usage: $0 <mapping-file> [--dry-run]"
     echo ""
     echo "Mapping file format (one per line):"
     echo "  old-tag -> new-tag"
+    echo "  old-tag -> {tag1;tag2;tag3}  (expand to multiple tags)"
     echo ""
     echo "Example:"
     echo "  SPIFFE -> spiffe"
     echo "  secrets-management -> secrets"
+    echo "  journaling -> {ponderings;tips;productivity}"
     exit 1
 fi
 
@@ -129,8 +132,16 @@ find content -name "*.md" -type f | while read file; do
                 file_replacements=$((file_replacements + 1))
 
             else
-                # Normal replacement
-                new_tags_line=$(echo "$new_tags_line" | sed "s/\"$old_tag\"/\"$new_tag\"/g")
+                # Check if new_tag contains multiple targets: {tag1;tag2;tag3}
+                if echo "$new_tag" | grep -q "^{.*}$"; then
+                    # Extract tags from {tag1;tag2;tag3} format
+                    multi_tags=$(echo "$new_tag" | sed 's/^{//; s/}$//; s/;/","/g')
+                    # Replace old tag with multiple new tags
+                    new_tags_line=$(echo "$new_tags_line" | sed "s/\"$old_tag\"/\"$multi_tags\"/g")
+                else
+                    # Normal single replacement
+                    new_tags_line=$(echo "$new_tags_line" | sed "s/\"$old_tag\"/\"$new_tag\"/g")
+                fi
                 file_modified=true
                 file_replacements=$((file_replacements + 1))
             fi
