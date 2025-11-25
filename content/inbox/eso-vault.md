@@ -13,7 +13,7 @@ description = "Using External Secrets Operator with HashiCorp Vault to Create Ku
 date = "2024-12-22"
 
 [taxonomies]
-tags = ["inbox","kubernetes","security","vault","external-secret-operator","secrets-management"]
+tags = ["external-secret-operator","inbox","kubernetes","secrets-management","security"]
 +++
 
 

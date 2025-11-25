@@ -13,6 +13,7 @@ ESO -> eso
 # External Secrets Operator
 eso -> external-secrets-operator
 external-secrets-operator -> external-secret-operator
+vault -> external-secret-operator
 
 # SPIFFE/SPIRE
 federation -> spiffe
@@ -108,6 +109,7 @@ commit -> git
 github -> git
 gitlab -> git
 gpg -> git
+workflow -> {tips;git}
 
 # Shell/Terminal
 zsh -> shell
@@ -186,6 +188,9 @@ modernization -> vcf
 virtualization -> vcf
 ntp -> vcf
 
+# Infrastructure
+o-ran -> infrastructure
+
 # Projects
 aegis -> spike
 architecture -> spike
@@ -222,6 +227,7 @@ platform-development -> kubernetes
 services -> kubernetes
 scalability -> devops
 nodejs -> devops
+papertrail -> devops
 
 # Category tags
 catch-22 -> top-of-mind
@@ -231,6 +237,7 @@ collaboration -> top-of-mind
 reading-list -> roadmap
 snippets -> inbox
 startup -> roadmap
+perception -> top-of-mind
 
 # Meta tags to consolidate
 volkan -> about

@@ -985,4 +985,49 @@
 </content>
         
     </entry>
+    <entry xml:lang="en">
+        <title>O-RAN R1 Interface</title>
+        <published>2024-11-24T00:00:00+00:00</published>
+        <updated>2024-11-24T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/o-ran-r1-interface/"/>
+        <id>https://zerotohero.dev/inbox/o-ran-r1-interface/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/o-ran-r1-interface/">&lt;p&gt;Here is a brief explanation of the O-RAN R1 Interface:&lt;&#x2F;p&gt;
+&lt;p&gt;O-RAN stands for Open Radio Access Network. It is an industry standard that
+defines open and interoperable interfaces for 5G RANs (Radio Access Networks).&lt;&#x2F;p&gt;
+&lt;p&gt;The R1 interface is one of the key interfaces defined by O-RAN. It connects the
+O-RU (O-RAN Radio Unit) and the O-DU (O-RAN Distributed Unit).&lt;&#x2F;p&gt;
+&lt;p&gt;The main functions of the R1 interface are:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Transport of user plane data between O-RU and O-DU via Ethernet fronthaul.&lt;br &#x2F;&gt;
+This includes downlink and uplink user data.&lt;&#x2F;li&gt;
+&lt;li&gt;Transport of control and management plane information between O-RU and O-DU.
+This includes control signaling, synchronization, and performance measurements.&lt;&#x2F;li&gt;
+&lt;li&gt;Configuration and control of the O-RU by the O-DU. The O-DU can configure
+parameters like frequency bands, transmission power, etc.&lt;&#x2F;li&gt;
+&lt;li&gt;Performance monitoring of O-RU by O-DU. The O-RU regularly sends KPIs and
+measurements that allow the O-DU to monitor and manage the RU.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Some key properties of the R1 interface are:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;It uses Ethernet as the transport mechanism.&lt;&#x2F;li&gt;
+&lt;li&gt;It supports functional split option 7-2x between O-RU and O-DU.&lt;&#x2F;li&gt;
+&lt;li&gt;It provides open interfaces with standard models for configuration, control,&lt;br &#x2F;&gt;
+performance monitoring etc.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;In summary, the R1 interface enables open and interoperable connectivity between
+the radio unit and distributed unit in an O-RAN architecture. It transports user
+data, control signaling, and facilitates management of the RU by the DU.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
 </feed>
