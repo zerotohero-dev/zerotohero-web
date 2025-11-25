@@ -13,7 +13,7 @@ description = "The Subtle Difference Between nil and Empty Slices in Go JSON Mar
 date = "2024-12-03"
 
 [taxonomies]
-tags = ["inbox","go","json","marshaling"]
+tags = ["go","inbox"]
 +++
 
 When working with Go slices, you might assume that a nil slice and an empty slice are completely interchangeable. After all, both have zero length, zero capacity, and support operations like `append()`. However, there's one important case where they behave differently: JSON marshaling.

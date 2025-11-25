@@ -13,7 +13,7 @@ description = "JWT Verification in Go: A Comprehensive Guide"
 date = "2024-12-03"
 
 [taxonomies]
-tags = ["inbox","jwt","security","go"]
+tags = ["go","inbox","security"]
 +++
 
 JSON Web Tokens (JWTs) are a popular mechanism for authentication and authorization in modern web applications. However, proper JWT verification is crucial for security. Let's explore how to implement robust JWT verification in Go.

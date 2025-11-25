@@ -671,12 +671,6 @@
         <loc>https://zerotohero.dev/tags/infrastructure/</loc>
     </url>
     <url>
-        <loc>https://zerotohero.dev/tags/json/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/jwt/</loc>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/tags/key-management/</loc>
     </url>
     <url>
@@ -693,9 +687,6 @@
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/mac-os/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/marshaling/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/mastodon/</loc>

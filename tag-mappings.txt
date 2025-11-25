@@ -175,6 +175,9 @@ programming -> DELETE_IF_NOT_ALONE
 cli -> DELETE_IF_NOT_ALONE
 memory -> DELETE_IF_NOT_ALONE
 encoding -> DELETE_IF_NOT_ALONE
+json -> DELETE_IF_NOT_ALONE
+jwt -> DELETE_IF_NOT_ALONE
+marshaling -> DELETE_IF_NOT_ALONE
 
 # DevOps/Kubernetes
 docker -> devops
