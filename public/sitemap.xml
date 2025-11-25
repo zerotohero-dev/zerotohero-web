@@ -671,9 +671,6 @@
         <loc>https://zerotohero.dev/tags/infrastructure/</loc>
     </url>
     <url>
-        <loc>https://zerotohero.dev/tags/key-management/</loc>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/tags/kubernetes/</loc>
     </url>
     <url>
@@ -684,12 +681,6 @@
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/linux/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/mac-os/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/mastodon/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/method-extraction/</loc>
@@ -789,9 +780,6 @@
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/setups/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/shamir/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/shell/</loc>

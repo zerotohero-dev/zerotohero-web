@@ -40,6 +40,8 @@ secret-sharing -> secrets-management
 # Security
 certificates -> security
 encryption -> security
+shamir -> security
+key-management -> security
 
 # Memory-related
 memory-management -> memory
@@ -178,6 +180,8 @@ encoding -> DELETE_IF_NOT_ALONE
 json -> DELETE_IF_NOT_ALONE
 jwt -> DELETE_IF_NOT_ALONE
 marshaling -> DELETE_IF_NOT_ALONE
+mastodon -> DELETE_IF_NOT_ALONE
+mac-os -> DELETE_IF_NOT_ALONE
 
 # DevOps/Kubernetes
 docker -> devops

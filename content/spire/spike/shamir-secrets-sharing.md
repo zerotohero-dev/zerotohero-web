@@ -12,7 +12,7 @@ title = "Shamir's Secret Sharing Scheme with SPIFFE and SPIKE"
 date = "2024-12-28"
 
 [taxonomies]
-tags = ["key-management","secrets-management","security","shamir","spiffe","spike","spire","system-design"]
+tags = ["secrets-management","security","spiffe","spike","spire","system-design"]
 +++
 
 ## Introduction

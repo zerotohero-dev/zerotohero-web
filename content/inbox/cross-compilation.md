@@ -13,7 +13,7 @@ description = "Cross-Compiling Go Applications on M3 Macs: A Practical Guide"
 date = "2024-11-27"
 
 [taxonomies]
-tags = ["go","inbox","kubernetes","mac-os"]
+tags = ["go","inbox","kubernetes"]
 +++
 
 
