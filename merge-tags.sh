@@ -112,6 +112,9 @@ find content -name "*.md" -type f | while read file; do
         # Check if tag exists in the line
         if echo "$new_tags_line" | grep -q "\"$old_tag\""; then
 
+            # Escape sed special characters in old_tag
+            old_tag_escaped=$(echo "$old_tag" | sed 's/[\/&]/\\&/g')
+
             # Handle special DELETE operations
             if [ "$new_tag" = "DELETE_IF_NOT_ALONE" ]; then
                 # Count total tags in the line
@@ -119,7 +122,7 @@ find content -name "*.md" -type f | while read file; do
 
                 if [ "$tag_count" -gt 1 ]; then
                     # Remove the tag (and handle comma cleanup)
-                    new_tags_line=$(echo "$new_tags_line" | sed "s/, *\"$old_tag\"//; s/\"$old_tag\" *, *//")
+                    new_tags_line=$(echo "$new_tags_line" | sed "s/, *\"$old_tag_escaped\"//; s/\"$old_tag_escaped\" *, *//")
                     file_modified=true
                     file_replacements=$((file_replacements + 1))
                 fi
@@ -127,20 +130,25 @@ find content -name "*.md" -type f | while read file; do
 
             elif [ "$new_tag" = "DELETE" ]; then
                 # Always remove the tag
-                new_tags_line=$(echo "$new_tags_line" | sed "s/, *\"$old_tag\"//; s/\"$old_tag\" *, *//")
+                new_tags_line=$(echo "$new_tags_line" | sed "s/, *\"$old_tag_escaped\"//; s/\"$old_tag_escaped\" *, *//")
                 file_modified=true
                 file_replacements=$((file_replacements + 1))
 
             else
+                # Escape sed special characters in new_tag
+                new_tag_escaped=$(echo "$new_tag" | sed 's/[\/&]/\\&/g')
+
                 # Check if new_tag contains multiple targets: {tag1;tag2;tag3}
                 if echo "$new_tag" | grep -q "^{.*}$"; then
                     # Extract tags from {tag1;tag2;tag3} format
                     multi_tags=$(echo "$new_tag" | sed 's/^{//; s/}$//; s/;/","/g')
+                    # Escape special characters in multi_tags
+                    multi_tags_escaped=$(echo "$multi_tags" | sed 's/[\/&]/\\&/g')
                     # Replace old tag with multiple new tags
-                    new_tags_line=$(echo "$new_tags_line" | sed "s/\"$old_tag\"/\"$multi_tags\"/g")
+                    new_tags_line=$(echo "$new_tags_line" | sed "s/\"$old_tag_escaped\"/\"$multi_tags_escaped\"/g")
                 else
                     # Normal single replacement
-                    new_tags_line=$(echo "$new_tags_line" | sed "s/\"$old_tag\"/\"$new_tag\"/g")
+                    new_tags_line=$(echo "$new_tags_line" | sed "s/\"$old_tag_escaped\"/\"$new_tag_escaped\"/g")
                 fi
                 file_modified=true
                 file_replacements=$((file_replacements + 1))

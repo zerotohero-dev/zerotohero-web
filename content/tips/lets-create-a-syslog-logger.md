@@ -12,7 +12,7 @@ title = "Let's Create a Syslog Logger"
 date = "2021-09-06"
 
 [taxonomies]
-tags = ["development","go","papertrail","syslog","tips"]
+tags = ["development","go","kubernetes","networking","papertrail","tips"]
 +++
 
 {{img(

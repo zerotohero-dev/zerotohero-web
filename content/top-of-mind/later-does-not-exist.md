@@ -12,7 +12,7 @@ title = "'Later' Does Not Exist"
 date = "2022-11-17"
 
 [taxonomies]
-tags = ["top-of-mind","time-management"]
+tags = ["productivity","top-of-mind"]
 +++
 
 !["Later" Does Not Exist](/images/size/w1200/2024/03/fire3.png)

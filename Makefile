@@ -51,6 +51,9 @@ normalize-tags: ## Remove duplicate tags from all posts (use DRY_RUN=1 for previ
 		./normalize-tags.sh; \
 	fi
 
+assign-tags: ## Assign tags to posts by slug (interactive)
+	@./assign-tags.sh
+
 find-no-images: ## Find blog posts without header images
 	@./find-posts-without-images.sh
 

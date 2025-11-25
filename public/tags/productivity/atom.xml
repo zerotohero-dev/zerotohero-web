@@ -1340,6 +1340,143 @@ caters to your work needs is an investment in your professional future.&lt;&#x2F
         
     </entry>
     <entry xml:lang="en">
+        <title>&#x27;Later&#x27; Does Not Exist</title>
+        <published>2022-11-17T00:00:00+00:00</published>
+        <updated>2022-11-17T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/top-of-mind/later-does-not-exist/"/>
+        <id>https://zerotohero.dev/top-of-mind/later-does-not-exist/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/top-of-mind/later-does-not-exist/">&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;size&#x2F;w1200&#x2F;2024&#x2F;03&#x2F;fire3.png&quot; alt=&quot;“Later” Does Not Exist&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;All of a sudden, an idea hits you. For example, writing an article about why the
+concept of “&lt;em&gt;I’ll do it later&lt;&#x2F;em&gt;” does not exist in the contemporary world. Then
+you decide to do that “later.” Then, you realize “later” is a synonym for “*
+&lt;em&gt;never&lt;&#x2F;em&gt;*” and start typing on your mechanical keyboard just 20 minutes before
+midnight.&lt;&#x2F;p&gt;
+&lt;p&gt;Why? I’ll get to that later &lt;strong&gt;real soon&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;But before that, let’s think about what “&lt;em&gt;later&lt;&#x2F;em&gt;” is.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-does-later-mean&quot;&gt;What Does “&lt;em&gt;Later&lt;&#x2F;em&gt;” Mean?&lt;&#x2F;h2&gt;
+&lt;p&gt;What &lt;strong&gt;is&lt;&#x2F;strong&gt; “&lt;em&gt;later&lt;&#x2F;em&gt;”?&lt;&#x2F;p&gt;
+&lt;p&gt;Maybe it’s adding a “&lt;em&gt;temporary hack&lt;&#x2F;em&gt;” to be removed later. Perhaps it’s
+removing a bug, introducing a lower-priority bug, and deciding to deal with it
+“&lt;strong&gt;&lt;em&gt;later&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;.” Maybe it’s temporarily breaking some test cases to deliver an
+urgent hotfix. Or maybe it’s stashing away your current work, to hack together a
+last-minute customer proof-of-concept, knowing that you’ll have &lt;strong&gt;&lt;em&gt;time&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt; to
+get back to your work “&lt;strong&gt;&lt;em&gt;later&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;”.&lt;&#x2F;p&gt;
+&lt;p&gt;Consider the actual consequences of your decisions: Are you honest with
+yourself? Are you going to get back to that “&lt;em&gt;later&lt;&#x2F;em&gt;”? What if other emergencies
+arise and you don’t? What kind of risk are you introducing?&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;later-has-many-forms&quot;&gt;“&lt;em&gt;Later&lt;&#x2F;em&gt;” Has Many Forms&lt;&#x2F;h2&gt;
+&lt;p&gt;There are other forms of “&lt;em&gt;later&lt;&#x2F;em&gt;,” too:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;The most popular one: “I’ll &lt;em&gt;fix it later&lt;&#x2F;em&gt;.” &lt;strong&gt;Srsly?!&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Or, “&lt;em&gt;just add a quality gate exception; I’ll add the unit tests later&lt;&#x2F;em&gt;.”&lt;&#x2F;li&gt;
+&lt;li&gt;Or “I’ll &lt;em&gt;discuss this feature with a greater audience later&lt;&#x2F;em&gt;.”&lt;&#x2F;li&gt;
+&lt;li&gt;Or “&lt;em&gt;We can worry about security&#x2F;performance&#x2F;reliability later&lt;&#x2F;em&gt;.”&lt;&#x2F;li&gt;
+&lt;li&gt;Or “&lt;em&gt;The code is working as is; we can make it more readable later&lt;&#x2F;em&gt;.”&lt;&#x2F;li&gt;
+&lt;li&gt;The list can go on and on…&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Yet, more often than not, what you mean by “&lt;em&gt;later&lt;&#x2F;em&gt;” is “&lt;strong&gt;never&lt;&#x2F;strong&gt;.”&lt;&#x2F;p&gt;
+&lt;p&gt;Because when you cut corners and create an illusion of making things &lt;strong&gt;faster&lt;&#x2F;strong&gt;,
+you are giving the upper management, project managers, product owners, and your
+customers a &lt;strong&gt;false&lt;&#x2F;strong&gt; sense of how quickly you deliver.&lt;&#x2F;p&gt;
+&lt;p&gt;Rest assured, knowing how awesome you are at things, they will be expecting *
+&lt;em&gt;more&lt;&#x2F;em&gt;* of it—that is a self-feeding cycle: There is remaining work, and you
+need to talk about it. Yet you do not. Hence comes more work!&lt;&#x2F;p&gt;
+&lt;p&gt;In essence, you are effectively &lt;strong&gt;lying&lt;&#x2F;strong&gt; to your stakeholders ad infinitum:
+Next time, you’ll be overloaded with more work; you’ll cut more corners. You’ll
+deliver much faster and be overloaded with even more work.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Later will NEVER come&lt;&#x2F;strong&gt;: You will start accruing a &lt;strong&gt;&lt;em&gt;$#!%&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt; ton of technical
+debt.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;set-realistic-expectations&quot;&gt;Set Realistic Expectations&lt;&#x2F;h2&gt;
+&lt;p&gt;The best way to reduce technical debt (&lt;em&gt;and, by extension, increase technical
+wealth&lt;&#x2F;em&gt;) is, to &lt;strong&gt;be honest&lt;&#x2F;strong&gt;, and set &lt;strong&gt;realistic expectations&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;You are not finished with a feature until it meets the “&lt;em&gt;definition of done&lt;&#x2F;em&gt;.” A
+&lt;strong&gt;definition of done&lt;&#x2F;strong&gt; can include things like:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Is the feature tested?&lt;&#x2F;li&gt;
+&lt;li&gt;Do key stakeholders verify it?&lt;&#x2F;li&gt;
+&lt;li&gt;Is there documentation?&lt;&#x2F;li&gt;
+&lt;li&gt;Did we do a usability test?&lt;&#x2F;li&gt;
+&lt;li&gt;Does it pass the performance benchmarks?&lt;&#x2F;li&gt;
+&lt;li&gt;Is it peer-reviewed?&lt;&#x2F;li&gt;
+&lt;li&gt;Is the code readable, duplication-free, and bug-free?&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;time-is-candy&quot;&gt;Time is Candy&lt;&#x2F;h2&gt;
+&lt;p&gt;You know what, that doesn’t only happen at work. It happens in your daily life,
+too: When was the last time you added an article to your “read it later” list,
+and you actually read it?&lt;&#x2F;p&gt;
+&lt;p&gt;It all boils down to &lt;strong&gt;time&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Time is your most precious asset because you cannot recreate it: Once you spend
+it, it’s gone. So the only way to do enough things in the amount of time you
+have is to &lt;strong&gt;be selective&lt;&#x2F;strong&gt; and &lt;strong&gt;do less&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Have priorities&lt;&#x2F;strong&gt;. Review &lt;strong&gt;often&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;☝️ That’s the only way to stay afloat.&lt;&#x2F;p&gt;
+&lt;p&gt;Later 👋.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;catch-22&#x2F;&quot;&gt;Catch 22&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;consume-less&#x2F;&quot;&gt;Consume Less&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;craft-captivating-documentation&#x2F;&quot;&gt;Craft Captivating Documentation&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;keep-your-secrets&#x2F;&quot;&gt;Keep Your Secrets… Secret&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ ‘Later’ Does Not Exist&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;perception-pivot&#x2F;&quot;&gt;Transform Feedback into Professional Mastery&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;probing-questions&#x2F;&quot;&gt;Embracing Daily Reflection&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;psst-you-dont-have-to-use-medium&#x2F;&quot;&gt;Psst… You Don’t Have to Use Medium&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;reshape-your-workspace&#x2F;&quot;&gt;Reshape Your Workspace, Reshape Your Future&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;secrets&#x2F;&quot;&gt;Secrets&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;the-dream-job&#x2F;&quot;&gt;Build Strong Connections to Land Your Dream Job&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;trust&#x2F;&quot;&gt;Trust Cultivates a Cohesive Team&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;vmware-secrets-manager&#x2F;&quot;&gt;Long Live Aegis!&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;write-to-forget&#x2F;&quot;&gt;Write to Forget&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;closure&#x2F;&quot;&gt;Closure&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;new-z2h-design&#x2F;&quot;&gt;The New Zero to Hero Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
         <title>Master Your vim</title>
         <published>2021-11-27T00:00:00+00:00</published>
         <updated>2021-11-27T00:00:00+00:00</updated>
