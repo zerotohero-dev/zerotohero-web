@@ -13,7 +13,7 @@ description = "Understanding `git push origin main`"
 date = "2025-11-23"
 
 [taxonomies]
-tags = ["tips","inbox","git","version-control"]
+tags = ["git","inbox","tips"]
 +++
 
 When working with Git, you might frequently encounter the command 

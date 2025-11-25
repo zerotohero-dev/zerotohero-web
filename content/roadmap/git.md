@@ -12,7 +12,7 @@ title = "Git Comfortable"
 date = "2021-10-27"
 
 [taxonomies]
-tags = ["roadmap","git","version-control"]
+tags = ["git","roadmap"]
 +++
 
 {{img(

@@ -35,6 +35,7 @@ mutexes -> go
 base64 -> go
 microservices -> go
 rest-api -> go
+request -> go
 
 # Secrets-related
 secrets -> secrets-management
@@ -48,6 +49,7 @@ encryption -> security
 shamir -> security
 key-management -> security
 pem -> security
+sqlite -> security
 
 # Memory-related
 memory-management -> memory
@@ -110,6 +112,7 @@ github -> git
 gitlab -> git
 gpg -> git
 workflow -> {tips;git}
+releases -> git
 
 # Shell/Terminal
 zsh -> shell
@@ -157,6 +160,8 @@ redirect -> {tips;development}
 time-management -> productivity
 workspace -> productivity
 vim -> {productivity;development}
+shiori -> setups
+reflection -> productivity
 
 # VMware
 vcsa -> vcf
@@ -187,6 +192,7 @@ virtual -> vcf
 modernization -> vcf
 virtualization -> vcf
 ntp -> vcf
+storage -> vcf
 
 # Infrastructure
 o-ran -> infrastructure
@@ -216,6 +222,7 @@ mac-os -> DELETE_IF_NOT_ALONE
 learning -> DELETE_IF_NOT_ALONE
 webhooks -> DELETE_IF_NOT_ALONE
 ponderings -> DELETE_IF_NOT_ALONE
+version-control -> DELETE_IF_NOT_ALONE
 
 # DevOps/Kubernetes
 docker -> devops
