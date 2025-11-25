@@ -611,10 +611,13 @@ grateful I am to have y’all by my side.&lt;&#x2F;p&gt;
         <link rel="alternate" type="text/html" href="https://zerotohero.dev/about/contact/"/>
         <id>https://zerotohero.dev/about/contact/</id>
         
-        <content type="html" xml:base="https://zerotohero.dev/about/contact/">&lt;p&gt;{{img(
-src=“&#x2F;images&#x2F;size&#x2F;w1200&#x2F;2024&#x2F;03&#x2F;0_0.webp)
-alt=“Have your say.”
-)}}&lt;&#x2F;p&gt;
+        <content type="html" xml:base="https://zerotohero.dev/about/contact/">
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;0_0.webp&quot; alt=&quot;Have your say.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Have your say.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
 &lt;p&gt;If you want to contact me, &lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;about&#x2F;contact&#x2F;&quot;&gt;this contact page&lt;&#x2F;a&gt;
 lists social platforms I’m actively contributing to.
 You can also email me at &lt;a href=&quot;mailto:me@volkan.io&quot;&gt;&lt;strong&gt;me@volkan.io&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;;

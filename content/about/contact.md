@@ -16,7 +16,7 @@ tags = ["about"]
 +++
 
 {{img(
-  src="/images/size/w1200/2024/03/0_0.webp)
+  src="/images/size/w1200/2024/03/0_0.webp"
   alt="Have your say."
 )}}
 
