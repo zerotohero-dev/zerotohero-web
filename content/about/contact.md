@@ -20,7 +20,7 @@ tags = ["about"]
   alt="Have your say."
 )}}
 
-If you want to contact me, [this contact page][web] 
+If you want to contact me, [**volkan.io**][web] 
 lists social platforms I'm actively contributing to.
 You can also email me at [**me@volkan.io**][email]; 
 however, don't expect an immediate reply (*or a reply at all*).
@@ -31,7 +31,7 @@ May the source be with you 🦄,
 
 Volkan.
 
-[web]: @/about/contact.md
+[web]: https://volkan.io/
 [email]: mailto:me@volkan.io
 
 --------
