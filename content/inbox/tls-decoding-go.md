@@ -13,7 +13,7 @@ description = "Debugging TLS Certificate Issues in Go: A Base64 Decoding Story"
 date = "2024-12-10"
 
 [taxonomies]
-tags = ["go","inbox","pem","security","tls"]
+tags = ["go","inbox","security","tls"]
 +++
 
 When working with TLS certificates in Go applications, you might encounter some unexpected challenges. In this post, we'll explore a common issue that occurs when dealing with base64-encoded certificates and how to resolve it.

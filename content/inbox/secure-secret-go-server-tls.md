@@ -13,7 +13,7 @@ description = "DBuilding a Secure Secrets Management Server in Go"
 date = "2024-12-10"
 
 [taxonomies]
-tags = ["inbox","go","security","secrets-management","tls","rest-api"]
+tags = ["go","inbox","secrets-management","security","tls"]
 +++
 
 In modern cloud-native environments, managing secrets securely is crucial for maintaining the security of your infrastructure. This post walks through building a secure secrets management server in Go that handles TLS certificates and serves secrets via a REST API.

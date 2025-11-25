@@ -33,6 +33,7 @@ http -> go
 mutexes -> go
 base64 -> go
 microservices -> go
+rest-api -> go
 
 # Secrets-related
 secrets -> secrets-management
@@ -45,6 +46,7 @@ certificates -> security
 encryption -> security
 shamir -> security
 key-management -> security
+pem -> security
 
 # Memory-related
 memory-management -> memory
@@ -106,6 +108,7 @@ gpg -> git
 zsh -> shell
 terminal -> shell
 command-line -> shell
+shell -> linux
 
 # Unix/Linux
 ubuntu -> linux
@@ -213,6 +216,8 @@ career -> top-of-mind
 collaboration -> top-of-mind
 reading-list -> roadmap
 snippets -> inbox
+team -> top-of-mind
+ponderings -> top-of-mind
 
 # Meta tags to consolidate
 volkan -> about

@@ -12,7 +12,7 @@ title = "Trust Cultivates a Cohesive Team"
 date = "2024-03-07"
 
 [taxonomies]
-tags = ["team","top-of-mind","trust"]
+tags = ["top-of-mind","trust"]
 +++
 
 ![Trust Cultivates a Cohesive Team](/images/size/w1200/2024/03/trust-team.png)
