@@ -12,7 +12,7 @@ title = "FizzBuzz Pro High Level Design"
 date = "2021-07-23"
 
 [taxonomies]
-tags = ["zero-to-prod"]
+tags = []
 +++
 
 {{img(

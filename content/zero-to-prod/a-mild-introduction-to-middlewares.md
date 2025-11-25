@@ -12,7 +12,7 @@ title = "Zero to Prod in Half an Hour: Part 7: A Mild Introduction to Middleware
 date = "2024-03-05"
 
 [taxonomies]
-tags = ["zero-to-prod"]
+tags = []
 +++  
 
 {{img(

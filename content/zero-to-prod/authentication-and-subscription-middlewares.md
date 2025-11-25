@@ -12,7 +12,7 @@ title = "Zero to Prod in Half an Hour: Part 10 --- Authentication and Subscripti
 date = "2022-02-10"
 
 [taxonomies]
-tags = ["zero-to-prod"]
+tags = []
 +++
 
 

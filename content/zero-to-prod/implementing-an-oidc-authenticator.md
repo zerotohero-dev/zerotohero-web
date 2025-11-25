@@ -12,7 +12,7 @@ title = "Zero to Prod in Half an Hour: Part 5 --- Implementing an OIDC Authentic
 date = "2021-01-12"
 
 [taxonomies]
-tags = ["zero-to-prod"]
+tags = []
 +++
 
 {{img(

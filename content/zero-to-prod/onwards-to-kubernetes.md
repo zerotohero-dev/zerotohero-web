@@ -12,7 +12,7 @@ title = "Zero to Prod in Half an Hour: Part 14: Onwards to Kubernetes"
 date = "2022-02-09"
 
 [taxonomies]
-tags = ["zero-to-prod"]
+tags = []
 +++
 
 {{img(

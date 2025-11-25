@@ -12,7 +12,7 @@ title = "It's Time to Fizz that Buzz"
 date = "2024-05-21"
 
 [taxonomies]
-tags = ["zero-to-prod"]
+tags = []
 +++
 
 {{img(

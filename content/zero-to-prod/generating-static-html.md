@@ -12,7 +12,7 @@ title = "Zero to Prod in Half an Hour: Part 2 --- Generating Static HTML"
 date = "2022-01-06"
 
 [taxonomies]
-tags = ["zero-to-prod"]
+tags = []
 +++
 
 {{img(

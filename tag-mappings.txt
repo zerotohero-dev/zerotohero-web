@@ -221,6 +221,9 @@ architecture -> SPIKE
 # External Secrets Operator (continued)
 debugging -> external-secret-operator
 
+# Meta/Series tags to remove (have dedicated landing pages)
+zero-to-prod -> DELETE
+
 # Conditional removals (only remove if other tags exist)
 automation -> DELETE_IF_NOT_ALONE
 comparison -> DELETE_IF_NOT_ALONE

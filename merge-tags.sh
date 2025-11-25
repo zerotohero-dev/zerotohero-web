@@ -130,7 +130,16 @@ find content -name "*.md" -type f | while read file; do
 
             elif [ "$new_tag" = "DELETE" ]; then
                 # Always remove the tag
-                new_tags_line=$(echo "$new_tags_line" | sed "s/, *\"$old_tag_escaped\"//; s/\"$old_tag_escaped\" *, *//")
+                # Check if this is the only tag
+                tag_count=$(echo "$new_tags_line" | grep -o '"[^"]*"' | wc -l | xargs)
+
+                if [ "$tag_count" -eq 1 ]; then
+                    # Only tag - create empty array
+                    new_tags_line="tags = []"
+                else
+                    # Multiple tags - remove with comma handling
+                    new_tags_line=$(echo "$new_tags_line" | sed "s/, *\"$old_tag_escaped\"//; s/\"$old_tag_escaped\" *, *//")
+                fi
                 file_modified=true
                 file_replacements=$((file_replacements + 1))
 

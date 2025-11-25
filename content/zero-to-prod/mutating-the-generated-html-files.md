@@ -12,7 +12,7 @@ title = "Zero to Prod in Half an Hour: Part 3 --- Mutating the Generated HTML Fi
 date = "2022-01-09"
 
 [taxonomies]
-tags = ["zero-to-prod"]
+tags = []
 +++
 
 ![Zero to Prod in Half an Hour: Part 3 --- Mutating the Generated HTML Files](/images/size/w1200/2024/03/mutation.png)

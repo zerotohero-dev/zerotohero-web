@@ -12,7 +12,7 @@ title = "Zero to Prod in Half an Hour: Part 1 --- An Overview of FizzBuzz Pro"
 date = "2022-10-15"
 
 [taxonomies]
-tags = ["zero-to-prod"]
+tags = []
 +++
 
 {{img(
