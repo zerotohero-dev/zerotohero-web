@@ -13,7 +13,7 @@ description = "Initial Configuration of Your ESXi Host: DCUI Setup Guide"
 date = "2024-12-10"
 
 [taxonomies]
-tags = ["VCF","inbox","server"]
+tags = ["VCF","inbox"]
 +++
 
 ## Video

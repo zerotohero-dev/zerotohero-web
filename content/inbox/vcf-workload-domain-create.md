@@ -13,7 +13,7 @@ description = "Creating Workload Domains in VMware Cloud Foundation: Step-by-Ste
 date = "2024-12-12"
 
 [taxonomies]
-tags = ["VCF","inbox","infrastructure"]
+tags = ["VCF","inbox"]
 +++
 
 Workload domains in VMware Cloud Foundation (VCF) are the primary method of allocating cloud capacity for hosting workloads. This guide walks through the process of creating and configuring workload domains.

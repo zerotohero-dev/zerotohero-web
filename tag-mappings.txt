@@ -63,6 +63,7 @@ memory-retention -> memory
 
 # Identity-related
 identity-management -> identity
+identity -> SPIFFE
 
 # Encryption/Crypto
 ssl -> tls
@@ -99,6 +100,8 @@ logging -> development
 system-design -> development
 testing -> development
 regexp -> {roadmap;development}
+method-extraction -> development
+strategy -> {tips;development}
 
 # Hacker culture
 hacker-ethic -> hacker-culture
@@ -202,9 +205,12 @@ ntp -> VCF
 storage -> VCF
 vsecm -> VCF
 vmware -> VCF
+migration -> VCF
+server -> VCF
 
 # Infrastructure
 o-ran -> infrastructure
+infrastructure -> VCF
 
 # Projects
 aegis -> SPIKE

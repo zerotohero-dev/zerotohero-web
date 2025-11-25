@@ -13,7 +13,7 @@ description = "Establishing SPIFFE Federation Between Kubernetes Clusters"
 date = "2024-12-16"
 
 [taxonomies]
-tags = ["SPIFFE","SPIRE","identity","inbox","kubernetes","security"]
+tags = ["SPIFFE","SPIRE","inbox","kubernetes","security"]
 +++
 
 SPIFFE (Secure Production Identity Framework For Everyone) provides a robust framework for service identity across distributed systems. When using SPIFFE with SPIRE (SPIFFE Runtime Environment) in Kubernetes clusters, it's common to have multiple trust domains. To enable secure communication between these domains, you need to establish SPIFFE federation by exchanging and trusting each other's trust bundles.
