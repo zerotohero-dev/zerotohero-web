@@ -12,7 +12,7 @@ title = "Write to Forget"
 date = "2023-07-25"
 
 [taxonomies]
-tags = ["hacker-culture","top-of-mind","writing"]
+tags = ["content-creation","hacker-culture","top-of-mind"]
 +++
 
 ![Write to Forget](/images/size/w1200/2024/03/write-to-forget.png)

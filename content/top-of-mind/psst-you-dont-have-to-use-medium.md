@@ -12,7 +12,7 @@ title = "Psst... You Don't Have to Use Medium: Discover the Freedom of Owning Yo
 date = "2024-03-06"
 
 [taxonomies]
-tags = ["top-of-mind","writing","content-creation"]
+tags = ["content-creation","top-of-mind"]
 +++
 
 ![Psst... You Don't Have to Use Medium: Discover the Freedom of Owning Your Content](/images/size/w1200/2024/03/freedom.png)

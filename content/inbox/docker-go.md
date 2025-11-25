@@ -13,7 +13,7 @@ description = "Building a Secure Webhook Server with Go and Docker: A Step-by-St
 date = "2024-12-11"
 
 [taxonomies]
-tags = ["go","inbox","kubernetes","security","webhooks"]
+tags = ["go","inbox","kubernetes","security"]
 +++
 
 In this tutorial, we'll walk through the process of building and containerizing a secure webhook server using Go. We'll cover everything from setting up the project structure to creating a production-ready Docker container.

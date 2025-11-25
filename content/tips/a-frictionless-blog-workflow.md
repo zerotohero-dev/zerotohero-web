@@ -12,7 +12,7 @@ title = "A Frictionless Blog Workflow"
 date = "2025-11-21"
 
 [taxonomies]
-tags = ["tips","writing","productivity","content-creation"]
+tags = ["content-creation","productivity","tips"]
 +++
 
 {{img(

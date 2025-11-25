@@ -18,6 +18,7 @@ external-secrets-operator -> external-secret-operator
 federation -> spiffe
 spire-agent -> spire
 go-spiffe -> spiffe
+zero-trust -> {spiffe;spire}
 
 # Go-specific
 cgo -> go
@@ -113,11 +114,13 @@ bash -> linux
 # Content/Writing
 content -> writing
 blogging -> writing
+writing -> content-creation
 documentation -> content-creation
 
 # Design
 color-theory -> design
 ux -> design
+typography -> design
 
 # Networking
 tcp-ip -> networking
@@ -161,6 +164,7 @@ configuration -> vcf
 installation -> vcf
 workload-domains -> vcf
 lifecycle-management -> vcf
+virtual -> vcf
 
 # Projects
 aegis -> spike
@@ -185,6 +189,7 @@ marshaling -> DELETE_IF_NOT_ALONE
 mastodon -> DELETE_IF_NOT_ALONE
 mac-os -> DELETE_IF_NOT_ALONE
 learning -> DELETE_IF_NOT_ALONE
+webhooks -> DELETE_IF_NOT_ALONE
 
 # DevOps/Kubernetes
 docker -> devops
