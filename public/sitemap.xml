@@ -674,19 +674,10 @@
         <loc>https://zerotohero.dev/tags/kubernetes/</loc>
     </url>
     <url>
-        <loc>https://zerotohero.dev/tags/learning/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/lifecycle-management/</loc>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/tags/linux/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/method-extraction/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/microservices/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/migration/</loc>
@@ -696,9 +687,6 @@
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/mtls/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/namespaces/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/networking/</loc>
@@ -729,9 +717,6 @@
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/permissions/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/platform-development/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/ponderings/</loc>
@@ -774,9 +759,6 @@
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/server/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/services/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/setups/</loc>

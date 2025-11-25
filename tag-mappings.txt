@@ -31,6 +31,7 @@ deadlocks -> go
 http -> go
 mutexes -> go
 base64 -> go
+microservices -> go
 
 # Secrets-related
 secrets -> secrets-management
@@ -159,6 +160,7 @@ gpu -> vcf
 configuration -> vcf
 installation -> vcf
 workload-domains -> vcf
+lifecycle-management -> vcf
 
 # Projects
 aegis -> spike
@@ -182,12 +184,16 @@ jwt -> DELETE_IF_NOT_ALONE
 marshaling -> DELETE_IF_NOT_ALONE
 mastodon -> DELETE_IF_NOT_ALONE
 mac-os -> DELETE_IF_NOT_ALONE
+learning -> DELETE_IF_NOT_ALONE
 
 # DevOps/Kubernetes
 docker -> devops
 devops -> kubernetes
 performance -> kubernetes
 aws -> kubernetes
+namespaces -> kubernetes
+platform-development -> kubernetes
+services -> kubernetes
 
 # Category tags
 catch-22 -> top-of-mind

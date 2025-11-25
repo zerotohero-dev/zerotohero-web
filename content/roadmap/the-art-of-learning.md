@@ -12,7 +12,7 @@ title = "Master Your Mind: Unleash the Power of Learning"
 date = "2024-03-06"
 
 [taxonomies]
-tags = ["roadmap","learning"]
+tags = ["roadmap"]
 +++
 
 ![Master Your Mind: Unleash the Power of Learning](/images/size/w1200/2024/03/rivers.png)
