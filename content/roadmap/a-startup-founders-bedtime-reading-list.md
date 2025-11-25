@@ -12,7 +12,7 @@ title = "A Startup Founder's Bedtime Reading List"
 date = "2021-11-26"
 
 [taxonomies]
-tags = ["roadmap","reading-list","startup"]
+tags = ["roadmap","startup"]
 +++
 
 ![A Startup Founder's Bedtime Reading List]()

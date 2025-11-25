@@ -710,13 +710,7 @@
         <loc>https://zerotohero.dev/tags/permissions/</loc>
     </url>
     <url>
-        <loc>https://zerotohero.dev/tags/ponderings/</loc>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/tags/productivity/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/reading-list/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/reflection/</loc>
@@ -761,9 +755,6 @@
         <loc>https://zerotohero.dev/tags/simplicity/</loc>
     </url>
     <url>
-        <loc>https://zerotohero.dev/tags/snippets/</loc>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/tags/spiffe/</loc>
     </url>
     <url>
@@ -783,9 +774,6 @@
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/strategy/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/streaming/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/syslog/</loc>

@@ -12,7 +12,7 @@ title = "Embracing Daily Reflection"
 date = "2021-06-04"
 
 [taxonomies]
-tags = ["ponderings","productivity","reflection","tips","top-of-mind"]
+tags = ["productivity","reflection","tips","top-of-mind"]
 +++
 
 ![Embracing Daily Reflection](/images/size/w1200/2024/03/Volkan_Ozcelik_By_asking_myself_probing_questions_I_delve_deepe_e8494425-f36a-4e0d-b320-64efce011b35.png)

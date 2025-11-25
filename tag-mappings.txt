@@ -117,6 +117,7 @@ content -> writing
 blogging -> writing
 writing -> content-creation
 documentation -> content-creation
+streaming -> {content-creation;productivity}
 
 # Design
 color-theory -> design
@@ -194,6 +195,7 @@ mastodon -> DELETE_IF_NOT_ALONE
 mac-os -> DELETE_IF_NOT_ALONE
 learning -> DELETE_IF_NOT_ALONE
 webhooks -> DELETE_IF_NOT_ALONE
+ponderings -> DELETE_IF_NOT_ALONE
 
 # DevOps/Kubernetes
 docker -> devops
@@ -209,6 +211,8 @@ catch-22 -> top-of-mind
 drafts -> inbox
 career -> top-of-mind
 collaboration -> top-of-mind
+reading-list -> roadmap
+snippets -> inbox
 
 # Meta tags to consolidate
 volkan -> about
