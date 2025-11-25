@@ -13,7 +13,7 @@ description = "Deploying Application Virtual Networks (AVNs) in VMware Cloud Fou
 date = "2024-12-12"
 
 [taxonomies]
-tags = ["inbox","networking","vcf","vmware"]
+tags = ["VCF","inbox","networking"]
 +++
 
 Application Virtual Networks (AVNs) are software-defined networking constructs built on overlay-backed virtual networks within NSX. When deploying the VMware Aria suite in Cloud Foundation, understanding AVN configuration is crucial for proper implementation.

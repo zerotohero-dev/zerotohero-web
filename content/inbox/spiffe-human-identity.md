@@ -13,7 +13,7 @@ description = "SPIFFE IDs and Human Identity: Bridging the Gap"
 date = "2024-11-27"
 
 [taxonomies]
-tags = ["inbox","spiffe","security","identity"]
+tags = ["SPIFFE","identity","inbox","security"]
 +++
 
 # 

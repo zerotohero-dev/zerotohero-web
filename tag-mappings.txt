@@ -6,9 +6,14 @@
 #   tag -> DELETE_IF_NOT_ALONE     (remove only if other tags exist)
 #
 # Case Inconsistencies (Easy Fixes)
-SPIFFE -> spiffe
-spiffeid -> spiffe
+spiffeid -> SPIFFE
 ESO -> eso
+
+# Capitalize Acronyms
+spiffe -> SPIFFE
+spire -> SPIRE
+spike -> SPIKE
+vcf -> VCF
 
 # External Secrets Operator
 eso -> external-secrets-operator
@@ -16,10 +21,11 @@ external-secrets-operator -> external-secret-operator
 vault -> external-secret-operator
 
 # SPIFFE/SPIRE
-federation -> spiffe
-spire-agent -> spire
-go-spiffe -> spiffe
-zero-trust -> {spiffe;spire}
+federation -> SPIFFE
+spire-agent -> SPIRE
+go-spiffe -> SPIFFE
+zero-trust -> {SPIFFE;SPIRE}
+token -> {SPIFFE;SPIRE}
 
 # Go-specific
 cgo -> go
@@ -162,44 +168,47 @@ workspace -> productivity
 vim -> {productivity;development}
 shiori -> setups
 reflection -> productivity
+simplicity -> productivity
 
 # VMware
-vcsa -> vcf
-vcenter -> vcf
-esxi -> vcf
-cloud-foundation -> vcf
-aria-suite -> vcf
-vsphere -> vcf
-best-practices -> vcf
-software-bundles -> vcf
-sddc -> vcf
-sddc-manager -> vcf
-cloud -> vcf
-cluster-management -> vcf
-private-cloud -> vcf
-deployment -> vcf
-disaster-recovery -> vcf
-host-comissioning -> vcf
-host-commissioning -> vcf
-host-expansion -> vcf
-dns -> vcf
-gpu -> vcf
-configuration -> vcf
-installation -> vcf
-workload-domains -> vcf
-lifecycle-management -> vcf
-virtual -> vcf
-modernization -> vcf
-virtualization -> vcf
-ntp -> vcf
-storage -> vcf
+vcsa -> VCF
+vcenter -> VCF
+esxi -> VCF
+cloud-foundation -> VCF
+aria-suite -> VCF
+vsphere -> VCF
+best-practices -> VCF
+software-bundles -> VCF
+sddc -> VCF
+sddc-manager -> VCF
+cloud -> VCF
+cluster-management -> VCF
+private-cloud -> VCF
+deployment -> VCF
+disaster-recovery -> VCF
+host-comissioning -> VCF
+host-commissioning -> VCF
+host-expansion -> VCF
+dns -> VCF
+gpu -> VCF
+configuration -> VCF
+installation -> VCF
+workload-domains -> VCF
+lifecycle-management -> VCF
+virtual -> VCF
+modernization -> VCF
+virtualization -> VCF
+ntp -> VCF
+storage -> VCF
+vsecm -> VCF
+vmware -> VCF
 
 # Infrastructure
 o-ran -> infrastructure
 
 # Projects
-aegis -> spike
-architecture -> spike
+aegis -> SPIKE
+architecture -> SPIKE
 
 # External Secrets Operator (continued)
 debugging -> external-secret-operator

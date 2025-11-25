@@ -12,7 +12,7 @@ title = "Embracing Simplicity: Why I've Given Up on Smart Quotes and Other Typog
 date = "2024-03-08"
 
 [taxonomies]
-tags = ["design","simplicity","top-of-mind"]
+tags = ["design","productivity","top-of-mind"]
 +++
 
 ![Embracing Simplicity: Why I've Given Up on Smart Quotes--and Other Typographic Niceties](/content/images/size/w1200/2024/03/typography-1.png)

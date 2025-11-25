@@ -13,7 +13,7 @@ description = "VMware vCenter Server: Complete Guide to Backup Configuration and
 date = "2024-12-12"
 
 [taxonomies]
-tags = ["inbox","vcf","vmware"]
+tags = ["VCF","inbox"]
 +++
 
 This guide covers two essential administrative tasks for vCenter Server: configuring backups and managing licenses. Proper backup configuration ensures business continuity, while correct license management keeps your environment compliant.

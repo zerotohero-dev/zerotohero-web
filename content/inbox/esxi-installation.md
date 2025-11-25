@@ -13,7 +13,7 @@ description = "Planning Your ESXi Host Installation: A Comprehensive Guidee"
 date = "2024-12-10"
 
 [taxonomies]
-tags = ["inbox","server","vcf","vmware"]
+tags = ["VCF","inbox","server"]
 +++
 
 ## Video

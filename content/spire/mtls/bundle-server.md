@@ -12,7 +12,7 @@ title = "mTLS With SPIRE: Part 4: Containerizing the Server Appp"
 date = "2022-08-19"
 
 [taxonomies]
-tags = ["mtls","spiffe","spire"]
+tags = ["SPIFFE","SPIRE","mtls"]
 +++
 
 {{img(

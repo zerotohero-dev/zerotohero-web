@@ -13,7 +13,7 @@ description = "vSphere 8 Update 2: What's New in VMware's Latest Release"
 date = "2024-12-12"
 
 [taxonomies]
-tags = ["development","inbox","infrastructure","kubernetes","vcf","vmware"]
+tags = ["VCF","development","inbox","infrastructure","kubernetes"]
 +++
 
 VMware has announced significant updates to vSphere 8 with Update 2, along with new cloud services for vSphere Plus customers. These updates focus on three key areas: administrative efficiency, performance improvements, and developer enablement.

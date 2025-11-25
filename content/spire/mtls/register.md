@@ -12,7 +12,7 @@ title = "mTLS With SPIRE: Part 7: Registering Nodes and Workloads to SPIRE"
 date = "2022-10-19"
 
 [taxonomies]
-tags = ["mtls","spiffe","spire"]
+tags = ["SPIFFE","SPIRE","mtls"]
 +++
 
 {{img(

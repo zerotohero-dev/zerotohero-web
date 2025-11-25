@@ -1526,6 +1526,114 @@ viewers.&lt;&#x2F;p&gt;
         
     </entry>
     <entry xml:lang="en">
+        <title>Embracing Simplicity: Why I&#x27;ve Given Up on Smart Quotes and Other Typographic Niceties</title>
+        <published>2024-03-08T00:00:00+00:00</published>
+        <updated>2024-03-08T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/top-of-mind/dumb-quotes/"/>
+        <id>https://zerotohero.dev/top-of-mind/dumb-quotes/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/top-of-mind/dumb-quotes/">&lt;p&gt;&lt;img src=&quot;&#x2F;content&#x2F;images&#x2F;size&#x2F;w1200&#x2F;2024&#x2F;03&#x2F;typography-1.png&quot; alt=&quot;Embracing Simplicity: Why I’ve Given Up on Smart Quotes–and Other Typographic Niceties&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Before you begin, for the
+interested, &lt;a href=&quot;https:&#x2F;&#x2F;smartquotesforsmartpeople.com&#x2F;&quot;&gt;here’s a reference that explains what smart and dumb quotes are&lt;&#x2F;a&gt;:&lt;br &#x2F;&gt;
+““Smart quotes” are the ideal form of quotation marks and apostrophes, and are
+commonly curly or sloped. “Dumb quotes,” or straight quotes, are a vestigial
+constraint from typewriters when using one key for two different marks helped
+save space on a keyboard.“&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;As someone deeply involved in communication, I have deliberately opted for
+simplicity by using dumb quotes and dumb typography and avoiding the intricate
+details of these typographic enhancements. Here’s why:&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-typographic-toolbox&quot;&gt;The Typographic Toolbox&lt;&#x2F;h2&gt;
+&lt;p&gt;Smart typography provides tools that aim to improve readability and visual
+appeal:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Em dashes (—) can create pauses.&lt;&#x2F;li&gt;
+&lt;li&gt;Indicating ranges with style en dashes (–) subtly differentiate values,&lt;&#x2F;li&gt;
+&lt;li&gt;and ellipses (…) effectively show omission or lingering thoughts.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;While these elements undoubtedly enhance the sophistication of writing, they
+also introduce complications in settings that often rely on basic typographic
+conventions.&lt;&#x2F;p&gt;
+&lt;p&gt;For instance, CI&#x2F;CD environments, CLIs, Diff&#x2F;Merge tools, Version Control
+Systems, and other developer tools may not be compatible with typography–A
+terminal will be much happier with &lt;code&gt;&quot;a quoted text like this...&quot;&lt;&#x2F;code&gt;,
+than &lt;code&gt;&quot;a smart quoted text like that...&quot;&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-challenge-of-going-digital&quot;&gt;The Challenge of Going Digital&lt;&#x2F;h2&gt;
+&lt;p&gt;With an array of platforms and software tools, such as IDEs and content
+management systems like &lt;strong&gt;&lt;em&gt;Ghost&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt; and &lt;strong&gt;&lt;em&gt;Jekyll&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;, simplicity and consistency
+are often valued more than precision.&lt;&#x2F;p&gt;
+&lt;p&gt;These platforms often automatically convert dumb typography to smart typography.&lt;&#x2F;p&gt;
+&lt;p&gt;So, if I type &lt;code&gt;&quot;I enjoy typography...&quot;&lt;&#x2F;code&gt; the published HTML on my blog will
+display as &lt;code&gt;&quot;I enjoy typography...&quot;&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;So, all this time, I’ve been fighting over nothing:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;My editing tools can transform dumb typography into smart typography.&lt;&#x2F;li&gt;
+&lt;li&gt;And my development tooling would instead prefer dumb typography all the time.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;In short, &lt;strong&gt;using dumb typography everywhere is (&lt;em&gt;ironically&lt;&#x2F;em&gt;) a smart way&lt;&#x2F;strong&gt; for
+me to move forward.&lt;&#x2F;p&gt;
+&lt;p&gt;Furthermore, all the other AI-powered spell-checking tools (&lt;em&gt;yes,&lt;&#x2F;em&gt; &lt;a href=&quot;https:&#x2F;&#x2F;www.grammarly.com&#x2F;&quot;&gt;
+&lt;em&gt;Grammarly&lt;&#x2F;em&gt;&lt;&#x2F;a&gt;&lt;em&gt;, I’m looking at you!&lt;&#x2F;em&gt;) default to dumb
+quotes no matter how hard I try to convince them otherwise: Each time I make a
+change in my text, rewriting with an AI-suggested clarification, I have to
+switch back to smart quotation marks manually.&lt;&#x2F;p&gt;
+&lt;p&gt;Besides, in programming and code comments, straight quotes are the &lt;strong&gt;norm&lt;&#x2F;strong&gt;,
+mostly because they are what’s being used in the context of programming
+languages. Mixing typographic quotes in code could lead to syntax errors or
+unintended behavior. Therefore, using straight quotes in code and possibly
+documentation facilitates smoother collaboration and reduces the overhead of
+handling formatting discrepancies.&lt;&#x2F;p&gt;
+&lt;p&gt;I’m so &lt;strong&gt;frustrated&lt;&#x2F;strong&gt; with battling against these tools. I just want to focus on
+creating content instead of constantly grappling with software over apostrophes
+and quotation marks. – I surrender. I. Give. Up!&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;focusing-on-what-matters&quot;&gt;Focusing on What Matters&lt;&#x2F;h2&gt;
+&lt;p&gt;When I think about what makes my technical blog valuable, it’s not about using
+fonts or styles. Instead, it is about effectively communicating complex ideas
+clearly and accurately to my audience.&lt;&#x2F;p&gt;
+&lt;p&gt;The people who read my blog seek insights and solutions to problems, so the
+content’s substance matters more to them than any fancy formatting. This
+understanding has led me to simplify my typography approach, focusing on
+functionality and making sure things, like quotes, simple dashes, and basic
+ellipses, are easy to read.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;simplifying-for-clarity-and-ease&quot;&gt;Simplifying for Clarity and Ease&lt;&#x2F;h2&gt;
+&lt;p&gt;Choosing simplicity isn’t about working within the limitations of tools; it’s a
+conscious decision to prioritize clear communication and compatibility. Above
+all else, I want my writing process to be &lt;strong&gt;smoother&lt;&#x2F;strong&gt; to produce content *
+&lt;em&gt;efficiently&lt;&#x2F;em&gt;*.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;a-broader-perspective-valuing-practicality&quot;&gt;A Broader Perspective: Valuing Practicality&lt;&#x2F;h2&gt;
+&lt;p&gt;Opting for a style reflects a more significant principle I believe in:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Prioritizing practicality over perfection&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;I don’t look at things from the ivory tower–I am not a purist. If anything, I
+consider myself a pragmatist.&lt;&#x2F;p&gt;
+&lt;p&gt;In writing, what truly matters is not how fancy your presentation looks. It is
+how well your message is understood accurately and clearly. By prioritizing the
+essentials, I allow myself to delve deeper into things that matter.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;The shift from typography towards a simplified approach signifies a broader
+understanding of the critical elements that drive effective communication. While
+my appeal of typography remains, my sanity comes first 😄. Embracing simplicity
+enables me to focus on creating content that informs, captivates, and enlightens
+without being bogged down by formatting intricacies.&lt;&#x2F;p&gt;
+&lt;p&gt;Yes, I may have gone on a bit about something some might not consider
+significant… However, I needed to get that off my chest.&lt;&#x2F;p&gt;
+&lt;p&gt;Until next time (dot dot dot)… May the source be with you 🦄.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
+&lt;p&gt;{{ top_of_mind_nav(selected=3) }&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
         <title>Reshape Your Workspace, Reshape Your Future</title>
         <published>2023-07-12T00:00:00+00:00</published>
         <updated>2023-07-12T00:00:00+00:00</updated>

@@ -710,9 +710,6 @@
         <loc>https://zerotohero.dev/tags/setups/</loc>
     </url>
     <url>
-        <loc>https://zerotohero.dev/tags/simplicity/</loc>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/tags/spiffe/</loc>
     </url>
     <url>
@@ -731,19 +728,10 @@
         <loc>https://zerotohero.dev/tags/tls/</loc>
     </url>
     <url>
-        <loc>https://zerotohero.dev/tags/token/</loc>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/tags/top-of-mind/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/vcf/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/vmware/</loc>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tags/vsecm/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/zero-to-prod/</loc>

@@ -13,7 +13,7 @@ description = "Deploying VMware vCenter Server Appliance (vCSA): A Comprehensive
 date = "2024-12-12"
 
 [taxonomies]
-tags = ["inbox","vcf","vmware"]
+tags = ["VCF","inbox"]
 +++
 
 

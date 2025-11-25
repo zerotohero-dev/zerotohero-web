@@ -12,7 +12,7 @@ title = "mTLS With SPIRE: Part 10: Establishing Cross-Cluster mTLS"
 date = "2022-08-19"
 
 [taxonomies]
-tags = ["mtls","spiffe","spire"]
+tags = ["SPIFFE","SPIRE","mtls"]
 +++
 
 {{img(
