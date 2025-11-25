@@ -87,12 +87,14 @@ destructuring -> development
 hashing -> development
 javascript -> development
 logging -> development
+system-design -> development
 
 # Hacker culture
 hacker-ethic -> hacker-culture
 hackers -> hacker-culture
 hacking -> hacker-culture
 guide -> hacker-culture
+team -> hacker-culture
 
 # Workload domains
 workload-domain -> workload-domains
@@ -208,6 +210,7 @@ aws -> kubernetes
 namespaces -> kubernetes
 platform-development -> kubernetes
 services -> kubernetes
+scalability -> devops
 
 # Category tags
 catch-22 -> top-of-mind
@@ -216,8 +219,6 @@ career -> top-of-mind
 collaboration -> top-of-mind
 reading-list -> roadmap
 snippets -> inbox
-team -> top-of-mind
-ponderings -> top-of-mind
 
 # Meta tags to consolidate
 volkan -> about
