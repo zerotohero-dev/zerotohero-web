@@ -38,7 +38,6 @@ navigation = [
     { url = "$BASE_URL/", title = "Z→H"},
     { url = "https://discord.gg/kampus", title = "kamp.us", is_external = true },
     { url = "https://github.com/spiffe/spike", title = "SPIKE", is_external = true },
-    { url = "https://github.com/vmware-tanzu/secrets-manager", title = "VSecM", is_external = true }
 ]
 
 [extra.papermod]
@@ -46,7 +45,7 @@ title = "Zero to Hero"
 default_theme = "auto"
 theme = "light"
 language_direction = "auto"
-keywords = ["keyword1", "keyword2", "keyword3"]
+keywords = ["architecture", "development", "hacker-culture"]
 show_toc = true
 show_theme_toggle = true
 show_scroll_to_top = true
@@ -68,7 +67,6 @@ navigation = [
     { url = "https://vadidekigeyik.com", title = "Vadideki Geyik", is_external = true },
     { url = "https://discord.gg/kampus", title = "kamp.us", is_external = true },
     { url = "https://github.com/spiffe/spike", title = "SPIKE", is_external = true },
-    { url = "https://github.com/vmware-tanzu/secrets-manager", title = "VSecM", is_external = true }
 ]
 
 home_title = "🐢⚡️🦌🦄"
