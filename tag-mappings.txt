@@ -26,6 +26,7 @@ spire-agent -> SPIRE
 go-spiffe -> SPIFFE
 zero-trust -> {SPIFFE;SPIRE}
 token -> {SPIFFE;SPIRE}
+mtls -> {SPIFFE;SPIRE}
 
 # Go-specific
 cgo -> go
@@ -133,6 +134,7 @@ shell -> linux
 ubuntu -> linux
 unix -> linux
 bash -> linux
+permissions -> linux
 
 # Content/Writing
 content -> writing

@@ -12,7 +12,7 @@ title = "mTLS With SPIRE: Part 1: Introduction"
 date = "2021-10-19"
 
 [taxonomies]
-tags = ["SPIFFE","SPIRE","mtls","security"]
+tags = ["SPIFFE","SPIRE","security"]
 +++
 
 {{img(
