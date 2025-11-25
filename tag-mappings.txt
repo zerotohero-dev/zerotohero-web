@@ -216,6 +216,7 @@ namespaces -> kubernetes
 platform-development -> kubernetes
 services -> kubernetes
 scalability -> devops
+nodejs -> devops
 
 # Category tags
 catch-22 -> top-of-mind
