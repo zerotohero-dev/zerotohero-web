@@ -12,7 +12,7 @@ title = "Interview Done. Radio Silence 🎃 What Now?"
 date = "2021-10-22"
 
 [taxonomies]
-tags = ["highlights"]
+tags = ["highlights","security","SPIFFE","SPIRE"]
 +++
 
 ![Interview Done. Radio Silence 🎃 What Now?]()

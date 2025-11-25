@@ -12,7 +12,7 @@ title = "Respect and Understanding"
 date = "2021-09-10"
 
 [taxonomies]
-tags = ["highlights","kubernetes"]
+tags = ["highlights","kubernetes","security"]
 +++
 
 {{img(

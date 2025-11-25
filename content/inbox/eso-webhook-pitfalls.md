@@ -13,7 +13,7 @@ description = "Building a Custom Webhook Provider for External Secrets Operator:
 date = "2024-12-12"
 
 [taxonomies]
-tags = ["external-secret-operator","inbox","kubernetes","architecture","go"]
+tags = ["external-secret-operator","inbox","kubernetes","architecture","go","secrets-management","security"]
 +++
 
 In this tutorial, we'll walk through creating a custom webhook provider for External Secrets Operator (ESO) from scratch. We'll build a simple Go server that serves as a webhook, deploy it to Kubernetes, and configure ESO to use it for secret management.

@@ -12,7 +12,7 @@ title = "The Only Thing That doesn't Change is Change Itself"
 date = "2021-05-19"
 
 [taxonomies]
-tags = ["highlights"]
+tags = ["highlights","development"]
 +++
 
 {{img(

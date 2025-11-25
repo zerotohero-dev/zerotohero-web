@@ -13,7 +13,7 @@ description = "Understanding SPIFFE Source Management in go-spiffe"
 date = "2024-12-01"
 
 [taxonomies]
-tags = ["SPIFFE","go","inbox","tips"]
+tags = ["SPIFFE","go","inbox","tips","SPIRE","networking","security"]
 +++
 
 When working with the go-spiffe library, one common question developers face is how to properly manage SPIFFE sources. Specifically, should you create a new source for each request, or can you maintain a long-living source? Let's dive into how source management works in go-spiffe and explore best practices for your applications.

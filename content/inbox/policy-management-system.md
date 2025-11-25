@@ -13,7 +13,7 @@ description = "Design Patterns in Go: Building a Policy Management System"
 date = "2024-11-24"
 
 [taxonomies]
-tags = ["inbox","go","development"]
+tags = ["inbox","go","development","SPIFFE","SPIRE"]
 +++
 
 When building systems that require access control, one common requirement is managing policies that define who can access what. In this post, I'll walk through the design and implementation of a policy management system in Go, highlighting important design decisions and patterns along the way.

@@ -12,7 +12,7 @@ title = "A Glossary of Mostly Developer-Related Things"
 date = "2021-11-27"
 
 [taxonomies]
-tags = ["development","roadmap","shell-scripting","cloud-native","linux"]
+tags = ["development","roadmap","shell-scripting","cloud-native","linux","productivity"]
 +++
 
 {{img(

@@ -12,7 +12,7 @@ title = "Zero to Prod in Half an Hour: Part 6 --- Serving Web Pages"
 date = "2022-01-15"
 
 [taxonomies]
-tags = ["git","go"]
+tags = ["git","go","infrastructure"]
 +++
 
 {{img(

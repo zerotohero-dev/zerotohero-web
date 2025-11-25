@@ -13,7 +13,7 @@ description = "Configuring ESXi Through the Web Interface: A Step-by-Step Guide"
 date = "2024-12-10"
 
 [taxonomies]
-tags = ["VCF","inbox"]
+tags = ["VCF","inbox","networking","security"]
 +++
 
 ## Video

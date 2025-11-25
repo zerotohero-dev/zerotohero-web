@@ -13,7 +13,7 @@ description = "Using External Secrets Operator with HTTP Endpoints: A Complete G
 date = "2024-12-12"
 
 [taxonomies]
-tags = ["external-secret-operator","inbox","kubernetes","security","authentication"]
+tags = ["external-secret-operator","inbox","kubernetes","security","authentication","secrets-management"]
 +++
 
 External Secrets Operator (ESO) is a powerful Kubernetes operator that helps manage secrets from external sources. While it's commonly used with cloud provider secret managers like AWS Secrets Manager or HashiCorp Vault, ESO also supports fetching secrets from HTTP endpoints. In this guide, we'll explore how to configure ESO to poll an HTTP endpoint and automatically create Kubernetes secrets from the response.

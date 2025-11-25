@@ -13,7 +13,7 @@ description = "Debugging URL Encoding Issues with External Secrets Operator's We
 date = "2024-12-12"
 
 [taxonomies]
-tags = ["external-secret-operator","inbox","kubernetes"]
+tags = ["external-secret-operator","inbox","kubernetes","secrets-management","security","development"]
 +++
 
 When working with Kubernetes External Secrets Operator (ESO) and its webhook provider, you might encounter some interesting URL encoding challenges. In this post, I'll walk through a specific issue we encountered and how we solved it, which might help others facing similar problems.

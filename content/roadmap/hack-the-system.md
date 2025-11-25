@@ -12,7 +12,7 @@ title = "Who Else is Ready to Hack?"
 date = "2021-11-12"
 
 [taxonomies]
-tags = ["roadmap","hacker-culture"]
+tags = ["roadmap","hacker-culture","secrets-management","security"]
 +++
 
 {{img(

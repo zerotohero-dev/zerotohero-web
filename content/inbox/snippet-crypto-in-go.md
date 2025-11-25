@@ -13,7 +13,7 @@ description = "Snippet/Draft: Crypto in Go"
 date = "2025-07-12"
 
 [taxonomies]
-tags = ["inbox","encryption","go"]
+tags = ["inbox","encryption","go","security"]
 +++
 
 ## Encrypting and Decrypting with AES CBC

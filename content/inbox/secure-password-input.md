@@ -13,7 +13,7 @@ description = "Implementing Secure Password Input in Go CLI Applications"
 date = "2024-11-27"
 
 [taxonomies]
-tags = ["go","inbox","security","shell-scripting","tips"]
+tags = ["go","inbox","security","shell-scripting","tips","networking"]
 +++
 
 When building command-line applications in Go, there often comes a time when you need to securely collect sensitive information from users, such as passwords. In this post, we'll explore how to implement secure password input in a Go CLI application using best practices.

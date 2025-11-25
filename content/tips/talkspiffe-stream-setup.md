@@ -12,7 +12,7 @@ title = "The Live Stream Dream"
 date = "2024-05-27"
 
 [taxonomies]
-tags = ["content-creation","productivity","setups","tips"]
+tags = ["content-creation","productivity","setups","tips","SPIFFE","SPIRE"]
 +++
 
 {{img(

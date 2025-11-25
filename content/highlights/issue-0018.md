@@ -12,7 +12,7 @@ title = "Keep Calm and Carry On"
 date = "2021-11-04"
 
 [taxonomies]
-tags = ["highlights"]
+tags = ["highlights","development"]
 +++
 
 {{img(

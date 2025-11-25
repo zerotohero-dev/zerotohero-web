@@ -13,7 +13,7 @@ description = "Understanding VMware Cloud Foundation Workload Domains: The Build
 date = "2024-12-12"
 
 [taxonomies]
-tags = ["VCF","inbox","architecture","infrastructure","kubernetes"]
+tags = ["VCF","inbox","architecture","infrastructure","kubernetes","productivity"]
 +++
 
 For vSphere administrators looking to build a more flexible and automated private cloud infrastructure, understanding VMware Cloud Foundation (VCF) Workload Domains is essential. Let's dive into what they are and how they can transform your datacenter operations.

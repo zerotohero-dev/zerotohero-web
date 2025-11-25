@@ -12,7 +12,7 @@ title = "How to Make Yourself Heard"
 date = "2024-05-27"
 
 [taxonomies]
-tags = ["highlights"]
+tags = ["highlights","infrastructure"]
 +++
 
 {{img(

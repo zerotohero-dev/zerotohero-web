@@ -13,7 +13,7 @@ description = "Understanding SSL Certificates: From Public CAs to Custom Root Ce
 date = "2024-12-12"
 
 [taxonomies]
-tags = ["inbox","kubernetes","security","tls","authentication","infrastructure"]
+tags = ["inbox","kubernetes","security","tls","authentication","infrastructure","networking"]
 +++
 
 As organizations scale their Kubernetes infrastructure, managing SSL certificates becomes increasingly complex. Let's dive into some common misconceptions and explore how certificate management really works, especially when dealing with custom Certificate Authorities (CAs).

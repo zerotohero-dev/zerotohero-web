@@ -1,4 +1,4 @@
-auth-srategies
+tauth-srategies
 csr
 custom-ca
 esxi-web-config

@@ -12,7 +12,7 @@ title = "Secrets"
 date = "2023-07-11"
 
 [taxonomies]
-tags = ["top-of-mind","secrets-management"]
+tags = ["top-of-mind","secrets-management","security"]
 +++
 
 ![Secrets](/images/size/w1200/2024/03/v0lkan_Secrets_must_be_exposed_when_found._Detours_must_be_take_0aa4d20b-246e-4ac2-892e-4dca002ec2c8.png)

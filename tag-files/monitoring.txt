@@ -1,4 +1,3 @@
-chisel
 docker-memory-limits
 issue-0009
 issue-0025

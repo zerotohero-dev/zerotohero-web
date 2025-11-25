@@ -12,7 +12,7 @@ title = "Zero to Prod in Half an Hour: Part 13 --- Containerizing Our Applicatio
 date = "2022-02-10"
 
 [taxonomies]
-tags = ["cloud-native","kubernetes"]
+tags = ["cloud-native","kubernetes","security"]
 +++
 
 {{img(

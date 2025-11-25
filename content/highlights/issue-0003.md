@@ -12,7 +12,7 @@ title = "Know Thyself"
 date = "2021-05-29"
 
 [taxonomies]
-tags = ["highlights"]
+tags = ["highlights","security","development"]
 +++
 
 {{img(

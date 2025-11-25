@@ -12,7 +12,7 @@ title = "Security Is Not Optional"
 date = "2021-11-26"
 
 [taxonomies]
-tags = ["roadmap","security","authentication","top-of-mind","infrastructure"]
+tags = ["roadmap","security","authentication","top-of-mind","infrastructure","development"]
 +++
 
 ![Security Is Not Optional](/images/size/w1200/2024/03/securu.png)

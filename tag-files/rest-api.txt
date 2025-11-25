@@ -1,4 +1,4 @@
-dedicated-oidc-server
+edicated-oidc-server
 scaling-your-node-api-like-a-boss
 secure-secret-go-server-tls
 spiffe-acl

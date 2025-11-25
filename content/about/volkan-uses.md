@@ -12,7 +12,7 @@ title = "Volkan Uses"
 date = "2024-03-04"
 
 [taxonomies]
-tags = ["about","setups","git","kubernetes"]
+tags = ["about","setups","git","kubernetes","infrastructure"]
 +++
 
 {{img(

@@ -13,7 +13,7 @@ description = "Understanding TLS Renegotiation in Go: When and Why to Use Renego
 date = "2024-12-03"
 
 [taxonomies]
-tags = ["go","inbox","kubernetes","security","tls","encryption"]
+tags = ["go","inbox","kubernetes","security","tls","encryption","networking"]
 +++
 
 When configuring TLS in Go applications, you'll often come across the recommendation to set `Renegotiation: tls.RenegotiateNever` in your TLS configuration. But what exactly does this mean, and why is it recommended? Let's dive deep into TLS renegotiation, its implications, and when you might want to use different settings.

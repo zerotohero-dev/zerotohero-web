@@ -12,7 +12,7 @@ title = "Trust Cultivates a Cohesive Team"
 date = "2024-03-07"
 
 [taxonomies]
-tags = ["hacker-culture","top-of-mind"]
+tags = ["hacker-culture","top-of-mind","productivity"]
 +++
 
 ![Trust Cultivates a Cohesive Team](/images/size/w1200/2024/03/trust-team.png)

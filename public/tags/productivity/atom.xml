@@ -497,6 +497,1410 @@ excerpts, or integrating with other tools in your workflow.&lt;&#x2F;p&gt;
         
     </entry>
     <entry xml:lang="en">
+        <title>Understanding DEK and KEK in Encryption: A Practical Guide</title>
+        <published>2024-12-22T00:00:00+00:00</published>
+        <updated>2024-12-22T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/dek-kek/"/>
+        <id>https://zerotohero.dev/inbox/dek-kek/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/dek-kek/">&lt;p&gt;Modern data encryption strategies often employ a two-layer model of key management to balance strong security with operational flexibility. Two commonly used concepts in this model are the Data Encryption Key (DEK) and the Key Encryption Key (KEK). In this post, we’ll unpack how these two keys work together, and how you might store and retrieve them effectively.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-are-dek-and-kek&quot;&gt;What Are DEK and KEK?&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;strong&gt;Data Encryption Key (DEK):&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+A DEK is the key used directly to encrypt and decrypt your data (e.g., files, database entries, or messages). Symmetric encryption algorithms such as AES (Advanced Encryption Standard) are typically used here because they’re efficient and optimized for handling large amounts of data.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Key Encryption Key (KEK):&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+A KEK is used to encrypt (or “wrap”) your DEK, rather than encrypting the data directly. By storing the DEK in a protected, encrypted form, you ensure that even if the encrypted DEK is compromised, it’s unreadable without the KEK.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;why-do-we-separate-keys&quot;&gt;Why Do We Separate Keys?&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;strong&gt;Efficiency:&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+Encrypting large data sets is best done using symmetric keys (DEKs) because they operate quickly and efficiently at scale.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Security:&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+The KEK ensures that DEKs are never stored in plaintext. If an attacker obtains an encrypted DEK, they can’t decrypt the actual data without the KEK.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Scalability and Flexibility:&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+Rotating a KEK doesn’t require re-encrypting all the data—just re-wrapping the DEKs. This modular approach makes it easier to manage large fleets of encrypted objects.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;practical-workflow&quot;&gt;Practical Workflow&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Encrypting Data:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Generate a DEK.&lt;&#x2F;li&gt;
+&lt;li&gt;Encrypt your data with the DEK.&lt;&#x2F;li&gt;
+&lt;li&gt;Encrypt the DEK using the KEK.&lt;&#x2F;li&gt;
+&lt;li&gt;Store the encrypted data along with the encrypted DEK.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Decrypting Data:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Retrieve the encrypted data and the encrypted DEK.&lt;&#x2F;li&gt;
+&lt;li&gt;Use the KEK to unwrap (decrypt) the DEK.&lt;&#x2F;li&gt;
+&lt;li&gt;Use the now-unwrapped DEK to decrypt your data.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;&lt;strong&gt;Analogy:&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+Think of the data as a treasure in a chest, and the DEK as the key to that chest. Instead of leaving that key out in the open, you lock it in a secure safe. The KEK is the combination to that safe. Without knowing the combination (KEK), the chest key (DEK) remains inaccessible, and so does your treasure (data).&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;identifying-the-right-kek-using-key-aliases&quot;&gt;Identifying the Right KEK: Using Key Aliases&lt;&#x2F;h2&gt;
+&lt;p&gt;A common question is how to know which KEK was used if you store many DEKs and data blobs. Since you’ll often have a “table” of encrypted DEKs, you need some metadata to help you fetch the right KEK.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Solution: Store a Key Alias or Key Identifier&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+Alongside each encrypted DEK, store a key alias or unique identifier that maps to the KEK used. When you need to decrypt, you look up this alias, fetch the corresponding KEK, and unwrap the DEK.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;example&quot;&gt;Example&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Encryption Time:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Data is encrypted with DEK_123.&lt;&#x2F;li&gt;
+&lt;li&gt;DEK_123 is wrapped with a KEK referenced by “KEK_Alias”.&lt;&#x2F;li&gt;
+&lt;li&gt;You store the encrypted data, encrypted DEK_123, and “KEK_Alias” together.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Decryption Time:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Look up “KEK_Alias”.&lt;&#x2F;li&gt;
+&lt;li&gt;Fetch the KEK that “KEK_Alias” represents.&lt;&#x2F;li&gt;
+&lt;li&gt;Unwrap DEK_123 using the KEK.&lt;&#x2F;li&gt;
+&lt;li&gt;Decrypt the data using the now-unwrapped DEK_123.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;why-versioning-helps&quot;&gt;Why Versioning Helps&lt;&#x2F;h3&gt;
+&lt;p&gt;Over time, you may rotate KEKs for security reasons. By storing a key alias and possibly a version number, you can keep track of which version of the KEK was used at the time of encryption. This makes it possible to decrypt older data even after you’ve updated the KEK.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;pros-and-cons&quot;&gt;Pros and Cons&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;strong&gt;Pros:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Efficient Encryption:&lt;&#x2F;strong&gt; Bulk data encryption using symmetric DEKs is fast.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Enhanced Security:&lt;&#x2F;strong&gt; DEKs aren’t stored in plaintext; they’re always protected by a KEK.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Scalable Rotation:&lt;&#x2F;strong&gt; You can rotate KEKs without re-encrypting all your data.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;strong&gt;Cons:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Added Complexity:&lt;&#x2F;strong&gt; Two-tier key management is more complex to implement.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Centralized Dependence:&lt;&#x2F;strong&gt; If the KEK or its associated alias system is compromised, attackers might gain access to multiple DEKs.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;key-takeaways&quot;&gt;Key Takeaways&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Use DEKs for fast, efficient encryption of data.&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Wrap DEKs with KEKs to keep them secure.&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Store a key alias (or key ID) alongside encrypted DEKs so you know which KEK to use during decryption.&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;further-reading&quot;&gt;Further Reading&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;NIST Special Publication 800-57: Recommendation for Key Management&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;csrc.nist.gov&#x2F;publications&#x2F;detail&#x2F;sp&#x2F;800-57-part-1&#x2F;rev-5&#x2F;final&quot;&gt;https:&#x2F;&#x2F;csrc.nist.gov&#x2F;publications&#x2F;detail&#x2F;sp&#x2F;800-57-part-1&#x2F;rev-5&#x2F;final&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;AWS KMS Best Practices&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;docs.aws.amazon.com&#x2F;kms&#x2F;latest&#x2F;developerguide&#x2F;best-practices.html&quot;&gt;https:&#x2F;&#x2F;docs.aws.amazon.com&#x2F;kms&#x2F;latest&#x2F;developerguide&#x2F;best-practices.html&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Google Cloud KMS Concepts&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;cloud.google.com&#x2F;kms&#x2F;docs&#x2F;concepts&quot;&gt;https:&#x2F;&#x2F;cloud.google.com&#x2F;kms&#x2F;docs&#x2F;concepts&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;HashiCorp Vault Key Management&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;www.vaultproject.io&#x2F;docs&#x2F;secrets&quot;&gt;https:&#x2F;&#x2F;www.vaultproject.io&#x2F;docs&#x2F;secrets&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;By keeping your key management strategy organized and using clear metadata like aliases, you can confidently store and retrieve your encrypted data, even as KEKs evolve over time.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Deploying Application Virtual Networks (AVNs) in VMware Cloud Foundation: A Guide for Aria Suite</title>
+        <published>2024-12-12T00:00:00+00:00</published>
+        <updated>2024-12-12T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/deploying-application-virtual-networks/"/>
+        <id>https://zerotohero.dev/inbox/deploying-application-virtual-networks/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/deploying-application-virtual-networks/">&lt;p&gt;Application Virtual Networks (AVNs) are software-defined networking constructs built on overlay-backed virtual networks within NSX. When deploying the VMware Aria suite in Cloud Foundation, understanding AVN configuration is crucial for proper implementation.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;understanding-avn-types&quot;&gt;Understanding AVN Types&lt;&#x2F;h2&gt;
+&lt;p&gt;When deploying AVNs for the Aria suite, two distinct network segments are created:&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;1-region-segment-local-virtual-network&quot;&gt;1. Region Segment (Local Virtual Network)&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Purpose: Hosts components that run locally&lt;&#x2F;li&gt;
+&lt;li&gt;Characteristics: No failover requirement&lt;&#x2F;li&gt;
+&lt;li&gt;Example components: Aria Operations for Logs&lt;&#x2F;li&gt;
+&lt;li&gt;Local-only operations&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;2-cross-region-segment&quot;&gt;2. Cross-Region Segment&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Purpose: Hosts components requiring DR capabilities&lt;&#x2F;li&gt;
+&lt;li&gt;Supports failover to DR site during outages&lt;&#x2F;li&gt;
+&lt;li&gt;Hosts components such as:
+&lt;ul&gt;
+&lt;li&gt;Aria Suite Lifecycle Manager&lt;&#x2F;li&gt;
+&lt;li&gt;Workspace ONE Access&lt;&#x2F;li&gt;
+&lt;li&gt;Aria Automation&lt;&#x2F;li&gt;
+&lt;li&gt;Aria Operations&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;deployment-process&quot;&gt;Deployment Process&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;prerequisites&quot;&gt;Prerequisites&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;NSX edge cluster must be deployed in the management domain&lt;&#x2F;li&gt;
+&lt;li&gt;Tier-1 router must be available&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;configuration-steps&quot;&gt;Configuration Steps&lt;&#x2F;h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Initial Navigation&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Access SDDC Manager&lt;&#x2F;li&gt;
+&lt;li&gt;Navigate to AVNs tab&lt;&#x2F;li&gt;
+&lt;li&gt;Select management domain&lt;&#x2F;li&gt;
+&lt;li&gt;Choose Actions &amp;gt; Add AVNs&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Network Type Selection&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Choose between:
+&lt;ul&gt;
+&lt;li&gt;Overlay-backed NSX segments&lt;&#x2F;li&gt;
+&lt;li&gt;VLAN-backed NSX segments&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Note: DR capabilities require overlay-backed segments&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Edge Configuration&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Select NSX edge cluster&lt;&#x2F;li&gt;
+&lt;li&gt;Choose associated Tier-1 router&lt;&#x2F;li&gt;
+&lt;li&gt;Configure segment attachment&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h3 id=&quot;segment-configuration&quot;&gt;Segment Configuration&lt;&#x2F;h3&gt;
+&lt;h4 id=&quot;region-network-settings&quot;&gt;Region Network Settings&lt;&#x2F;h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Name specification (e.g., “region”)&lt;&#x2F;li&gt;
+&lt;li&gt;Subnet configuration (e.g., 192.168.11.0)&lt;&#x2F;li&gt;
+&lt;li&gt;Gateway assignment (e.g., 192.168.11.1)&lt;&#x2F;li&gt;
+&lt;li&gt;MTU setting (typically 8940)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h4 id=&quot;cross-region-network-settings&quot;&gt;Cross-Region Network Settings&lt;&#x2F;h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Name specification (e.g., “x-region”)&lt;&#x2F;li&gt;
+&lt;li&gt;Subnet configuration (e.g., 192.168.31.0)&lt;&#x2F;li&gt;
+&lt;li&gt;Gateway assignment (e.g., 192.168.31.1)&lt;&#x2F;li&gt;
+&lt;li&gt;MTU setting (typically 8940)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;deployment-verification&quot;&gt;Deployment Verification&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;nsx-manager&quot;&gt;NSX Manager&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Check network topology&lt;&#x2F;li&gt;
+&lt;li&gt;Verify segment creation&lt;&#x2F;li&gt;
+&lt;li&gt;Confirm routing configuration&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;vsphere-client&quot;&gt;vSphere Client&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;View segments as port groups&lt;&#x2F;li&gt;
+&lt;li&gt;Verify distributed switch integration&lt;&#x2F;li&gt;
+&lt;li&gt;Check network availability&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;implementation-considerations&quot;&gt;Implementation Considerations&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Design Planning&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Determine component placement&lt;&#x2F;li&gt;
+&lt;li&gt;Plan IP addressing scheme&lt;&#x2F;li&gt;
+&lt;li&gt;Consider DR requirements&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Network Architecture&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Review existing network topology&lt;&#x2F;li&gt;
+&lt;li&gt;Plan segment integration&lt;&#x2F;li&gt;
+&lt;li&gt;Consider bandwidth requirements&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Security Considerations&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Segment isolation&lt;&#x2F;li&gt;
+&lt;li&gt;Access controls&lt;&#x2F;li&gt;
+&lt;li&gt;Traffic patterns&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;benefits&quot;&gt;Benefits&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Software-Defined Networking&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Flexible network configuration&lt;&#x2F;li&gt;
+&lt;li&gt;Automated deployment&lt;&#x2F;li&gt;
+&lt;li&gt;Consistent implementation&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Disaster Recovery&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Built-in failover capability&lt;&#x2F;li&gt;
+&lt;li&gt;Site resilience&lt;&#x2F;li&gt;
+&lt;li&gt;Component protection&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Integration&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Seamless NSX integration&lt;&#x2F;li&gt;
+&lt;li&gt;vSphere compatibility&lt;&#x2F;li&gt;
+&lt;li&gt;Automated management&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;Deploying AVNs through SDDC Manager provides a streamlined approach to creating the necessary network infrastructure for the Aria suite. The automated process ensures consistent configuration while supporting both local operations and disaster recovery requirements.&lt;&#x2F;p&gt;
+&lt;p&gt;The separation between region and cross-region segments allows for flexible component placement while maintaining appropriate failover capabilities where needed. This architecture supports both operational efficiency and business continuity requirements.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Understanding VMware vCenter Server Appliance (vCSA): The Central Management Solution</title>
+        <published>2024-12-12T00:00:00+00:00</published>
+        <updated>2024-12-12T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/understanding-vcsa/"/>
+        <id>https://zerotohero.dev/inbox/understanding-vcsa/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/understanding-vcsa/">&lt;p&gt;Managing multiple ESXi hosts individually can quickly become overwhelming as your infrastructure grows. This is where VMware’s vCenter Server Appliance (vCSA) comes into play, offering a centralized management solution that streamlines your virtual infrastructure operations.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-is-vcenter-server-appliance&quot;&gt;What is vCenter Server Appliance?&lt;&#x2F;h2&gt;
+&lt;p&gt;vCSA serves as a central management platform for your ESXi hosts. Instead of managing each host individually, administrators can use vCSA as a single pane of glass to oversee and control their entire VMware infrastructure. This approach significantly reduces management overhead and improves operational efficiency.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;key-components-and-interfaces&quot;&gt;Key Components and Interfaces&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;vsphere-client&quot;&gt;vSphere Client&lt;&#x2F;h3&gt;
+&lt;p&gt;The primary way to interact with vCSA is through the vSphere Client. This web-based interface allows administrators to:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Connect to the vCenter server using standard HTTPS (port 443)&lt;&#x2F;li&gt;
+&lt;li&gt;Manage all connected ESXi hosts&lt;&#x2F;li&gt;
+&lt;li&gt;Configure virtual machines and infrastructure settings&lt;&#x2F;li&gt;
+&lt;li&gt;Monitor resource usage and performance&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;vami-vmware-appliance-management-interface&quot;&gt;VAMI (VMware Appliance Management Interface)&lt;&#x2F;h3&gt;
+&lt;p&gt;VAMI, accessible through port 5480, provides a secondary interface specifically for managing the vCSA itself. Through VAMI, administrators can:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Perform system updates&lt;&#x2F;li&gt;
+&lt;li&gt;Configure networking settings&lt;&#x2F;li&gt;
+&lt;li&gt;Manage appliance-specific configurations&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;deployment-prerequisites&quot;&gt;Deployment Prerequisites&lt;&#x2F;h2&gt;
+&lt;p&gt;Before deploying vCSA, you’ll need:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;At least one ESXi host with sufficient resources to run the vCSA virtual machine&lt;&#x2F;li&gt;
+&lt;li&gt;A management PC (Windows, Linux, or Mac) to run the vCSA installer&lt;&#x2F;li&gt;
+&lt;li&gt;Network connectivity between all components&lt;&#x2F;li&gt;
+&lt;li&gt;Proper DNS and Active Directory configuration (if using AD integration)&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;deployment-process&quot;&gt;Deployment Process&lt;&#x2F;h2&gt;
+&lt;p&gt;The vCSA deployment occurs in two distinct phases:&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;phase-1-initial-installation&quot;&gt;Phase 1: Initial Installation&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Deploy the virtual machine&lt;&#x2F;li&gt;
+&lt;li&gt;Configure basic system settings&lt;&#x2F;li&gt;
+&lt;li&gt;Initialize core services&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;phase-2-configuration&quot;&gt;Phase 2: Configuration&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Configure the appliance settings&lt;&#x2F;li&gt;
+&lt;li&gt;Set up authentication&lt;&#x2F;li&gt;
+&lt;li&gt;Configure networking options&lt;&#x2F;li&gt;
+&lt;li&gt;Establish service configurations&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;post-deployment-setup&quot;&gt;Post-Deployment Setup&lt;&#x2F;h2&gt;
+&lt;p&gt;After successful deployment, administrators should:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Create at least one datacenter object to organize resources&lt;&#x2F;li&gt;
+&lt;li&gt;Set up one or more clusters to enable advanced features&lt;&#x2F;li&gt;
+&lt;li&gt;Add ESXi hosts to the vCenter server&lt;&#x2F;li&gt;
+&lt;li&gt;Configure any additional features like vSAN or vMotion&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;benefits-of-centralized-management&quot;&gt;Benefits of Centralized Management&lt;&#x2F;h2&gt;
+&lt;p&gt;Using vCSA offers several advantages:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Simplified management of multiple hosts through a single interface&lt;&#x2F;li&gt;
+&lt;li&gt;Consistent configuration across all managed hosts&lt;&#x2F;li&gt;
+&lt;li&gt;Enhanced monitoring and reporting capabilities&lt;&#x2F;li&gt;
+&lt;li&gt;Ability to enable advanced features like vMotion and HA&lt;&#x2F;li&gt;
+&lt;li&gt;Streamlined updates and maintenance procedures&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;While individual host access remains possible through the ESXi host client, managing through vCenter provides a more efficient and feature-rich experience, especially in larger environments.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;vCenter Server Appliance is a crucial component in any scalable VMware infrastructure. By providing centralized management capabilities, it enables administrators to efficiently manage their virtual infrastructure while unlocking advanced features that aren’t available when managing hosts individually. Whether you’re managing a handful of hosts or hundreds, vCSA brings the control and visibility needed for effective infrastructure management.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>VMware Cloud Foundation: A Modern Cloud Operating Model for vSphere Admins</title>
+        <published>2024-12-12T00:00:00+00:00</published>
+        <updated>2024-12-12T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/vcf-for-vsphere-admins/"/>
+        <id>https://zerotohero.dev/inbox/vcf-for-vsphere-admins/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/vcf-for-vsphere-admins/">&lt;p&gt;As organizations continue to modernize their infrastructure, vSphere administrators are increasingly looking for ways to streamline operations and reduce maintenance overhead. VMware Cloud Foundation (VCF) offers a compelling solution by providing a modern, agile, and highly efficient cloud operating model that brings the convenience of public cloud operations to your on-premises datacenter.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-is-vmware-cloud-foundation&quot;&gt;What is VMware Cloud Foundation?&lt;&#x2F;h2&gt;
+&lt;p&gt;At its core, VCF is an integrated software stack that enables you to deploy and manage software-defined compute, storage, networking, and cloud management across all your infrastructure. Whether you’re running workloads in private datacenters, public clouds, government clouds, or edge locations, VCF provides a consistent operational model.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;key-components&quot;&gt;Key Components&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;sddc-manager-the-automation-hub&quot;&gt;SDDC Manager: The Automation Hub&lt;&#x2F;h3&gt;
+&lt;p&gt;The Software-Defined Data Center (SDDC) Manager serves as the cornerstone of VCF’s automation capabilities. It handles:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Day 0 through Day 2 operational tasks&lt;&#x2F;li&gt;
+&lt;li&gt;Automated patching and upgrades&lt;&#x2F;li&gt;
+&lt;li&gt;Lifecycle management of the entire software stack&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;vsphere-the-familiar-foundation&quot;&gt;vSphere: The Familiar Foundation&lt;&#x2F;h3&gt;
+&lt;p&gt;As the core hypervisor platform, vSphere continues to be the building block that vSphere administrators know and trust. VCF allows you to leverage your existing skills while adding new capabilities to your infrastructure.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;vsan-software-defined-storage&quot;&gt;vSAN: Software-Defined Storage&lt;&#x2F;h3&gt;
+&lt;p&gt;vSAN provides secure shared storage managed through software policies, offering:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Policy-based storage management&lt;&#x2F;li&gt;
+&lt;li&gt;Flexible storage services&lt;&#x2F;li&gt;
+&lt;li&gt;Integration with existing storage solutions&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;nsx-network-virtualization-and-security&quot;&gt;NSX: Network Virtualization and Security&lt;&#x2F;h3&gt;
+&lt;p&gt;NSX transforms traditional networking into software-defined infrastructure, providing:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Software-defined network segments&lt;&#x2F;li&gt;
+&lt;li&gt;Virtual routers and distributed switches&lt;&#x2F;li&gt;
+&lt;li&gt;Load balancers and distributed firewalls&lt;&#x2F;li&gt;
+&lt;li&gt;Migration capabilities without re-IPing VMs&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;tanzu-kubernetes-integration&quot;&gt;Tanzu: Kubernetes Integration&lt;&#x2F;h3&gt;
+&lt;p&gt;For organizations embracing containerization, VCF includes Tanzu support:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Native Kubernetes infrastructure provisioning&lt;&#x2F;li&gt;
+&lt;li&gt;Automated deployment through SDDC Manager&lt;&#x2F;li&gt;
+&lt;li&gt;Consistent developer experience across environments&lt;&#x2F;li&gt;
+&lt;li&gt;Integration with familiar vSphere management tools&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;aria-comprehensive-cloud-management&quot;&gt;Aria: Comprehensive Cloud Management&lt;&#x2F;h3&gt;
+&lt;p&gt;Aria rounds out the stack by providing:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Capacity management&lt;&#x2F;li&gt;
+&lt;li&gt;Performance monitoring and logging&lt;&#x2F;li&gt;
+&lt;li&gt;Self-service application catalog&lt;&#x2F;li&gt;
+&lt;li&gt;Automated application delivery&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;the-power-of-consistency&quot;&gt;The Power of Consistency&lt;&#x2F;h2&gt;
+&lt;p&gt;VCF’s true value lies in its ability to deliver consistency across all environments. Through automation and standardization, organizations can:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Deploy infrastructure with predictable results&lt;&#x2F;li&gt;
+&lt;li&gt;Scale resources consistently across sites&lt;&#x2F;li&gt;
+&lt;li&gt;Maintain stability through automated lifecycle management&lt;&#x2F;li&gt;
+&lt;li&gt;Reduce operational overhead and human error&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;real-world-impact&quot;&gt;Real-World Impact&lt;&#x2F;h2&gt;
+&lt;p&gt;The benefits of VCF are not just theoretical. Organizations implementing VCF have reported significant operational improvements, including:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;75% reduction in P1 and P2 infrastructure outage calls&lt;&#x2F;li&gt;
+&lt;li&gt;Ability to perform updates during business hours&lt;&#x2F;li&gt;
+&lt;li&gt;Reduced after-hours maintenance requirements&lt;&#x2F;li&gt;
+&lt;li&gt;Lower operational costs&lt;&#x2F;li&gt;
+&lt;li&gt;Enhanced security posture&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;For vSphere administrators looking to modernize their infrastructure operations, VMware Cloud Foundation offers a path forward that combines familiar tools with modern automation capabilities. By bringing public cloud operational models to on-premises infrastructure, VCF enables IT teams to spend less time on maintenance and more time on innovation.&lt;&#x2F;p&gt;
+&lt;p&gt;By leveraging VCF’s comprehensive automation and integrated stack, organizations can deliver cloud infrastructure with the reliability of traditional on-premises deployments and the agility of public cloud providers. This marks a significant evolution in how we manage infrastructure, making those dreaded 2 AM infrastructure outage pages increasingly rare.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Simplifying Infrastructure Updates with VMware Cloud Foundation&#x27;s Lifecycle Management</title>
+        <published>2024-12-12T00:00:00+00:00</published>
+        <updated>2024-12-12T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/vcf-lcm/"/>
+        <id>https://zerotohero.dev/inbox/vcf-lcm/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/vcf-lcm/">&lt;p&gt;For organizations running VMware Cloud Foundation (VCF), one of the most powerful features is the centralized lifecycle management (LCM) through SDDC Manager. This capability transforms what was once a complex, manual process into an automated, orchestrated workflow. Let’s explore how it works and why it matters.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;understanding-the-bill-of-materials-bom&quot;&gt;Understanding the Bill of Materials (BOM)&lt;&#x2F;h2&gt;
+&lt;p&gt;Each VCF release comes with a specific Bill of Materials (BOM) that defines:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Exact versions of all infrastructure components&lt;&#x2F;li&gt;
+&lt;li&gt;Compatible versions for management domains&lt;&#x2F;li&gt;
+&lt;li&gt;Supported versions for workload domains&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;This precise version control ensures that all components work together seamlessly and maintains consistency across your infrastructure.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;software-bundle-management&quot;&gt;Software Bundle Management&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;downloading-updates&quot;&gt;Downloading Updates&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Bundles are downloaded directly from VMware&lt;&#x2F;li&gt;
+&lt;li&gt;Requires VMware Customer Connect credentials&lt;&#x2F;li&gt;
+&lt;li&gt;No manual package searching needed&lt;&#x2F;li&gt;
+&lt;li&gt;Download history tracking available&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;flexible-scheduling&quot;&gt;Flexible Scheduling&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Schedule downloads during off-peak hours&lt;&#x2F;li&gt;
+&lt;li&gt;Option for immediate download when needed&lt;&#x2F;li&gt;
+&lt;li&gt;Track download history through the interface&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;the-update-process&quot;&gt;The Update Process&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;pre-update-checks&quot;&gt;Pre-Update Checks&lt;&#x2F;h3&gt;
+&lt;p&gt;SDDC Manager includes a comprehensive pre-check feature that verifies:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Available disk space&lt;&#x2F;li&gt;
+&lt;li&gt;Hardware compatibility&lt;&#x2F;li&gt;
+&lt;li&gt;Other potential upgrade blockers&lt;&#x2F;li&gt;
+&lt;li&gt;Infrastructure readiness&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;update-management&quot;&gt;Update Management&lt;&#x2F;h3&gt;
+&lt;p&gt;Updates are managed through the “Updates” tab for each workload domain, providing:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Current version information for all components&lt;&#x2F;li&gt;
+&lt;li&gt;Available updates&lt;&#x2F;li&gt;
+&lt;li&gt;Update history&lt;&#x2F;li&gt;
+&lt;li&gt;Status tracking&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;best-practices-for-updates&quot;&gt;Best Practices for Updates&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Pre-Update Planning&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Review release notes thoroughly&lt;&#x2F;li&gt;
+&lt;li&gt;Check hardware compatibility with new ESXi versions&lt;&#x2F;li&gt;
+&lt;li&gt;Verify BOM compatibility&lt;&#x2F;li&gt;
+&lt;li&gt;Schedule maintenance windows&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;During Updates&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Run pre-checks before starting&lt;&#x2F;li&gt;
+&lt;li&gt;Monitor progress through SDDC Manager&lt;&#x2F;li&gt;
+&lt;li&gt;Keep track of component versions&lt;&#x2F;li&gt;
+&lt;li&gt;Follow the orchestrated workflow&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Post-Update Tasks&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Verify successful completion&lt;&#x2F;li&gt;
+&lt;li&gt;Review update history&lt;&#x2F;li&gt;
+&lt;li&gt;Document any issues encountered&lt;&#x2F;li&gt;
+&lt;li&gt;Validate system functionality&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;benefits-of-centralized-lifecycle-management&quot;&gt;Benefits of Centralized Lifecycle Management&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Reduced Complexity&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Single interface for all updates&lt;&#x2F;li&gt;
+&lt;li&gt;Automated orchestration&lt;&#x2F;li&gt;
+&lt;li&gt;Proven upgrade paths&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Enhanced Security&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Regular security updates&lt;&#x2F;li&gt;
+&lt;li&gt;Validated configurations&lt;&#x2F;li&gt;
+&lt;li&gt;Tested combinations&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Operational Efficiency&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Automated workflows&lt;&#x2F;li&gt;
+&lt;li&gt;Reduced manual intervention&lt;&#x2F;li&gt;
+&lt;li&gt;Predictable outcomes&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;the-importance-of-regular-updates&quot;&gt;The Importance of Regular Updates&lt;&#x2F;h2&gt;
+&lt;p&gt;Staying current with VCF updates is crucial for:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Security patch implementation&lt;&#x2F;li&gt;
+&lt;li&gt;Bug fixes and improvements&lt;&#x2F;li&gt;
+&lt;li&gt;New feature availability&lt;&#x2F;li&gt;
+&lt;li&gt;Infrastructure stability&lt;&#x2F;li&gt;
+&lt;li&gt;Compliance requirements&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;SDDC Manager’s lifecycle management capabilities transform what was once a complex, risky process into a streamlined, automated workflow. By providing centralized control, automated pre-checks, and orchestrated updates, VCF helps organizations maintain their infrastructure with confidence while reducing operational overhead and risk.&lt;&#x2F;p&gt;
+&lt;p&gt;Remember to always check the VMware Compatibility Guide before updates and review release notes for any environment-specific considerations. With proper planning and use of SDDC Manager’s lifecycle management features, organizations can keep their infrastructure current and secure while minimizing operational disruption.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Understanding VMware Cloud Foundation Workload Domains: The Building Blocks of Your Private Cloud</title>
+        <published>2024-12-12T00:00:00+00:00</published>
+        <updated>2024-12-12T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/vcf-workload-domains/"/>
+        <id>https://zerotohero.dev/inbox/vcf-workload-domains/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/vcf-workload-domains/">&lt;p&gt;For vSphere administrators looking to build a more flexible and automated private cloud infrastructure, understanding VMware Cloud Foundation (VCF) Workload Domains is essential. Let’s dive into what they are and how they can transform your datacenter operations.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-is-a-workload-domain&quot;&gt;What is a Workload Domain?&lt;&#x2F;h2&gt;
+&lt;p&gt;At its core, a Workload Domain is a vCenter instance with an ESXi compute cluster, but with an important distinction: it’s deployed through automation following a prescribed architecture. This automation handles:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;ESXi host deployment with dedicated vCenter server&lt;&#x2F;li&gt;
+&lt;li&gt;Software-defined networking (SDN) configuration&lt;&#x2F;li&gt;
+&lt;li&gt;Storage connectivity and configuration&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Once deployed, the SDDC (Software-Defined Data Center) Manager takes control of the Workload Domain, enabling you to:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Create new domains&lt;&#x2F;li&gt;
+&lt;li&gt;Expand or contract resources&lt;&#x2F;li&gt;
+&lt;li&gt;Delete domains&lt;&#x2F;li&gt;
+&lt;li&gt;Manage the entire lifecycle&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;This automation-first approach brings public cloud-like operations to your private datacenter.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;types-of-workload-domains&quot;&gt;Types of Workload Domains&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;1-management-workload-domain&quot;&gt;1. Management Workload Domain&lt;&#x2F;h3&gt;
+&lt;p&gt;The Management Workload Domain is the foundation of your VCF deployment and hosts most management VMs, including:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;vCenter Server&lt;&#x2F;li&gt;
+&lt;li&gt;NSX Managers&lt;&#x2F;li&gt;
+&lt;li&gt;Aria appliances&lt;&#x2F;li&gt;
+&lt;li&gt;Third-party management and operations (MANO) applications&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;The only exception is the NSX Edge network cluster nodes, which are deployed separately.&lt;&#x2F;p&gt;
+&lt;p&gt;For smaller deployments (SMB&#x2F;ROBO), the Management Workload Domain can also host business workloads. However, larger infrastructures typically benefit from separate domains.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;2-vi-virtual-infrastructure-workload-domain&quot;&gt;2. VI (Virtual Infrastructure) Workload Domain&lt;&#x2F;h3&gt;
+&lt;p&gt;VI Workload Domains are purpose-built for running applications, offering:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Clear separation between management and business workloads&lt;&#x2F;li&gt;
+&lt;li&gt;Prevention of “noisy neighbor” situations&lt;&#x2F;li&gt;
+&lt;li&gt;Independent lifecycle management&lt;&#x2F;li&gt;
+&lt;li&gt;Dedicated resources for specific use cases&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;scaling-and-flexibility&quot;&gt;Scaling and Flexibility&lt;&#x2F;h2&gt;
+&lt;p&gt;VCF offers multiple deployment options to match your needs:&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;multiple-workload-domains&quot;&gt;Multiple Workload Domains&lt;&#x2F;h3&gt;
+&lt;p&gt;Each domain can have its own:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;vCenter Server&lt;&#x2F;li&gt;
+&lt;li&gt;NSX management plane&lt;&#x2F;li&gt;
+&lt;li&gt;Storage resources&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;This separation enables scenarios like:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Dedicated domains for Windows and Linux teams&lt;&#x2F;li&gt;
+&lt;li&gt;Separate domains for DMZ applications&lt;&#x2F;li&gt;
+&lt;li&gt;Isolated environments for virtual desktops&lt;&#x2F;li&gt;
+&lt;li&gt;Independent patch management schedules&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;nsx-management-plane-options&quot;&gt;NSX Management Plane Options&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Deploy new NSX management planes for each domain&lt;&#x2F;li&gt;
+&lt;li&gt;Share existing NSX management planes across domains&lt;&#x2F;li&gt;
+&lt;li&gt;Mix and match based on requirements&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;sso-domain-flexibility&quot;&gt;SSO Domain Flexibility&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Default: Shared SSO across domains&lt;&#x2F;li&gt;
+&lt;li&gt;Optional: SSO domain isolation&lt;&#x2F;li&gt;
+&lt;li&gt;Full isolation capability (popular with cloud service providers)&lt;&#x2F;li&gt;
+&lt;li&gt;Maintain central management through SDDC Manager&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;advanced-deployment-scenarios&quot;&gt;Advanced Deployment Scenarios&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;multi-site-support&quot;&gt;Multi-Site Support&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Remote cluster deployment capabilities&lt;&#x2F;li&gt;
+&lt;li&gt;Two-node remote clusters with third-party storage&lt;&#x2F;li&gt;
+&lt;li&gt;Three or more node clusters with vSAN&lt;&#x2F;li&gt;
+&lt;li&gt;Management plane remains centralized&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;stretched-clusters&quot;&gt;Stretched Clusters&lt;&#x2F;h3&gt;
+&lt;p&gt;When used with vSAN, VCF supports stretched cluster deployments between sites, enabling:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Zero-downtime maintenance&lt;&#x2F;li&gt;
+&lt;li&gt;VM restart and recovery for unplanned failures&lt;&#x2F;li&gt;
+&lt;li&gt;Application migration between sites&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;benefits-of-workload-domains&quot;&gt;Benefits of Workload Domains&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Control Boundaries&lt;&#x2F;strong&gt;: Clear separation of resources and responsibilities&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Cloud Automation&lt;&#x2F;strong&gt;: Public cloud-like operations in your datacenter&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Flexible Architecture&lt;&#x2F;strong&gt;: Multiple options to match your needs&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Consistent Deployment&lt;&#x2F;strong&gt;: Repeatable, automated architecture&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Independent Lifecycle Management&lt;&#x2F;strong&gt;: Separate upgrade schedules for different teams&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Scalability&lt;&#x2F;strong&gt;: Easy addition of resources within or across domains&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;Workload Domains are the foundation of VMware Cloud Foundation’s ability to deliver cloud-like operations in your private datacenter. Through automation and flexible architecture options, they enable organizations to maintain separation of concerns while ensuring consistent deployment and management of resources. Whether you’re running a small business or a large enterprise, VCF’s Workload Domains provide the architecture needed to build and manage modern private cloud infrastructure.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Migrating from vSphere to VMware Cloud Foundation: A Comprehensive Guide</title>
+        <published>2024-12-12T00:00:00+00:00</published>
+        <updated>2024-12-12T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/vsphere-to-vcf-migration/"/>
+        <id>https://zerotohero.dev/inbox/vsphere-to-vcf-migration/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/vsphere-to-vcf-migration/">&lt;p&gt;Many organizations are looking to transform their traditional vSphere environments into a full private cloud experience with VMware Cloud Foundation (VCF). This guide explores the migration process and key benefits.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;why-move-to-cloud-foundation&quot;&gt;Why Move to Cloud Foundation?&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;sddc-manager-benefits&quot;&gt;SDDC Manager Benefits&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Built-in automation and architecture&lt;&#x2F;li&gt;
+&lt;li&gt;Consistent infrastructure deployment&lt;&#x2F;li&gt;
+&lt;li&gt;Public cloud-like experience on-premises&lt;&#x2F;li&gt;
+&lt;li&gt;Centralized lifecycle management&lt;&#x2F;li&gt;
+&lt;li&gt;Integrated password management&lt;&#x2F;li&gt;
+&lt;li&gt;Certificate management capabilities&lt;&#x2F;li&gt;
+&lt;li&gt;STIG compliance for government agencies&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;migration-process-overview&quot;&gt;Migration Process Overview&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;initial-setup&quot;&gt;Initial Setup&lt;&#x2F;h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Deploy VCF as greenfield installation&lt;&#x2F;li&gt;
+&lt;li&gt;Start with management domain
+&lt;ul&gt;
+&lt;li&gt;Requires minimum four hosts&lt;&#x2F;li&gt;
+&lt;li&gt;Houses SDDC Manager&lt;&#x2F;li&gt;
+&lt;li&gt;Includes new vCenter Server&lt;&#x2F;li&gt;
+&lt;li&gt;Creates new SSO domain&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h3 id=&quot;migration-tool-hcx&quot;&gt;Migration Tool: HCX&lt;&#x2F;h3&gt;
+&lt;p&gt;HCX (Hybrid Cloud Extension) is the key component that enables migration:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Links existing vSphere and new VCF environments&lt;&#x2F;li&gt;
+&lt;li&gt;Works across:
+&lt;ul&gt;
+&lt;li&gt;Same datacenter migrations&lt;&#x2F;li&gt;
+&lt;li&gt;Different sites&lt;&#x2F;li&gt;
+&lt;li&gt;Datacenter consolidations&lt;&#x2F;li&gt;
+&lt;li&gt;Merger scenarios&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;network-considerations&quot;&gt;Network Considerations&lt;&#x2F;h3&gt;
+&lt;p&gt;Two primary options for networking:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;VLAN-Backed Port Groups&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Continue using existing VLANs&lt;&#x2F;li&gt;
+&lt;li&gt;Plumb existing VLANs into VCF&lt;&#x2F;li&gt;
+&lt;li&gt;Minimal network changes required&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Software-Defined Networking&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Convert to NSX VPCs&lt;&#x2F;li&gt;
+&lt;li&gt;Layer 2 network extension&lt;&#x2F;li&gt;
+&lt;li&gt;Zero-downtime conversion&lt;&#x2F;li&gt;
+&lt;li&gt;Modern networking capabilities&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;migration-strategy&quot;&gt;Migration Strategy&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;phase-1-initial-setup&quot;&gt;Phase 1: Initial Setup&lt;&#x2F;h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Deploy VCF management domain&lt;&#x2F;li&gt;
+&lt;li&gt;Install HCX in both environments&lt;&#x2F;li&gt;
+&lt;li&gt;Establish connectivity between environments&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h3 id=&quot;phase-2-workload-migration&quot;&gt;Phase 2: Workload Migration&lt;&#x2F;h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Use vMotion through HCX&lt;&#x2F;li&gt;
+&lt;li&gt;Support bulk migrations&lt;&#x2F;li&gt;
+&lt;li&gt;Move workloads to management domain initially&lt;&#x2F;li&gt;
+&lt;li&gt;Drain existing hosts systematically&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h3 id=&quot;phase-3-infrastructure-expansion&quot;&gt;Phase 3: Infrastructure Expansion&lt;&#x2F;h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Repurpose freed hosts&lt;&#x2F;li&gt;
+&lt;li&gt;Create VI workload domain&lt;&#x2F;li&gt;
+&lt;li&gt;Continue migration process&lt;&#x2F;li&gt;
+&lt;li&gt;Rinse and repeat until complete&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;storage-integration&quot;&gt;Storage Integration&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;third-party-storage-support&quot;&gt;Third-Party Storage Support&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Retain existing storage investments&lt;&#x2F;li&gt;
+&lt;li&gt;Support for:
+&lt;ul&gt;
+&lt;li&gt;Fiber Channel&lt;&#x2F;li&gt;
+&lt;li&gt;NFS&lt;&#x2F;li&gt;
+&lt;li&gt;External arrays&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Available in both:
+&lt;ul&gt;
+&lt;li&gt;Management domains&lt;&#x2F;li&gt;
+&lt;li&gt;VI workload domains&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;best-practices&quot;&gt;Best Practices&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Planning&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Verify hardware compatibility&lt;&#x2F;li&gt;
+&lt;li&gt;Assess network requirements&lt;&#x2F;li&gt;
+&lt;li&gt;Plan storage integration&lt;&#x2F;li&gt;
+&lt;li&gt;Document application dependencies&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Execution&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Start with less critical workloads&lt;&#x2F;li&gt;
+&lt;li&gt;Use swing capacity approach&lt;&#x2F;li&gt;
+&lt;li&gt;Validate each migration&lt;&#x2F;li&gt;
+&lt;li&gt;Maintain backup strategy&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Post-Migration&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Verify application functionality&lt;&#x2F;li&gt;
+&lt;li&gt;Update documentation&lt;&#x2F;li&gt;
+&lt;li&gt;Remove legacy configurations&lt;&#x2F;li&gt;
+&lt;li&gt;Train team on new capabilities&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;Migrating from vSphere to VMware Cloud Foundation represents a shift from traditional virtualization to a full private cloud operating model. While the process requires careful planning and execution, the benefits of automation, consistency, and integrated lifecycle management make it a compelling evolution for many organizations.&lt;&#x2F;p&gt;
+&lt;p&gt;The flexibility to maintain existing networking and storage investments, combined with the powerful capabilities of HCX, provides a practical path forward that can be executed with minimal disruption to existing operations.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>vSphere 8 Update 2: What&#x27;s New in VMware&#x27;s Latest Releasee</title>
+        <published>2024-12-12T00:00:00+00:00</published>
+        <updated>2024-12-12T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/whats-new-in-vsphere-8/"/>
+        <id>https://zerotohero.dev/inbox/whats-new-in-vsphere-8/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/whats-new-in-vsphere-8/">&lt;p&gt;VMware has announced significant updates to vSphere 8 with Update 2, along with new cloud services for vSphere Plus customers. These updates focus on three key areas: administrative efficiency, performance improvements, and developer enablement.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;enhanced-it-admin-efficiency&quot;&gt;Enhanced IT Admin Efficiency&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;new-lifecycle-management-service&quot;&gt;New Lifecycle Management Service&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;ESXi-Linux lifecycle management service for vSphere Plus customers&lt;&#x2F;li&gt;
+&lt;li&gt;Cloud console management for ESXi host fleet updates&lt;&#x2F;li&gt;
+&lt;li&gt;Dramatically reduced update operations for large environments&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;improved-vcenter-updates&quot;&gt;Improved vCenter Updates&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Reduced Downtime Upgrade technology now available to all vSphere customers&lt;&#x2F;li&gt;
+&lt;li&gt;Update downtime reduced from ~1 hour to just minutes&lt;&#x2F;li&gt;
+&lt;li&gt;Streamlined upgrade process&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;enhanced-identity-management&quot;&gt;Enhanced Identity Management&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Expanded identity provider support&lt;&#x2F;li&gt;
+&lt;li&gt;New support for Microsoft Azure AD (now Entra ID)&lt;&#x2F;li&gt;
+&lt;li&gt;Joins existing support for:
+&lt;ul&gt;
+&lt;li&gt;ADFS&lt;&#x2F;li&gt;
+&lt;li&gt;Okta&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Centralizes authentication&lt;&#x2F;li&gt;
+&lt;li&gt;Simplifies security audits&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;supercharged-performance&quot;&gt;Supercharged Performance&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;enhanced-gpu-support&quot;&gt;Enhanced GPU Support&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Increased GPU capacity up to 16 GPUs per VM&lt;&#x2F;li&gt;
+&lt;li&gt;Improved DRS (Distributed Resource Scheduler):
+&lt;ul&gt;
+&lt;li&gt;Smarter GPU workload distribution&lt;&#x2F;li&gt;
+&lt;li&gt;Enhanced GPU resource utilization&lt;&#x2F;li&gt;
+&lt;li&gt;Better load balancing for GPU-intensive workloads&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;expanded-dpu-ecosystem&quot;&gt;Expanded DPU Ecosystem&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;New hardware vendor support:
+&lt;ul&gt;
+&lt;li&gt;Lenovo&lt;&#x2F;li&gt;
+&lt;li&gt;Fujitsu&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Adds to existing partnerships with:
+&lt;ul&gt;
+&lt;li&gt;Dell&lt;&#x2F;li&gt;
+&lt;li&gt;HPE&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Enhanced CPU offloading capabilities&lt;&#x2F;li&gt;
+&lt;li&gt;Improved resource optimization&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;developer-and-devops-enhancements&quot;&gt;Developer and DevOps Enhancements&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;vm-management-improvements&quot;&gt;VM Management Improvements&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;New VM registry functionality&lt;&#x2F;li&gt;
+&lt;li&gt;Self-service VM provisioning&lt;&#x2F;li&gt;
+&lt;li&gt;Enhanced Windows VM support:
+&lt;ul&gt;
+&lt;li&gt;Independent Windows VM creation&lt;&#x2F;li&gt;
+&lt;li&gt;Removed previous restrictions&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;expanded-vm-service-capabilities&quot;&gt;Expanded VM Service Capabilities&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Support for all vSphere-compatible VM types&lt;&#x2F;li&gt;
+&lt;li&gt;Removed previous VM type limitations&lt;&#x2F;li&gt;
+&lt;li&gt;Improved self-service options&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;kubernetes-integration&quot;&gt;Kubernetes Integration&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Streamlined supervisor cluster setup&lt;&#x2F;li&gt;
+&lt;li&gt;New configuration export&#x2F;import capability&lt;&#x2F;li&gt;
+&lt;li&gt;Simplified cluster replication&lt;&#x2F;li&gt;
+&lt;li&gt;Faster deployment processes&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;key-benefits&quot;&gt;Key Benefits&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;For Administrators&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Reduced maintenance time&lt;&#x2F;li&gt;
+&lt;li&gt;Simplified updates&lt;&#x2F;li&gt;
+&lt;li&gt;Better security management&lt;&#x2F;li&gt;
+&lt;li&gt;Enhanced automation&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;For AI&#x2F;ML Workloads&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Improved GPU utilization&lt;&#x2F;li&gt;
+&lt;li&gt;Enhanced performance&lt;&#x2F;li&gt;
+&lt;li&gt;Better resource distribution&lt;&#x2F;li&gt;
+&lt;li&gt;Expanded hardware support&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;For Developers&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Greater autonomy&lt;&#x2F;li&gt;
+&lt;li&gt;Simplified workflows&lt;&#x2F;li&gt;
+&lt;li&gt;Improved self-service capabilities&lt;&#x2F;li&gt;
+&lt;li&gt;Enhanced Kubernetes management&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;best-practices-for-adoption&quot;&gt;Best Practices for Adoption&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Planning&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Review current environment&lt;&#x2F;li&gt;
+&lt;li&gt;Identify priority areas&lt;&#x2F;li&gt;
+&lt;li&gt;Plan GPU resource allocation&lt;&#x2F;li&gt;
+&lt;li&gt;Assess identity management needs&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Implementation&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Start with lifecycle management improvements&lt;&#x2F;li&gt;
+&lt;li&gt;Gradually expand GPU utilization&lt;&#x2F;li&gt;
+&lt;li&gt;Enable developer self-service features&lt;&#x2F;li&gt;
+&lt;li&gt;Document new processes&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Optimization&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Monitor GPU resource usage&lt;&#x2F;li&gt;
+&lt;li&gt;Fine-tune DRS settings&lt;&#x2F;li&gt;
+&lt;li&gt;Evaluate developer workflows&lt;&#x2F;li&gt;
+&lt;li&gt;Collect feedback from teams&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;vSphere 8 Update 2 represents a significant step forward in VMware’s commitment to enhancing administrative efficiency, supporting AI workloads, and enabling developer productivity. The combination of reduced maintenance overhead, improved performance capabilities, and expanded self-service options provides organizations with the tools needed to meet modern infrastructure demands while preparing for future innovations.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Securely Generating and Storing SPIRE Agent Tokens</title>
+        <published>2024-12-02T00:00:00+00:00</published>
+        <updated>2024-12-02T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/spire-agent-token-generation/"/>
+        <id>https://zerotohero.dev/inbox/spire-agent-token-generation/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/spire-agent-token-generation/">&lt;p&gt;SPIRE (the SPIFFE Runtime Environment) requires tokens for agent authentication. Here’s a secure way to generate and store these tokens using bash scripting.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-problem&quot;&gt;The Problem&lt;&#x2F;h2&gt;
+&lt;p&gt;When working with SPIRE, we often need to generate agent tokens and store them for later use. The default &lt;code&gt;spire-server token generate&lt;&#x2F;code&gt; command outputs tokens with a “Token: “ prefix, which isn’t always ideal for automation or direct use in configuration files.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-solution&quot;&gt;The Solution&lt;&#x2F;h2&gt;
+&lt;p&gt;Here’s a bash script that generates a SPIRE agent token, strips unnecessary prefixes, and stores it securely:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;#!&#x2F;usr&#x2F;bin&#x2F;env bash
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;#    \\ SPIKE: Keep your secrets secret with SPIFFE.
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;#  \\\\\ Copyright 2024-present SPIKE contributors.
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# \\\\\\\ SPDX-License-Identifier: Apache-2.0
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;TOKEN_FILE&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;agent-token.txt&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Generate token and strip the &amp;quot;Token: &amp;quot; prefix
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;! &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;spire-server token generate -spiffeID spiffe:&#x2F;&#x2F;spike.ist&#x2F;spire-agent &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;s&#x2F;^Token: &#x2F;&#x2F;&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;TOKEN_FILE&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;then
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Error: Failed to generate token&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;&amp;gt;&amp;amp;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;2
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;exit&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt; 1
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;fi
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Verify file was created and is not empty
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;[ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;! &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;-s &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;TOKEN_FILE&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;]&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;then
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Error: Token file is empty or was not created&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;&amp;gt;&amp;amp;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;2
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;exit&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt; 1
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;fi
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Set restrictive permissions
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;chmod 600 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;TOKEN_FILE&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Token successfully generated and saved to $&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;TOKEN_FILE&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;how-it-works&quot;&gt;How It Works&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Token Generation&lt;&#x2F;strong&gt;: The script uses &lt;code&gt;spire-server token generate&lt;&#x2F;code&gt; to create a new token with a specific SPIFFE ID.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Text Processing&lt;&#x2F;strong&gt;: A &lt;code&gt;sed&lt;&#x2F;code&gt; command strips the “Token: “ prefix from the output:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&#x27;s&#x2F;^Token: &#x2F;&#x2F;&#x27;&lt;&#x2F;code&gt; replaces “Token: “ at the start of the line with nothing&lt;&#x2F;li&gt;
+&lt;li&gt;The clean token is then redirected to the output file&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Error Handling&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Checks if token generation succeeded&lt;&#x2F;li&gt;
+&lt;li&gt;Verifies the output file exists and isn’t empty&lt;&#x2F;li&gt;
+&lt;li&gt;Returns meaningful error messages&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Security&lt;&#x2F;strong&gt;: Sets file permissions to 600 (read&#x2F;write for owner only) to protect the token&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Save the script as &lt;code&gt;generate-agent-token.sh&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Make it executable: &lt;code&gt;chmod +x generate-agent-token.sh&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Run it: &lt;code&gt;.&#x2F;generate-agent-token.sh&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;The token will be saved in &lt;code&gt;agent-token.txt&lt;&#x2F;code&gt; in the current directory.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;best-practices&quot;&gt;Best Practices&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Always use restrictive file permissions for token files&lt;&#x2F;li&gt;
+&lt;li&gt;Store tokens in a secure location&lt;&#x2F;li&gt;
+&lt;li&gt;Never commit tokens to version control&lt;&#x2F;li&gt;
+&lt;li&gt;Consider using environment variables or secure vaults for production environments&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;This script provides a secure and automated way to generate and store SPIRE agent tokens. By removing the prefix and implementing proper error handling, it makes token management more reliable and automation-friendly.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Securing CI&#x2F;CD Access to Your Secrets Management System: An Architectural Analysis</title>
+        <published>2024-11-27T00:00:00+00:00</published>
+        <updated>2024-11-27T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/dedicated-oidc-server/"/>
+        <id>https://zerotohero.dev/inbox/dedicated-oidc-server/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/dedicated-oidc-server/">&lt;p&gt;When building a secrets management system, one of the key challenges is providing secure automated access for CI&#x2F;CD pipelines while maintaining strong security boundaries. In this post, we’ll explore different architectural approaches to solving this problem, analyzing their trade-offs and providing recommendations.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-base-architecture&quot;&gt;The Base Architecture&lt;&#x2F;h2&gt;
+&lt;p&gt;Before diving into the solutions, let’s understand our starting point. The existing system consists of two main components:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Pilot&lt;&#x2F;strong&gt;: A CLI tool that provides user access to secrets&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Nexus&lt;&#x2F;strong&gt;: The secure storage backend for secrets&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;The communication between these components uses SPIFFE mTLS over REST, providing strong security guarantees and identity-based access control.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-challenge&quot;&gt;The Challenge&lt;&#x2F;h2&gt;
+&lt;p&gt;While this architecture works well for human operators using the CLI, we need to provide automated access for CI&#x2F;CD pipelines. This requires exposing a RESTful interface that can be consumed by automation tools while maintaining our security posture.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;solution-options&quot;&gt;Solution Options&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;1-extend-pilot-as-an-oidc-resource-server&quot;&gt;1. Extend Pilot as an OIDC Resource Server&lt;&#x2F;h3&gt;
+&lt;p&gt;In this approach, we would enhance the existing Pilot component to serve as an OIDC resource server, allowing it to handle automated requests alongside its CLI duties.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Advantages:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Reuses existing, trusted component&lt;&#x2F;li&gt;
+&lt;li&gt;Maintains current security boundary where only Pilot talks to Nexus&lt;&#x2F;li&gt;
+&lt;li&gt;Preserves existing SPIFFE mTLS security model&lt;&#x2F;li&gt;
+&lt;li&gt;Reduces operational complexity by not adding new components&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;strong&gt;Disadvantages:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Mixes different concerns in one component&lt;&#x2F;li&gt;
+&lt;li&gt;Complicates Pilot’s codebase and testing&lt;&#x2F;li&gt;
+&lt;li&gt;May require significant architectural changes to Pilot&lt;&#x2F;li&gt;
+&lt;li&gt;Could impact CLI performance and reliability&lt;&#x2F;li&gt;
+&lt;li&gt;Makes future changes more complex&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;2-create-a-dedicated-oidc-resource-server&quot;&gt;2. Create a Dedicated OIDC Resource Server&lt;&#x2F;h3&gt;
+&lt;p&gt;This solution involves building a new component specifically designed to handle CI&#x2F;CD automation requests, essentially acting as a Pilot analog for automated access.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Advantages:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Clean separation of concerns&lt;&#x2F;li&gt;
+&lt;li&gt;Purpose-built for CI&#x2F;CD integration needs&lt;&#x2F;li&gt;
+&lt;li&gt;Independent scaling and maintenance&lt;&#x2F;li&gt;
+&lt;li&gt;Can implement specific rate limiting and security controls&lt;&#x2F;li&gt;
+&lt;li&gt;Separate logging and auditing for automated access&lt;&#x2F;li&gt;
+&lt;li&gt;Easier to evolve and maintain&lt;&#x2F;li&gt;
+&lt;li&gt;Can be optimized for automated workflows&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;strong&gt;Disadvantages:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;New component to maintain and monitor&lt;&#x2F;li&gt;
+&lt;li&gt;Need to implement SPIFFE mTLS client functionality&lt;&#x2F;li&gt;
+&lt;li&gt;Additional operational overhead&lt;&#x2F;li&gt;
+&lt;li&gt;Initial development investment&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;3-expose-nexus-as-an-oidc-resource-server&quot;&gt;3. Expose Nexus as an OIDC Resource Server&lt;&#x2F;h3&gt;
+&lt;p&gt;The third option involves modifying Nexus to directly handle automated requests as an OIDC resource server.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Advantages:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Potentially simpler architecture&lt;&#x2F;li&gt;
+&lt;li&gt;Direct access to secrets store&lt;&#x2F;li&gt;
+&lt;li&gt;Fewer network hops&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;strong&gt;Disadvantages:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Breaks single-responsibility principle&lt;&#x2F;li&gt;
+&lt;li&gt;Increases attack surface of critical secrets store&lt;&#x2F;li&gt;
+&lt;li&gt;Complicates Nexus’s security model&lt;&#x2F;li&gt;
+&lt;li&gt;Makes storage backend changes more difficult&lt;&#x2F;li&gt;
+&lt;li&gt;Violates the principle of least privilege&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;recommended-approach&quot;&gt;Recommended Approach&lt;&#x2F;h2&gt;
+&lt;p&gt;After careful analysis, creating a dedicated OIDC resource server (Option 2) emerges as the most robust solution. Here’s why:&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;security-benefits&quot;&gt;Security Benefits&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Maintains existing security boundaries&lt;&#x2F;li&gt;
+&lt;li&gt;Allows for fine-grained access control specific to automation&lt;&#x2F;li&gt;
+&lt;li&gt;Keeps Nexus protected behind SPIFFE mTLS&lt;&#x2F;li&gt;
+&lt;li&gt;Enables separate security policies for automated access&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;architectural-benefits&quot;&gt;Architectural Benefits&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Clean separation of concerns&lt;&#x2F;li&gt;
+&lt;li&gt;Independent scaling and evolution&lt;&#x2F;li&gt;
+&lt;li&gt;Dedicated logging and monitoring&lt;&#x2F;li&gt;
+&lt;li&gt;Easier to maintain and modify&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;operational-benefits&quot;&gt;Operational Benefits&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Can implement automation-specific features&lt;&#x2F;li&gt;
+&lt;li&gt;Independent deployment and updates&lt;&#x2F;li&gt;
+&lt;li&gt;Separate rate limiting and throttling&lt;&#x2F;li&gt;
+&lt;li&gt;Dedicated audit trails for automated access&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;implementation-considerations&quot;&gt;Implementation Considerations&lt;&#x2F;h2&gt;
+&lt;p&gt;When implementing the dedicated OIDC resource server approach, consider:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Authentication&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Implement robust OIDC client authentication&lt;&#x2F;li&gt;
+&lt;li&gt;Consider additional authentication methods for different CI&#x2F;CD platforms&lt;&#x2F;li&gt;
+&lt;li&gt;Implement proper token validation and management&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Authorization&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Define clear RBAC policies for CI&#x2F;CD access&lt;&#x2F;li&gt;
+&lt;li&gt;Implement fine-grained access control&lt;&#x2F;li&gt;
+&lt;li&gt;Consider environment-based restrictions&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Security&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Implement rate limiting&lt;&#x2F;li&gt;
+&lt;li&gt;Add robust audit logging&lt;&#x2F;li&gt;
+&lt;li&gt;Consider request validation and sanitization&lt;&#x2F;li&gt;
+&lt;li&gt;Implement proper error handling that doesn’t leak sensitive information&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Monitoring&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add detailed operational metrics&lt;&#x2F;li&gt;
+&lt;li&gt;Implement automated access pattern analysis&lt;&#x2F;li&gt;
+&lt;li&gt;Set up alerting for suspicious activities&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;While all three approaches could work, creating a dedicated OIDC resource server provides the best balance of security, maintainability, and flexibility. It allows for proper separation of concerns while maintaining strong security boundaries and enables independent evolution of human and automated access patterns.&lt;&#x2F;p&gt;
+&lt;p&gt;This solution might require more initial development effort, but the long-term benefits in terms of security, maintainability, and operational flexibility make it the most robust choice for production environments.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Creating GitHub Releases with Binary Artifacts: A Complete Guide</title>
+        <published>2024-11-27T00:00:00+00:00</published>
+        <updated>2024-11-27T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/github-releases/"/>
+        <id>https://zerotohero.dev/inbox/github-releases/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/github-releases/">&lt;p&gt;Whether you’re distributing compiled binaries, executables, or any other release artifacts, GitHub provides two convenient methods to create releases and share your builds. In this guide, we’ll explore both the manual UI approach and automated workflows for creating GitHub releases.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;method-1-using-github-s-web-interface&quot;&gt;Method 1: Using GitHub’s Web Interface&lt;&#x2F;h2&gt;
+&lt;p&gt;The simplest way to create a release is directly through GitHub’s user interface. Here’s a step-by-step guide:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Navigate to Releases&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Go to your repository&lt;&#x2F;li&gt;
+&lt;li&gt;Click on “Releases” in the right sidebar&lt;&#x2F;li&gt;
+&lt;li&gt;If you don’t see it, you can also access it via “Tags” → “Releases”&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Create the Release&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Click the “Create a new release” button&lt;&#x2F;li&gt;
+&lt;li&gt;If you have no releases yet, look for “Draft a new release”&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Configure Release Details&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Tag&lt;&#x2F;strong&gt;: Either choose an existing tag or create a new one (e.g., &lt;code&gt;v1.0.0&lt;&#x2F;code&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Release title&lt;&#x2F;strong&gt;: Give your release a descriptive name&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Description&lt;&#x2F;strong&gt;: Add release notes, changelog, or any relevant documentation&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Upload Binary Artifacts&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Look for the “Attach binaries” section&lt;&#x2F;li&gt;
+&lt;li&gt;Either drag and drop your files directly onto this area&lt;&#x2F;li&gt;
+&lt;li&gt;Or use the “Choose files” button to select them from your computer&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Set Release Type&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Regular release: For stable versions&lt;&#x2F;li&gt;
+&lt;li&gt;Pre-release: For beta or testing versions&lt;&#x2F;li&gt;
+&lt;li&gt;Draft: To save without publishing&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Publish&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Click “Publish release” to make it public&lt;&#x2F;li&gt;
+&lt;li&gt;Or “Save draft” to continue editing later&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;method-2-automated-releases-with-github-actions&quot;&gt;Method 2: Automated Releases with GitHub Actions&lt;&#x2F;h2&gt;
+&lt;p&gt;For more consistent and automated releases, you can use GitHub Actions. This is particularly useful when you have:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Multiple binary artifacts&lt;&#x2F;li&gt;
+&lt;li&gt;Cross-platform builds&lt;&#x2F;li&gt;
+&lt;li&gt;Regular release cycles&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Here’s how to set it up:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Create Workflow File&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Create a &lt;code&gt;.github&#x2F;workflows&lt;&#x2F;code&gt; directory in your repository&lt;&#x2F;li&gt;
+&lt;li&gt;Add a file named &lt;code&gt;release.yml&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Configure the Workflow&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;yaml&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-yaml &quot;&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;name&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;Release Binaries
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;on&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;push&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;tags&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;      - &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;v*&amp;#39;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Define Build and Release Steps&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Set up your build environment&lt;&#x2F;li&gt;
+&lt;li&gt;Compile binaries for different platforms&lt;&#x2F;li&gt;
+&lt;li&gt;Upload artifacts to the release&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Trigger Release&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;git tag v1.0.0
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;git push origin v1.0.0
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;best-practices&quot;&gt;Best Practices&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Versioning&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use semantic versioning (e.g., v1.0.0)&lt;&#x2F;li&gt;
+&lt;li&gt;Be consistent with your version numbering&lt;&#x2F;li&gt;
+&lt;li&gt;Include build numbers if needed&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Documentation&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Always include release notes&lt;&#x2F;li&gt;
+&lt;li&gt;Document breaking changes&lt;&#x2F;li&gt;
+&lt;li&gt;List new features and bug fixes&lt;&#x2F;li&gt;
+&lt;li&gt;Add installation instructions&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Binary Organization&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use clear naming conventions&lt;&#x2F;li&gt;
+&lt;li&gt;Include architecture information in filenames&lt;&#x2F;li&gt;
+&lt;li&gt;Consider adding checksums for verification&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Post-Release&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Test download links&lt;&#x2F;li&gt;
+&lt;li&gt;Verify binary artifacts&lt;&#x2F;li&gt;
+&lt;li&gt;Update documentation references&lt;&#x2F;li&gt;
+&lt;li&gt;Announce the release in relevant channels&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;managing-existing-releases&quot;&gt;Managing Existing Releases&lt;&#x2F;h2&gt;
+&lt;p&gt;You can also manage releases after publication:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Editing Releases&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Navigate to the release page&lt;&#x2F;li&gt;
+&lt;li&gt;Click “Edit release”&lt;&#x2F;li&gt;
+&lt;li&gt;Modify description, title, or binary artifacts&lt;&#x2F;li&gt;
+&lt;li&gt;Save changes&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Deleting Releases&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use with caution&lt;&#x2F;li&gt;
+&lt;li&gt;Can remove individual artifacts&lt;&#x2F;li&gt;
+&lt;li&gt;Or delete entire releases&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;GitHub Releases provide a robust platform for distributing your binary artifacts. Whether you choose the manual UI approach or automated workflows, following these guidelines will help you create professional and well-organized releases for your users.&lt;&#x2F;p&gt;
+&lt;p&gt;Remember that releases serve as important historical markers for your project, so take time to document them properly and ensure all artifacts are properly tested before publishing.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;p&gt;&lt;em&gt;Last updated: November 2024&lt;&#x2F;em&gt;&lt;br &#x2F;&gt;
+&lt;em&gt;Feel free to share and adapt this guide with attribution.&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
         <title>The Live Stream Dream</title>
         <published>2024-05-27T00:00:00+00:00</published>
         <updated>2024-05-27T00:00:00+00:00</updated>
@@ -1634,6 +3038,124 @@ significant… However, I needed to get that off my chest.&lt;&#x2F;p&gt;
         
     </entry>
     <entry xml:lang="en">
+        <title>Trust Cultivates a Cohesive Team</title>
+        <published>2024-03-07T00:00:00+00:00</published>
+        <updated>2024-03-07T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/top-of-mind/trust/"/>
+        <id>https://zerotohero.dev/top-of-mind/trust/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/top-of-mind/trust/">&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;size&#x2F;w1200&#x2F;2024&#x2F;03&#x2F;trust-team.png&quot; alt=&quot;Trust Cultivates a Cohesive Team&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;trust-is-important&quot;&gt;Trust Is Important&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;strong&gt;Trust&lt;&#x2F;strong&gt; is crucial for team success, so it’s not surprising that it is often a
+focal point in discussions about team performance. While trust among team
+members is commonly emphasized everywhere, establishing trust among teammates
+can take &lt;strong&gt;intentional effort&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;In this article, I’ll introduce ways to foster trust within your team.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;don-t-leave-collaboration-to-chance&quot;&gt;Don’t Leave Collaboration to Chance&lt;&#x2F;h2&gt;
+&lt;p&gt;One of your duties as a leader is to &lt;strong&gt;avoid ambiguity&lt;&#x2F;strong&gt;. To avoid leaving
+collaboration to chance, initiate discussions at the start of each project on
+how the team will collaborate.&lt;&#x2F;p&gt;
+&lt;p&gt;This upfront communication can help prevent misunderstandings and promote
+teamwork. Everyone can also help this by taking turns sharing their strengths,
+preferred communication styles, and past collaboration experiences.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;overcommunicate-then-overcommunicate-some-more&quot;&gt;Overcommunicate, Then Overcommunicate Some More&lt;&#x2F;h2&gt;
+&lt;p&gt;Create a culture that prioritizes keeping everyone informed. Encourage everyone
+to share information &lt;strong&gt;inclusively&lt;&#x2F;strong&gt;. There is no “us versus them,” and there
+shall never be one.&lt;&#x2F;p&gt;
+&lt;p&gt;Transparency enhances trust and boosts creativity, performance, and overall
+productivity.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;recognize&quot;&gt;Recognize&lt;&#x2F;h2&gt;
+&lt;p&gt;Recognize the contributions of others by &lt;strong&gt;sharing credit&lt;&#x2F;strong&gt;. Cultivate an
+environment where teammates &lt;strong&gt;acknowledge&lt;&#x2F;strong&gt; and appreciate those who have helped
+them succeed. This practice fosters a culture of respect and gratitude, which is
+essential for building trust.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;disagreements-are-fine&quot;&gt;Disagreements are Fine&lt;&#x2F;h2&gt;
+&lt;p&gt;Embrace disagreements as&lt;strong&gt;opportunities&lt;&#x2F;strong&gt;for growth and improvement. Encourage
+your team to address conflicts, reminding them that diverse viewpoints often
+lead to outcomes as long as discussions remain respectful and collaborative.&lt;&#x2F;p&gt;
+&lt;p&gt;When conflicts arise, addressing them and working towards resolution is
+essential.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;Establishing trust within a team is a &lt;strong&gt;journey&lt;&#x2F;strong&gt; that necessitates plans and
+ongoing commitment from everyone. Setting up collaboration strategies that
+encourage dialogue, acknowledge individual and group efforts, and view
+disagreements as opportunities for growth are fundamental steps in creating an
+environment rich in trust.&lt;&#x2F;p&gt;
+&lt;p&gt;These actions boost team trust and enhance &lt;strong&gt;innovation&lt;&#x2F;strong&gt;, &lt;strong&gt;performance&lt;&#x2F;strong&gt;,
+and &lt;strong&gt;efficiency&lt;&#x2F;strong&gt;, leading to a more
+&lt;strong&gt;unified&lt;&#x2F;strong&gt;, &lt;strong&gt;effective&lt;&#x2F;strong&gt;, and &lt;strong&gt;resilient&lt;&#x2F;strong&gt; team.&lt;&#x2F;p&gt;
+&lt;p&gt;As you navigate the intricacies of working intentionally, fostering trust
+ensures that each member feels &lt;strong&gt;valued&lt;&#x2F;strong&gt;, &lt;strong&gt;heard&lt;&#x2F;strong&gt;, and &lt;strong&gt;essential&lt;&#x2F;strong&gt; to the
+team’s accomplishments. Through these endeavors, teams can achieve outcomes
+rooted in mutual regard and confidence.&lt;&#x2F;p&gt;
+&lt;p&gt;Henceforth, every team member must prioritize these approaches to cultivate an
+atmosphere where trust flourishes naturally, and collaboration thrives
+effortlessly. This will help everyone feel &lt;strong&gt;empowered&lt;&#x2F;strong&gt; to contribute.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;catch-22&#x2F;&quot;&gt;Catch 22&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;consume-less&#x2F;&quot;&gt;Consume Less&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;craft-captivating-documentation&#x2F;&quot;&gt;Craft Captivating Documentation&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;keep-your-secrets&#x2F;&quot;&gt;Keep Your Secrets… Secret&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;later-does-not-exist&#x2F;&quot;&gt;‘Later’ Does Not Exist&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;perception-pivot&#x2F;&quot;&gt;Transform Feedback into Professional Mastery&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;probing-questions&#x2F;&quot;&gt;Embracing Daily Reflection&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;psst-you-dont-have-to-use-medium&#x2F;&quot;&gt;Psst… You Don’t Have to Use Medium&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;reshape-your-workspace&#x2F;&quot;&gt;Reshape Your Workspace, Reshape Your Future&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;secrets&#x2F;&quot;&gt;Secrets&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;the-dream-job&#x2F;&quot;&gt;Build Strong Connections to Land Your Dream Job&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Trust Cultivates a Cohesive Team&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;vmware-secrets-manager&#x2F;&quot;&gt;Long Live Aegis!&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;write-to-forget&#x2F;&quot;&gt;Write to Forget&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;closure&#x2F;&quot;&gt;Closure&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;new-z2h-design&#x2F;&quot;&gt;The New Zero to Hero Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
         <title>Reshape Your Workspace, Reshape Your Future</title>
         <published>2023-07-12T00:00:00+00:00</published>
         <updated>2023-07-12T00:00:00+00:00</updated>
@@ -1872,6 +3394,292 @@ have is to &lt;strong&gt;be selective&lt;&#x2F;strong&gt; and &lt;strong&gt;do l
 &lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;new-z2h-design&#x2F;&quot;&gt;The New Zero to Hero Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>A Glossary of Mostly Developer-Related Things</title>
+        <published>2021-11-27T00:00:00+00:00</published>
+        <updated>2021-11-27T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/roadmap/glossary/"/>
+        <id>https://zerotohero.dev/roadmap/glossary/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/roadmap/glossary/">
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;acronym.png&quot; alt=&quot;The tech industry loves its TLAs.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;The tech industry loves its TLAs.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;We love our terms and acronyms, don’t we? They help us communicate complex
+notions with just a few characters; however, they can also be an obstacle when
+you are learning new stuff. This page covers a list of mostly developer-related
+terms and acronyms with links to further explanations about them.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;A&#x2F;B_testing&quot;&gt;A&#x2F;B Testing&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Application_programming_interface&quot;&gt;API&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.interaction-design.org&#x2F;literature&#x2F;topics&#x2F;adaptive-design&quot;&gt;Adaptive Design&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Agile_software_development&quot;&gt;Agile Software Development&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Algorithm&quot;&gt;Algorithm&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Automation&quot;&gt;Automation&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Scrum_(software_development)#Product_backlog&quot;&gt;Backlog&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Bash_(Unix_shell)&quot;&gt;bash&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Behavior-driven_development&quot;&gt;BDD (&lt;em&gt;Behavior-Driven
+Development&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Big_data&quot;&gt;Big Data&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;cloud.google.com&#x2F;bigquery&quot;&gt;Big Query&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.mozilla.org&#x2F;en-US&#x2F;firefox&#x2F;browsers&#x2F;what-is-a-browser&#x2F;&quot;&gt;Browser&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Software_bug&quot;&gt;Bug&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;dev.to&#x2F;tanhauhau&#x2F;what-is-module-bundler-and-how-does-it-work-3gp2&quot;&gt;Bundling&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Burn_rate&quot;&gt;Burn Rate&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;C_Sharp_(programming_language)&quot;&gt;C#&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;C%2B%2B&quot;&gt;C++&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Content_management_system&quot;&gt;CMS (&lt;em&gt;Content Management
+System&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.cncf.io&#x2F;&quot;&gt;CNCF (&lt;em&gt;Cloud Native Computing Foundation&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Central_processing_unit&quot;&gt;CPU (&lt;em&gt;Central Processing
+Unit&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;crm.org&#x2F;crmland&#x2F;what-is-a-crm&quot;&gt;CRM (&lt;em&gt;Customer Relationship
+Management&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Cascading_Style_Sheets&quot;&gt;CSS (&lt;em&gt;Cascading Style
+Sheet&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Call_to_action_(marketing)&quot;&gt;CTA (&lt;em&gt;Call to
+Action&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;C_(programming_language)&quot;&gt;C&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Cache_(computing)&quot;&gt;Cache&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Churn_rate&quot;&gt;Churn Rate&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Source-code_editor&quot;&gt;Code Editor&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;CommonJS&quot;&gt;CommonJS&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;OS-level_virtualization&quot;&gt;Container&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Continuous_integration&quot;&gt;CI (&lt;em&gt;Continuous
+Integration&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Cookie&quot;&gt;Cookie&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Web_crawler&quot;&gt;Crawl&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Domain_Name_System&quot;&gt;DNS (&lt;em&gt;Domain Name System&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;List_of_DNS_record_types&quot;&gt;DNS Record Types&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Dots_per_inch&quot;&gt;DPI (&lt;em&gt;Dots Per Inch&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Data_structure&quot;&gt;Data Structure&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Debugging&quot;&gt;Debugging&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Software_deployment&quot;&gt;Deployment&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Design&quot;&gt;Design&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;DevOps&quot;&gt;DevOps&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.docker.com&#x2F;&quot;&gt;Docker&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Domain_name&quot;&gt;Domain&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;ECMAScript&quot;&gt;ECMAScript&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.erlang.org&#x2F;&quot;&gt;Erlang&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;web.dev&#x2F;first-meaningful-paint&#x2F;&quot;&gt;FMP (&lt;em&gt;First Meaningful Paint&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Functional_programming&quot;&gt;FP (&lt;em&gt;Functional
+Programming&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;File_Transfer_Protocol&quot;&gt;FTP (&lt;em&gt;File Transfer
+Protocol&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Function_as_a_service&quot;&gt;FaaS&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Favicon&quot;&gt;Favicon&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Software_framework&quot;&gt;Framework&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Front_end_and_back_end&quot;&gt;Front End and Back End&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.blog&#x2F;2019&#x2F;10&#x2F;17&#x2F;imho-the-mythical-fullstack-engineer&#x2F;&quot;&gt;Full-Stack&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Graphical_user_interface&quot;&gt;GUI (&lt;em&gt;Graphical User
+Interface&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;&quot;&gt;GitHub&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;git-scm.com&#x2F;&quot;&gt;Git&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;golang.org&#x2F;&quot;&gt;Go&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;graphql.org&#x2F;&quot;&gt;GraphQL&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.haskell.org&#x2F;&quot;&gt;Haskell&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;HTML&quot;&gt;HTML (&lt;em&gt;Hypertext Markup Language&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;HTTP&#x2F;Status&quot;&gt;HTTP Response Status Codes&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;HTTP&quot;&gt;HTTP (&lt;em&gt;Hypertext Transfer
+Protocol&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;humanstxt.org&#x2F;&quot;&gt;humans.txt&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;ionicframework.com&#x2F;resources&#x2F;articles&#x2F;what-is-hybrid-app-development&quot;&gt;Hybrid App&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Hypervisor&quot;&gt;Hypervisor&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Infrastructure_as_a_service&quot;&gt;IaaS (&lt;em&gt;Infrastructure as a
+Service&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Inbound_marketing&quot;&gt;Inbound Marketing&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Information_architecture&quot;&gt;Information Architecture&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Integration_testing&quot;&gt;Integration Testing&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jamstack.org&#x2F;&quot;&gt;JAM Stack&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Learn&#x2F;JavaScript&#x2F;First_steps&#x2F;What_is_JavaScript&quot;&gt;JavaScript&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;go.java&#x2F;&quot;&gt;Java&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Kaizen&quot;&gt;Kaizen&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Kanban_(development)&quot;&gt;Kanban&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;&quot;&gt;Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;LAMP_(software_bundle)&quot;&gt;LAMP Stack&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Library_(computing)&quot;&gt;Library&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Lisp_(programming_language)&quot;&gt;Lisp&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;API&#x2F;Window&#x2F;localStorage&quot;&gt;Local Storage&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;MEAN_(solution_stack)&quot;&gt;MEAN Stack&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.educative.io&#x2F;edpresso&#x2F;what-is-mern-stack&quot;&gt;MERN Stack&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Mock_object&quot;&gt;Mocking&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;mqtt.org&#x2F;&quot;&gt;MQTT (&lt;em&gt;Message Queue Telemetry Transport&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Mean_time_to_repair&quot;&gt;MTTR (&lt;em&gt;Mean Time to
+Repair&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Minimum_viable_product&quot;&gt;MVP (&lt;em&gt;Minimum Viable
+Product&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Machine_learning&quot;&gt;Machine Learning&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Minification_(programming)&quot;&gt;Minification&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Mobile_app&quot;&gt;Mobile App&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Mockup#Software_engineering&quot;&gt;Mockup&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Modular_design&quot;&gt;Module&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Web_navigation&quot;&gt;Navigation&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Not_invented_here&quot;&gt;NIH (&lt;em&gt;Not Invented Here&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;NoSQL&quot;&gt;NoSQL&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;nodejs.org&#x2F;en&#x2F;&quot;&gt;Node.js&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Orchestration_(computing)&quot;&gt;Orchestration&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Object-oriented_programming&quot;&gt;OOP (&lt;em&gt;Object-Oriented
+Programming&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Out_of_the_box_(feature)&quot;&gt;OOTB (&lt;em&gt;Out of the
+Box&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;OSI_model&quot;&gt;OSI Model&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;owasp.org&#x2F;&quot;&gt;OWASP (&lt;em&gt;Open Web Application Security Project&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Operating_system&quot;&gt;Operating System&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Platform_as_a_service&quot;&gt;PaaS &lt;em&gt;_Platform as a
+Service&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Plug-in_(computing)&quot;&gt;Plugin&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;concepts&#x2F;workloads&#x2F;pods&#x2F;pod&#x2F;&quot;&gt;Pod&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;dev.to&#x2F;flippedcoding&#x2F;difference-between-development-stage-and-production-d0p&quot;&gt;Production&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developers.google.com&#x2F;protocol-buffers&quot;&gt;Protocol Buffers&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Prototype&quot;&gt;Prototype&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.python.org&#x2F;&quot;&gt;Python&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Random-access_memory&quot;&gt;RAM (&lt;em&gt;Random-Access
+Memory&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Representational_state_transfer&quot;&gt;REST (&lt;em&gt;Representational State
+Transfer&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;URL_redirection&quot;&gt;Redirect&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Registrar&quot;&gt;Registrar&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Image_resolution&quot;&gt;Resolution&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.smashingmagazine.com&#x2F;2011&#x2F;01&#x2F;guidelines-for-responsive-web-design&#x2F;&quot;&gt;Responsive Design&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Technology_roadmap&quot;&gt;Roadmap&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;support.google.com&#x2F;webmasters&#x2F;answer&#x2F;6062608&quot;&gt;robots.txt&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.ruby-lang.org&#x2F;en&#x2F;&quot;&gt;Ruby&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.rust-lang.org&#x2F;&quot;&gt;Rust&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Simple_Mail_Transfer_Protocol&quot;&gt;SMTP (&lt;em&gt;Simple Mail Transfer
+Protocol&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;SQL&quot;&gt;SQL (&lt;em&gt;Structured Query Language&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Solid-state_drive&quot;&gt;SSD (&lt;em&gt;Solid-State Drive&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Secure_Shell&quot;&gt;SSH (&lt;em&gt;Secure Shell&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Software_as_a_service&quot;&gt;SaaS (&lt;em&gt;Software as a
+Service&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Scheme_(programming_language)&quot;&gt;Scheme&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Web_scraping&quot;&gt;Scrape&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Scrum_(software_development)&quot;&gt;Scrum&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Server_(computing)&quot;&gt;Server&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Separation_of_concerns&quot;&gt;Separation of Concerns&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;thoughtbot.com&#x2F;blog&#x2F;a-closer-look-at-test-spies&quot;&gt;Spying&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Serverless_computing&quot;&gt;Serverless&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;API&#x2F;Window&#x2F;sessionStorage&quot;&gt;Session Storage&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Site_map&quot;&gt;Sitemap&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Smalltalk&quot;&gt;Smalltalk&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Solution_stack&quot;&gt;Software Stack&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Version_control&quot;&gt;Source Control&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;SOLID&quot;&gt;SOLID&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.atlassian.com&#x2F;agile&#x2F;scrum&#x2F;sprints&quot;&gt;Sprint&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Test-driven_development&quot;&gt;TDD (&lt;em&gt;Test-Driven
+Development&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Transport_Layer_Security&quot;&gt;TLS&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Time_to_first_byte&quot;&gt;TTFB (&lt;em&gt;Time to First
+Byte&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Tag_(metadata)&quot;&gt;Tags&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Web_template_system&quot;&gt;Template&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Test_stub&quot;&gt;Test Stub&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Text_editor&quot;&gt;Text Editor&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Acceptance_testing&quot;&gt;UAT (&lt;em&gt;User Acceptance
+Testing&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;User_interface_design&quot;&gt;UI Design&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;User_interface&quot;&gt;UI (&lt;em&gt;User Interface&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;User_experience_design&quot;&gt;UX Design&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;User_experience&quot;&gt;UX (&lt;em&gt;User Experience&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Unit_testing&quot;&gt;Unit Testing&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.usability.gov&#x2F;how-to-and-tools&#x2F;methods&#x2F;usability-testing.html&quot;&gt;Usability Testing&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;User_agent&quot;&gt;User Agent&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.interaction-design.org&#x2F;literature&#x2F;topics&#x2F;user-research&quot;&gt;User Research&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;WYSIWYG&quot;&gt;WYSIWYG (&lt;em&gt;What You See Is What You
+Get&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Waterfall_model&quot;&gt;Waterfall&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Web_application&quot;&gt;Web App&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Graphical_widget&quot;&gt;Widget&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.usability.gov&#x2F;how-to-and-tools&#x2F;methods&#x2F;wireframing.html&quot;&gt;Wireframe&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;You_aren%27t_gonna_need_it&quot;&gt;YAGNI&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Z_shell&quot;&gt;zsh&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Until next time… May the source be with you 🦄.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;roadmap&#x2F;&quot;&gt;Be the Next Version of Yourself&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;hack-the-system&#x2F;&quot;&gt;Who Else is Ready to Hack?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;chisel&#x2F;&quot;&gt;Grab Your Chisel and Start Pounding&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learn-fast-remember-more&#x2F;&quot;&gt;Unlock Your Brain’s Power: Learn Fast, Remember More&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;the-art-of-learning&#x2F;&quot;&gt;Master Your Mind: Unleash the Power of Learning&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;bedtime-reading&#x2F;&quot;&gt;Resources Every Developer Must Read: No Exceptions&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;knowing-javascript-is-not-good-enough&#x2F;&quot;&gt;Knowing JavaScript Is Not Good Enough&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learn-javascript-the-unconventional-way&#x2F;&quot;&gt;Learn JavaScript the Unconventional Way&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learn-haskell&#x2F;&quot;&gt;Want to Learn JavaScript? Learn Haskell First&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ A Glossary of Mostly Developer-Related Things&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;git&#x2F;&quot;&gt;Git Comfortable&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;vim&#x2F;&quot;&gt;Master Your Vim-Fu&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;one-does-not-simply-terminal&#x2F;&quot;&gt;One Does Not Simply Terminal 👌&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;design-patterns&#x2F;&quot;&gt;Paint Me Like One of Your French Design Patterns&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;regexp&#x2F;&quot;&gt;Tame Your Regular Expressions&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;security&#x2F;&quot;&gt;Security Is Not Optional&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;you-need-testing&#x2F;&quot;&gt;You Need Testing&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;a-startup-founders-bedtime-reading-list&#x2F;&quot;&gt;A Startup Founder’s Bedtime Reading List&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;color-theory&#x2F;&quot;&gt;Orange Is the New Purple&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;ramp-up-in-user-experience-design&#x2F;&quot;&gt;Ramp Up in User Experience Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;typography&#x2F;&quot;&gt;Get Better at Typography&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learning-rust&#x2F;&quot;&gt;Exploring Rust as a Go Developer&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 </content>

@@ -12,7 +12,7 @@ title = "Winning at Work: Thriving With Difficult Colleagues"
 date = "2023-05-27"
 
 [taxonomies]
-tags = ["highlights","authentication","git","kubernetes"]
+tags = ["highlights","authentication","git","kubernetes","SPIFFE","SPIRE"]
 +++
 
 {{img(

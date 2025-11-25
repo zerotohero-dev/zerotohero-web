@@ -1319,6 +1319,73 @@ The External Secrets Operator continuously reconciles resources. When it sees yo
         
     </entry>
     <entry xml:lang="en">
+        <title>Understanding Docker&#x27;s 6MB Memory Limit: A Deep Dive</title>
+        <published>2024-12-12T00:00:00+00:00</published>
+        <updated>2024-12-12T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/docker-memory-limits/"/>
+        <id>https://zerotohero.dev/inbox/docker-memory-limits/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/docker-memory-limits/">&lt;p&gt;Have you ever encountered this puzzling error message while working with Docker containers?&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#282828;color:#fdf4c1aa;&quot;&gt;&lt;code&gt;&lt;span&gt;Warning Failed 89s (x12 over 3m44s) kubelet Error: Error response from daemon: Minimum memory limit allowed is 6MB
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;If you’re like many developers, your first instinct might be to check Kubernetes’ LimitRange resources:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;$ kubectl get limitrange -A
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;No resources found
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;But wait - if there are no LimitRange resources defined, where is this 6MB limit coming from? Let’s dive deep into this common containerization puzzle.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-mystery-of-the-6mb-limit&quot;&gt;The Mystery of the 6MB Limit&lt;&#x2F;h2&gt;
+&lt;p&gt;The key to understanding this issue lies in recognizing that this limit isn’t coming from Kubernetes at all - it’s actually a built-in restriction in Docker itself. This often surprises developers because it’s not documented prominently in Docker’s documentation.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;why-does-this-limit-exist&quot;&gt;Why Does This Limit Exist?&lt;&#x2F;h3&gt;
+&lt;p&gt;The 6MB minimum memory limit serves as a critical safeguard in Docker’s architecture. It’s designed to prevent containers from being started with dangerously low memory limits that could lead to:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Immediate Out-of-Memory (OOM) kills&lt;&#x2F;li&gt;
+&lt;li&gt;Unstable container behavior&lt;&#x2F;li&gt;
+&lt;li&gt;System resource exhaustion&lt;&#x2F;li&gt;
+&lt;li&gt;Cascading failures in container orchestration&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;configuration-options-what-can-you-do&quot;&gt;Configuration Options: What Can You Do?&lt;&#x2F;h2&gt;
+&lt;p&gt;While this limit is hardcoded into Docker’s engine, you’re not entirely without options. Here are several approaches to dealing with this limitation:&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;1-adjust-your-resource-allocation&quot;&gt;1. Adjust Your Resource Allocation&lt;&#x2F;h3&gt;
+&lt;p&gt;The most straightforward solution is to ensure your containers have adequate memory allocation. If you’re hitting this limit, it’s worth questioning whether running with such minimal memory is truly optimal for your application.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;2-alternative-approaches&quot;&gt;2. Alternative Approaches&lt;&#x2F;h3&gt;
+&lt;p&gt;If you absolutely need to work with very low memory limits, consider these options:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Use Docker Swarm with Compatibility Mode&lt;&#x2F;strong&gt;: Running Docker Swarm with the &lt;code&gt;--compatibility&lt;&#x2F;code&gt; flag can alter how memory limits are interpreted&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Switch Container Runtimes&lt;&#x2F;strong&gt;: Consider using containerd or another container runtime that doesn’t impose this limitation&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Custom Docker Build&lt;&#x2F;strong&gt;: Though not recommended for production, you could technically modify Docker’s source code to adjust this limit&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;best-practices-and-recommendations&quot;&gt;Best Practices and Recommendations&lt;&#x2F;h2&gt;
+&lt;p&gt;When working with container memory limits, consider these best practices:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Right-size Your Containers&lt;&#x2F;strong&gt;: Instead of trying to run with minimal memory, focus on appropriate sizing based on actual application needs&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Monitor Memory Usage&lt;&#x2F;strong&gt;: Use tools like cAdvisor or Prometheus to understand your actual memory usage patterns&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Test Thoroughly&lt;&#x2F;strong&gt;: Always test your containers under load to ensure memory limits are appropriate&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Document Your Settings&lt;&#x2F;strong&gt;: Make memory requirements and limits explicit in your deployment documentation&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;While Docker’s 6MB memory limit might seem restrictive at first, it’s actually a thoughtful safeguard that helps prevent potentially problematic container configurations. Understanding this limit - and working with it rather than against it - will help you build more reliable containerized applications.&lt;&#x2F;p&gt;
+&lt;p&gt;Remember: Just because you can run a container with minimal memory doesn’t always mean you should. Focus on stability and reliability over minimal resource usage unless you have a compelling reason to do otherwise.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;additional-resources&quot;&gt;Additional Resources&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Docker Documentation on Resource Constraints&lt;&#x2F;li&gt;
+&lt;li&gt;Kubernetes Memory Management Documentation&lt;&#x2F;li&gt;
+&lt;li&gt;Container Runtime Comparisons&lt;&#x2F;li&gt;
+&lt;li&gt;Memory Optimization Strategies for Containers&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Happy containerizing!&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
         <title>Installing VMware vCenter Server Appliance (vCSA): Stage 1 Deployment Guide</title>
         <published>2024-12-12T00:00:00+00:00</published>
         <updated>2024-12-12T00:00:00+00:00</updated>
@@ -3310,6 +3377,227 @@ The External Secrets Operator continuously reconciles resources. When it sees yo
         
     </entry>
     <entry xml:lang="en">
+        <title>Better Error Handling Patterns for Go SDKs</title>
+        <published>2024-12-01T00:00:00+00:00</published>
+        <updated>2024-12-01T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/sdk-error-handling/"/>
+        <id>https://zerotohero.dev/inbox/sdk-error-handling/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/sdk-error-handling/">&lt;p&gt;When building SDKs in Go, one common challenge is balancing transparency and debuggability with clean error handling. This becomes particularly evident when implementing retry mechanisms, where we need to track multiple attempts, delays, and error states.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-common-approach-logging&quot;&gt;The Common Approach: Logging&lt;&#x2F;h2&gt;
+&lt;p&gt;Many SDKs resort to internal logging for debugging:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;Retry&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;scope &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;string&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;f &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func&lt;&#x2F;span&gt;&lt;span&gt;() &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;error&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;s &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;Strategy&lt;&#x2F;span&gt;&lt;span&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;error &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;correlationID &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;crypto&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Id&lt;&#x2F;span&gt;&lt;span&gt;()
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;log&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;TraceLn&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;correlationID&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Starting retry loop&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; ... retry logic with logging
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;While this provides visibility, it has several drawbacks:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Forces a logging implementation on SDK users&lt;&#x2F;li&gt;
+&lt;li&gt;Mixes concerns between error handling and logging&lt;&#x2F;li&gt;
+&lt;li&gt;Makes testing more complicated&lt;&#x2F;li&gt;
+&lt;li&gt;Can pollute user logs with SDK internals&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;better-patterns-for-sdk-error-handling&quot;&gt;Better Patterns for SDK Error Handling&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;1-rich-error-types&quot;&gt;1. Rich Error Types&lt;&#x2F;h3&gt;
+&lt;p&gt;Instead of logging, return structured error information:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;type &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;RetryError &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;struct &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;OriginalError &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;error
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Attempts     &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;int
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;TotalTime    time&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;Duration
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Scope        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;string
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;CorrelationID &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;string
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func &lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;e &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;RetryError&lt;&#x2F;span&gt;&lt;span&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;Error&lt;&#x2F;span&gt;&lt;span&gt;() &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;string &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;fmt&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Sprintf&lt;&#x2F;span&gt;&lt;span&gt;(
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;failed after &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;%d&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt; attempts over &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;%v&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt; in scope &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;%s&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39; (correlation_id: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;%s&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;): &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;%v&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;e&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Attempts&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;e&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;TotalTime&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;e&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Scope&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;e&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;CorrelationID&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;e&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;OriginalError&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;    )
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Benefits:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Users can extract detailed information when needed&lt;&#x2F;li&gt;
+&lt;li&gt;Follows Go’s error handling patterns&lt;&#x2F;li&gt;
+&lt;li&gt;Makes testing straightforward&lt;&#x2F;li&gt;
+&lt;li&gt;Keeps separation of concerns&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;2-event-callbacks&quot;&gt;2. Event Callbacks&lt;&#x2F;h3&gt;
+&lt;p&gt;Allow users to plug in their own handling:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;type &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;RetryCallback &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;attempt &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;int&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;delay time&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;Duration&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;error&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;Retry&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;f &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func&lt;&#x2F;span&gt;&lt;span&gt;() &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;error&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;s &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;Strategy&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;onRetry &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;RetryCallback&lt;&#x2F;span&gt;&lt;span&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;error &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Call onRetry for each attempt
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This approach:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Gives users complete control over instrumentation&lt;&#x2F;li&gt;
+&lt;li&gt;Enables custom metrics collection&lt;&#x2F;li&gt;
+&lt;li&gt;Supports different logging implementations&lt;&#x2F;li&gt;
+&lt;li&gt;Maintains flexibility&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;3-optional-debug-mode&quot;&gt;3. Optional Debug Mode&lt;&#x2F;h3&gt;
+&lt;p&gt;Configure debug behavior through options:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;type &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;Config &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;struct &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Logger &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;Logger
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Debug  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;bool
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;Retry&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;f &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func&lt;&#x2F;span&gt;&lt;span&gt;() &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;error&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;s &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;Strategy&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cfg &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;Config&lt;&#x2F;span&gt;&lt;span&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;error &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cfg &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;&amp;amp;&amp;amp; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cfg&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Debug &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;&amp;amp;&amp;amp; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cfg&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Logger &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Log debug information
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This pattern:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Makes debugging optional&lt;&#x2F;li&gt;
+&lt;li&gt;Allows users to choose their logging implementation&lt;&#x2F;li&gt;
+&lt;li&gt;Keeps debug information out of production logs&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;best-practices&quot;&gt;Best Practices&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Return, Don’t Log&lt;&#x2F;strong&gt;: SDKs should return rich error information rather than logging internally.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Structured Errors&lt;&#x2F;strong&gt;: Use custom error types with fields that capture important debugging details.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Error Wrapping&lt;&#x2F;strong&gt;: Preserve error context through the chain:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;fmt&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Errorf&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;retry failed: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;%w&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;originalError&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Flexible Instrumentation&lt;&#x2F;strong&gt;: Provide hooks for users to implement their own logging&#x2F;metrics.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Clear Documentation&lt;&#x2F;strong&gt;: Document error types and their fields thoroughly.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;implementation-example&quot;&gt;Implementation Example&lt;&#x2F;h2&gt;
+&lt;p&gt;Here’s a complete implementation combining these patterns:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;type &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;RetryInfo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;struct &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;CorrelationID &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;string
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Events        &lt;&#x2F;span&gt;&lt;span&gt;[]&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;RetryEvent
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;StartTime     time&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;Time
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;type &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;RetryEvent &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;struct &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Attempt   &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;int
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Delay     time&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;Duration
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Error     &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;error
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;TimeStamp time&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;Time
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;Retry&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;f &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func&lt;&#x2F;span&gt;&lt;span&gt;() &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;error&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;s &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;Strategy&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;onRetry &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;RetryCallback&lt;&#x2F;span&gt;&lt;span&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;error &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;info &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &amp;amp;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;RetryInfo&lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;CorrelationID&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;crypto&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Id&lt;&#x2F;span&gt;&lt;span&gt;(),
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;StartTime&lt;&#x2F;span&gt;&lt;span&gt;:    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;time&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Now&lt;&#x2F;span&gt;&lt;span&gt;(),
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;    
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;for &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;i &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;i &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;&amp;lt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;int&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;s&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;MaxRetries&lt;&#x2F;span&gt;&lt;span&gt;); &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;i&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;++ &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;f&lt;&#x2F;span&gt;&lt;span&gt;()
+&lt;&#x2F;span&gt;&lt;span&gt;        
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;== &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil
+&lt;&#x2F;span&gt;&lt;span&gt;        }
+&lt;&#x2F;span&gt;&lt;span&gt;        
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;event &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;RetryEvent&lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Attempt&lt;&#x2F;span&gt;&lt;span&gt;:   &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;i &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;+ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;TimeStamp&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;time&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Now&lt;&#x2F;span&gt;&lt;span&gt;(),
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Error&lt;&#x2F;span&gt;&lt;span&gt;:     &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;        }
+&lt;&#x2F;span&gt;&lt;span&gt;        
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;onRetry &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;onRetry&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;event&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Attempt&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;event&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Delay&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;        }
+&lt;&#x2F;span&gt;&lt;span&gt;        
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;info&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Events &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;append&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;info&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Events&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;event&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; ... retry logic
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;    
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;&amp;amp;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;RetryError&lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Info&lt;&#x2F;span&gt;&lt;span&gt;:    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;info&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;LastErr&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;info&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Events&lt;&#x2F;span&gt;&lt;span&gt;[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;len&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;info&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Events&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;].&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Error&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;By following these patterns, we can build SDKs that:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Provide rich debugging information&lt;&#x2F;li&gt;
+&lt;li&gt;Respect separation of concerns&lt;&#x2F;li&gt;
+&lt;li&gt;Give users control over logging and instrumentation&lt;&#x2F;li&gt;
+&lt;li&gt;Maintain clean, idiomatic Go code&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Remember: good SDK design is about enabling users while staying out of their way. Return errors, don’t log them, and give users the tools they need to handle errors appropriately in their context.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>O-RAN R1 Interface</title>
+        <published>2024-11-24T00:00:00+00:00</published>
+        <updated>2024-11-24T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/o-ran-r1-interface/"/>
+        <id>https://zerotohero.dev/inbox/o-ran-r1-interface/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/o-ran-r1-interface/">&lt;p&gt;Here is a brief explanation of the O-RAN R1 Interface:&lt;&#x2F;p&gt;
+&lt;p&gt;O-RAN stands for Open Radio Access Network. It is an industry standard that
+defines open and interoperable interfaces for 5G RANs (Radio Access Networks).&lt;&#x2F;p&gt;
+&lt;p&gt;The R1 interface is one of the key interfaces defined by O-RAN. It connects the
+O-RU (O-RAN Radio Unit) and the O-DU (O-RAN Distributed Unit).&lt;&#x2F;p&gt;
+&lt;p&gt;The main functions of the R1 interface are:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Transport of user plane data between O-RU and O-DU via Ethernet fronthaul.&lt;br &#x2F;&gt;
+This includes downlink and uplink user data.&lt;&#x2F;li&gt;
+&lt;li&gt;Transport of control and management plane information between O-RU and O-DU.
+This includes control signaling, synchronization, and performance measurements.&lt;&#x2F;li&gt;
+&lt;li&gt;Configuration and control of the O-RU by the O-DU. The O-DU can configure
+parameters like frequency bands, transmission power, etc.&lt;&#x2F;li&gt;
+&lt;li&gt;Performance monitoring of O-RU by O-DU. The O-RU regularly sends KPIs and
+measurements that allow the O-DU to monitor and manage the RU.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Some key properties of the R1 interface are:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;It uses Ethernet as the transport mechanism.&lt;&#x2F;li&gt;
+&lt;li&gt;It supports functional split option 7-2x between O-RU and O-DU.&lt;&#x2F;li&gt;
+&lt;li&gt;It provides open interfaces with standard models for configuration, control,&lt;br &#x2F;&gt;
+performance monitoring etc.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;In summary, the R1 interface enables open and interoperable connectivity between
+the radio unit and distributed unit in an O-RAN architecture. It transports user
+data, control signaling, and facilitates management of the RU by the DU.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
         <title>Building an ACL System for SPIFFE-based Secrets Store</title>
         <published>2024-11-24T00:00:00+00:00</published>
         <updated>2024-11-24T00:00:00+00:00</updated>
@@ -3510,6 +3798,208 @@ The External Secrets Operator continuously reconciles resources. When it sees yo
 &lt;p&gt;The complete code is available in the examples above. Feel free to use and modify it for your needs!&lt;&#x2F;p&gt;
 &lt;hr &#x2F;&gt;
 &lt;p&gt;&lt;em&gt;This post is part of our series on SPIFFE-based infrastructure. Stay tuned for more posts about secrets management, workload identity, and secure service-to-service communication.&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>How to Make Yourself Heard</title>
+        <published>2024-05-27T00:00:00+00:00</published>
+        <updated>2024-05-27T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/highlights/issue-0009/"/>
+        <id>https://zerotohero.dev/highlights/issue-0009/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/highlights/issue-0009/">
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;dj.png&quot; alt=&quot;How to Make Yourself Heard&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;How to Make Yourself Heard&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;Welcome to the ninth issue of &lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt; Highlights.&lt;&#x2F;p&gt;
+&lt;p&gt;Last week, I was a bit swamped, so I skipped the weekly update. Yet, I made “*
+*&lt;em&gt;a lot&lt;&#x2F;em&gt;**” of progress in the meantime. Here, I’ll out line some of that
+progress.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;radio-zero-to-hero&quot;&gt;Radio Zero to Hero&lt;&#x2F;h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Update 2024-05-27&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Radio Zero to Hero is no longer active. I’ve archived the project
+a while ago because keeping a stream alive without actually hosting the
+stream did not work well on Twitch. In addition, I was constantly using
+a lot of system resources and it was effecting the device’s life span.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;For starters, &lt;a href=&quot;https:&#x2F;&#x2F;twitch.tv&#x2F;VadidekiVolkan&quot;&gt;we now have a music station that streams cool music for
+you to get in the zone&lt;&#x2F;a&gt; non-stop 24&#x2F;7 😀.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2021&amp;#x2F;07&amp;#x2F;Screen-Shot-2021-07-16-at-9.25.33-AM.png&quot; alt=&quot;Radio Zero to Hero&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Radio Zero to Hero&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;It even has a terminal aquarium 🐠 that you can watch all day—how nerd is that?
+🙂.&lt;&#x2F;p&gt;
+&lt;p&gt;Want to see it? &lt;a href=&quot;https:&#x2F;&#x2F;twitch.tv&#x2F;VadidekiVolkan&quot;&gt;Come join the fun and &lt;strong&gt;follow me&lt;&#x2F;strong&gt; on Twitch&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;I listen to it instead of Spotify all day long. I have 1500+ (&lt;em&gt;and increasing&lt;&#x2F;em&gt;)
+tracks that I’ve curated and mixed personally. You’ll like it.&lt;&#x2F;p&gt;
+&lt;p&gt;Aside from displaying ASCII fishes all day long, I also do real-time coding and
+screencasting there: It’s fun.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-s-on-the-horizon-woman-fried-egg&quot;&gt;What’s on the Horizon 👩‍🍳&lt;&#x2F;h2&gt;
+&lt;p&gt;I’m planning to &lt;strong&gt;Create an EKS Cluster&lt;&#x2F;strong&gt; and deploy some of the services
+that we’ve created in the former live streams to that cluster.&lt;&#x2F;p&gt;
+&lt;p&gt;Once I finish the code of some of these services, I will write articles about
+them too to dig into the architectural discussions I’ve gone through while
+designing them. Yet, before, I want to finalize and deploy a
+micro-services-driven app. I’d like that app to run in the cloud, on a *
+&lt;em&gt;Kubernetes&lt;&#x2F;em&gt;* cluster, as a MVP.&lt;&#x2F;p&gt;
+&lt;p&gt;So there’s &lt;strong&gt;a lot&lt;&#x2F;strong&gt; of progress; however, not all the progress is on this
+site. &lt;a href=&quot;https:&#x2F;&#x2F;twitch.tv&#x2F;VadidekiVolkan&quot;&gt;If you follow me on &lt;strong&gt;Twitch&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, you’ll witness the progress
+closely.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;random-thought-of-the-week&quot;&gt;Random Thought of the Week&lt;&#x2F;h2&gt;
+&lt;p&gt;Do you hold back in meetings? Are you unsure how to jump in and make yourself
+heard? Do you often go unnoticed when everyone is excited about a topic?&lt;&#x2F;p&gt;
+&lt;p&gt;If yes, then I have a recommendation for you.&lt;&#x2F;p&gt;
+&lt;p&gt;To make sure that you are heard, and your voice is in the mix, try &lt;strong&gt;claiming
+space&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Make everybody aware of your contribution before launching into the main
+point.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;For example, instead of asking “&lt;em&gt;Can we look at this problem from the customer’s
+standpoint?&lt;&#x2F;em&gt;”, you can ease into the issue. Instead, you can ask something
+like “&lt;em&gt;Can we pause for a moment, step back, and take a longer-term view of
+these metrics? I did some research, and here’s what I found…&lt;&#x2F;em&gt;”&lt;&#x2F;p&gt;
+&lt;p&gt;👆This will capture your audience’s attention and position you as a knowledgeable
+person in your field.&lt;&#x2F;p&gt;
+&lt;p&gt;Once you show that you have done your homework and know what you are talking
+about, you can better articulate your proposal. This way, people can have a
+sense of understanding of what you are suggesting before you get to the details.&lt;&#x2F;p&gt;
+&lt;p&gt;Also, make sure to emphasize why your idea is essential. People in the room
+should know &lt;strong&gt;why&lt;&#x2F;strong&gt; they should care to prioritize this idea right now (&lt;em&gt;among
+many other things that seem to be equally important&lt;&#x2F;em&gt;).&lt;&#x2F;p&gt;
+&lt;p&gt;Finally, don’t stay in the spotlight forever. Invite contribution and feedback
+by asking probing questions like&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;“&lt;em&gt;What do you think?&lt;&#x2F;em&gt;”,&lt;&#x2F;li&gt;
+&lt;li&gt;“&lt;em&gt;How many of you feel this way?&lt;&#x2F;em&gt;”,&lt;&#x2F;li&gt;
+&lt;li&gt;“&lt;em&gt;What are your thoughts, it’s not that crazy of an idea, is it?&lt;&#x2F;em&gt;”.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;This will allow people to think more deeply about what you’ve proposed, and
+you’ll have a chance to read the room and get a sense of how your message has
+been received so far.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;look-what-i-ve-found&quot;&gt;Look What I’ve Found&lt;&#x2F;h2&gt;
+&lt;p&gt;Here are the things that grabbed my attention this week.&lt;&#x2F;p&gt;
+&lt;p&gt;I typically don’t share these anywhere else.&lt;&#x2F;p&gt;
+&lt;p&gt;Exclusively hand-picked for you 👌. Enjoy.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;strong&gt;TreeSheets&lt;&#x2F;strong&gt; is an open-source free-form data organizer—it’s like excel
+worksheets, but in a tree-like structure—get it? tree…
+sheets 🙂][treesheets].&lt;&#x2F;li&gt;
+&lt;li&gt;[&lt;strong&gt;BlueMonday&lt;&#x2F;strong&gt; is an HTML sanitized written in Go—in case you need that
+kind of a thing][bluemonday].&lt;&#x2F;li&gt;
+&lt;li&gt;[Counting is harder than it seems. In his article, Bruno outlines ways to
+&lt;strong&gt;safely&lt;&#x2F;strong&gt; count in &lt;strong&gt;Go&lt;&#x2F;strong&gt;][count].&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;[treesheets] :https:&#x2F;&#x2F;strlen.com&#x2F;treesheets&#x2F;
+[bluemonday]: https:&#x2F;&#x2F;github.com&#x2F;microcosm-cc&#x2F;bluemonday
+[count]: https:&#x2F;&#x2F;brunocalza.me&#x2F;there-are-many-ways-to-safely-count&#x2F;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;thanks-a-lot-red-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
+&lt;p&gt;That’s all for this week. Next week, I’ll gather more unique content and
+resources.&lt;&#x2F;p&gt;
+&lt;p&gt;So, until next time… May the source be with you 🦄.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;issues&quot;&gt;Issues&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0001&#x2F;&quot;&gt;Issue 1: Hello World, Hello Stars, Hello Universe&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0002&#x2F;&quot;&gt;Issue 2: The Only Thing That doesn’t Change is Change Itself&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0003&#x2F;&quot;&gt;Issue 3: Know Thyself&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0004&#x2F;&quot;&gt;Issue 4: Have You Fizzed that Buzz?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0005&#x2F;&quot;&gt;Issue 5: Be Kind&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0006&#x2F;&quot;&gt;Issue 6: Earn the Promotion You Deserve&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0007&#x2F;&quot;&gt;Issue 7: Who Else Journals Daily?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0008&#x2F;&quot;&gt;Issue 8: Who Are You?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Issue 9: How to Make Yourself Heard&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0010&#x2F;&quot;&gt;Issue 10: Tough Conversations&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0011&#x2F;&quot;&gt;Issue 11: Assemble Your Personal Board of Advisor&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0012&#x2F;&quot;&gt;Issue 12: What’s Your Plan&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0013&#x2F;&quot;&gt;Issue 13: Nine-to-Five? I Don’t Think So&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0014&#x2F;&quot;&gt;Issue 14: Respect and Understanding&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0015&#x2F;&quot;&gt;Issue 15: Pivoting Your Career?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0016&#x2F;&quot;&gt;Issue 16: Ghosted?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0017&#x2F;&quot;&gt;Issue 17: ‘Following Your Passion’ Is Hardly Enough&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0018&#x2F;&quot;&gt;Issue 18: Keep Cam and Carry On&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0019&#x2F;&quot;&gt;Issue 19: Attention, Intention, Compassion&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0020&#x2F;&quot;&gt;Issue 20: Words Matter&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0021&#x2F;&quot;&gt;Issue 21: Change Is the Only Constant&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0022&#x2F;&quot;&gt;Issue 22: Overcome the Awkward Feeling of Networking&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0023&#x2F;&quot;&gt;Issue 23: Unleash Your Curiosity: Unlock Your Potential as a Leader&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0024&#x2F;&quot;&gt;Issue 24: Interview Done. Radio Silence 🎃 What Now?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0025&#x2F;&quot;&gt;Issue 25: Unlock Your True Potential: Make Your Hard Work Visible&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0026&#x2F;&quot;&gt;Issue 26: Winning at Work: Thriving With Difficult Colleagues&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0027&#x2F;&quot;&gt;Issue 27: Promotions Don’t Happen Overnight&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
 </content>
         
     </entry>
@@ -3726,6 +4216,1155 @@ resources.&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0025&#x2F;&quot;&gt;Issue 25: Unlock Your True Potential: Make Your Hard Work Visible&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0026&#x2F;&quot;&gt;Issue 26: Winning at Work: Thriving With Difficult Colleagues&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0027&#x2F;&quot;&gt;Issue 27: Promotions Don’t Happen Overnight&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Volkan Uses</title>
+        <published>2024-03-04T00:00:00+00:00</published>
+        <updated>2024-03-04T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/about/volkan-uses/"/>
+        <id>https://zerotohero.dev/about/volkan-uses/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/about/volkan-uses/">
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;trinkets.png&quot; alt=&quot;Tools and trinkets.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Tools and trinkets.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;This is a list of tools, gadgets, software, and hardware I currently use, have
+liked, and find worth mentioning.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Disclaimer&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;I am not affiliated with any of the products or services mentioned here.
+I just share them because I like them.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;personal&quot;&gt;Personal&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;vadidekigeyik.com&#x2F;&quot;&gt;Vadideki Geyik&lt;&#x2F;a&gt;: Hands down, the best Turkish
+tech podcast.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;&#x2F;&quot;&gt;zerotohero.dev&lt;&#x2F;a&gt;: My blog (&lt;em&gt;that you are reading right now&lt;&#x2F;em&gt;).&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;vadidekivolkan&quot;&gt;My Twitter&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;v0lkan&quot;&gt;My GitHub&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;twitch.tv&#x2F;VadidekiVolkan&quot;&gt;My Twitch&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;gadgets-and-gizmos&quot;&gt;Gadgets and Gizmos&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.lttstore.com&#x2F;products&#x2F;screwdriver&quot;&gt;LTT Screwdriver&lt;&#x2F;a&gt;: A very
+high-quality ratcheting screwdriver.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;gp&#x2F;product&#x2F;B000WGD13U&quot;&gt;Fisher Space Pen - The Original Astronaut
+Pen&lt;&#x2F;a&gt;: The one that NASA spent
+“&lt;em&gt;millions&lt;&#x2F;em&gt;” to design.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;gp&#x2F;product&#x2F;B07Q2GQW9D&quot;&gt;KEPEAK Military Tactical Pen&lt;&#x2F;a&gt;:
+You can write on paper and break thick glasses simultaneously.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.raspberrypi.org&#x2F;&quot;&gt;Raspberry Pi&lt;&#x2F;a&gt;: I use this to create small
+projects.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;tessel.io&#x2F;&quot;&gt;Tessel&lt;&#x2F;a&gt;: Another IoT board that I used to use.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;gp&#x2F;product&#x2F;B0050R67U0&quot;&gt;MagicFiber Microfiber Cleaning Cloths,
+13 PACK&lt;&#x2F;a&gt;: I have glasses; they
+need cleaning. MagicFiber is the best.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;gp&#x2F;product&#x2F;B00JJG0YMG&quot;&gt;MagicFiber Extra Large Microfiber Cleaning
+Cloth&lt;&#x2F;a&gt;: They said:
+“&lt;em&gt;bigger is better&lt;&#x2F;em&gt;.”&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;ZEISS-Lens-Cleaning-Spray-2x120ml&#x2F;dp&#x2F;B07339STBJ&quot;&gt;Zeiss Lens Cleaning
+Spray&lt;&#x2F;a&gt;:
+I use the best when my vision is at stake.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.elgato.com&#x2F;us&#x2F;en&#x2F;p&#x2F;stream-deck-mk2-black&quot;&gt;Elgato StreamDeck&lt;&#x2F;a&gt;:
+One of the best investments I’ve made. If you stream regularly, you
+&lt;strong&gt;must&lt;&#x2F;strong&gt; have this.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.gancube.com&#x2F;&quot;&gt;GAN Cube&lt;&#x2F;a&gt;: It’s the best Rubik’s Cube out there.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;computer-and-peripherals&quot;&gt;Computer and Peripherals&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Commodore_64&quot;&gt;Commodore 64&lt;&#x2F;a&gt;: My first computer.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.apple.com&#x2F;mac-studio&#x2F;&quot;&gt;Mac Studio&lt;&#x2F;a&gt;: I have a beefy Mac to do
+my work, content creation, gaming, and streaming.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.apple.com&#x2F;mac-mini&#x2F;&quot;&gt;Mac Mini Intel 2018&lt;&#x2F;a&gt;: I use this as a local
+build and test environment, and experimental server.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.intel.com&#x2F;content&#x2F;www&#x2F;us&#x2F;en&#x2F;products&#x2F;boards-kits&#x2F;nuc.html&quot;&gt;Intel Nuc&lt;&#x2F;a&gt;:
+I use this for other random experimentation. It has &lt;strong&gt;Ubuntu&lt;&#x2F;strong&gt; installed.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.logitech.com&#x2F;en-us&#x2F;products&#x2F;mice&#x2F;mx-master-3s.910-006557.html&quot;&gt;Logitech MX Master
+3S&lt;&#x2F;a&gt;:
+The fastest scroll ever; you’ll never realize how important scrolling is before
+you use this mouse. It’s very ergonomic too.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.logitech.com&#x2F;en-us&#x2F;products&#x2F;keyboards&#x2F;mx-mechanical.html&quot;&gt;Logitech MX
+Keys&lt;&#x2F;a&gt;:
+I use this keyboard mostly. It is silent, with a small form factor, and like
+&lt;strong&gt;MX Master 3&lt;&#x2F;strong&gt;, it can connect to up to 3 devices at the same time, which
+is very useful.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.daskeyboard.com&#x2F;&quot;&gt;Das Keyboard 4 Professional&lt;&#x2F;a&gt;: My &lt;strong&gt;default&lt;&#x2F;strong&gt;
+keyboard choice. I use this keyboard when I need to type a lot. It has Chery
+MX Blue keys, making it very clicky and loud, but it’s very satisfying.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.caldigit.com&#x2F;thunderbolt-station-4&#x2F;&quot;&gt;CalDigit Thunderbolt Station&lt;&#x2F;a&gt;:
+Adds 18 more ports to your machine for extreme connectivity.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;gp&#x2F;product&#x2F;B08L5VQJ2G&quot;&gt;InnoView Portable Monitor,
+15.6 Inch&lt;&#x2F;a&gt;: I use this as a
+secondary monitor for streams as a dedicated 1080p source.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.apple.com&#x2F;ipad-pro&#x2F;&quot;&gt;Apple iPad Pro 4th Gen (&lt;em&gt;11 inch&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;: I use
+it for many things, including monitoring the alternate destinations when
+I stream to multiple platforms.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;gp&#x2F;product&#x2F;B00BIFNTMC&quot;&gt;Anker 2.4G Wireless Vertical Ergonomic Optical
+Mouse&lt;&#x2F;a&gt;: It’s very ergonomic;
+it’s a fraction of the price of &lt;strong&gt;MX Master 3&lt;&#x2F;strong&gt;, and it’s amazingly precise
+and comfortable. If you need an no-fluff ergonomic mouse, this is the one.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;home-office-office&quot;&gt;&lt;strong&gt;Home Office &#x2F; Office&lt;&#x2F;strong&gt;&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.mobilepixels.us&#x2F;products&#x2F;trio&quot;&gt;MP Trio Max&lt;&#x2F;a&gt;: This gives two
+additional monitors to my laptop. It’s a great tool when you need more screen
+real estate. And it’s very portable too, which makes it a great fit for office
+and travel.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;dp&#x2F;B09SHLNX1J&quot;&gt;Crank Adjustable Height Rolling Standing
+Desk&lt;&#x2F;a&gt;: I use this as my desk. It’s very
+sturdy, and it’s easy to adjust the height.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;gp&#x2F;product&#x2F;B09CZFK33K&quot;&gt;CyberPower Intelligent LCD UPS
+System&lt;&#x2F;a&gt;: I use this to protect
+my computer and other devices from power outages.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;gp&#x2F;product&#x2F;B08Y5ZQZ7J&quot;&gt;Power Strip Tower and Surge
+Protector&lt;&#x2F;a&gt;: I use this to power
+my devices.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;gp&#x2F;product&#x2F;B08L5VQJ2G&quot;&gt;TBMax Cat 6 Ethernet Cable 50 ft - High-Speed Flat Cat6 Computer
+LAN Wire&lt;&#x2F;a&gt;: I use this to connect
+my computer to the router. I don’t believe in Wi-Fi.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;gp&#x2F;product&#x2F;B0000VYJRY&quot;&gt;Keyspan by Tripp Lite PR-PRO3 Presentation Remote Pro Wireless w
+Laser&lt;&#x2F;a&gt;: I have a cat.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;gp&#x2F;product&#x2F;B000OOYECC&quot;&gt;Rain Design 10032 mStand Laptop Stand,
+Silver&lt;&#x2F;a&gt;: I use this to raise my
+laptop to eye level. You’ll never know when you need it.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;gp&#x2F;product&#x2F;B08L5VQJ2G&quot;&gt;Kogonee Wooden Digital Alarm
+Clock&lt;&#x2F;a&gt;: You’ll never know you
+need this before you use it.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;storage&quot;&gt;Storage&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;gp&#x2F;product&#x2F;B00LW3OYK8&quot;&gt;Transcend 256GB Thunderbolt Solid State Drive StoreJet 500 for
+Mac&lt;&#x2F;a&gt;: I use this when I need a
+temporary high-speed SSD drive.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;gp&#x2F;product&#x2F;B07X41PWTY&quot;&gt;WD 12TB Elements Desktop External Hard
+Drive&lt;&#x2F;a&gt;: I use this to store
+raw production and post production assets; you cannot imagine how much space
+you need to create quality audiovisual content.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;disk-management&quot;&gt;Disk Management&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;daisydiskapp.com&#x2F;&quot;&gt;Daisy Disk&lt;&#x2F;a&gt;: I use this to find out what’s taking
+up space on my disk.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.cleverfiles.com&#x2F;&quot;&gt;Disk Drill&lt;&#x2F;a&gt;: I use this to recover deleted
+files. I use &lt;strong&gt;Backblaze&lt;&#x2F;strong&gt;, but in rare cases, I might not have backed up the
+file, where Disk Drill comes to the rescue.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;window-management&quot;&gt;Window Management&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;magnet.crowdcafe.com&#x2F;&quot;&gt;Magnet&lt;&#x2F;a&gt;: I use this to manage my windows.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;lightpillar.com&#x2F;windowtidy&#x2F;&quot;&gt;Window Tidy&lt;&#x2F;a&gt;: I use this along with
+Magnet.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;office-applications&quot;&gt;Office Applications&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.microsoft.com&#x2F;en-us&#x2F;microsoft-365&quot;&gt;Microsoft Office 365&lt;&#x2F;a&gt;: I use
+this to create documents, spreadsheets, and presentations.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;workspace.google.com&#x2F;&quot;&gt;Google Workspace&lt;&#x2F;a&gt;: I mainly use this to host
+emails for my various domains.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.grammarly.com&#x2F;&quot;&gt;Grammarly&lt;&#x2F;a&gt;: I use this to check my grammar and
+spelling. It’s a lifesaver!&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;miro.com&#x2F;&quot;&gt;Miro&lt;&#x2F;a&gt;: I use this to create diagrams and mind maps.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;apps.apple.com&#x2F;us&#x2F;app&#x2F;world-clock-pro&#x2F;id980670056&quot;&gt;World Clock Pro&lt;&#x2F;a&gt;:
+I use this to keep track of time zones. It’s simple, super useful, and does
+one thing well. I love it!&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.edrawsoft.com&#x2F;&quot;&gt;Wondershare Edraw Max&lt;&#x2F;a&gt;: I use this to create
+diagrams, mind maps, and technical drawings.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.omnigroup.com&#x2F;omnigraffle&quot;&gt;Omnigraffle&lt;&#x2F;a&gt;: I use this as an
+alternative to &lt;strong&gt;Edraw Max&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.thunderbird.net&#x2F;&quot;&gt;Mozilla Thunderbird&lt;&#x2F;a&gt;: I use this to manage my
+emails when I am fed up with Microsoft Outlook.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;browsers&quot;&gt;Browsers&lt;&#x2F;h2&gt;
+&lt;p&gt;I use several browsers; my main browser is &lt;strong&gt;Safari&lt;&#x2F;strong&gt;. It’s memory and
+battery-efficient, the default browser on macOS. People complain about its
+extension support, but I don’t use extensions much, so it’s not a problem.&lt;&#x2F;p&gt;
+&lt;p&gt;Here’s a list of browsers that I use occasionally:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.apple.com&#x2F;safari&quot;&gt;Safari&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;vivaldi.com&#x2F;&quot;&gt;Vivaldi&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.opera.com&#x2F;&quot;&gt;Opera&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.google.com&#x2F;chrome&quot;&gt;Chrome&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.mozilla.org&#x2F;en-US&#x2F;firefox&#x2F;new&quot;&gt;Firefox&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.microsoft.com&#x2F;en-us&#x2F;edge&quot;&gt;Edge&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;brave.com&#x2F;&quot;&gt;Brave&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;lynx.browser.org&#x2F;&quot;&gt;Lynx&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;web.cortland.edu&#x2F;flteach&#x2F;methods&#x2F;obj1&#x2F;gopher.html&quot;&gt;Gopher&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;programming-languages&quot;&gt;Programming Languages&lt;&#x2F;h2&gt;
+&lt;p&gt;Here are some of the languages I use, have used, and liked, in no particular
+order:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;JavaScript&quot;&gt;JavaScript&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;nodejs.org&#x2F;&quot;&gt;Node.js&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.typescriptlang.org&#x2F;&quot;&gt;TypeScript&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;C_(programming_language)&quot;&gt;C&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;C%2B%2B&quot;&gt;C++&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.erlang.org&#x2F;&quot;&gt;Erlang&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.haskell.org&#x2F;&quot;&gt;Haskell&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;golang.org&#x2F;&quot;&gt;Go&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;CSS&quot;&gt;CSS&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;sass-lang.com&#x2F;&quot;&gt;Sass&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.java.com&#x2F;&quot;&gt;Java&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;spring.io&#x2F;projects&#x2F;spring-boot&quot;&gt;Java Spring&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;dotnet.microsoft.com&#x2F;&quot;&gt;DotNet&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.microsoft.com&#x2F;en-us&#x2F;dotnet&#x2F;csharp&#x2F;&quot;&gt;C#&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.microsoft.com&#x2F;en-us&#x2F;dotnet&#x2F;visual-basic&#x2F;&quot;&gt;Visual Basic&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;BASIC&quot;&gt;Basic&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Active_Server_Pages&quot;&gt;ASP&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;asp.net&quot;&gt;ASP.Net&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;yaml.org&#x2F;&quot;&gt;YAML&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;XML&quot;&gt;XML&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.json.org&#x2F;&quot;&gt;JSON&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;YANG&quot;&gt;YANG&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;NETCONF&quot;&gt;NETCONF&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;SQL&quot;&gt;SQL&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;handlebarsjs.com&#x2F;&quot;&gt;Handlebars&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.python.org&#x2F;&quot;&gt;Python&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.ruby-lang.org&#x2F;en&#x2F;&quot;&gt;Ruby&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.rust-lang.org&#x2F;&quot;&gt;Rust&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;code-editors-and-ides&quot;&gt;Code Editors and IDEs&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.sublimetext.com&#x2F;&quot;&gt;Sublime Text&lt;&#x2F;a&gt;: I use this when I need a
+lightweight code editor.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.vim.org&#x2F;&quot;&gt;Vim&lt;&#x2F;a&gt;: This is the editor that I use in the terminal.
+I use &lt;strong&gt;Vim emulation&lt;&#x2F;strong&gt; in any editor that supports it, too.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;code.visualstudio.com&#x2F;&quot;&gt;Visual Studio Code&lt;&#x2F;a&gt;: I use this as an
+alternative code editor.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.jetbrains.com&#x2F;idea&quot;&gt;IntelliJ IDEA&lt;&#x2F;a&gt;: I use this as my main IDE,
+along with other &lt;strong&gt;JetBrains&lt;&#x2F;strong&gt; IDEs.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.jetbrains.com&#x2F;webstorm&quot;&gt;WebStorm&lt;&#x2F;a&gt;: The best IDE to do web-related
+development.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.jetbrains.com&#x2F;go&quot;&gt;GoLand&lt;&#x2F;a&gt;: The best IDE to do Go development.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.jetbrains.com&#x2F;pycharm&quot;&gt;PyCharm&lt;&#x2F;a&gt;: The best IDE to do Python
+development.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.jetbrains.com&#x2F;ruby&quot;&gt;RubyMine&lt;&#x2F;a&gt;: The best IDE to do Ruby development.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.jetbrains.com&#x2F;clion&quot;&gt;CLion&lt;&#x2F;a&gt;: The best IDE to do C&#x2F;C++ development.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.jetbrains.com&#x2F;rust&quot;&gt;RustRover&lt;&#x2F;a&gt;: The best IDE to do Rust development.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zedapp.org&#x2F;&quot;&gt;Zed&lt;&#x2F;a&gt;: Honestly, I still prefer &lt;strong&gt;Sublime&lt;&#x2F;strong&gt;; it is a neat
+app, but &lt;strong&gt;Sublime&lt;&#x2F;strong&gt; is still the app that I launch by reflex when I want to
+quickly note something down.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;embedded-code-editors&quot;&gt;Embedded Code Editors&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;codemirror.net&#x2F;&quot;&gt;CodeMirror&lt;&#x2F;a&gt;: I use this when I need a code editor in
+my web apps.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;microsoft.github.io&#x2F;monaco-editor&quot;&gt;Monaco&lt;&#x2F;a&gt;: It’s another code editor
+that I use in my web apps.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;codepen.io&#x2F;&quot;&gt;Codepen&lt;&#x2F;a&gt;: I use this when I need to share a code
+snippet with someone.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;repl.it&quot;&gt;Repl.it&lt;&#x2F;a&gt;: I use this when I need to share a code snippet
+along with a running environment with someone.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;gist.github.com&#x2F;&quot;&gt;GitHub Gists&lt;&#x2F;a&gt;: I use this when I need to share a
+code snippet with someone, but I don’t want to create a repository for it.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;observablehq.com&#x2F;&quot;&gt;ObservableHQ&lt;&#x2F;a&gt;: I use this when I need to share a
+code snippet with someone, but I want to add some explanation to it.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;terminal-emulators&quot;&gt;Terminal Emulators&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;Swordfish90&#x2F;cool-retro-term&quot;&gt;Cool Retro Terminal&lt;&#x2F;a&gt;: It’s
+just to have fun. I typically use &lt;strong&gt;iTerm&lt;&#x2F;strong&gt; for everything terminal-related.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;iterm2.com&#x2F;&quot;&gt;iTerm2&lt;&#x2F;a&gt;: I use this as my terminal emulator.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;hyper.is&#x2F;&quot;&gt;Hyper&lt;&#x2F;a&gt;: A configurable, JavaScript-based terminal emulator.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;alacritty&#x2F;alacritty&quot;&gt;Alacritty&lt;&#x2F;a&gt;: A cross-platform,
+GPU-accelerated terminal emulator. &lt;strong&gt;Very&lt;&#x2F;strong&gt; minimalistic. It’s so minimalistic
+that you’ll have to know &lt;a href=&quot;https:&#x2F;&#x2F;tmux.z2h.dev&#x2F;&quot;&gt;tmux&lt;&#x2F;a&gt; to be productive with it.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;tunneling&quot;&gt;Tunneling&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;ngrok.com&#x2F;&quot;&gt;Ngrok&lt;&#x2F;a&gt;: I use this to expose my local services to the Internet.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;desktop-virtualization&quot;&gt;Desktop Virtualization&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.parallels.com&#x2F;&quot;&gt;Parallels Desktop&lt;&#x2F;a&gt;: I use this to run Windows and
+Linux virtual machines on my Mac. It’s the best desktop virtualization tool
+that you can run on a Mac.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;payment-gateways&quot;&gt;Payment Gateways&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;stripe.com&#x2F;&quot;&gt;Stripe&lt;&#x2F;a&gt;: I use this to process payments. It’s
+developer-friendly, with great API documentation and support.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.paypal.com&#x2F;&quot;&gt;Paypal&lt;&#x2F;a&gt;: I use this as an alternative to
+&lt;strong&gt;Stripe&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;gumroad.com&#x2F;&quot;&gt;Gumroad&lt;&#x2F;a&gt;: I use this to sell digital products.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;large-language-models&quot;&gt;Large Language Models&lt;&#x2F;h2&gt;
+&lt;p&gt;I have “&lt;em&gt;pro&lt;&#x2F;em&gt;” subscriptions to all of these tools. I use them for all kinds
+of research and content creation.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;chat.openai.com&#x2F;&quot;&gt;ChatGPT&lt;&#x2F;a&gt;: It generates text, images, and answers
+questions.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;perplexity.ai&quot;&gt;Perplexity&lt;&#x2F;a&gt;: When you have Perplexity, you don’t need
+Google.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;claude.ai&#x2F;&quot;&gt;Claude&lt;&#x2F;a&gt;: I use Claude in a similar way to ChatGPT.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;generative-art&quot;&gt;Generative Art&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;midjourney.com&#x2F;&quot;&gt;Midjourney&lt;&#x2F;a&gt;: I use this to create generative art.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;nero.ai&#x2F;&quot;&gt;Nero AI&lt;&#x2F;a&gt;: I use this to upscale and modify my images.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;design-tools&quot;&gt;Design Tools&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;xscopeapp.com&#x2F;&quot;&gt;xScope&lt;&#x2F;a&gt;: I use this to measure things on my screen.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;imageoptim.com&#x2F;mac&quot;&gt;ImageOptim&lt;&#x2F;a&gt;: I use this to optimize images for
+the web.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;paletton.com&#x2F;&quot;&gt;Paletton&lt;&#x2F;a&gt;: I use this to find color palettes.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.sketch.com&#x2F;&quot;&gt;Sketch&lt;&#x2F;a&gt;: I use this to create designs, I am
+stubbornly &lt;strong&gt;not&lt;&#x2F;strong&gt; using Figma as my main design tool.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.figma.com&#x2F;&quot;&gt;Figma&lt;&#x2F;a&gt;: This is an alternative design tool that I
+play with.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;get.adobe.com&#x2F;reader&#x2F;&quot;&gt;Adobe Acrobat Reader&lt;&#x2F;a&gt;: I use this to read PDFs.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;fonts.adobe.com&#x2F;&quot;&gt;Adobe Fonts&lt;&#x2F;a&gt;: I use this to find fonts and use
+them in my web apps.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;fonts-and-themes&quot;&gt;Fonts and Themes&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.monolisa.dev&#x2F;&quot;&gt;Mono Lisa&lt;&#x2F;a&gt;: I use this as my main font.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.fsd.it&#x2F;shop&#x2F;fonts&#x2F;pragmatapro&#x2F;&quot;&gt;PragmataPro Mono&lt;&#x2F;a&gt;: I use this
+when I need to compare many things at once and I need a font with a huge
+x-height that works even at the smallest sizes. It is an acquired taste, and
+it requires some getting-used-to.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.typography.com&#x2F;fonts&#x2F;operator&#x2F;styles&#x2F;&quot;&gt;Operator Mono&lt;&#x2F;a&gt;: Another
+decent (&lt;em&gt;and overpriced&lt;&#x2F;em&gt;) monotype font that I like.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.monokai.pro&#x2F;&quot;&gt;Monokai Pro&lt;&#x2F;a&gt;: I use this as my main theme.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;draculatheme.com&#x2F;pro&quot;&gt;Dracula Pro&lt;&#x2F;a&gt;: I use this as an alternative theme.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;morhetz&#x2F;gruvbox&quot;&gt;Gruvbox&lt;&#x2F;a&gt;: I use this when I need a change
+but don’t want to be so drastic. It works really well when I do written content
+such as editing a lot of markdown files.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;plugins.jetbrains.com&#x2F;plugin&#x2F;12102-cyan-light-theme&quot;&gt;Cyan Light&lt;&#x2F;a&gt;:
+I don’t always work in a dark cave. &lt;strong&gt;Cyan Light&lt;&#x2F;strong&gt; is my preferred theme when
+there is a lot of ambient light that make a dark color scheme impractical.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;plugins.jetbrains.com&#x2F;plugin&#x2F;12103-gray-theme&quot;&gt;Gray&lt;&#x2F;a&gt;: This is my
+alternate light theme choice.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;music&quot;&gt;Music&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;music.youtube.com&#x2F;&quot;&gt;YouTube Music&lt;&#x2F;a&gt;: This is my main music app.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.spotify.com&#x2F;&quot;&gt;Spotify&lt;&#x2F;a&gt;: I use this to listen to music, and
+podcasts too.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.avid.com&#x2F;sibelius&quot;&gt;Avid Sibelius&lt;&#x2F;a&gt;: The best music notation
+software in existence.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.arturia.com&#x2F;products&#x2F;analog-classics&#x2F;piano-v&#x2F;overview&quot;&gt;Arturia Piano
+V3&lt;&#x2F;a&gt;: I use
+this to use different piano flavors when I practice.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;video-storage&quot;&gt;Video Storage&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;&quot;&gt;YouTube&lt;&#x2F;a&gt;: I use this to save screencasts that
+I’ve created.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;vimeo.com&#x2F;&quot;&gt;Vimeo&lt;&#x2F;a&gt;: I use this to save and share videos too.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;twitch.tv&quot;&gt;Twitch&lt;&#x2F;a&gt;: Pro tip: If you highlight your entire stream,
+you can save it indefinitely on Twitch. Otherwise the stream recording is
+deleted after 60 days.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;video-processing&quot;&gt;Video Processing&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.telestream.net&#x2F;screenflow&#x2F;&quot;&gt;ScreenFlow&lt;&#x2F;a&gt;: I use this to record
+my screen.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;ffmpeg.org&#x2F;&quot;&gt;ffmpeg&lt;&#x2F;a&gt;: A complete, cross-platform solution to record,
+convert, and stream audio and video.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;audio-processing&quot;&gt;Audio Processing&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.adobe.com&#x2F;products&#x2F;audition.html&quot;&gt;Adobe Audition&lt;&#x2F;a&gt;: I use this
+to edit audio files.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;airfoil&#x2F;mac&#x2F;&quot;&gt;Airfoil&lt;&#x2F;a&gt;: I use this to stream audio
+from my Mac to other devices.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.audacityteam.org&#x2F;&quot;&gt;Audacity&lt;&#x2F;a&gt;: I typically use this connected to
+my digital piano to record my music. It can also edit audio files.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.izotope.com&#x2F;en&#x2F;products&#x2F;rx.html&quot;&gt;Izotope RX 10&lt;&#x2F;a&gt;: I use this to
+clean up my audio files. It is one of the best post-production tools out there.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.izotope.com&#x2F;en&#x2F;products&#x2F;murf.html&quot;&gt;Murf&lt;&#x2F;a&gt;: I use this to create
+AI-generated Audio transcripts for the tutorials that I create. It’s a great
+time-saver.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;audio-gear&quot;&gt;Audio Gear&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;gp&#x2F;product&#x2F;B00NV9LSGW&quot;&gt;Harman Kardon SoundSticks Wireless Bluetooth Speaker
+System&lt;&#x2F;a&gt;: I use this to listen
+to music. It’s a great speaker system, and it looks amazing too.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;gp&#x2F;product&#x2F;B09CZFK33K&#x2F;&quot;&gt;Mackie CR StealthBar Desktop PC
+Soundbar&lt;&#x2F;a&gt;: Much reasonably-priced
+compared to competitors with great audio quality.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;gp&#x2F;product&#x2F;B0B6GHW1SX&quot;&gt;Sennheiser Consumer Audio Momentum 4 Wireless
+Headphones&lt;&#x2F;a&gt;: I use this to listen
+to music when I am not at my desk, I also use it during live streams because
+Airpods have their own mind and pair with random devices when you least expect
+it, which is not good when you are streaming. In addition it’s perfect for
+&lt;strong&gt;Office&lt;&#x2F;strong&gt; and &lt;strong&gt;Home Office&lt;&#x2F;strong&gt; when you want to get into the zone.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;gp&#x2F;product&#x2F;B07ZPC9QD4&quot;&gt;Apple AirPods Pro&lt;&#x2F;a&gt;: I use this
+during meetings and conferences. Because of its small form factor, it does not
+look as goofy as other over-the-ear headphones.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;streaming-gear&quot;&gt;Streaming Gear&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;gp&#x2F;product&#x2F;B00HVLUSGM&quot;&gt;Audio-Technica ATH-M50xBL Professional Studio Monitor
+Headphones&lt;&#x2F;a&gt;: Great audio quality,
+flat frequency response. Very comfy on the ears.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.shure.com&#x2F;en-US&#x2F;products&#x2F;microphones&#x2F;sm7b&quot;&gt;Shure SM7B&lt;&#x2F;a&gt;: I use
+this to record my voice. It’s a great microphone, but it requires a lot of
+gain, so you need a good preamp to use it.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;gp&#x2F;product&#x2F;B004MQSV04&quot;&gt;Cloudlifter CL-1 Mic Activator
+Preamp&lt;&#x2F;a&gt;: I use this to boost
+the gain of my Shure SM7B microphone.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;gp&#x2F;product&#x2F;B0746MG3VR&quot;&gt;Elgato Game Capture HD 60 X&lt;&#x2F;a&gt;: I
+use this to capture my stream sessions.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;gp&#x2F;product&#x2F;B07QR6Z1JB&#x2F;&quot;&gt;Elgato Camlink 4K&lt;&#x2F;a&gt;: I use this
+to connect my camera to my Mac.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.panasonic.com&#x2F;mea&#x2F;en&#x2F;consumer&#x2F;cameras-camcorders&#x2F;camcorders&#x2F;hc-v180.html&quot;&gt;Panasonic HC v180 Camcorder&lt;&#x2F;a&gt;:
+I use this as my camera when I stream.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;gp&#x2F;product&#x2F;B075ZYG89F&quot;&gt;Neewer 2 Packs Dimmable 5600K USB LED Video
+Light&lt;&#x2F;a&gt;: Way cost-effective than
+the alternatives, such as Elgato. It does the same job. I use this to light up
+my face when I stream.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;gp&#x2F;product&#x2F;B07ZQXJQ4J&quot;&gt;Instahibit Retractable 6x6.8ft Pull Down Green
+Screen&lt;&#x2F;a&gt;: I use this to hide my
+messy room when I stream.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;gp&#x2F;product&#x2F;B07QR6Z1JB&#x2F;&quot;&gt;Focusrite Scarlett Solo 3rd Gen USB Audio
+Interface&lt;&#x2F;a&gt;: I use this to
+connect my microphone to my Mac.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;gp&#x2F;product&#x2F;B07KQ1R5ZQ&quot;&gt;DTech HDMI Dummy Plug 4K Display
+Emulator&lt;&#x2F;a&gt;: I use this to trick
+my Mac to think that I have a 4K monitor connected to it. It’s useful when you
+want to stream at 4K, but you don’t have a 4K monitor.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;gp&#x2F;product&#x2F;B07KQ1R5ZQ&quot;&gt;Acoustic Design Works - Mondrian Kit of Acoustic
+Panels – 73“ X 49“ X 1&lt;&#x2F;a&gt;: I use
+this to reduce the echo in my room when I stream.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;streaming&quot;&gt;Streaming&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;waydabber&#x2F;BetterDisplay#readme&quot;&gt;BetterDisplay&lt;&#x2F;a&gt;: BetterDisplay
+is a truly wonderful tool! It lets you convert your displays to fully scalable
+screens, manage display configuration overrides. It allows brightness and color
+control, provides XDR&#x2F;HDR brightness upscaling. I use it as a mirror monitor to
+my 1080p monitor during streaming.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;presentifyapp.com&quot;&gt;Presentify&lt;&#x2F;a&gt;: I use this to highlight my mouse
+cursor and keystrokes during my streams. This is another app that you don’t
+know you need until you use it.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;gp&#x2F;product&#x2F;B00HZDLNWO&quot;&gt;Flip Clock&lt;&#x2F;a&gt;: I use this as a
+clock overlay on my stream. It’s especially useful when you need a countdown
+timer.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;sorrynotsorry.resn.co.nz&#x2F;&quot;&gt;Sorry No Sorry&lt;&#x2F;a&gt;: I use this to drop quick
+notifications like “&lt;em&gt;5min break; BRB&lt;&#x2F;em&gt;” on my stream.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.telestream.net&#x2F;wirecast&#x2F;&quot;&gt;Wirecast&lt;&#x2F;a&gt;: I use this to stream to
+multiple platforms at the same time.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;farrago&#x2F;&quot;&gt;Farrago&lt;&#x2F;a&gt;: I use this to play sound effects
+on my stream.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;handmirror.app&#x2F;&quot;&gt;Handmirror&lt;&#x2F;a&gt;: It’s useful to quickly check how you
+look in the camera before starting a stream. It’s also useful to display a
+secondary camera source from a capture card if needed.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;audiohijack&#x2F;&quot;&gt;Audio Hijack&lt;&#x2F;a&gt;: I use this to capture
+audio from different sources and mix them together. It plays really well with
+&lt;strong&gt;Loopback&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;soundsource&#x2F;&quot;&gt;SoundSource&lt;&#x2F;a&gt;: I use this to control
+the volume of different audio sources.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;piezo&#x2F;&quot;&gt;Piezo&lt;&#x2F;a&gt;: I use this to record audio from
+different sources.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;loopback&#x2F;&quot;&gt;Loopback&lt;&#x2F;a&gt;: I use this to create virtual
+audio devices.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;airfoil&#x2F;mac&#x2F;&quot;&gt;Airfoil&lt;&#x2F;a&gt;: I use this to stream audio
+from my Mac to other devices.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;vox.rocks&#x2F;&quot;&gt;Vox&lt;&#x2F;a&gt;: I use this to play music on my stream.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.synesthesia.live&#x2F;&quot;&gt;Synesthesia&lt;&#x2F;a&gt;: I use this to create visual
+effects on my stream.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;chatterino.com&#x2F;&quot;&gt;Chatterino&lt;&#x2F;a&gt;: I use this to manage my Twitch chat.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;stream-automation&quot;&gt;Stream Automation&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;streamelements.com&#x2F;&quot;&gt;Stream Elements&lt;&#x2F;a&gt;: I use this to manage my
+stream, add bots, etc.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;stream-music&quot;&gt;Stream Music&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.epidemicsound.com&#x2F;&quot;&gt;Epidemic Sound&lt;&#x2F;a&gt;: I hand-pick almost all my
+music from&lt;strong&gt;Epidemic Sound&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;mailers&quot;&gt;Mailers&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.mailgun.com&#x2F;&quot;&gt;Mailgun&lt;&#x2F;a&gt;: I use this to send emails, especially
+when I want a reliable and programmatic interface.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;mailchimp.com&#x2F;&quot;&gt;Mailchimp&lt;&#x2F;a&gt;: I use this to send emails when I
+don’t want to deal with code.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;desktop-app-development&quot;&gt;Desktop App Development&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.electronjs.org&#x2F;&quot;&gt;Electron&lt;&#x2F;a&gt;: I use this to build desktop apps.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;phonegap.com&#x2F;&quot;&gt;Phonegap&lt;&#x2F;a&gt;: I used use use &lt;strong&gt;PhoneGap&lt;&#x2F;strong&gt; for Desktop
+app development too.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;nwjs.io&#x2F;&quot;&gt;nw.js&lt;&#x2F;a&gt;: I use this as an alternative to &lt;strong&gt;Electron&lt;&#x2F;strong&gt;.
+It is lighter.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;password-managers-and-authentication&quot;&gt;Password Managers and Authentication&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;1password.com&#x2F;&quot;&gt;1Password&lt;&#x2F;a&gt;: I use this to store anything secret.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;authy.com&#x2F;&quot;&gt;Authy&lt;&#x2F;a&gt;: I use this to manage my 2FA tokens. The best
+feature is that it syncs across devices, so if I lose my phone, I can still
+access my tokens.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;task-management&quot;&gt;Task Management&lt;&#x2F;h2&gt;
+&lt;p&gt;I use &lt;a href=&quot;https:&#x2F;&#x2F;heptabase.com&#x2F;&quot;&gt;&lt;strong&gt;Heptabase&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; as my main task management tool
+at the moment.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;16bugs.com&#x2F;&quot;&gt;16bugs&lt;&#x2F;a&gt;: This site has been available since the dawn of
+time. When I need a simple task management tool, just for myself, I use it.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;agenda.com&#x2F;&quot;&gt;Agenda&lt;&#x2F;a&gt;: I use this to keep track of my notes action items.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.bugzilla.org&#x2F;&quot;&gt;Bugzilla&lt;&#x2F;a&gt;: I use this to manage my bugs.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;trello.com&#x2F;&quot;&gt;Trello&lt;&#x2F;a&gt;: I use this for projects that are more complex
+than a simple task list, but requires less structure than a full-blown
+enterprise software project.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.atlassian.com&#x2F;software&#x2F;confluence&quot;&gt;Confluence&lt;&#x2F;a&gt;: Some say it’s a
+wiki; I think it’s a “&lt;em&gt;write-only&lt;&#x2F;em&gt;” database.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.atlassian.com&#x2F;software&#x2F;jira&quot;&gt;Jira&lt;&#x2F;a&gt;: I wish it doesn’t exist.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;culturedcode.com&#x2F;things&#x2F;&quot;&gt;Things&lt;&#x2F;a&gt;: I used to use it; it’s still a
+great tool. I can go as far as to say, it is the best Mac to-do app out there.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;workflow-management&quot;&gt;Workflow Management&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;ifttt.com&#x2F;&quot;&gt;IFTTT&lt;&#x2F;a&gt;: I use this to automate my workflows.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zapier.com&#x2F;&quot;&gt;Zapier&lt;&#x2F;a&gt;: This is an alternate tool that I sometimes use.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;about&#x2F;volkan-uses&#x2F;n8n.io&quot;&gt;n8n.io&lt;&#x2F;a&gt;: I use this when I need a bit more programmatic access to my
+workflows.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;camunda.com&#x2F;&quot;&gt;Camunda&lt;&#x2F;a&gt;: I use this when I need a full-blown workflow
+engine.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jupyter.org&#x2F;&quot;&gt;Jupyter Notebooks&lt;&#x2F;a&gt;: I use this when I need to create
+interactive notebooks.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;knowledge-management&quot;&gt;Knowledge Management&lt;&#x2F;h2&gt;
+&lt;p&gt;Nowadays, &lt;a href=&quot;https:&#x2F;&#x2F;heptabase.com&#x2F;&quot;&gt;&lt;strong&gt;Heptabase&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; is my main tool for keeping
+track of my notes, but I use other tools to complement it too.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;heptabase.com&#x2F;&quot;&gt;Heptabase&lt;&#x2F;a&gt;: I use this as my central knowledge base.
+It is excellent in organizing, searching, prioritizing, and making sense of
+vast amount of information.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;obsidian.md&#x2F;&quot;&gt;Obsidian&lt;&#x2F;a&gt;: I use this to keep track of my notes.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;tiddlywiki.com&#x2F;&quot;&gt;TiddlyWiki&lt;&#x2F;a&gt;: A lesser-known tool; really useful.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.literatureandlatte.com&#x2F;scrivener&#x2F;overview&quot;&gt;Scriviner&lt;&#x2F;a&gt;: I use this
+to write long-form, structured content, like articles, books, etc.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;remarkable.com&#x2F;&quot;&gt;reMarkable&lt;&#x2F;a&gt;: I use this to take notes and to read
+books. Its tactile feel is almost—but not exactly—like writing on paper.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.devontechnologies.com&#x2F;apps&#x2F;devonthink&quot;&gt;DEVONThink&lt;&#x2F;a&gt;: I use this
+to store my documents, notes, and other files. It has an amazing full-text
+search feature, that helps me find what I want, when I want.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;communication&quot;&gt;Communication&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;discord.com&#x2F;&quot;&gt;Discord&lt;&#x2F;a&gt;: I am a member of a lot of tech discord servers.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;slack.com&#x2F;&quot;&gt;Slack&lt;&#x2F;a&gt;: I use this to communicate with my colleagues.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zoom.us&#x2F;&quot;&gt;Zoom&lt;&#x2F;a&gt;: I use this to communicate with… well… everyone.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;icq.com&#x2F;&quot;&gt;ICQ&lt;&#x2F;a&gt;: I used to use this.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.mirc.com&#x2F;&quot;&gt;Mirc&lt;&#x2F;a&gt;: I used to use this.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.whatsapp.com&#x2F;&quot;&gt;WhatsApp&lt;&#x2F;a&gt;: I use this to communicate with my
+family and friends.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;developer-tools&quot;&gt;Developer Tools&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;brew.sh&#x2F;&quot;&gt;Homebrew&lt;&#x2F;a&gt;: I use this to install software on my Mac. It’s
+typically the first thing I install on a new Mac.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kaleidoscopeapp.com&#x2F;&quot;&gt;Kaleidoscope&lt;&#x2F;a&gt;: I use this to compare files
+and folders.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kapeli.com&#x2F;dash&quot;&gt;Dash&lt;&#x2F;a&gt;: I use this to find documentation for
+programming languages, frameworks, and libraries. It is also an excellent
+text autocompleter.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.git-tower.com&#x2F;&quot;&gt;Tower&lt;&#x2F;a&gt;: I use this to manage my git repositories.
+It’s the best git client out there.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.sublimemerge.com&#x2F;&quot;&gt;Sublime Merge&lt;&#x2F;a&gt;: I use this as an alternative
+git client.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;k8slens.dev&#x2F;&quot;&gt;Lens&lt;&#x2F;a&gt;: I use this to manage my Kubernetes clusters.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;state-management&quot;&gt;State Management&lt;&#x2F;h2&gt;
+&lt;p&gt;Again, all of these do more-or-less the same thing. I use
+&lt;strong&gt;Redux&lt;&#x2F;strong&gt; when I have a choice, but I don’t have a preference.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zustand-demo.pmnd.rs&quot;&gt;Zustand&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;redux.js.org&#x2F;&quot;&gt;Redux&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;xstate.js.org&#x2F;&quot;&gt;XState&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;mobx.js.org&#x2F;&quot;&gt;MobX&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;about&#x2F;volkan-uses&#x2F;Stately.AI&quot;&gt;Stately.AI&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;javascript-frameworks&quot;&gt;JavaScript Frameworks&lt;&#x2F;h2&gt;
+&lt;p&gt;All of them are similar and serve a purpose. I use &lt;strong&gt;React&lt;&#x2F;strong&gt; when I have a
+choice, but I don’t have a preference.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;emberjs.com&#x2F;&quot;&gt;Ember.js&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;angular.io&#x2F;&quot;&gt;Angular&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;reactjs.org&#x2F;&quot;&gt;React&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;vuejs.org&#x2F;&quot;&gt;Vue.js&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;svelte.dev&#x2F;&quot;&gt;Svelte&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;infernojs.org&#x2F;&quot;&gt;Inferno&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;preactjs.com&#x2F;&quot;&gt;Preact&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;mithril.js.org&#x2F;&quot;&gt;Mithril&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jquery.com&#x2F;&quot;&gt;jQuery&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;mootools.net&#x2F;&quot;&gt;MooTools&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;visualization-libraries&quot;&gt;Visualization Libraries&lt;&#x2F;h2&gt;
+&lt;p&gt;Again, my choice is &lt;strong&gt;D3&lt;&#x2F;strong&gt; when I have a choice, but all of these libraries get
+the job done. &lt;strong&gt;Rappid&lt;&#x2F;strong&gt; or &lt;strong&gt;JointJS&lt;&#x2F;strong&gt; is especially useful when creating
+interactive diagrams that you can manipulate and connect nodes with lines and
+arrows.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;d3js.org&#x2F;&quot;&gt;D3&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.chartjs.org&#x2F;&quot;&gt;Chart.js&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.highcharts.com&#x2F;&quot;&gt;Highcharts&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;plotly.com&#x2F;&quot;&gt;Plotly&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.jointjs.com&#x2F;rappid&quot;&gt;Rappid&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.jointjs.com&#x2F;&quot;&gt;JointJS&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;functional-javascript&quot;&gt;Functional JavaScript&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;ramdajs.com&#x2F;&quot;&gt;Ramda&lt;&#x2F;a&gt;: If you like Haskell, you’ll like Ramda.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;rxjs.dev&#x2F;&quot;&gt;RxJS&lt;&#x2F;a&gt;: I use this when I need to do reactive programming.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;static-sites&quot;&gt;Static Sites&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;&quot;&gt;Zola&lt;&#x2F;a&gt;: The best I’ve seen so far. It has become
+my “go-to” website generation tool.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docusaurus.io&#x2F;&quot;&gt;Docusaurus&lt;&#x2F;a&gt;: Good for building documentation sites.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.mkdocs.org&#x2F;&quot;&gt;MkDocs&lt;&#x2F;a&gt;: Again, useful for documentation sites.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.gatsbyjs.com&#x2F;&quot;&gt;Gatsby&lt;&#x2F;a&gt;: General-purpose static site generator.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jekyllrb.com&#x2F;&quot;&gt;Jekyll&lt;&#x2F;a&gt;: Reliable, just works, no fluff.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;nextjs.org&#x2F;&quot;&gt;Next.js&lt;&#x2F;a&gt;: If you like React, you like Next.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;local-servers&quot;&gt;Local Servers&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.npmjs.com&#x2F;package&#x2F;http-server&quot;&gt;&lt;code&gt;http-server&lt;&#x2F;code&gt;&lt;&#x2F;a&gt;: I use this to serve
+static files locally. Fast, easy to run. Gets the job done.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;httpd.apache.org&#x2F;&quot;&gt;Apache HTTP Server&lt;&#x2F;a&gt;: I use this as a static file
+server, too.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;nginx.org&#x2F;&quot;&gt;NGINX&lt;&#x2F;a&gt;: I use this as a reverse proxy, and as a static
+file server.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.haproxy.org&#x2F;&quot;&gt;HAProxy&lt;&#x2F;a&gt;: I use this as an alternative to NGINX.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;message-queues-and-stream-processing&quot;&gt;Message Queues and Stream Processing&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kafka.apache.org&#x2F;&quot;&gt;Apache Kafka&lt;&#x2F;a&gt;: I use this to process messages.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.rabbitmq.com&#x2F;&quot;&gt;RabbitMQ&lt;&#x2F;a&gt;: My go-to message queue.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zeromq.org&#x2F;&quot;&gt;ZeroMQ&lt;&#x2F;a&gt;: I use this when I feel extra nerdy.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.pubnub.com&#x2F;&quot;&gt;PubNub&lt;&#x2F;a&gt;: I use this when I need a managed message
+queue.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;search-and-indexing&quot;&gt;Search and Indexing&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;lucene.apache.org&#x2F;&quot;&gt;Apache Lucene&lt;&#x2F;a&gt;: I use this to index and search
+documents.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.elastic.co&#x2F;elasticsearch&#x2F;&quot;&gt;ElasticSearch&lt;&#x2F;a&gt;: I use this to index
+and search documents.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.elastic.co&#x2F;what-is&#x2F;elk-stack&quot;&gt;ELK Stack&lt;&#x2F;a&gt;: This is the typical
+production stack for ElasticSearch.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;opensearch.org&#x2F;&quot;&gt;OpenSearch&lt;&#x2F;a&gt;: I use this as an alternative to
+ElasticSearch, especially when licensing is a concern.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;log-aggregation&quot;&gt;Log Aggregation&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.fluentd.org&#x2F;&quot;&gt;Fluentd&lt;&#x2F;a&gt;: I use this to collect logs.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.papertrail.com&#x2F;&quot;&gt;Papertrail&lt;&#x2F;a&gt;: A log aggregation service that I
+use frequently.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.honeybadger.io&#x2F;&quot;&gt;Honeybadger&lt;&#x2F;a&gt;: I use this to collect logs and errors.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.hotjar.com&#x2F;&quot;&gt;Hotjar&lt;&#x2F;a&gt;: I use this to collect user behavior.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;monitoring&quot;&gt;Monitoring&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;prometheus.io&#x2F;&quot;&gt;Prometheus&lt;&#x2F;a&gt;: I use this to monitor my applications.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;grafana.com&#x2F;&quot;&gt;Grafana&lt;&#x2F;a&gt;: I use this to visualize my metrics.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.elastic.co&#x2F;kibana&quot;&gt;Kibana&lt;&#x2F;a&gt;: I use this to visualize my logs.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kiali.io&#x2F;&quot;&gt;Kiali&lt;&#x2F;a&gt;: I use this to visualize my service mesh.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;graphql-and-friends&quot;&gt;GraphQL and Friends&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.apollographql.com&#x2F;docs&quot;&gt;Apollo&lt;&#x2F;a&gt;: I use this to build GraphQL servers.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.prisma.io&#x2F;&quot;&gt;Prisma&lt;&#x2F;a&gt;: I use this along with Apollo.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;api-methodologies&quot;&gt;API Methodologies&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;restfulapi.net&#x2F;&quot;&gt;REST&lt;&#x2F;a&gt;: I use this when I need to build a RESTful API.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;grpc.io&#x2F;&quot;&gt;gRPC&lt;&#x2F;a&gt;: I use this to build microservices.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;mqtt.org&#x2F;&quot;&gt;MQTT&lt;&#x2F;a&gt;: I use this when I need to build a lightweight
+messaging protocol.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;API&#x2F;WebSockets_API&quot;&gt;Websockets&lt;&#x2F;a&gt;:
+I use this when I need to build a real-time API.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;databases&quot;&gt;Databases&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.mongodb.com&#x2F;&quot;&gt;MongoDB&lt;&#x2F;a&gt;: Unless there is a specific constraint,
+I use this as my default database.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.arangodb.com&#x2F;&quot;&gt;ArangoDB&lt;&#x2F;a&gt;: I use this when I need a graph database.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.cockroachlabs.com&#x2F;product&#x2F;&quot;&gt;CockroachDB&lt;&#x2F;a&gt;: I use this when I need
+a distributed database.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;couchdb.apache.org&#x2F;&quot;&gt;CouchDB&lt;&#x2F;a&gt;: I use this when I need a light document database.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;pouchdb.com&#x2F;&quot;&gt;PouchDB&lt;&#x2F;a&gt;: I use this when I need a portable document database.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.postgresql.org&#x2F;&quot;&gt;PostgreSQL&lt;&#x2F;a&gt;: I use this when I need a relational database.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.mysql.com&#x2F;&quot;&gt;MySQL&lt;&#x2F;a&gt;: This is my second pick for a relational database.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;redis.io&#x2F;&quot;&gt;Redis&lt;&#x2F;a&gt;: I use this when I need a key-value store.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;neo4j.com&#x2F;&quot;&gt;Neo4J&lt;&#x2F;a&gt;: It’s another graph database that I use.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;source-control&quot;&gt;Source Control&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;git-scm.com&#x2F;&quot;&gt;Git&lt;&#x2F;a&gt;: I use this to manage my source code.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;gitlab.com&#x2F;&quot;&gt;Gitlab&lt;&#x2F;a&gt;: I will never get used to it.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;&quot;&gt;GitHub&lt;&#x2F;a&gt;: Like Twitter, but for source code.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;artifacthub.io&#x2F;&quot;&gt;Artifact Hub&lt;&#x2F;a&gt;: I use this to find and store Helm
+charts.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;goharbor.io&#x2F;&quot;&gt;Harbor&lt;&#x2F;a&gt;: I use this to store container images too.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;css-frameworks&quot;&gt;CSS Frameworks&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;bulma.io&#x2F;&quot;&gt;Bulma&lt;&#x2F;a&gt;: I use this when I need a simple CSS framework.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;tailwindcss.com&#x2F;&quot;&gt;Tailwind&lt;&#x2F;a&gt;: I use this when I need a more complex
+CSS framework.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;tailwindui.com&#x2F;&quot;&gt;Tailwind UI&lt;&#x2F;a&gt;: I use this when I need a UI kit for
+&lt;strong&gt;Tailwind&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;getbootstrap.com&#x2F;&quot;&gt;Bootstrap&lt;&#x2F;a&gt;: It’s a reliable CSS framework, too.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;get.foundation&#x2F;&quot;&gt;Foundation&lt;&#x2F;a&gt;: I use this when I need a CSS framework
+that’s not Bootstrap.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;getbem.com&#x2F;&quot;&gt;BEM&lt;&#x2F;a&gt;: I use this methodology when I need to write CSS
+from scratch.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;smacss.com&#x2F;&quot;&gt;SMACSS&lt;&#x2F;a&gt;: I use this methodology when I have a larger CSS
+codebase that needs to be maintained.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;styled-components.com&#x2F;&quot;&gt;Styled Components&lt;&#x2F;a&gt;: I use this when I need
+to write CSS in JavaScript.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;icons&quot;&gt;Icons&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;streamlineicons.com&#x2F;&quot;&gt;Streamline Icons&lt;&#x2F;a&gt;: When I need an icon, I
+almost always use &lt;strong&gt;Streamline Icons&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;file-managers&quot;&gt;File Managers&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;binarynights.com&#x2F;&quot;&gt;Forklift&lt;&#x2F;a&gt;: I use this to manage my files.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;panic.com&#x2F;transmit&#x2F;&quot;&gt;Transmit&lt;&#x2F;a&gt;: I use this to transfer files around.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;mac.eltima.com&#x2F;file-manager.html&quot;&gt;Commander One Pro&lt;&#x2F;a&gt;: I use this as
+an alternative to &lt;strong&gt;Forklift&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;theunarchiver.com&#x2F;&quot;&gt;The Unarchiver&lt;&#x2F;a&gt;: I use this to extract compressed
+files.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;cocoatech.com&#x2F;&quot;&gt;Path Finder&lt;&#x2F;a&gt;: It’s a good file manager, too, but I
+find it a bit bloated.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;system-diagnostics&quot;&gt;System Diagnostics&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;bjango.com&#x2F;mac&#x2F;istatmenus&#x2F;&quot;&gt;iStat Menus&lt;&#x2F;a&gt;: I use this to monitor my
+system.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;binaryfruit.com&#x2F;drivedx&quot;&gt;DriveDX&lt;&#x2F;a&gt;: I use this to monitor my hard
+drives. You will never know when your hard drive will fail.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;books&quot;&gt;Books&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.audible.com&#x2F;&quot;&gt;Audible&lt;&#x2F;a&gt;: I use this to listen to books.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;read.amazon.com&#x2F;kindle-library&quot;&gt;Kindle&lt;&#x2F;a&gt;: I use this to read books.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;the-cloud&quot;&gt;“&lt;em&gt;the Cloud&lt;&#x2F;em&gt;”&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;aws.amazon.com&#x2F;&quot;&gt;AWS&lt;&#x2F;a&gt;: Yes, it’s expensive compared to the&lt;&#x2F;li&gt;
+&lt;li&gt;competition. Yes, it’s complicated. Yet, it’s a cloud that I can count on.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;azure.microsoft.com&#x2F;&quot;&gt;Azure&lt;&#x2F;a&gt;: I use this when I need to use a remote
+Windows virtual machine.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.linode.com&#x2F;&quot;&gt;Linode&lt;&#x2F;a&gt;: I use this when I need a simple Linux
+virtual machine. It’s cheap and reliable with fanatical support.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.digitalocean.com&#x2F;&quot;&gt;Digital Ocean&lt;&#x2F;a&gt;: Honestly, I use Digital Ocean
+mostly for its documentation. They have excellent technical articles. Also,
+it does not make a hole in your wallet, and it’s reliable; so you can use it
+for any kind of production setup.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.hetzner.com&#x2F;&quot;&gt;Hetzner&lt;&#x2F;a&gt;: I use this when I need a cheap, reliable,
+and dedicated server. It’s a German company, so you know it’s reliable.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;video&quot;&gt;Video&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;support.apple.com&#x2F;quicktime&quot;&gt;Quicktime&lt;&#x2F;a&gt;: I use this to play videos.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.videolan.org&#x2F;vlc&#x2F;&quot;&gt;VLC Media Player&lt;&#x2F;a&gt;: I use this for stuff that
+Quicktime can’t play.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;cloud-native-tools&quot;&gt;Cloud-Native Tools&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;&quot;&gt;Kubernetes&lt;&#x2F;a&gt;: I use Kubernetes to run my applications
+in clusters in a cloud-native and declarative way.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;metallb.universe.tf&#x2F;&quot;&gt;MetalLB&lt;&#x2F;a&gt;: I use this to expose my services in
+Kubernetes, especially for bare-metal clusters.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;helm.sh&#x2F;&quot;&gt;Helm&lt;&#x2F;a&gt;: I use this to package my applications in Kubernetes.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;cert-manager.io&#x2F;&quot;&gt;CertManager&lt;&#x2F;a&gt;: I use this to manage my certificates
+in Kubernetes.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;istio.io&#x2F;&quot;&gt;Istio&lt;&#x2F;a&gt;: I use this to manage my service mesh in Kubernetes.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;spiffe.io&#x2F;&quot;&gt;SPIRE&lt;&#x2F;a&gt;: I use this to manage my service identity in Kubernetes.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;spiffe.io&#x2F;&quot;&gt;SPIFFE&lt;&#x2F;a&gt;: SPIFFE is the protocol that SPIRE uses.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;&quot;&gt;VMware Secrets Manager&lt;&#x2F;a&gt;: I use this to manage my secrets
+in Kubernetes.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;coredns.io&#x2F;&quot;&gt;CoreDNS&lt;&#x2F;a&gt;: I use this as my DNS server in Kubernetes.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.docker.com&#x2F;&quot;&gt;Docker&lt;&#x2F;a&gt;: I use this to build my containers.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;hub.docker.com&#x2F;&quot;&gt;DockerHub&lt;&#x2F;a&gt;: I use this to store my containers.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;kubernetes-sigs&#x2F;external-dns&quot;&gt;ExternalDNS&lt;&#x2F;a&gt;: I use this to
+manage my DNS records in Kubernetes.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.nginx.com&#x2F;&quot;&gt;NGINX&lt;&#x2F;a&gt;: I use this as my ingress controller in Kubernetes.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;traefik.io&#x2F;&quot;&gt;Traefik&lt;&#x2F;a&gt;: I use this as an alternate ingress controller.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.envoyproxy.io&#x2F;&quot;&gt;Envoy&lt;&#x2F;a&gt;: I use this as lower-level proxy.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;cluster-api.sigs.k8s.io&#x2F;&quot;&gt;Cluster API&lt;&#x2F;a&gt;: I use this to manage my
+Kubernetes clusters.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.keycloak.org&#x2F;&quot;&gt;Keycloak&lt;&#x2F;a&gt;: I use this to manage my identities
+in Kubernetes.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;about&#x2F;volkan-uses&#x2F;Min.io&quot;&gt;Min.io&lt;&#x2F;a&gt;: I use this to manage my object storage in Kubernetes.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;k8snetworkplumbingwg&#x2F;multus-cni&quot;&gt;Multus CNI&lt;&#x2F;a&gt;: This is
+especially useful when you need to manage multiple network interfaces in a Pod.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;opentelemetry.io&#x2F;&quot;&gt;Open Telemetry&lt;&#x2F;a&gt;: I use this to manage my telemetry
+in Kubernetes.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.openpolicyagent.org&#x2F;&quot;&gt;Open Policy Agent&lt;&#x2F;a&gt;: I use this to manage
+my policies in Kubernetes.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;linux-distributions&quot;&gt;Linux Distributions&lt;&#x2F;h2&gt;
+&lt;p&gt;My “&lt;em&gt;go-to&lt;&#x2F;em&gt;” distro is &lt;strong&gt;Ubuntu&lt;&#x2F;strong&gt;: Stable, reliable, and easy to use. I switch
+between distros from time to time, to see what’s new, and to learn new things though.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;ubuntu.com&#x2F;&quot;&gt;Ubuntu&lt;&#x2F;a&gt;: My “&lt;em&gt;go-to&lt;&#x2F;em&gt;” distro.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;getfedora.org&#x2F;&quot;&gt;Fedora&lt;&#x2F;a&gt;: I use this when I need to use a
+RedHat-based distro.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;archlinux.org&#x2F;&quot;&gt;Arch Linux&lt;&#x2F;a&gt;: I use this when I need to torture myself.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.kali.org&#x2F;&quot;&gt;Kali Linux&lt;&#x2F;a&gt;: I use this when I need to do some
+penetration testing.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.gentoo.org&#x2F;&quot;&gt;Gentoo&lt;&#x2F;a&gt;: Is another alternative I use.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;linuxmint.com&#x2F;&quot;&gt;Linux Mint&lt;&#x2F;a&gt;: I use this when I need to use a
+Debian-based distro.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;manjaro.org&#x2F;&quot;&gt;Manjaro&lt;&#x2F;a&gt;: I use this when I need to use an
+Arch-based distro.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;elementary.io&#x2F;&quot;&gt;Elementary OS&lt;&#x2F;a&gt;: Is a different flavor of Ubuntu
+that I use from time to time.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;backup-and-recovery&quot;&gt;Backup and Recovery&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.backblaze.com&#x2F;&quot;&gt;Backblaze&lt;&#x2F;a&gt;: Great backup solution that you
+forget it exists. In a world of complexity and lock-in, Backblaze is easy yet
+high-performance, 1&#x2F;5 the cost with no gotchas, S3-compatible, and open to a
+lot of use cases—my &lt;strong&gt;go-to&lt;&#x2F;strong&gt; solution.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;transpilers&quot;&gt;Transpilers&lt;&#x2F;h2&gt;
+&lt;p&gt;I have no definitive choice when it comes to transpilers. I use whatever is
+available and works for the project at hand.&lt;&#x2F;p&gt;
+&lt;p&gt;I prefer &lt;strong&gt;Parcel&lt;&#x2F;strong&gt; if I need a zero-config transpiler, and use &lt;strong&gt;Webpack&lt;&#x2F;strong&gt;
+if I need more control.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;babeljs.io&#x2F;&quot;&gt;Babel&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;webpack.js.org&#x2F;&quot;&gt;Webpack&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;parceljs.org&#x2F;&quot;&gt;Parcel&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;rollupjs.org&#x2F;&quot;&gt;Rollup&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;gulpjs.com&#x2F;&quot;&gt;Gulp&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;vitejs.dev&#x2F;&quot;&gt;Vite&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;unit-testing&quot;&gt;Unit Testing&lt;&#x2F;h2&gt;
+&lt;p&gt;These tools are dime a dozen, too, and they mostly do similar things.
+I pick whichever is available and works for the project at hand.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;cucumber.io&#x2F;&quot;&gt;Cucumber&lt;&#x2F;a&gt;: I use this to write BDD tests.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;cucumber.io&#x2F;docs&#x2F;gherkin&#x2F;&quot;&gt;Gherkin&lt;&#x2F;a&gt;: I use this to write BDD tests.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;mochajs.org&#x2F;&quot;&gt;Mocha&lt;&#x2F;a&gt;: I use this to write unit tests.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jasmine.github.io&#x2F;&quot;&gt;Jasmine&lt;&#x2F;a&gt;: Similar to &lt;strong&gt;Mocha&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jestjs.io&#x2F;&quot;&gt;Jest&lt;&#x2F;a&gt;: Similar to &lt;strong&gt;Mocha&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;load-testing&quot;&gt;Load Testing&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.blazemeter.com&#x2F;&quot;&gt;BlazeMeter&lt;&#x2F;a&gt;: I use this to run load tests.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;about&#x2F;volkan-uses&#x2F;Flood.io&quot;&gt;Flood.io&lt;&#x2F;a&gt;: I use this to run load tests, too.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jmeter.apache.org&#x2F;&quot;&gt;JMeter&lt;&#x2F;a&gt;: I use this to run load tests, as well.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;browser-emulation&quot;&gt;Browser Emulation&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;pptr.dev&#x2F;&quot;&gt;Puppeteer&lt;&#x2F;a&gt;: I use this to emulate browsers and test UI
+components.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.selenium.dev&#x2F;&quot;&gt;Selenium&lt;&#x2F;a&gt;: Selenium is a bit date, but it is a
+great tool still.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.cypress.io&#x2F;&quot;&gt;Cypress&lt;&#x2F;a&gt;: A similar tool that I use.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;webdriver.io&#x2F;&quot;&gt;WebdriverIO&lt;&#x2F;a&gt;: Another similar tool with a growing
+user base.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;karma-runner.github.io&#x2F;&quot;&gt;Karma&lt;&#x2F;a&gt;: I used to use Karma for the same
+purpose too.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.npmjs.com&#x2F;package&#x2F;zombie&quot;&gt;zombie.js&lt;&#x2F;a&gt;: Insanely fast headless
+browser testing.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;saucelabs.com&#x2F;&quot;&gt;Sauce Labs&lt;&#x2F;a&gt;: I use this to run my tests in the cloud.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;ci-cd&quot;&gt;CI&#x2F;CD&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.jenkins.io&#x2F;&quot;&gt;Jenkins&lt;&#x2F;a&gt;: I use this to run my CI&#x2F;CD pipelines.
+It’s old, it’s ugly, but it works like a charm.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;travis-ci.com&#x2F;&quot;&gt;Travis&lt;&#x2F;a&gt;: Another CI solution that I use sometimes.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;circleci.com&#x2F;&quot;&gt;Circle CI&lt;&#x2F;a&gt;: I use this when I need to run my CI&#x2F;CD
+pipelines in the cloud.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;chat-widgets&quot;&gt;Chat Widgets&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;crisp.chat&#x2F;&quot;&gt;Crisp&lt;&#x2F;a&gt;: I use this to chat with my visitors. Even it’s
+free version is more than enough. And the paid version is very affordable,
+unlike alternatives like &lt;strong&gt;Intercom&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;blogging-platforms&quot;&gt;Blogging Platforms&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;ghost.org&#x2F;&quot;&gt;Ghost&lt;&#x2F;a&gt;: I use this to run my blog.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;wordpress.com&#x2F;&quot;&gt;WordPress&lt;&#x2F;a&gt;: This is my second choice when it comes
+to blogging.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;markdown&quot;&gt;Markdown&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;marked2app.com&#x2F;&quot;&gt;Marked 2&lt;&#x2F;a&gt;: I use this to preview my markdown files.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;learning&quot;&gt;Learning&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.pluralsight.com&#x2F;&quot;&gt;PluralSight&lt;&#x2F;a&gt;: I use this to improve myself
+technically.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.oreilly.com&#x2F;&quot;&gt;O’Reilly&lt;&#x2F;a&gt;: Another learning platform that I visit
+frequently.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.udemy.com&#x2F;&quot;&gt;Udemy&lt;&#x2F;a&gt;: When I cannot find anything in the above two,
+I try Udemy.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;hbr.org&#x2F;&quot;&gt;HBR&lt;&#x2F;a&gt;: I use this to improve myself professionally. It’s a
+great source of information on how to be a better leader.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;long-long-ago&quot;&gt;Long, Long Ago&lt;&#x2F;h2&gt;
+&lt;p&gt;Websites that I visited eons ago, and they are not popular anymore, some of them
+are even extinct (&lt;em&gt;and I provided web archive links for them instead&lt;&#x2F;em&gt;).&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;quirksmode.org&#x2F;&quot;&gt;QuirksMode&lt;&#x2F;a&gt;: I used to visit this site to learn
+about browser quirks.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;web.archive.org&#x2F;web&#x2F;20230319084116&#x2F;https:&#x2F;&#x2F;evolt.org&#x2F;&quot;&gt;Evolt&lt;&#x2F;a&gt;: I used
+to discuss accessibility, usability, front end development, and the new web.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;web.archive.org&#x2F;web&#x2F;20230319084116&#x2F;https:&#x2F;&#x2F;www.webmonkey.com&#x2F;&quot;&gt;WebMonkey&lt;&#x2F;a&gt;:
+I used to visit this site to learn about web development.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;web.archive.org&#x2F;web&#x2F;20230307132114&#x2F;http:&#x2F;&#x2F;lists.evolt.org&#x2F;&quot;&gt;The List&lt;&#x2F;a&gt;:
+It is the first mailing list that I was actively contributing. I learned a lot
+there. Some of my mentors were active contributors there too.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.csszengarden.com&#x2F;&quot;&gt;CSS Zen Garden&lt;&#x2F;a&gt;: Table-based design was becoming
+out of fashion, and CSS Zen Garden was the place to realize how a single HTML
+document can be styled in many different ways.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;alistapart.com&#x2F;&quot;&gt;A List Apart&lt;&#x2F;a&gt;: I used to visit this site to learn
+about web development.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;bonsaiden.github.io&#x2F;JavaScript-Garden&#x2F;&quot;&gt;JavaScript Garden&lt;&#x2F;a&gt;: I used
+to visit this site to learn about JavaScript. It was a great resource when you
+want to have a quick reference.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.codeproject.com&#x2F;&quot;&gt;CodeProject&lt;&#x2F;a&gt;: I used to visit this site especially
+when I wanted to learn about Windows development. I had quite a few articles
+published there too.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;web.archive.org&#x2F;web&#x2F;20230319084116&#x2F;https:&#x2F;&#x2F;www.4guysfromrolla.com&#x2F;&quot;&gt;Four Guys from Rolla&lt;&#x2F;a&gt;:
+I used to visit this site to learn about &lt;a href=&quot;https:&#x2F;&#x2F;asp.net&quot;&gt;ASP.NET&lt;&#x2F;a&gt; development.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;coderanch.com&#x2F;&quot;&gt;Java Ranch Big Moose Saloon&lt;&#x2F;a&gt;: I used to visit this
+site to learn about Java development.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;about&#x2F;volkan-uses&#x2F;java.sun.com&quot;&gt;java.sun.com&lt;&#x2F;a&gt;: Once upon a time, Java was free, as in
+“&lt;em&gt;free beer&lt;&#x2F;em&gt;”.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;about&#x2F;volkan-uses&#x2F;astalavista.box.sk&quot;&gt;astalavista.box.sk&lt;&#x2F;a&gt;: I used to visit this site to learn
+about security.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;explore-more&quot;&gt;Explore More&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;about&#x2F;a-new-hope&#x2F;&quot;&gt;Every Saga Has a Beginning&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;about&#x2F;volkan&#x2F;&quot;&gt;Volkan Özçelik&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Volkan Uses&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;about&#x2F;contact&#x2F;&quot;&gt;Contact&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;about&#x2F;privacy&#x2F;&quot;&gt;Privacy Policy&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Unlock Your True Potential: Make Your Hard Work Visible</title>
+        <published>2023-01-16T00:00:00+00:00</published>
+        <updated>2023-01-16T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/highlights/issue-0025/"/>
+        <id>https://zerotohero.dev/highlights/issue-0025/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/highlights/issue-0025/">&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0025&#x2F;&quot; alt=&quot;&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;stand.png&quot; alt=&quot;Show yourself.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Show yourself.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Update 2024-05-21&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Aegis&lt;&#x2F;strong&gt; is now maintained by &lt;strong&gt;VMware Tanzu&lt;&#x2F;strong&gt; GitHub Organization
+with a new name: &lt;strong&gt;&lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;&quot;&gt;VMware Secrets Manager&lt;&#x2F;a&gt;&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;It is ready for production use, and as the time of this writing we
+are already using it in production clusters.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Welcome to the 25th issue of &lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt; Highlights.&lt;&#x2F;p&gt;
+&lt;p&gt;Several things have been going on, yet I think this week’s highlight was
+&lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;&quot;&gt;&lt;strong&gt;Aegis&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;. It has been very well received by people who
+are well-known in the Cloud Native security community, and I have a feeling it
+is growing to become a bit more than a side project, but we’ll see.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;aegis-keep-your-secrets-secret&quot;&gt;Aegis: Keep Your Secrets… Secret&lt;&#x2F;h2&gt;
+&lt;p&gt;As I said, last week was mainly about &lt;strong&gt;Aegis&lt;&#x2F;strong&gt;, but what is &lt;strong&gt;Aegis&lt;&#x2F;strong&gt;?&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;vmware-tanzu&#x2F;secrets-manager&quot;&gt;&lt;strong&gt;Aegis&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; is a Kubernetes-native, lightweight secrets management
+solution that keeps your secrets secret. And last week, I made significant
+progress with it.&lt;&#x2F;p&gt;
+&lt;p&gt;Some key highlights of the current version are:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Upgraded &lt;strong&gt;Aegis&lt;&#x2F;strong&gt; to the latest and greatest &lt;a href=&quot;https:&#x2F;&#x2F;spiffe.io&#x2F;&quot;&gt;&lt;strong&gt;SPIRE&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+version as the identity control plane. That gave a bunch of stability
+improvements and reduced memory usage significantly.&lt;&#x2F;li&gt;
+&lt;li&gt;A lot of documentation updates to make &lt;strong&gt;Aegis&lt;&#x2F;strong&gt; easier to use and deploy.&lt;&#x2F;li&gt;
+&lt;li&gt;Making everything configurable via environment variables.&lt;&#x2F;li&gt;
+&lt;li&gt;Added &lt;strong&gt;liveness&lt;&#x2F;strong&gt; and &lt;strong&gt;readiness&lt;&#x2F;strong&gt; probes to critical components for
+Kubernetes-native lifecycle management.&lt;&#x2F;li&gt;
+&lt;li&gt;Started using &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;GoogleContainerTools&#x2F;distroless&quot;&gt;&lt;strong&gt;distroless images&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+for an additional layer of security.&lt;&#x2F;li&gt;
+&lt;li&gt;Using &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;spiffe&#x2F;spiffe-csi&quot;&gt;&lt;strong&gt;SPIFFE CSI driver&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; instead of
+volume mounts (&lt;em&gt;for security again&lt;&#x2F;em&gt;).&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Although &lt;strong&gt;Aegis&lt;&#x2F;strong&gt; is still an alpha product and has yet to be battle-tested,
+I am confident it can be used in a production cluster.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;random-thought-of-the-week&quot;&gt;Random Thought of the Week&lt;&#x2F;h2&gt;
+&lt;p&gt;In today’s fast-paced and competitive business environment, it is essential to
+stand out and make your hard work and achievements visible to your management.
+Unfortunately, you can fall into the trap of being overlooked as a hidden gem
+among your peers, despite your consistent efforts and contributions to the team.&lt;&#x2F;p&gt;
+&lt;p&gt;This can be detrimental to career growth and advancement opportunities. So what
+are the ways to sort this out, unlock your true potential, and ace your career?&lt;&#x2F;p&gt;
+&lt;p&gt;One word: &lt;strong&gt;Take initiative&lt;&#x2F;strong&gt;… Okay, that was two words, but still 🙂.&lt;&#x2F;p&gt;
+&lt;p&gt;By sharing your daily progress, goals, and accomplishments with your manager,
+you can ensure that your hard work does not go unnoticed.&lt;&#x2F;p&gt;
+&lt;p&gt;One effective way to make your work visible is by providing &lt;strong&gt;regular updates&lt;&#x2F;strong&gt;
+and participating in huddles with your manager. This allows you to share your
+progress on current projects, any challenges you may be facing, and any new
+ideas or solutions you have come up with.&lt;&#x2F;p&gt;
+&lt;p&gt;By providing this information regularly, you can create a transparent view of
+your work for your manager and demonstrate your willingness to actively
+collaborate and contribute to the team.&lt;&#x2F;p&gt;
+&lt;p&gt;Another critical aspect of making your work visible is sharing real-time metrics
+and key performance indicators (&lt;strong&gt;&lt;em&gt;KPIs&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;) with your manager. These metrics
+provide valuable insights into the impact and results of your work and
+demonstrate your ability to measure and track your progress. This can help your
+manager better understand the value you bring to the team and your role in
+achieving business goals.&lt;&#x2F;p&gt;
+&lt;p&gt;In addition to regular updates and sharing metrics, it is also essential to
+&lt;strong&gt;proactively&lt;&#x2F;strong&gt; offer &lt;strong&gt;creative solutions&lt;&#x2F;strong&gt;, volunteer extra time and effort,
+and showcase your skill set to help your manager tackle challenges. This
+demonstrates your willingness to go above and beyond and showcases your ability
+to think outside the box and bring fresh perspectives to the team.&lt;&#x2F;p&gt;
+&lt;p&gt;All these can put you on your manager’s radar as a valuable asset to the team
+and help you get the promotion you deserve.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;look-what-i-ve-found&quot;&gt;Look What I’ve Found&lt;&#x2F;h2&gt;
+&lt;p&gt;Here are the things that grabbed my attention this week.&lt;&#x2F;p&gt;
+&lt;p&gt;I typically don’t share these anywhere else.&lt;&#x2F;p&gt;
+&lt;p&gt;Exclusively hand-picked for you 👌. Enjoy.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;sampler.dev&#x2F;&quot;&gt;Sampler is a tool for shell commands execution, visualization and
+alerting&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.airplane.dev&#x2F;&quot;&gt;Airplane is a developer infrastructure for internal tooling&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;0xax.gitbooks.io&#x2F;linux-insides&#x2F;content&#x2F;SysCall&#x2F;linux-syscall-4.htm&quot;&gt;In case you wonder how a unix kernel runs a program, here is a nice
+article about it&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;thanks-a-lot-red-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
+&lt;p&gt;That’s all for this week. Next week, I’ll gather more unique content and
+resources.&lt;&#x2F;p&gt;
+&lt;p&gt;So, until next time… May the source be with you 🦄.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;issues&quot;&gt;Issues&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0001&#x2F;&quot;&gt;Issue 1: Hello World, Hello Stars, Hello Universe&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0002&#x2F;&quot;&gt;Issue 2: The Only Thing That doesn’t Change is Change Itself&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0003&#x2F;&quot;&gt;Issue 3: Know Thyself&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0004&#x2F;&quot;&gt;Issue 4: Have You Fizzed that Buzz?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0005&#x2F;&quot;&gt;Issue 5: Be Kind&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0006&#x2F;&quot;&gt;Issue 6: Earn the Promotion You Deserve&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0007&#x2F;&quot;&gt;Issue 7: Who Else Journals Daily?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0008&#x2F;&quot;&gt;Issue 8: Who Are You?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0009&#x2F;&quot;&gt;Issue 9: How to Make Yourself Heard&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0010&#x2F;&quot;&gt;Issue 10: Tough Conversations&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0011&#x2F;&quot;&gt;Issue 11: Assemble Your Personal Board of Advisor&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0012&#x2F;&quot;&gt;Issue 12: What’s Your Plan&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0013&#x2F;&quot;&gt;Issue 13: Nine-to-Five? I Don’t Think So&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0014&#x2F;&quot;&gt;Issue 14: Respect and Understanding&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0015&#x2F;&quot;&gt;Issue 15: Pivoting Your Career?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0016&#x2F;&quot;&gt;Issue 16: Ghosted?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0017&#x2F;&quot;&gt;Issue 17: ‘Following Your Passion’ Is Hardly Enough&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0018&#x2F;&quot;&gt;Issue 18: Keep Cam and Carry On&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0019&#x2F;&quot;&gt;Issue 19: Attention, Intention, Compassion&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0020&#x2F;&quot;&gt;Issue 20: Words Matter&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0021&#x2F;&quot;&gt;Issue 21: Change Is the Only Constant&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0022&#x2F;&quot;&gt;Issue 22: Overcome the Awkward Feeling of Networking&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0023&#x2F;&quot;&gt;Issue 23: Unleash Your Curiosity: Unlock Your Potential as a Leader&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0024&#x2F;&quot;&gt;Issue 24: Interview Done. Radio Silence 🎃 What Now?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Issue 25: Unlock Your True Potential: Make Your Hard Work Visible&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;issue-0026&#x2F;&quot;&gt;Issue 26: Winning at Work: Thriving With Difficult Colleagues&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
@@ -3957,6 +5596,131 @@ related articles and other helpful links.&lt;&#x2F;p&gt;
 archive&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;hr &#x2F;&gt;
+&lt;p&gt;Until the next lecture… May the source be with you 🦄.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Zero to Prod in Half an Hour: Part 6 --- Serving Web Pages</title>
+        <published>2022-01-15T00:00:00+00:00</published>
+        <updated>2022-01-15T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/zero-to-prod/serving-web-pages/"/>
+        <id>https://zerotohero.dev/zero-to-prod/serving-web-pages/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/zero-to-prod/serving-web-pages/">
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;recurse.png&quot; alt=&quot;Zero to Prod in Half an Hour: Part 6 --- Serving Web Pages&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Zero to Prod in Half an Hour: Part 6 --- Serving Web Pages&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;This section will add a bunch of static web page templates into our application
+and serve them in several routes. We will also use a Gumroad embed form and a
+very minimal dynamic templating in our subscription form.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;lecture&quot;&gt;Lecture&lt;&#x2F;h2&gt;
+&lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;
+  &lt;iframe src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;bfNJjviT47M?si=T-ha1j-GV8xKTc9R&quot;
+    frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture; web-share&quot;
+    referrerpolicy=&quot;strict-origin-when-cross-origin&quot;
+    allowfullscreen
+    style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot;
+    title=&quot;Zero to Prod in Half an Hour: Part 6 --- Serving Web Pages&quot;&gt;&lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;Zero to Prod in Half an Hour: Part 6 --- Serving Web Pages&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;playlist&quot;&gt;Playlist&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;an-overview-of-fizzbuzz-pro&#x2F;&quot;&gt;Part 1: An Overview of FizzBuzz Pro&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;generating-static-html&#x2F;&quot;&gt;Part 2: Generating Static HTML&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;mutating-the-generated-html-files&#x2F;&quot;&gt;Part 3: Mutating the Generated HTML Files&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;app-authentication-overview&#x2F;&quot;&gt;Part 4: App Authentication Overview&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;implementing-an-oidc-authenticator&#x2F;&quot;&gt;Part 5: Implementing an OIDC Authenticator&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Part 6: Serving Web Pages&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;a-mild-introduction-to-middlewares&#x2F;&quot;&gt;Part 7: A Mild Introduction to Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;authenticate-all-the-things&#x2F;&quot;&gt;Part 8: Authenticate All the Things&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;thinking-in-middlewares&#x2F;&quot;&gt;Part 9: Thinking in Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;authentication-and-subscription-middlewares&#x2F;&quot;&gt;Part 10: Authentication and Subscription Middlewares&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;implementing-authentication-handlers&#x2F;&quot;&gt;Part 11: Implementing Authentication Handlers&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;the-final-touches&#x2F;&quot;&gt;Part 12: The Final Touches&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;containerizing-our-application&#x2F;&quot;&gt;Part 13: Containerizing Our Application&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;onwards-to-kubernetes&#x2F;&quot;&gt;Part 14: Onwards to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;creating-ecr-repositories&#x2F;&quot;&gt;Creating ECR Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;deploying-a-microservice-to-k8s&#x2F;&quot;&gt;Deploying a Microservice to Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizz-that-buzz&#x2F;&quot;&gt;Fizz that Buzz&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-hla&#x2F;&quot;&gt;FizzBuzz Pro High-Level Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-repos&#x2F;&quot;&gt;FizzBuzz Pro Repositories&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;tools-and-technologies-mentioned&quot;&gt;Tools and Technologies Mentioned&lt;&#x2F;h2&gt;
+&lt;p&gt;Here are the tools and technologies that were mentioned in the video, along with
+related articles and other helpful links.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;gin-gonic.com&#x2F;&quot;&gt;Gin Web Framework&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;pkg.go.dev&#x2F;github.com&#x2F;gin-gonic&#x2F;gin#HandlerFunc&quot;&gt;gin.HandlerFunc&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;pkg.go.dev&#x2F;github.com&#x2F;gin-gonic&#x2F;gin#Context&quot;&gt;gin.Context&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;pkg.go.dev&#x2F;github.com&#x2F;gin-gonic&#x2F;gin#Engine.LoadHTMLGlob&quot;&gt;gin.Engine.LoadHTMLGlob()&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Higher-order_function&quot;&gt;Higher-Order Function&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.mongodb.com&#x2F;&quot;&gt;MongoDB&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;pkg.go.dev&#x2F;github.com&#x2F;globalsign&#x2F;mgo&quot;&gt;mgo&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;gumroad.com&#x2F;&quot;&gt;Gumroad&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;app.gumroad.com&#x2F;api&quot;&gt;Gumroad API&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.papertrail.com&#x2F;&quot;&gt;Papertrail&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Syslog&quot;&gt;Syslog&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.aws.amazon.com&#x2F;eks&#x2F;latest&#x2F;userguide&#x2F;alb-ingress.html&quot;&gt;Application load balancing on Amazon EKS&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;vimeo.com&#x2F;173610242&quot;&gt;Monitorama PDX 2016 - Kelsey Hightower - healthz: Stop reverse engineering applications and start monitoring from the inside&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;tasks&#x2F;configure-pod-container&#x2F;configure-liveness-readiness-startup-probes&#x2F;&quot;&gt;Kubernetes: Configure Liveness, Readiness and Startup Probes&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;read-the-source&quot;&gt;Read The Source&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;assets.zerotohero.dev&#x2F;zero-to-prod-in-30&#x2F;zero-to-prod-in-30.zip&quot;&gt;Download the source code (&lt;em&gt;114kb zip
+archive&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
 &lt;p&gt;Until the next lecture… May the source be with you 🦄.&lt;&#x2F;p&gt;
 </content>
         

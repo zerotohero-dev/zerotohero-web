@@ -12,7 +12,7 @@ title = "Setting Up SPIRE on EKS in Less Than Ten Minutes"
 date = "2021-12-18"
 
 [taxonomies]
-tags = ["SPIFFE","SPIRE","kubernetes","security"]
+tags = ["SPIFFE","SPIRE","kubernetes","security","secrets-management"]
 +++
 
 ![Setting Up SPIRE on EKS in Less Than Ten Minutes](/images/size/w1200/2024/03/trust.png)

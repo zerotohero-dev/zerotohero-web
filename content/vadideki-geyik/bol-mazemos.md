@@ -4,7 +4,7 @@ date = "2024-08-04"
 template = "geyik.html"
 
 [taxonomies]
-tags = ["about"]
+tags = ["about","development"]
 +++
 
 ## Önceki Yayında Yarım Kalanlar / Sonraki Yayinda Konusulabilecekler
