@@ -13,7 +13,7 @@ description = "Configuring VMware vCenter Server Appliance (vCSA): Stage 2 Setup
 date = "2024-12-12"
 
 [taxonomies]
-tags = ["inbox","vcf","virtualization","vmware"]
+tags = ["inbox","vcf","vmware"]
 +++
 
 After successfully deploying the vCSA virtual machine in Stage 1, Stage 2 handles the critical initial configuration of your vCenter Server. This guide walks through the complete configuration process to get your vCenter Server up and running.

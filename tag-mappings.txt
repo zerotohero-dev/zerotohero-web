@@ -89,6 +89,7 @@ javascript -> development
 logging -> development
 system-design -> development
 testing -> development
+regexp -> {roadmap;development}
 
 # Hacker culture
 hacker-ethic -> hacker-culture
@@ -152,6 +153,8 @@ loc -> tips
 journaling -> {ponderings;tips;productivity}
 redirect -> {tips;development}
 time-management -> productivity
+workspace -> productivity
+vim -> {productivity;development}
 
 # VMware
 vcsa -> vcf
@@ -180,6 +183,8 @@ workload-domains -> vcf
 lifecycle-management -> vcf
 virtual -> vcf
 modernization -> vcf
+virtualization -> vcf
+ntp -> vcf
 
 # Projects
 aegis -> spike

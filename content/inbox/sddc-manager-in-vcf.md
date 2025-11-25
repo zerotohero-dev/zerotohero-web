@@ -13,7 +13,7 @@ description = "SDDC Manager in VMware Cloud Foundation: A Comprehensive Guide"
 date = "2024-12-12"
 
 [taxonomies]
-tags = ["inbox","vcf","virtualization","vmware"]
+tags = ["inbox","vcf","vmware"]
 +++
 
 The Software-Defined Data Center (SDDC) Manager is the central management component of VMware Cloud Foundation (VCF). This guide explores its capabilities, deployment, and essential configuration steps.
