@@ -7,14 +7,16 @@ read -p "Title: " title
 echo ""
 
 echo "Available categories:"
-echo "  1) top-of-mind    - Random thoughts and musings (brain dump)"
-echo "  2) inbox          - General content (default)"
-echo "  3) highlights     - Leadership and non-technical aspects"
-echo "  4) tips           - Useful tips, tricks, and code snippets"
-echo "  5) roadmap        - Career guidance, resources, life lessons"
-echo "  6) zero-to-prod   - Production-ready system tutorials"
-echo "  7) spire          - SPIFFE and SPIRE articles"
-read -p "Choose category (1-7) [default: 2]: " category_num
+echo "  1) top-of-mind       - Random thoughts and musings (brain dump)"
+echo "  2) inbox             - General content (default)"
+echo "  3) highlights        - Leadership and non-technical aspects"
+echo "  4) tips              - Useful tips, tricks, and code snippets"
+echo "  5) roadmap           - Career guidance, resources, life lessons"
+echo "  6) zero-to-prod      - Production-ready system tutorials"
+echo "  7) spire             - SPIFFE and SPIRE articles"
+echo "  8) content-creation  - Writing, blogging, and content strategy"
+echo "  9) go                - Go programming language articles"
+read -p "Choose category (1-9) [default: 2]: " category_num
 category_num=${category_num:-2}
 
 case $category_num in
@@ -25,6 +27,8 @@ case $category_num in
     5) category="roadmap";;
     6) category="zero-to-prod";;
     7) category="spire";;
+    8) category="content-creation";;
+    9) category="go";;
     *) category="inbox";;
 esac
 

@@ -4831,13 +4831,13 @@ when the time comes.&lt;&#x2F;p&gt;
 &lt;li&gt;In &lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;zero-to-prod&#x2F;fizzbuzz-pro-repos&#x2F;&quot;&gt;The Repositories, Tools, and Services We’ll Use for FizzBuzz
 Pro&lt;&#x2F;a&gt; use case, we looked into the repositories and services that
 we will use in &lt;strong&gt;FizzBuzz Pro&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
-&lt;li&gt;In &lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;microservice-env-vars&#x2F;&quot;&gt;A Technique to Ensure Environment Variables Are Set Before Starting a
+&lt;li&gt;In &lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;go&#x2F;microservice-env-vars&#x2F;&quot;&gt;A Technique to Ensure Environment Variables Are Set Before Starting a
 Microservice&lt;&#x2F;a&gt; article, we saw a technique to ensure that our
 microservice does not start if any of the environment variables it depends on
 is missing.&lt;&#x2F;li&gt;
-&lt;li&gt;In &lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;make-your-code-leaner&#x2F;&quot;&gt;Make Your Code Leaner By Extracting Methods&lt;&#x2F;a&gt; article, we saw an
+&lt;li&gt;In &lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;go&#x2F;make-your-code-leaner&#x2F;&quot;&gt;Make Your Code Leaner By Extracting Methods&lt;&#x2F;a&gt; article, we saw an
 example of the &lt;strong&gt;method extraction&lt;&#x2F;strong&gt; refactoring technique.&lt;&#x2F;li&gt;
-&lt;li&gt;In &lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;lets-create-a-syslog-logger&#x2F;&quot;&gt;Let’s Create a Syslog Logger&lt;&#x2F;a&gt;
+&lt;li&gt;In &lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;go&#x2F;lets-create-a-syslog-logger&#x2F;&quot;&gt;Let’s Create a Syslog Logger&lt;&#x2F;a&gt;
 use case, we created a &lt;strong&gt;logging wrapper&lt;&#x2F;strong&gt; module that logs messages to
 &lt;strong&gt;Syslog&lt;&#x2F;strong&gt;: a standard network-based logging protocol that works on a wide
 variety of different types of devices and applications.&lt;&#x2F;li&gt;

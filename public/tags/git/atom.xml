@@ -187,8 +187,8 @@ them:&lt;&#x2F;p&gt;
 &lt;p&gt;This scans all markdown files and lists posts missing the header image syntax,
 making it easy to go back and add visuals.&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;moving-posts-between-sections&quot;&gt;Moving Posts Between Sections&lt;&#x2F;h3&gt;
-&lt;p&gt;As my blog evolved, I realized some posts belonged in different categories. The
-&lt;code&gt;move-to-tips.sh&lt;&#x2F;code&gt; script (now &lt;code&gt;make move-to-tips&lt;&#x2F;code&gt;) handles this:&lt;&#x2F;p&gt;
+&lt;p&gt;As &lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt; evolved, I realized some posts belonged in different
+categories. The &lt;code&gt;move-to-tips.sh&lt;&#x2F;code&gt; script (now &lt;code&gt;make move-to-tips&lt;&#x2F;code&gt;) handles this:&lt;&#x2F;p&gt;
 &lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;$ make move-to-tips
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Post slug: frictionless-blog-workflow
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Moving from inbox to tips...
@@ -224,7 +224,7 @@ making it easy to go back and add visuals.&lt;&#x2F;p&gt;
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Write your blog post here...
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;EOF
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;The Makefile just delegates to the script:&lt;&#x2F;p&gt;
+&lt;p&gt;The &lt;code&gt;Makefile&lt;&#x2F;code&gt; just delegates to the script:&lt;&#x2F;p&gt;
 &lt;pre data-lang=&quot;makefile&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-makefile &quot;&gt;&lt;code class=&quot;language-makefile&quot; data-lang=&quot;makefile&quot;&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;new&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;## Create a new blog post interactively
 &lt;&#x2F;span&gt;&lt;span&gt;	&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;@&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;.&#x2F;new-post.sh
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
@@ -262,8 +262,8 @@ blog post.&lt;&#x2F;p&gt;
       font-size: 1em;&quot;&gt;Grammarly in action.&lt;&#x2F;p&gt;
 &lt;&#x2F;div&gt;
 &lt;h2 id=&quot;use-the-source-luke&quot;&gt;Use the Source, Luke&lt;&#x2F;h2&gt;
-&lt;p&gt;As I improve these scripts over time, the latest versions will always be available
-in this blog’s repository:&lt;&#x2F;p&gt;
+&lt;p&gt;As I improve these scripts over time, the latest versions will always be
+available in this blog’s repository:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;zerotohero-dev&#x2F;zerotohero-web&quot;&gt;&lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt; on GitHub&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
@@ -1772,10 +1772,10 @@ presented here can have applications beyond the use case covered in this article
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/jwt-parsing/"/>
-        <id>https://zerotohero.dev/inbox/jwt-parsing/</id>
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/go/jwt-parsing/"/>
+        <id>https://zerotohero.dev/go/jwt-parsing/</id>
         
-        <content type="html" xml:base="https://zerotohero.dev/inbox/jwt-parsing/">&lt;p&gt;When working with JWTs in Go, you’ll often need to extract and validate claims from the payload section. Let’s walk through how to do this effectively using the popular &lt;code&gt;github.com&#x2F;golang-jwt&#x2F;jwt&lt;&#x2F;code&gt; package.&lt;&#x2F;p&gt;
+        <content type="html" xml:base="https://zerotohero.dev/go/jwt-parsing/">&lt;p&gt;When working with JWTs in Go, you’ll often need to extract and validate claims from the payload section. Let’s walk through how to do this effectively using the popular &lt;code&gt;github.com&#x2F;golang-jwt&#x2F;jwt&lt;&#x2F;code&gt; package.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;basic-jwt-structure&quot;&gt;Basic JWT Structure&lt;&#x2F;h2&gt;
 &lt;p&gt;First, let’s understand what we’re parsing. A JWT consists of three parts:&lt;&#x2F;p&gt;
 &lt;ol&gt;
@@ -6035,9 +6035,6 @@ masters alike.&lt;&#x2F;p&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;typography&#x2F;&quot;&gt;Get Better at Typography&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learning-rust&#x2F;&quot;&gt;Exploring Rust as a Go Developer&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 </content>
         
@@ -6153,9 +6150,6 @@ resources.&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;typography&#x2F;&quot;&gt;Get Better at Typography&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learning-rust&#x2F;&quot;&gt;Exploring Rust as a Go Developer&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 </content>
@@ -6301,9 +6295,6 @@ next.&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;typography&#x2F;&quot;&gt;Get Better at Typography&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learning-rust&#x2F;&quot;&gt;Exploring Rust as a Go Developer&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 </content>
@@ -6488,9 +6479,6 @@ provide you with more resources than you need 🙂.&lt;&#x2F;p&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;typography&#x2F;&quot;&gt;Get Better at Typography&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learning-rust&#x2F;&quot;&gt;Exploring Rust as a Go Developer&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 </content>
         
@@ -6615,9 +6603,6 @@ them, here are a few additional resources that you can use:&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;typography&#x2F;&quot;&gt;Get Better at Typography&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learning-rust&#x2F;&quot;&gt;Exploring Rust as a Go Developer&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 </content>
@@ -6800,10 +6785,10 @@ related articles and other helpful links.&lt;&#x2F;p&gt;
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://zerotohero.dev/tips/microservice-env-vars/"/>
-        <id>https://zerotohero.dev/tips/microservice-env-vars/</id>
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/go/microservice-env-vars/"/>
+        <id>https://zerotohero.dev/go/microservice-env-vars/</id>
         
-        <content type="html" xml:base="https://zerotohero.dev/tips/microservice-env-vars/">&lt;p&gt;&lt;img src=&quot;&#x2F;content&#x2F;images&#x2F;size&#x2F;w1200&#x2F;2024&#x2F;03&#x2F;pipes.png&quot; alt=&quot;Environment Variables&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+        <content type="html" xml:base="https://zerotohero.dev/go/microservice-env-vars/">&lt;p&gt;&lt;img src=&quot;&#x2F;content&#x2F;images&#x2F;size&#x2F;w1200&#x2F;2024&#x2F;03&#x2F;pipes.png&quot; alt=&quot;Environment Variables&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 
 &lt;div class=&quot;z2h-image&quot;&gt;
     &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;pipes.png&quot; alt=&quot;Configuration and Pipes.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
@@ -7023,25 +7008,10 @@ artifacts that we’ve covered in this article.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;base64-decoding-a-string-in-go&#x2F;&quot;&gt;Base64 Decoding a String in Go&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;destructure&#x2F;&quot;&gt;Use Destructuring to Remove Attributes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;getting-the-body-of-an-http-request-with-go&#x2F;&quot;&gt;Getting the Body of an HTTP Request With Go&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;lets-create-a-syslog-logger&#x2F;&quot;&gt;Let’s Create a Syslog Logger&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;make-your-code-leaner&#x2F;&quot;&gt;Make Your Code Leaner By Extracting Method&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;mastodon-101&#x2F;&quot;&gt;Who Else Wants to Have Their Own Mastodon Server?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;▶ How to Ensure Environment Variables Are Set&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;scaling-your-node-api-like-a-boss&#x2F;&quot;&gt;Scaling Your Node.js API Like a Boss&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
@@ -7056,7 +7026,7 @@ artifacts that we’ve covered in this article.&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;redirect-index-page&#x2F;&quot;&gt;Redirecting a Static Web Page&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;git-push-origin-main&#x2F;&quot;&gt;Understanding &lt;code&gt;git push origin main&lt;&#x2F;code&gt;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;▶ Understanding &lt;code&gt;git push origin main&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 </content>

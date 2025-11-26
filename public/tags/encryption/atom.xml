@@ -19,10 +19,10 @@
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/snippet-crypto-in-go/"/>
-        <id>https://zerotohero.dev/inbox/snippet-crypto-in-go/</id>
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/go/snippet-crypto-in-go/"/>
+        <id>https://zerotohero.dev/go/snippet-crypto-in-go/</id>
         
-        <content type="html" xml:base="https://zerotohero.dev/inbox/snippet-crypto-in-go/">&lt;h2 id=&quot;encrypting-and-decrypting-with-aes-cbc&quot;&gt;Encrypting and Decrypting with AES CBC&lt;&#x2F;h2&gt;
+        <content type="html" xml:base="https://zerotohero.dev/go/snippet-crypto-in-go/">&lt;h2 id=&quot;encrypting-and-decrypting-with-aes-cbc&quot;&gt;Encrypting and Decrypting with AES CBC&lt;&#x2F;h2&gt;
 &lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;package &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;main
 &lt;&#x2F;span&gt;&lt;span&gt;
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;import &lt;&#x2F;span&gt;&lt;span&gt;(
@@ -1350,69 +1350,6 @@ Alongside each encrypted DEK, store a key alias or unique identifier that maps t
         
     </entry>
     <entry xml:lang="en">
-        <title>How to Decrypt Files Using age - A Quick Guide</title>
-        <published>2024-12-03T00:00:00+00:00</published>
-        <updated>2024-12-03T00:00:00+00:00</updated>
-        
-        <author>
-          <name>
-            
-              Volkan Özçelik
-            
-          </name>
-        </author>
-        
-        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/age-decryption-guide/"/>
-        <id>https://zerotohero.dev/inbox/age-decryption-guide/</id>
-        
-        <content type="html" xml:base="https://zerotohero.dev/inbox/age-decryption-guide/">&lt;p&gt;Age is a modern file encryption tool that’s simple yet powerful. Here’s how to decrypt age-encrypted files using a secret key.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;prerequisites&quot;&gt;Prerequisites&lt;&#x2F;h2&gt;
-&lt;ul&gt;
-&lt;li&gt;age installed on your system&lt;&#x2F;li&gt;
-&lt;li&gt;An encrypted file (base64 encoded)&lt;&#x2F;li&gt;
-&lt;li&gt;A secret key (starting with AGE-SECRET-KEY-)&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;step-by-step-decryption&quot;&gt;Step-by-Step Decryption&lt;&#x2F;h2&gt;
-&lt;ol&gt;
-&lt;li&gt;First, decode the base64 content to a file:&lt;&#x2F;li&gt;
-&lt;&#x2F;ol&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;YOUR-BASE64-CONTENT&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;base64 -d &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt; encrypted.age
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;ol start=&quot;2&quot;&gt;
-&lt;li&gt;Save the secret key to a file:&lt;&#x2F;li&gt;
-&lt;&#x2F;ol&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;AGE-SECRET-KEY-YOUR-KEY&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt; key.txt
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;chmod 600 key.txt  &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Set proper permissions
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;ol start=&quot;3&quot;&gt;
-&lt;li&gt;Decrypt the file:&lt;&#x2F;li&gt;
-&lt;&#x2F;ol&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;age --decrypt -i key.txt encrypted.age
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;installing-age&quot;&gt;Installing age&lt;&#x2F;h2&gt;
-&lt;p&gt;Choose your platform:&lt;&#x2F;p&gt;
-&lt;ul&gt;
-&lt;li&gt;macOS: &lt;code&gt;brew install age&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;Ubuntu&#x2F;Debian: &lt;code&gt;apt install age&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;Other systems: Download from the &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;FiloSottile&#x2F;age&quot;&gt;age GitHub repository&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;common-issues&quot;&gt;Common Issues&lt;&#x2F;h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Ensure you’re using only the AGE-SECRET-KEY line for decryption&lt;&#x2F;li&gt;
-&lt;li&gt;Verify the base64 content is complete and properly formatted&lt;&#x2F;li&gt;
-&lt;li&gt;Check file permissions on the key file (should be readable only by you)&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;security-best-practices&quot;&gt;Security Best Practices&lt;&#x2F;h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Never share your secret key&lt;&#x2F;li&gt;
-&lt;li&gt;Delete key files after use&lt;&#x2F;li&gt;
-&lt;li&gt;Store encrypted files and keys separately&lt;&#x2F;li&gt;
-&lt;li&gt;Use secure channels when transferring encrypted files&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-</content>
-        
-    </entry>
-    <entry xml:lang="en">
         <title>Understanding TLS Renegotiation in Go: When and Why to Use RenegotiateNever</title>
         <published>2024-12-03T00:00:00+00:00</published>
         <updated>2024-12-03T00:00:00+00:00</updated>
@@ -1425,10 +1362,10 @@ Alongside each encrypted DEK, store a key alias or unique identifier that maps t
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/tls-renogatiation/"/>
-        <id>https://zerotohero.dev/inbox/tls-renogatiation/</id>
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/go/tls-renogatiation/"/>
+        <id>https://zerotohero.dev/go/tls-renogatiation/</id>
         
-        <content type="html" xml:base="https://zerotohero.dev/inbox/tls-renogatiation/">&lt;p&gt;When configuring TLS in Go applications, you’ll often come across the recommendation to set &lt;code&gt;Renegotiation: tls.RenegotiateNever&lt;&#x2F;code&gt; in your TLS configuration. But what exactly does this mean, and why is it recommended? Let’s dive deep into TLS renegotiation, its implications, and when you might want to use different settings.&lt;&#x2F;p&gt;
+        <content type="html" xml:base="https://zerotohero.dev/go/tls-renogatiation/">&lt;p&gt;When configuring TLS in Go applications, you’ll often come across the recommendation to set &lt;code&gt;Renegotiation: tls.RenegotiateNever&lt;&#x2F;code&gt; in your TLS configuration. But what exactly does this mean, and why is it recommended? Let’s dive deep into TLS renegotiation, its implications, and when you might want to use different settings.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;what-is-tls-renegotiation&quot;&gt;What is TLS Renegotiation?&lt;&#x2F;h2&gt;
 &lt;p&gt;TLS renegotiation is a feature that allows clients and servers to update their TLS session parameters (like cipher suites or client certificates) without interrupting the existing connection. While this sounds useful, it comes with its own set of challenges.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;the-three-options-in-go&quot;&gt;The Three Options in Go&lt;&#x2F;h2&gt;
@@ -1517,6 +1454,69 @@ Alongside each encrypted DEK, store a key alias or unique identifier that maps t
         
     </entry>
     <entry xml:lang="en">
+        <title>How to Decrypt Files Using age - A Quick Guide</title>
+        <published>2024-12-03T00:00:00+00:00</published>
+        <updated>2024-12-03T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/age-decryption-guide/"/>
+        <id>https://zerotohero.dev/inbox/age-decryption-guide/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/age-decryption-guide/">&lt;p&gt;Age is a modern file encryption tool that’s simple yet powerful. Here’s how to decrypt age-encrypted files using a secret key.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;prerequisites&quot;&gt;Prerequisites&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;age installed on your system&lt;&#x2F;li&gt;
+&lt;li&gt;An encrypted file (base64 encoded)&lt;&#x2F;li&gt;
+&lt;li&gt;A secret key (starting with AGE-SECRET-KEY-)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;step-by-step-decryption&quot;&gt;Step-by-Step Decryption&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;First, decode the base64 content to a file:&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;YOUR-BASE64-CONTENT&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;base64 -d &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt; encrypted.age
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;Save the secret key to a file:&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;AGE-SECRET-KEY-YOUR-KEY&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt; key.txt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;chmod 600 key.txt  &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Set proper permissions
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;Decrypt the file:&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;age --decrypt -i key.txt encrypted.age
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;installing-age&quot;&gt;Installing age&lt;&#x2F;h2&gt;
+&lt;p&gt;Choose your platform:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;macOS: &lt;code&gt;brew install age&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Ubuntu&#x2F;Debian: &lt;code&gt;apt install age&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Other systems: Download from the &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;FiloSottile&#x2F;age&quot;&gt;age GitHub repository&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;common-issues&quot;&gt;Common Issues&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Ensure you’re using only the AGE-SECRET-KEY line for decryption&lt;&#x2F;li&gt;
+&lt;li&gt;Verify the base64 content is complete and properly formatted&lt;&#x2F;li&gt;
+&lt;li&gt;Check file permissions on the key file (should be readable only by you)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;security-best-practices&quot;&gt;Security Best Practices&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Never share your secret key&lt;&#x2F;li&gt;
+&lt;li&gt;Delete key files after use&lt;&#x2F;li&gt;
+&lt;li&gt;Store encrypted files and keys separately&lt;&#x2F;li&gt;
+&lt;li&gt;Use secure channels when transferring encrypted files&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
         <title>Better Error Handling Patterns for Go SDKs</title>
         <published>2024-12-01T00:00:00+00:00</published>
         <updated>2024-12-01T00:00:00+00:00</updated>
@@ -1529,10 +1529,10 @@ Alongside each encrypted DEK, store a key alias or unique identifier that maps t
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/sdk-error-handling/"/>
-        <id>https://zerotohero.dev/inbox/sdk-error-handling/</id>
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/go/sdk-error-handling/"/>
+        <id>https://zerotohero.dev/go/sdk-error-handling/</id>
         
-        <content type="html" xml:base="https://zerotohero.dev/inbox/sdk-error-handling/">&lt;p&gt;When building SDKs in Go, one common challenge is balancing transparency and debuggability with clean error handling. This becomes particularly evident when implementing retry mechanisms, where we need to track multiple attempts, delays, and error states.&lt;&#x2F;p&gt;
+        <content type="html" xml:base="https://zerotohero.dev/go/sdk-error-handling/">&lt;p&gt;When building SDKs in Go, one common challenge is balancing transparency and debuggability with clean error handling. This becomes particularly evident when implementing retry mechanisms, where we need to track multiple attempts, delays, and error states.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;the-common-approach-logging&quot;&gt;The Common Approach: Logging&lt;&#x2F;h2&gt;
 &lt;p&gt;Many SDKs resort to internal logging for debugging:&lt;&#x2F;p&gt;
 &lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;Retry&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;scope &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;string&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;f &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func&lt;&#x2F;span&gt;&lt;span&gt;() &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;error&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;s &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;Strategy&lt;&#x2F;span&gt;&lt;span&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;error &lt;&#x2F;span&gt;&lt;span&gt;{
@@ -1705,10 +1705,10 @@ Alongside each encrypted DEK, store a key alias or unique identifier that maps t
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/root-key-encryption/"/>
-        <id>https://zerotohero.dev/inbox/root-key-encryption/</id>
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/go/root-key-encryption/"/>
+        <id>https://zerotohero.dev/go/root-key-encryption/</id>
         
-        <content type="html" xml:base="https://zerotohero.dev/inbox/root-key-encryption/">&lt;p&gt;When building secure systems, we often need to protect sensitive cryptographic keys. A common pattern is encrypting a root key using an admin password. This post will walk through implementing this pattern securely in Go using industry-standard cryptographic practices.&lt;&#x2F;p&gt;
+        <content type="html" xml:base="https://zerotohero.dev/go/root-key-encryption/">&lt;p&gt;When building secure systems, we often need to protect sensitive cryptographic keys. A common pattern is encrypting a root key using an admin password. This post will walk through implementing this pattern securely in Go using industry-standard cryptographic practices.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;the-problem&quot;&gt;The Problem&lt;&#x2F;h2&gt;
 &lt;p&gt;Imagine you have a system with a root key that needs to be stored securely. You want to encrypt this key using an admin password (like a secure 16-character random string) so that only someone with the admin password can access the root key. This is a common requirement in key management systems, HSMs, and other security-critical applications.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;security-requirements&quot;&gt;Security Requirements&lt;&#x2F;h2&gt;
@@ -2057,28 +2057,13 @@ application.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;base64-decoding-a-string-in-go&#x2F;&quot;&gt;Base64 Decoding a String in Go&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;destructure&#x2F;&quot;&gt;Use Destructuring to Remove Attributes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;getting-the-body-of-an-http-request-with-go&#x2F;&quot;&gt;Getting the Body of an HTTP Request With Go&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;lets-create-a-syslog-logger&#x2F;&quot;&gt;Let’s Create a Syslog Logger&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;make-your-code-leaner&#x2F;&quot;&gt;Make Your Code Leaner By Extracting Method&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;mastodon-101&#x2F;&quot;&gt;Who Else Wants to Have Their Own Mastodon Server?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;microservice-env-vars&#x2F;&quot;&gt;How to Ensure Environment Variables Are Set&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;▶ Scaling Your Node.js API Like a Boss&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;scaling-your-node-api-like-a-boss&#x2F;&quot;&gt;Scaling Your Node.js API Like a Boss&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;content-creation&#x2F;talkspiffe-stream-setup&#x2F;&quot;&gt;The Live Stream Dream&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
@@ -2334,10 +2319,10 @@ simple, who knew&lt;&#x2F;a&gt;!&lt;&#x2F;li&gt;
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://zerotohero.dev/tips/make-your-code-leaner/"/>
-        <id>https://zerotohero.dev/tips/make-your-code-leaner/</id>
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/go/make-your-code-leaner/"/>
+        <id>https://zerotohero.dev/go/make-your-code-leaner/</id>
         
-        <content type="html" xml:base="https://zerotohero.dev/tips/make-your-code-leaner/">
+        <content type="html" xml:base="https://zerotohero.dev/go/make-your-code-leaner/">
 &lt;div class=&quot;z2h-image&quot;&gt;
     &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;extract.png&quot; alt=&quot;Extracting methods.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
     &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
@@ -2350,7 +2335,7 @@ of &lt;a href=&quot;https:&#x2F;&#x2F;refactoring.com&#x2F;catalog&#x2F;extractF
 We’ll make our code less repetitive, cleaner, and easier to follow.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;duplicating-a-method&quot;&gt;Duplicating a Method&lt;&#x2F;h2&gt;
 &lt;p&gt;Let’s take the &lt;code&gt;SanitizeCrypto()&lt;&#x2F;code&gt; function
-from &lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;microservice-env-vars&#x2F;&quot;&gt;our former &lt;code&gt;fizz-env&lt;&#x2F;code&gt; module&lt;&#x2F;a&gt;:&lt;&#x2F;p&gt;
+from &lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;go&#x2F;microservice-env-vars&#x2F;&quot;&gt;our former &lt;code&gt;fizz-env&lt;&#x2F;code&gt; module&lt;&#x2F;a&gt;:&lt;&#x2F;p&gt;
 &lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func &lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;e &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;FizzEnv&lt;&#x2F;span&gt;&lt;span&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;SanitizeCrypto&lt;&#x2F;span&gt;&lt;span&gt;() {
 &lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;sanitizeCommon&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;e&lt;&#x2F;span&gt;&lt;span&gt;)
 &lt;&#x2F;span&gt;&lt;span&gt;
@@ -2459,25 +2444,10 @@ artifacts that we’ve covered in this article.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;base64-decoding-a-string-in-go&#x2F;&quot;&gt;Base64 Decoding a String in Go&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;destructure&#x2F;&quot;&gt;Use Destructuring to Remove Attributes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;getting-the-body-of-an-http-request-with-go&#x2F;&quot;&gt;Getting the Body of an HTTP Request With Go&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;lets-create-a-syslog-logger&#x2F;&quot;&gt;Let’s Create a Syslog Logger&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;▶ Make Your Code Leaner By Extracting Method&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;mastodon-101&#x2F;&quot;&gt;Who Else Wants to Have Their Own Mastodon Server?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;microservice-env-vars&#x2F;&quot;&gt;How to Ensure Environment Variables Are Set&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;scaling-your-node-api-like-a-boss&#x2F;&quot;&gt;Scaling Your Node.js API Like a Boss&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
@@ -2486,7 +2456,7 @@ artifacts that we’ve covered in this article.&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;content-creation&#x2F;talkspiffe-stream-setup&#x2F;&quot;&gt;The Live Stream Dream&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;zshell-startup-files&#x2F;&quot;&gt;.zprofile, .zshrc, .zenv, OMG! What Do I Put Where?!&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;▶ .zprofile, .zshrc, .zenv, OMG! What Do I Put Where?!&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;redirect-index-page&#x2F;&quot;&gt;Redirecting a Static Web Page&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
@@ -2511,10 +2481,10 @@ artifacts that we’ve covered in this article.&lt;&#x2F;p&gt;
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://zerotohero.dev/tips/microservice-env-vars/"/>
-        <id>https://zerotohero.dev/tips/microservice-env-vars/</id>
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/go/microservice-env-vars/"/>
+        <id>https://zerotohero.dev/go/microservice-env-vars/</id>
         
-        <content type="html" xml:base="https://zerotohero.dev/tips/microservice-env-vars/">&lt;p&gt;&lt;img src=&quot;&#x2F;content&#x2F;images&#x2F;size&#x2F;w1200&#x2F;2024&#x2F;03&#x2F;pipes.png&quot; alt=&quot;Environment Variables&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+        <content type="html" xml:base="https://zerotohero.dev/go/microservice-env-vars/">&lt;p&gt;&lt;img src=&quot;&#x2F;content&#x2F;images&#x2F;size&#x2F;w1200&#x2F;2024&#x2F;03&#x2F;pipes.png&quot; alt=&quot;Environment Variables&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 
 &lt;div class=&quot;z2h-image&quot;&gt;
     &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;pipes.png&quot; alt=&quot;Configuration and Pipes.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
@@ -2734,25 +2704,10 @@ artifacts that we’ve covered in this article.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;base64-decoding-a-string-in-go&#x2F;&quot;&gt;Base64 Decoding a String in Go&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;destructure&#x2F;&quot;&gt;Use Destructuring to Remove Attributes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;getting-the-body-of-an-http-request-with-go&#x2F;&quot;&gt;Getting the Body of an HTTP Request With Go&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;lets-create-a-syslog-logger&#x2F;&quot;&gt;Let’s Create a Syslog Logger&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;make-your-code-leaner&#x2F;&quot;&gt;Make Your Code Leaner By Extracting Method&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;mastodon-101&#x2F;&quot;&gt;Who Else Wants to Have Their Own Mastodon Server?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;▶ How to Ensure Environment Variables Are Set&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;scaling-your-node-api-like-a-boss&#x2F;&quot;&gt;Scaling Your Node.js API Like a Boss&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
@@ -2767,7 +2722,7 @@ artifacts that we’ve covered in this article.&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;redirect-index-page&#x2F;&quot;&gt;Redirecting a Static Web Page&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;git-push-origin-main&#x2F;&quot;&gt;Understanding &lt;code&gt;git push origin main&lt;&#x2F;code&gt;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;▶ Understanding &lt;code&gt;git push origin main&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 </content>

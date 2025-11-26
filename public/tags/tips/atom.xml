@@ -187,8 +187,8 @@ them:&lt;&#x2F;p&gt;
 &lt;p&gt;This scans all markdown files and lists posts missing the header image syntax,
 making it easy to go back and add visuals.&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;moving-posts-between-sections&quot;&gt;Moving Posts Between Sections&lt;&#x2F;h3&gt;
-&lt;p&gt;As my blog evolved, I realized some posts belonged in different categories. The
-&lt;code&gt;move-to-tips.sh&lt;&#x2F;code&gt; script (now &lt;code&gt;make move-to-tips&lt;&#x2F;code&gt;) handles this:&lt;&#x2F;p&gt;
+&lt;p&gt;As &lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt; evolved, I realized some posts belonged in different
+categories. The &lt;code&gt;move-to-tips.sh&lt;&#x2F;code&gt; script (now &lt;code&gt;make move-to-tips&lt;&#x2F;code&gt;) handles this:&lt;&#x2F;p&gt;
 &lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;$ make move-to-tips
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Post slug: frictionless-blog-workflow
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Moving from inbox to tips...
@@ -224,7 +224,7 @@ making it easy to go back and add visuals.&lt;&#x2F;p&gt;
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Write your blog post here...
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;EOF
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;The Makefile just delegates to the script:&lt;&#x2F;p&gt;
+&lt;p&gt;The &lt;code&gt;Makefile&lt;&#x2F;code&gt; just delegates to the script:&lt;&#x2F;p&gt;
 &lt;pre data-lang=&quot;makefile&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-makefile &quot;&gt;&lt;code class=&quot;language-makefile&quot; data-lang=&quot;makefile&quot;&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;new&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;## Create a new blog post interactively
 &lt;&#x2F;span&gt;&lt;span&gt;	&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;@&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;.&#x2F;new-post.sh
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
@@ -262,8 +262,8 @@ blog post.&lt;&#x2F;p&gt;
       font-size: 1em;&quot;&gt;Grammarly in action.&lt;&#x2F;p&gt;
 &lt;&#x2F;div&gt;
 &lt;h2 id=&quot;use-the-source-luke&quot;&gt;Use the Source, Luke&lt;&#x2F;h2&gt;
-&lt;p&gt;As I improve these scripts over time, the latest versions will always be available
-in this blog’s repository:&lt;&#x2F;p&gt;
+&lt;p&gt;As I improve these scripts over time, the latest versions will always be
+available in this blog’s repository:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;zerotohero-dev&#x2F;zerotohero-web&quot;&gt;&lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt; on GitHub&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
@@ -690,10 +690,10 @@ excerpts, or integrating with other tools in your workflow.&lt;&#x2F;p&gt;
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/go-spiffe-source/"/>
-        <id>https://zerotohero.dev/inbox/go-spiffe-source/</id>
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/go/go-spiffe-source/"/>
+        <id>https://zerotohero.dev/go/go-spiffe-source/</id>
         
-        <content type="html" xml:base="https://zerotohero.dev/inbox/go-spiffe-source/">&lt;p&gt;When working with the go-spiffe library, one common question developers face is how to properly manage SPIFFE sources. Specifically, should you create a new source for each request, or can you maintain a long-living source? Let’s dive into how source management works in go-spiffe and explore best practices for your applications.&lt;&#x2F;p&gt;
+        <content type="html" xml:base="https://zerotohero.dev/go/go-spiffe-source/">&lt;p&gt;When working with the go-spiffe library, one common question developers face is how to properly manage SPIFFE sources. Specifically, should you create a new source for each request, or can you maintain a long-living source? Let’s dive into how source management works in go-spiffe and explore best practices for your applications.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;the-lifecycle-of-a-spiffe-source&quot;&gt;The Lifecycle of a SPIFFE Source&lt;&#x2F;h2&gt;
 &lt;p&gt;A SPIFFE source, created using &lt;code&gt;workloadapi.NewX509Source()&lt;&#x2F;code&gt;, is designed to be a long-living component in your application. When you create a source, several important things happen behind the scenes:&lt;&#x2F;p&gt;
 &lt;ol&gt;
@@ -765,10 +765,10 @@ excerpts, or integrating with other tools in your workflow.&lt;&#x2F;p&gt;
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/audit-logging/"/>
-        <id>https://zerotohero.dev/inbox/audit-logging/</id>
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/go/audit-logging/"/>
+        <id>https://zerotohero.dev/go/audit-logging/</id>
         
-        <content type="html" xml:base="https://zerotohero.dev/inbox/audit-logging/">&lt;p&gt;When building web services, audit logging is often approached in one of two extremes: either skipped entirely for “later” or over-engineered from the start. Let’s explore a pragmatic middle ground, starting with a simple HTTP router factory.&lt;&#x2F;p&gt;
+        <content type="html" xml:base="https://zerotohero.dev/go/audit-logging/">&lt;p&gt;When building web services, audit logging is often approached in one of two extremes: either skipped entirely for “later” or over-engineered from the start. Let’s explore a pragmatic middle ground, starting with a simple HTTP router factory.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;the-starting-point&quot;&gt;The Starting Point&lt;&#x2F;h2&gt;
 &lt;p&gt;Here’s a typical router factory in Go - simple and functional:&lt;&#x2F;p&gt;
 &lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;factory&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;p&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;a&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;m &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;string&lt;&#x2F;span&gt;&lt;span&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;handler &lt;&#x2F;span&gt;&lt;span&gt;{
@@ -846,6 +846,148 @@ excerpts, or integrating with other tools in your workflow.&lt;&#x2F;p&gt;
 &lt;p&gt;Remember: The best audit logging system is the one that actually gets implemented and maintained, not the one that covers every theoretical future need.&lt;&#x2F;p&gt;
 &lt;hr &#x2F;&gt;
 &lt;p&gt;&lt;em&gt;This post is part of our series on practical Go patterns. For more insights on building maintainable Go services, follow our blog.&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Implementing Secure Password Input in Go CLI Applications</title>
+        <published>2024-11-27T00:00:00+00:00</published>
+        <updated>2024-11-27T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/go/secure-password-input/"/>
+        <id>https://zerotohero.dev/go/secure-password-input/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/go/secure-password-input/">&lt;p&gt;When building command-line applications in Go, there often comes a time when you need to securely collect sensitive information from users, such as passwords. In this post, we’ll explore how to implement secure password input in a Go CLI application using best practices.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-challenge&quot;&gt;The Challenge&lt;&#x2F;h2&gt;
+&lt;p&gt;Consider a typical CLI initialization command where you need to collect an admin password:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;NewInitCommand&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;source &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;workloadapi&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;X509Source&lt;&#x2F;span&gt;&lt;span&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cobra&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;Command &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;var &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;initCmd &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &amp;amp;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cobra&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Command&lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Use&lt;&#x2F;span&gt;&lt;span&gt;:   &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;init&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Short&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Initialize spike configuration&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Run&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cmd &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cobra&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;Command&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;args &lt;&#x2F;span&gt;&lt;span&gt;[]&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;string&lt;&#x2F;span&gt;&lt;span&gt;) {
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; How do we securely get the password?
+&lt;&#x2F;span&gt;&lt;span&gt;        },
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;initCmd
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Simply using &lt;code&gt;fmt.Scanln()&lt;&#x2F;code&gt; or similar methods would display the password in plain text as the user types - a significant security risk. We need a better solution.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-solution-using-term-readpassword&quot;&gt;The Solution: Using term.ReadPassword&lt;&#x2F;h2&gt;
+&lt;p&gt;Go’s &lt;code&gt;golang.org&#x2F;x&#x2F;term&lt;&#x2F;code&gt; package provides a secure way to read passwords from the terminal. Here’s how to implement it:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;First, install the required dependency:&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;go get golang.org&#x2F;x&#x2F;term
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;Import the necessary packages:&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;import &lt;&#x2F;span&gt;&lt;span&gt;(
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;golang.org&#x2F;x&#x2F;term&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;syscall&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;fmt&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;Implement the password collection:&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;NewInitCommand&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;source &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;workloadapi&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;X509Source&lt;&#x2F;span&gt;&lt;span&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cobra&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;Command &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;var &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;initCmd &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &amp;amp;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cobra&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Command&lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Use&lt;&#x2F;span&gt;&lt;span&gt;:   &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;init&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Short&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Initialize spike configuration&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Run&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cmd &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cobra&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;Command&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;args &lt;&#x2F;span&gt;&lt;span&gt;[]&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;string&lt;&#x2F;span&gt;&lt;span&gt;) {
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Check initialization state
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;state&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;net&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;CheckInitState&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;source&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;fmt&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Println&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Failed to check init state:&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;fmt&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Println&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Error&lt;&#x2F;span&gt;&lt;span&gt;())
+&lt;&#x2F;span&gt;&lt;span&gt;                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return
+&lt;&#x2F;span&gt;&lt;span&gt;            }
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;state &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;== &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;data&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;AlreadyInitialized &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;fmt&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Println&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;SPIKE is already initialized.&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;fmt&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Println&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Nothing to do.&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return
+&lt;&#x2F;span&gt;&lt;span&gt;            }
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Collect password securely
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;fmt&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Print&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Enter admin password: &amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;password&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;term&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;ReadPassword&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;int&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;syscall&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Stdin&lt;&#x2F;span&gt;&lt;span&gt;))
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;fmt&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Println&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;\nFailed to read password:&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;fmt&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Println&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Error&lt;&#x2F;span&gt;&lt;span&gt;())
+&lt;&#x2F;span&gt;&lt;span&gt;                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return
+&lt;&#x2F;span&gt;&lt;span&gt;            }
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;fmt&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Println&lt;&#x2F;span&gt;&lt;span&gt;() &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Add newline after password input
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Convert to string if needed
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;passwordStr &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;string&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;password&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Use the password...
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;fmt&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Println&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;fmt&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Println&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;    SPIKE system initialization completed.&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;fmt&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Println&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;      Generated admin token and saved it to&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;fmt&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Println&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;        .&#x2F;.spike-admin-token for future use.&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;fmt&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Println&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;        },
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;initCmd
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;why-this-approach-works&quot;&gt;Why This Approach Works&lt;&#x2F;h2&gt;
+&lt;p&gt;This implementation offers several security benefits:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Hidden Input&lt;&#x2F;strong&gt;: The password isn’t displayed on screen as the user types&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Memory Security&lt;&#x2F;strong&gt;: Password is initially stored as a byte slice (&lt;code&gt;[]byte&lt;&#x2F;code&gt;), which can be securely wiped from memory&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Clean User Experience&lt;&#x2F;strong&gt;: The interface is professional and familiar to users&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Error Handling&lt;&#x2F;strong&gt;: Robust error handling for input failures&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Cross-Platform&lt;&#x2F;strong&gt;: Works across different operating systems&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;best-practices&quot;&gt;Best Practices&lt;&#x2F;h2&gt;
+&lt;p&gt;When implementing password input in your CLI applications:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Clear Memory&lt;&#x2F;strong&gt;: If possible, clear the password from memory after use&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Validate Input&lt;&#x2F;strong&gt;: Add password strength requirements if needed&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Confirmation&lt;&#x2F;strong&gt;: For new passwords, consider asking users to type twice&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Clear Prompts&lt;&#x2F;strong&gt;: Use clear prompts to indicate what’s expected&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Error Messages&lt;&#x2F;strong&gt;: Provide helpful error messages without revealing sensitive information&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;example-adding-password-confirmation&quot;&gt;Example: Adding Password Confirmation&lt;&#x2F;h2&gt;
+&lt;p&gt;For cases where users are setting a new password, here’s how to add confirmation:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;getPasswordWithConfirmation&lt;&#x2F;span&gt;&lt;span&gt;() (&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;string&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;error&lt;&#x2F;span&gt;&lt;span&gt;) {
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;fmt&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Print&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Enter new password: &amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;password1&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;term&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;ReadPassword&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;int&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;syscall&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Stdin&lt;&#x2F;span&gt;&lt;span&gt;))
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;fmt&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Println&lt;&#x2F;span&gt;&lt;span&gt;()
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;fmt&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Print&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Confirm password: &amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;password2&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;term&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;ReadPassword&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;int&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;syscall&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Stdin&lt;&#x2F;span&gt;&lt;span&gt;))
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;fmt&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Println&lt;&#x2F;span&gt;&lt;span&gt;()
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;string&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;password1&lt;&#x2F;span&gt;&lt;span&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;string&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;password2&lt;&#x2F;span&gt;&lt;span&gt;) {
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;fmt&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Errorf&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;passwords do not match&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;string&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;password1&lt;&#x2F;span&gt;&lt;span&gt;), &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;Implementing secure password input in Go CLI applications is straightforward with the right tools. The &lt;code&gt;golang.org&#x2F;x&#x2F;term&lt;&#x2F;code&gt; package provides a robust solution that works across platforms and follows security best practices. By following these patterns, you can ensure your CLI applications handle sensitive information securely and professionally.&lt;&#x2F;p&gt;
+&lt;p&gt;Remember to always consider security implications when handling passwords and other sensitive data, and make sure to follow your organization’s security requirements and best practices.&lt;&#x2F;p&gt;
 </content>
         
     </entry>
@@ -1157,148 +1299,6 @@ excerpts, or integrating with other tools in your workflow.&lt;&#x2F;p&gt;
 &lt;hr &#x2F;&gt;
 &lt;p&gt;&lt;em&gt;Last updated: November 2024&lt;&#x2F;em&gt;&lt;br &#x2F;&gt;
 &lt;em&gt;Feel free to share and adapt this guide with attribution.&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
-</content>
-        
-    </entry>
-    <entry xml:lang="en">
-        <title>Implementing Secure Password Input in Go CLI Applications</title>
-        <published>2024-11-27T00:00:00+00:00</published>
-        <updated>2024-11-27T00:00:00+00:00</updated>
-        
-        <author>
-          <name>
-            
-              Volkan Özçelik
-            
-          </name>
-        </author>
-        
-        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/secure-password-input/"/>
-        <id>https://zerotohero.dev/inbox/secure-password-input/</id>
-        
-        <content type="html" xml:base="https://zerotohero.dev/inbox/secure-password-input/">&lt;p&gt;When building command-line applications in Go, there often comes a time when you need to securely collect sensitive information from users, such as passwords. In this post, we’ll explore how to implement secure password input in a Go CLI application using best practices.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;the-challenge&quot;&gt;The Challenge&lt;&#x2F;h2&gt;
-&lt;p&gt;Consider a typical CLI initialization command where you need to collect an admin password:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;NewInitCommand&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;source &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;workloadapi&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;X509Source&lt;&#x2F;span&gt;&lt;span&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cobra&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;Command &lt;&#x2F;span&gt;&lt;span&gt;{
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;var &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;initCmd &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &amp;amp;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cobra&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Command&lt;&#x2F;span&gt;&lt;span&gt;{
-&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Use&lt;&#x2F;span&gt;&lt;span&gt;:   &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;init&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;,
-&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Short&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Initialize spike configuration&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;,
-&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Run&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cmd &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cobra&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;Command&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;args &lt;&#x2F;span&gt;&lt;span&gt;[]&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;string&lt;&#x2F;span&gt;&lt;span&gt;) {
-&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; How do we securely get the password?
-&lt;&#x2F;span&gt;&lt;span&gt;        },
-&lt;&#x2F;span&gt;&lt;span&gt;    }
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;initCmd
-&lt;&#x2F;span&gt;&lt;span&gt;}
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;Simply using &lt;code&gt;fmt.Scanln()&lt;&#x2F;code&gt; or similar methods would display the password in plain text as the user types - a significant security risk. We need a better solution.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;the-solution-using-term-readpassword&quot;&gt;The Solution: Using term.ReadPassword&lt;&#x2F;h2&gt;
-&lt;p&gt;Go’s &lt;code&gt;golang.org&#x2F;x&#x2F;term&lt;&#x2F;code&gt; package provides a secure way to read passwords from the terminal. Here’s how to implement it:&lt;&#x2F;p&gt;
-&lt;ol&gt;
-&lt;li&gt;First, install the required dependency:&lt;&#x2F;li&gt;
-&lt;&#x2F;ol&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;go get golang.org&#x2F;x&#x2F;term
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;ol start=&quot;2&quot;&gt;
-&lt;li&gt;Import the necessary packages:&lt;&#x2F;li&gt;
-&lt;&#x2F;ol&gt;
-&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;import &lt;&#x2F;span&gt;&lt;span&gt;(
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;golang.org&#x2F;x&#x2F;term&amp;quot;
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;syscall&amp;quot;
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;fmt&amp;quot;
-&lt;&#x2F;span&gt;&lt;span&gt;)
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;ol start=&quot;3&quot;&gt;
-&lt;li&gt;Implement the password collection:&lt;&#x2F;li&gt;
-&lt;&#x2F;ol&gt;
-&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;NewInitCommand&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;source &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;workloadapi&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;X509Source&lt;&#x2F;span&gt;&lt;span&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cobra&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;Command &lt;&#x2F;span&gt;&lt;span&gt;{
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;var &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;initCmd &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &amp;amp;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cobra&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Command&lt;&#x2F;span&gt;&lt;span&gt;{
-&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Use&lt;&#x2F;span&gt;&lt;span&gt;:   &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;init&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;,
-&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Short&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Initialize spike configuration&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;,
-&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Run&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cmd &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cobra&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;Command&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;args &lt;&#x2F;span&gt;&lt;span&gt;[]&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;string&lt;&#x2F;span&gt;&lt;span&gt;) {
-&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Check initialization state
-&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;state&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;net&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;CheckInitState&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;source&lt;&#x2F;span&gt;&lt;span&gt;)
-&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil &lt;&#x2F;span&gt;&lt;span&gt;{
-&lt;&#x2F;span&gt;&lt;span&gt;                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;fmt&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Println&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Failed to check init state:&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
-&lt;&#x2F;span&gt;&lt;span&gt;                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;fmt&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Println&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Error&lt;&#x2F;span&gt;&lt;span&gt;())
-&lt;&#x2F;span&gt;&lt;span&gt;                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return
-&lt;&#x2F;span&gt;&lt;span&gt;            }
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;state &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;== &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;data&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;AlreadyInitialized &lt;&#x2F;span&gt;&lt;span&gt;{
-&lt;&#x2F;span&gt;&lt;span&gt;                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;fmt&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Println&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;SPIKE is already initialized.&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
-&lt;&#x2F;span&gt;&lt;span&gt;                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;fmt&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Println&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Nothing to do.&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
-&lt;&#x2F;span&gt;&lt;span&gt;                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return
-&lt;&#x2F;span&gt;&lt;span&gt;            }
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Collect password securely
-&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;fmt&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Print&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Enter admin password: &amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
-&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;password&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;term&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;ReadPassword&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;int&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;syscall&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Stdin&lt;&#x2F;span&gt;&lt;span&gt;))
-&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil &lt;&#x2F;span&gt;&lt;span&gt;{
-&lt;&#x2F;span&gt;&lt;span&gt;                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;fmt&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Println&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;\nFailed to read password:&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
-&lt;&#x2F;span&gt;&lt;span&gt;                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;fmt&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Println&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Error&lt;&#x2F;span&gt;&lt;span&gt;())
-&lt;&#x2F;span&gt;&lt;span&gt;                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return
-&lt;&#x2F;span&gt;&lt;span&gt;            }
-&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;fmt&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Println&lt;&#x2F;span&gt;&lt;span&gt;() &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Add newline after password input
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Convert to string if needed
-&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;passwordStr &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;string&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;password&lt;&#x2F;span&gt;&lt;span&gt;)
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Use the password...
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;fmt&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Println&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
-&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;fmt&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Println&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;    SPIKE system initialization completed.&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
-&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;fmt&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Println&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;      Generated admin token and saved it to&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
-&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;fmt&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Println&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;        .&#x2F;.spike-admin-token for future use.&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
-&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;fmt&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Println&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
-&lt;&#x2F;span&gt;&lt;span&gt;        },
-&lt;&#x2F;span&gt;&lt;span&gt;    }
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;initCmd
-&lt;&#x2F;span&gt;&lt;span&gt;}
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;why-this-approach-works&quot;&gt;Why This Approach Works&lt;&#x2F;h2&gt;
-&lt;p&gt;This implementation offers several security benefits:&lt;&#x2F;p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Hidden Input&lt;&#x2F;strong&gt;: The password isn’t displayed on screen as the user types&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;strong&gt;Memory Security&lt;&#x2F;strong&gt;: Password is initially stored as a byte slice (&lt;code&gt;[]byte&lt;&#x2F;code&gt;), which can be securely wiped from memory&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;strong&gt;Clean User Experience&lt;&#x2F;strong&gt;: The interface is professional and familiar to users&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;strong&gt;Error Handling&lt;&#x2F;strong&gt;: Robust error handling for input failures&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;strong&gt;Cross-Platform&lt;&#x2F;strong&gt;: Works across different operating systems&lt;&#x2F;li&gt;
-&lt;&#x2F;ol&gt;
-&lt;h2 id=&quot;best-practices&quot;&gt;Best Practices&lt;&#x2F;h2&gt;
-&lt;p&gt;When implementing password input in your CLI applications:&lt;&#x2F;p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Clear Memory&lt;&#x2F;strong&gt;: If possible, clear the password from memory after use&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;strong&gt;Validate Input&lt;&#x2F;strong&gt;: Add password strength requirements if needed&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;strong&gt;Confirmation&lt;&#x2F;strong&gt;: For new passwords, consider asking users to type twice&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;strong&gt;Clear Prompts&lt;&#x2F;strong&gt;: Use clear prompts to indicate what’s expected&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;strong&gt;Error Messages&lt;&#x2F;strong&gt;: Provide helpful error messages without revealing sensitive information&lt;&#x2F;li&gt;
-&lt;&#x2F;ol&gt;
-&lt;h2 id=&quot;example-adding-password-confirmation&quot;&gt;Example: Adding Password Confirmation&lt;&#x2F;h2&gt;
-&lt;p&gt;For cases where users are setting a new password, here’s how to add confirmation:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;getPasswordWithConfirmation&lt;&#x2F;span&gt;&lt;span&gt;() (&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;string&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;error&lt;&#x2F;span&gt;&lt;span&gt;) {
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;fmt&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Print&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Enter new password: &amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;password1&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;term&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;ReadPassword&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;int&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;syscall&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Stdin&lt;&#x2F;span&gt;&lt;span&gt;))
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil &lt;&#x2F;span&gt;&lt;span&gt;{
-&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err
-&lt;&#x2F;span&gt;&lt;span&gt;    }
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;fmt&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Println&lt;&#x2F;span&gt;&lt;span&gt;()
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;fmt&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Print&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Confirm password: &amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;password2&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;term&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;ReadPassword&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;int&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;syscall&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Stdin&lt;&#x2F;span&gt;&lt;span&gt;))
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil &lt;&#x2F;span&gt;&lt;span&gt;{
-&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err
-&lt;&#x2F;span&gt;&lt;span&gt;    }
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;fmt&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Println&lt;&#x2F;span&gt;&lt;span&gt;()
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;string&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;password1&lt;&#x2F;span&gt;&lt;span&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;string&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;password2&lt;&#x2F;span&gt;&lt;span&gt;) {
-&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;fmt&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Errorf&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;passwords do not match&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
-&lt;&#x2F;span&gt;&lt;span&gt;    }
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;string&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;password1&lt;&#x2F;span&gt;&lt;span&gt;), &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil
-&lt;&#x2F;span&gt;&lt;span&gt;}
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
-&lt;p&gt;Implementing secure password input in Go CLI applications is straightforward with the right tools. The &lt;code&gt;golang.org&#x2F;x&#x2F;term&lt;&#x2F;code&gt; package provides a robust solution that works across platforms and follows security best practices. By following these patterns, you can ensure your CLI applications handle sensitive information securely and professionally.&lt;&#x2F;p&gt;
-&lt;p&gt;Remember to always consider security implications when handling passwords and other sensitive data, and make sure to follow your organization’s security requirements and best practices.&lt;&#x2F;p&gt;
 </content>
         
     </entry>
@@ -7814,25 +7814,10 @@ without having to worry about the underlying infrastructure.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;base64-decoding-a-string-in-go&#x2F;&quot;&gt;Base64 Decoding a String in Go&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;destructure&#x2F;&quot;&gt;Use Destructuring to Remove Attributes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;getting-the-body-of-an-http-request-with-go&#x2F;&quot;&gt;Getting the Body of an HTTP Request With Go&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;lets-create-a-syslog-logger&#x2F;&quot;&gt;Let’s Create a Syslog Logger&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;make-your-code-leaner&#x2F;&quot;&gt;Make Your Code Leaner By Extracting Method&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;mastodon-101&#x2F;&quot;&gt;Who Else Wants to Have Their Own Mastodon Server?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;microservice-env-vars&#x2F;&quot;&gt;How to Ensure Environment Variables Are Set&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;scaling-your-node-api-like-a-boss&#x2F;&quot;&gt;Scaling Your Node.js API Like a Boss&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
@@ -7844,7 +7829,7 @@ without having to worry about the underlying infrastructure.&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;zshell-startup-files&#x2F;&quot;&gt;.zprofile, .zshrc, .zenv, OMG! What Do I Put Where?!&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;▶ Redirecting a Static Web Page&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;redirect-index-page&#x2F;&quot;&gt;Redirecting a Static Web Page&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;git-push-origin-main&#x2F;&quot;&gt;Understanding &lt;code&gt;git push origin main&lt;&#x2F;code&gt;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
@@ -7974,10 +7959,10 @@ significant… However, I needed to get that off my chest.&lt;&#x2F;p&gt;
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://zerotohero.dev/tips/base64-decoding-a-string-in-go/"/>
-        <id>https://zerotohero.dev/tips/base64-decoding-a-string-in-go/</id>
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/go/base64-decoding-a-string-in-go/"/>
+        <id>https://zerotohero.dev/go/base64-decoding-a-string-in-go/</id>
         
-        <content type="html" xml:base="https://zerotohero.dev/tips/base64-decoding-a-string-in-go/">
+        <content type="html" xml:base="https://zerotohero.dev/go/base64-decoding-a-string-in-go/">
 &lt;div class=&quot;z2h-image&quot;&gt;
     &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;strings.png&quot; alt=&quot;Strings.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
     &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
@@ -8025,25 +8010,10 @@ data as a byte slice.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;▶ Base64 Decoding a String in Go&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;destructure&#x2F;&quot;&gt;Use Destructuring to Remove Attributes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;getting-the-body-of-an-http-request-with-go&#x2F;&quot;&gt;Getting the Body of an HTTP Request With Go&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;lets-create-a-syslog-logger&#x2F;&quot;&gt;Let’s Create a Syslog Logger&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;make-your-code-leaner&#x2F;&quot;&gt;Make Your Code Leaner By Extracting Method&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;▶ Use Destructuring to Remove Attributes&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;mastodon-101&#x2F;&quot;&gt;Who Else Wants to Have Their Own Mastodon Server?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;microservice-env-vars&#x2F;&quot;&gt;How to Ensure Environment Variables Are Set&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;scaling-your-node-api-like-a-boss&#x2F;&quot;&gt;Scaling Your Node.js API Like a Boss&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
@@ -9144,25 +9114,10 @@ Which also has been a fun learning experience that led to this article.&lt;&#x2F
 &lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;base64-decoding-a-string-in-go&#x2F;&quot;&gt;Base64 Decoding a String in Go&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;destructure&#x2F;&quot;&gt;Use Destructuring to Remove Attributes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;getting-the-body-of-an-http-request-with-go&#x2F;&quot;&gt;Getting the Body of an HTTP Request With Go&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;lets-create-a-syslog-logger&#x2F;&quot;&gt;Let’s Create a Syslog Logger&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;make-your-code-leaner&#x2F;&quot;&gt;Make Your Code Leaner By Extracting Method&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;▶ Who Else Wants to Have Their Own Mastodon Server?&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;microservice-env-vars&#x2F;&quot;&gt;How to Ensure Environment Variables Are Set&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;mastodon-101&#x2F;&quot;&gt;Who Else Wants to Have Their Own Mastodon Server?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;scaling-your-node-api-like-a-boss&#x2F;&quot;&gt;Scaling Your Node.js API Like a Boss&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
@@ -9174,7 +9129,7 @@ Which also has been a fun learning experience that led to this article.&lt;&#x2F
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;zshell-startup-files&#x2F;&quot;&gt;.zprofile, .zshrc, .zenv, OMG! What Do I Put Where?!&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;redirect-index-page&#x2F;&quot;&gt;Redirecting a Static Web Page&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;▶ Redirecting a Static Web Page&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;git-push-origin-main&#x2F;&quot;&gt;Understanding &lt;code&gt;git push origin main&lt;&#x2F;code&gt;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
@@ -9229,25 +9184,10 @@ Which also has been a fun learning experience that led to this article.&lt;&#x2F
 &lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;base64-decoding-a-string-in-go&#x2F;&quot;&gt;Base64 Decoding a String in Go&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;destructure&#x2F;&quot;&gt;Use Destructuring to Remove Attributes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;▶ Use Destructuring to Remove Attributes&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;getting-the-body-of-an-http-request-with-go&#x2F;&quot;&gt;Getting the Body of an HTTP Request With Go&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;lets-create-a-syslog-logger&#x2F;&quot;&gt;Let’s Create a Syslog Logger&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;make-your-code-leaner&#x2F;&quot;&gt;Make Your Code Leaner By Extracting Method&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;mastodon-101&#x2F;&quot;&gt;Who Else Wants to Have Their Own Mastodon Server?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;microservice-env-vars&#x2F;&quot;&gt;How to Ensure Environment Variables Are Set&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;▶ Who Else Wants to Have Their Own Mastodon Server?&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;scaling-your-node-api-like-a-boss&#x2F;&quot;&gt;Scaling Your Node.js API Like a Boss&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
@@ -9281,10 +9221,10 @@ Which also has been a fun learning experience that led to this article.&lt;&#x2F
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://zerotohero.dev/tips/getting-the-body-of-an-http-request-with-go/"/>
-        <id>https://zerotohero.dev/tips/getting-the-body-of-an-http-request-with-go/</id>
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/go/getting-the-body-of-an-http-request-with-go/"/>
+        <id>https://zerotohero.dev/go/getting-the-body-of-an-http-request-with-go/</id>
         
-        <content type="html" xml:base="https://zerotohero.dev/tips/getting-the-body-of-an-http-request-with-go/">
+        <content type="html" xml:base="https://zerotohero.dev/go/getting-the-body-of-an-http-request-with-go/">
 &lt;div class=&quot;z2h-image&quot;&gt;
     &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;http.png&quot; alt=&quot;Request and responses.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
     &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
@@ -9358,28 +9298,13 @@ request body. Here is an example of how you can do this:&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;base64-decoding-a-string-in-go&#x2F;&quot;&gt;Base64 Decoding a String in Go&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;destructure&#x2F;&quot;&gt;Use Destructuring to Remove Attributes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;▶ Getting the Body of an HTTP Request With Go&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;lets-create-a-syslog-logger&#x2F;&quot;&gt;Let’s Create a Syslog Logger&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;make-your-code-leaner&#x2F;&quot;&gt;Make Your Code Leaner By Extracting Method&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;mastodon-101&#x2F;&quot;&gt;Who Else Wants to Have Their Own Mastodon Server?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;microservice-env-vars&#x2F;&quot;&gt;How to Ensure Environment Variables Are Set&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;scaling-your-node-api-like-a-boss&#x2F;&quot;&gt;Scaling Your Node.js API Like a Boss&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;▶ Scaling Your Node.js API Like a Boss&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;content-creation&#x2F;talkspiffe-stream-setup&#x2F;&quot;&gt;The Live Stream Dream&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
@@ -9442,28 +9367,13 @@ application.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;base64-decoding-a-string-in-go&#x2F;&quot;&gt;Base64 Decoding a String in Go&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;destructure&#x2F;&quot;&gt;Use Destructuring to Remove Attributes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;getting-the-body-of-an-http-request-with-go&#x2F;&quot;&gt;Getting the Body of an HTTP Request With Go&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;lets-create-a-syslog-logger&#x2F;&quot;&gt;Let’s Create a Syslog Logger&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;make-your-code-leaner&#x2F;&quot;&gt;Make Your Code Leaner By Extracting Method&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;mastodon-101&#x2F;&quot;&gt;Who Else Wants to Have Their Own Mastodon Server?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;microservice-env-vars&#x2F;&quot;&gt;How to Ensure Environment Variables Are Set&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;▶ Scaling Your Node.js API Like a Boss&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;scaling-your-node-api-like-a-boss&#x2F;&quot;&gt;Scaling Your Node.js API Like a Boss&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;content-creation&#x2F;talkspiffe-stream-setup&#x2F;&quot;&gt;The Live Stream Dream&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
@@ -9494,10 +9404,10 @@ application.&lt;&#x2F;p&gt;
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://zerotohero.dev/tips/lets-create-a-syslog-logger/"/>
-        <id>https://zerotohero.dev/tips/lets-create-a-syslog-logger/</id>
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/go/lets-create-a-syslog-logger/"/>
+        <id>https://zerotohero.dev/go/lets-create-a-syslog-logger/</id>
         
-        <content type="html" xml:base="https://zerotohero.dev/tips/lets-create-a-syslog-logger/">
+        <content type="html" xml:base="https://zerotohero.dev/go/lets-create-a-syslog-logger/">
 &lt;div class=&quot;z2h-image&quot;&gt;
     &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;papertrail.png&quot; alt=&quot;Papertrail.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
     &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
@@ -9549,7 +9459,7 @@ configuring your logger.&lt;&#x2F;p&gt;
 &lt;p&gt;Dependencies&lt;&#x2F;p&gt;
 &lt;p&gt;Let’s start with the dependencies that we need.&lt;&#x2F;p&gt;
 &lt;p&gt;We’ll use
-the &lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;make-your-code-leaner&#x2F;&quot;&gt;&lt;code&gt;fizz-env&lt;&#x2F;code&gt; module from the last article&lt;&#x2F;a&gt;.
+the &lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;go&#x2F;make-your-code-leaner&#x2F;&quot;&gt;&lt;code&gt;fizz-env&lt;&#x2F;code&gt; module from the last article&lt;&#x2F;a&gt;.
 Other dependencies we need are all parts of &lt;strong&gt;Go&lt;&#x2F;strong&gt; standard library.&lt;&#x2F;p&gt;
 &lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; $WORKSPACE&#x2F;fizz-logging&#x2F;pkg&#x2F;log&#x2F;log.go
 &lt;&#x2F;span&gt;&lt;span&gt;
@@ -9671,31 +9581,16 @@ artifacts that we’ve covered in this article.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;base64-decoding-a-string-in-go&#x2F;&quot;&gt;Base64 Decoding a String in Go&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;destructure&#x2F;&quot;&gt;Use Destructuring to Remove Attributes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;getting-the-body-of-an-http-request-with-go&#x2F;&quot;&gt;Getting the Body of an HTTP Request With Go&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;▶ Let’s Create a Syslog Logger&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;make-your-code-leaner&#x2F;&quot;&gt;Make Your Code Leaner By Extracting Method&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;mastodon-101&#x2F;&quot;&gt;Who Else Wants to Have Their Own Mastodon Server?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;microservice-env-vars&#x2F;&quot;&gt;How to Ensure Environment Variables Are Set&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;scaling-your-node-api-like-a-boss&#x2F;&quot;&gt;Scaling Your Node.js API Like a Boss&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;content-creation&#x2F;talkspiffe-stream-setup&#x2F;&quot;&gt;The Live Stream Dream&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;▶ The Live Stream Dream&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;zshell-startup-files&#x2F;&quot;&gt;.zprofile, .zshrc, .zenv, OMG! What Do I Put Where?!&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
@@ -9847,25 +9742,10 @@ how to use them in the most canonical way.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;base64-decoding-a-string-in-go&#x2F;&quot;&gt;Base64 Decoding a String in Go&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;destructure&#x2F;&quot;&gt;Use Destructuring to Remove Attributes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;getting-the-body-of-an-http-request-with-go&#x2F;&quot;&gt;Getting the Body of an HTTP Request With Go&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;lets-create-a-syslog-logger&#x2F;&quot;&gt;Let’s Create a Syslog Logger&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;make-your-code-leaner&#x2F;&quot;&gt;Make Your Code Leaner By Extracting Method&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;mastodon-101&#x2F;&quot;&gt;Who Else Wants to Have Their Own Mastodon Server?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;microservice-env-vars&#x2F;&quot;&gt;How to Ensure Environment Variables Are Set&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;scaling-your-node-api-like-a-boss&#x2F;&quot;&gt;Scaling Your Node.js API Like a Boss&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
@@ -9874,7 +9754,7 @@ how to use them in the most canonical way.&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;content-creation&#x2F;talkspiffe-stream-setup&#x2F;&quot;&gt;The Live Stream Dream&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;▶ .zprofile, .zshrc, .zenv, OMG! What Do I Put Where?!&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;zshell-startup-files&#x2F;&quot;&gt;.zprofile, .zshrc, .zenv, OMG! What Do I Put Where?!&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;redirect-index-page&#x2F;&quot;&gt;Redirecting a Static Web Page&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
@@ -9899,10 +9779,10 @@ how to use them in the most canonical way.&lt;&#x2F;p&gt;
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://zerotohero.dev/tips/make-your-code-leaner/"/>
-        <id>https://zerotohero.dev/tips/make-your-code-leaner/</id>
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/go/make-your-code-leaner/"/>
+        <id>https://zerotohero.dev/go/make-your-code-leaner/</id>
         
-        <content type="html" xml:base="https://zerotohero.dev/tips/make-your-code-leaner/">
+        <content type="html" xml:base="https://zerotohero.dev/go/make-your-code-leaner/">
 &lt;div class=&quot;z2h-image&quot;&gt;
     &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;extract.png&quot; alt=&quot;Extracting methods.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
     &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
@@ -9915,7 +9795,7 @@ of &lt;a href=&quot;https:&#x2F;&#x2F;refactoring.com&#x2F;catalog&#x2F;extractF
 We’ll make our code less repetitive, cleaner, and easier to follow.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;duplicating-a-method&quot;&gt;Duplicating a Method&lt;&#x2F;h2&gt;
 &lt;p&gt;Let’s take the &lt;code&gt;SanitizeCrypto()&lt;&#x2F;code&gt; function
-from &lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;microservice-env-vars&#x2F;&quot;&gt;our former &lt;code&gt;fizz-env&lt;&#x2F;code&gt; module&lt;&#x2F;a&gt;:&lt;&#x2F;p&gt;
+from &lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;go&#x2F;microservice-env-vars&#x2F;&quot;&gt;our former &lt;code&gt;fizz-env&lt;&#x2F;code&gt; module&lt;&#x2F;a&gt;:&lt;&#x2F;p&gt;
 &lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func &lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;e &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;FizzEnv&lt;&#x2F;span&gt;&lt;span&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;SanitizeCrypto&lt;&#x2F;span&gt;&lt;span&gt;() {
 &lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;sanitizeCommon&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;e&lt;&#x2F;span&gt;&lt;span&gt;)
 &lt;&#x2F;span&gt;&lt;span&gt;
@@ -10024,25 +9904,10 @@ artifacts that we’ve covered in this article.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;base64-decoding-a-string-in-go&#x2F;&quot;&gt;Base64 Decoding a String in Go&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;destructure&#x2F;&quot;&gt;Use Destructuring to Remove Attributes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;getting-the-body-of-an-http-request-with-go&#x2F;&quot;&gt;Getting the Body of an HTTP Request With Go&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;lets-create-a-syslog-logger&#x2F;&quot;&gt;Let’s Create a Syslog Logger&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;▶ Make Your Code Leaner By Extracting Method&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;mastodon-101&#x2F;&quot;&gt;Who Else Wants to Have Their Own Mastodon Server?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;microservice-env-vars&#x2F;&quot;&gt;How to Ensure Environment Variables Are Set&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;scaling-your-node-api-like-a-boss&#x2F;&quot;&gt;Scaling Your Node.js API Like a Boss&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
@@ -10051,7 +9916,7 @@ artifacts that we’ve covered in this article.&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;content-creation&#x2F;talkspiffe-stream-setup&#x2F;&quot;&gt;The Live Stream Dream&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;zshell-startup-files&#x2F;&quot;&gt;.zprofile, .zshrc, .zenv, OMG! What Do I Put Where?!&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;▶ .zprofile, .zshrc, .zenv, OMG! What Do I Put Where?!&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;redirect-index-page&#x2F;&quot;&gt;Redirecting a Static Web Page&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
@@ -10076,10 +9941,10 @@ artifacts that we’ve covered in this article.&lt;&#x2F;p&gt;
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://zerotohero.dev/tips/microservice-env-vars/"/>
-        <id>https://zerotohero.dev/tips/microservice-env-vars/</id>
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/go/microservice-env-vars/"/>
+        <id>https://zerotohero.dev/go/microservice-env-vars/</id>
         
-        <content type="html" xml:base="https://zerotohero.dev/tips/microservice-env-vars/">&lt;p&gt;&lt;img src=&quot;&#x2F;content&#x2F;images&#x2F;size&#x2F;w1200&#x2F;2024&#x2F;03&#x2F;pipes.png&quot; alt=&quot;Environment Variables&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+        <content type="html" xml:base="https://zerotohero.dev/go/microservice-env-vars/">&lt;p&gt;&lt;img src=&quot;&#x2F;content&#x2F;images&#x2F;size&#x2F;w1200&#x2F;2024&#x2F;03&#x2F;pipes.png&quot; alt=&quot;Environment Variables&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 
 &lt;div class=&quot;z2h-image&quot;&gt;
     &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;pipes.png&quot; alt=&quot;Configuration and Pipes.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
@@ -10299,25 +10164,10 @@ artifacts that we’ve covered in this article.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;base64-decoding-a-string-in-go&#x2F;&quot;&gt;Base64 Decoding a String in Go&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;destructure&#x2F;&quot;&gt;Use Destructuring to Remove Attributes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;getting-the-body-of-an-http-request-with-go&#x2F;&quot;&gt;Getting the Body of an HTTP Request With Go&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;lets-create-a-syslog-logger&#x2F;&quot;&gt;Let’s Create a Syslog Logger&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;make-your-code-leaner&#x2F;&quot;&gt;Make Your Code Leaner By Extracting Method&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;mastodon-101&#x2F;&quot;&gt;Who Else Wants to Have Their Own Mastodon Server?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;▶ How to Ensure Environment Variables Are Set&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;scaling-your-node-api-like-a-boss&#x2F;&quot;&gt;Scaling Your Node.js API Like a Boss&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
@@ -10332,7 +10182,7 @@ artifacts that we’ve covered in this article.&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;redirect-index-page&#x2F;&quot;&gt;Redirecting a Static Web Page&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;git-push-origin-main&#x2F;&quot;&gt;Understanding &lt;code&gt;git push origin main&lt;&#x2F;code&gt;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;▶ Understanding &lt;code&gt;git push origin main&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 </content>

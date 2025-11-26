@@ -86,10 +86,10 @@
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/docker-go/"/>
-        <id>https://zerotohero.dev/inbox/docker-go/</id>
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/go/docker-go/"/>
+        <id>https://zerotohero.dev/go/docker-go/</id>
         
-        <content type="html" xml:base="https://zerotohero.dev/inbox/docker-go/">&lt;p&gt;In this tutorial, we’ll walk through the process of building and containerizing a secure webhook server using Go. We’ll cover everything from setting up the project structure to creating a production-ready Docker container.&lt;&#x2F;p&gt;
+        <content type="html" xml:base="https://zerotohero.dev/go/docker-go/">&lt;p&gt;In this tutorial, we’ll walk through the process of building and containerizing a secure webhook server using Go. We’ll cover everything from setting up the project structure to creating a production-ready Docker container.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;project-overview&quot;&gt;Project Overview&lt;&#x2F;h2&gt;
 &lt;p&gt;Our webhook server is designed to handle secure GET requests with query parameters, process JSON data, and implement basic authentication. The server listens on port 8443 and includes detailed request logging for debugging purposes.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;prerequisites&quot;&gt;Prerequisites&lt;&#x2F;h2&gt;
@@ -247,10 +247,10 @@
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/auth-srategies/"/>
-        <id>https://zerotohero.dev/inbox/auth-srategies/</id>
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/go/auth-srategies/"/>
+        <id>https://zerotohero.dev/go/auth-srategies/</id>
         
-        <content type="html" xml:base="https://zerotohero.dev/inbox/auth-srategies/">&lt;p&gt;In modern cloud-native applications, authentication requirements can vary significantly across different environments and use cases. In this post, I’ll share how we implemented a flexible authentication system for a webhook server that integrates with Kubernetes External Secrets Operator (ESO).&lt;&#x2F;p&gt;
+        <content type="html" xml:base="https://zerotohero.dev/go/auth-srategies/">&lt;p&gt;In modern cloud-native applications, authentication requirements can vary significantly across different environments and use cases. In this post, I’ll share how we implemented a flexible authentication system for a webhook server that integrates with Kubernetes External Secrets Operator (ESO).&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;the-challenge&quot;&gt;The Challenge&lt;&#x2F;h2&gt;
 &lt;p&gt;Our webhook server needed to support different authentication methods depending on the deployment environment and security requirements. We wanted to support:&lt;&#x2F;p&gt;
 &lt;ol&gt;
@@ -394,10 +394,10 @@
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/secure-secret-go-server-tls/"/>
-        <id>https://zerotohero.dev/inbox/secure-secret-go-server-tls/</id>
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/go/secure-secret-go-server-tls/"/>
+        <id>https://zerotohero.dev/go/secure-secret-go-server-tls/</id>
         
-        <content type="html" xml:base="https://zerotohero.dev/inbox/secure-secret-go-server-tls/">&lt;p&gt;In modern cloud-native environments, managing secrets securely is crucial for maintaining the security of your infrastructure. This post walks through building a secure secrets management server in Go that handles TLS certificates and serves secrets via a REST API.&lt;&#x2F;p&gt;
+        <content type="html" xml:base="https://zerotohero.dev/go/secure-secret-go-server-tls/">&lt;p&gt;In modern cloud-native environments, managing secrets securely is crucial for maintaining the security of your infrastructure. This post walks through building a secure secrets management server in Go that handles TLS certificates and serves secrets via a REST API.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;overview&quot;&gt;Overview&lt;&#x2F;h2&gt;
 &lt;p&gt;Our server needs to:&lt;&#x2F;p&gt;
 &lt;ol&gt;
@@ -559,10 +559,10 @@
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/cross-compilation/"/>
-        <id>https://zerotohero.dev/inbox/cross-compilation/</id>
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/go/cross-compilation/"/>
+        <id>https://zerotohero.dev/go/cross-compilation/</id>
         
-        <content type="html" xml:base="https://zerotohero.dev/inbox/cross-compilation/">&lt;p&gt;Cross-compiling Go applications on Apple Silicon (M-series) Macs can be tricky, especially when dealing with CGO dependencies. In this guide, we’ll explore different approaches to building Go applications for multiple architectures, specifically targeting Linux (AMD64 and ARM64) and macOS (ARM64).&lt;&#x2F;p&gt;
+        <content type="html" xml:base="https://zerotohero.dev/go/cross-compilation/">&lt;p&gt;Cross-compiling Go applications on Apple Silicon (M-series) Macs can be tricky, especially when dealing with CGO dependencies. In this guide, we’ll explore different approaches to building Go applications for multiple architectures, specifically targeting Linux (AMD64 and ARM64) and macOS (ARM64).&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;the-challenge&quot;&gt;The Challenge&lt;&#x2F;h2&gt;
 &lt;p&gt;When working with Go applications that use CGO, simple cross-compilation commands like &lt;code&gt;GOOS=linux GOARCH=amd64 go build&lt;&#x2F;code&gt; might not be sufficient. This is particularly true when:&lt;&#x2F;p&gt;
 &lt;ul&gt;
@@ -1801,9 +1801,6 @@ Get&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;typography&#x2F;&quot;&gt;Get Better at Typography&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learning-rust&#x2F;&quot;&gt;Exploring Rust as a Go Developer&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 </content>

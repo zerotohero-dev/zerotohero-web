@@ -897,126 +897,6 @@ The External Secrets Operator continuously reconciles resources. When it sees yo
         
     </entry>
     <entry xml:lang="en">
-        <title>Debugging URL Encoding Issues with External Secrets Operator&#x27;s Webhook Provider</title>
-        <published>2024-12-12T00:00:00+00:00</published>
-        <updated>2024-12-12T00:00:00+00:00</updated>
-        
-        <author>
-          <name>
-            
-              Volkan Özçelik
-            
-          </name>
-        </author>
-        
-        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/eso-urlencode/"/>
-        <id>https://zerotohero.dev/inbox/eso-urlencode/</id>
-        
-        <content type="html" xml:base="https://zerotohero.dev/inbox/eso-urlencode/">&lt;p&gt;When working with Kubernetes External Secrets Operator (ESO) and its webhook provider, you might encounter some interesting URL encoding challenges. In this post, I’ll walk through a specific issue we encountered and how we solved it, which might help others facing similar problems.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;the-setup&quot;&gt;The Setup&lt;&#x2F;h2&gt;
-&lt;p&gt;We started with a basic &lt;code&gt;ClusterSecretStore&lt;&#x2F;code&gt; configuration using ESO’s webhook provider:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;yaml&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-yaml &quot;&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;apiVersion&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;external-secrets.io&#x2F;v1beta1
-&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;kind&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;ClusterSecretStore
-&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;metadata&lt;&#x2F;span&gt;&lt;span&gt;:
-&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;name&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;webhook-backend
-&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;spec&lt;&#x2F;span&gt;&lt;span&gt;:
-&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;provider&lt;&#x2F;span&gt;&lt;span&gt;:
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;webhook&lt;&#x2F;span&gt;&lt;span&gt;:
-&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;url&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;http:&#x2F;&#x2F;eso-webhook.default.svc.cluster.local:80&#x2F;webhook?{{ .remoteRef.key }}&amp;quot;
-&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;method&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;GET
-&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;result&lt;&#x2F;span&gt;&lt;span&gt;:
-&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;jsonPath&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;$&amp;quot;
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;Our webhook server was a simple Go application designed to handle requests and return secret values based on a path parameter. We expected clean, separate query parameters, but reality had different plans.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;the-problem&quot;&gt;The Problem&lt;&#x2F;h2&gt;
-&lt;p&gt;When we started debugging why our webhook wasn’t working as expected, we added some basic logging to our Go server:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;key &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;r&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;URL&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Query&lt;&#x2F;span&gt;&lt;span&gt;().&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Get&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;key&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;fmt&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Println&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;key&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;key&lt;&#x2F;span&gt;&lt;span&gt;)
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;To our surprise, the key was empty! Further investigation by printing the raw URL revealed something interesting:&lt;&#x2F;p&gt;
-&lt;pre style=&quot;background-color:#282828;color:#fdf4c1aa;&quot;&gt;&lt;code&gt;&lt;span&gt;Method: GET
-&lt;&#x2F;span&gt;&lt;span&gt;URL: &#x2F;webhook?key%3Dcoca-cola.cluster-001%26path%3Dnamespaces.cokeSystem.secrets.adminCredentials.value
-&lt;&#x2F;span&gt;&lt;span&gt;Protocol: HTTP&#x2F;1.1
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;The entire query string was URL-encoded as a single parameter. Instead of getting our parameters separately, everything was encoded within the &lt;code&gt;key&lt;&#x2F;code&gt; parameter.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;the-solution&quot;&gt;The Solution&lt;&#x2F;h2&gt;
-&lt;h3 id=&quot;understanding-what-s-happening&quot;&gt;Understanding What’s Happening&lt;&#x2F;h3&gt;
-&lt;p&gt;When ESO processes the template in our ClusterSecretStore URL, it’s taking the entire &lt;code&gt;remoteRef.key&lt;&#x2F;code&gt; value and inserting it as-is into the URL. If our &lt;code&gt;remoteRef.key&lt;&#x2F;code&gt; contains URL-special characters (like &lt;code&gt;=&lt;&#x2F;code&gt; and &lt;code&gt;&amp;amp;&lt;&#x2F;code&gt;), they get encoded, resulting in our doubly-nested query string.&lt;&#x2F;p&gt;
-&lt;h3 id=&quot;fixing-the-server-code&quot;&gt;Fixing the Server Code&lt;&#x2F;h3&gt;
-&lt;p&gt;Here’s how we modified our webhook server to handle this situation properly:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;webhookHandler&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;w http&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;ResponseWriter&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;r &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;http&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;Request&lt;&#x2F;span&gt;&lt;span&gt;) {
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Get the &amp;#39;key&amp;#39; query parameter
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;encodedKey &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;r&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;URL&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Query&lt;&#x2F;span&gt;&lt;span&gt;().&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Get&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;key&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
-&lt;&#x2F;span&gt;&lt;span&gt;    
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Unescape the key parameter
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;decodedKey&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;url&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;QueryUnescape&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;encodedKey&lt;&#x2F;span&gt;&lt;span&gt;)
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil &lt;&#x2F;span&gt;&lt;span&gt;{
-&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;http&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Error&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;w&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Failed to decode key parameter&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;http&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;StatusBadRequest&lt;&#x2F;span&gt;&lt;span&gt;)
-&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return
-&lt;&#x2F;span&gt;&lt;span&gt;    }
-&lt;&#x2F;span&gt;&lt;span&gt;    
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Parse the decoded key as a query string
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;values&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;url&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;ParseQuery&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;decodedKey&lt;&#x2F;span&gt;&lt;span&gt;)
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil &lt;&#x2F;span&gt;&lt;span&gt;{
-&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;http&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Error&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;w&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Invalid key format&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;http&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;StatusBadRequest&lt;&#x2F;span&gt;&lt;span&gt;)
-&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return
-&lt;&#x2F;span&gt;&lt;span&gt;    }
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;authKey &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;values&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Get&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;key&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;path &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;values&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Get&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;path&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Validate and use the parameters
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;authKey &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;coca-cola.cluster-001&amp;quot; &lt;&#x2F;span&gt;&lt;span&gt;{
-&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;http&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Error&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;w&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Invalid authentication key&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;http&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;StatusUnauthorized&lt;&#x2F;span&gt;&lt;span&gt;)
-&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return
-&lt;&#x2F;span&gt;&lt;span&gt;    }
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;path &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;== &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;&amp;quot; &lt;&#x2F;span&gt;&lt;span&gt;{
-&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;http&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Error&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;w&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Path is required&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;http&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;StatusBadRequest&lt;&#x2F;span&gt;&lt;span&gt;)
-&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return
-&lt;&#x2F;span&gt;&lt;span&gt;    }
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Process the request...
-&lt;&#x2F;span&gt;&lt;span&gt;}
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;The key improvements in this solution are:&lt;&#x2F;p&gt;
-&lt;ol&gt;
-&lt;li&gt;Using &lt;code&gt;url.QueryUnescape()&lt;&#x2F;code&gt; to properly decode the URL-encoded parameter&lt;&#x2F;li&gt;
-&lt;li&gt;Using &lt;code&gt;url.ParseQuery()&lt;&#x2F;code&gt; to parse the decoded string as a query string itself&lt;&#x2F;li&gt;
-&lt;li&gt;Extracting the actual key and path values from the parsed query parameters&lt;&#x2F;li&gt;
-&lt;&#x2F;ol&gt;
-&lt;h3 id=&quot;using-the-clustersecretstore&quot;&gt;Using the ClusterSecretStore&lt;&#x2F;h3&gt;
-&lt;p&gt;With this server implementation, we can now use our ClusterSecretStore like this:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;yaml&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-yaml &quot;&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;apiVersion&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;external-secrets.io&#x2F;v1beta1
-&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;kind&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;ExternalSecret
-&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;metadata&lt;&#x2F;span&gt;&lt;span&gt;:
-&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;name&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;example-external-secret
-&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;spec&lt;&#x2F;span&gt;&lt;span&gt;:
-&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;secretStoreRef&lt;&#x2F;span&gt;&lt;span&gt;:
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;name&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;webhook-backend
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;kind&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;ClusterSecretStore
-&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;target&lt;&#x2F;span&gt;&lt;span&gt;:
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;name&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;example-secret
-&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;data&lt;&#x2F;span&gt;&lt;span&gt;:
-&lt;&#x2F;span&gt;&lt;span&gt;  - &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;secretKey&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;adminPassword
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;remoteRef&lt;&#x2F;span&gt;&lt;span&gt;:
-&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;key&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;key=coca-cola.cluster-001&amp;amp;path=namespaces.cokeSystem.secrets.adminCredentials.value&amp;quot;
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;lessons-learned&quot;&gt;Lessons Learned&lt;&#x2F;h2&gt;
-&lt;ol&gt;
-&lt;li&gt;Always implement detailed request logging when debugging webhook issues&lt;&#x2F;li&gt;
-&lt;li&gt;Don’t assume how parameters will be encoded or structured in webhook requests&lt;&#x2F;li&gt;
-&lt;li&gt;Use standard library functions for URL parsing and decoding instead of custom string manipulation&lt;&#x2F;li&gt;
-&lt;li&gt;Remember that template variables in Kubernetes resources might be processed differently than you expect&lt;&#x2F;li&gt;
-&lt;&#x2F;ol&gt;
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
-&lt;p&gt;URL encoding issues can be tricky to debug, especially when dealing with nested query parameters. By understanding how ESO processes template variables and using proper URL parsing tools, we can build robust webhook handlers that correctly handle these scenarios.&lt;&#x2F;p&gt;
-&lt;p&gt;Remember to always implement proper logging during development and testing phases - it makes debugging these kinds of issues much easier. The Go standard library provides excellent tools for handling URL encoding and parsing, so make use of them instead of trying to parse query strings manually.&lt;&#x2F;p&gt;
-&lt;p&gt;This solution provides a clean way to handle the URL encoding challenges while maintaining the security and functionality requirements of our webhook provider.&lt;&#x2F;p&gt;
-</content>
-        
-    </entry>
-    <entry xml:lang="en">
         <title>Building a Custom Webhook Provider for External Secrets Operator: A Step-by-Step Guide</title>
         <published>2024-12-12T00:00:00+00:00</published>
         <updated>2024-12-12T00:00:00+00:00</updated>
@@ -1029,10 +909,10 @@ The External Secrets Operator continuously reconciles resources. When it sees yo
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/eso-webhook-pitfalls/"/>
-        <id>https://zerotohero.dev/inbox/eso-webhook-pitfalls/</id>
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/go/eso-webhook-pitfalls/"/>
+        <id>https://zerotohero.dev/go/eso-webhook-pitfalls/</id>
         
-        <content type="html" xml:base="https://zerotohero.dev/inbox/eso-webhook-pitfalls/">&lt;p&gt;In this tutorial, we’ll walk through creating a custom webhook provider for External Secrets Operator (ESO) from scratch. We’ll build a simple Go server that serves as a webhook, deploy it to Kubernetes, and configure ESO to use it for secret management.&lt;&#x2F;p&gt;
+        <content type="html" xml:base="https://zerotohero.dev/go/eso-webhook-pitfalls/">&lt;p&gt;In this tutorial, we’ll walk through creating a custom webhook provider for External Secrets Operator (ESO) from scratch. We’ll build a simple Go server that serves as a webhook, deploy it to Kubernetes, and configure ESO to use it for secret management.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;understanding-the-architecture&quot;&gt;Understanding the Architecture&lt;&#x2F;h2&gt;
 &lt;p&gt;The External Secrets Operator (ESO) can fetch secrets from various providers, including custom webhooks. In this setup:&lt;&#x2F;p&gt;
 &lt;ol&gt;
@@ -1246,6 +1126,126 @@ The External Secrets Operator continuously reconciles resources. When it sees yo
 &lt;li&gt;Service networking and discovery&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;By following this guide, you can create a flexible secret management solution that integrates seamlessly with your Kubernetes infrastructure while maintaining security and scalability.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Debugging URL Encoding Issues with External Secrets Operator&#x27;s Webhook Provider</title>
+        <published>2024-12-12T00:00:00+00:00</published>
+        <updated>2024-12-12T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/eso-urlencode/"/>
+        <id>https://zerotohero.dev/inbox/eso-urlencode/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/eso-urlencode/">&lt;p&gt;When working with Kubernetes External Secrets Operator (ESO) and its webhook provider, you might encounter some interesting URL encoding challenges. In this post, I’ll walk through a specific issue we encountered and how we solved it, which might help others facing similar problems.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-setup&quot;&gt;The Setup&lt;&#x2F;h2&gt;
+&lt;p&gt;We started with a basic &lt;code&gt;ClusterSecretStore&lt;&#x2F;code&gt; configuration using ESO’s webhook provider:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;yaml&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-yaml &quot;&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;apiVersion&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;external-secrets.io&#x2F;v1beta1
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;kind&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;ClusterSecretStore
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;metadata&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;name&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;webhook-backend
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;spec&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;provider&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;webhook&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;url&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;http:&#x2F;&#x2F;eso-webhook.default.svc.cluster.local:80&#x2F;webhook?{{ .remoteRef.key }}&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;method&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;GET
+&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;result&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;jsonPath&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;$&amp;quot;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Our webhook server was a simple Go application designed to handle requests and return secret values based on a path parameter. We expected clean, separate query parameters, but reality had different plans.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-problem&quot;&gt;The Problem&lt;&#x2F;h2&gt;
+&lt;p&gt;When we started debugging why our webhook wasn’t working as expected, we added some basic logging to our Go server:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;key &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;r&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;URL&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Query&lt;&#x2F;span&gt;&lt;span&gt;().&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Get&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;key&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;fmt&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Println&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;key&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;key&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;To our surprise, the key was empty! Further investigation by printing the raw URL revealed something interesting:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#282828;color:#fdf4c1aa;&quot;&gt;&lt;code&gt;&lt;span&gt;Method: GET
+&lt;&#x2F;span&gt;&lt;span&gt;URL: &#x2F;webhook?key%3Dcoca-cola.cluster-001%26path%3Dnamespaces.cokeSystem.secrets.adminCredentials.value
+&lt;&#x2F;span&gt;&lt;span&gt;Protocol: HTTP&#x2F;1.1
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The entire query string was URL-encoded as a single parameter. Instead of getting our parameters separately, everything was encoded within the &lt;code&gt;key&lt;&#x2F;code&gt; parameter.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-solution&quot;&gt;The Solution&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;understanding-what-s-happening&quot;&gt;Understanding What’s Happening&lt;&#x2F;h3&gt;
+&lt;p&gt;When ESO processes the template in our ClusterSecretStore URL, it’s taking the entire &lt;code&gt;remoteRef.key&lt;&#x2F;code&gt; value and inserting it as-is into the URL. If our &lt;code&gt;remoteRef.key&lt;&#x2F;code&gt; contains URL-special characters (like &lt;code&gt;=&lt;&#x2F;code&gt; and &lt;code&gt;&amp;amp;&lt;&#x2F;code&gt;), they get encoded, resulting in our doubly-nested query string.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;fixing-the-server-code&quot;&gt;Fixing the Server Code&lt;&#x2F;h3&gt;
+&lt;p&gt;Here’s how we modified our webhook server to handle this situation properly:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;webhookHandler&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;w http&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;ResponseWriter&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;r &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;http&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;Request&lt;&#x2F;span&gt;&lt;span&gt;) {
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Get the &amp;#39;key&amp;#39; query parameter
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;encodedKey &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;r&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;URL&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Query&lt;&#x2F;span&gt;&lt;span&gt;().&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Get&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;key&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;    
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Unescape the key parameter
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;decodedKey&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;url&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;QueryUnescape&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;encodedKey&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;http&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Error&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;w&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Failed to decode key parameter&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;http&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;StatusBadRequest&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;    
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Parse the decoded key as a query string
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;values&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;url&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;ParseQuery&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;decodedKey&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;http&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Error&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;w&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Invalid key format&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;http&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;StatusBadRequest&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;authKey &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;values&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Get&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;key&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;path &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;values&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Get&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;path&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Validate and use the parameters
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;authKey &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;coca-cola.cluster-001&amp;quot; &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;http&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Error&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;w&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Invalid authentication key&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;http&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;StatusUnauthorized&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;path &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;== &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;&amp;quot; &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;http&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Error&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;w&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Path is required&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;http&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;StatusBadRequest&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Process the request...
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The key improvements in this solution are:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Using &lt;code&gt;url.QueryUnescape()&lt;&#x2F;code&gt; to properly decode the URL-encoded parameter&lt;&#x2F;li&gt;
+&lt;li&gt;Using &lt;code&gt;url.ParseQuery()&lt;&#x2F;code&gt; to parse the decoded string as a query string itself&lt;&#x2F;li&gt;
+&lt;li&gt;Extracting the actual key and path values from the parsed query parameters&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h3 id=&quot;using-the-clustersecretstore&quot;&gt;Using the ClusterSecretStore&lt;&#x2F;h3&gt;
+&lt;p&gt;With this server implementation, we can now use our ClusterSecretStore like this:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;yaml&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-yaml &quot;&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;apiVersion&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;external-secrets.io&#x2F;v1beta1
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;kind&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;ExternalSecret
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;metadata&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;name&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;example-external-secret
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;spec&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;secretStoreRef&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;name&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;webhook-backend
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;kind&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;ClusterSecretStore
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;target&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;name&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;example-secret
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;data&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;  - &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;secretKey&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;adminPassword
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;remoteRef&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#8ec07c;&quot;&gt;key&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;key=coca-cola.cluster-001&amp;amp;path=namespaces.cokeSystem.secrets.adminCredentials.value&amp;quot;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;lessons-learned&quot;&gt;Lessons Learned&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Always implement detailed request logging when debugging webhook issues&lt;&#x2F;li&gt;
+&lt;li&gt;Don’t assume how parameters will be encoded or structured in webhook requests&lt;&#x2F;li&gt;
+&lt;li&gt;Use standard library functions for URL parsing and decoding instead of custom string manipulation&lt;&#x2F;li&gt;
+&lt;li&gt;Remember that template variables in Kubernetes resources might be processed differently than you expect&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;URL encoding issues can be tricky to debug, especially when dealing with nested query parameters. By understanding how ESO processes template variables and using proper URL parsing tools, we can build robust webhook handlers that correctly handle these scenarios.&lt;&#x2F;p&gt;
+&lt;p&gt;Remember to always implement proper logging during development and testing phases - it makes debugging these kinds of issues much easier. The Go standard library provides excellent tools for handling URL encoding and parsing, so make use of them instead of trying to parse query strings manually.&lt;&#x2F;p&gt;
+&lt;p&gt;This solution provides a clean way to handle the URL encoding challenges while maintaining the security and functionality requirements of our webhook provider.&lt;&#x2F;p&gt;
 </content>
         
     </entry>
@@ -1860,10 +1860,10 @@ The External Secrets Operator continuously reconciles resources. When it sees yo
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/auth-srategies/"/>
-        <id>https://zerotohero.dev/inbox/auth-srategies/</id>
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/go/auth-srategies/"/>
+        <id>https://zerotohero.dev/go/auth-srategies/</id>
         
-        <content type="html" xml:base="https://zerotohero.dev/inbox/auth-srategies/">&lt;p&gt;In modern cloud-native applications, authentication requirements can vary significantly across different environments and use cases. In this post, I’ll share how we implemented a flexible authentication system for a webhook server that integrates with Kubernetes External Secrets Operator (ESO).&lt;&#x2F;p&gt;
+        <content type="html" xml:base="https://zerotohero.dev/go/auth-srategies/">&lt;p&gt;In modern cloud-native applications, authentication requirements can vary significantly across different environments and use cases. In this post, I’ll share how we implemented a flexible authentication system for a webhook server that integrates with Kubernetes External Secrets Operator (ESO).&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;the-challenge&quot;&gt;The Challenge&lt;&#x2F;h2&gt;
 &lt;p&gt;Our webhook server needed to support different authentication methods depending on the deployment environment and security requirements. We wanted to support:&lt;&#x2F;p&gt;
 &lt;ol&gt;
@@ -2007,10 +2007,10 @@ The External Secrets Operator continuously reconciles resources. When it sees yo
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/secure-secret-go-server-tls/"/>
-        <id>https://zerotohero.dev/inbox/secure-secret-go-server-tls/</id>
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/go/secure-secret-go-server-tls/"/>
+        <id>https://zerotohero.dev/go/secure-secret-go-server-tls/</id>
         
-        <content type="html" xml:base="https://zerotohero.dev/inbox/secure-secret-go-server-tls/">&lt;p&gt;In modern cloud-native environments, managing secrets securely is crucial for maintaining the security of your infrastructure. This post walks through building a secure secrets management server in Go that handles TLS certificates and serves secrets via a REST API.&lt;&#x2F;p&gt;
+        <content type="html" xml:base="https://zerotohero.dev/go/secure-secret-go-server-tls/">&lt;p&gt;In modern cloud-native environments, managing secrets securely is crucial for maintaining the security of your infrastructure. This post walks through building a secure secrets management server in Go that handles TLS certificates and serves secrets via a REST API.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;overview&quot;&gt;Overview&lt;&#x2F;h2&gt;
 &lt;p&gt;Our server needs to:&lt;&#x2F;p&gt;
 &lt;ol&gt;
@@ -2172,10 +2172,10 @@ The External Secrets Operator continuously reconciles resources. When it sees yo
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/tls-decoding-go/"/>
-        <id>https://zerotohero.dev/inbox/tls-decoding-go/</id>
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/go/tls-decoding-go/"/>
+        <id>https://zerotohero.dev/go/tls-decoding-go/</id>
         
-        <content type="html" xml:base="https://zerotohero.dev/inbox/tls-decoding-go/">&lt;p&gt;When working with TLS certificates in Go applications, you might encounter some unexpected challenges. In this post, we’ll explore a common issue that occurs when dealing with base64-encoded certificates and how to resolve it.&lt;&#x2F;p&gt;
+        <content type="html" xml:base="https://zerotohero.dev/go/tls-decoding-go/">&lt;p&gt;When working with TLS certificates in Go applications, you might encounter some unexpected challenges. In this post, we’ll explore a common issue that occurs when dealing with base64-encoded certificates and how to resolve it.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;the-problem&quot;&gt;The Problem&lt;&#x2F;h2&gt;
 &lt;p&gt;Consider a scenario where you’re building a secure web server in Go that needs to use TLS certificates. You’re retrieving these certificates from a secrets management system, but when you try to start the server, you get this cryptic error:&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#282828;color:#fdf4c1aa;&quot;&gt;&lt;code&gt;&lt;span&gt;Error loading server certificate and key: tls: failed to find any PEM data in certificate input
@@ -3269,10 +3269,10 @@ Modify your webhook service to handle token fetching differently:&lt;&#x2F;p&gt;
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/spiffe-acl/"/>
-        <id>https://zerotohero.dev/inbox/spiffe-acl/</id>
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/go/spiffe-acl/"/>
+        <id>https://zerotohero.dev/go/spiffe-acl/</id>
         
-        <content type="html" xml:base="https://zerotohero.dev/inbox/spiffe-acl/">&lt;p&gt;Managing secrets in a microservices environment is challenging. While tools like HashiCorp Vault are excellent, sometimes you need a lighter solution that integrates deeply with your existing SPIFFE-based identity system. In this post, we’ll build an ACL (Access Control List) system for a SPIFFE-aware secrets store.&lt;&#x2F;p&gt;
+        <content type="html" xml:base="https://zerotohero.dev/go/spiffe-acl/">&lt;p&gt;Managing secrets in a microservices environment is challenging. While tools like HashiCorp Vault are excellent, sometimes you need a lighter solution that integrates deeply with your existing SPIFFE-based identity system. In this post, we’ll build an ACL (Access Control List) system for a SPIFFE-aware secrets store.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;the-problem&quot;&gt;The Problem&lt;&#x2F;h2&gt;
 &lt;p&gt;In a SPIFFE-enabled infrastructure, each workload has a unique SPIFFE ID. For example:&lt;&#x2F;p&gt;
 &lt;ul&gt;
@@ -5312,9 +5312,6 @@ your social media profile, &lt;strong&gt;go and make a flocking change&lt;&#x2F;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;typography&#x2F;&quot;&gt;Get Better at Typography&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learning-rust&#x2F;&quot;&gt;Exploring Rust as a Go Developer&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 </content>

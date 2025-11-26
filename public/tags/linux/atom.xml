@@ -699,6 +699,117 @@ excerpts, or integrating with other tools in your workflow.&lt;&#x2F;p&gt;
         
     </entry>
     <entry xml:lang="en">
+        <title>Cross-Compiling Go Applications on M3 Macs: A Practical Guide</title>
+        <published>2024-11-27T00:00:00+00:00</published>
+        <updated>2024-11-27T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/go/cross-compilation/"/>
+        <id>https://zerotohero.dev/go/cross-compilation/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/go/cross-compilation/">&lt;p&gt;Cross-compiling Go applications on Apple Silicon (M-series) Macs can be tricky, especially when dealing with CGO dependencies. In this guide, we’ll explore different approaches to building Go applications for multiple architectures, specifically targeting Linux (AMD64 and ARM64) and macOS (ARM64).&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-challenge&quot;&gt;The Challenge&lt;&#x2F;h2&gt;
+&lt;p&gt;When working with Go applications that use CGO, simple cross-compilation commands like &lt;code&gt;GOOS=linux GOARCH=amd64 go build&lt;&#x2F;code&gt; might not be sufficient. This is particularly true when:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Your application uses CGO-dependent packages&lt;&#x2F;li&gt;
+&lt;li&gt;You need to build for multiple architectures&lt;&#x2F;li&gt;
+&lt;li&gt;You’re working on an M-series Mac&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;initial-approach-local-cross-compilation&quot;&gt;Initial Approach: Local Cross-Compilation&lt;&#x2F;h2&gt;
+&lt;p&gt;My first attempt involved using traditional cross-compilation tools. Here’s what I initially tried:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Linux ARM64
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;CGO_ENABLED&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;0 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOEXPERIMENT&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;boringcrypto &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;go build -o keeper .&#x2F;app&#x2F;keeper&#x2F;cmd&#x2F;main.go
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;CGO_ENABLED&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOEXPERIMENT&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;boringcrypto &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;go build -o nexus .&#x2F;app&#x2F;nexus&#x2F;cmd&#x2F;main.go
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;CGO_ENABLED&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;0 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOEXPERIMENT&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;boringcrypto &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;go build -o spike .&#x2F;app&#x2F;spike&#x2F;cmd&#x2F;main.go
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;However, when trying to cross-compile for different architectures, I ran into issues:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOOS&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;linux &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOARCH&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;amd64 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;CGO_ENABLED&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOEXPERIMENT&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;boringcrypto &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;go build -o nexus-linux-amd64 .&#x2F;app&#x2F;nexus&#x2F;cmd&#x2F;main.go
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This approach failed because it needed proper cross-compilation toolchains.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-solution-docker-based-cross-compilation&quot;&gt;The Solution: Docker-Based Cross-Compilation&lt;&#x2F;h2&gt;
+&lt;p&gt;After exploring various options, I found that using Docker for cross-compilation provides the most reliable and reproducible solution. Here’s how to implement it:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;First, create a Dockerfile:&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;pre data-lang=&quot;dockerfile&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-dockerfile &quot;&gt;&lt;code class=&quot;language-dockerfile&quot; data-lang=&quot;dockerfile&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;FROM&lt;&#x2F;span&gt;&lt;span&gt; golang:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;1.21-alpine &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;AS &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;builder
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Install build tools
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;RUN &lt;&#x2F;span&gt;&lt;span&gt;apk add --no-cache gcc musl-dev
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Set working directory
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;WORKDIR &lt;&#x2F;span&gt;&lt;span&gt;&#x2F;app
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Copy go mod files
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;COPY&lt;&#x2F;span&gt;&lt;span&gt; go.mod go.sum .&#x2F;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;RUN &lt;&#x2F;span&gt;&lt;span&gt;go mod download
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Copy source code
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;COPY&lt;&#x2F;span&gt;&lt;span&gt; . .
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Build for different platforms
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;RUN &lt;&#x2F;span&gt;&lt;span&gt;GOOS=linux GOARCH=amd64 CGO_ENABLED=0 GOEXPERIMENT=boringcrypto go build -o keeper-linux-amd64 .&#x2F;app&#x2F;keeper&#x2F;cmd&#x2F;main.go &amp;amp;&amp;amp; \
+&lt;&#x2F;span&gt;&lt;span&gt;    GOOS=linux GOARCH=amd64 CGO_ENABLED=1 GOEXPERIMENT=boringcrypto go build -o nexus-linux-amd64 .&#x2F;app&#x2F;nexus&#x2F;cmd&#x2F;main.go &amp;amp;&amp;amp; \
+&lt;&#x2F;span&gt;&lt;span&gt;    GOOS=linux GOARCH=amd64 CGO_ENABLED=0 GOEXPERIMENT=boringcrypto go build -o spike-linux-amd64 .&#x2F;app&#x2F;spike&#x2F;cmd&#x2F;main.go &amp;amp;&amp;amp; \
+&lt;&#x2F;span&gt;&lt;span&gt;    GOOS=linux GOARCH=arm64 CGO_ENABLED=0 GOEXPERIMENT=boringcrypto go build -o keeper-linux-arm64 .&#x2F;app&#x2F;keeper&#x2F;cmd&#x2F;main.go &amp;amp;&amp;amp; \
+&lt;&#x2F;span&gt;&lt;span&gt;    GOOS=linux GOARCH=arm64 CGO_ENABLED=1 GOEXPERIMENT=boringcrypto go build -o nexus-linux-arm64 .&#x2F;app&#x2F;nexus&#x2F;cmd&#x2F;main.go &amp;amp;&amp;amp; \
+&lt;&#x2F;span&gt;&lt;span&gt;    GOOS=linux GOARCH=arm64 CGO_ENABLED=0 GOEXPERIMENT=boringcrypto go build -o spike-linux-arm64 .&#x2F;app&#x2F;spike&#x2F;cmd&#x2F;main.go
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;Create a build script:&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;#!&#x2F;bin&#x2F;bash
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Build the Docker image
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;docker build -t go-cross-compiler .
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Create a container and copy the binaries
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;docker create --name temp-container go-cross-compiler
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;docker cp temp-container:&#x2F;app&#x2F;keeper-linux-amd64 .
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;docker cp temp-container:&#x2F;app&#x2F;nexus-linux-amd64 .
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;docker cp temp-container:&#x2F;app&#x2F;spike-linux-amd64 .
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;docker cp temp-container:&#x2F;app&#x2F;keeper-linux-arm64 .
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;docker cp temp-container:&#x2F;app&#x2F;nexus-linux-arm64 .
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;docker cp temp-container:&#x2F;app&#x2F;spike-linux-arm64 .
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Clean up
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;docker rm temp-container
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;advantages-of-the-docker-approach&quot;&gt;Advantages of the Docker Approach&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Reproducibility&lt;&#x2F;strong&gt;: The build environment is consistent across different development machines&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;No Local Dependencies&lt;&#x2F;strong&gt;: No need to install cross-compilation tools locally&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Simplified Process&lt;&#x2F;strong&gt;: One command builds all targets&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Consistent Results&lt;&#x2F;strong&gt;: Binaries are built in a controlled environment&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Easy CI&#x2F;CD Integration&lt;&#x2F;strong&gt;: The Docker-based approach works well in automated pipelines&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;building-for-macos-arm64&quot;&gt;Building for macOS ARM64&lt;&#x2F;h2&gt;
+&lt;p&gt;For macOS ARM64 builds, you can still build natively on your M-series Mac:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOOS&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;darwin &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOARCH&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;arm64 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;CGO_ENABLED&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;0 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOEXPERIMENT&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;boringcrypto &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;go build -o keeper-darwin-arm64 .&#x2F;app&#x2F;keeper&#x2F;cmd&#x2F;main.go
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOOS&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;darwin &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOARCH&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;arm64 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;CGO_ENABLED&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOEXPERIMENT&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;boringcrypto &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;go build -o nexus-darwin-arm64 .&#x2F;app&#x2F;nexus&#x2F;cmd&#x2F;main.go
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOOS&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;darwin &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOARCH&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;arm64 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;CGO_ENABLED&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;0 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOEXPERIMENT&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;boringcrypto &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;go build -o spike-darwin-arm64 .&#x2F;app&#x2F;spike&#x2F;cmd&#x2F;main.go
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;common-pitfalls-and-solutions&quot;&gt;Common Pitfalls and Solutions&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;CGO Dependencies&lt;&#x2F;strong&gt;: When &lt;code&gt;CGO_ENABLED=1&lt;&#x2F;code&gt;, ensure your Docker container has the necessary build tools installed&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Architecture Mismatch&lt;&#x2F;strong&gt;: Double-check &lt;code&gt;GOOS&lt;&#x2F;code&gt; and &lt;code&gt;GOARCH&lt;&#x2F;code&gt; values match your target platforms&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Build Tags&lt;&#x2F;strong&gt;: Consider using build tags for platform-specific code&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Static Linking&lt;&#x2F;strong&gt;: For better portability, use &lt;code&gt;CGO_ENABLED=0&lt;&#x2F;code&gt; when possible&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;While cross-compilation on M-series Macs presents some challenges, using Docker provides a robust and maintainable solution. This approach simplifies the build process and ensures consistent results across different architectures.&lt;&#x2F;p&gt;
+&lt;p&gt;For projects that don’t require CGO, you might still use direct cross-compilation. However, for complex projects with CGO dependencies, the Docker-based approach is recommended.&lt;&#x2F;p&gt;
+&lt;p&gt;Remember to version your build scripts and Dockerfile alongside your project code to maintain build reproducibility across your team.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
         <title>How to Count Lines in Your Source Code Projects: A Comprehensive Guide</title>
         <published>2024-11-27T00:00:00+00:00</published>
         <updated>2024-11-27T00:00:00+00:00</updated>
@@ -832,117 +943,6 @@ excerpts, or integrating with other tools in your workflow.&lt;&#x2F;p&gt;
 &lt;li&gt;Create a custom solution when you need specific features or integration with your workflow&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;Remember that the goal isn’t just to count lines, but to gain insights that help you better understand and manage your codebase.&lt;&#x2F;p&gt;
-</content>
-        
-    </entry>
-    <entry xml:lang="en">
-        <title>Cross-Compiling Go Applications on M3 Macs: A Practical Guide</title>
-        <published>2024-11-27T00:00:00+00:00</published>
-        <updated>2024-11-27T00:00:00+00:00</updated>
-        
-        <author>
-          <name>
-            
-              Volkan Özçelik
-            
-          </name>
-        </author>
-        
-        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/cross-compilation/"/>
-        <id>https://zerotohero.dev/inbox/cross-compilation/</id>
-        
-        <content type="html" xml:base="https://zerotohero.dev/inbox/cross-compilation/">&lt;p&gt;Cross-compiling Go applications on Apple Silicon (M-series) Macs can be tricky, especially when dealing with CGO dependencies. In this guide, we’ll explore different approaches to building Go applications for multiple architectures, specifically targeting Linux (AMD64 and ARM64) and macOS (ARM64).&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;the-challenge&quot;&gt;The Challenge&lt;&#x2F;h2&gt;
-&lt;p&gt;When working with Go applications that use CGO, simple cross-compilation commands like &lt;code&gt;GOOS=linux GOARCH=amd64 go build&lt;&#x2F;code&gt; might not be sufficient. This is particularly true when:&lt;&#x2F;p&gt;
-&lt;ul&gt;
-&lt;li&gt;Your application uses CGO-dependent packages&lt;&#x2F;li&gt;
-&lt;li&gt;You need to build for multiple architectures&lt;&#x2F;li&gt;
-&lt;li&gt;You’re working on an M-series Mac&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;initial-approach-local-cross-compilation&quot;&gt;Initial Approach: Local Cross-Compilation&lt;&#x2F;h2&gt;
-&lt;p&gt;My first attempt involved using traditional cross-compilation tools. Here’s what I initially tried:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Linux ARM64
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;CGO_ENABLED&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;0 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOEXPERIMENT&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;boringcrypto &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;go build -o keeper .&#x2F;app&#x2F;keeper&#x2F;cmd&#x2F;main.go
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;CGO_ENABLED&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOEXPERIMENT&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;boringcrypto &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;go build -o nexus .&#x2F;app&#x2F;nexus&#x2F;cmd&#x2F;main.go
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;CGO_ENABLED&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;0 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOEXPERIMENT&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;boringcrypto &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;go build -o spike .&#x2F;app&#x2F;spike&#x2F;cmd&#x2F;main.go
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;However, when trying to cross-compile for different architectures, I ran into issues:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOOS&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;linux &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOARCH&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;amd64 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;CGO_ENABLED&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOEXPERIMENT&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;boringcrypto &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;go build -o nexus-linux-amd64 .&#x2F;app&#x2F;nexus&#x2F;cmd&#x2F;main.go
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;This approach failed because it needed proper cross-compilation toolchains.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;the-solution-docker-based-cross-compilation&quot;&gt;The Solution: Docker-Based Cross-Compilation&lt;&#x2F;h2&gt;
-&lt;p&gt;After exploring various options, I found that using Docker for cross-compilation provides the most reliable and reproducible solution. Here’s how to implement it:&lt;&#x2F;p&gt;
-&lt;ol&gt;
-&lt;li&gt;First, create a Dockerfile:&lt;&#x2F;li&gt;
-&lt;&#x2F;ol&gt;
-&lt;pre data-lang=&quot;dockerfile&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-dockerfile &quot;&gt;&lt;code class=&quot;language-dockerfile&quot; data-lang=&quot;dockerfile&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;FROM&lt;&#x2F;span&gt;&lt;span&gt; golang:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;1.21-alpine &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;AS &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;builder
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Install build tools
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;RUN &lt;&#x2F;span&gt;&lt;span&gt;apk add --no-cache gcc musl-dev
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Set working directory
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;WORKDIR &lt;&#x2F;span&gt;&lt;span&gt;&#x2F;app
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Copy go mod files
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;COPY&lt;&#x2F;span&gt;&lt;span&gt; go.mod go.sum .&#x2F;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;RUN &lt;&#x2F;span&gt;&lt;span&gt;go mod download
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Copy source code
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;COPY&lt;&#x2F;span&gt;&lt;span&gt; . .
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Build for different platforms
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;RUN &lt;&#x2F;span&gt;&lt;span&gt;GOOS=linux GOARCH=amd64 CGO_ENABLED=0 GOEXPERIMENT=boringcrypto go build -o keeper-linux-amd64 .&#x2F;app&#x2F;keeper&#x2F;cmd&#x2F;main.go &amp;amp;&amp;amp; \
-&lt;&#x2F;span&gt;&lt;span&gt;    GOOS=linux GOARCH=amd64 CGO_ENABLED=1 GOEXPERIMENT=boringcrypto go build -o nexus-linux-amd64 .&#x2F;app&#x2F;nexus&#x2F;cmd&#x2F;main.go &amp;amp;&amp;amp; \
-&lt;&#x2F;span&gt;&lt;span&gt;    GOOS=linux GOARCH=amd64 CGO_ENABLED=0 GOEXPERIMENT=boringcrypto go build -o spike-linux-amd64 .&#x2F;app&#x2F;spike&#x2F;cmd&#x2F;main.go &amp;amp;&amp;amp; \
-&lt;&#x2F;span&gt;&lt;span&gt;    GOOS=linux GOARCH=arm64 CGO_ENABLED=0 GOEXPERIMENT=boringcrypto go build -o keeper-linux-arm64 .&#x2F;app&#x2F;keeper&#x2F;cmd&#x2F;main.go &amp;amp;&amp;amp; \
-&lt;&#x2F;span&gt;&lt;span&gt;    GOOS=linux GOARCH=arm64 CGO_ENABLED=1 GOEXPERIMENT=boringcrypto go build -o nexus-linux-arm64 .&#x2F;app&#x2F;nexus&#x2F;cmd&#x2F;main.go &amp;amp;&amp;amp; \
-&lt;&#x2F;span&gt;&lt;span&gt;    GOOS=linux GOARCH=arm64 CGO_ENABLED=0 GOEXPERIMENT=boringcrypto go build -o spike-linux-arm64 .&#x2F;app&#x2F;spike&#x2F;cmd&#x2F;main.go
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;ol start=&quot;2&quot;&gt;
-&lt;li&gt;Create a build script:&lt;&#x2F;li&gt;
-&lt;&#x2F;ol&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;#!&#x2F;bin&#x2F;bash
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Build the Docker image
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;docker build -t go-cross-compiler .
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Create a container and copy the binaries
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;docker create --name temp-container go-cross-compiler
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;docker cp temp-container:&#x2F;app&#x2F;keeper-linux-amd64 .
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;docker cp temp-container:&#x2F;app&#x2F;nexus-linux-amd64 .
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;docker cp temp-container:&#x2F;app&#x2F;spike-linux-amd64 .
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;docker cp temp-container:&#x2F;app&#x2F;keeper-linux-arm64 .
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;docker cp temp-container:&#x2F;app&#x2F;nexus-linux-arm64 .
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;docker cp temp-container:&#x2F;app&#x2F;spike-linux-arm64 .
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Clean up
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;docker rm temp-container
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;advantages-of-the-docker-approach&quot;&gt;Advantages of the Docker Approach&lt;&#x2F;h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Reproducibility&lt;&#x2F;strong&gt;: The build environment is consistent across different development machines&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;strong&gt;No Local Dependencies&lt;&#x2F;strong&gt;: No need to install cross-compilation tools locally&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;strong&gt;Simplified Process&lt;&#x2F;strong&gt;: One command builds all targets&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;strong&gt;Consistent Results&lt;&#x2F;strong&gt;: Binaries are built in a controlled environment&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;strong&gt;Easy CI&#x2F;CD Integration&lt;&#x2F;strong&gt;: The Docker-based approach works well in automated pipelines&lt;&#x2F;li&gt;
-&lt;&#x2F;ol&gt;
-&lt;h2 id=&quot;building-for-macos-arm64&quot;&gt;Building for macOS ARM64&lt;&#x2F;h2&gt;
-&lt;p&gt;For macOS ARM64 builds, you can still build natively on your M-series Mac:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOOS&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;darwin &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOARCH&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;arm64 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;CGO_ENABLED&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;0 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOEXPERIMENT&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;boringcrypto &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;go build -o keeper-darwin-arm64 .&#x2F;app&#x2F;keeper&#x2F;cmd&#x2F;main.go
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOOS&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;darwin &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOARCH&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;arm64 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;CGO_ENABLED&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOEXPERIMENT&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;boringcrypto &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;go build -o nexus-darwin-arm64 .&#x2F;app&#x2F;nexus&#x2F;cmd&#x2F;main.go
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOOS&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;darwin &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOARCH&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;arm64 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;CGO_ENABLED&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;0 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GOEXPERIMENT&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;boringcrypto &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;go build -o spike-darwin-arm64 .&#x2F;app&#x2F;spike&#x2F;cmd&#x2F;main.go
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;common-pitfalls-and-solutions&quot;&gt;Common Pitfalls and Solutions&lt;&#x2F;h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;CGO Dependencies&lt;&#x2F;strong&gt;: When &lt;code&gt;CGO_ENABLED=1&lt;&#x2F;code&gt;, ensure your Docker container has the necessary build tools installed&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;strong&gt;Architecture Mismatch&lt;&#x2F;strong&gt;: Double-check &lt;code&gt;GOOS&lt;&#x2F;code&gt; and &lt;code&gt;GOARCH&lt;&#x2F;code&gt; values match your target platforms&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;strong&gt;Build Tags&lt;&#x2F;strong&gt;: Consider using build tags for platform-specific code&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;strong&gt;Static Linking&lt;&#x2F;strong&gt;: For better portability, use &lt;code&gt;CGO_ENABLED=0&lt;&#x2F;code&gt; when possible&lt;&#x2F;li&gt;
-&lt;&#x2F;ol&gt;
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
-&lt;p&gt;While cross-compilation on M-series Macs presents some challenges, using Docker provides a robust and maintainable solution. This approach simplifies the build process and ensures consistent results across different architectures.&lt;&#x2F;p&gt;
-&lt;p&gt;For projects that don’t require CGO, you might still use direct cross-compilation. However, for complex projects with CGO dependencies, the Docker-based approach is recommended.&lt;&#x2F;p&gt;
-&lt;p&gt;Remember to version your build scripts and Dockerfile alongside your project code to maintain build reproducibility across your team.&lt;&#x2F;p&gt;
 </content>
         
     </entry>
@@ -1089,6 +1089,96 @@ Use the file properties dialog or NTFS permissions to restrict access to specifi
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
 &lt;p&gt;SQLite’s approach to security might be different from what you’re used to, but it’s not inherently less secure. By understanding its serverless nature and implementing appropriate security measures at the file system and application levels, you can build robust and secure applications with SQLite. The key is choosing the right security measures for your specific use case and implementing them correctly.&lt;&#x2F;p&gt;
 &lt;p&gt;Remember: security is only as strong as its weakest link. Always consider your entire application’s security architecture, not just database access control.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Working with User Home Directory in Go: A Security-First Approachl</title>
+        <published>2024-11-24T00:00:00+00:00</published>
+        <updated>2024-11-24T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/go/home-dir-in-go/"/>
+        <id>https://zerotohero.dev/go/home-dir-in-go/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/go/home-dir-in-go/">&lt;h1 id=&quot;&quot;&gt;&lt;&#x2F;h1&gt;
+&lt;p&gt;When building command-line tools or applications that need to store configuration files, it’s common to use the user’s home directory. In this post, we’ll explore how to safely create and manage a hidden directory in the user’s home folder using Go, with a focus on security.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;getting-the-user-s-home-directory&quot;&gt;Getting the User’s Home Directory&lt;&#x2F;h2&gt;
+&lt;p&gt;Go provides a straightforward way to get the user’s home directory through the &lt;code&gt;os&lt;&#x2F;code&gt; package:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;homeDir&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;os&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;UserHomeDir&lt;&#x2F;span&gt;&lt;span&gt;()
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This works cross-platform, handling the differences between Windows (&lt;code&gt;C:\Users\username&lt;&#x2F;code&gt;), Unix (&lt;code&gt;&#x2F;home&#x2F;username&lt;&#x2F;code&gt;), and macOS (&lt;code&gt;&#x2F;Users&#x2F;username&lt;&#x2F;code&gt;).&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;creating-a-hidden-directory&quot;&gt;Creating a Hidden Directory&lt;&#x2F;h2&gt;
+&lt;p&gt;In Unix-like systems, directories starting with a dot (&lt;code&gt;.&lt;&#x2F;code&gt;) are hidden by default. Let’s create a &lt;code&gt;.spike&lt;&#x2F;code&gt; directory in the user’s home folder:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;package &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;main
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;import &lt;&#x2F;span&gt;&lt;span&gt;(
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;os&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;path&#x2F;filepath&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;main&lt;&#x2F;span&gt;&lt;span&gt;() {
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;homeDir&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;os&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;UserHomeDir&lt;&#x2F;span&gt;&lt;span&gt;()
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;panic&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;spikeDir &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;filepath&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Join&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;homeDir&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;.spike&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;    
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;os&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;MkdirAll&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;spikeDir&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;0600&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;panic&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;understanding-file-permissions&quot;&gt;Understanding File Permissions&lt;&#x2F;h2&gt;
+&lt;p&gt;The permission value &lt;code&gt;0600&lt;&#x2F;code&gt; in the code above is crucial for security:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;6&lt;&#x2F;code&gt; (owner): Read (4) + Write (2) = 6&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;0&lt;&#x2F;code&gt; (group): No permissions&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;0&lt;&#x2F;code&gt; (others): No permissions&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;This ensures that only the owner can read and write to the directory, while all other users on the system are denied access.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;handling-existing-directories&quot;&gt;Handling Existing Directories&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;code&gt;MkdirAll&lt;&#x2F;code&gt; has some interesting behavior when the directory already exists:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;If the directory doesn’t exist, it creates it with the specified permissions&lt;&#x2F;li&gt;
+&lt;li&gt;If the directory exists, it does nothing and returns &lt;code&gt;nil&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;It won’t modify permissions of an existing directory&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;To ensure consistent permissions, we should explicitly set them:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Create if doesn&amp;#39;t exist
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;os&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;MkdirAll&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;spikeDir&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;0600&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;panic&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Ensure correct permissions even if directory already existed
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;os&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Chmod&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;spikeDir&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;0600&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;panic&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;platform-considerations&quot;&gt;Platform Considerations&lt;&#x2F;h2&gt;
+&lt;p&gt;While Unix-style permissions (&lt;code&gt;0600&lt;&#x2F;code&gt;) work well on Unix-like systems, Windows handles permissions differently. Go will attempt to map these permissions to Windows Access Control Lists (ACLs), but the exact behavior might vary.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;best-practices&quot;&gt;Best Practices&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Always check for errors when dealing with file operations&lt;&#x2F;li&gt;
+&lt;li&gt;Use &lt;code&gt;filepath.Join()&lt;&#x2F;code&gt; instead of string concatenation for paths&lt;&#x2F;li&gt;
+&lt;li&gt;Set restrictive permissions for directories containing sensitive data&lt;&#x2F;li&gt;
+&lt;li&gt;Consider explicitly setting permissions after directory creation&lt;&#x2F;li&gt;
+&lt;li&gt;Use &lt;code&gt;os.UserHomeDir()&lt;&#x2F;code&gt; instead of environment variables for better cross-platform support&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;When creating directories in a user’s home folder, it’s crucial to consider security implications. By using appropriate permissions and handling existing directories correctly, we can ensure our application safely stores its data while preventing unauthorized access.&lt;&#x2F;p&gt;
+&lt;p&gt;Remember, security is not just about functionality—it’s about protecting user data and maintaining trust in your application.&lt;&#x2F;p&gt;
 </content>
         
     </entry>
@@ -1336,96 +1426,6 @@ Use the file properties dialog or NTFS permissions to restrict access to specifi
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;Remember: when working with directories, the execute permission is essential for basic operations. Always ensure it’s set appropriately for your use case.&lt;&#x2F;p&gt;
 &lt;p&gt;Happy permissions managing! 🐧&lt;&#x2F;p&gt;
-</content>
-        
-    </entry>
-    <entry xml:lang="en">
-        <title>Working with User Home Directory in Go: A Security-First Approachl</title>
-        <published>2024-11-24T00:00:00+00:00</published>
-        <updated>2024-11-24T00:00:00+00:00</updated>
-        
-        <author>
-          <name>
-            
-              Volkan Özçelik
-            
-          </name>
-        </author>
-        
-        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/home-dir-in-go/"/>
-        <id>https://zerotohero.dev/inbox/home-dir-in-go/</id>
-        
-        <content type="html" xml:base="https://zerotohero.dev/inbox/home-dir-in-go/">&lt;h1 id=&quot;&quot;&gt;&lt;&#x2F;h1&gt;
-&lt;p&gt;When building command-line tools or applications that need to store configuration files, it’s common to use the user’s home directory. In this post, we’ll explore how to safely create and manage a hidden directory in the user’s home folder using Go, with a focus on security.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;getting-the-user-s-home-directory&quot;&gt;Getting the User’s Home Directory&lt;&#x2F;h2&gt;
-&lt;p&gt;Go provides a straightforward way to get the user’s home directory through the &lt;code&gt;os&lt;&#x2F;code&gt; package:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;homeDir&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;os&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;UserHomeDir&lt;&#x2F;span&gt;&lt;span&gt;()
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;This works cross-platform, handling the differences between Windows (&lt;code&gt;C:\Users\username&lt;&#x2F;code&gt;), Unix (&lt;code&gt;&#x2F;home&#x2F;username&lt;&#x2F;code&gt;), and macOS (&lt;code&gt;&#x2F;Users&#x2F;username&lt;&#x2F;code&gt;).&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;creating-a-hidden-directory&quot;&gt;Creating a Hidden Directory&lt;&#x2F;h2&gt;
-&lt;p&gt;In Unix-like systems, directories starting with a dot (&lt;code&gt;.&lt;&#x2F;code&gt;) are hidden by default. Let’s create a &lt;code&gt;.spike&lt;&#x2F;code&gt; directory in the user’s home folder:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;package &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;main
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;import &lt;&#x2F;span&gt;&lt;span&gt;(
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;os&amp;quot;
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;path&#x2F;filepath&amp;quot;
-&lt;&#x2F;span&gt;&lt;span&gt;)
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;func &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;main&lt;&#x2F;span&gt;&lt;span&gt;() {
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;homeDir&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;os&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;UserHomeDir&lt;&#x2F;span&gt;&lt;span&gt;()
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil &lt;&#x2F;span&gt;&lt;span&gt;{
-&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;panic&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err&lt;&#x2F;span&gt;&lt;span&gt;)
-&lt;&#x2F;span&gt;&lt;span&gt;    }
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;spikeDir &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;filepath&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Join&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;homeDir&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;.spike&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
-&lt;&#x2F;span&gt;&lt;span&gt;    
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;os&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;MkdirAll&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;spikeDir&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;0600&lt;&#x2F;span&gt;&lt;span&gt;)
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil &lt;&#x2F;span&gt;&lt;span&gt;{
-&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;panic&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err&lt;&#x2F;span&gt;&lt;span&gt;)
-&lt;&#x2F;span&gt;&lt;span&gt;    }
-&lt;&#x2F;span&gt;&lt;span&gt;}
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;understanding-file-permissions&quot;&gt;Understanding File Permissions&lt;&#x2F;h2&gt;
-&lt;p&gt;The permission value &lt;code&gt;0600&lt;&#x2F;code&gt; in the code above is crucial for security:&lt;&#x2F;p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;6&lt;&#x2F;code&gt; (owner): Read (4) + Write (2) = 6&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;0&lt;&#x2F;code&gt; (group): No permissions&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;0&lt;&#x2F;code&gt; (others): No permissions&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;p&gt;This ensures that only the owner can read and write to the directory, while all other users on the system are denied access.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;handling-existing-directories&quot;&gt;Handling Existing Directories&lt;&#x2F;h2&gt;
-&lt;p&gt;&lt;code&gt;MkdirAll&lt;&#x2F;code&gt; has some interesting behavior when the directory already exists:&lt;&#x2F;p&gt;
-&lt;ol&gt;
-&lt;li&gt;If the directory doesn’t exist, it creates it with the specified permissions&lt;&#x2F;li&gt;
-&lt;li&gt;If the directory exists, it does nothing and returns &lt;code&gt;nil&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;It won’t modify permissions of an existing directory&lt;&#x2F;li&gt;
-&lt;&#x2F;ol&gt;
-&lt;p&gt;To ensure consistent permissions, we should explicitly set them:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Create if doesn&amp;#39;t exist
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;os&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;MkdirAll&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;spikeDir&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;0600&lt;&#x2F;span&gt;&lt;span&gt;)
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil &lt;&#x2F;span&gt;&lt;span&gt;{
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;panic&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err&lt;&#x2F;span&gt;&lt;span&gt;)
-&lt;&#x2F;span&gt;&lt;span&gt;}
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;&#x2F;&#x2F; Ensure correct permissions even if directory already existed
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;os&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Chmod&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;spikeDir&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;0600&lt;&#x2F;span&gt;&lt;span&gt;)
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;nil &lt;&#x2F;span&gt;&lt;span&gt;{
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;panic&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;err&lt;&#x2F;span&gt;&lt;span&gt;)
-&lt;&#x2F;span&gt;&lt;span&gt;}
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;platform-considerations&quot;&gt;Platform Considerations&lt;&#x2F;h2&gt;
-&lt;p&gt;While Unix-style permissions (&lt;code&gt;0600&lt;&#x2F;code&gt;) work well on Unix-like systems, Windows handles permissions differently. Go will attempt to map these permissions to Windows Access Control Lists (ACLs), but the exact behavior might vary.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;best-practices&quot;&gt;Best Practices&lt;&#x2F;h2&gt;
-&lt;ol&gt;
-&lt;li&gt;Always check for errors when dealing with file operations&lt;&#x2F;li&gt;
-&lt;li&gt;Use &lt;code&gt;filepath.Join()&lt;&#x2F;code&gt; instead of string concatenation for paths&lt;&#x2F;li&gt;
-&lt;li&gt;Set restrictive permissions for directories containing sensitive data&lt;&#x2F;li&gt;
-&lt;li&gt;Consider explicitly setting permissions after directory creation&lt;&#x2F;li&gt;
-&lt;li&gt;Use &lt;code&gt;os.UserHomeDir()&lt;&#x2F;code&gt; instead of environment variables for better cross-platform support&lt;&#x2F;li&gt;
-&lt;&#x2F;ol&gt;
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
-&lt;p&gt;When creating directories in a user’s home folder, it’s crucial to consider security implications. By using appropriate permissions and handling existing directories correctly, we can ensure our application safely stores its data while preventing unauthorized access.&lt;&#x2F;p&gt;
-&lt;p&gt;Remember, security is not just about functionality—it’s about protecting user data and maintaining trust in your application.&lt;&#x2F;p&gt;
 </content>
         
     </entry>
@@ -1708,9 +1708,6 @@ Get&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;typography&#x2F;&quot;&gt;Get Better at Typography&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learning-rust&#x2F;&quot;&gt;Exploring Rust as a Go Developer&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 </content>
         
@@ -1845,9 +1842,6 @@ maybe it is not that hard after all 😉.&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;typography&#x2F;&quot;&gt;Get Better at Typography&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learning-rust&#x2F;&quot;&gt;Exploring Rust as a Go Developer&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 </content>
@@ -2197,9 +2191,6 @@ hope you find them useful.&lt;&#x2F;p&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;typography&#x2F;&quot;&gt;Get Better at Typography&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learning-rust&#x2F;&quot;&gt;Exploring Rust as a Go Developer&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 </content>
         
@@ -2427,25 +2418,10 @@ how to use them in the most canonical way.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;base64-decoding-a-string-in-go&#x2F;&quot;&gt;Base64 Decoding a String in Go&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;destructure&#x2F;&quot;&gt;Use Destructuring to Remove Attributes&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;getting-the-body-of-an-http-request-with-go&#x2F;&quot;&gt;Getting the Body of an HTTP Request With Go&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;lets-create-a-syslog-logger&#x2F;&quot;&gt;Let’s Create a Syslog Logger&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;make-your-code-leaner&#x2F;&quot;&gt;Make Your Code Leaner By Extracting Method&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;mastodon-101&#x2F;&quot;&gt;Who Else Wants to Have Their Own Mastodon Server?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;microservice-env-vars&#x2F;&quot;&gt;How to Ensure Environment Variables Are Set&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;scaling-your-node-api-like-a-boss&#x2F;&quot;&gt;Scaling Your Node.js API Like a Boss&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
@@ -2454,7 +2430,7 @@ how to use them in the most canonical way.&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;content-creation&#x2F;talkspiffe-stream-setup&#x2F;&quot;&gt;The Live Stream Dream&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;▶ .zprofile, .zshrc, .zenv, OMG! What Do I Put Where?!&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;zshell-startup-files&#x2F;&quot;&gt;.zprofile, .zshrc, .zenv, OMG! What Do I Put Where?!&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;redirect-index-page&#x2F;&quot;&gt;Redirecting a Static Web Page&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;

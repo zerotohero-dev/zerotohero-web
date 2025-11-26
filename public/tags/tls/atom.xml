@@ -143,10 +143,10 @@
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/auth-srategies/"/>
-        <id>https://zerotohero.dev/inbox/auth-srategies/</id>
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/go/auth-srategies/"/>
+        <id>https://zerotohero.dev/go/auth-srategies/</id>
         
-        <content type="html" xml:base="https://zerotohero.dev/inbox/auth-srategies/">&lt;p&gt;In modern cloud-native applications, authentication requirements can vary significantly across different environments and use cases. In this post, I’ll share how we implemented a flexible authentication system for a webhook server that integrates with Kubernetes External Secrets Operator (ESO).&lt;&#x2F;p&gt;
+        <content type="html" xml:base="https://zerotohero.dev/go/auth-srategies/">&lt;p&gt;In modern cloud-native applications, authentication requirements can vary significantly across different environments and use cases. In this post, I’ll share how we implemented a flexible authentication system for a webhook server that integrates with Kubernetes External Secrets Operator (ESO).&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;the-challenge&quot;&gt;The Challenge&lt;&#x2F;h2&gt;
 &lt;p&gt;Our webhook server needed to support different authentication methods depending on the deployment environment and security requirements. We wanted to support:&lt;&#x2F;p&gt;
 &lt;ol&gt;
@@ -290,10 +290,10 @@
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/secure-secret-go-server-tls/"/>
-        <id>https://zerotohero.dev/inbox/secure-secret-go-server-tls/</id>
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/go/secure-secret-go-server-tls/"/>
+        <id>https://zerotohero.dev/go/secure-secret-go-server-tls/</id>
         
-        <content type="html" xml:base="https://zerotohero.dev/inbox/secure-secret-go-server-tls/">&lt;p&gt;In modern cloud-native environments, managing secrets securely is crucial for maintaining the security of your infrastructure. This post walks through building a secure secrets management server in Go that handles TLS certificates and serves secrets via a REST API.&lt;&#x2F;p&gt;
+        <content type="html" xml:base="https://zerotohero.dev/go/secure-secret-go-server-tls/">&lt;p&gt;In modern cloud-native environments, managing secrets securely is crucial for maintaining the security of your infrastructure. This post walks through building a secure secrets management server in Go that handles TLS certificates and serves secrets via a REST API.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;overview&quot;&gt;Overview&lt;&#x2F;h2&gt;
 &lt;p&gt;Our server needs to:&lt;&#x2F;p&gt;
 &lt;ol&gt;
@@ -455,10 +455,10 @@
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/tls-decoding-go/"/>
-        <id>https://zerotohero.dev/inbox/tls-decoding-go/</id>
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/go/tls-decoding-go/"/>
+        <id>https://zerotohero.dev/go/tls-decoding-go/</id>
         
-        <content type="html" xml:base="https://zerotohero.dev/inbox/tls-decoding-go/">&lt;p&gt;When working with TLS certificates in Go applications, you might encounter some unexpected challenges. In this post, we’ll explore a common issue that occurs when dealing with base64-encoded certificates and how to resolve it.&lt;&#x2F;p&gt;
+        <content type="html" xml:base="https://zerotohero.dev/go/tls-decoding-go/">&lt;p&gt;When working with TLS certificates in Go applications, you might encounter some unexpected challenges. In this post, we’ll explore a common issue that occurs when dealing with base64-encoded certificates and how to resolve it.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;the-problem&quot;&gt;The Problem&lt;&#x2F;h2&gt;
 &lt;p&gt;Consider a scenario where you’re building a secure web server in Go that needs to use TLS certificates. You’re retrieving these certificates from a secrets management system, but when you try to start the server, you get this cryptic error:&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#282828;color:#fdf4c1aa;&quot;&gt;&lt;code&gt;&lt;span&gt;Error loading server certificate and key: tls: failed to find any PEM data in certificate input
@@ -708,10 +708,10 @@
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/tls-renogatiation/"/>
-        <id>https://zerotohero.dev/inbox/tls-renogatiation/</id>
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/go/tls-renogatiation/"/>
+        <id>https://zerotohero.dev/go/tls-renogatiation/</id>
         
-        <content type="html" xml:base="https://zerotohero.dev/inbox/tls-renogatiation/">&lt;p&gt;When configuring TLS in Go applications, you’ll often come across the recommendation to set &lt;code&gt;Renegotiation: tls.RenegotiateNever&lt;&#x2F;code&gt; in your TLS configuration. But what exactly does this mean, and why is it recommended? Let’s dive deep into TLS renegotiation, its implications, and when you might want to use different settings.&lt;&#x2F;p&gt;
+        <content type="html" xml:base="https://zerotohero.dev/go/tls-renogatiation/">&lt;p&gt;When configuring TLS in Go applications, you’ll often come across the recommendation to set &lt;code&gt;Renegotiation: tls.RenegotiateNever&lt;&#x2F;code&gt; in your TLS configuration. But what exactly does this mean, and why is it recommended? Let’s dive deep into TLS renegotiation, its implications, and when you might want to use different settings.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;what-is-tls-renegotiation&quot;&gt;What is TLS Renegotiation?&lt;&#x2F;h2&gt;
 &lt;p&gt;TLS renegotiation is a feature that allows clients and servers to update their TLS session parameters (like cipher suites or client certificates) without interrupting the existing connection. While this sounds useful, it comes with its own set of challenges.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;the-three-options-in-go&quot;&gt;The Three Options in Go&lt;&#x2F;h2&gt;

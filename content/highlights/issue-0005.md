@@ -45,9 +45,9 @@ Here is a list of articles that I've published this week:
   variety of different types of devices and applications.
 
 [fizzbuzz-pro]: @/zero-to-prod/fizzbuzz-pro-repos.md
-[microservices]: @/tips/microservice-env-vars.md
-[lean]: @/tips/make-your-code-leaner.md
-[syslog]: @/tips/lets-create-a-syslog-logger.md
+[microservices]: @/go/microservice-env-vars.md
+[lean]: @/go/make-your-code-leaner.md
+[syslog]: @/go/lets-create-a-syslog-logger.md
 
 ## Volkan Uses ⌨️
 

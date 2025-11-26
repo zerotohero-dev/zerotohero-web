@@ -1,0 +1,139 @@
+# Go-Tagged Articles
+
+Below is a list of all articles currently tagged with 'go'.
+Review this list and remove any that are not specifically about Go programming.
+The remaining articles can then be moved to the content/go/ directory.
+
+---
+
+- **Pragmatic Audit Logging in Go: Starting Small and Growing Smart**
+  - File: `inbox/audit-logging.md`
+  - Path: `content/inbox/audit-logging.md`
+
+- **Implementing Flexible Authentication Strategies in Go: A Real-World Example with External Secrets Operator**
+  - File: `inbox/auth-srategies.md`
+  - Path: `content/inbox/auth-srategies.md`
+
+- **Cross-Compiling Go Applications on M3 Macs: A Practical Guide**
+  - File: `inbox/cross-compilation.md`
+  - Path: `content/inbox/cross-compilation.md`
+
+- **Understanding Lock Upgrading Deadlocks in Go: A Common Concurrency Pitfall**
+  - File: `inbox/deadlock.md`
+  - Path: `content/inbox/deadlock.md`
+
+- **Building a Secure Webhook Server with Go and Docker: A Step-by-Step Guide**
+  - File: `inbox/docker-go.md`
+  - Path: `content/inbox/docker-go.md`
+
+- **Building a Custom Webhook Provider for External Secrets Operator: A Step-by-Step Guide**
+  - File: `inbox/eso-webhook-pitfalls.md`
+  - Path: `content/inbox/eso-webhook-pitfalls.md`
+
+- **Type-Safe Configuration Keys in Go: Finding the Right Balance**
+  - File: `inbox/go-config.md`
+  - Path: `content/inbox/go-config.md`
+
+- **Understanding Error Handling with Defer in Go: A Deep Dive**
+  - File: `inbox/go-deferred.md`
+  - Path: `content/inbox/go-deferred.md`
+
+- **log.Fatalf() vs panic in Go: Choosing the Right Way to Fail**
+  - File: `inbox/go-error-handling.md`
+  - Path: `content/inbox/go-error-handling.md`
+
+- **Understanding the 'Superfluous Response.WriteHeader' Error in Go**
+  - File: `inbox/go-http-headers.md`
+  - Path: `content/inbox/go-http-headers.md`
+
+- **The Subtle Difference Between nil and Empty Slices in Go JSON Marshaling**
+  - File: `inbox/go-slices.md`
+  - Path: `content/inbox/go-slices.md`
+
+- **Understanding SPIFFE Source Management in go-spiffe**
+  - File: `inbox/go-spiffe-source.md`
+  - Path: `content/inbox/go-spiffe-source.md`
+
+- **Working with User Home Directory in Go: A Security-First Approachl**
+  - File: `inbox/home-dir-in-go.md`
+  - Path: `content/inbox/home-dir-in-go.md`
+
+- **Parsing JWT Claims in Go: A Practical Guide**
+  - File: `inbox/jwt-parsing.md`
+  - Path: `content/inbox/jwt-parsing.md`
+
+- **JWT Verification in Go: A Comprehensive Guide**
+  - File: `inbox/jwt-validation.md`
+  - Path: `content/inbox/jwt-validation.md`
+
+- **Design Patterns in Go: Building a Policy Management System**
+  - File: `inbox/policy-management-system.md`
+  - Path: `content/inbox/policy-management-system.md`
+
+- **Designing a Reusable Retry Package in Go: Beyond the Logger Antipatterne**
+  - File: `inbox/reusable-retry-package-in-go.md`
+  - Path: `content/inbox/reusable-retry-package-in-go.md`
+
+- **Secure Root Key Encryption in Go: A Practical Guide**
+  - File: `inbox/root-key-encryption.md`
+  - Path: `content/inbox/root-key-encryption.md`
+
+- **Better Error Handling Patterns for Go SDKs**
+  - File: `inbox/sdk-error-handling.md`
+  - Path: `content/inbox/sdk-error-handling.md`
+
+- **Implementing Secure Password Input in Go CLI Applications**
+  - File: `inbox/secure-password-input.md`
+  - Path: `content/inbox/secure-password-input.md`
+
+- **Building a Secure Secrets Management Server in Go**
+  - File: `inbox/secure-secret-go-server-tls.md`
+  - Path: `content/inbox/secure-secret-go-server-tls.md`
+
+- **Understanding Go's slog Log Levels: A Practical Guidee**
+  - File: `inbox/slog-levels.md`
+  - Path: `content/inbox/slog-levels.md`
+
+- **Snippet/Draft: Crypto in Go**
+  - File: `inbox/snippet-crypto-in-go.md`
+  - Path: `content/inbox/snippet-crypto-in-go.md`
+
+- **Building an ACL System for SPIFFE-based Secrets Store**
+  - File: `inbox/spiffe-acl.md`
+  - Path: `content/inbox/spiffe-acl.md`
+
+- **Debugging TLS Certificate Issues in Go: A Base64 Decoding Story**
+  - File: `inbox/tls-decoding-go.md`
+  - Path: `content/inbox/tls-decoding-go.md`
+
+- **Understanding TLS Renegotiation in Go: When and Why to Use RenegotiateNever**
+  - File: `inbox/tls-renogatiation.md`
+  - Path: `content/inbox/tls-renogatiation.md`
+
+- **Properly Handling URL Query Parameters in Go**
+  - File: `inbox/url-params-in-go.md`
+  - Path: `content/inbox/url-params-in-go.md`
+
+- **Exploring Rust as a Go Developer**
+  - File: `roadmap/learning-rust.md`
+  - Path: `content/roadmap/learning-rust.md`
+
+- **Base64 Decoding a String in Go**
+  - File: `tips/base64-decoding-a-string-in-go.md`
+  - Path: `content/tips/base64-decoding-a-string-in-go.md`
+
+- **Getting the Body of an HTTP Request With Go**
+  - File: `tips/getting-the-body-of-an-http-request-with-go.md`
+  - Path: `content/tips/getting-the-body-of-an-http-request-with-go.md`
+
+- **Let's Create a Syslog Logger**
+  - File: `tips/lets-create-a-syslog-logger.md`
+  - Path: `content/tips/lets-create-a-syslog-logger.md`
+
+- **Make Your Code Leaner By Extracting Methods**
+  - File: `tips/make-your-code-leaner.md`
+  - Path: `content/tips/make-your-code-leaner.md`
+
+- **Here's a Technique to Ensure Environment Variables Are Set Before Starting a Microservice**
+  - File: `tips/microservice-env-vars.md`
+  - Path: `content/tips/microservice-env-vars.md`

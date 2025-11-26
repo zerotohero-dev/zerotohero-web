@@ -236,8 +236,8 @@ making it easy to go back and add visuals.
 
 ### Moving Posts Between Sections
 
-As my blog evolved, I realized some posts belonged in different categories. The
-`move-to-tips.sh` script (now `make move-to-tips`) handles this:
+As **Zero to Hero** evolved, I realized some posts belonged in different 
+categories. The `move-to-tips.sh` script (now `make move-to-tips`) handles this:
 
 ```bash
 $ make move-to-tips
@@ -281,7 +281,7 @@ Write your blog post here...
 EOF
 ```
 
-The Makefile just delegates to the script:
+The `Makefile` just delegates to the script:
 
 ```makefile
 new: ## Create a new blog post interactively
@@ -332,8 +332,8 @@ And with the `CTRL+G` keyboard shortcut, it's literally one click away.
 
 ## Use the Source, Luke
 
-As I improve these scripts over time, the latest versions will always be available
-in this blog's repository:
+As I improve these scripts over time, the latest versions will always be 
+available in this blog's repository:
 
 * [**Zero to Hero** on GitHub](https://github.com/zerotohero-dev/zerotohero-web)
 

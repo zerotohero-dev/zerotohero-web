@@ -187,8 +187,8 @@ them:&lt;&#x2F;p&gt;
 &lt;p&gt;This scans all markdown files and lists posts missing the header image syntax,
 making it easy to go back and add visuals.&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;moving-posts-between-sections&quot;&gt;Moving Posts Between Sections&lt;&#x2F;h3&gt;
-&lt;p&gt;As my blog evolved, I realized some posts belonged in different categories. The
-&lt;code&gt;move-to-tips.sh&lt;&#x2F;code&gt; script (now &lt;code&gt;make move-to-tips&lt;&#x2F;code&gt;) handles this:&lt;&#x2F;p&gt;
+&lt;p&gt;As &lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt; evolved, I realized some posts belonged in different
+categories. The &lt;code&gt;move-to-tips.sh&lt;&#x2F;code&gt; script (now &lt;code&gt;make move-to-tips&lt;&#x2F;code&gt;) handles this:&lt;&#x2F;p&gt;
 &lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;$ make move-to-tips
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Post slug: frictionless-blog-workflow
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Moving from inbox to tips...
@@ -224,7 +224,7 @@ making it easy to go back and add visuals.&lt;&#x2F;p&gt;
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Write your blog post here...
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;EOF
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;The Makefile just delegates to the script:&lt;&#x2F;p&gt;
+&lt;p&gt;The &lt;code&gt;Makefile&lt;&#x2F;code&gt; just delegates to the script:&lt;&#x2F;p&gt;
 &lt;pre data-lang=&quot;makefile&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-makefile &quot;&gt;&lt;code class=&quot;language-makefile&quot; data-lang=&quot;makefile&quot;&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;new&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;## Create a new blog post interactively
 &lt;&#x2F;span&gt;&lt;span&gt;	&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;@&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;.&#x2F;new-post.sh
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
@@ -262,8 +262,8 @@ blog post.&lt;&#x2F;p&gt;
       font-size: 1em;&quot;&gt;Grammarly in action.&lt;&#x2F;p&gt;
 &lt;&#x2F;div&gt;
 &lt;h2 id=&quot;use-the-source-luke&quot;&gt;Use the Source, Luke&lt;&#x2F;h2&gt;
-&lt;p&gt;As I improve these scripts over time, the latest versions will always be available
-in this blog’s repository:&lt;&#x2F;p&gt;
+&lt;p&gt;As I improve these scripts over time, the latest versions will always be
+available in this blog’s repository:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;zerotohero-dev&#x2F;zerotohero-web&quot;&gt;&lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt; on GitHub&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
@@ -3743,9 +3743,6 @@ Get&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;typography&#x2F;&quot;&gt;Get Better at Typography&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learning-rust&#x2F;&quot;&gt;Exploring Rust as a Go Developer&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 </content>
         
@@ -3880,9 +3877,6 @@ maybe it is not that hard after all 😉.&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;typography&#x2F;&quot;&gt;Get Better at Typography&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learning-rust&#x2F;&quot;&gt;Exploring Rust as a Go Developer&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 </content>

@@ -53,6 +53,138 @@
         <lastmod>2023-07-25</lastmod>
     </url>
     <url>
+        <loc>https://zerotohero.dev/go/audit-logging/</loc>
+        <lastmod>2024-11-28</lastmod>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/go/auth-srategies/</loc>
+        <lastmod>2024-12-10</lastmod>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/go/base64-decoding-a-string-in-go/</loc>
+        <lastmod>2024-03-01</lastmod>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/go/cross-compilation/</loc>
+        <lastmod>2024-11-27</lastmod>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/go/deadlock/</loc>
+        <lastmod>2024-11-27</lastmod>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/go/docker-go/</loc>
+        <lastmod>2024-12-11</lastmod>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/go/eso-webhook-pitfalls/</loc>
+        <lastmod>2024-12-12</lastmod>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/go/getting-the-body-of-an-http-request-with-go/</loc>
+        <lastmod>2023-03-01</lastmod>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/go/go-config/</loc>
+        <lastmod>2024-11-24</lastmod>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/go/go-deferred/</loc>
+        <lastmod>2024-12-01</lastmod>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/go/go-error-handling/</loc>
+        <lastmod>2024-11-28</lastmod>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/go/go-http-headers/</loc>
+        <lastmod>2024-11-24</lastmod>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/go/go-slices/</loc>
+        <lastmod>2024-12-03</lastmod>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/go/go-spiffe-source/</loc>
+        <lastmod>2024-12-01</lastmod>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/go/home-dir-in-go/</loc>
+        <lastmod>2024-11-24</lastmod>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/go/jwt-parsing/</loc>
+        <lastmod>2024-12-10</lastmod>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/go/jwt-validation/</loc>
+        <lastmod>2024-12-03</lastmod>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/go/learning-rust/</loc>
+        <lastmod>2024-07-21</lastmod>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/go/lets-create-a-syslog-logger/</loc>
+        <lastmod>2021-09-06</lastmod>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/go/make-your-code-leaner/</loc>
+        <lastmod>2021-06-06</lastmod>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/go/microservice-env-vars/</loc>
+        <lastmod>2021-06-06</lastmod>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/go/policy-management-system/</loc>
+        <lastmod>2024-11-24</lastmod>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/go/reusable-retry-package-in-go/</loc>
+        <lastmod>2024-11-24</lastmod>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/go/root-key-encryption/</loc>
+        <lastmod>2024-11-27</lastmod>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/go/sdk-error-handling/</loc>
+        <lastmod>2024-12-01</lastmod>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/go/secure-password-input/</loc>
+        <lastmod>2024-11-27</lastmod>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/go/secure-secret-go-server-tls/</loc>
+        <lastmod>2024-12-10</lastmod>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/go/slog-levels/</loc>
+        <lastmod>2024-11-28</lastmod>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/go/snippet-crypto-in-go/</loc>
+        <lastmod>2025-07-12</lastmod>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/go/spiffe-acl/</loc>
+        <lastmod>2024-11-24</lastmod>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/go/tls-decoding-go/</loc>
+        <lastmod>2024-12-10</lastmod>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/go/tls-renogatiation/</loc>
+        <lastmod>2024-12-03</lastmod>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/go/url-params-in-go/</loc>
+        <lastmod>2024-11-24</lastmod>
+    </url>
+    <url>
         <loc>https://zerotohero.dev/highlights/</loc>
     </url>
     <url>
@@ -175,14 +307,6 @@
         <lastmod>2024-12-03</lastmod>
     </url>
     <url>
-        <loc>https://zerotohero.dev/inbox/audit-logging/</loc>
-        <lastmod>2024-11-28</lastmod>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/inbox/auth-srategies/</loc>
-        <lastmod>2024-12-10</lastmod>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/inbox/background-processes/</loc>
         <lastmod>2024-11-24</lastmod>
     </url>
@@ -199,20 +323,12 @@
         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
-        <loc>https://zerotohero.dev/inbox/cross-compilation/</loc>
-        <lastmod>2024-11-27</lastmod>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/inbox/csr/</loc>
         <lastmod>2024-12-16</lastmod>
     </url>
     <url>
         <loc>https://zerotohero.dev/inbox/custom-ca/</loc>
         <lastmod>2024-12-12</lastmod>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/inbox/deadlock/</loc>
-        <lastmod>2024-11-27</lastmod>
     </url>
     <url>
         <loc>https://zerotohero.dev/inbox/dedicated-oidc-server/</loc>
@@ -231,10 +347,6 @@
         <lastmod>2024-12-12</lastmod>
     </url>
     <url>
-        <loc>https://zerotohero.dev/inbox/docker-go/</loc>
-        <lastmod>2024-12-11</lastmod>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/inbox/docker-memory-limits/</loc>
         <lastmod>2024-12-12</lastmod>
     </url>
@@ -245,10 +357,6 @@
     <url>
         <loc>https://zerotohero.dev/inbox/eso-vault/</loc>
         <lastmod>2024-12-22</lastmod>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/inbox/eso-webhook-pitfalls/</loc>
-        <lastmod>2024-12-12</lastmod>
     </url>
     <url>
         <loc>https://zerotohero.dev/inbox/eso-webhook-provider/</loc>
@@ -291,48 +399,12 @@
         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
-        <loc>https://zerotohero.dev/inbox/go-config/</loc>
-        <lastmod>2024-11-24</lastmod>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/inbox/go-deferred/</loc>
-        <lastmod>2024-12-01</lastmod>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/inbox/go-error-handling/</loc>
-        <lastmod>2024-11-28</lastmod>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/inbox/go-http-headers/</loc>
-        <lastmod>2024-11-24</lastmod>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/inbox/go-slices/</loc>
-        <lastmod>2024-12-03</lastmod>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/inbox/go-spiffe-source/</loc>
-        <lastmod>2024-12-01</lastmod>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/inbox/home-dir-in-go/</loc>
-        <lastmod>2024-11-24</lastmod>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/inbox/installing-vcsa-stage-1/</loc>
         <lastmod>2024-12-12</lastmod>
     </url>
     <url>
         <loc>https://zerotohero.dev/inbox/jwt-mtls/</loc>
         <lastmod>2024-11-27</lastmod>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/inbox/jwt-parsing/</loc>
-        <lastmod>2024-12-10</lastmod>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/inbox/jwt-validation/</loc>
-        <lastmod>2024-12-03</lastmod>
     </url>
     <url>
         <loc>https://zerotohero.dev/inbox/kubernetes-namespace/</loc>
@@ -355,36 +427,12 @@
         <lastmod>2024-12-12</lastmod>
     </url>
     <url>
-        <loc>https://zerotohero.dev/inbox/policy-management-system/</loc>
-        <lastmod>2024-11-24</lastmod>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/inbox/reusable-retry-package-in-go/</loc>
-        <lastmod>2024-11-24</lastmod>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/inbox/root-key-encryption/</loc>
-        <lastmod>2024-11-27</lastmod>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/inbox/sddc-manager-in-vcf/</loc>
         <lastmod>2024-12-12</lastmod>
     </url>
     <url>
-        <loc>https://zerotohero.dev/inbox/sdk-error-handling/</loc>
-        <lastmod>2024-12-01</lastmod>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/inbox/secret-export/</loc>
         <lastmod>2024-12-12</lastmod>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/inbox/secure-password-input/</loc>
-        <lastmod>2024-11-27</lastmod>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/inbox/secure-secret-go-server-tls/</loc>
-        <lastmod>2024-12-10</lastmod>
     </url>
     <url>
         <loc>https://zerotohero.dev/inbox/sha256-guide/</loc>
@@ -395,20 +443,8 @@
         <lastmod>2025-06-22</lastmod>
     </url>
     <url>
-        <loc>https://zerotohero.dev/inbox/slog-levels/</loc>
-        <lastmod>2024-11-28</lastmod>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/inbox/snippet-crypto-in-go/</loc>
-        <lastmod>2025-07-12</lastmod>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/inbox/snippet-systemd-network-wait-online-too-long/</loc>
         <lastmod>2025-07-13</lastmod>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/inbox/spiffe-acl/</loc>
-        <lastmod>2024-11-24</lastmod>
     </url>
     <url>
         <loc>https://zerotohero.dev/inbox/spiffe-federation/</loc>
@@ -435,24 +471,12 @@
         <lastmod>2024-11-24</lastmod>
     </url>
     <url>
-        <loc>https://zerotohero.dev/inbox/tls-decoding-go/</loc>
-        <lastmod>2024-12-10</lastmod>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/inbox/tls-renogatiation/</loc>
-        <lastmod>2024-12-03</lastmod>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/inbox/tls-san/</loc>
         <lastmod>2024-12-10</lastmod>
     </url>
     <url>
         <loc>https://zerotohero.dev/inbox/understanding-vcsa/</loc>
         <lastmod>2024-12-12</lastmod>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/inbox/url-params-in-go/</loc>
-        <lastmod>2024-11-24</lastmod>
     </url>
     <url>
         <loc>https://zerotohero.dev/inbox/vcenter-backup/</loc>
@@ -754,36 +778,16 @@
         <loc>https://zerotohero.dev/tips/</loc>
     </url>
     <url>
-        <loc>https://zerotohero.dev/tips/base64-decoding-a-string-in-go/</loc>
-        <lastmod>2024-03-01</lastmod>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/tips/destructure/</loc>
         <lastmod>2023-03-07</lastmod>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tips/getting-the-body-of-an-http-request-with-go/</loc>
-        <lastmod>2023-03-01</lastmod>
     </url>
     <url>
         <loc>https://zerotohero.dev/tips/git-push-origin-main/</loc>
         <lastmod>2025-11-23</lastmod>
     </url>
     <url>
-        <loc>https://zerotohero.dev/tips/lets-create-a-syslog-logger/</loc>
-        <lastmod>2021-09-06</lastmod>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tips/make-your-code-leaner/</loc>
-        <lastmod>2021-06-06</lastmod>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/tips/mastodon-101/</loc>
         <lastmod>2023-05-27</lastmod>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/tips/microservice-env-vars/</loc>
-        <lastmod>2021-06-06</lastmod>
     </url>
     <url>
         <loc>https://zerotohero.dev/tips/redirect-index-page/</loc>
