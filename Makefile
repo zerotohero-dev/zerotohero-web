@@ -10,7 +10,7 @@ help: ## Show this help message
 	@echo ""
 
 new: ## Create a new blog post interactively
-	@./new-post.sh
+	@./hack/new-post.sh
 
 build: ## Build the site with Zola
 	@echo "Building site..."
@@ -63,10 +63,10 @@ apply-tags: ## Apply tags from a slug file (use TAG=<name> FILE=<path>)
 	@./hack/apply-tags-from-file.sh "$(TAG)" "$(FILE)"
 
 find-no-images: ## Find blog posts without header images
-	@./find-posts-without-images.sh
+	@./hack/find-posts-without-images.sh
 
 move-to-tips: ## Move a post from inbox to tips section
-	@./move-to-tips.sh
+	@./hack/move-to-tips.sh
 
 clean: ## Clean the public directory
 	@echo "Cleaning build artifacts..."

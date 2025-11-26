@@ -9,7 +9,7 @@
 # `-------'`------'`--' `--'
 
 title = "A Frictionless Blog Workflow"
-date = "2025-11-21"
+date = "2025-11-25"
 
 [taxonomies]
 tags = ["content-creation","productivity","tips","git"]
@@ -110,12 +110,19 @@ The script automatically:
 Here is a list of all `make` targets so far:
 
 ```makefile
-make help    # Show all available commands
-make new     # Create a new blog post interactively
-make build   # Build the site with Zola
-make serve   # Start local dev server
-make deploy  # Build and push to production
-make clean   # Remove build artifacts
+make help           # Show all available commands
+make new            # Create a new blog post interactively
+make build          # Build the site with Zola
+make serve          # Start local dev server
+make deploy         # Build and push to production
+make clean          # Remove build artifacts
+make tags           # List all tags with frequency
+make merge-tags     # Merge/rename tags
+make normalize-tags # Remove duplicate tags
+make assign-tags    # Assign tags interactively
+make apply-tags     # Apply tags from a file
+make find-no-images # Find posts without images
+make move-to-tips   # Move posts between sections
 ```
 
 ### Publish
@@ -132,8 +139,114 @@ Commit message: Add frictionless workflow post
 Deployed successfully!
 ```
 
-It builds with `zola`, prompts for a commit message, and pushes everything 
+It builds with `zola`, prompts for a commit message, and pushes everything
 in one command.
+
+## Tag Management: Taming the Chaos
+
+As my blog grew to 200+ posts, I noticed a problem: **tag chaos**. I had:
+
+* Inconsistent naming (`kubernetes` vs `k8s`, `golang` vs `go`)
+* Too many similar tags (`tips`, `tips-and-tricks`, `best-practices`)
+* Duplicate tags in the same post
+* Posts missing important tags altogether
+
+Manual tag management across hundreds of markdown files? No thanks.
+
+### The Tag Management Suite
+
+I created a set of scripts in the `./hack/` directory to solve this:
+
+#### Analyzing Tags (`make tags`)
+
+First, I needed to see what I was dealing with:
+
+```bash
+$ make tags
+```
+
+This lists all tags with their usage frequency, sorted by popularity. It helped me
+identify duplicates and rarely-used tags that should be merged.
+
+#### Merging Tags (`make merge-tags`)
+
+Once I identified tags to consolidate, I created a `tag-mappings.txt` file:
+
+```text
+# Merge similar tags
+golang -> go
+k8s -> kubernetes
+tips-and-tricks -> tips
+best-practices -> tips
+```
+
+Then ran:
+
+```bash
+$ make merge-tags DRY_RUN=1  # Preview changes
+$ make merge-tags             # Apply changes
+```
+
+This automatically renamed tags across all posts, consolidating my tag taxonomy.
+
+#### Removing Duplicates (`make normalize-tags`)
+
+Some posts had the same tag listed multiple times. The normalize script cleans
+this up:
+
+```bash
+$ make normalize-tags DRY_RUN=1  # Preview
+$ make normalize-tags             # Fix duplicates
+```
+
+#### Bulk Tag Assignment (`make assign-tags` and `make apply-tags`)
+
+For adding tags to multiple posts at once:
+
+```bash
+$ make assign-tags TAG=architecture FILE=tag-files/architecture.txt
+```
+
+This was crucial when I realized 20+ posts about system design were missing the
+`architecture` tag.
+
+### Chaos into Order
+
+These utilities transformed my tag management from a manual nightmare into a
+systematic process. Now:
+
+* Tags are consistent across the entire blog
+* I can bulk-tag related content in seconds
+* No more duplicate tags cluttering posts
+* Easy to reorganize taxonomy as the blog evolves
+
+## Content Organization Utilities
+
+### Finding Posts Without Images
+
+Blog posts without header images look incomplete. I created a script to find 
+them:
+
+```bash
+$ make find-no-images
+```
+
+This scans all markdown files and lists posts missing the header image syntax,
+making it easy to go back and add visuals.
+
+### Moving Posts Between Sections
+
+As my blog evolved, I realized some posts belonged in different categories. The
+`move-to-tips.sh` script (now `make move-to-tips`) handles this:
+
+```bash
+$ make move-to-tips
+Post slug: frictionless-blog-workflow
+Moving from inbox to tips...
+Done!
+```
+
+It moves the file, updates internal links, and preserves all metadata.
 
 ## The Implementation
 
@@ -219,13 +332,24 @@ And with the `CTRL+G` keyboard shortcut, it's literally one click away.
 
 ## Use the Source, Luke
 
-As I improve this script over time, the latest version will always be available 
+As I improve these scripts over time, the latest versions will always be available
 in this blog's repository:
 
 * [**Zero to Hero** on GitHub](https://github.com/zerotohero-dev/zerotohero-web)
 
-Check out the `Makefile` and `new-post.sh` in the root directory, and feel free
-to adapt it to your own workflow.
+All workflow scripts are now organized in the `./hack/` directory:
+
+* `new-post.sh` - Interactive post creation
+* `list-tags.sh` - Tag frequency analysis
+* `merge-tags.sh` - Bulk tag renaming
+* `normalize-tags.sh` - Remove duplicate tags
+* `assign-tags.sh` - Interactive tag assignment
+* `apply-tags-from-file.sh` - Bulk tag application
+* `find-posts-without-images.sh` - Find posts missing header images
+* `move-to-tips.sh` - Move posts between sections
+
+The `Makefile` in the root directory provides convenient shortcuts to all these
+utilities. Feel free to adapt them to your own workflow.
 
 ## Links and Further Reference
 

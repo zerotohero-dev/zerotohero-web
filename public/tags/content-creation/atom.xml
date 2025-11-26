@@ -102,12 +102,19 @@ interactively. Now the workflow is:&lt;&#x2F;p&gt;
 &lt;li&gt;Outputs an absolute path that I can click to open&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;Here is a list of all &lt;code&gt;make&lt;&#x2F;code&gt; targets so far:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;makefile&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-makefile &quot;&gt;&lt;code class=&quot;language-makefile&quot; data-lang=&quot;makefile&quot;&gt;&lt;span&gt;make help    &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Show all available commands
-&lt;&#x2F;span&gt;&lt;span&gt;make new     &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Create a new blog post interactively
-&lt;&#x2F;span&gt;&lt;span&gt;make build   &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Build the site with Zola
-&lt;&#x2F;span&gt;&lt;span&gt;make serve   &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Start local dev server
-&lt;&#x2F;span&gt;&lt;span&gt;make deploy  &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Build and push to production
-&lt;&#x2F;span&gt;&lt;span&gt;make clean   &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Remove build artifacts
+&lt;pre data-lang=&quot;makefile&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-makefile &quot;&gt;&lt;code class=&quot;language-makefile&quot; data-lang=&quot;makefile&quot;&gt;&lt;span&gt;make help           &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Show all available commands
+&lt;&#x2F;span&gt;&lt;span&gt;make new            &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Create a new blog post interactively
+&lt;&#x2F;span&gt;&lt;span&gt;make build          &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Build the site with Zola
+&lt;&#x2F;span&gt;&lt;span&gt;make serve          &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Start local dev server
+&lt;&#x2F;span&gt;&lt;span&gt;make deploy         &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Build and push to production
+&lt;&#x2F;span&gt;&lt;span&gt;make clean          &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Remove build artifacts
+&lt;&#x2F;span&gt;&lt;span&gt;make tags           &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# List all tags with frequency
+&lt;&#x2F;span&gt;&lt;span&gt;make merge-tags     &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Merge&#x2F;rename tags
+&lt;&#x2F;span&gt;&lt;span&gt;make normalize-tags &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Remove duplicate tags
+&lt;&#x2F;span&gt;&lt;span&gt;make assign-tags    &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Assign tags interactively
+&lt;&#x2F;span&gt;&lt;span&gt;make apply-tags     &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Apply tags from a file
+&lt;&#x2F;span&gt;&lt;span&gt;make find-no-images &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Find posts without images
+&lt;&#x2F;span&gt;&lt;span&gt;make move-to-tips   &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Move posts between sections
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;h3 id=&quot;publish&quot;&gt;Publish&lt;&#x2F;h3&gt;
 &lt;p&gt;I just do a &lt;code&gt;make deploy&lt;&#x2F;code&gt;… and done.&lt;&#x2F;p&gt;
@@ -120,6 +127,74 @@ interactively. Now the workflow is:&lt;&#x2F;p&gt;
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;It builds with &lt;code&gt;zola&lt;&#x2F;code&gt;, prompts for a commit message, and pushes everything
 in one command.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;tag-management-taming-the-chaos&quot;&gt;Tag Management: Taming the Chaos&lt;&#x2F;h2&gt;
+&lt;p&gt;As my blog grew to 200+ posts, I noticed a problem: &lt;strong&gt;tag chaos&lt;&#x2F;strong&gt;. I had:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Inconsistent naming (&lt;code&gt;kubernetes&lt;&#x2F;code&gt; vs &lt;code&gt;k8s&lt;&#x2F;code&gt;, &lt;code&gt;golang&lt;&#x2F;code&gt; vs &lt;code&gt;go&lt;&#x2F;code&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;Too many similar tags (&lt;code&gt;tips&lt;&#x2F;code&gt;, &lt;code&gt;tips-and-tricks&lt;&#x2F;code&gt;, &lt;code&gt;best-practices&lt;&#x2F;code&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;Duplicate tags in the same post&lt;&#x2F;li&gt;
+&lt;li&gt;Posts missing important tags altogether&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Manual tag management across hundreds of markdown files? No thanks.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;the-tag-management-suite&quot;&gt;The Tag Management Suite&lt;&#x2F;h3&gt;
+&lt;p&gt;I created a set of scripts in the &lt;code&gt;.&#x2F;hack&#x2F;&lt;&#x2F;code&gt; directory to solve this:&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;analyzing-tags-make-tags&quot;&gt;Analyzing Tags (&lt;code&gt;make tags&lt;&#x2F;code&gt;)&lt;&#x2F;h4&gt;
+&lt;p&gt;First, I needed to see what I was dealing with:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;$ make tags
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This lists all tags with their usage frequency, sorted by popularity. It helped me
+identify duplicates and rarely-used tags that should be merged.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;merging-tags-make-merge-tags&quot;&gt;Merging Tags (&lt;code&gt;make merge-tags&lt;&#x2F;code&gt;)&lt;&#x2F;h4&gt;
+&lt;p&gt;Once I identified tags to consolidate, I created a &lt;code&gt;tag-mappings.txt&lt;&#x2F;code&gt; file:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;text&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-text &quot;&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;span&gt;# Merge similar tags
+&lt;&#x2F;span&gt;&lt;span&gt;golang -&amp;gt; go
+&lt;&#x2F;span&gt;&lt;span&gt;k8s -&amp;gt; kubernetes
+&lt;&#x2F;span&gt;&lt;span&gt;tips-and-tricks -&amp;gt; tips
+&lt;&#x2F;span&gt;&lt;span&gt;best-practices -&amp;gt; tips
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Then ran:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;$ make merge-tags DRY_RUN=1  &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Preview changes
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;$ make merge-tags             &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Apply changes
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This automatically renamed tags across all posts, consolidating my tag taxonomy.&lt;&#x2F;p&gt;
+&lt;h4 id=&quot;removing-duplicates-make-normalize-tags&quot;&gt;Removing Duplicates (&lt;code&gt;make normalize-tags&lt;&#x2F;code&gt;)&lt;&#x2F;h4&gt;
+&lt;p&gt;Some posts had the same tag listed multiple times. The normalize script cleans
+this up:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;$ make normalize-tags DRY_RUN=1  &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Preview
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;$ make normalize-tags             &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Fix duplicates
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h4 id=&quot;bulk-tag-assignment-make-assign-tags-and-make-apply-tags&quot;&gt;Bulk Tag Assignment (&lt;code&gt;make assign-tags&lt;&#x2F;code&gt; and &lt;code&gt;make apply-tags&lt;&#x2F;code&gt;)&lt;&#x2F;h4&gt;
+&lt;p&gt;For adding tags to multiple posts at once:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;$ make assign-tags TAG=architecture FILE=tag-files&#x2F;architecture.txt
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This was crucial when I realized 20+ posts about system design were missing the
+&lt;code&gt;architecture&lt;&#x2F;code&gt; tag.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;chaos-into-order&quot;&gt;Chaos into Order&lt;&#x2F;h3&gt;
+&lt;p&gt;These utilities transformed my tag management from a manual nightmare into a
+systematic process. Now:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Tags are consistent across the entire blog&lt;&#x2F;li&gt;
+&lt;li&gt;I can bulk-tag related content in seconds&lt;&#x2F;li&gt;
+&lt;li&gt;No more duplicate tags cluttering posts&lt;&#x2F;li&gt;
+&lt;li&gt;Easy to reorganize taxonomy as the blog evolves&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;content-organization-utilities&quot;&gt;Content Organization Utilities&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;finding-posts-without-images&quot;&gt;Finding Posts Without Images&lt;&#x2F;h3&gt;
+&lt;p&gt;Blog posts without header images look incomplete. I created a script to find
+them:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;$ make find-no-images
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This scans all markdown files and lists posts missing the header image syntax,
+making it easy to go back and add visuals.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;moving-posts-between-sections&quot;&gt;Moving Posts Between Sections&lt;&#x2F;h3&gt;
+&lt;p&gt;As my blog evolved, I realized some posts belonged in different categories. The
+&lt;code&gt;move-to-tips.sh&lt;&#x2F;code&gt; script (now &lt;code&gt;make move-to-tips&lt;&#x2F;code&gt;) handles this:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;$ make move-to-tips
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Post slug: frictionless-blog-workflow
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Moving from inbox to tips...
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Done!
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;It moves the file, updates internal links, and preserves all metadata.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;the-implementation&quot;&gt;The Implementation&lt;&#x2F;h2&gt;
 &lt;p&gt;Here is the &lt;code&gt;new-post.sh&lt;&#x2F;code&gt; that handles all the logic:&lt;&#x2F;p&gt;
 &lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;#!&#x2F;bin&#x2F;bash
@@ -187,13 +262,24 @@ blog post.&lt;&#x2F;p&gt;
       font-size: 1em;&quot;&gt;Grammarly in action.&lt;&#x2F;p&gt;
 &lt;&#x2F;div&gt;
 &lt;h2 id=&quot;use-the-source-luke&quot;&gt;Use the Source, Luke&lt;&#x2F;h2&gt;
-&lt;p&gt;As I improve this script over time, the latest version will always be available
+&lt;p&gt;As I improve these scripts over time, the latest versions will always be available
 in this blog’s repository:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;zerotohero-dev&#x2F;zerotohero-web&quot;&gt;&lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt; on GitHub&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;p&gt;Check out the &lt;code&gt;Makefile&lt;&#x2F;code&gt; and &lt;code&gt;new-post.sh&lt;&#x2F;code&gt; in the root directory, and feel free
-to adapt it to your own workflow.&lt;&#x2F;p&gt;
+&lt;p&gt;All workflow scripts are now organized in the &lt;code&gt;.&#x2F;hack&#x2F;&lt;&#x2F;code&gt; directory:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;new-post.sh&lt;&#x2F;code&gt; - Interactive post creation&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;list-tags.sh&lt;&#x2F;code&gt; - Tag frequency analysis&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;merge-tags.sh&lt;&#x2F;code&gt; - Bulk tag renaming&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;normalize-tags.sh&lt;&#x2F;code&gt; - Remove duplicate tags&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;assign-tags.sh&lt;&#x2F;code&gt; - Interactive tag assignment&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;apply-tags-from-file.sh&lt;&#x2F;code&gt; - Bulk tag application&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;find-posts-without-images.sh&lt;&#x2F;code&gt; - Find posts missing header images&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;move-to-tips.sh&lt;&#x2F;code&gt; - Move posts between sections&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;The &lt;code&gt;Makefile&lt;&#x2F;code&gt; in the root directory provides convenient shortcuts to all these
+utilities. Feel free to adapt them to your own workflow.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;links-and-further-reference&quot;&gt;Links and Further Reference&lt;&#x2F;h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;&quot;&gt;Zola Static Site Generator&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
@@ -1193,6 +1279,9 @@ viewers.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;content-creation&#x2F;a-frictionless-blog-workflow&#x2F;&quot;&gt;A Frictionless Blog Workflow&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;content-creation&#x2F;write-to-forget&#x2F;&quot;&gt;Write to Forget&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
@@ -1203,9 +1292,6 @@ viewers.&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;content-creation&#x2F;talkspiffe-stream-setup&#x2F;&quot;&gt;The Live Stream Dream&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;content-creation&#x2F;a-frictionless-blog-workflow&#x2F;&quot;&gt;A Frictionless Blog Workflow&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 </content>
@@ -1329,6 +1415,9 @@ creating &lt;strong&gt;valuable&lt;&#x2F;strong&gt; and &lt;strong&gt;meaningful
 &lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;content-creation&#x2F;a-frictionless-blog-workflow&#x2F;&quot;&gt;A Frictionless Blog Workflow&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;content-creation&#x2F;write-to-forget&#x2F;&quot;&gt;Write to Forget&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
@@ -1339,9 +1428,6 @@ creating &lt;strong&gt;valuable&lt;&#x2F;strong&gt; and &lt;strong&gt;meaningful
 &lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;content-creation&#x2F;talkspiffe-stream-setup&#x2F;&quot;&gt;The Live Stream Dream&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;content-creation&#x2F;a-frictionless-blog-workflow&#x2F;&quot;&gt;A Frictionless Blog Workflow&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 </content>
@@ -1404,6 +1490,9 @@ allow our minds to focus on what matters.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;content-creation&#x2F;a-frictionless-blog-workflow&#x2F;&quot;&gt;A Frictionless Blog Workflow&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;content-creation&#x2F;write-to-forget&#x2F;&quot;&gt;Write to Forget&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
@@ -1414,9 +1503,6 @@ allow our minds to focus on what matters.&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;content-creation&#x2F;talkspiffe-stream-setup&#x2F;&quot;&gt;The Live Stream Dream&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;content-creation&#x2F;a-frictionless-blog-workflow&#x2F;&quot;&gt;A Frictionless Blog Workflow&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 </content>
@@ -1489,6 +1575,9 @@ positioning your project for more outstanding achievements.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;content-creation&#x2F;a-frictionless-blog-workflow&#x2F;&quot;&gt;A Frictionless Blog Workflow&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;content-creation&#x2F;write-to-forget&#x2F;&quot;&gt;Write to Forget&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
@@ -1499,9 +1588,6 @@ positioning your project for more outstanding achievements.&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;content-creation&#x2F;talkspiffe-stream-setup&#x2F;&quot;&gt;The Live Stream Dream&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;content-creation&#x2F;a-frictionless-blog-workflow&#x2F;&quot;&gt;A Frictionless Blog Workflow&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 </content>
