@@ -17,6 +17,7 @@
 {% set posts_10 = get_section(path="spire/mtls/_index.md") %}
 {% set posts_12 = get_section(path="tips/_index.md") %}
 {% set posts_13 = get_section(path="top-of-mind/_index.md") %}
+{% set posts_14 = get_section(path="content-creation/_index.md") %}
 {% set posts_21 = get_section(path="zero-to-prod/_index.md") %}
 {% set posts_22 = get_section(path="inbox/_index.md") %}
 {% set posts_24 = get_section(path="spire/spike/_index.md") %}
@@ -29,6 +30,7 @@
   | concat(with=posts_10.pages)
   | concat(with=posts_12.pages)
   | concat(with=posts_13.pages)
+  | concat(with=posts_14.pages)
   | concat(with=posts_21.pages)
   | concat(with=posts_22.pages)
   | concat(with=posts_24.pages)
