@@ -178,6 +178,24 @@
      href="{{ z2ps.permalink }}"></a>
 </article>
 
+{% set z2ps = get_section(path="content-creation/_index.md") %}
+
+<article class="post-entry">
+  <header class="entry-header">
+    <h2>
+      <svg
+          style="position: relative; top: 6px;"
+          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" height="32" width="32"><path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" /></svg>
+      {{ z2ps.title }}
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>{{ z2ps.description }}</p>
+  </div>
+  <a class="entry-link" aria-label="post link to {{ z2ps.title }}"
+     href="{{ z2ps.permalink }}"></a>
+</article>
+
 {% set z2ps = get_section(path="tips/_index.md") %}
 
 <article class="post-entry">

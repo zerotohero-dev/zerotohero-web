@@ -1061,4 +1061,4 @@ Keep pushing the boundaries, and may the source be with you 🦄.
 
 ## Section Contents
 
-{{ tips_nav(selected=9) }}
+{{ content_creation_nav(selected=0) }}

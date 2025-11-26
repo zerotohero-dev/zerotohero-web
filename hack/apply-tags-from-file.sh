@@ -105,5 +105,5 @@ echo "  Files not found: $files_not_found"
 if [ $files_modified -gt 0 ]; then
     echo ""
     echo "Running normalization to remove duplicates..."
-    ./normalize-tags.sh
+    ./hack/normalize-tags.sh
 fi

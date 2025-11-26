@@ -151,4 +151,4 @@ creating **valuable** and **meaningful** content.
 
 ## Section Contents
 
-{{ top_of_mind_nav(selected=8) }}
+{{ content_creation_nav(selected=0) }}

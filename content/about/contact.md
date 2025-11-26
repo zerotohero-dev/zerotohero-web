@@ -23,7 +23,7 @@ tags = ["about"]
 If you want to contact me, [**volkan.io**][web] 
 lists social platforms I'm actively contributing to.
 You can also email me at [**me@volkan.io**][email]; 
-however, don't expect an immediate reply (*or a reply at all*).
+however, don't expect an immediate reply (*or any reply at all*).
 
 Thanks for stopping by.
 

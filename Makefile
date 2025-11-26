@@ -35,24 +35,32 @@ deploy: build ## Build and deploy to production (git push)
 	fi
 
 tags: ## List all tags with usage frequency
-	@./list-tags.sh
+	@./hack/list-tags.sh
 
 merge-tags: ## Merge/rename tags using tag-mappings.txt (use DRY_RUN=1 for preview)
 	@if [ "$(DRY_RUN)" = "1" ]; then \
-		./merge-tags.sh tag-mappings.txt --dry-run; \
+		./hack/merge-tags.sh tag-mappings.txt --dry-run; \
 	else \
-		./merge-tags.sh tag-mappings.txt; \
+		./hack/merge-tags.sh tag-mappings.txt; \
 	fi
 
 normalize-tags: ## Remove duplicate tags from all posts (use DRY_RUN=1 for preview)
 	@if [ "$(DRY_RUN)" = "1" ]; then \
-		./normalize-tags.sh --dry-run; \
+		./hack/normalize-tags.sh --dry-run; \
 	else \
-		./normalize-tags.sh; \
+		./hack/normalize-tags.sh; \
 	fi
 
 assign-tags: ## Assign tags to posts by slug (interactive)
-	@./assign-tags.sh
+	@./hack/assign-tags.sh
+
+apply-tags: ## Apply tags from a slug file (use TAG=<name> FILE=<path>)
+	@if [ -z "$(TAG)" ] || [ -z "$(FILE)" ]; then \
+		echo "Usage: make apply-tags TAG=<tag-name> FILE=<slug-file>"; \
+		echo "Example: make apply-tags TAG=architecture FILE=tag-files/architecture.txt"; \
+		exit 1; \
+	fi
+	@./hack/apply-tags-from-file.sh "$(TAG)" "$(FILE)"
 
 find-no-images: ## Find blog posts without header images
 	@./find-posts-without-images.sh

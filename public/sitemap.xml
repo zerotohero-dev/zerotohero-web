@@ -30,6 +30,29 @@
         <loc>https://zerotohero.dev/archive/</loc>
     </url>
     <url>
+        <loc>https://zerotohero.dev/content-creation/</loc>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/content-creation/a-frictionless-blog-workflow/</loc>
+        <lastmod>2025-11-21</lastmod>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/content-creation/craft-captivating-documentation/</loc>
+        <lastmod>2023-07-21</lastmod>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/content-creation/psst-you-dont-have-to-use-medium/</loc>
+        <lastmod>2024-03-06</lastmod>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/content-creation/talkspiffe-stream-setup/</loc>
+        <lastmod>2024-05-27</lastmod>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/content-creation/write-to-forget/</loc>
+        <lastmod>2023-07-25</lastmod>
+    </url>
+    <url>
         <loc>https://zerotohero.dev/highlights/</loc>
     </url>
     <url>
@@ -731,10 +754,6 @@
         <loc>https://zerotohero.dev/tips/</loc>
     </url>
     <url>
-        <loc>https://zerotohero.dev/tips/a-frictionless-blog-workflow/</loc>
-        <lastmod>2025-11-21</lastmod>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/tips/base64-decoding-a-string-in-go/</loc>
         <lastmod>2024-03-01</lastmod>
     </url>
@@ -775,10 +794,6 @@
         <lastmod>2021-09-27</lastmod>
     </url>
     <url>
-        <loc>https://zerotohero.dev/tips/talkspiffe-stream-setup/</loc>
-        <lastmod>2024-05-27</lastmod>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/tips/zshell-startup-files/</loc>
         <lastmod>2021-08-09</lastmod>
     </url>
@@ -796,10 +811,6 @@
     <url>
         <loc>https://zerotohero.dev/top-of-mind/consume-less/</loc>
         <lastmod>2024-03-10</lastmod>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/top-of-mind/craft-captivating-documentation/</loc>
-        <lastmod>2023-07-21</lastmod>
     </url>
     <url>
         <loc>https://zerotohero.dev/top-of-mind/dumb-quotes/</loc>
@@ -826,10 +837,6 @@
         <lastmod>2021-06-04</lastmod>
     </url>
     <url>
-        <loc>https://zerotohero.dev/top-of-mind/psst-you-dont-have-to-use-medium/</loc>
-        <lastmod>2024-03-06</lastmod>
-    </url>
-    <url>
         <loc>https://zerotohero.dev/top-of-mind/reshape-your-workspace/</loc>
         <lastmod>2023-07-12</lastmod>
     </url>
@@ -848,10 +855,6 @@
     <url>
         <loc>https://zerotohero.dev/top-of-mind/vmware-secrets-manager/</loc>
         <lastmod>2023-08-03</lastmod>
-    </url>
-    <url>
-        <loc>https://zerotohero.dev/top-of-mind/write-to-forget/</loc>
-        <lastmod>2023-07-25</lastmod>
     </url>
     <url>
         <loc>https://zerotohero.dev/vadideki-geyik/bol-mazemos/</loc>

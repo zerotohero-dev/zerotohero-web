@@ -24,7 +24,7 @@
 - name: "Scaling Your Node.js API Like a Boss"
   url: "@/tips/scaling-your-node-api-like-a-boss.md"
 - name: "The Live Stream Dream"
-  url: "@/tips/talkspiffe-stream-setup.md"
+  url: "@/content-creation/talkspiffe-stream-setup.md"
 - name: ".zprofile, .zshrc, .zenv, OMG! What Do I Put Where?!"
   url: "@/tips/zshell-startup-files.md"
 - name: "Redirecting a Static Web Page"

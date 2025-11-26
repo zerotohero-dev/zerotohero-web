@@ -68,4 +68,4 @@ allow our minds to focus on what matters.
 
 ## Section Contents
 
-{{ top_of_mind_nav(selected=14) }}
+{{ content_creation_nav(selected=0) }}

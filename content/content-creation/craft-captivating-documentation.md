@@ -88,4 +88,4 @@ And until next time... May the source be with you 🦄.
 
 ## Section Contents
 
-{{ top_of_mind_nav(selected=3) }}
+{{ content_creation_nav(selected=0) }}

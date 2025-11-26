@@ -175,7 +175,7 @@ echo ""
 
 if [ $files_modified -gt 0 ]; then
     echo "Running tag normalization..."
-    ./normalize-tags.sh
+    ./hack/normalize-tags.sh
     echo ""
     echo "✓ Done! Tags have been assigned and normalized."
 else

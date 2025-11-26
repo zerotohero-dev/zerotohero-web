@@ -1,0 +1,19 @@
+#   (`-')           (`-').->
+#   ( OO).->        (OO )__
+# ,(_/----. .----. ,--. ,'-' doubt everything,
+# |__,    |\_,-.  ||  | |  |
+#  (_/   /    .' .'|  `-'  | be curious,
+#  .'  .'_  .'  /_ |  .-.  |
+# |       ||      ||  | |  | learn.
+# `-------'`------'`--' `--'
+
+- name: "Write to Forget"
+  url: "@/content-creation/write-to-forget.md"
+- name: "Craft Captivating Documentation"
+  url: "@/content-creation/craft-captivating-documentation.md"
+- name: "Psst... You Don't Have to Use Medium"
+  url: "@/content-creation/psst-you-dont-have-to-use-medium.md"
+- name: "The Live Stream Dream"
+  url: "@/content-creation/talkspiffe-stream-setup.md"
+- name: "A Frictionless Blog Workflow"
+  url: "@/content-creation/a-frictionless-blog-workflow.md"
