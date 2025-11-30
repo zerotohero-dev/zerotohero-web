@@ -119,6 +119,34 @@
      href="{{ go_section.permalink }}"></a>
 </article>
 
+<h2>Development</h2>
+
+<p>Software development practices, patterns, and methodologies: from coding best
+  practices and design patterns to testing strategies and building maintainable
+  software.</p>
+<p>&nbsp;</p>
+
+{% set dev_section = get_section(path="development/_index.md") %}
+
+<article class="post-entry">
+  <header class="entry-header">
+    <h2>
+      <svg
+          style="position: relative; top: 6px;"
+          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" height="32" width="32">
+        <polyline points="16 18 22 12 16 6"></polyline>
+        <polyline points="8 6 2 12 8 18"></polyline>
+      </svg>
+      {{ dev_section.title }}
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>{{ dev_section.description }}</p>
+  </div>
+  <a class="entry-link" aria-label="post link to {{ dev_section.title }}"
+     href="{{ dev_section.permalink }}"></a>
+</article>
+
 <h2>Roadmap</h2>
 
 <p>A special selection of articles aimed at helping you navigate the world of

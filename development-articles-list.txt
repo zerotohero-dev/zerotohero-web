@@ -1,0 +1,116 @@
+# Development-Tagged Articles
+
+Below is a list of all articles currently tagged with 'development'.
+Review this list and remove any that should not be in the Development category.
+The remaining articles can then be moved to the content/development/ directory.
+
+---
+
+- **How to Count Lines in Your Source Code Projects: A Comprehensive Guide**
+  - File: `inbox/counting-lines-of-code.md`
+  - Path: `content/inbox/counting-lines-of-code.md`
+
+- **Securing CI/CD Access to Your Secrets Management System: An Architectural Analysis**
+  - File: `inbox/dedicated-oidc-server.md`
+  - Path: `content/inbox/dedicated-oidc-server.md`
+
+- **Debugging URL Encoding Issues with External Secrets Operator's Webhook Provider**
+  - File: `inbox/eso-urlencode.md`
+  - Path: `content/inbox/eso-urlencode.md`
+
+- **Using External Secrets Operator with HashiCorp Vault to Create Kubernetes Secrets**
+  - File: `inbox/eso-vault.md`
+  - Path: `content/inbox/eso-vault.md`
+
+- **Computing File Hashes in Unix Systems: A Complete Guide**
+  - File: `inbox/file-hashing.md`
+  - Path: `content/inbox/file-hashing.md`
+
+- **Understanding Kubernetes Services and Namespaces: A Practical Guide**
+  - File: `inbox/kubernetes-namespace.md`
+  - Path: `content/inbox/kubernetes-namespace.md`
+
+- **Computing SHA256 Hashes for Binary Files: A Quick Guide**
+  - File: `inbox/sha256-guide.md`
+  - Path: `content/inbox/sha256-guide.md`
+
+- **SQLite Security: Understanding Authentication and Protectio**
+  - File: `inbox/sqlite-security.md`
+  - Path: `content/inbox/sqlite-security.md`
+
+- **vSphere 8 Update 2: What's New in VMware's Latest Releasee**
+  - File: `inbox/whats-new-in-vsphere-8.md`
+  - Path: `content/inbox/whats-new-in-vsphere-8.md`
+
+- **Resources Every Developer Must Read: No Exceptions**
+  - File: `roadmap/bedtime-reading.md`
+  - Path: `content/roadmap/bedtime-reading.md`
+
+- **Paint Me Like One of Your French Design Patterns**
+  - File: `roadmap/design-patterns.md`
+  - Path: `content/roadmap/design-patterns.md`
+
+- **A Glossary of Mostly Developer-Related Things**
+  - File: `roadmap/glossary.md`
+  - Path: `content/roadmap/glossary.md`
+
+- **Knowing JavaScript Is Not Good Enough**
+  - File: `roadmap/knowing-javascript-is-not-good-enough.md`
+  - Path: `content/roadmap/knowing-javascript-is-not-good-enough.md`
+
+- **Want to Learn JavaScript? Learn Haskell First**
+  - File: `roadmap/learn-haskell.md`
+  - Path: `content/roadmap/learn-haskell.md`
+
+- **Learn Your JavaScript the Unconventional Way**
+  - File: `roadmap/learn-javascript-the-unconventional-way.md`
+  - Path: `content/roadmap/learn-javascript-the-unconventional-way.md`
+
+- **Exploring Rust as a Go Developer**
+  - File: `roadmap/learning-rust.md`
+  - Path: `content/roadmap/learning-rust.md`
+
+- **Tame Your Regular Expressions**
+  - File: `roadmap/regexp.md`
+  - Path: `content/roadmap/regexp.md`
+
+- **Be the Next Version of Yourself**
+  - File: `roadmap/roadmap.md`
+  - Path: `content/roadmap/roadmap.md`
+
+- **Security Is Not Optional**
+  - File: `roadmap/security.md`
+  - Path: `content/roadmap/security.md`
+
+- **Master Your vim**
+  - File: `roadmap/vim.md`
+  - Path: `content/roadmap/vim.md`
+
+- **You Need Testing**
+  - File: `roadmap/you-need-testing.md`
+  - Path: `content/roadmap/you-need-testing.md`
+
+- **Use Destructuring to Remove Attributes **
+  - File: `tips/destructure.md`
+  - Path: `content/tips/destructure.md`
+
+- **Redirecting a Static Web Page**
+  - File: `tips/redirect-index-page.md`
+  - Path: `content/tips/redirect-index-page.md`
+
+- **Scaling Your Node.js API Like a Boss**
+  - File: `tips/scaling-your-node-api-like-a-boss.md`
+  - Path: `content/tips/scaling-your-node-api-like-a-boss.md`
+
+- **Transform Feedback into Professional Mastery**
+  - File: `top-of-mind/perception-pivot.md`
+  - Path: `content/top-of-mind/perception-pivot.md`
+
+- **Bol Mazemos**
+  - File: `vadideki-geyik/bol-mazemos.md`
+  - Path: `content/vadideki-geyik/bol-mazemos.md`
+
+
+---
+
+Total articles found: 45

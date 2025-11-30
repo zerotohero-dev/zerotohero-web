@@ -16,7 +16,8 @@ echo "  6) zero-to-prod      - Production-ready system tutorials"
 echo "  7) spire             - SPIFFE and SPIRE articles"
 echo "  8) content-creation  - Writing, blogging, and content strategy"
 echo "  9) go                - Go programming language articles"
-read -p "Choose category (1-9) [default: 2]: " category_num
+echo " 10) development       - Software development practices and patterns"
+read -p "Choose category (1-10) [default: 2]: " category_num
 category_num=${category_num:-2}
 
 case $category_num in
@@ -29,6 +30,7 @@ case $category_num in
     7) category="spire";;
     8) category="content-creation";;
     9) category="go";;
+    10) category="development";;
     *) category="inbox";;
 esac
 
