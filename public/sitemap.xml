@@ -321,6 +321,10 @@
         <lastmod>2024-12-03</lastmod>
     </url>
     <url>
+        <loc>https://zerotohero.dev/inbox/code-and-documentation-audit-promt-for-claude-code/</loc>
+        <lastmod>2025-12-03</lastmod>
+    </url>
+    <url>
         <loc>https://zerotohero.dev/inbox/configuring-vcsa-stage-2/</loc>
         <lastmod>2024-12-12</lastmod>
     </url>
@@ -707,6 +711,9 @@
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/development/</loc>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/tags/draft/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/encryption/</loc>

@@ -4,8 +4,84 @@
     <link rel="self" type="application/atom+xml" href="https://zerotohero.dev/tags/development/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://zerotohero.dev"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2024-12-28T00:00:00+00:00</updated>
+    <updated>2025-12-03T00:00:00+00:00</updated>
     <id>https://zerotohero.dev/tags/development/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Code and Documentation Audit Promt for Claude Code</title>
+        <published>2025-12-03T00:00:00+00:00</published>
+        <updated>2025-12-03T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/code-and-documentation-audit-promt-for-claude-code/"/>
+        <id>https://zerotohero.dev/inbox/code-and-documentation-audit-promt-for-claude-code/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/code-and-documentation-audit-promt-for-claude-code/">&lt;pre data-lang=&quot;text&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-text &quot;&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;span&gt; I need a comprehensive audit of Go documentation vs implementation across the 
+&lt;&#x2F;span&gt;&lt;span&gt; codebase.
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;Scope: &#x2F;home&#x2F;volkan&#x2F;WORKSPACE&#x2F;spike-sdk-go
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;For each exported function, check:
+&lt;&#x2F;span&gt;&lt;span&gt;1. Return type mismatches (e.g., doc says &amp;quot;error&amp;quot; but returns 
+&lt;&#x2F;span&gt;&lt;span&gt;   &amp;quot;*sdkErrors.SDKError&amp;quot;)
+&lt;&#x2F;span&gt;&lt;span&gt;2. Parameter type mismatches (e.g., doc says &amp;quot;string&amp;quot; but uses custom type)
+&lt;&#x2F;span&gt;&lt;span&gt;3. Missing godoc comments
+&lt;&#x2F;span&gt;&lt;span&gt;4. Outdated behavior descriptions
+&lt;&#x2F;span&gt;&lt;span&gt;5. Missing parameter documentation
+&lt;&#x2F;span&gt;&lt;span&gt;6. Missing return value documentation
+&lt;&#x2F;span&gt;&lt;span&gt;7. Inconsistent example code
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;Focus on:
+&lt;&#x2F;span&gt;&lt;span&gt;- All packages under api&#x2F;
+&lt;&#x2F;span&gt;&lt;span&gt;- crypto&#x2F; package
+&lt;&#x2F;span&gt;&lt;span&gt;- kv&#x2F; package
+&lt;&#x2F;span&gt;&lt;span&gt;- log&#x2F; package
+&lt;&#x2F;span&gt;&lt;span&gt;- retry&#x2F; package
+&lt;&#x2F;span&gt;&lt;span&gt;- security&#x2F; package
+&lt;&#x2F;span&gt;&lt;span&gt;- strings&#x2F; package
+&lt;&#x2F;span&gt;&lt;span&gt;- system&#x2F; package
+&lt;&#x2F;span&gt;&lt;span&gt;- validation&#x2F; package
+&lt;&#x2F;span&gt;&lt;span&gt;- net&#x2F; package
+&lt;&#x2F;span&gt;&lt;span&gt;- errors&#x2F; package
+&lt;&#x2F;span&gt;&lt;span&gt;- spiffe&#x2F; package
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;Return:
+&lt;&#x2F;span&gt;&lt;span&gt;- A structured markdown report grouped by issue type
+&lt;&#x2F;span&gt;&lt;span&gt;- File paths with line numbers
+&lt;&#x2F;span&gt;&lt;span&gt;- Current vs expected documentation
+&lt;&#x2F;span&gt;&lt;span&gt;- Severity rating (critical&#x2F;moderate&#x2F;minor)
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;Do NOT make any changes - only analyze and report.
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;Based on this report, we will create a phased plan and incrementally fix things.
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;Alternative: Iterative Approach
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;If you want changes made incrementally:
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;Audit and FIX documentation issues in these files:
+&lt;&#x2F;span&gt;&lt;span&gt;- &#x2F;home&#x2F;volkan&#x2F;WORKSPACE&#x2F;spike-sdk-go&#x2F;api&#x2F;internal&#x2F;impl&#x2F;secret&#x2F;*.go
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;Check and fix:
+&lt;&#x2F;span&gt;&lt;span&gt;1. Return types: Update &amp;quot;error&amp;quot; to &amp;quot;*sdkErrors.SDKError&amp;quot; where applicable
+&lt;&#x2F;span&gt;&lt;span&gt;2. Add missing godoc for exported functions
+&lt;&#x2F;span&gt;&lt;span&gt;3. Ensure parameter types match function signatures
+&lt;&#x2F;span&gt;&lt;span&gt;4. Verify return value lists are complete
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;After each file, report:
+&lt;&#x2F;span&gt;&lt;span&gt;- What was found
+&lt;&#x2F;span&gt;&lt;span&gt;- What was fixed
+&lt;&#x2F;span&gt;&lt;span&gt;- Line numbers changed
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>Shamir&#x27;s Secret Sharing Scheme with SPIFFE and SPIKE</title>
         <published>2024-12-28T00:00:00+00:00</published>
