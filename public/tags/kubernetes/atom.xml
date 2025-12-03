@@ -4114,10 +4114,13 @@ Modify your webhook service to handle token fetching differently:&lt;&#x2F;p&gt;
         <link rel="alternate" type="text/html" href="https://zerotohero.dev/about/volkan/"/>
         <id>https://zerotohero.dev/about/volkan/</id>
         
-        <content type="html" xml:base="https://zerotohero.dev/about/volkan/">&lt;p&gt;{{img(
-src=“&#x2F;images&#x2F;size&#x2F;w1200&#x2F;2024&#x2F;03&#x2F;deerz.webp”
-alt=“Don’t miss the deer, go kiss the deer 🦌💋.
-)}}&lt;&#x2F;p&gt;
+        <content type="html" xml:base="https://zerotohero.dev/about/volkan/">
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;size&amp;#x2F;w1200&amp;#x2F;2024&amp;#x2F;03&amp;#x2F;deerz.webp&quot; alt=&quot;Don&amp;#x27;t miss the deer, go kiss the deer 🦌💋.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Don&amp;#x27;t miss the deer, go kiss the deer 🦌💋.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
 &lt;h2 id=&quot;hey-there-wave&quot;&gt;Hey There 👋&lt;&#x2F;h2&gt;
 &lt;p&gt;Hello, I’m &lt;strong&gt;Volkan&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;I’m a &lt;strong&gt;developer&lt;&#x2F;strong&gt;, speaker, &lt;strong&gt;streamer&lt;&#x2F;strong&gt;, &lt;strong&gt;creator&lt;&#x2F;strong&gt;, connector,
