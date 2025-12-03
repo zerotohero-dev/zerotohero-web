@@ -8,12 +8,14 @@
 # |       ||      ||  | |  | learn.
 # `-------'`------'`--' `--'
 
-title = "Code and Documentation Audit Promt for Claude Code"
+title = "Code and Documentation Audit Prompt for Claude Code"
 date = "2025-12-03"
 
 [taxonomies]
 tags = ["inbox", "development", "draft"]
 +++
+
+## Draft
 
 ```text
  I need a comprehensive audit of Go documentation vs implementation across the 

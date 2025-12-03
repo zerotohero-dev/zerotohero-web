@@ -7,7 +7,7 @@
     <updated>2025-12-03T00:00:00+00:00</updated>
     <id>https://zerotohero.dev/tags/development/atom.xml</id>
     <entry xml:lang="en">
-        <title>Code and Documentation Audit Promt for Claude Code</title>
+        <title>Code and Documentation Audit Prompt for Claude Code</title>
         <published>2025-12-03T00:00:00+00:00</published>
         <updated>2025-12-03T00:00:00+00:00</updated>
         
@@ -22,7 +22,8 @@
         <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/code-and-documentation-audit-promt-for-claude-code/"/>
         <id>https://zerotohero.dev/inbox/code-and-documentation-audit-promt-for-claude-code/</id>
         
-        <content type="html" xml:base="https://zerotohero.dev/inbox/code-and-documentation-audit-promt-for-claude-code/">&lt;pre data-lang=&quot;text&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-text &quot;&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;span&gt; I need a comprehensive audit of Go documentation vs implementation across the 
+        <content type="html" xml:base="https://zerotohero.dev/inbox/code-and-documentation-audit-promt-for-claude-code/">&lt;h2 id=&quot;draft&quot;&gt;Draft&lt;&#x2F;h2&gt;
+&lt;pre data-lang=&quot;text&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-text &quot;&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;span&gt; I need a comprehensive audit of Go documentation vs implementation across the 
 &lt;&#x2F;span&gt;&lt;span&gt; codebase.
 &lt;&#x2F;span&gt;&lt;span&gt;
 &lt;&#x2F;span&gt;&lt;span&gt;Scope: &#x2F;home&#x2F;volkan&#x2F;WORKSPACE&#x2F;spike-sdk-go
