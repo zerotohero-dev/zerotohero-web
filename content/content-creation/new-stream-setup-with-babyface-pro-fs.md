@@ -301,7 +301,7 @@ All outputs we have defined are routed directly to the stream mix.
 What's the fun in streaming if I'm not listening to what I'm playing,
 isn't it?
 
-For that, I have a separate Audio Hijack session:
+For that, I have a separate **Audio Hijack** session:
 
 {{img(
   src="/images/2025/12/audio-to-me.png"
