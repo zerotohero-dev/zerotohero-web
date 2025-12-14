@@ -145,7 +145,7 @@ AI-generated background sounds; it is totally copyright-free.
 ## To Duck or not to Duck
 
 Another thing that I needed to configure is the background music's 
-**gain level**:When I am talking, I want to keep it around **5-10%**, 
+**gain level**: When I am talking, I want to keep it around **5-10%**, 
 and when I'm not speaking and doing a focused programming session, for example,
 I prefer to elevate it around **40%**, so that the audience can enjoy the music,
 while I can continue my focused work. 
