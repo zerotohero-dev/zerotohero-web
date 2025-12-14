@@ -330,7 +330,7 @@ tough to manipulate with precision.&lt;&#x2F;p&gt;
       font-size: 1em;&quot;&gt;RME Totalmix snapshots.&lt;&#x2F;p&gt;
 &lt;&#x2F;div&gt;
 &lt;h2 id=&quot;remove-that-hiss-our-preciousss&quot;&gt;Remove that “&lt;em&gt;Hiss&lt;&#x2F;em&gt;”, Our Preciousss&lt;&#x2F;h2&gt;
-&lt;p&gt;Next, get rid of the noise floor. For that, In [&lt;strong&gt;Audio Hijack&lt;&#x2F;strong&gt;][audio-hijack,
+&lt;p&gt;Next, get rid of the noise floor. For that, In &lt;a href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;audiohijack&#x2F;&quot; title=&quot;Audio Hijack&quot;&gt;&lt;strong&gt;Audio Hijack&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;,
 I added a&lt;strong&gt;Speech Denoise&lt;&#x2F;strong&gt; plugin immediately after the input, which worked
 beautifully:&lt;&#x2F;p&gt;
 

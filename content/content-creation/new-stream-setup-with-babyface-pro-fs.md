@@ -363,7 +363,7 @@ tough to manipulate with precision.
 
 ## Remove that "*Hiss*", Our Preciousss
 
-Next, get rid of the noise floor. For that, In [**Audio Hijack**][audio-hijack, 
+Next, get rid of the noise floor. For that, In [**Audio Hijack**][audio-hijack], 
 I added a**Speech Denoise** plugin immediately after the input, which worked 
 beautifully:
 
