@@ -565,6 +565,73 @@ my main monitor.
   alt="Stream audio monitoring."
 )}}
 
+## Different Monitors Have Different Outcomes
+
+Here is my stream signal path and where I put various RMS meters:
+
+```text
+Mic
+ → Babyface ADC
+   → TotalMix (input domain)
+     → Audio Hijack
+       → AH Meter #1 (post-ADC, pre-processing)
+         → Processing chain (EQ / Comp / Limiter)
+           → AH Meter #2 (post-processing)
+             → AH Output
+               → Babyface Loopback: ADAT 7/8
+                 → Wirecast input
+                   → Wirecast meter
+                     → Encoder / Stream
+
+```
+
+**ADAT 7/8** is my Stream master bus. That means:
+
+* Anything before **AH Meter #2** is not yet final
+* Anything after **ADAT 7/8** does not exist for the stream
+* AudioHijack is **one** contributor to what ends up on that bus 
+  (*often the main one*), but the truth for the stream is: 
+  whatever is on **ADAT 7/8 loopback**
+
+That makes the meter for **ADAT 7/8 Loopback bus** in **DigiCheck** the
+most direct, single source of truth for the system.
+
+Wirecast's own meter is still useful but not authoritative for the final stream.
+
+So if I see a **red** for **ADAT 7/8** in **DigiCheck**, that is an immediate
+**fix now**. And the likely fix would be adjusting the input gain of the
+microphone.
+
+A **red** on Wirecast (*while DigiCheck looks fine*) is merely a *conservative
+warning* that implies I am flirting with the ceiling.
+
+A **red** on **Audio Hijack #1** would mean input capture is getting hot.
+
+A **red** on **Audio Hijack #2** would mean the process chain is getting hot.
+
+## RMS Target Recommendations
+
+The industry standard for **RMS** is **-18 to -14 dBFS**. That will:
+
+* Sound present, and "*close";
+* Leave headroom for emphasis when needed;
+* Play nicely with background music;
+* Encode cleanly across platforms.
+
+Anything below **-20 dBFS** will start to sound "*too quiet*". When that
+happens:
+
+* Viewers will tend to turn the volume up;
+* The noise floor (*if any*) becomes more noticeable;
+* Platform normalization will boost and residue badly later.
+
+For **background music**, the recommended level is **-28 to -24 dBFS**. 
+Depending on the genre, it can be even higher.
+
+But instead of memorizing all these numbers, **practically** you can aim to keep
+your peaks at **yellows** at all times: That's what most DJs do, and eventually 
+get natural at this in time.
+
 ## Tools and Technologies Mentioned
 
 ### Services

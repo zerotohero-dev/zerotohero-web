@@ -521,6 +521,60 @@ my main monitor.&lt;&#x2F;p&gt;
       margin-top: -1.125em;
       font-size: 1em;&quot;&gt;Stream audio monitoring.&lt;&#x2F;p&gt;
 &lt;&#x2F;div&gt;
+&lt;h2 id=&quot;different-monitors-have-different-outcomes&quot;&gt;Different Monitors Have Different Outcomes&lt;&#x2F;h2&gt;
+&lt;p&gt;Here is my stream signal path and where I put various RMS meters:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;text&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-text &quot;&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;span&gt;Mic
+&lt;&#x2F;span&gt;&lt;span&gt; → Babyface ADC
+&lt;&#x2F;span&gt;&lt;span&gt;   → TotalMix (input domain)
+&lt;&#x2F;span&gt;&lt;span&gt;     → Audio Hijack
+&lt;&#x2F;span&gt;&lt;span&gt;       → AH Meter #1 (post-ADC, pre-processing)
+&lt;&#x2F;span&gt;&lt;span&gt;         → Processing chain (EQ &#x2F; Comp &#x2F; Limiter)
+&lt;&#x2F;span&gt;&lt;span&gt;           → AH Meter #2 (post-processing)
+&lt;&#x2F;span&gt;&lt;span&gt;             → AH Output
+&lt;&#x2F;span&gt;&lt;span&gt;               → Babyface Loopback: ADAT 7&#x2F;8
+&lt;&#x2F;span&gt;&lt;span&gt;                 → Wirecast input
+&lt;&#x2F;span&gt;&lt;span&gt;                   → Wirecast meter
+&lt;&#x2F;span&gt;&lt;span&gt;                     → Encoder &#x2F; Stream
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;strong&gt;ADAT 7&#x2F;8&lt;&#x2F;strong&gt; is my Stream master bus. That means:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Anything before &lt;strong&gt;AH Meter #2&lt;&#x2F;strong&gt; is not yet final&lt;&#x2F;li&gt;
+&lt;li&gt;Anything after &lt;strong&gt;ADAT 7&#x2F;8&lt;&#x2F;strong&gt; does not exist for the stream&lt;&#x2F;li&gt;
+&lt;li&gt;AudioHijack is &lt;strong&gt;one&lt;&#x2F;strong&gt; contributor to what ends up on that bus
+(&lt;em&gt;often the main one&lt;&#x2F;em&gt;), but the truth for the stream is:
+whatever is on &lt;strong&gt;ADAT 7&#x2F;8 loopback&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;That makes the meter for &lt;strong&gt;ADAT 7&#x2F;8 Loopback bus&lt;&#x2F;strong&gt; in &lt;strong&gt;DigiCheck&lt;&#x2F;strong&gt; the
+most direct, single source of truth for the system.&lt;&#x2F;p&gt;
+&lt;p&gt;Wirecast’s own meter is still useful but not authoritative for the final stream.&lt;&#x2F;p&gt;
+&lt;p&gt;So if I see a &lt;strong&gt;red&lt;&#x2F;strong&gt; for &lt;strong&gt;ADAT 7&#x2F;8&lt;&#x2F;strong&gt; in &lt;strong&gt;DigiCheck&lt;&#x2F;strong&gt;, that is an immediate
+&lt;strong&gt;fix now&lt;&#x2F;strong&gt;. And the likely fix would be adjusting the input gain of the
+microphone.&lt;&#x2F;p&gt;
+&lt;p&gt;A &lt;strong&gt;red&lt;&#x2F;strong&gt; on Wirecast (&lt;em&gt;while DigiCheck looks fine&lt;&#x2F;em&gt;) is merely a &lt;em&gt;conservative
+warning&lt;&#x2F;em&gt; that implies I am flirting with the ceiling.&lt;&#x2F;p&gt;
+&lt;p&gt;A &lt;strong&gt;red&lt;&#x2F;strong&gt; on &lt;strong&gt;Audio Hijack #1&lt;&#x2F;strong&gt; would mean input capture is getting hot.&lt;&#x2F;p&gt;
+&lt;p&gt;A &lt;strong&gt;red&lt;&#x2F;strong&gt; on &lt;strong&gt;Audio Hijack #2&lt;&#x2F;strong&gt; would mean the process chain is getting hot.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;rms-target-recommendations&quot;&gt;RMS Target Recommendations&lt;&#x2F;h2&gt;
+&lt;p&gt;The industry standard for &lt;strong&gt;RMS&lt;&#x2F;strong&gt; is &lt;strong&gt;-18 to -14 dBFS&lt;&#x2F;strong&gt;. That will:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Sound present, and “*close”;&lt;&#x2F;li&gt;
+&lt;li&gt;Leave headroom for emphasis when needed;&lt;&#x2F;li&gt;
+&lt;li&gt;Play nicely with background music;&lt;&#x2F;li&gt;
+&lt;li&gt;Encode cleanly across platforms.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Anything below &lt;strong&gt;-20 dBFS&lt;&#x2F;strong&gt; will start to sound “&lt;em&gt;too quiet&lt;&#x2F;em&gt;”. When that
+happens:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Viewers will tend to turn the volume up;&lt;&#x2F;li&gt;
+&lt;li&gt;The noise floor (&lt;em&gt;if any&lt;&#x2F;em&gt;) becomes more noticeable;&lt;&#x2F;li&gt;
+&lt;li&gt;Platform normalization will boost and residue badly later.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;For &lt;strong&gt;background music&lt;&#x2F;strong&gt;, the recommended level is &lt;strong&gt;-28 to -24 dBFS&lt;&#x2F;strong&gt;.
+Depending on the genre, it can be even higher.&lt;&#x2F;p&gt;
+&lt;p&gt;But instead of memorizing all these numbers, &lt;strong&gt;practically&lt;&#x2F;strong&gt; you can aim to keep
+your peaks at &lt;strong&gt;yellows&lt;&#x2F;strong&gt; at all times: That’s what most DJs do, and eventually
+get natural at this in time.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;tools-and-technologies-mentioned&quot;&gt;Tools and Technologies Mentioned&lt;&#x2F;h2&gt;
 &lt;h3 id=&quot;services&quot;&gt;Services&lt;&#x2F;h3&gt;
 &lt;ul&gt;
