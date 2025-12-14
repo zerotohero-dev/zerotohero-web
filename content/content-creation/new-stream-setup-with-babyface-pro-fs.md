@@ -651,7 +651,7 @@ get natural at this in time.
 ### Apps
 
 * [TotalMix FX][totalmix]
-* [Digicheck NG][digicheck]
+* [DigiCheck NG][digicheck]
 * [Ozone][ozone]
 * [Audio Hijack][audio-hijack]
 * [Loopback][loopback]
