@@ -319,7 +319,7 @@ Depending on how you use your mic, your levels may vary, of course.&lt;&#x2F;p&g
 &lt;p&gt;This adjustment is done at the hardware level, and it is the &lt;strong&gt;cleanest&lt;&#x2F;strong&gt;
 output you can get without introducing any additional software modulation.&lt;&#x2F;p&gt;
 &lt;p&gt;However, since I might need to modify the gain in real time during the live
-stream, I created &lt;strong&gt;8 snapshots&lt;&#x2F;strong&gt;, ranging from &lt;strong&gt;46 dB&lt;&#x2F;strong&gt; to &lt;strong&gt;39 dB&lt;&#x2F;strong&gt;. This is
+stream, I created &lt;strong&gt;8 snapshots&lt;&#x2F;strong&gt;, ranging from &lt;strong&gt;46 dB&lt;&#x2F;strong&gt; to &lt;strong&gt;39 dB&lt;&#x2F;strong&gt;: This is
 much easier than trying to turn a virtual knob in real-time: Something
 tough to manipulate with precision.&lt;&#x2F;p&gt;
 

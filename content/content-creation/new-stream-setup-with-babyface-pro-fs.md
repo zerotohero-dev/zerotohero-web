@@ -352,7 +352,7 @@ This adjustment is done at the hardware level, and it is the **cleanest**
 output you can get without introducing any additional software modulation.
 
 However, since I might need to modify the gain in real time during the live 
-stream, I created **8 snapshots**, ranging from **46 dB** to **39 dB**. This is 
+stream, I created **8 snapshots**, ranging from **46 dB** to **39 dB**: This is 
 much easier than trying to turn a virtual knob in real-time: Something 
 tough to manipulate with precision.
 
