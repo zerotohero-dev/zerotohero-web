@@ -58,7 +58,7 @@ much as possible.&lt;&#x2F;li&gt;
 so I don’t have to “&lt;em&gt;eat the microphone&lt;&#x2F;em&gt;” while debugging a
 complicated codebase on live stream.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;p&gt;This article describes how I establish these goals, and provides an overview
+&lt;p&gt;This article describes how I established these goals, and provides an overview
 of &lt;a href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;audiohijack&#x2F;&quot; title=&quot;Audio Hijack&quot;&gt;&lt;strong&gt;Audio Hijack&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;’s and &lt;strong&gt;Babyface&lt;&#x2F;strong&gt;’s interfaces.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;lift-input-gain-with-cloudlifter&quot;&gt;Lift Input Gain with Cloudlifter.&lt;&#x2F;h2&gt;
 &lt;p&gt;To increase the gain of the input signal a little bit more, so that I can
@@ -109,7 +109,7 @@ touch a waveform, the better it sounds&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
 sources, outputs, and the occasional copyright headache. Here is how I tackled
 those real-world challenges.&lt;&#x2F;p&gt;
 &lt;p&gt;I typically do two types of live streams: either just myself, with some light
-background music from Spotify or co-streaming with multiple guests accepting
+background music from Spotify or co-streaming with multiple guests, accepting
 their audio input from a shared Zoom session.&lt;&#x2F;p&gt;
 &lt;p&gt;When I stream, I may stream to multiple places in parallel using
 &lt;a href=&quot;https:&#x2F;&#x2F;restream.io&quot; title=&quot;Restram.io&quot;&gt;Restream.io&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
@@ -123,11 +123,11 @@ the audience likes to Twitch.&lt;&#x2F;p&gt;
 &lt;p&gt;For DRM-free music, I use &lt;a href=&quot;https:&#x2F;&#x2F;endel.io&quot; title=&quot;Endel: Focus, relax, and sleep&quot;&gt;&lt;strong&gt;Endel&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, which generates calming
 AI-generated background sounds; it is totally copyright-free.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;to-duck-or-not-to-duck&quot;&gt;To Duck or not to Duck&lt;&#x2F;h2&gt;
-&lt;p&gt;Another thing that I needed to configure is background music’s &lt;strong&gt;gain level&lt;&#x2F;strong&gt;:
-When I am talking, I want to keep it around &lt;strong&gt;5-10%&lt;&#x2F;strong&gt;, and when I’m not
-speaking and doing a focused programming session, for example, I prefer to
-elevate it around &lt;strong&gt;40%&lt;&#x2F;strong&gt;, so that the audience can enjoy the music, while
-I can continue my focused work.&lt;&#x2F;p&gt;
+&lt;p&gt;Another thing that I needed to configure is the background music’s
+&lt;strong&gt;gain level&lt;&#x2F;strong&gt;:When I am talking, I want to keep it around &lt;strong&gt;5-10%&lt;&#x2F;strong&gt;,
+and when I’m not speaking and doing a focused programming session, for example,
+I prefer to elevate it around &lt;strong&gt;40%&lt;&#x2F;strong&gt;, so that the audience can enjoy the music,
+while I can continue my focused work.&lt;&#x2F;p&gt;
 &lt;p&gt;There are &lt;strong&gt;ducking&lt;&#x2F;strong&gt; plugins that achieve this effect automatically. Yet,
 I personally don’t like them because they distort the beginning of the speech,
 cutting off my initial words every once in a while. They can also activate
@@ -195,9 +195,9 @@ does nothing other than act as a bridge.&lt;&#x2F;p&gt;
       margin-top: -1.125em;
       font-size: 1em;&quot;&gt;&amp;#x27;Endel Loopback&amp;#x27; Loopback interface.&lt;&#x2F;p&gt;
 &lt;&#x2F;div&gt;
-&lt;p&gt;For the &lt;strong&gt;Wirecast&lt;&#x2F;strong&gt; input, here is how the audio input in Wirecast is
-configured: It is listening to the channels &lt;strong&gt;11&#x2F;12&lt;&#x2F;strong&gt;, which correspond to
-the &lt;strong&gt;ADAT 7&#x2F;8&lt;&#x2F;strong&gt; software input Loopback in &lt;strong&gt;Babyface&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;For the &lt;a href=&quot;https:&#x2F;&#x2F;www.wirecast.io&#x2F;en&#x2F;&quot; title=&quot;Wirecast&quot;&gt;&lt;strong&gt;Wirecast&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; input, here is how the audio input in
+&lt;strong&gt;Wirecast&lt;&#x2F;strong&gt; is configured: It is listening to the channels &lt;strong&gt;11&#x2F;12&lt;&#x2F;strong&gt;, which
+correspond to the &lt;strong&gt;ADAT 7&#x2F;8&lt;&#x2F;strong&gt; software input Loopback in &lt;strong&gt;Babyface&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
 
 &lt;div class=&quot;z2h-image&quot;&gt;
     &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2025&amp;#x2F;12&amp;#x2F;wirecast-audio.png&quot; alt=&quot;Wirecast audio input.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
@@ -240,7 +240,7 @@ with &lt;strong&gt;Babyface Pro FS&lt;&#x2F;strong&gt; audio drivers, I create a
 &lt;p&gt;By the way, you can see all these internal channel mappings in &lt;strong&gt;Babyface Pro
 FS&lt;&#x2F;strong&gt; in the mixer’s &lt;strong&gt;matrix view&lt;&#x2F;strong&gt;. It requires some “&lt;em&gt;getting used to&lt;&#x2F;em&gt;”, but
 once you get the hang of how the rows and columns tie together, it is really
-helpful in debugging your audio flow.&lt;&#x2F;p&gt;
+invaluable in debugging your audio flow.&lt;&#x2F;p&gt;
 &lt;p&gt;This way, you can ensure every input is routed to the exact output channel
 you want.&lt;&#x2F;p&gt;
 
@@ -256,8 +256,8 @@ interfaces custom names.&lt;&#x2F;p&gt;
 &lt;p&gt;Below, I have renamed “&lt;em&gt;AN 1&#x2F;2&lt;&#x2F;em&gt;” to “*&lt;em&gt;Shure SM7B&lt;&#x2F;em&gt;” because
 that’s the microphone I’m using; “&lt;em&gt;PH 3&#x2F;4&lt;&#x2F;em&gt;” to “&lt;strong&gt;Headphones&lt;&#x2F;strong&gt;”, and “ADAT 5&#x2F;6”
 to “&lt;strong&gt;What I Hear&lt;&#x2F;strong&gt;”, which makes much more sense and eliminates the mental math
-of remembering numbered interface names during the stream in case you need to
-do some realtime adjustment, need to recall which one is which.&lt;&#x2F;p&gt;
+of remembering numbered interface names during the stream, in case you need to
+do some real-time adjustment, need to recall which one is which.&lt;&#x2F;p&gt;
 
 &lt;div class=&quot;z2h-image&quot;&gt;
     &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2025&amp;#x2F;12&amp;#x2F;babyface-matrix-renamed.png&quot; alt=&quot;RME Totalmix matrix view with renamed channel names.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
@@ -303,7 +303,7 @@ possible.&lt;&#x2F;li&gt;
 &lt;h2 id=&quot;hardware-gain-adjustment&quot;&gt;Hardware Gain Adjustment&lt;&#x2F;h2&gt;
 &lt;p&gt;Let’s start with gain.&lt;&#x2F;p&gt;
 &lt;p&gt;I found the sweet spot for my input gain on the audio interface to be around
-&lt;strong&gt;-39 dB to -42 dB&lt;&#x2F;strong&gt;; anything above that range started to overshoot.
+&lt;strong&gt;-39 dB to -42 dB&lt;&#x2F;strong&gt;; anything above that range began to overshoot.
 Depending on how you use your mic, your levels may vary, of course.&lt;&#x2F;p&gt;
 
 &lt;div class=&quot;z2h-image&quot;&gt;
@@ -316,8 +316,8 @@ Depending on how you use your mic, your levels may vary, of course.&lt;&#x2F;p&g
 output you can get without introducing any additional software modulation.&lt;&#x2F;p&gt;
 &lt;p&gt;However, since I might need to modify the gain in real time during the live
 stream, I created &lt;strong&gt;8 snapshots&lt;&#x2F;strong&gt;, ranging from &lt;strong&gt;46 dB&lt;&#x2F;strong&gt; to &lt;strong&gt;39 dB&lt;&#x2F;strong&gt;. This is
-much easier than trying to turn a virtual knob, in real-time: Something very
-hard to manipulate with precision.&lt;&#x2F;p&gt;
+much easier than trying to turn a virtual knob in real-time: Something
+tough to manipulate with precision.&lt;&#x2F;p&gt;
 
 &lt;div class=&quot;z2h-image&quot;&gt;
     &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2025&amp;#x2F;12&amp;#x2F;babyface-snapshots.png&quot; alt=&quot;RME Totalmix snapshots.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
@@ -450,8 +450,8 @@ vocals, using the &lt;code&gt;duck()&lt;&#x2F;code&gt; function I defined:&lt;&#
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;h2 id=&quot;stream-deck-vox-controls&quot;&gt;Stream Deck Vox Controls&lt;&#x2F;h2&gt;
 &lt;p&gt;When you save this file with the &lt;code&gt;.ahcommand&lt;&#x2F;code&gt; extension, then you can define
-these transitions in &lt;strong&gt;Stream Deck&lt;&#x2F;strong&gt; too, and switch to one another with the
-push of a button:&lt;&#x2F;p&gt;
+these transitions in &lt;a href=&quot;https:&#x2F;&#x2F;www.elgato.com&#x2F;us&#x2F;en&#x2F;p&#x2F;stream-deck-xl&quot; title=&quot;Elgato Stream Deck XL&quot;&gt;&lt;strong&gt;Stream Deck&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; too, and switch to one
+another with the push of a button:&lt;&#x2F;p&gt;
 
 &lt;div class=&quot;z2h-image&quot;&gt;
     &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2025&amp;#x2F;12&amp;#x2F;streamdeck-audio.png&quot; alt=&quot;Controlling audio with Audio Hijack commands in Stream Deck.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
@@ -469,7 +469,7 @@ music (&lt;em&gt;for things like “quick breaks” or before starting the strea
 waiting for people to join in the chatroom&lt;&#x2F;em&gt;).&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;With core routing and controls set up, I needed a reliable way to monitor
-everything in real time and catch issues before they reached the audience.&lt;&#x2F;p&gt;
+everything in real time and catch issues before they reach the audience.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;audio-monitoring&quot;&gt;Audio Monitoring&lt;&#x2F;h2&gt;
 &lt;p&gt;None of these would matter if my vocal output is too low or too high and
 I don’t notice it immediately during a live stream. For this, I use

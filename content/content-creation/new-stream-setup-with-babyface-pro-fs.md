@@ -59,7 +59,7 @@ Thus, with the new **Babyface Pro FS**, I had two goals in mind:
   so I don't have to "*eat the microphone*" while debugging a
   complicated codebase on live stream.
 
-This article describes how I establish these goals, and provides an overview
+This article describes how I established these goals, and provides an overview
 of [**Audio Hijack**][audio-hijack]'s and **Babyface**'s interfaces.
 
 ## Lift Input Gain with Cloudlifter.
@@ -121,7 +121,7 @@ sources, outputs, and the occasional copyright headache. Here is how I tackled
 those real-world challenges.
 
 I typically do two types of live streams: either just myself, with some light 
-background music from Spotify or co-streaming with multiple guests accepting
+background music from Spotify or co-streaming with multiple guests, accepting
 their audio input from a shared Zoom session.
 
 When I stream, I may stream to multiple places in parallel using
@@ -141,11 +141,11 @@ AI-generated background sounds; it is totally copyright-free.
 
 ## To Duck or not to Duck
 
-Another thing that I needed to configure is background music's **gain level**:
-When I am talking, I want to keep it around **5-10%**, and when I'm not 
-speaking and doing a focused programming session, for example, I prefer to 
-elevate it around **40%**, so that the audience can enjoy the music, while
-I can continue my focused work. 
+Another thing that I needed to configure is the background music's 
+**gain level**:When I am talking, I want to keep it around **5-10%**, 
+and when I'm not speaking and doing a focused programming session, for example,
+I prefer to elevate it around **40%**, so that the audience can enjoy the music,
+while I can continue my focused work. 
 
 There are **ducking** plugins that achieve this effect automatically. Yet, 
 I personally don’t like them because they distort the beginning of the speech, 
@@ -219,9 +219,9 @@ And here is the [**Loopback**][loopback] "*Endel Loopback*" interface:
 )}}
 
 
-For the **Wirecast** input, here is how the audio input in Wirecast is
-configured: It is listening to the channels **11/12**, which correspond to 
-the **ADAT 7/8** software input Loopback in **Babyface**.
+For the [**Wirecast**][wirecast] input, here is how the audio input in 
+**Wirecast** is configured: It is listening to the channels **11/12**, which 
+correspond to the **ADAT 7/8** software input Loopback in **Babyface**.
 
 {{img(
 src="/images/2025/12/wirecast-audio.png"
@@ -266,7 +266,7 @@ This is what Wirecast consumes.
 By the way, you can see all these internal channel mappings in **Babyface Pro
 FS** in the mixer's **matrix view**. It requires some "*getting used to*", but 
 once you get the hang of how the rows and columns tie together, it is really 
-helpful in debugging your audio flow. 
+invaluable in debugging your audio flow. 
 
 This way, you can ensure every input is routed to the exact output channel 
 you want.
@@ -283,8 +283,8 @@ interfaces custom names.
 Below, I have renamed "*AN 1/2*" to "**Shure SM7B*" because
 that's the microphone I'm using; "*PH 3/4*" to "**Headphones**", and "ADAT 5/6" 
 to "**What I Hear**", which makes much more sense and eliminates the mental math
-of remembering numbered interface names during the stream in case you need to 
-do some realtime adjustment, need to recall which one is which.
+of remembering numbered interface names during the stream, in case you need to 
+do some real-time adjustment, need to recall which one is which.
 
 {{img(
   src="/images/2025/12/babyface-matrix-renamed.png"
@@ -337,7 +337,7 @@ So, in my audio input pipeline, I had to compensate for:
 Let's start with gain.
 
 I found the sweet spot for my input gain on the audio interface to be around 
-**-39 dB to -42 dB**; anything above that range started to overshoot. 
+**-39 dB to -42 dB**; anything above that range began to overshoot. 
 Depending on how you use your mic, your levels may vary, of course.
 
 {{img(
@@ -350,8 +350,8 @@ output you can get without introducing any additional software modulation.
 
 However, since I might need to modify the gain in real time during the live 
 stream, I created **8 snapshots**, ranging from **46 dB** to **39 dB**. This is 
-much easier than trying to turn a virtual knob, in real-time: Something very 
-hard to manipulate with precision.
+much easier than trying to turn a virtual knob in real-time: Something 
+tough to manipulate with precision.
 
 {{img(
   src="/images/2025/12/babyface-snapshots.png"
@@ -487,8 +487,8 @@ vocals, using the `duck()` function I defined:
 ## Stream Deck Vox Controls
 
 When you save this file with the `.ahcommand` extension, then you can define
-these transitions in **Stream Deck** too, and switch to one another with the
-push of a button:
+these transitions in [**Stream Deck**][streamdeck] too, and switch to one 
+another with the push of a button:
 
 {{img(
   src="/images/2025/12/streamdeck-audio.png"
@@ -505,7 +505,7 @@ Here is what these buttons do, from top to bottom:
   waiting for people to join in the chatroom*).
 
 With core routing and controls set up, I needed a reliable way to monitor 
-everything in real time and catch issues before they reached the audience.
+everything in real time and catch issues before they reach the audience.
 
 ## Audio Monitoring
 
