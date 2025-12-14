@@ -108,9 +108,12 @@ touch a waveform, the better it sounds&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;Of course, streaming isn’t just about clean audio—it’s about managing multiple
 sources, outputs, and the occasional copyright headache. Here is how I tackled
 those real-world challenges.&lt;&#x2F;p&gt;
-&lt;p&gt;I typically do two types of live streams: either just myself, with some light
-background music from Spotify or co-streaming with multiple guests, accepting
-their audio input from a shared Zoom session.&lt;&#x2F;p&gt;
+&lt;p&gt;I typically do two types of live streams:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Either just myself, with some light background music from Spotify&lt;&#x2F;li&gt;
+&lt;li&gt;or co-streaming with multiple guests, accepting their audio input from a
+&lt;strong&gt;shared Zoom session&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
 &lt;p&gt;When I stream, I may stream to multiple places in parallel using
 &lt;a href=&quot;https:&#x2F;&#x2F;restream.io&quot; title=&quot;Restram.io&quot;&gt;Restream.io&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;Streaming Spotify on Twitch is fine, as long as you don’t publish the live

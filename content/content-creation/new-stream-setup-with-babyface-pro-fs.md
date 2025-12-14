@@ -120,9 +120,11 @@ Of course, streaming isn't just about clean audio—it's about managing multiple
 sources, outputs, and the occasional copyright headache. Here is how I tackled
 those real-world challenges.
 
-I typically do two types of live streams: either just myself, with some light 
-background music from Spotify or co-streaming with multiple guests, accepting
-their audio input from a shared Zoom session.
+I typically do two types of live streams: 
+
+* Either just myself, with some light background music from Spotify 
+* or co-streaming with multiple guests, accepting their audio input from a 
+  **shared Zoom session**.
 
 When I stream, I may stream to multiple places in parallel using
 [Restream.io][restream].
