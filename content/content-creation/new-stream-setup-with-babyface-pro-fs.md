@@ -613,7 +613,7 @@ A **red** on **Audio Hijack #2** would mean the process chain is getting hot.
 
 The industry standard for **RMS** is **-18 to -14 dBFS**. That will:
 
-* Sound present, and "*close";
+* Sound present, and "*close*";
 * Leave headroom for emphasis when needed;
 * Play nicely with background music;
 * Encode cleanly across platforms.

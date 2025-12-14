@@ -558,7 +558,7 @@ warning&lt;&#x2F;em&gt; that implies I am flirting with the ceiling.&lt;&#x2F;p&
 &lt;h2 id=&quot;rms-target-recommendations&quot;&gt;RMS Target Recommendations&lt;&#x2F;h2&gt;
 &lt;p&gt;The industry standard for &lt;strong&gt;RMS&lt;&#x2F;strong&gt; is &lt;strong&gt;-18 to -14 dBFS&lt;&#x2F;strong&gt;. That will:&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;Sound present, and “*close”;&lt;&#x2F;li&gt;
+&lt;li&gt;Sound present, and “&lt;em&gt;close&lt;&#x2F;em&gt;”;&lt;&#x2F;li&gt;
 &lt;li&gt;Leave headroom for emphasis when needed;&lt;&#x2F;li&gt;
 &lt;li&gt;Play nicely with background music;&lt;&#x2F;li&gt;
 &lt;li&gt;Encode cleanly across platforms.&lt;&#x2F;li&gt;
