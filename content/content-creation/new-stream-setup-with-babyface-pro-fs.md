@@ -402,6 +402,28 @@ And here is all of these put together:
 Once the basics were running smoothly, I wanted to streamline my workflow and 
 make live adjustments effortless.
 
+## Wait! Ozone Advanced Has a Limiter Function
+
+So why not use it, right?
+
+I'm not using it, not "*because Ozone is bad*", but because of how Ozone's
+limiter is designed versus what I need in a live chain.
+
+Ozone's limiter (*Maximizer / Dynamics limiter*) is a **mastering limiter**, 
+not a live safety limiter. So, it is the wrong tool for real-time, 
+zero-latency, never-clip protection, which is what my final limiter is doing.
+
+Ozone's limiter is designed to:
+
+* Increase perceived loudness
+* Shape transients musically
+* **Use lookahead**
+* Use psychoacoustic models
+* Trade transient accuracy for loudness
+* Work with offline or fixed-buffer DAWs
+
+☝️ That is perfect for mastering and **dangerous** for live capture.
+
 ## Operation Automation
 
 In the pipeline, you might have noticed these two input switch blocks, each

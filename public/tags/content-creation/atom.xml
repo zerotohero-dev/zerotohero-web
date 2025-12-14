@@ -371,6 +371,23 @@ that follows the compressor:&lt;&#x2F;p&gt;
 &lt;&#x2F;div&gt;
 &lt;p&gt;Once the basics were running smoothly, I wanted to streamline my workflow and
 make live adjustments effortless.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;wait-ozone-advanced-has-a-limiter-function&quot;&gt;Wait! Ozone Advanced Has a Limiter Function&lt;&#x2F;h2&gt;
+&lt;p&gt;So why not use it, right?&lt;&#x2F;p&gt;
+&lt;p&gt;I’m not using it, not “&lt;em&gt;because Ozone is bad&lt;&#x2F;em&gt;”, but because of how Ozone’s
+limiter is designed versus what I need in a live chain.&lt;&#x2F;p&gt;
+&lt;p&gt;Ozone’s limiter (&lt;em&gt;Maximizer &#x2F; Dynamics limiter&lt;&#x2F;em&gt;) is a &lt;strong&gt;mastering limiter&lt;&#x2F;strong&gt;,
+not a live safety limiter. So, it is the wrong tool for real-time,
+zero-latency, never-clip protection, which is what my final limiter is doing.&lt;&#x2F;p&gt;
+&lt;p&gt;Ozone’s limiter is designed to:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Increase perceived loudness&lt;&#x2F;li&gt;
+&lt;li&gt;Shape transients musically&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Use lookahead&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Use psychoacoustic models&lt;&#x2F;li&gt;
+&lt;li&gt;Trade transient accuracy for loudness&lt;&#x2F;li&gt;
+&lt;li&gt;Work with offline or fixed-buffer DAWs&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;☝️ That is perfect for mastering and &lt;strong&gt;dangerous&lt;&#x2F;strong&gt; for live capture.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;operation-automation&quot;&gt;Operation Automation&lt;&#x2F;h2&gt;
 &lt;p&gt;In the pipeline, you might have noticed these two input switch blocks, each
 consisting of two input switches.&lt;&#x2F;p&gt;
