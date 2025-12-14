@@ -66,7 +66,7 @@ of [**Audio Hijack**][audio-hijack]'s and **Babyface**'s interfaces.
 
 To increase the gain of the input signal a little bit more, so that I can
 minimize software-based audio post-processing, I also have a 
-[CloudLifter X][cloudlifter] in my audio pipeline.
+[**CloudLifter X**][cloudlifter] in my audio pipeline.
 
 {{img(
   src="/images/2025/12/cloud-lifter.jpg"
@@ -97,7 +97,7 @@ Here is how my audio input components are connected:
 └────────────────────┘
 ```
 
-With the physical connections in place, the next step is configuring the 
+With the physical connections in place, the next step is to configure the
 software to get the most out of this hardware.
 
 ## Less Processing, Better Quality
@@ -198,7 +198,7 @@ For my unique streaming needs, I created the following pipeline:
 
 **Endel Loopback** is the **only** software loopback interface I have had to 
 create. It is targeted for [**OBS Studio**][obs]'s audio ingestion. This is not 
-because of Babyface's limitations, but  because OBS Studio does not properly
+because of Babyface's limitations, but because OBS Studio does not properly
 recognize Babyface's output channels. 
 
 In this case, **Endel Loopback** is just a pass-through virtual interface that 
@@ -236,7 +236,7 @@ Here's how the **Audio Hijack** output is configured:
 )}}
 
 
-Note that Wirecast maps to the same input channels as **ADAT 7/8** (*which, 
+Note that **Wirecast** maps to the same input channels as **ADAT 7/8** (*which, 
 again, correspond to channels 11/12 in Wirecast's mapping*).
 
 ## What Goes Where
@@ -251,7 +251,7 @@ And here is the overall information flow:
 ## Mixer Setup
 
 Then, in the mixer [**RME TotalMix FX**][totalmix], which comes prepackaged 
-with Babyface Pro FS audio drivers, I create a loopback interface from 
+with **Babyface Pro FS** audio drivers, I create a loopback interface from 
 **ADAT 7/8** software input channel to **ADAT 7/8** output:
 
 {{img(
@@ -263,10 +263,10 @@ This is what Wirecast consumes.
 
 ## What is the Matrix?
 
-By the way, you can see all these internal channel mappings in Babyface Pro
-FS in the mixer's matrix view. It requires some "*getting used to*", but once
-you get the hang of how the rows and columns tie together, it is really helpful
-in debugging your audio flow. 
+By the way, you can see all these internal channel mappings in **Babyface Pro
+FS** in the mixer's **matrix view**. It requires some "*getting used to*", but 
+once you get the hang of how the rows and columns tie together, it is really 
+helpful in debugging your audio flow. 
 
 This way, you can ensure every input is routed to the exact output channel 
 you want.
@@ -313,10 +313,10 @@ I redirect whatever I want to hear in the background to channels **9/10** of
 
 ## Audio Input Pipeline Cleanup
 
-Shure **SM7B** is a studio-grade microphone, and it requires 
+[**Shure SM7B**][shure] is a studio-grade microphone, and it requires 
 (**ahem**—"demands") you to speak very close to it (*less than a handspan 
 distance from your mouth to the mic*). However, that's not always practical 
-during a live coding session. Regardless, SM7B is **very** gain-hungry.
+during a live coding session. Regardless, **SM7B** is **very** gain-hungry.
 
 So, in my audio input pipeline, I had to compensate for:
 
@@ -360,8 +360,9 @@ hard to manipulate with precision.
 
 ## Remove that "*Hiss*", Our Preciousss
 
-Next, get rid of the noise floor. For that, In **Audio Hijack**, I added a 
-**Speech Denoise** plugin immediately after the input, which worked beautifully:
+Next, get rid of the noise floor. For that, In [**Audio Hijack**][audio-hijack, 
+I added a**Speech Denoise** plugin immediately after the input, which worked 
+beautifully:
 
 {{img(
   src="/images/2025/12/ah-speech-denoise.png"
@@ -372,7 +373,7 @@ It's not visible on this screen, but I also **enabled**, **mono signal
 processing** to preserve some CPU cycles. The microphone input is
 already mono, so there is no need to process two channels.
 
-Immediately after speech denoise, I added a very light compression using the
+Immediately after the speech denoise, I added a very light compression using the
 [**Ozone Advanced**][ozone] toolkit with the following parameters:
 
 {{img(
