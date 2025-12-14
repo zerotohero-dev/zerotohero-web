@@ -15,7 +15,14 @@ date = "2025-12-03"
 tags = ["inbox", "development", "draft"]
 +++
 
-## Draft
+Here is the prompt that I used to verify that the code and documentation of
+[**SPIKE**](https://github.com/spiffe/spike) and 
+[**SPIKE Go SDK**](https://github.com/spiffe/spike-sdk-go) is aligned.
+
+Later down the line, I am planning to streamline this process even further.
+
+But I still think, you need a human in the loop, as some of the documentation
+may turn out to be misplaced or inaccurate.
 
 ```text
  I need a comprehensive audit of Go documentation vs implementation across the 

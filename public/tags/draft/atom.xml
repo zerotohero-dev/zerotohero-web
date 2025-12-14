@@ -22,7 +22,12 @@
         <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/code-and-documentation-audit-promt-for-claude-code/"/>
         <id>https://zerotohero.dev/inbox/code-and-documentation-audit-promt-for-claude-code/</id>
         
-        <content type="html" xml:base="https://zerotohero.dev/inbox/code-and-documentation-audit-promt-for-claude-code/">&lt;h2 id=&quot;draft&quot;&gt;Draft&lt;&#x2F;h2&gt;
+        <content type="html" xml:base="https://zerotohero.dev/inbox/code-and-documentation-audit-promt-for-claude-code/">&lt;p&gt;Here is the prompt that I used to verify that the code and documentation of
+&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;spiffe&#x2F;spike&quot;&gt;&lt;strong&gt;SPIKE&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; and
+&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;spiffe&#x2F;spike-sdk-go&quot;&gt;&lt;strong&gt;SPIKE Go SDK&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; is aligned.&lt;&#x2F;p&gt;
+&lt;p&gt;Later down the line, I am planning to streamline this process even further.&lt;&#x2F;p&gt;
+&lt;p&gt;But I still think, you need a human in the loop, as some of the documentation
+may turn out to be misplaced or inaccurate.&lt;&#x2F;p&gt;
 &lt;pre data-lang=&quot;text&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-text &quot;&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;span&gt; I need a comprehensive audit of Go documentation vs implementation across the 
 &lt;&#x2F;span&gt;&lt;span&gt; codebase.
 &lt;&#x2F;span&gt;&lt;span&gt;

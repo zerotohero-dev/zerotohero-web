@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Zero to Hero - streaming</title>
+    <link rel="self" type="application/atom+xml" href="https://zerotohero.dev/tags/streaming/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://zerotohero.dev"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2025-12-13T00:00:00+00:00</updated>
+    <id>https://zerotohero.dev/tags/streaming/atom.xml</id>
+    <entry xml:lang="en">
+        <title>New Audio Pipeline with BabyFace Pro FS</title>
+        <published>2025-12-13T00:00:00+00:00</published>
+        <updated>2025-12-13T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/content-creation/new-stream-setup-with-babyface-pro-fs/"/>
+        <id>https://zerotohero.dev/content-creation/new-stream-setup-with-babyface-pro-fs/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/content-creation/new-stream-setup-with-babyface-pro-fs/">&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;2025&#x2F;12&#x2F;babyface.jpg&quot; alt=&quot;Babyface Pro FS&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;roadmap&quot;&gt;Roadmap&lt;&#x2F;h2&gt;
+&lt;p&gt;This article covers:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Why I upgraded my audio interface and what I set out to achieve&lt;&#x2F;li&gt;
+&lt;li&gt;The hardware signal chain (&lt;em&gt;including mic, Cloudlifter, and Babyface Pro FS&lt;&#x2F;em&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;How software routing (&lt;em&gt;Audio Hijack, OBS, Wirecast, TotalMix FX&lt;&#x2F;em&gt;) ties it all
+together&lt;&#x2F;li&gt;
+&lt;li&gt;Managing streaming complexities—background music, copyright, and multi-output
+scenarios&lt;&#x2F;li&gt;
+&lt;li&gt;Dynamic control during streams and automation with Stream Deck&lt;&#x2F;li&gt;
+&lt;li&gt;Monitoring and achieving clean, reliable audio in real-time&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Now, let’s break down the hardware foundations that make this setup possible.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;new-audio-interface-new-setup&quot;&gt;New Audio Interface, New Setup&lt;&#x2F;h2&gt;
+&lt;p&gt;I recently bought a shiny &lt;a href=&quot;https:&#x2F;&#x2F;rme-audio.de&#x2F;babyface-pro-fs.html&quot; title=&quot;Babyface Pro FS&quot;&gt;&lt;strong&gt;Babyface Pro FS&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; audio interface.&lt;&#x2F;p&gt;
+&lt;p&gt;With 24 channels, 6 hardware outputs, 6 hardware inputs, and 6 software
+playback virtual inputs, it is a powerhouse. Yes, it has “&lt;strong&gt;some&lt;&#x2F;strong&gt;”(?!) learning
+curve, but when you get the hang of it, it provides endless possibilities.&lt;&#x2F;p&gt;
+&lt;p&gt;But most importantly, it has a &lt;strong&gt;very clean&lt;&#x2F;strong&gt; output with an almost zero noise
+floor (&lt;em&gt;around -50 dB&lt;&#x2F;em&gt;). That is much better than comparatively lower-end
+amplifiers like &lt;a href=&quot;https:&#x2F;&#x2F;us.focusrite.com&#x2F;products&#x2F;scarlett-solo&quot; title=&quot;Scarlett Solo&quot;&gt;Focusrite Scarlett Solo&lt;&#x2F;a&gt; or &lt;a href=&quot;https:&#x2F;&#x2F;www.uaudio.com&#x2F;products&#x2F;volt-2-usb&quot; title=&quot;Universal Audio: Volt 2&quot;&gt;Volt 2&lt;&#x2F;a&gt;.
+This is especially important for my setup because I have a very-gain-hungry
+microphone: &lt;a href=&quot;https:&#x2F;&#x2F;www.shure.com&#x2F;en-US&#x2F;products&#x2F;microphones&#x2F;sm7b?variant=SM7B&quot; title=&quot;Shure SM7B Vocal Microphone&quot;&gt;&lt;strong&gt;Shure SM7B&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;. With &lt;strong&gt;Shure&lt;&#x2F;strong&gt; hungry hippo, even the
+smallest noise floor gets elevated when I increase the audio interface’s input
+gain by 40–50 dB.&lt;&#x2F;p&gt;
+&lt;p&gt;Moreover, the added noise becomes even more pronounced when you apply voice
+compression and other additional filters to the output.&lt;&#x2F;p&gt;
+&lt;p&gt;Thus, with the new &lt;strong&gt;Babyface Pro FS&lt;&#x2F;strong&gt;, I had two goals in mind:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Minimize digital audio processing to reduce residual background noise as
+much as possible.&lt;&#x2F;li&gt;
+&lt;li&gt;Have a “&lt;em&gt;good enough&lt;&#x2F;em&gt;” system that increases gain solely with hardware
+so I don’t have to “&lt;em&gt;eat the microphone&lt;&#x2F;em&gt;” while debugging a
+complicated codebase on live stream.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;This article describes how I establish these goals, and provides an overview
+of &lt;a href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;audiohijack&#x2F;&quot; title=&quot;Audio Hijack&quot;&gt;&lt;strong&gt;Audio Hijack&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;’s and &lt;strong&gt;Babyface&lt;&#x2F;strong&gt;’s interfaces.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;lift-input-gain-with-cloudlifter&quot;&gt;Lift Input Gain with Cloudlifter.&lt;&#x2F;h2&gt;
+&lt;p&gt;To increase the gain of the input signal a little bit more, so that I can
+minimize software-based audio post-processing, I also have a
+&lt;a href=&quot;https:&#x2F;&#x2F;www.cloudmicrophones.com&#x2F;cloudlifter-cl-x&quot; title=&quot;Cloudlifter CL-X&quot;&gt;CloudLifter X&lt;&#x2F;a&gt; in my audio pipeline.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2025&amp;#x2F;12&amp;#x2F;cloud-lifter.jpg&quot; alt=&quot;Cloudlifter X.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Cloudlifter X.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;Here is how my audio input components are connected:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;txt&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-txt &quot;&gt;&lt;code class=&quot;language-txt&quot; data-lang=&quot;txt&quot;&gt;&lt;span&gt;┌────────────────────┐
+&lt;&#x2F;span&gt;&lt;span&gt;│ Mac Studio (USB-C) │
+&lt;&#x2F;span&gt;&lt;span&gt;└────────────────────┘
+&lt;&#x2F;span&gt;&lt;span&gt;           │          
+&lt;&#x2F;span&gt;&lt;span&gt;           ▼          
+&lt;&#x2F;span&gt;&lt;span&gt;┌────────────────────┐
+&lt;&#x2F;span&gt;&lt;span&gt;│  BabyFace Pro FS   │
+&lt;&#x2F;span&gt;&lt;span&gt;│  AN 1&#x2F;2 (XLR in)   │
+&lt;&#x2F;span&gt;&lt;span&gt;└────────────────────┘
+&lt;&#x2F;span&gt;&lt;span&gt;           │          
+&lt;&#x2F;span&gt;&lt;span&gt;           ▼          
+&lt;&#x2F;span&gt;&lt;span&gt;┌────────────────────┐
+&lt;&#x2F;span&gt;&lt;span&gt;│   CloudLifter X    │
+&lt;&#x2F;span&gt;&lt;span&gt;└────────────────────┘
+&lt;&#x2F;span&gt;&lt;span&gt;           │          
+&lt;&#x2F;span&gt;&lt;span&gt;           ▼          
+&lt;&#x2F;span&gt;&lt;span&gt;┌────────────────────┐
+&lt;&#x2F;span&gt;&lt;span&gt;│  SHURE SM7B (mic)  │
+&lt;&#x2F;span&gt;&lt;span&gt;└────────────────────┘
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;With the physical connections in place, the next step is configuring the
+software to get the most out of this hardware.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;less-processing-better-quality&quot;&gt;Less Processing, Better Quality&lt;&#x2F;h2&gt;
+&lt;p&gt;In my &lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;content-creation&#x2F;talkspiffe-stream-setup&#x2F;&quot;&gt;older streaming setup&lt;&#x2F;a&gt;, I heavily used &lt;em&gt;software
+audio loopback interfaces and post-processing&lt;&#x2F;em&gt;. With &lt;strong&gt;Babyface&lt;&#x2F;strong&gt;, I was able
+to move many of these operations directly to the hardware interface, offloading
+them from the CPU and using a device designed for audio routing and mixing.&lt;&#x2F;p&gt;
+&lt;p&gt;The result was much natural and smoother.&lt;&#x2F;p&gt;
+&lt;p&gt;In addition, since &lt;strong&gt;Babyface&lt;&#x2F;strong&gt; was doing such a great job of reducing the noise
+floor, I didn’t need many modifications to the input signal anyway. It was such
+a relief, because whether you do it in hardware or software, &lt;strong&gt;the less you
+touch a waveform, the better it sounds&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;streaming-pipeline-complexity&quot;&gt;Streaming Pipeline Complexity&lt;&#x2F;h2&gt;
+&lt;p&gt;Of course, streaming isn’t just about clean audio—it’s about managing multiple
+sources, outputs, and the occasional copyright headache. Here is how I tackled
+those real-world challenges.&lt;&#x2F;p&gt;
+&lt;p&gt;I typically do two types of live streams: either just myself, with some light
+background music from Spotify or co-streaming with multiple guests accepting
+their audio input from a shared Zoom session.&lt;&#x2F;p&gt;
+&lt;p&gt;When I stream, I may stream to multiple places in parallel using
+&lt;a href=&quot;https:&#x2F;&#x2F;restream.io&quot; title=&quot;Restram.io&quot;&gt;Restream.io&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Streaming Spotify on Twitch is fine, as long as you don’t publish the live
+stream as a VOD and just play non-DRM-free music during the live stream;
+however, streaming the same content to YouTube is problematic, since YouTube
+does not allow copyrighted content even during the live streams.&lt;&#x2F;p&gt;
+&lt;p&gt;That added some complexity to the setup, because I’ll have to send DRM-free
+music to YouTube and other platforms, while sending really cool music that
+the audience likes to Twitch.&lt;&#x2F;p&gt;
+&lt;p&gt;For DRM-free music, I use &lt;a href=&quot;https:&#x2F;&#x2F;endel.io&quot; title=&quot;Endel: Focus, relax, and sleep&quot;&gt;&lt;strong&gt;Endel&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, which generates calming
+AI-generated background sounds; it is totally copyright-free.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;to-duck-or-not-to-duck&quot;&gt;To Duck or not to Duck&lt;&#x2F;h2&gt;
+&lt;p&gt;Another thing that I needed to configure is background music’s &lt;strong&gt;gain level&lt;&#x2F;strong&gt;:
+When I am talking, I want to keep it around &lt;strong&gt;5-10%&lt;&#x2F;strong&gt;, and when I’m not
+speaking and doing a focused programming session, for example, I prefer to
+elevate it around &lt;strong&gt;40%&lt;&#x2F;strong&gt;, so that the audience can enjoy the music, while
+I can continue my focused work.&lt;&#x2F;p&gt;
+&lt;p&gt;There are &lt;strong&gt;ducking&lt;&#x2F;strong&gt; plugins that achieve this effect automatically. Yet,
+I personally don’t like them because they distort the beginning of the speech,
+cutting off my initial words every once in a while. They can also activate
+unnecessarily to other noise sources in the room, disrupting the stream.&lt;&#x2F;p&gt;
+&lt;p&gt;Thankfully, I have &lt;a href=&quot;https:&#x2F;&#x2F;www.elgato.com&#x2F;us&#x2F;en&#x2F;p&#x2F;stream-deck-xl&quot; title=&quot;Elgato Stream Deck XL&quot;&gt;&lt;strong&gt;Stream Deck&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; to change these levels
+instantly by simply pressing a button.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;audio-hijack-configuration&quot;&gt;Audio Hijack Configuration&lt;&#x2F;h2&gt;
+&lt;p&gt;Let’s continue with &lt;a href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;audiohijack&#x2F;&quot; title=&quot;Audio Hijack&quot;&gt;&lt;strong&gt;Audio Hijack&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; configuration.&lt;&#x2F;p&gt;
+&lt;p&gt;Overall, I have four audio input sources:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;My microphone&lt;&#x2F;li&gt;
+&lt;li&gt;Zoom (&lt;em&gt;guest&lt;&#x2F;em&gt;) audio&lt;&#x2F;li&gt;
+&lt;li&gt;Endel (&lt;em&gt;DRM-free audio&lt;&#x2F;em&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;Spotify (&lt;em&gt;Copyrighted music&lt;&#x2F;em&gt;)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;And these sources need to change state depending on the &lt;strong&gt;kind&lt;&#x2F;strong&gt; of streaming
+I am doing. And these changes can happen dynamically during a single streaming
+session, too. So… &lt;strong&gt;automation ftw!&lt;&#x2F;strong&gt;, but we’ll come to that later.&lt;&#x2F;p&gt;
+&lt;p&gt;For my unique streaming needs, I created the following pipeline:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Hint&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;You can open these images in a new tab to view larger versions.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2025&amp;#x2F;12&amp;#x2F;ah-pipeline.png&quot; alt=&quot;AudioHijack pipeline.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;AudioHijack pipeline.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;ul&gt;
+&lt;li&gt;The &lt;strong&gt;Endel&lt;&#x2F;strong&gt; audio is split into two with different gain levels, then mixed
+with my microphone audio after some post-processing. The resultant audio is
+fed into “&lt;strong&gt;Endel Loopback&lt;&#x2F;strong&gt;”, which becomes the audio source for
+&lt;a href=&quot;https:&#x2F;&#x2F;obsproject.com&quot; title=&quot;OBS Studio&quot;&gt;&lt;strong&gt;OBS Studio&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;. OBS Studio directly mirrors my main streaming app
+&lt;a href=&quot;https:&#x2F;&#x2F;www.wirecast.io&#x2F;en&#x2F;&quot; title=&quot;Wirecast&quot;&gt;&lt;strong&gt;Wirecast&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, but it uses &lt;strong&gt;DRM-free&lt;&#x2F;strong&gt; background music from
+&lt;strong&gt;Endel&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;Similarly, &lt;strong&gt;Spotify music&lt;&#x2F;strong&gt; is split into two with different gain levels and
+fed into Babyface Pro FS’s software playback (&lt;em&gt;PB 11&#x2F;12&lt;&#x2F;em&gt;) input, which
+corresponds to &lt;em&gt;ADAT 7&#x2F;8&lt;&#x2F;em&gt; software input.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Zoom audio&lt;&#x2F;strong&gt; is also split-fed into both &lt;strong&gt;Endel Loopback&lt;&#x2F;strong&gt;, and &lt;strong&gt;Babyface
+Pro FS&lt;&#x2F;strong&gt; software input channel. &lt;strong&gt;OBS Studio&lt;&#x2F;strong&gt; uses &lt;strong&gt;Endel Loopback&lt;&#x2F;strong&gt; as the
+background audio source, whereas &lt;strong&gt;Babyface Pro FS&lt;&#x2F;strong&gt; software audio input is
+“&lt;em&gt;looped back&lt;&#x2F;em&gt;” through hardware to &lt;a href=&quot;https:&#x2F;&#x2F;www.wirecast.io&#x2F;en&#x2F;&quot; title=&quot;Wirecast&quot;&gt;&lt;strong&gt;Wirecast&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;strong&gt;Endel Loopback&lt;&#x2F;strong&gt; is the &lt;strong&gt;only&lt;&#x2F;strong&gt; software loopback interface I have had to
+create. It is targeted for &lt;a href=&quot;https:&#x2F;&#x2F;obsproject.com&quot; title=&quot;OBS Studio&quot;&gt;&lt;strong&gt;OBS Studio&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;’s audio ingestion. This is not
+because of Babyface’s limitations, but  because OBS Studio does not properly
+recognize Babyface’s output channels.&lt;&#x2F;p&gt;
+&lt;p&gt;In this case, &lt;strong&gt;Endel Loopback&lt;&#x2F;strong&gt; is just a pass-through virtual interface that
+does nothing other than act as a bridge.&lt;&#x2F;p&gt;
+&lt;p&gt;Here’s &lt;strong&gt;OBS&lt;&#x2F;strong&gt;’s audio input configuration:&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2025&amp;#x2F;12&amp;#x2F;obs-audio-config.png&quot; alt=&quot;OBS Studio audio configuration.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;OBS Studio audio configuration.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;And here is the &lt;a href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;loopback&#x2F;&quot; title=&quot;Loopback&quot;&gt;&lt;strong&gt;Loopback&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; “&lt;em&gt;Endel Loopback&lt;&#x2F;em&gt;” interface:&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2025&amp;#x2F;12&amp;#x2F;endel-loopback.png&quot; alt=&quot;&amp;#x27;Endel Loopback&amp;#x27; Loopback interface.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;&amp;#x27;Endel Loopback&amp;#x27; Loopback interface.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;For the &lt;strong&gt;Wirecast&lt;&#x2F;strong&gt; input, here is how the audio input in Wirecast is
+configured: It is listening to the channels &lt;strong&gt;11&#x2F;12&lt;&#x2F;strong&gt;, which correspond to
+the &lt;strong&gt;ADAT 7&#x2F;8&lt;&#x2F;strong&gt; software input Loopback in &lt;strong&gt;Babyface&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2025&amp;#x2F;12&amp;#x2F;wirecast-audio.png&quot; alt=&quot;Wirecast audio input.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Wirecast audio input.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;Here’s how the &lt;strong&gt;Audio Hijack&lt;&#x2F;strong&gt; output is configured:&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2025&amp;#x2F;12&amp;#x2F;ah-babyface.png&quot; alt=&quot;AudioHijack audio output.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;AudioHijack audio output.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;Note that Wirecast maps to the same input channels as &lt;strong&gt;ADAT 7&#x2F;8&lt;&#x2F;strong&gt; (&lt;em&gt;which,
+again, correspond to channels 11&#x2F;12 in Wirecast’s mapping&lt;&#x2F;em&gt;).&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-goes-where&quot;&gt;What Goes Where&lt;&#x2F;h2&gt;
+&lt;p&gt;And here is the overall information flow:&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2025&amp;#x2F;12&amp;#x2F;ah-info-flow.png&quot; alt=&quot;Audio Hijack information flow.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Audio Hijack information flow.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;mixer-setup&quot;&gt;Mixer Setup&lt;&#x2F;h2&gt;
+&lt;p&gt;Then, in the mixer &lt;a href=&quot;https:&#x2F;&#x2F;rme-audio.de&#x2F;totalmix-fx.html&quot; title=&quot;TotalMix FX&quot;&gt;&lt;strong&gt;RME TotalMix FX&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, which comes prepackaged
+with Babyface Pro FS audio drivers, I create a loopback interface from
+&lt;strong&gt;ADAT 7&#x2F;8&lt;&#x2F;strong&gt; software input channel to &lt;strong&gt;ADAT 7&#x2F;8&lt;&#x2F;strong&gt; output:&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2025&amp;#x2F;12&amp;#x2F;babyface-loopback.png&quot; alt=&quot;Babyface loopback interface.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Babyface loopback interface.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;This is what Wirecast consumes.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-is-the-matrix&quot;&gt;What is the Matrix?&lt;&#x2F;h2&gt;
+&lt;p&gt;By the way, you can see all these internal channel mappings in Babyface Pro
+FS in the mixer’s matrix view. It requires some “&lt;em&gt;getting used to&lt;&#x2F;em&gt;”, but once
+you get the hang of how the rows and columns tie together, it is really helpful
+in debugging your audio flow.&lt;&#x2F;p&gt;
+&lt;p&gt;This way, you can ensure every input is routed to the exact output channel
+you want.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2025&amp;#x2F;12&amp;#x2F;babyface-matrix.png&quot; alt=&quot;RME Totalmix matrix view.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;RME Totalmix matrix view.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;And for some clarity of mind, so that you don’t have to memorize what
+cryptic interface name maps to which one of your devices, you can give these
+interfaces custom names.&lt;&#x2F;p&gt;
+&lt;p&gt;Below, I have renamed “&lt;em&gt;AN 1&#x2F;2&lt;&#x2F;em&gt;” to “*&lt;em&gt;Shure SM7B&lt;&#x2F;em&gt;” because
+that’s the microphone I’m using; “&lt;em&gt;PH 3&#x2F;4&lt;&#x2F;em&gt;” to “&lt;strong&gt;Headphones&lt;&#x2F;strong&gt;”, and “ADAT 5&#x2F;6”
+to “&lt;strong&gt;What I Hear&lt;&#x2F;strong&gt;”, which makes much more sense and eliminates the mental math
+of remembering numbered interface names during the stream in case you need to
+do some realtime adjustment, need to recall which one is which.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2025&amp;#x2F;12&amp;#x2F;babyface-matrix-renamed.png&quot; alt=&quot;RME Totalmix matrix view with renamed channel names.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;RME Totalmix matrix view with renamed channel names.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;what-i-hear&quot;&gt;What I Hear&lt;&#x2F;h2&gt;
+&lt;p&gt;So, what does the “&lt;strong&gt;What I Hear&lt;&#x2F;strong&gt;” interface receive, though?&lt;&#x2F;p&gt;
+&lt;p&gt;One issue so far here is that I don’t listen to any of this background music.
+All outputs we have defined are routed directly to the stream mix.&lt;&#x2F;p&gt;
+&lt;p&gt;What’s the fun in streaming if I’m not listening to what I’m playing,
+isn’t it?&lt;&#x2F;p&gt;
+&lt;p&gt;For that, I have a separate Audio Hijack session:&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2025&amp;#x2F;12&amp;#x2F;audio-to-me.png&quot; alt=&quot;Audio Hijack information flow.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Audio Hijack information flow.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;I redirect whatever I want to hear in the background to channels &lt;strong&gt;9&#x2F;10&lt;&#x2F;strong&gt; of
+&lt;strong&gt;Babyface&lt;&#x2F;strong&gt;, which correspond to the ADAT 5&#x2F;6 software input interface.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;audio-input-pipeline-cleanup&quot;&gt;Audio Input Pipeline Cleanup&lt;&#x2F;h2&gt;
+&lt;p&gt;Shure &lt;strong&gt;SM7B&lt;&#x2F;strong&gt; is a studio-grade microphone, and it requires
+(&lt;strong&gt;ahem&lt;&#x2F;strong&gt;—“demands”) you to speak very close to it (&lt;em&gt;less than a handspan
+distance from your mouth to the mic&lt;&#x2F;em&gt;). However, that’s not always practical
+during a live coding session. Regardless, SM7B is &lt;strong&gt;very&lt;&#x2F;strong&gt; gain-hungry.&lt;&#x2F;p&gt;
+&lt;p&gt;So, in my audio input pipeline, I had to compensate for:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Hungry gain requirements of &lt;strong&gt;SM7B&lt;&#x2F;strong&gt; (&lt;em&gt;especially when I’m using it at a
+distance between one and two handspans&lt;&#x2F;em&gt;),&lt;&#x2F;li&gt;
+&lt;li&gt;Cleaning up the noise floor that might result in such gain adjustments,&lt;&#x2F;li&gt;
+&lt;li&gt;Dynamic adjustment of the audio signal if I move around or lean back, thus
+moving away from the microphone,&lt;&#x2F;li&gt;
+&lt;li&gt;And (&lt;em&gt;although it’s &lt;strong&gt;very&lt;&#x2F;strong&gt; difficult to intentionally make a Shure SM7B’s
+output waveform overshoot and clip—these are truly gain-hungry monsters&lt;&#x2F;em&gt;),
+handle any output overload and clipping issues that may happen during the
+stream.&lt;&#x2F;li&gt;
+&lt;li&gt;And to monitor all of this in real-time, with as minimal a distraction as
+possible.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;hardware-gain-adjustment&quot;&gt;Hardware Gain Adjustment&lt;&#x2F;h2&gt;
+&lt;p&gt;Let’s start with gain.&lt;&#x2F;p&gt;
+&lt;p&gt;I found the sweet spot for my input gain on the audio interface to be around
+&lt;strong&gt;-39 dB to -42 dB&lt;&#x2F;strong&gt;; anything above that range started to overshoot.
+Depending on how you use your mic, your levels may vary, of course.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2025&amp;#x2F;12&amp;#x2F;babyface-gain.png&quot; alt=&quot;RME Totalmix input gain.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;RME Totalmix input gain.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;This adjustment is done at the hardware level, and it is the &lt;strong&gt;cleanest&lt;&#x2F;strong&gt;
+output you can get without introducing any additional software modulation.&lt;&#x2F;p&gt;
+&lt;p&gt;However, since I might need to modify the gain in real time during the live
+stream, I created &lt;strong&gt;8 snapshots&lt;&#x2F;strong&gt;, ranging from &lt;strong&gt;46 dB&lt;&#x2F;strong&gt; to &lt;strong&gt;39 dB&lt;&#x2F;strong&gt;. This is
+much easier than trying to turn a virtual knob, in real-time: Something very
+hard to manipulate with precision.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2025&amp;#x2F;12&amp;#x2F;babyface-snapshots.png&quot; alt=&quot;RME Totalmix snapshots.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;RME Totalmix snapshots.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;remove-that-hiss-our-preciousss&quot;&gt;Remove that “&lt;em&gt;Hiss&lt;&#x2F;em&gt;”, Our Preciousss&lt;&#x2F;h2&gt;
+&lt;p&gt;Next, get rid of the noise floor. For that, In &lt;strong&gt;Audio Hijack&lt;&#x2F;strong&gt;, I added a
+&lt;strong&gt;Speech Denoise&lt;&#x2F;strong&gt; plugin immediately after the input, which worked beautifully:&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2025&amp;#x2F;12&amp;#x2F;ah-speech-denoise.png&quot; alt=&quot;Audio Hijack speech denoise.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Audio Hijack speech denoise.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;It’s not visible on this screen, but I also &lt;strong&gt;enabled&lt;&#x2F;strong&gt;, &lt;strong&gt;mono signal
+processing&lt;&#x2F;strong&gt; to preserve some CPU cycles. The microphone input is
+already mono, so there is no need to process two channels.&lt;&#x2F;p&gt;
+&lt;p&gt;Immediately after speech denoise, I added a very light compression using the
+&lt;a href=&quot;https:&#x2F;&#x2F;www.izotope.com&#x2F;en&#x2F;products&#x2F;ozone&quot; title=&quot;Ozone&quot;&gt;&lt;strong&gt;Ozone Advanced&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; toolkit with the following parameters:&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2025&amp;#x2F;12&amp;#x2F;ozone-compressor.png&quot; alt=&quot;Audio compression.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Audio compression.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;And finally, not that I’d likely need—but just to be safe—I added a limiter
+that follows the compressor:&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2025&amp;#x2F;12&amp;#x2F;au-peak-limiter.png&quot; alt=&quot;Peak limiter.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Peak limiter.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;And here is all of these put together:&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2025&amp;#x2F;12&amp;#x2F;ah-audio-in.png&quot; alt=&quot;Audio input pipeline.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Audio input pipeline.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;Once the basics were running smoothly, I wanted to streamline my workflow and
+make live adjustments effortless.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;operation-automation&quot;&gt;Operation Automation&lt;&#x2F;h2&gt;
+&lt;p&gt;In the pipeline, you might have noticed these two input switch blocks, each
+consisting of two input switches.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2025&amp;#x2F;12&amp;#x2F;ah-switches.png&quot; alt=&quot;Audio input switches.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Audio input switches.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;They effectively create an &lt;strong&gt;audio routing state machine&lt;&#x2F;strong&gt; for me. And the
+best part of it: They are programmable.&lt;&#x2F;p&gt;
+&lt;p&gt;For example, here is a script that lowers the background music and elevates my
+vocals, using the &lt;code&gt;duck()&lt;&#x2F;code&gt; function I defined:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;javascript&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-javascript &quot;&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span&gt;(() &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;=&amp;gt; &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;const &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;sessionName &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Stream Session&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;const &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;modeSwitches  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span&gt;[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Endel Mode&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Spotify Mode&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;];
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;const &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;routeSwitches &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span&gt;[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Endel Route&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Spotify Route&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;];
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;const &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;voxSwitches &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span&gt;[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Mic Mode&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Guest Mode&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;]
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;const &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;s &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;app.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;sessionWithName&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;sessionName&lt;&#x2F;span&gt;&lt;span&gt;); 
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;s&lt;&#x2F;span&gt;&lt;span&gt;) {
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;console&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;error&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Session not found: &amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;+ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;sessionName&lt;&#x2F;span&gt;&lt;span&gt;);
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;  }
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;function &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;switchToA&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;name&lt;&#x2F;span&gt;&lt;span&gt;) {
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;const &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;b &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;s.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;blockWithName&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;name&lt;&#x2F;span&gt;&lt;span&gt;);
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;b&lt;&#x2F;span&gt;&lt;span&gt;) {
+&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;console&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;error&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;No block named &amp;#39;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;+ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;name &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;+ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;&amp;#39;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;);
+&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;b&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;type &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!== &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;InputSwitchBlock&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;) {
+&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;console&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;error&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;&amp;#39;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;+ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;name &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;+ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;&amp;#39; is not a switch block &amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;+ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;b&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;type&lt;&#x2F;span&gt;&lt;span&gt;);
+&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;b.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;switchToA&lt;&#x2F;span&gt;&lt;span&gt;();  
+&lt;&#x2F;span&gt;&lt;span&gt;  }
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;function &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;switchToB&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;name&lt;&#x2F;span&gt;&lt;span&gt;) {
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;const &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;b &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;s.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;blockWithName&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;name&lt;&#x2F;span&gt;&lt;span&gt;);
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;b&lt;&#x2F;span&gt;&lt;span&gt;) {
+&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;console&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;error&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;No block named &amp;#39;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;+ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;name &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;+ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;&amp;#39;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;);
+&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;b&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;type &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!== &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;InputSwitchBlock&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;) {
+&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;console&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;error&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;&amp;#39;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;+ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;name &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;+ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;&amp;#39; is not a switch block &amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;+ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;b&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;type&lt;&#x2F;span&gt;&lt;span&gt;);
+&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;b.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;switchToB&lt;&#x2F;span&gt;&lt;span&gt;();
+&lt;&#x2F;span&gt;&lt;span&gt;  }
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;function &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;justMusic&lt;&#x2F;span&gt;&lt;span&gt;() {
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;modeSwitches.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;forEach&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;switchToA&lt;&#x2F;span&gt;&lt;span&gt;);
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;routeSwitches.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;forEach&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;switchToA&lt;&#x2F;span&gt;&lt;span&gt;);
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;voxSwitches.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;forEach&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;switchToB&lt;&#x2F;span&gt;&lt;span&gt;);
+&lt;&#x2F;span&gt;&lt;span&gt;  }
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;function &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;duck&lt;&#x2F;span&gt;&lt;span&gt;() {
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;modeSwitches.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;forEach&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;switchToB&lt;&#x2F;span&gt;&lt;span&gt;);
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;routeSwitches.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;forEach&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;switchToA&lt;&#x2F;span&gt;&lt;span&gt;);
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;voxSwitches.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;forEach&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;switchToA&lt;&#x2F;span&gt;&lt;span&gt;);  
+&lt;&#x2F;span&gt;&lt;span&gt;  } 
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;function &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;muteMyself&lt;&#x2F;span&gt;&lt;span&gt;() {
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;switchToB&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Mic Mode&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;);
+&lt;&#x2F;span&gt;&lt;span&gt;  }
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;function &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;unmuteMyself&lt;&#x2F;span&gt;&lt;span&gt;() {
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;switchToA&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Mic Mode&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;);
+&lt;&#x2F;span&gt;&lt;span&gt;  }
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;function &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;muteGuests&lt;&#x2F;span&gt;&lt;span&gt;() {
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;switchToB&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Guest Mode&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;);
+&lt;&#x2F;span&gt;&lt;span&gt;  }
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;duck&lt;&#x2F;span&gt;&lt;span&gt;();
+&lt;&#x2F;span&gt;&lt;span&gt;})();
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;stream-deck-vox-controls&quot;&gt;Stream Deck Vox Controls&lt;&#x2F;h2&gt;
+&lt;p&gt;When you save this file with the &lt;code&gt;.ahcommand&lt;&#x2F;code&gt; extension, then you can define
+these transitions in &lt;strong&gt;Stream Deck&lt;&#x2F;strong&gt; too, and switch to one another with the
+push of a button:&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2025&amp;#x2F;12&amp;#x2F;streamdeck-audio.png&quot; alt=&quot;Controlling audio with Audio Hijack commands in Stream Deck.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Controlling audio with Audio Hijack commands in Stream Deck.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;Here is what these buttons do, from top to bottom:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Mute&#x2F;unmute my microphone only, without touching anything else;&lt;&#x2F;li&gt;
+&lt;li&gt;Mute&#x2F;unmute guest audio;&lt;&#x2F;li&gt;
+&lt;li&gt;Mute&#x2F;unmute background music, without touching anything else;&lt;&#x2F;li&gt;
+&lt;li&gt;Duck background music for me to talk; mute everyone and just turn on the
+music (&lt;em&gt;for things like “quick breaks” or before starting the stream while
+waiting for people to join in the chatroom&lt;&#x2F;em&gt;).&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;With core routing and controls set up, I needed a reliable way to monitor
+everything in real time and catch issues before they reached the audience.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;audio-monitoring&quot;&gt;Audio Monitoring&lt;&#x2F;h2&gt;
+&lt;p&gt;None of these would matter if my vocal output is too low or too high and
+I don’t notice it immediately during a live stream. For this, I use
+&lt;a href=&quot;https:&#x2F;&#x2F;rme-audio.de&#x2F;digicheck-ng.html&quot; title=&quot;Digicheck NG&quot;&gt;&lt;strong&gt;DigiCheck NG&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;In the image below:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;The top horizontal monitor is the actual stream mix.&lt;&#x2F;li&gt;
+&lt;li&gt;The bottom horizontal monitor monitors the microphone output before any
+processing (&lt;em&gt;if it clips, there is nothing you can do, so I try to keep it
+around -20dB RMS as best as I can&lt;&#x2F;em&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;The smaller horizontal monitor in the top-right shows all output channels on
+the &lt;strong&gt;Babyface&lt;&#x2F;strong&gt;, so if I inadvertently enable something I don’t need, I will
+see it immediately.&lt;&#x2F;li&gt;
+&lt;li&gt;The bottom half is &lt;a href=&quot;https:&#x2F;&#x2F;www.wirecast.io&#x2F;en&#x2F;&quot; title=&quot;Wirecast&quot;&gt;&lt;strong&gt;Wirecast&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, which I &lt;strong&gt;don’t&lt;&#x2F;strong&gt; touch at all
+because I manage the entire stream screen transitions using
+&lt;a href=&quot;https:&#x2F;&#x2F;www.elgato.com&#x2F;us&#x2F;en&#x2F;p&#x2F;stream-deck-xl&quot; title=&quot;Elgato Stream Deck XL&quot;&gt;&lt;strong&gt;Stream Deck&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, so it merely acts as an unobtrusive visual
+monitor of the live stream session.&lt;&#x2F;li&gt;
+&lt;li&gt;To the right of the screen are &lt;strong&gt;YouTube&lt;&#x2F;strong&gt; and &lt;strong&gt;Twitch&lt;&#x2F;strong&gt; chats.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;These all sit in a small secondary display below my main display; always
+in my peripheral vision, but never distracting me while I’m working with
+my main monitor.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2025&amp;#x2F;12&amp;#x2F;stream-audio-monitoring.png&quot; alt=&quot;Stream audio monitoring.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Stream audio monitoring.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;tools-and-technologies-mentioned&quot;&gt;Tools and Technologies Mentioned&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;services&quot;&gt;Services&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;restream.io&quot; title=&quot;Restram.io&quot;&gt;Restram.io&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;endel.io&quot; title=&quot;Endel: Focus, relax, and sleep&quot;&gt;Endel&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;hardware-and-devices&quot;&gt;Hardware and Devices&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;rme-audio.de&#x2F;babyface-pro-fs.html&quot; title=&quot;Babyface Pro FS&quot;&gt;Babyface Pro FS&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;us.focusrite.com&#x2F;products&#x2F;scarlett-solo&quot; title=&quot;Scarlett Solo&quot;&gt;Scarlett Solo&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.uaudio.com&#x2F;products&#x2F;volt-2-usb&quot; title=&quot;Universal Audio: Volt 2&quot;&gt;Universal Audio: Volt 2&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.cloudmicrophones.com&#x2F;cloudlifter-cl-x&quot; title=&quot;Cloudlifter CL-X&quot;&gt;Cloudlifter CL-X&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.shure.com&#x2F;en-US&#x2F;products&#x2F;microphones&#x2F;sm7b?variant=SM7B&quot; title=&quot;Shure SM7B Vocal Microphone&quot;&gt;Shure SM7B Vocal Microphone&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.elgato.com&#x2F;us&#x2F;en&#x2F;p&#x2F;stream-deck-xl&quot; title=&quot;Elgato Stream Deck XL&quot;&gt;Elgato Stream Deck XL&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;apps&quot;&gt;Apps&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;rme-audio.de&#x2F;totalmix-fx.html&quot; title=&quot;TotalMix FX&quot;&gt;TotalMix FX&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;rme-audio.de&#x2F;digicheck-ng.html&quot; title=&quot;Digicheck NG&quot;&gt;Digicheck NG&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.izotope.com&#x2F;en&#x2F;products&#x2F;ozone&quot; title=&quot;Ozone&quot;&gt;Ozone&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;audiohijack&#x2F;&quot; title=&quot;Audio Hijack&quot;&gt;Audio Hijack&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;loopback&#x2F;&quot; title=&quot;Loopback&quot;&gt;Loopback&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.wirecast.io&#x2F;en&#x2F;&quot; title=&quot;Wirecast&quot;&gt;Wirecast&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;obsproject.com&quot; title=&quot;OBS Studio&quot;&gt;OBS Studio&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;With this new setup, it’s really straightforward to switch between audio
+settings with the push of a button, which makes streaming more fun while
+delivering the best audio quality I can to the audience.&lt;&#x2F;p&gt;
+&lt;p&gt;This project also gave me a much deeper appreciation for how hardware and
+software can work together to solve practical problems—whether that’s noise
+management, platform-specific routing, or just the ability to quickly adapt
+without interrupting a live session.&lt;&#x2F;p&gt;
+&lt;p&gt;If you’re considering a similar upgrade or want to streamline your own
+workflow, feel free to borrow any of these ideas or configurations. It’s been a
+rewarding journey, and the flexibility I’ve gained makes it all worthwhile.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>
