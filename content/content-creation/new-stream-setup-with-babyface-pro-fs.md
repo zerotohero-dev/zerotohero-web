@@ -280,7 +280,7 @@ And for some clarity of mind, so that you don't have to memorize what
 cryptic interface name maps to which one of your devices, you can give these
 interfaces custom names. 
 
-Below, I have renamed "*AN 1/2*" to "**Shure SM7B*" because
+Below, I have renamed "*AN 1/2*" to "**Shure SM7B**" because
 that's the microphone I'm using; "*PH 3/4*" to "**Headphones**", and "ADAT 5/6" 
 to "**What I Hear**", which makes much more sense and eliminates the mental math
 of remembering numbered interface names during the stream, in case you need to 
