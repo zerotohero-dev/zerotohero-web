@@ -36,9 +36,10 @@ Now, let’s break down the hardware foundations that make this setup possible.
 
 I recently bought a shiny [**Babyface Pro FS**][babyface] audio interface. 
 
-With 24 channels, 6 hardware outputs, 6 hardware inputs, and 6 software 
-playback virtual inputs, it is a powerhouse. Yes, it has "**some**"(?!) learning 
-curve, but when you get the hang of it, it provides endless possibilities.
+With **24 channels, 6 hardware outputs, 6 hardware inputs, and 6 software 
+playback virtual inputs**, it is a powerhouse. Yes, it has "**some**"(**?!**) 
+*"learning curve"*, but when you get the hang of it, it provides endless 
+possibilities.
 
 But most importantly, it has a **very clean** output with an almost zero noise 
 floor (*around -50 dB*). That is much better than comparatively lower-end 
