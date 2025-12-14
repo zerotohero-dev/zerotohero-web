@@ -388,6 +388,7 @@ zero-latency, never-clip protection, which is what my final limiter is doing.&lt
 &lt;li&gt;Work with offline or fixed-buffer DAWs&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;☝️ That is perfect for mastering and &lt;strong&gt;dangerous&lt;&#x2F;strong&gt; for live capture.&lt;&#x2F;p&gt;
+&lt;p&gt;That clarified, now back to automation.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;operation-automation&quot;&gt;Operation Automation&lt;&#x2F;h2&gt;
 &lt;p&gt;In the pipeline, you might have noticed these two input switch blocks, each
 consisting of two input switches.&lt;&#x2F;p&gt;

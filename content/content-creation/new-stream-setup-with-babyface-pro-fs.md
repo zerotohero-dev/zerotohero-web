@@ -424,6 +424,8 @@ Ozone's limiter is designed to:
 
 ☝️ That is perfect for mastering and **dangerous** for live capture.
 
+That clarified, now back to automation.
+
 ## Operation Automation
 
 In the pipeline, you might have noticed these two input switch blocks, each
