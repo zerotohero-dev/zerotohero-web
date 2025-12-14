@@ -328,10 +328,10 @@ So, in my audio input pipeline, I had to compensate for:
 * Cleaning up the noise floor that might result in such gain adjustments,
 * Dynamic adjustment of the audio signal if I move around or lean back, thus
   moving away from the microphone,
-* And (*although it's **very** difficult to intentionally make a Shure SM7B's
-  output waveform overshoot and clip—these are truly gain-hungry monsters*),
-  handle any output overload and clipping issues that may happen during the
-  stream.
+* And (*although it's **very** difficult to intentionally make a
+  **Shure SM7B**'s output waveform overshoot and clip—these are truly 
+  **gain-hungry** monsters*), handle any output overload and clipping issues 
+  that may happen during the stream.
 * And to monitor all of this in real-time, with as minimal a distraction as 
   possible.
 

@@ -297,10 +297,10 @@ distance between one and two handspans&lt;&#x2F;em&gt;),&lt;&#x2F;li&gt;
 &lt;li&gt;Cleaning up the noise floor that might result in such gain adjustments,&lt;&#x2F;li&gt;
 &lt;li&gt;Dynamic adjustment of the audio signal if I move around or lean back, thus
 moving away from the microphone,&lt;&#x2F;li&gt;
-&lt;li&gt;And (&lt;em&gt;although it’s &lt;strong&gt;very&lt;&#x2F;strong&gt; difficult to intentionally make a Shure SM7B’s
-output waveform overshoot and clip—these are truly gain-hungry monsters&lt;&#x2F;em&gt;),
-handle any output overload and clipping issues that may happen during the
-stream.&lt;&#x2F;li&gt;
+&lt;li&gt;And (&lt;em&gt;although it’s &lt;strong&gt;very&lt;&#x2F;strong&gt; difficult to intentionally make a
+&lt;strong&gt;Shure SM7B&lt;&#x2F;strong&gt;’s output waveform overshoot and clip—these are truly
+&lt;strong&gt;gain-hungry&lt;&#x2F;strong&gt; monsters&lt;&#x2F;em&gt;), handle any output overload and clipping issues
+that may happen during the stream.&lt;&#x2F;li&gt;
 &lt;li&gt;And to monitor all of this in real-time, with as minimal a distraction as
 possible.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
