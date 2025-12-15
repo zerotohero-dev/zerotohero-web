@@ -24,7 +24,7 @@
 </span><span>
 </span><span>Tags (comma-separated): blogging, workflow, content-creation
 </span><span>
-</span><span>Created: /Users/volkan/&LTtruncated...>/a-frictionless-blog-workflow.md
+</span><span>Created: /Users/volkan/&lt;truncated...>/a-frictionless-blog-workflow.md
 </span></code></pre><p>The script automatically:<ul><li>Converts the title to a URL-friendly slug (<code>a-frictionless-blog-workflow</code>)<li>Generates today’s date in the correct format<li>Creates the file in the correct directory<li>Adds proper TOML frontmatter<li>Includes the category as a default tag<li>Outputs an absolute path that I can click to open</ul><p>Here is a list of all <code>make</code> targets so far:<pre class=language-makefile data-lang=makefile style=color:#fdf4c1aa;background-color:#282828><code class=language-makefile data-lang=makefile><span>make help           </span><span style=color:#928374;font-style:italic># Show all available commands
 </span><span>make new            </span><span style=color:#928374;font-style:italic># Create a new blog post interactively
 </span><span>make build          </span><span style=color:#928374;font-style:italic># Build the site with Zola
@@ -74,7 +74,7 @@
 </span><span style=color:#b8bb26>       </span><span style=color:#fdf4c1>sed </span><span style=color:#b8bb26>'s/^-//' </span><span style=color:#fe8019>| </span><span style=color:#fdf4c1>sed </span><span style=color:#b8bb26>'s/-$//')
 </span><span>
 </span><span style=color:#928374;font-style:italic># Create file with proper frontmatter
-</span><span style=color:#fdf4c1>cat </span><span style=color:#fe8019>> </span><span style=color:#b8bb26>"$</span><span style=color:#fdf4c1>filename</span><span style=color:#b8bb26>" </span><span style=color:#fe8019><<</span><span style=color:#fa5c4b>EOF
+</span><span style=color:#fdf4c1>cat </span><span style=color:#fe8019>> </span><span style=color:#b8bb26>"$</span><span style=color:#fdf4c1>filename</span><span style=color:#b8bb26>" </span><span style=color:#fe8019>&lt;&lt;</span><span style=color:#fa5c4b>EOF
 </span><span style=color:#fdf4c1>+++
 </span><span style=color:#fdf4c1>title = "$title"
 </span><span style=color:#fdf4c1>date = "$(date +%Y-%m-%d)"

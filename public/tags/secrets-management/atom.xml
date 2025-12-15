@@ -3556,7 +3556,7 @@ search it for scholarly articles&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;retool.com&#x2F;&quot;&gt;So you want a tool to build internal tools really fast. Say no more fam,
 and meet &lt;strong&gt;ReTool&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;thanks-a-lot-red-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
 &lt;p&gt;That’s all for this week. Next week, I’ll gather more unique content and
 resources.&lt;&#x2F;p&gt;
 &lt;p&gt;So, until next time… May the source be with you 🦄.&lt;&#x2F;p&gt;
@@ -4098,7 +4098,7 @@ alerting&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;0xax.gitbooks.io&#x2F;linux-insides&#x2F;content&#x2F;SysCall&#x2F;linux-syscall-4.htm&quot;&gt;In case you wonder how a unix kernel runs a program, here is a nice
 article about it&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;thanks-a-lot-red-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
 &lt;p&gt;That’s all for this week. Next week, I’ll gather more unique content and
 resources.&lt;&#x2F;p&gt;
 &lt;p&gt;So, until next time… May the source be with you 🦄.&lt;&#x2F;p&gt;
@@ -4558,7 +4558,7 @@ this document outlines the details of
 &lt;a href=&quot;https:&#x2F;&#x2F;spiffe.io&#x2F;docs&#x2F;latest&#x2F;deploying&#x2F;registering&#x2F;&quot;&gt;how workloads are registered with &lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt; IDs in the
 &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt; server&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
-&lt;h2 id=&quot;detectivefemale-spire-agents&quot;&gt;🕵️‍♀️ SPIRE Agents&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;detective-female-sign-spire-agents&quot;&gt;🕵️‍♀️ SPIRE Agents&lt;&#x2F;h2&gt;
 &lt;p&gt;There is a single &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt; &lt;strong&gt;Agent&lt;&#x2F;strong&gt; on each &lt;strong&gt;Node&lt;&#x2F;strong&gt;. The agents talk to the
 &lt;strong&gt;SPIRE Server&lt;&#x2F;strong&gt;. Multiple workloads on the node talk to the same agent using the
 &lt;strong&gt;SPIFFE Workload API&lt;&#x2F;strong&gt; to receive their &lt;strong&gt;SVID&lt;&#x2F;strong&gt;s.&lt;&#x2F;p&gt;

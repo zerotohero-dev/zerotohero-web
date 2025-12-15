@@ -339,8 +339,8 @@ So, in my audio input pipeline, I had to compensate for:
 
 Let's start with gain.
 
-I found the sweet spot for my input gain on the audio interface to be around 
-**-39 dB to -42 dB**; anything above that range began to overshoot. 
+I found the sweet spot for my input gain increase on the audio interface 
+to be around **39 dB to 42 dB**; anything above that range began to overshoot.
 Depending on how you use your mic, your levels may vary, of course.
 
 {{img(

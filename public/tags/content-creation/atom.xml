@@ -306,8 +306,8 @@ possible.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;hardware-gain-adjustment&quot;&gt;Hardware Gain Adjustment&lt;&#x2F;h2&gt;
 &lt;p&gt;Let’s start with gain.&lt;&#x2F;p&gt;
-&lt;p&gt;I found the sweet spot for my input gain on the audio interface to be around
-&lt;strong&gt;-39 dB to -42 dB&lt;&#x2F;strong&gt;; anything above that range began to overshoot.
+&lt;p&gt;I found the sweet spot for my input gain increase on the audio interface
+to be around &lt;strong&gt;39 dB to 42 dB&lt;&#x2F;strong&gt;; anything above that range began to overshoot.
 Depending on how you use your mic, your levels may vary, of course.&lt;&#x2F;p&gt;
 
 &lt;div class=&quot;z2h-image&quot;&gt;
