@@ -7,4 +7,5 @@
 # |       ||      ||  | |  | learn.
 # `-------'`------'`--' `--'
 
-[]
+- name: "Development Environment Setup Quickstart Guide"
+  url: "@/development/quickstart.md"

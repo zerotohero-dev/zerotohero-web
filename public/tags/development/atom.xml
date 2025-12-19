@@ -19,10 +19,10 @@
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://zerotohero.dev/development/bookmarks-i-regularly-use/"/>
-        <id>https://zerotohero.dev/development/bookmarks-i-regularly-use/</id>
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/development/quickstart/"/>
+        <id>https://zerotohero.dev/development/quickstart/</id>
         
-        <content type="html" xml:base="https://zerotohero.dev/development/bookmarks-i-regularly-use/">&lt;p&gt;Here are some bookmarks that I visit frequently when deploying a new system,
+        <content type="html" xml:base="https://zerotohero.dev/development/quickstart/">&lt;p&gt;Here are some bookmarks that I visit frequently when deploying a new system,
 or setting up a new development environment, or just trying to look something
 up, along with some snippets that I use frequently.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;build-essentials&quot;&gt;Build Essentials&lt;&#x2F;h2&gt;
