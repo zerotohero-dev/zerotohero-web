@@ -7,6 +7,181 @@
     <updated>2025-12-03T00:00:00+00:00</updated>
     <id>https://zerotohero.dev/tags/development/atom.xml</id>
     <entry xml:lang="en">
+        <title>Development Environment Setup Quickstart Reference</title>
+        <published>2025-12-03T00:00:00+00:00</published>
+        <updated>2025-12-03T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/development/bookmarks-i-regularly-use/"/>
+        <id>https://zerotohero.dev/development/bookmarks-i-regularly-use/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/development/bookmarks-i-regularly-use/">&lt;p&gt;Here are some bookmarks that I visit frequently when deploying a new system,
+or setting up a new development environment, or just trying to look something
+up, along with some snippets that I use frequently.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;build-essentials&quot;&gt;Build Essentials&lt;&#x2F;h2&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;sudo apt update
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;sudo apt upgrade
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;sudo apt install build-essential
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;zshrc&quot;&gt;&lt;code&gt;~&#x2F;.zshrc&lt;&#x2F;code&gt;&lt;&#x2F;h2&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;export &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;ZSH&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;HOME&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&#x2F;.oh-my-zsh&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;ZSH_THEME&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;powerlevel10k&#x2F;powerlevel10k&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;source &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;$ZSH&#x2F;oh-my-zsh.sh
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;export &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;MANPATH&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;&#x2F;usr&#x2F;local&#x2F;man:$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;MANPATH&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;export &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;PATH&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;PATH&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;:&#x2F;usr&#x2F;local&#x2F;go&#x2F;bin&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;export &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GPG_TTY&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;$(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;tty&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;export &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;WORKSPACE&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;HOME&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&#x2F;WORKSPACE&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;export &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;PATH&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;PATH&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;:$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;WORKSPACE&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&#x2F;spire&#x2F;bin&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;export &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;PATH&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;PATH&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;:$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;WORKSPACE&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&#x2F;spike&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;export &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;PATH&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;PATH&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;:$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;HOME&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&#x2F;.local&#x2F;bin&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;source &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;WORKSPACE&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&#x2F;spike&#x2F;hack&#x2F;lib&#x2F;env.sh&amp;quot;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;distro-information&quot;&gt;Distro Information&lt;&#x2F;h2&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cat &#x2F;etc&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;release
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Or:
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;lsb_release -a
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;## Or:
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;export &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;ARCH&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;$(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;case &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;$(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;uname -m&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;in &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;x86_64&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;\
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;-n amd64 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;;; aarch64&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;-n arm64 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;;; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;\
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;-n $(uname -m) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;;; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;esac&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;export &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;OS&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;$(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;uname &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;awk &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;{print tolower($0)}&amp;#39;)
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;npm-and-node&quot;&gt;NPM and Node&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;nodejs.org&quot;&gt;Node.js&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;claude-code&quot;&gt;Claude Code&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;claude.com&#x2F;product&#x2F;claude-code&quot;&gt;Claude Code&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;grammarly&quot;&gt;Grammarly&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.grammarly.com&#x2F;&quot;&gt;Grammarly&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;github&quot;&gt;GitHub&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.github.com&#x2F;en&#x2F;authentication&#x2F;connecting-to-github-with-ssh&#x2F;generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent&quot;&gt;Generating a new SSH Key&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.github.com&#x2F;en&#x2F;authentication&#x2F;connecting-to-github-with-ssh&#x2F;adding-a-new-ssh-key-to-your-github-account&quot;&gt;Adding a new SSH Key to Your GitHub Account&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.github.com&#x2F;en&#x2F;authentication&#x2F;managing-commit-signature-verification&#x2F;generating-a-new-gpg-key&quot;&gt;Generating a new GPG Key&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.github.com&#x2F;en&#x2F;authentication&#x2F;managing-commit-signature-verification&#x2F;adding-a-gpg-key-to-your-github-account&quot;&gt;Adding a GPG Key to Your GitHub Account&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;docker&quot;&gt;Docker&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.docker.com&#x2F;engine&#x2F;install&#x2F;ubuntu&#x2F;&quot;&gt;Installing Docker Engine to Ubuntu&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.docker.com&#x2F;engine&#x2F;install&#x2F;linux-postinstall&#x2F;&quot;&gt;Linux Post-Installation Steps for Docker&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;windows-subsystem-for-linux&quot;&gt;Windows Subsystem for Linux&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[Installing WSL](https:&#x2F;&#x2F;learn.microsoft.com&#x2F;en-us&#x2F;windows&#x2F;wsl&#x2F;install)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;minikube&quot;&gt;Minikube&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;minikube.sigs.k8s.io&#x2F;docs&#x2F;start&#x2F;&quot;&gt;Installing Minikube&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;copying-ssh-keys-to-remote-hosts&quot;&gt;Copying SSH Keys to Remote Hosts&lt;&#x2F;h2&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;ssh-copy-id -i ~&#x2F;.ssh&#x2F;id_rsa.pub user@host
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;zsh-and-powerlevel10k&quot;&gt;zsh and PowerLevel10k&lt;&#x2F;h2&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;sudo apt update
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;sudo apt install zsh
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;chsh -s &#x2F;usr&#x2F;bin&#x2F;zsh
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;ohmyz.sh&#x2F;&quot;&gt;Oh My ZSH&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;romkatv&#x2F;powerlevel10k&quot;&gt;Powerlevel10k&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;jetbrains&quot;&gt;JetBrains&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.jetbrains.com&#x2F;toolbox-app&#x2F;&quot;&gt;JetBrains Toolbox&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;fonts&quot;&gt;Fonts&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.monolisa.dev&#x2F;&quot;&gt;MonoLisa&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;fsd.it&#x2F;shop&#x2F;fonts&#x2F;pragmatapro&#x2F;&quot;&gt;PragmataPro Mono&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;usgraphics.com&#x2F;products&#x2F;berkeley-mono&quot;&gt;Berkeley Mono&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.typography.com&#x2F;fonts&#x2F;operator&#x2F;styles&#x2F;operatormonoscreensmart&quot;&gt;Operator Mono&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;themes&quot;&gt;Themes&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;plugins.jetbrains.com&#x2F;plugin&#x2F;26472-gerry-themes-pro-lifetime-&quot;&gt;Gerry Themes&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;draculatheme.com&#x2F;pro&quot;&gt;Dracula Pro&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;monokai.pro&#x2F;&quot;&gt;Monokai Pro&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;vim-setup&quot;&gt;Vim Setup&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;preservim&#x2F;nerdtree&quot;&gt;NerdTree&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;morhetz&#x2F;gruvbox&quot;&gt;Gruvbox Theme&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;vim-airline&#x2F;vim-airline&quot;&gt;Vim Airline&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;vimrc&quot;&gt;&lt;code&gt;.vimrc&lt;&#x2F;code&gt;&lt;&#x2F;h3&gt;
+&lt;pre data-lang=&quot;text&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-text &quot;&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;span&gt;set nocompatible
+&lt;&#x2F;span&gt;&lt;span&gt;filetype off
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;syntax enable
+&lt;&#x2F;span&gt;&lt;span&gt;colorscheme darcula
+&lt;&#x2F;span&gt;&lt;span&gt;set nu
+&lt;&#x2F;span&gt;&lt;span&gt;set rnu
+&lt;&#x2F;span&gt;&lt;span&gt;set cursorline
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;# Right Margin
+&lt;&#x2F;span&gt;&lt;span&gt;set colorcolumn=80
+&lt;&#x2F;span&gt;&lt;span&gt;highlight colorcolumn guibg=#444444
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;# Tab Settings
+&lt;&#x2F;span&gt;&lt;span&gt;set tabstop=2
+&lt;&#x2F;span&gt;&lt;span&gt;set shiftwidth=2
+&lt;&#x2F;span&gt;&lt;span&gt;set softtabstop=2
+&lt;&#x2F;span&gt;&lt;span&gt;set smarttab
+&lt;&#x2F;span&gt;&lt;span&gt;set expandtab
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;# Remove Scrollbars
+&lt;&#x2F;span&gt;&lt;span&gt;set guioptions-=r
+&lt;&#x2F;span&gt;&lt;span&gt;set guioptions-=R
+&lt;&#x2F;span&gt;&lt;span&gt;set guioptions-=L
+&lt;&#x2F;span&gt;&lt;span&gt;set guioptions-=l
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;set laststatus=2
+&lt;&#x2F;span&gt;&lt;span&gt;set hlsearch
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;# IndentGuidesEnable
+&lt;&#x2F;span&gt;&lt;span&gt;autocmd! GUIEnter * set vb t_vb=
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;windows&quot;&gt;Windows&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learn.microsoft.com&#x2F;en-us&#x2F;windows&#x2F;terminal&#x2F;install&quot;&gt;Windows Terminal&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learn.microsoft.com&#x2F;en-us&#x2F;windows&#x2F;powertoys&#x2F;&quot;&gt;Power Toys&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;windows-shortcuts&quot;&gt;Windows Shortcuts&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Next&#x2F;Previous Desktop: &lt;code&gt;Win + Ctrl + (right or left arrow key)&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Shift+Drag to move a window to a fancy zone.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;jetbrains-shortcuts&quot;&gt;JetBrains Shortcuts&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Search Everywhere: &lt;code&gt;Shift + Shift&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Search in file: &lt;code&gt;Alt + F3&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Find in files: &lt;code&gt;Ctrl + Shift + F&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Select in…: &lt;code&gt;Alt + F1&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Toggle terminal: &lt;code&gt;Alt + F12&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Various views: &lt;code&gt;Alt 1--9&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Commit view: &lt;code&gt;Alt + 0&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
         <title>Code and Documentation Audit Prompt for Claude Code</title>
         <published>2025-12-03T00:00:00+00:00</published>
         <updated>2025-12-03T00:00:00+00:00</updated>
