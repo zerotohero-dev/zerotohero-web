@@ -87,7 +87,7 @@ export OS=$(uname | awk '{print tolower($0)}')
 
 ## Windows Subsystem for Linux
 
-* [Installing WSL](https://learn.microsoft.com/en-us/windows/wsl/install\)
+* [Installing WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
 
 ## Minikube
 

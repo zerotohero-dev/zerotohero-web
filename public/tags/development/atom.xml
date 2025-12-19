@@ -84,7 +84,7 @@ up, along with some snippets that I use frequently.&lt;&#x2F;p&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;windows-subsystem-for-linux&quot;&gt;Windows Subsystem for Linux&lt;&#x2F;h2&gt;
 &lt;ul&gt;
-&lt;li&gt;[Installing WSL](https:&#x2F;&#x2F;learn.microsoft.com&#x2F;en-us&#x2F;windows&#x2F;wsl&#x2F;install)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learn.microsoft.com&#x2F;en-us&#x2F;windows&#x2F;wsl&#x2F;install&quot;&gt;Installing WSL&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;minikube&quot;&gt;Minikube&lt;&#x2F;h2&gt;
 &lt;ul&gt;
