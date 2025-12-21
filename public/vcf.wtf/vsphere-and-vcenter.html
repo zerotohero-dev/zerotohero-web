@@ -1,0 +1,235 @@
+<!DOCTYPE html> <html lang="en"><head>
+<title>vSphere and vCenter</title>
+<base href=".">
+<meta name="pathname" content="vsphere-and-vcenter.html">
+<meta name="description" content="VMware Cloud Foundation - vSphere and vCenter">
+<meta property="og:title" content="vSphere and vCenter">
+<meta property="og:description" content="VMware Cloud Foundation - vSphere and vCenter">
+<meta property="og:type" content="website">
+<meta property="og:url" content="vsphere-and-vcenter.html">
+<meta property="og:image" content="assets/what-is-vmware-vcenter-vs-vsphere-vs-esxi.webp">
+<meta charset="UTF-8"><meta property="og:site_name" content="VMware Cloud Foundation"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0"><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="site-lib/rss.xml"><script async="" id="webpage-script" src="site-lib/scripts/webpage.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="graph-wasm-script" src="site-lib/scripts/graph-wasm.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="graph-render-worker-script" src="site-lib/scripts/graph-render-worker.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="icon" href="site-lib/media/favicon.png"><link rel="stylesheet" href="site-lib/styles/obsidian.css"><link rel="stylesheet" href="site-lib/styles/theme.css"><link rel="preload" href="site-lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="site-lib/styles/global-variable-styles.css"></noscript><link rel="preload" href="site-lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="site-lib/styles/main-styles.css"></noscript><style>body{--line-width:40em;--line-width-adaptive:40em;--file-line-width:40em;--sidebar-width:min(20em, 80vw);--collapse-arrow-size:11px;--tree-vertical-spacing:1.3em;--sidebar-margin:12px}:root{background-color:#202124}.sidebar{height:100%;font-size:14px;z-index:10;min-width:calc(var(--sidebar-width) + var(--divider-width-hover));max-width:calc(var(--sidebar-width) + var(--divider-width-hover));position:relative;overflow:hidden;overflow:clip;transition:min-width ease-in-out,max-width ease-in-out;transition-duration:.2s;contain:size}#left-sidebar{left:0}#right-sidebar{right:0}.sidebar.is-collapsed{min-width:0;max-width:0}.sidebar.floating{position:absolute}.sidebar .leaf-content{height:100%;min-width:calc(var(--sidebar-width) - var(--divider-width-hover));top:0;padding:var(--sidebar-margin);padding-top:4em;line-height:var(--line-height-tight);background-color:var(--background-secondary);transition:background-color,border-right,border-left,box-shadow;transition-duration:var(--color-fade-speed);transition-timing-function:ease-in-out;position:absolute;display:flex;flex-direction:column}.sidebar:not(.is-collapsed) .leaf-content{min-width:calc(max(100%,var(--sidebar-width)) - 3px);max-width:calc(max(100%,var(--sidebar-width)) - 3px)}#left-sidebar-content{left:0;border-top-right-radius:var(--radius-l);border-bottom-right-radius:var(--radius-l)}#right-sidebar-content{right:0;border-top-left-radius:var(--radius-l);border-bottom-left-radius:var(--radius-l)}.sidebar #left-sidebar-content,.sidebar #right-sidebar-content{contain:none!important;container-type:normal!important;animation:none!important}.sidebar:has(.leaf-content:empty):has(.topbar-content:empty){display:none}.sidebar-topbar{height:calc(2.3em + 2 * var(--sidebar-margin));width:var(--sidebar-width);padding:var(--sidebar-margin);z-index:1;position:fixed;display:flex;align-items:center;transition:width ease-in-out;transition-duration:inherit}.sidebar.is-collapsed .sidebar-topbar{width:calc(2.3em + var(--sidebar-margin) * 2)}.sidebar .sidebar-topbar.is-collapsed{width:0}#left-sidebar .sidebar-topbar{left:0;flex-direction:row;border-top-right-radius:var(--radius-l)}#right-sidebar .sidebar-topbar{right:0;flex-direction:row-reverse;border-top-left-radius:var(--radius-l)}#left-sidebar .topbar-content{margin-right:calc(2.3em + var(--sidebar-margin));flex-direction:row}#right-sidebar .topbar-content{margin-left:calc(2.3em + var(--sidebar-margin));flex-direction:row-reverse}.topbar-content{overflow:hidden visible;overflow:clip visible;width:100%;height:100%;display:flex;align-items:center;transition:inherit}.sidebar.is-collapsed .topbar-content{width:0;transition:inherit}.clickable-icon.sidebar-collapse-icon{background-color:transparent;color:var(--icon-color-focused);padding:2px!important;margin:0!important;height:100%!important;width:2.3em!important;margin-inline:0.14em!important;position:absolute}#left-sidebar .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);right:var(--sidebar-margin)}#right-sidebar .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);left:var(--sidebar-margin)}.clickable-icon.sidebar-collapse-icon svg.svg-icon{width:100%;height:100%}.feature-title{margin-left:1px;text-transform:uppercase;letter-spacing:.06em;margin-top:.75em;margin-bottom:.75em}.feature-header{display:flex;align-items:center;padding-top:0;font-size:1em;padding-left:0}body.floating-sidebars .sidebar{position:absolute}body{transition:background-color var(--color-fade-speed) ease-in-out}#navbar:not(:empty){display:flex;align-items:center;justify-content:space-between;padding:.5em 1em;width:100%}#main{display:flex;flex-direction:column;height:100%;width:100%;align-items:stretch;justify-content:center}#main-horizontal{display:flex;flex-direction:row;flex-grow:1;width:100%;align-items:stretch;justify-content:center}#center-content{flex-basis:100%;max-width:100%;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;transition:opacity .2s ease-in-out;contain:inline-size}.hide{opacity:0!important;transition:opacity .2s ease-in-out;pointer-events:none}#center-content>.obsidian-document{padding-left:2em;padding-right:1em;margin-bottom:0;width:100%;width:-webkit-fill-available;width:-moz-available;width:fill-available;transition:background-color var(--color-fade-speed) ease-in-out;border-top-right-radius:var(--window-radius,var(--radius-m));border-top-left-radius:var(--window-radius,var(--radius-m));overflow-x:hidden!important;overflow-y:auto!important;display:flex!important;flex-direction:column!important;align-items:center!important;contain:inline-size}body #center-content>.obsidian-document>.markdown-preview-sizer{padding-bottom:80vh;width:100%;max-width:var(--line-width);flex-basis:var(--line-width);transition:background-color var(--color-fade-speed) ease-in-out;contain:inline-size}#center-content>.obsidian-document>div{width:100%!important;transition:background-color var(--color-fade-speed) ease-in-out;contain:inline-size}#center-content>.obsidian-document:not([data-type=markdown]).embed{display:flex;padding:1em;height:100%;width:100%;align-items:center;justify-content:center}#center-content>.obsidian-document:not([data-type=markdown]).embed>*{max-width:100%;max-height:100%;object-fit:contain}:not(h1,h2,h3,h4,h5,h6,li):has(> :is(.math,table)){overflow-x:auto!important}#center-content>.obsidian-document:not([data-type=markdown]){overflow-x:auto;contain:content;padding:0;margin:0;height:100%}.obsidian-document[data-type=attachment]{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;width:100%}.obsidian-document[data-type=attachment]>*{outline:0;border:none;box-shadow:none}.obsidian-document[data-type=attachment] :is(img){max-width:90%;max-height:90%;object-fit:contain}.obsidian-document[data-type=attachment]>:is(audio){width:100%;max-width:min(90%,var(--line-width))}.obsidian-document[data-type=attachment]>:is(embed,iframe,video){width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain}.canvas-wrapper>:is(.header,.footer){z-index:100;position:absolute;display:flex;justify-content:center;flex-direction:column;width:100%;align-items:center}.scroll-highlight{position:absolute;width:100%;height:100%;pointer-events:none;z-index:1000;background-color:hsla(var(--color-accent-hsl),.25);opacity:0;padding:1em;inset:50%;translate:-50% -50%;border-radius:var(--radius-s)}</style><script defer="">async function loadIncludes(){let e=document.querySelectorAll("link[itemprop='include']");for(const t of e){let e=t.getAttribute("href");try{let o="";if(e.startsWith("https:")||e.startsWith("http:")||"file:"!=window.location.protocol){const n=await fetch(e);if(!n.ok){console.log("Could not include file: "+e),t?.remove();continue}o=await n.text()}else{const t=document.getElementById(btoa(encodeURI(e)));if(t){const e=JSON.parse(decodeURI(atob(t.getAttribute("value")??"")));o=e?.data??""}}let n=document.createRange().createContextualFragment(o);t.before(n),t.remove(),console.log("Included text: "+o),console.log("Included file: "+e)}catch(o){t?.remove(),console.log("Could not include file: "+e,o);continue}}}document.addEventListener("DOMContentLoaded",(()=>{loadIncludes()}));let isFileProtocol="file:"==location.protocol;function waitLoadScripts(e,t){let o=e.map((e=>document.getElementById(e+"-script")));!function e(n){let l=o[n],c=n+1;l?(l&&"true"!=l.getAttribute("loaded")||n<o.length&&e(c),n<o.length&&l.addEventListener("load",(()=>e(c)))):n<o.length?e(c):t()}(0)}</script></head><body class="publish css-settings-manager styled-scrollbars show-inline-title show-ribbon is-focused"><script defer="">let theme=localStorage.getItem("theme")||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");"dark"==theme?(document.body.classList.add("theme-dark"),document.body.classList.remove("theme-light")):(document.body.classList.add("theme-light"),document.body.classList.remove("theme-dark")),window.innerWidth<480?document.body.classList.add("is-phone"):window.innerWidth<768?document.body.classList.add("is-tablet"):window.innerWidth<1024?document.body.classList.add("is-small-screen"):document.body.classList.add("is-large-screen")</script><div class="parsed-feature-container" style="display: contents;"><link itemprop="include" href="site-lib/html/custom-head-content-content.html"></div><div id="main"><div id="navbar"></div><div id="main-horizontal"><div id="left-content" class="leaf" style="--sidebar-width: var(--sidebar-width-left);"><div id="left-sidebar" class="sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"><div id="search-container"><div id="search-wrapper"><input enterkeyhint="search" type="search" spellcheck="false" placeholder="Search..."><div aria-label="Clear search" id="search-clear-button"></div></div></div></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content-wrapper"><div id="left-sidebar-content" class="leaf-content"><link itemprop="include" href="site-lib/html/file-tree-content.html"></div></div><script defer="">let ls = document.querySelector("#left-sidebar"); ls.classList.toggle("is-collapsed", window.innerWidth < 768); ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));</script></div></div><div id="center-content" class="leaf"><div class="obsidian-document markdown-preview-view markdown-rendered node-insert-event is-readable-line-width allow-fold-headings allow-fold-lists show-indentation-guide show-properties" data-type="markdown"><style id="MJX-CHTML-styles"></style><div class="markdown-preview-sizer markdown-preview-section"><div class="header"><h1 class="page-title heading inline-title" id="vSphere_and_vCenter_0">vSphere and vCenter</h1><div class="data-bar"></div></div><div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div><div class="el-ul"><ul class="has-list-bullet">
+<li data-line="0" dir="auto"><span class="list-bullet"></span><strong>vSphere</strong> is the platform (the whole virtualization stack)</li>
+<li data-line="1" dir="auto"><span class="list-bullet"></span><strong>vCenter Server</strong> is the <strong>control plane</strong> that manages the coordinates of that platform</li>
+<li data-line="2" dir="auto"><span class="list-bullet"></span><strong>ESXi</strong> is the <strong>hypervisor</strong> that runs on hardware and executes VMs.</li>
+</ul></div><div class="el-p"><p dir="auto">I mentally see (but don’t tell) this as “<strong>vSphere is just marketing</strong>”:</p></div><div class="el-ul"><ul class="has-list-bullet">
+<li data-line="0" dir="auto"><span class="list-bullet"></span><span class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></span>There is nothing I can <code>curl</code> called vSphere.
+<ul class="has-list-bullet">
+<li data-line="1" dir="auto"><span class="list-bullet"></span>it is “air”.</li>
+</ul>
+</li>
+</ul></div><div class="el-p"><p dir="auto"><span alt="what-is-vmware-vcenter-vs-vsphere-vs-esxi.webp" src="assets/what-is-vmware-vcenter-vs-vsphere-vs-esxi.webp" class="internal-embed media-embed image-embed is-loaded" target="_self"><img alt="what-is-vmware-vcenter-vs-vsphere-vs-esxi.webp" src="assets/what-is-vmware-vcenter-vs-vsphere-vs-esxi.webp" target="_self"></span></p></div><div class="el-p"><p dir="auto"><strong>VMware vSphere</strong> is a <strong>product suite</strong>, not a single binary.</p></div><div class="el-p"><p dir="auto">To be clear: vSphere is a <strong>product name</strong>, or a <strong>platform name</strong>. Its components are the concrete things that actually do the work.</p></div><div class="el-p"><p dir="auto">vSphere includes:</p></div><div class="el-ul"><ul class="has-list-bullet">
+<li data-line="0" dir="auto"><span class="list-bullet"></span>
+<p><strong>ESXi</strong> is the bare-metal hypervisor.</p>
+</li>
+<li data-line="1" dir="auto"><span class="list-bullet"></span>
+<p><strong><a data-href="vCenter Server" href=".html" class="internal-link" target="_self" rel="noopener nofollow">vCenter Server</a></strong> provides centralized management.</p>
+</li>
+<li data-line="2" dir="auto"><span class="list-bullet"></span><span class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></span>
+<p>Platform features:</p>
+<ul class="has-list-bullet">
+<li data-line="3" dir="auto"><span class="list-bullet"></span><strong>vMotion</strong> (live VM migration)</li>
+<li data-line="4" dir="auto"><span class="list-bullet"></span>HA/DRS</li>
+<li data-line="5" dir="auto"><span class="list-bullet"></span>Resource pools</li>
+<li data-line="6" dir="auto"><span class="list-bullet"></span>Distributed switches</li>
+<li data-line="7" dir="auto"><span class="list-bullet"></span>Storage policies</li>
+<li data-line="8" dir="auto"><span class="list-bullet"></span>Fault tolerance</li>
+</ul>
+</li>
+<li data-line="10" dir="auto"><span class="list-bullet"></span>
+<p>You cannot have vSphere without ESXi.</p>
+</li>
+<li data-line="11" dir="auto"><span class="list-bullet"></span>
+<p>You can have ESXi without vCenter (<em>but it will be very limited</em>).</p>
+</li>
+</ul></div><div class="el-h2"><h2 data-heading="vCenter Server" dir="auto" class="heading" id="vCenter_Server_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></span>vCenter Server</h2></div><div class="el-ul"><ul class="has-list-bullet">
+<li data-line="0" dir="auto"><span class="list-bullet"></span>Connects many ESXi hosts.</li>
+<li data-line="1" dir="auto"><span class="list-bullet"></span>Maintains inventory and state</li>
+<li data-line="2" dir="auto"><span class="list-bullet"></span>Enforces cluster-level logic.</li>
+<li data-line="3" dir="auto"><span class="list-bullet"></span><span class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></span>Orchestrates features that require coordination.
+<ul class="has-list-bullet">
+<li data-line="4" dir="auto"><span class="list-bullet"></span>vMotion between hosts</li>
+<li data-line="5" dir="auto"><span class="list-bullet"></span>DRS placement decisions</li>
+<li data-line="6" dir="auto"><span class="list-bullet"></span>Cluster HA</li>
+<li data-line="7" dir="auto"><span class="list-bullet"></span>Supervisor Cluster (for Kubernetes / VCF)</li>
+</ul>
+</li>
+</ul></div><div class="el-p"><p dir="auto"><strong>vCenter Server</strong> is a set of <strong>backend services</strong>:</p></div><div class="el-ul"><ul class="has-list-bullet">
+<li data-line="0" dir="auto"><span class="list-bullet"></span>Inventory (<em>hosts, clusters, VMs</em>)</li>
+<li data-line="1" dir="auto"><span class="list-bullet"></span>State and configuration database</li>
+<li data-line="2" dir="auto"><span class="list-bullet"></span>Scheduling logic (<a data-href="DRS" href=".html" class="internal-link" target="_self" rel="noopener nofollow">DRS</a>)</li>
+<li data-line="3" dir="auto"><span class="list-bullet"></span><a data-href="HA" href=".html" class="internal-link" target="_self" rel="noopener nofollow">HA</a> coordination</li>
+<li data-line="4" dir="auto"><span class="list-bullet"></span><a data-href="vMotion" href=".html" class="internal-link" target="_self" rel="noopener nofollow">vMotion</a> orchestration</li>
+<li data-line="5" dir="auto"><span class="list-bullet"></span>RBAC, roles, permissions</li>
+<li data-line="6" dir="auto"><span class="list-bullet"></span>APIs (<em>REST, SOAP</em>)</li>
+</ul></div><div class="el-p"><p dir="auto"><span alt="What-is-VMware-vSphere-vSphere-Client.jpg" src="assets/what-is-vmware-vsphere-vsphere-client.jpg" class="internal-embed media-embed image-embed is-loaded" target="_self"><img alt="What-is-VMware-vSphere-vSphere-Client.jpg" src="assets/what-is-vmware-vsphere-vsphere-client.jpg" target="_self"></span></p></div><div class="el-p"><p dir="auto">There is exactly ONE UI name (“<a data-href="vSphere Client" href="vsphere-client.html" class="internal-link" target="_self" rel="noopener nofollow">vSphere Client</a>”), but it can connect to TWO different backends.</p></div><div class="el-ul"><ul class="has-list-bullet">
+<li data-line="0" dir="auto"><span class="list-bullet"></span>vSphere Server</li>
+<li data-line="1" dir="auto"><span class="list-bullet"></span>ESXi Hosts</li>
+</ul></div><div class="el-pre"><pre class="language-text"><code data-line="0" class="language-text is-loaded">## Mode 1
+Browser
+   ↓
+ESXi Host
+   ↓
+Embedded vSphere Client
+
+## Mode 2
+Browser
+   ↓
+vCenter Server
+   ↓
+vSphere Client
+   ↓
+Many ESXi hosts
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre></div><div class="el-table" dir="ltr" style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th dir="ltr">You log into</th>
+<th dir="ltr">UI name</th>
+<th dir="ltr">Real authority</th>
+<th dir="auto"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="ltr">ESXi host IP</td>
+<td dir="ltr">vSphere Client</td>
+<td dir="ltr">That host only</td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="ltr">vCenter FQDN</td>
+<td dir="ltr">vSphere Client</td>
+<td dir="ltr">Entire environment</td>
+<td dir="auto"></td>
+</tr>
+</tbody>
+</table></div><div class="el-h2"><h2 data-heading="vSphere Cluster" dir="auto" class="heading" id="vSphere_Cluster_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></span>vSphere Cluster</h2></div><div class="el-p"><p dir="auto">A <a data-href="vSphere Cluster" href=".html" class="internal-link" target="_self" rel="noopener nofollow">vSphere Cluster</a> is a <strong>logical grouping of ESXi hosts that vCenter treats as a single resource pool and failure domain</strong>.</p></div><div class="el-ul"><ul class="has-list-bullet">
+<li data-line="0" dir="auto"><span class="list-bullet"></span>It exists only in vCenter</li>
+<li data-line="1" dir="auto"><span class="list-bullet"></span>ESXi hosts do not know they are “<em>in a cluster</em>”.</li>
+</ul></div><div class="el-p"><p dir="auto">When you create a <strong>cluster</strong> in vCenter Server, you are telling:<br>
+“*These ESXi hosts agree to be scheduled, balanced, and failed over together.”</p></div><div class="el-p"><p dir="auto">This enables cluster-level logic, such as</p></div><div class="el-ol"><ol>
+<li data-line="0" dir="auto"><span class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></span>DRS (Distributed Resource Scheduler):
+<ul class="has-list-bullet">
+<li data-line="1" dir="auto"><span class="list-bullet"></span><span class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></span>vCenter decides
+<ul class="has-list-bullet">
+<li data-line="2" dir="auto"><span class="list-bullet"></span>which host should run which VM.</li>
+<li data-line="3" dir="auto"><span class="list-bullet"></span>When to rebalance the load.</li>
+</ul>
+</li>
+<li data-line="4" dir="auto"><span class="list-bullet"></span>Uses <strong><a data-href="vMotion" href=".html" class="internal-link" target="_self" rel="noopener nofollow">vMotion</a></strong> to move VMs between hosts.</li>
+</ul>
+</li>
+<li data-line="5" dir="auto"><span class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></span>HA (High Availability)
+<ul class="has-list-bullet">
+<li data-line="6" dir="auto"><span class="list-bullet"></span>Hosts run a lightweight HA agent.</li>
+<li data-line="7" dir="auto"><span class="list-bullet"></span><span class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></span>If a host dies:
+<ul class="has-list-bullet">
+<li data-line="8" dir="auto"><span class="list-bullet"></span>Other hosts detect it</li>
+<li data-line="9" dir="auto"><span class="list-bullet"></span>vCenter (or preconfigured HA logic) restarts VMs elsewhere.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-line="10" dir="auto"><span class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></span>Shared resource abstraction
+<ul class="has-list-bullet">
+<li data-line="11" dir="auto"><span class="list-bullet"></span><span class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></span>Instead of thinking:
+<ul class="has-list-bullet">
+<li data-line="12" dir="auto"><span class="list-bullet"></span><code>Host A: 64 cores Host B: 64 cores</code></li>
+</ul>
+</li>
+<li data-line="13" dir="auto"><span class="list-bullet"></span><span class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></span>vCenter presents
+<ul class="has-list-bullet">
+<li data-line="14" dir="auto"><span class="list-bullet"></span><code>Cluster: 128 cores</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol></div><div class="el-p"><p dir="auto">VM placement and limits are <strong>logical</strong>, not physical.</p></div><div class="el-p"><p dir="auto">A vSphere Cluster is <strong>not</strong>:</p></div><div class="el-table" dir="ltr" style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th dir="ltr">Thing</th>
+<th dir="ltr">Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="ltr">Kubernetes cluster</td>
+<td dir="ltr">No pod scheduling, no etcd, no control loops</td>
+</tr>
+<tr>
+<td dir="ltr">Storage cluster</td>
+<td dir="ltr">Storage is external (vSAN is separate)</td>
+</tr>
+<tr>
+<td dir="ltr">Network cluster</td>
+<td dir="ltr">Networking is abstracted, not clustered</td>
+</tr>
+<tr>
+<td dir="ltr">Consensus system</td>
+<td dir="ltr">No quorum, no RAFT</td>
+</tr>
+</tbody>
+</table></div><div class="el-h2"><h2 data-heading="Why VMware still calls it a “cluster”" dir="auto" class="heading" id="Why_VMware_still_calls_it_a_“cluster”_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></span>Why VMware still calls it a “cluster”</h2></div><div class="el-p"><p dir="auto">Because from an <strong>operator’s perspective</strong>:</p></div><div class="el-ul"><ul class="has-list-bullet">
+<li data-line="0" dir="auto"><span class="list-bullet"></span>Hosts act like a pool</li>
+<li data-line="1" dir="auto"><span class="list-bullet"></span>Failures are absorbed</li>
+<li data-line="2" dir="auto"><span class="list-bullet"></span>Workloads move transparently<br>
+But architecturally:
+<blockquote dir="auto">
+<p><strong>The cluster is an illusion created by vCenter.</strong></p>
+</blockquote>
+</li>
+</ul></div><div class="el-p"><p dir="auto">A vSphere cluster is a <a data-href="vCenter" href="vcf/main-componets/engine/vsphere/vcenter.html" class="internal-link" target="_self" rel="noopener nofollow">vCenter</a>-defined scheduling and failure domain over multiple <a data-href="ESXi" href=".html" class="internal-link" target="_self" rel="noopener nofollow">ESXi</a> hosts,</p></div><div class="el-h2"><h2 data-heading="vSphere Cluster ←→ Kubernetes Cluster Comparison" dir="auto" class="heading" id="vSphere_Cluster_←→_Kubernetes_Cluster_Comparison_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></span>vSphere Cluster ←→ Kubernetes Cluster Comparison</h2></div><div class="el-table" dir="ltr" style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th dir="ltr">Aspect</th>
+<th dir="ltr">vSphere Cluster</th>
+<th dir="ltr">Kubernetes Cluster</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="ltr">Exists where?</td>
+<td dir="ltr">vCenter only</td>
+<td dir="ltr">Control plane + nodes</td>
+</tr>
+<tr>
+<td dir="ltr">Control plane</td>
+<td dir="ltr">Centralized</td>
+<td dir="ltr">Distributed</td>
+</tr>
+<tr>
+<td dir="ltr">Failure logic</td>
+<td dir="ltr">External (vCenter)</td>
+<td dir="ltr">Internal (controllers)</td>
+</tr>
+<tr>
+<td dir="ltr">Scheduling</td>
+<td dir="ltr">VMs</td>
+<td dir="ltr">Pods</td>
+</tr>
+<tr>
+<td dir="ltr">Node awareness</td>
+<td dir="ltr">Passive</td>
+<td dir="ltr">Active</td>
+</tr>
+<tr>
+<td dir="ltr">Self-healing</td>
+<td dir="ltr">Restart VMs</td>
+<td dir="ltr">Reconcile desired state</td>
+</tr>
+</tbody>
+</table></div><div class="el-h2"><h2 data-heading="Typical Deployment Topology" dir="auto" class="heading" id="Typical_Deployment_Topology_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></span>Typical Deployment Topology</h2></div><div class="el-pre"><pre class="language-text"><code data-line="0" class="language-text is-loaded">[ Physical Servers ]
+        ↓
+     ESXi (many hosts)
+        ↓
+   vCenter Server
+        ↓
+  vSphere features &amp; automation
+
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre></div><div class="footer"><div class="data-bar"></div></div></div></div></div><div id="right-content" class="leaf" style="--sidebar-width: var(--sidebar-width-right);"><div id="right-sidebar" class="sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"><label class="theme-toggle-container" for="theme-toggle-input" id=""><input class="theme-toggle-input" type="checkbox" id="theme-toggle-input"><div class="toggle-background"></div></label></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content-wrapper"><div id="right-sidebar-content" class="leaf-content"><div class="graph-view-wrapper"><div class="feature-header"><div class="feature-title">Interactive Graph</div></div><div class="graph-view-placeholder">
+		<div class="graph-view-container">
+			<div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+			<div class="graph-icon graph-global" role="button" aria-label="Global Graph" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-git-fork"><circle cx="12" cy="18" r="3"></circle><circle cx="6" cy="6" r="3"></circle><circle cx="18" cy="6" r="3"></circle><path d="M18 9v2c0 .6-.4 1-1 1H7c-.6 0-1-.4-1-1V9"></path><path d="M12 12v3"></path></svg></div>
+			<canvas id="graph-canvas" class="hide" width="512px" height="512px"></canvas>
+		</div>
+		</div></div><div id="outline" class=" tree-container"><div class="feature-header"><div class="feature-title">Table Of Contents</div><button class="clickable-icon nav-action-button tree-collapse-all" aria-label="Collapse All"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button></div><div class="tree-item mod-collapsible" data-depth="1"><a class="tree-item-self is-clickable mod-collapsible" href="vsphere-and-vcenter.html#vSphere_and_vCenter_0" data-path="#vSphere_and_vCenter_0"><div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><div class="tree-item-inner heading-link" heading-name="vSphere and vCenter">vSphere and vCenter</div></a><div class="tree-item-children"><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="vsphere-and-vcenter.html#vCenter_Server_0" data-path="#vCenter_Server_0"><div class="tree-item-inner heading-link" heading-name="vCenter Server">vCenter Server</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="vsphere-and-vcenter.html#vSphere_Cluster_0" data-path="#vSphere_Cluster_0"><div class="tree-item-inner heading-link" heading-name="vSphere Cluster">vSphere Cluster</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="vsphere-and-vcenter.html#Why_VMware_still_calls_it_a_“cluster”_0" data-path="#Why_VMware_still_calls_it_a_“cluster”_0"><div class="tree-item-inner heading-link" heading-name="Why VMware still calls it a “cluster”">Why VMware still calls it a “cluster”</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="vsphere-and-vcenter.html#vSphere_Cluster_←→_Kubernetes_Cluster_Comparison_0" data-path="#vSphere_Cluster_←→_Kubernetes_Cluster_Comparison_0"><div class="tree-item-inner heading-link" heading-name="vSphere Cluster ←→ Kubernetes Cluster Comparison">vSphere Cluster ←→ Kubernetes Cluster Comparison</div></a><div class="tree-item-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-item-self is-clickable" href="vsphere-and-vcenter.html#Typical_Deployment_Topology_0" data-path="#Typical_Deployment_Topology_0"><div class="tree-item-inner heading-link" heading-name="Typical Deployment Topology">Typical Deployment Topology</div></a><div class="tree-item-children"></div></div></div></div></div></div></div><script defer="">let rs = document.querySelector("#right-sidebar"); rs.classList.toggle("is-collapsed", window.innerWidth < 768); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script></div></div></div></div></body></html>
