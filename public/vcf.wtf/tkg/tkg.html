@@ -19,7 +19,56 @@
 <li data-line="6" dir="auto"><span class="list-bullet"></span>vSphere IAM / RBAC boundaries</li>
 </ul>
 </li>
-</ul></div><div class="footer"><div class="data-bar"></div></div></div></div></div><div id="right-content" class="leaf" style="--sidebar-width: var(--sidebar-width-right);"><div id="right-sidebar" class="sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"><label class="theme-toggle-container" for="theme-toggle-input" id=""><input class="theme-toggle-input" type="checkbox" id="theme-toggle-input"><div class="toggle-background"></div></label></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content-wrapper"><div id="right-sidebar-content" class="leaf-content"><div class="graph-view-wrapper"><div class="feature-header"><div class="feature-title">Interactive Graph</div></div><div class="graph-view-placeholder">
+</ul></div><div class="el-table" dir="ltr" style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th dir="ltr">Flavor</th>
+<th dir="ltr">Status</th>
+<th dir="ltr">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="ltr">TKG <strong>Standalone</strong> (management cluster model)</td>
+<td dir="ltr">🪦 Legacy</td>
+<td dir="ltr">TKGm / TKGs</td>
+</tr>
+<tr>
+<td dir="ltr">TKG <strong>Supervisor-based</strong></td>
+<td dir="ltr">✅ Current</td>
+<td dir="ltr">This is what VCF 9.x uses</td>
+</tr>
+</tbody>
+</table></div><div class="el-p"><p dir="auto">Inside the guest cluster:</p></div><div class="el-ul"><ul class="has-list-bullet">
+<li data-line="0" dir="auto"><span class="list-bullet"></span><span class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></span>Kubernetes sees:
+<ul class="has-list-bullet">
+<li data-line="1" dir="auto"><span class="list-bullet"></span>Namespaces</li>
+<li data-line="2" dir="auto"><span class="list-bullet"></span>RBAC</li>
+<li data-line="3" dir="auto"><span class="list-bullet"></span>CRDs</li>
+<li data-line="4" dir="auto"><span class="list-bullet"></span>Workloads</li>
+</ul>
+</li>
+<li data-line="5" dir="auto"><span class="list-bullet"></span><span class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></span>It does <strong>not</strong> see:
+<ul class="has-list-bullet">
+<li data-line="6" dir="auto"><span class="list-bullet"></span>Organizations</li>
+<li data-line="7" dir="auto"><span class="list-bullet"></span>Projects</li>
+<li data-line="8" dir="auto"><span class="list-bullet"></span>Approval flows</li>
+<li data-line="9" dir="auto"><span class="list-bullet"></span>Business tenancy</li>
+</ul>
+</li>
+</ul></div><div class="el-p"><p dir="auto">Those live <strong>outside the cluster</strong>, enforced by:</p></div><div class="el-ul"><ul class="has-list-bullet">
+<li data-line="0" dir="auto"><span class="list-bullet"></span><a data-href="vSphere" href="vcf/main-componets/engine/vsphere/vsphere.html" class="internal-link" target="_self" rel="noopener nofollow">vSphere</a></li>
+<li data-line="1" dir="auto"><span class="list-bullet"></span><a data-href="vSphere Supervisor" href="vcf/main-componets/engine/vsphere-supervisor/vsphere-supervisor.html" class="internal-link" target="_self" rel="noopener nofollow">vSphere Supervisor</a></li>
+<li data-line="2" dir="auto"><span class="list-bullet"></span>Automation layers (i.e., <a data-href="VCF Automation" href="vcf/main-componets/engine/vcf-a/vcf-automation.html" class="internal-link" target="_self" rel="noopener nofollow">VCF Automation</a>)</li>
+</ul></div><div class="el-p"><p dir="auto">This is similar to saying “<em>a Docker container does not know which Jira project paid for the VM it runs on</em>”.</p></div><div class="el-pre"><pre class="language-text"><code data-line="0" class="language-text is-loaded">vSphere / ESX
+└── Supervisor Cluster
+    └── Supervisor Namespace
+        └── TKG Workload Cluster (guest cluster)
+            ├── Kubernetes API
+            ├── Nodes = VMs
+            └── Apps / Pods
+
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre></div><div class="footer"><div class="data-bar"></div></div></div></div></div><div id="right-content" class="leaf" style="--sidebar-width: var(--sidebar-width-right);"><div id="right-sidebar" class="sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"><label class="theme-toggle-container" for="theme-toggle-input" id=""><input class="theme-toggle-input" type="checkbox" id="theme-toggle-input"><div class="toggle-background"></div></label></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content-wrapper"><div id="right-sidebar-content" class="leaf-content"><div class="graph-view-wrapper"><div class="feature-header"><div class="feature-title">Interactive Graph</div></div><div class="graph-view-placeholder">
 		<div class="graph-view-container">
 			<div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
 			<div class="graph-icon graph-global" role="button" aria-label="Global Graph" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-git-fork"><circle cx="12" cy="18" r="3"></circle><circle cx="6" cy="6" r="3"></circle><circle cx="18" cy="6" r="3"></circle><path d="M18 9v2c0 .6-.4 1-1 1H7c-.6 0-1-.4-1-1V9"></path><path d="M12 12v3"></path></svg></div>

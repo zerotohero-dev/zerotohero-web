@@ -1,4 +1,603 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[VMware Cloud Foundation]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>site-lib/media/favicon.png</url><title>VMware Cloud Foundation</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Sun, 21 Dec 2025 15:16:47 GMT</lastBuildDate><atom:link href="site-lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Sun, 21 Dec 2025 15:16:40 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[Tenants in Supervisor]]></title><description><![CDATA[<a href=".?query=tag:tenancy" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#tenancy">#tenancy</a>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[VMware Cloud Foundation]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>site-lib/media/favicon.png</url><title>VMware Cloud Foundation</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Sun, 21 Dec 2025 19:38:55 GMT</lastBuildDate><atom:link href="site-lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Sun, 21 Dec 2025 19:38:36 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[Supervisor Namespace]]></title><description><![CDATA[These are not Kubernetes namespaces in the usual sense.
+They are:
+Resource-governed containers
+Backed by: vSphere Networking (<a data-href="NSX" href="vcf/main-componets/engine/nsx/nsx.html" class="internal-link" target="_self" rel="noopener nofollow">NSX</a>)
+<br>vSphere Storage (<a data-href="VSAN" href="vcf/main-componets/engine/vsan/vsan.html" class="internal-link" target="_self" rel="noopener nofollow">VSAN</a>)
+vSphere RBAC A tenant can have more than one Supervisor Namespace; however, those namespaces are not individual tenants.
+Tenancy is a business/trust concept. Supervisor Namespaces are execution slices that implement tenancy.
+vCenter / API / UI ↓
+Supervisor Namespace created ↓
+Namespace appears in Kubernetes ↓
+kubectl can now interact with it
+^ This is the opposite of upstream Kubernetes.In a vSphere Supervisor cluster, tenant namespaces are created and owned by vSphere as Supervisor Namespaces. Kubernetes users cannot create namespaces directly; kubectl is used only to interact with namespaces after vSphere has provisioned them.
+Supervisor Namespaces are created by vSphere
+<br>kubectl create ns is not how tenancy is established. This will be explicitly denies on the <a data-href="Supervisor Cluster" href=".html" class="internal-link" target="_self" rel="noopener nofollow">Supervisor Cluster</a>.
+There is no concept of a regular tenant namespace on Supervisor
+Kubernetes reflects what vSphere creates
+Namespace lifecycle is deliberately centralized for safety
+In a Supervisor cluster, Kubernetes cluster-admin privileges do not grant authority over physical resource allocation. Namespace creation and resource envelopes are owned by vSphere, and Kubernetes operates strictly within those bounds.Tenant: Coca-Cola
+├── ns-coke-prod
+├── ns-coke-stage
+└── ns-coke-dev Tenant: Coca-Cola
+├── ns-coke-us
+├── ns-coke-eu
+└── ns-coke-apac ## VCF Automation Representation Organization: Coca-Cola
+├── Project: Coke-Prod → ns-coke-prod
+├── Project: Coke-Stage → ns-coke-stage
+└── Project: Coke-Dev → ns-coke-dev ^ One organization, multiple projects,
+Each project maps to (ideally) one Supervisor Namespace.
+But this is also possible: Organization: Coca-Cola
+└── Project: Coke ├── ns-coke-dev ├── ns-coke-stage └── ns-coke-prod The only inverant is one supervisor namespace cannot belong
+to multiple projects. Namespaces are unique per supervisor cluster.
+Supervisor clusters are *isolation domains*, so global
+uniqueness enforcement would have been 1) artificial
+and 2) painful. Organization
+└── Project └── Supervisor Namespace(s)
+From vSphere's perspective, a Pod, VM, or VM-based Pod is just scheduled compute.Project is an automation construct.
+Defined by Automation Admin persona.
+Mapped to one or more Supervisor Namespaces.
+Invisible to vSphere / Kubernetes.
+Their purpose is to govern requests, not execution.
+<br>From the <a data-href="Guest Cluster" href="tkg/guest-cluster.html" class="internal-link" target="_self" rel="noopener nofollow">Guest Cluster</a>’s perspective, Organizations and Projects do not exist; similarly there is no concept of an organization or project inside the <a data-href="Supervisor Cluster" href=".html" class="internal-link" target="_self" rel="noopener nofollow">Supervisor Cluster</a> either.Supervisor namespaces intentionally mimic Kubernetes semantics:From the developer's laptop, they feel like ordinary Kubernetes namespaces.Here is where they differ though (mostly around ownership and LCM)in Supervisor namespaces, resource governance is outside Kubernetes.In Kubernetes:
+CPU/memory limits = ResourceQuota
+Storage = StorageClass + PVC
+Network = CNI rules
+In Supervisor:
+CPU/memory = vSphere resource pools
+Storage = datastore policies
+Network = NSX segments
+Limits are hard boundaries, not advisory
+So when you say:
+"This namespace gets 8 vCPU and 64 GB RAM"
+That's not a Kubernetes promise---that's vSphere enforcing physics.Security model is in vSphere, not in KubernetesKubernetes RBAC applies inside the box vSphere already drew.That’s why certain Kubernetes admin actions are silently blocked even when RBAC says “allowed”.From Kubernetes’ POV:
+It looks like a CNI plugin
+In reality:
+NSX owns: L2/L3 segments
+Firewall rules
+Load balancers Kubernetes asks politely. NSX decides.This matters for:
+NetworkPolicy
+Ingress behavior
+Multi-tenant isolation
+In vanilla K8s:
+PVC requests storage
+Cluster tries to satisfy it
+In Supervisor:
+PVC must map to pre-approved storage policies
+Datastore capabilities are enforced externally
+StorageClass ≈ view of vSphere policy, not a free-form construct.The goal of this abstraction is to:
+Let Kubernetes users feel at home
+Let infrastructure teams retain determinism
+Avoid “Kubernetes ate my datacenter” chaos
+So Supervisor namespaces are:
+Kubernetes-compatible interfaces to vSphere-owned sandboxes Supervisor namespaces intentionally impersonate Kubernetes namespaces
+Kubernetes sees them as native; operations are externally enforced
+vSphere owns: lifecycle
+resource limits
+security boundaries Kubernetes operates within those constraints
+Supervisor Namespace names are unique only within a Supervisor cluster, and every Supervisor Namespace is governed by exactly one Project; Organizations do not directly own namespaces.Supervisor Namespace names are not globally unique, nor organization-wide unique.<br>They are unique per <a data-href="Supervisor Cluster" href=".html" class="internal-link" target="_self" rel="noopener nofollow">Supervisor Cluster</a>.<br>Supervisor Namespaces are always associated with a <a data-href="Project" href="project.html" class="internal-link" target="_self" rel="noopener nofollow">Project</a>.Organization
+└── Project └── Supervisor Namespace(s) Namespace names are: ❌ not global
+❌ not org-unique
+❌ not project-unique
+✅ unique per Supervisor cluster Namespace: belongs to exactly one Project
+indirectly belongs to one Organization
+never floats independently Here’s a concrete example:Org: Verizon
+Project: West-Coast - Supervisor Cluster: sjc-01 - Namespace: edge-prod - Supervisor Cluster: lax-01 - Namespace: edge-prod ← same name, totally fine Project: East-Coast - Supervisor Cluster: iad-01 - Namespace: edge-prod ← also fine <br>Namespace names are <a data-href="Supervisor Cluster" href=".html" class="internal-link" target="_self" rel="noopener nofollow">Supervisor Cluster</a>-scoped
+Projects are mandatory governance owners
+Organizations are containers of projects, not namespaces
+Any apparent contradiction is UI simplification, not platform behavior
+]]></description><link>supervisor-namespace.html</link><guid isPermaLink="false">Supervisor Namespace.md</guid><pubDate>Sun, 21 Dec 2025 19:37:56 GMT</pubDate></item><item><title><![CDATA[Blueprint]]></title><description><![CDATA[A Blueprint is a declarative deployment template that defines what can be requested, how it is configured, where it may land, and under which policies and approvals.Blueprints live in <a data-href="VCF Automation" href="vcf/main-componets/engine/vcf-a/vcf-automation.html" class="internal-link" target="_self" rel="noopener nofollow">VCF Automation</a>.<br>Blueprints in <a data-href="VCF Automation" href="vcf/main-componets/engine/vcf-a/vcf-automation.html" class="internal-link" target="_self" rel="noopener nofollow">VCF Automation</a> are governed deployment templates that define allowed workload patterns, configuration inputs, placement constraints, and approval policies. They orchestrate resource creation but are not part of the runtime execution layer.Once a deployment is created, the Blueprint can be deleted and the workload keeps running: It’s not part of the runtime layer.User ↓
+Blueprint ← governance + intent ↓
+Project ← who / where / policy ↓
+Supervisor Namespace ↓
+vSphere / Kubernetes runtime
+Kubernetes YAML answers:
+“How do I create this thing?”
+Blueprints answer:
+“Who is allowed to create which thing, under what rules, and with whose approval?” Organization: business boundary (e.g. Verizon)
+<br><a data-href="Project" href="project.html" class="internal-link" target="_self" rel="noopener nofollow">Project</a>: governance scope (e.g. US-East)
+Blueprint: allowed patterns inside that scope
+Organization: Verizon
+└── Project: US-East ├── Blueprint: Standard App VM ├── Blueprint: GPU Pod └── Blueprint: 3-Node K8s Cluster
+Each Blueprint:
+targets specific Supervisor Namespace(s)
+enforces constraints
+hides complexity from requesters
+Typically it defines:Examples:
+A VM
+A vSphere Pod
+A Guest Kubernetes cluster
+A multi-tier app (VM + LB + storage) CPU / memory sizes
+Environment variables
+Image versions
+Feature toggles
+Secret references (not secret values) <br>Which <a data-href="Supervisor Namespace" href="supervisor-namespace.html" class="internal-link" target="_self" rel="noopener nofollow">Supervisor Namespace</a>(s) are allowed
+Which storage policies are allowed
+Which networks are allowed
+Size limits
+Placement rules Who can request it
+Who must approve it
+Lease duration
+Cost visibility / chargeback tags
+<br><a data-href="Supervisor Namespace" href="supervisor-namespace.html" class="internal-link" target="_self" rel="noopener nofollow">Supervisor Namespace</a>]]></description><link>blueprint.html</link><guid isPermaLink="false">Blueprint.md</guid><pubDate>Sun, 21 Dec 2025 19:37:08 GMT</pubDate></item><item><title><![CDATA[Project]]></title><description><![CDATA[<a data-href="VCF Automation" href="vcf/main-componets/engine/vcf-a/vcf-automation.html" class="internal-link" target="_self" rel="noopener nofollow">VCF Automation</a> supports both one-to-one and one-to-many mappings between Projects and Supervisor Namespaces; the choice is an architectural pattern, not a platform constraint.Very common, very clean:Organization: Coca-Cola
+├── Project: Coke-Prod → ns-coke-prod
+├── Project: Coke-Stage → ns-coke-stage
+└── Project: Coke-Dev → ns-coke-dev
+Why teams choose this
+Clean blast-radius isolation
+Clear RBAC and quotas per environment
+Easy mental model
+Common in regulated / prod-heavy setups
+This is a design choice, not a platform requirement.(Equally valid, also common in larger deployments)Organization: Coca-Cola
+└── Project: Coke ├── ns-coke-dev ├── ns-coke-stage └── ns-coke-prod
+Why teams choose this
+Shared governance (same people, same blueprints)
+Environment separation handled at namespace level
+Easier cross-env promotion workflows
+Fewer projects to manage
+]]></description><link>project.html</link><guid isPermaLink="false">Project.md</guid><pubDate>Sun, 21 Dec 2025 19:33:56 GMT</pubDate></item><item><title><![CDATA[Governance]]></title><description><![CDATA[Governance in VCF is the set of mechanisms that decide who is allowed to request which platform capabilities, under what constraints, with what approvals, and for how long — before anything is created.<a data-href="VCF Automation" href="vcf/main-componets/engine/vcf-a/vcf-automation.html" class="internal-link" target="_self" rel="noopener nofollow">VCF Automation</a> governs entitlement and lifecycle decisions, including lease expiry and grace periods, but vSphere Supervisor remains the execution authority and only acts when Automation explicitly requests a change.
+VCF-A governance is front-door, human-aware, policy-driven
+It’s about entitlement, approval, and lifecycle
+It is not a security monitoring system
+It is not a Terraform-style reconciler
+It is exactly what service providers and large enterprises need to avoid chaos
+What Governance is not:Governance does not watch workloads.
+It decides whether they are allowed to exist in the first place.Governance (VCF Automation)
+├── Organizations
+├── Projects
+├── Blueprints
+├── Entitlements
+├── Approvals
+├── Quotas
+└── Leases Execution (vSphere / Supervisor)
+├── Namespaces
+├── Resource pools
+├── Networks
+└── Workloads
+Nothing in the execution layer knowns governance exists.
+Governance defines who may open the door.
+Execution decides what happens after they are inside the house.
+In other words, governance is “pre-creation” control, not runtime policing.<br><a data-href="Supervisor Namespace" href="supervisor-namespace.html" class="internal-link" target="_self" rel="noopener nofollow">Supervisor Namespace</a><br><a data-href="vSphere Supervisor" href="vcf/main-componets/engine/vsphere-supervisor/vsphere-supervisor.html" class="internal-link" target="_self" rel="noopener nofollow">vSphere Supervisor</a><br><a data-href="vSphere Pod" href="vsphere-pod.html" class="internal-link" target="_self" rel="noopener nofollow">vSphere Pod</a><br><a data-href="Supervisor Namespace" href="supervisor-namespace.html" class="internal-link" target="_self" rel="noopener nofollow">Supervisor Namespace</a><br><a href=".?query=tag:tenancy" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#tenancy">#tenancy</a>]]></description><link>vcf/governance.html</link><guid isPermaLink="false">VCF/Governance.md</guid><pubDate>Sun, 21 Dec 2025 19:31:12 GMT</pubDate></item><item><title><![CDATA[Supervisor and Supervisor Cluster]]></title><description><![CDATA[
+A mode / capability of a vSphere cluster
+Means: “This vSphere cluster has Kubernetes enabled and is running the Supervisor control plane” or less wordy: “*a vSphere cluster with Supervisor enabled”. Not a physical thing by itself
+Think of it as a feature flag + control plane. A vSphere cluster with Supervisor enabled
+A concrete, addressable object: ESXi hosts
+vCenter-managed cluster
+Supervisor control plane VMs This is what you actually connect to with kubectl
+In practice, people often say:
+“deploy this on Supervisor”
+“connect to the Supervisor”
+“namespace on Supervisor”
+What they mean is: “the Kubernetes API exposed by the Supervisor-enabled vSphere cluster”
+So colloquially: Supervisor ≈ Supervisor Cluster
+But technically:
+Supervisor = the Kubernetes capability
+Supervisor Cluster = the vSphere cluster running it
+]]></description><link>supervisor-and-supervisor-cluster.html</link><guid isPermaLink="false">Supervisor and Supervisor Cluster.md</guid><pubDate>Sun, 21 Dec 2025 19:29:46 GMT</pubDate></item><item><title><![CDATA[VCF Automation]]></title><description><![CDATA[enables IT teams and cloud service providers (<a data-href="CSP" href=".html" class="internal-link" target="_self" rel="noopener nofollow">CSP</a>s) to deliver a self-service private cloud for AI, Kubernetes, and VM-based applications.<br>The solution simplifies the process of provisioning and scaling a <a data-href="multi-tenant" href=".html" class="internal-link" target="_self" rel="noopener nofollow">multi-tenant</a> private cloud with out-of-the-box Infrastructure as a Service (<a data-href="IaaS" href=".html" class="internal-link" target="_self" rel="noopener nofollow">IaaS</a>) offerings, accelerating the time to market for applications while maintaining control using policy-based governance.VCF Automation provides governance at the request and lifecycle level—controlling who can deploy which patterns, under what constraints and approvals—while runtime security, drift detection, and continuous enforcement are handled by downstream platforms.<br><a data-href="Governance" href="vcf/governance.html" class="internal-link" target="_self" rel="noopener nofollow">Governance</a><br><a href=".?query=tag:tenancy" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#tenancy">#tenancy</a>VCF Automation has the following capabilities:
+<br><a data-href="Cloud Services" href="vcf/main-componets/engine/vcf-a/cloud-services.html" class="internal-link" target="_self" rel="noopener nofollow">Cloud Services</a>: Provides a set of cloud services to meet the needs of application teams
+<br><a data-href="Provider Management" href="vcf/main-componets/engine/vcf-a/provider-management.html" class="internal-link" target="_self" rel="noopener nofollow">Provider Management</a>: Supports IT teams and cloud service providers to effectively manage, deliver, and scale cloud services across multiple vCenter and VCF instances.
+<br><a data-href="Organization Management" href="vcf/main-componets/engine/vcf-a/organization-management.html" class="internal-link" target="_self" rel="noopener nofollow">Organization Management</a>: Provides capabilities that enable the organization administrator of a Line of Business or a tenant to further organize and govern resources allocated to them among application teams.
+<br><a data-href="vSphere Supervisor" href="vcf/main-componets/engine/vsphere-supervisor/vsphere-supervisor.html" class="internal-link" target="_self" rel="noopener nofollow">vSphere Supervisor</a>: Provides the capability to run Kubernetes workloads directly on ESX hosts and to create upstream Kubernetes clusters within dedicated namespaces.( <a href=".?query=tag:todo" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#todo">#todo</a>: Further explanation needed )
+]]></description><link>vcf/main-componets/engine/vcf-a/vcf-automation.html</link><guid isPermaLink="false">VCF/Main Componets/engine/VCF-A/VCF Automation.md</guid><pubDate>Sun, 21 Dec 2025 19:22:12 GMT</pubDate></item><item><title><![CDATA[Virtual Appliance]]></title><description><![CDATA[A VMware appliance is a prepackaged, hardened virtual machine that bundles an OS, application, configuration, and lifecycle tooling into a single deployable unit.A VMware-style appliance typically includes:
+A minimal, locked-down OS
+The application(s)
+Configuration defaults
+Upgrade mechanisms
+Health checks
+Backup/restore hooks
+Support boundaries (“only change things this way”)
+The key idea is:
+You manage the appliance as a product, not as a general-purpose OS.
+Usually yes, but conceptually they can be:
+One VM (vCenter)
+Multiple tightly-coupled VMs (some NSX / telco components)
+But still treated as one product unit
+From the operator’s perspective:
+You deploy “the appliance”
+You don’t manage its internals individually
+Once you accept that:
+vCenter is a VM
+Supervisor components are appliances
+Then the stack becomes very consistent:
+<a data-href="ESX" href="vcf/main-componets/engine/vsphere/esx.html" class="internal-link" target="_self" rel="noopener nofollow">ESX</a> runs everything
+<br><a data-href="vCenter Server" href="vcenter-server.html" class="internal-link" target="_self" rel="noopener nofollow">vCenter Server</a> orchestrates everything
+<br><a data-href="Appliance" href=".html" class="internal-link" target="_self" rel="noopener nofollow">Appliance</a>s are how VMware ships control planes Kubernetes is just another control surface layered on top Multiple VMs ≠ appliance unless:If you deploy 3 random VMs and wire them together yourself — that’s not an appliance.<br><a data-href="VCF Automation" href="vcf/main-componets/engine/vcf-a/vcf-automation.html" class="internal-link" target="_self" rel="noopener nofollow">VCF Automation</a>]]></description><link>virtual-appliance.html</link><guid isPermaLink="false">Virtual Appliance.md</guid><pubDate>Sun, 21 Dec 2025 19:21:36 GMT</pubDate></item><item><title><![CDATA[vCenter Server]]></title><description><![CDATA[vCenter Server runs as a <a data-href="Virtual Appliance" href="virtual-appliance.html" class="internal-link" target="_self" rel="noopener nofollow">Virtual Appliance</a> (<a data-href="VCSA" href=".html" class="internal-link" target="_self" rel="noopener nofollow">VCSA</a>) — a prebuilt VM — on <a data-href="ESX" href="vcf/main-componets/engine/vsphere/esx.html" class="internal-link" target="_self" rel="noopener nofollow">ESX</a>.Concretely:
+vCenter is not bare metal
+It is deployed as an OVA
+That OVA becomes one VM (sometimes functionally “a group of services”, but still a single VM)
+Internally, that VM runs:
+A hardened Linux-based OS
+vCenter services
+Database (embedded or external, depending on scale)
+Physical hardware
+└── ESX └── vCenter Server Appliance (VM) └── vCenter services
+<br><img alt="ESXi-vs-vSphere-vs-vCenter-overview.png.webp" src="assets/esxi-vs-vsphere-vs-vcenter-overview.png.webp" target="_self">]]></description><link>vcenter-server.html</link><guid isPermaLink="false">vCenter Server.md</guid><pubDate>Sun, 21 Dec 2025 19:14:13 GMT</pubDate><enclosure url="assets/esxi-vs-vsphere-vs-vcenter-overview.png.webp" length="0" type="image/webp"/><content:encoded>&lt;figure&gt;&lt;img src="assets/esxi-vs-vsphere-vs-vcenter-overview.png.webp"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[VM Workload and Pod Workload]]></title><description><![CDATA[In VCF, a workload is:
+A unit of compute that consumes CPU, memory, storage, and networking, and is subject to lifecycle, policy, and governance.
+VCF doesn’t care what the workload is at a philosophical level. It cares about:
+How it is instantiated
+How it is isolated
+How it is scheduled
+How it is governed
+Which control plane owns it
+one machine per workloadA VM workload is a traditional virtual machine:
+Runs on ESX
+Has its own guest OS
+Is managed by vCenter
+Uses <a data-href="vSphere construct" href="vsphere-construct.html" class="internal-link" target="_self" rel="noopener nofollow">vSphere construct</a>s directly <br><a data-href="vCenter Server" href="vcenter-server.html" class="internal-link" target="_self" rel="noopener nofollow">vCenter Server</a> is the authoritative control plane
+VCF Automation wraps vCenter, but does not replace it CPU / memory allocated per VM
+Strong isolation via hypervisor boundaries
+Overcommitment controlled at ESX level Create VM
+Power on/off
+Snapshot
+Clone
+Patch guest OS
+Backup VM image VM policies
+Placement rules
+Affinity / anti-affinity
+HA / DRS
+Backup &amp; DR policies
+many disposable units forming a service.A pod workload is a Kubernetes Pod running on the vSphere Supervisor Cluster.A pod on the vSphere Supervisor Cluster is not a traditional Kubernetes pod.
+It is a vSphere Pod — Kubernetes-shaped, but vSphere-implemented.Key point:
+A pod workload is not a VM pretending to be a container. Supervisor pods are VMs implementing container semantics, not containers implemented as VMs. A Supervisor pod is a Kubernetes Pod whose execution unit is a micro-VM, where the VM boundary replaces the Linux container boundary. The VM is the isolation primitive
+The Pod is the semantic primitive
+The container image is payload, not a process model
+So the VM is not “pretending to be a container” —
+it is implementing the Pod abstraction using a VM instead of a process.
+Pod (Kubernetes API object) └─ Backed by └─ Ultra-lightweight VM └─ ESX └─ Hardware
+It is:
+A Kubernetes-native unit
+Scheduled by Kubernetes
+Governed by Kubernetes APIs
+Backed by vSphere under the hood Kubernetes API (Supervisor cluster) is authoritative
+vCenter supplies infrastructure, not lifecycle semantics
+VCF Automation governs Kubernetes intent, not individual pods CPU / memory requested via Kubernetes requests &amp; limits
+Scheduler decides placement
+Isolation via: Namespaces
+RBAC
+Pod security
+(Optionally) VM-backed pod runtimes Declarative (YAML)
+Reconciliation-based
+Pods are ephemeral
+Restart ≠ failure
+Replacement is normal Namespace-level quotas
+Admission control
+Image policies
+Network policies VM workloads → legacy, stateful, pet-like systems
+Pod workloads → cloud-native, stateless, cattle-like systems
+VCF’s value is:
+Running both on the same physical infrastructure, with unified policy and automation, without forcing one model onto the other.
+Trying to manage pods like VMs breaks Kubernetes.
+Trying to manage VMs like pods breaks operational reality.VCF keeps them separate but coordinated.<br>A pod workload in VCF is a Kubernetes-native execution unit scheduled and governed by the <a data-href="vSphere Supervisor" href="vcf/main-componets/engine/vsphere-supervisor/vsphere-supervisor.html" class="internal-link" target="_self" rel="noopener nofollow">vSphere Supervisor</a> Kubernetes control plane, consuming vSphere resources indirectly through Kubernetes abstractions—unlike a VM workload, which is a hypervisor-managed, OS-bearing unit directly governed by vCenter.
+“Pod workload” ≠ “small VM”
+Pod workloads are Kubernetes-first, not vSphere-first
+VMs are stateful machines
+Pods are replaceable execution instances
+VCF supports both because enterprises need both
+]]></description><link>vm-workload-and-pod-workload.html</link><guid isPermaLink="false">VM Workload and Pod Workload.md</guid><pubDate>Sun, 21 Dec 2025 19:11:39 GMT</pubDate></item><item><title><![CDATA[vSphere, ESX, and vCenter]]></title><description><![CDATA[Saying “vSphere is ESX and vCenter” is colloquially common, but technically incomplete.Because vSphere is a platform, it is NOT a single product.<a data-href="vSphere" href="vcf/main-componets/engine/vsphere/vsphere.html" class="internal-link" target="_self" rel="noopener nofollow">vSphere</a> is VMware’s virtualization platform built on <a data-href="ESX" href="vcf/main-componets/engine/vsphere/esx.html" class="internal-link" target="_self" rel="noopener nofollow">ESX</a> hosts managed by <a data-href="vCenter Server" href="vcenter-server.html" class="internal-link" target="_self" rel="noopener nofollow">vCenter Server</a>, together providing cluster-level services such as <a data-href="HA" href=".html" class="internal-link" target="_self" rel="noopener nofollow">HA</a>, <a data-href="DRS" href=".html" class="internal-link" target="_self" rel="noopener nofollow">DRS</a>, and Kubernetes integration.But still, that term is mostly, contextually “good enough” because, in practice:
+You never run production vSphere without vCenter
+ESX alone is just a hypervisor, not a platform
+vCenter alone does nothing Type-1 (bare-metal) hypervisor
+Runs directly on hardware
+Owns: CPU scheduling
+Memory management
+Device virtualization Does not coordinate clusters by itself
+You can run standalone ESXi without vCenter, but:
+No clustering
+<br>No <a data-href="HA" href=".html" class="internal-link" target="_self" rel="noopener nofollow">HA</a>
+<br>No <a data-href="DRS" href=".html" class="internal-link" target="_self" rel="noopener nofollow">DRS</a>
+<br>No <a data-href="vMotion" href="vmotion.html" class="internal-link" target="_self" rel="noopener nofollow">vMotion</a> orchestration Centralized control plane
+Manages: <br><a data-href="ESX" href="vcf/main-componets/engine/vsphere/esx.html" class="internal-link" target="_self" rel="noopener nofollow">ESX</a> hosts
+Clusters
+Resource pools
+Policies Orchestrates: vMotion
+DRS
+HA
+Lifecycle
+vCenter does not run workloads — it tells ESX what to do. In ESX, there is no general-purpose userland like you’d expect in Linux or Windows.ESX is a purpose-built, bare-metal hypervisor operating system whose kernel (VMkernel) directly manages hardware resources and runs virtual machines.]]></description><link>vsphere,-esx,-and-vcenter.html</link><guid isPermaLink="false">vSphere, ESX, and vCenter.md</guid><pubDate>Sun, 21 Dec 2025 18:55:30 GMT</pubDate></item><item><title><![CDATA[vCloud Director]]></title><description><![CDATA[VMware vCloud Director (VCD) is a cloud-management and multi-tenancy layer built on top of vSphere. It was designed primarily for service providers (ISPs, telcos, MSPs) to offer VMware-based clouds to multiple customers in a clean, isolated, self-service way.
+vSphere → virtualization engine (hypervisors, clusters, VMs)
+VCD → cloud abstraction + multi-tenant control plane
+VCF → opinionated full stack (compute + storage + networking + ops)
+vSphere does not have native multitenancy, VCD enables multitenancy.
+VCD → sell VMware-based cloud to others VCF Automation → run your own internal cloud
+Cloud Layer
+────────────
+vCloud Director ← multi-tenant cloud manager Automation Layer
+────────────
+VCF Automation / Aria Automation Infrastructure
+────────────
+vSphere + vSAN + NSX Hardware
+────────────
+Bare metal
+<img alt="vcd-000.svg" src="assets/vcd-000.svg" target="_self"><br><img alt="vcd-26274c8be-3a18-40f1-adf0-8281a9feb4d8.webp" src="assets/vcd-26274c8be-3a18-40f1-adf0-8281a9feb4d8.webp" target="_self"><br>
+<img alt="vcd-6adff3c1-ab57-4412-bdd8-2caa7cbd3982.webp" src="assets/vcd-6adff3c1-ab57-4412-bdd8-2caa7cbd3982.webp" target="_self"><br>
+<img alt="vcd-3-Screen-Shot-2020-07-02-at-2.01.05-PM.webp" src="assets/vcd-3-screen-shot-2020-07-02-at-2.01.05-pm.webp" target="_self">No.
+vSphere = hypervisor + cluster management
+VCD = separate product that consumes vSphere
+<br>VMware’s product web pages for Cloud Director explicitly state that VCD operates within the VMware Cloud Foundation platform as an integrated cloud-management layer: VCD is described as helping to “[efficiently […] operate and manage your managed private and public cloud services using VMware Cloud Director within the VMware Cloud Foundation platform](<a data-tooltip-position="top" aria-label="https://www.vmware.com/products/cloud-infrastructure/cloud-director" rel="noopener nofollow" class="external-link is-unresolved" href="https://www.vmware.com/products/cloud-infrastructure/cloud-director" target="_self">VMware Cloud Director | Leading Cloud Service Delivery Platform</a>.However, in the baseline VCF component lists and core architectural docs, the docs list things like vSphere, vSAN, NSX, SDDC Manager, VCF Automation but not VCD as a base building block.
+*Historically: no.
+Today: “it depends on the SKU and use case.”**
+VMware Cloud Foundation (VCF) is aimed at:
+Enterprises
+Private cloud
+Platform teams
+<br>Automation (<a data-href="VCF Automation" href="vcf/main-componets/engine/vcf-a/vcf-automation.html" class="internal-link" target="_self" rel="noopener nofollow">VCF Automation</a>)
+VMware vCloud Director (VCD) is aimed at:
+Service providers
+Telcos
+Hosted private cloud
+Customer-facing tenancy
+VCF does not require VCD, and most enterprise VCF deployments do not use it.]]></description><link>vcloud-director.html</link><guid isPermaLink="false">vCloud Director.md</guid><pubDate>Sun, 21 Dec 2025 18:47:17 GMT</pubDate><enclosure url="assets/vcd-000.svg" length="0" type="image/svg+xml"/><content:encoded>&lt;figure&gt;&lt;img src="assets/vcd-000.svg"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[vcd-000]]></title><description><![CDATA[<img src="assets/vcd-000.svg" target="_self">]]></description><link>assets/vcd-000.html</link><guid isPermaLink="false">Assets/vcd-000.svg</guid><pubDate>Sun, 21 Dec 2025 18:47:12 GMT</pubDate><enclosure url="assets/vcd-000.svg" length="0" type="image/svg+xml"/><content:encoded>&lt;figure&gt;&lt;img src="assets/vcd-000.svg"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[vSphere]]></title><description><![CDATA[At its core, it is a compute, storage, and network abstraction layer: A distributed operating system for data centers.It manages large collections of infrastructure, such as CPUs, storage, networking, GPUs, and DPUs as a seamless and dynamic operating environment, and also manages the complexity of a data center.&nbsp;
+It virtualizes physical infrastructure into managed CPU, storage, and networking resources.vSphere
+├── ESXi (data plane)
+├── vCenter Server (control plane)
+└── Integrated services (HA, DRS, vMotion, etc.)
+vSphere is a distributed system that provides the following;vSphere is a datacenter operating system.The two core components of VMware&nbsp;vSphere:
+<a data-href="ESX" href="vcf/main-componets/engine/vsphere/esx.html" class="internal-link" target="_self" rel="noopener nofollow">ESX</a>
+<br>and <a data-href="vCenter" href="vcf/main-componets/engine/vsphere/vcenter.html" class="internal-link" target="_self" rel="noopener nofollow">vCenter</a> <br><a data-href="High Availability" href=".html" class="internal-link" target="_self" rel="noopener nofollow">High Availability</a> with&nbsp;vSphere automatically restarts your VMs following physical machine failure.
+<br><a data-href="Fault Tolerance" href=".html" class="internal-link" target="_self" rel="noopener nofollow">Fault Tolerance</a> provides continuous availability of any application in the event of a hardware failure with no data loss or downtime.
+<br><a data-href="vMotion" href="vmotion.html" class="internal-link" target="_self" rel="noopener nofollow">vMotion</a> enables live migration of virtual machines with no disruption to users or loss of service, eliminating the need to schedule application downtime for planned server maintenance. Storage vMotion avoids downtime for planned storage maintenance. Identity federation with Microsoft Entra ID, ADFS and Okta.
+Virtual Machine Encryption: Data-at-rest encryption for virtual machine data and disks.
+<br><a data-href="vSphere Trust Authority" href=".html" class="internal-link" target="_self" rel="noopener nofollow">vSphere Trust Authority</a>: Remote attestation for sensitive workloads.
+]]></description><link>vcf/main-componets/engine/vsphere/vsphere.html</link><guid isPermaLink="false">VCF/Main Componets/engine/vSphere/vSphere.md</guid><pubDate>Sun, 21 Dec 2025 17:58:46 GMT</pubDate></item><item><title><![CDATA[index]]></title><description><![CDATA[This site contains my personal notes and understanding of VMware Cloud Foundation. It reflects my own learning journey and mental models, which may be incomplete, outdated, or incorrect.This is not official documentation.For authoritative and up-to-date information, please refer to the <a data-tooltip-position="top" aria-label="https://docs.vmware.com/en/VMware-Cloud-Foundation/index.html" rel="noopener nofollow" class="external-link is-unresolved" href="https://docs.vmware.com/en/VMware-Cloud-Foundation/index.html" target="_self">official VMware Cloud Foundation documentation</a>.This site is not affiliated with, endorsed by, or sponsored by VMware, Inc. or Broadcom Inc.VMware, VMware Cloud Foundation, and related marks are trademarks of VMware, Inc. or its subsidiaries.]]></description><link>index.html</link><guid isPermaLink="false">index.md</guid><pubDate>Sun, 21 Dec 2025 17:56:50 GMT</pubDate></item><item><title><![CDATA[vSphere Pod]]></title><description><![CDATA[A vSphere Pod is a Kubernetes Pod whose sandbox runs inside a lightweight VM (via <a data-href="ESX" href="vcf/main-componets/engine/vsphere/esx.html" class="internal-link" target="_self" rel="noopener nofollow">ESX</a>]), not inside a container runtime on a shared Linux node.So:
+API semantics → Kubernetes
+Runtime semantics → vSphere / VM
+Traditional Kubernetes Pods:
+Share a Linux kernel
+Rely on namespaces + cgroups
+Are fast and efficient
+But have weaker isolation (from a hypervisor POV)
+vSphere Pods were created to:
+Give VM-grade isolation
+While keeping Pod-level developer UX
+For multi-tenant / regulated environments
+This matters a lot for:
+Service providers
+Telco
+Regulated enterprise workloads
+“Pods from different customers must never share a kernel”
+Regular Kubernetes:Node (Linux)
+└── kubelet ├── Pod A ├── Pod B └── Pod C vSphere Pods:ESXi
+├── Pod-VM A
+├── Pod-VM B
+└── Pod-VM C No shared container runtime
+No shared kubelet per “node”
+Each pod is scheduled directly by vSphere
+Kubernetes still thinks it’s scheduling Pods — but vSphere translates that into VM placement.So in vSphereland, “One Pod ~= Tiny VM”<br><img alt="vsphere-pod-d7cddcdc-2c10-4459-999e-bfa73ee28e8c.webp" src="assets/vsphere-pod-d7cddcdc-2c10-4459-999e-bfa73ee28e8c.webp" target="_self"><br>
+<img alt="vsphere-pod-298459bc-258c-4430-81a5-fb5330d7ce24.webp" src="assets/vsphere-pod-298459bc-258c-4430-81a5-fb5330d7ce24.webp" target="_self"><br>
+<img alt="vsphere-pod-4.png" src="assets/vsphere-pod-4.png" target="_self">
+Kubernetes: Decides which pod should run vSphere: Decides where the pod-VM runs
+Enforces CPU, memory, NUMA, HA, DRS
+This is what “Kubernetes-native mode” really looks like under the hood. From the Pod’s perspective:
+It has an IP
+It mounts volumes
+It exposes ports
+Under the hood:
+Networking is NSX-backed
+Storage is datastore-policy-backe
+Attach/detach happens at VM granularity
+Again: Pod UX, VM machinery.
+Despite the VM runtime, vSphere Pods still use:
+Pod specs
+Containers
+Init containers
+ConfigMaps
+Volume mounts
+Pod lifecycle (create/delete/restart)
+Kubernetes Services (with some constraints)
+So developers mostly don’t care—and that is by design. Regular Pod → process in a shared OS
+vSphere Pod → process in its own micro-VM
+Or:
+Regular K8s → Linux container model
+vSphere Pods → “micro-VM container” model
+Essentially: vSphere Pods are not regular Kubernetes Pods
+They are Pod-shaped workloads backed by per-Pod VMs
+Kubernetes API semantics remain intact
+Runtime isolation is hypervisor-level
+This is intentional and central to Supervisor’s design
+]]></description><link>vsphere-pod.html</link><guid isPermaLink="false">vSphere Pod.md</guid><pubDate>Sun, 21 Dec 2025 17:45:06 GMT</pubDate><enclosure url="assets/vsphere-pod-d7cddcdc-2c10-4459-999e-bfa73ee28e8c.webp" length="0" type="image/webp"/><content:encoded>&lt;figure&gt;&lt;img src="assets/vsphere-pod-d7cddcdc-2c10-4459-999e-bfa73ee28e8c.webp"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[vsphere-pod-4]]></title><description><![CDATA[<img src="assets/vsphere-pod-4.png" target="_self">]]></description><link>assets/vsphere-pod-4.html</link><guid isPermaLink="false">Assets/vsphere-pod-4.png</guid><pubDate>Sun, 21 Dec 2025 17:16:08 GMT</pubDate><enclosure url="assets/vsphere-pod-4.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="assets/vsphere-pod-4.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[vSphere Supervisor]]></title><description><![CDATA[The vSphere Supervisor lives as a set of Kubernetes control-plane VMs running on ESX hosts, instantiated, wired, and governed by <a data-href="vCenter Server" href="vcenter-server.html" class="internal-link" target="_self" rel="noopener nofollow">vCenter Server</a>.<br>
+<img alt="supervisor-cluster-placement.webp" src="assets/supervisor-cluster-placement.webp" target="_self">
+<br>Runs on: <a data-href="ESX" href="vcf/main-componets/engine/vsphere/esx.html" class="internal-link" target="_self" rel="noopener nofollow">ESX</a>
+Created and managed by: VMware vCenter Server
+Implemented as: Kubernetes control-plane VMs
+<br>Distributed across <a data-href="ESX" href="vcf/main-componets/engine/vsphere/esx.html" class="internal-link" target="_self" rel="noopener nofollow">ESX</a> hosts
+<br>Backed by <a data-href="vSAN" href="vcf/main-componets/engine/vsan/vsan.html" class="internal-link" target="_self" rel="noopener nofollow">vSAN</a> / datastores
+<br>Networked via <a data-href="NSX" href="vcf/main-componets/engine/nsx/nsx.html" class="internal-link" target="_self" rel="noopener nofollow">NSX</a> (or <a data-href="VDS" href="vcf/main-componets/engine/vsan/vds.html" class="internal-link" target="_self" rel="noopener nofollow">VDS</a> in simpler setups) When you “enable Supervisor” in vCenter:
+vCenter:
+Creates a special-purpose Kubernetes cluster
+Instantiates its control plane as VMs
+Pins it tightly to: Cluster membership
+Networking
+Storage Treats it as part of the infrastructure, not a tenant workload
+So the Supervisor is:
+Not a workload cluster
+Not user-managed Kubernetes
+Not a vSphere product you install
+It is an infrastructure service owned by vCenter.Physical Hosts
+└─ ESX └─ vCenter Server (control plane) └─ Supervisor Cluster (Kubernetes control plane VMs) ├─ Supervisor Namespaces ├─ vSphere Pods └─ Guest / Workload Clusters
+The vSphere Supervisor is a Kubernetes control plane deployed as system-managed VMs on ESX, whose lifecycle is owned entirely by vCenter Server and whose purpose is to expose Kubernetes semantics directly on vSphere infrastructure.
+The vSphere Supervisor physically lives as vCenter-managed Kubernetes control-plane VMs running on ESX hosts inside a vSphere cluster.
+<br>vSphere Supervisor is the foundation of VCF <a data-href="consumption" href=".html" class="internal-link" target="_self" rel="noopener nofollow">consumption</a> and can be enabled during workload domain creation or directly in vCenter.<br>
+<a href=".?query=tag:todo" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#todo">#todo</a> "consumption" is discussed in several meetings. It seems like standard nomenclature. Learn what it is.
+<br>
+<a href=".?query=tag:todo" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#todo">#todo</a> Is vSphere Supervisor a type of vSphere deployment. Follow-up: what really is vSphere?
+Is it part of VCF-A or VCF-O?
+It transforms vSphere clusters into modern application platforms by embedding a platform-level Kubernetes control plane directly into ESX hosts, exposing a unified declarative API surface.<br>This integration allows end users to provision and manage workloads, including VMs, containers via <a data-href="vSphere Pods" href=".html" class="internal-link" target="_self" rel="noopener nofollow">vSphere Pods</a>, full Kubernetes clusters through <a data-href="VKS" href=".html" class="internal-link" target="_self" rel="noopener nofollow">VKS</a>, <a data-href="OCI image registries" href=".html" class="internal-link" target="_self" rel="noopener nofollow">OCI image registries</a>, and data services through a consistent API interface.<br>
+<a href=".?query=tag:todo" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#todo">#todo</a> what kinds or registries, "bring your own", harbor, cloud? all?
+<br>
+<a href=".?query=tag:todo" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#todo">#todo</a> why embedding the control plane into ESX hosts is such a big thing? wasn't that possible before. Isn't an ESX a "linux machine" at a high level anyway? What makes this so unique and innovative?
+<br>
+<a href=".?query=tag:todo" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#todo">#todo</a> is the "unified declarative API surface" k8s API, and custom resources? What kind(s) of Custom Resources?
+<br>
+<a href=".?query=tag:todo" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#todo">#todo</a> what "really" is a vSphere Pod? Enough with all the marketing language!
+<br><a data-href="vSphere Supervisor" href="vcf/main-componets/engine/vsphere-supervisor/vsphere-supervisor.html" class="internal-link" target="_self" rel="noopener nofollow">vSphere Supervisor</a> maintains enterprise-grade governance, security, and operational consistency through <a data-href="vCenter" href="vcf/main-componets/engine/vsphere/vcenter.html" class="internal-link" target="_self" rel="noopener nofollow">vCenter</a>,&nbsp;<a data-href="VCF Operations" href="vcf/main-componets/engine/vcf-o/vcf-operations.html" class="internal-link" target="_self" rel="noopener nofollow">VCF Operations</a>, and&nbsp;<a data-href="VCF Automation" href="vcf/main-componets/engine/vcf-a/vcf-automation.html" class="internal-link" target="_self" rel="noopener nofollow">VCF Automation</a>.<br>
+<a href=".?query=tag:todo" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#todo">#todo</a> is vSphere Supervisor a higher-level abstraction around the above; or is it a separate entity that communicates (i.e. supervises) those sub-entities?
+<br>vSphere Supervisor's <a data-href="vSphere Namespaces" href=".html" class="internal-link" target="_self" rel="noopener nofollow">vSphere Namespaces</a> provide the foundation for multi-tenancy, enabling GitOps-based workflows, and delivering cloud-like self-service in private data centers.<br>
+<a href=".?query=tag:todo" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#todo">#todo</a> so tenancy is namespace-bound?
+<br><a href=".?query=tag:tenancy" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#tenancy">#tenancy</a>
+<br>Use <a data-href="NSX Virtual Private Clouds" href=".html" class="internal-link" target="_self" rel="noopener nofollow">NSX Virtual Private Clouds</a> (VPC) workload networks. This configuration is a requirement for using&nbsp;<a data-href="VCF Automation" href="vcf/main-componets/engine/vcf-a/vcf-automation.html" class="internal-link" target="_self" rel="noopener nofollow">VCF Automation</a>
+<br>Determine if a <a data-href="Single-Zone Supervisor" href=".html" class="internal-link" target="_self" rel="noopener nofollow">Single-Zone Supervisor</a> or <a data-href="Multi-Zone Supervisor" href=".html" class="internal-link" target="_self" rel="noopener nofollow">Multi-Zone Supervisor</a> deployment is required: In VCF 9.0, a Supervisor deployed in a single-zone configuration cannot be converted to a multi-zone deployment after enablement. You must determine the target deployment model before initiating the Supervisor enablement process.
+<br>
+<a href=".?query=tag:todo" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#todo">#todo</a> what is single-zone versus multi-zone? Single-Zone Deployment: A Single-Zone Supervisor deployment uses a single vSphere cluster to host both workloads and Supervisor management components. <br>Additional <a data-href="vSphere Zone" href=".html" class="internal-link" target="_self" rel="noopener nofollow">vSphere Zone</a>s can be added after initial enablement. However, these zones are used exclusively for workload placement and do not host <a data-href="Supervisor control plane components" href=".html" class="internal-link" target="_self" rel="noopener nofollow">Supervisor control plane components</a>. <br>
+<a href=".?query=tag:todo" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#todo">#todo</a> what are Supervisor control plane components? <br>
+Multi-Zone Deployment: A Multi-Zone Supervisor deployment uses three <a data-href="vSphere cluster" href=".html" class="internal-link" target="_self" rel="noopener nofollow">vSphere cluster</a>s, placing each cluster into a <a data-href="vSphere Zone" href=".html" class="internal-link" target="_self" rel="noopener nofollow">vSphere Zone</a>. vSphere Zones are used by workloads and Supervisor management components to deliver high availability and expose each cluster as an independent, consumable availability zone. This configuration provides a resilient, HA-capable platform. Additional vSphere Zones can be added after initial enablement. However, these additional zones are available for workload consumption only, not for Supervisor control plane components. Single Host: Also a Single-Zone Supervisor with a single Control Plane VM deployed to a single ESX host, with vSphere HA disabled. While it shares the same characteristics as other single-zone deployments, in this configuration, any host failure results in downtime for the Supervisor Control Plane and potentially for associated workloads. <br>
+Easy Supervisor: This is a Single-Zone simplified deployment that uses workload networking on top of <a data-href="vSphere Distributed Switch" href=".html" class="internal-link" target="_self" rel="noopener nofollow">vSphere Distributed Switch</a>, designed as a fast and simple starting point for proof-of-concept environments and production deployments leveraging vSphere Distributed Switch. An Easy Supervisor deployment consists of: One Supervisor Control Plane VM
+A shared network for both workload and management traffic
+No load balancer <br>
+<a href=".?query=tag:todo" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#todo">#todo</a> does that imply that normally workload and management traffic is spilt? <br>It is <a data-href="vSphere" href="vcf/main-componets/engine/vsphere/vsphere.html" class="internal-link" target="_self" rel="noopener nofollow">vSphere</a> running in special Kubernetes-enabled mode.
+<br><a data-href="VCF Automation" href="vcf/main-componets/engine/vcf-a/vcf-automation.html" class="internal-link" target="_self" rel="noopener nofollow">VCF Automation</a> consumes what Supervisor exposes.
+<br><img alt="supervisor-conceptual.webp" src="assets/supervisor-conceptual.webp" target="_self">You can think of Supervisor as vSphere with Kubernetes fused into its control plane.<br><img alt="ks-ns.png" src="assets/ks-ns.png" target="_self"><br><img alt="supervisor-diagram.webp" src="supervisor-diagram.webp" target="_self"><br>When you enable Supervisor on a <a data-href="vSphere cluster" href=".html" class="internal-link" target="_self" rel="noopener nofollow">vSphere cluster</a>, you are activating a capability inside vSphere.
+<br>Supervisor runs inside <a data-href="ESX" href="vcf/main-componets/engine/vsphere/esx.html" class="internal-link" target="_self" rel="noopener nofollow">ESX</a>.
+<br>Uses <a data-href="vCenter" href="vcf/main-componets/engine/vsphere/vcenter.html" class="internal-link" target="_self" rel="noopener nofollow">vCenter</a> as the <a data-href="control plane" href=".html" class="internal-link" target="_self" rel="noopener nofollow">control plane</a>.
+<br>Creates <a data-href="Supervisor Namespace" href="supervisor-namespace.html" class="internal-link" target="_self" rel="noopener nofollow">Supervisor Namespace</a>s.
+Exposes Kubernetes APIs, backed by native vSphere primitives.
+So conceptually, Supervisor is vSphere operating in "Kubernetes-native mode".<br><a data-href="Supervisor Namespace" href="supervisor-namespace.html" class="internal-link" target="_self" rel="noopener nofollow">Supervisor Namespace</a>s are not Kubernetes namespaces.If classic vSphere is "run VMs", Supervisor vSphere is "Run anything (VMs, Pods, services)" with the same primitives.
+<br>Supervisor runs on <a data-href="ESX" href="vcf/main-componets/engine/vsphere/esx.html" class="internal-link" target="_self" rel="noopener nofollow">ESX</a>.
+It enables Kubernetes semantics backed by vSphere primitives.
+<br><a data-href="VCF Automation" href="vcf/main-componets/engine/vcf-a/vcf-automation.html" class="internal-link" target="_self" rel="noopener nofollow">VCF Automation</a> is optional and sits above Supervisor.
+<br><a data-href="Supervisor Namespace" href="supervisor-namespace.html" class="internal-link" target="_self" rel="noopener nofollow">Supervisor Namespace</a>s look like Kubernetes namespace on purpose.vSphere (authoritative substrate)
+└── Supervisor ├── Kubernetes API (authoritative for some things) └── vSphere API/UI (authoritative for others)
+There is no promise that:
+every UI action has a YAML equivalent
+or that YAML is the “source of truth” for all infra
+Instead:
+some things are Kubernetes-first
+some things remain vSphere-first
+Kubernetes manifest → vSphere policy enforcement.
+Create VMs via VirtualMachine CRDs (VM Operator)
+Create Pods / Deployments
+Attach storage
+Attach networks (within guardrails) PVCs backed by vSphere storage policies
+Datastore selection via StorageClasses
+Policy-based placement Declare “I need this secret”
+Injector materializes it
+VCF Secret Service enforces access <br>Pods/VMs attach to <a data-href="NSX" href="vcf/main-componets/engine/nsx/nsx.html" class="internal-link" target="_self" rel="noopener nofollow">NSX</a>-backed segments
+Load balancers exposed via K8s Service abstractions
+You don’t manage NSX topology in YAML, but you consume it declaratively. Infrastructure topology
+Tenancy and Governance constructs (Organization, Projects, Quoatas at Provider level, Approval, Chargeback) Those live in VCF Automation / vSphere UI, not Kubernetes. So: vSphere Supervisor exposes a Kubernetes-native API surface for workload consumption (pods, VMs, storage, networking), while infrastructure topology, tenancy, and governance remain vSphere- and Automation-controlled.<br><img alt="vsphere-with-tanzu-vm-service.png" src="assets/vsphere-with-tanzu-vm-service.png" target="_self"><br>
+<img alt="vsphere-supervisor-cf6fb05a-eddd-448c-a4ff-fee4f42f207a.webp" src="assets/vsphere-supervisor-cf6fb05a-eddd-448c-a4ff-fee4f42f207a.webp" target="_self"><br>
+<img alt="vsphere-supervisor-c3733e8c-9204-4e01-8b0c-5bc816bdbf77.webp" src="assets/vsphere-supervisor-c3733e8c-9204-4e01-8b0c-5bc816bdbf77.webp" target="_self">]]></description><link>vcf/main-componets/engine/vsphere-supervisor/vsphere-supervisor.html</link><guid isPermaLink="false">VCF/Main Componets/engine/vSphere Supervisor/vSphere Supervisor.md</guid><pubDate>Sun, 21 Dec 2025 17:04:23 GMT</pubDate><enclosure url="assets/supervisor-cluster-placement.webp" length="0" type="image/webp"/><content:encoded>&lt;figure&gt;&lt;img src="assets/supervisor-cluster-placement.webp"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[vsphere-with-tanzu-vm-service]]></title><description><![CDATA[<img src="assets/vsphere-with-tanzu-vm-service.png" target="_self">]]></description><link>assets/vsphere-with-tanzu-vm-service.html</link><guid isPermaLink="false">Assets/vsphere-with-tanzu-vm-service.png</guid><pubDate>Sun, 21 Dec 2025 16:59:25 GMT</pubDate><enclosure url="assets/vsphere-with-tanzu-vm-service.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="assets/vsphere-with-tanzu-vm-service.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[Secrets Federation Notes]]></title><description><![CDATA[<a href=".?query=tag:todo" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#todo">#todo</a> TODO: remove this from the docs once I have a good enough template for the solution.
+Many tenants (Pepsi, Coca Cola, Sprite, Pizza Hut)
+Each tenant has an external Vault (or Vault instance) with paths that can overlap: credentials/db/finance is a common example Sync into an internal OpenBao (or internal Vault) via ESO
+Inject into workloads via Vault Sidecar Injector
+You want no path collisions and no possibility of cross-tenant access
+There are two separate problems:
+Storage namespace collision in internal OpenBao
+Runtime authorization when workloads fetch secrets (injection)
+this is the first half of the problem.Based on the official VCF Secret Service docs, a lot of the “last-mile consumption” is already solved (create secret → store it → inject it into pods/VMs as files), but tenancy isolation is explicitly coarse and largely stops at the Supervisor Namespace boundary. It’s there, but it’s not the fine-grained. That is any OpenBao secret bound to a namespace is visible to any workload in that namespace.That should be fine since tenants are effectively namespace-bound.The “Managing Secrets…” doc spells out delivery formats:
+vSphere Pods → file mount under /vault/secrets/&lt;user-provided-name&gt;
+VM Service VMs → disk-based transfer + read-only mount
+VKS (guest) cluster pods → file mount similar to vSphere Pods
+This solves consistent delivery semantics per workload type.
+All service accounts have read access to all secrets of that namespace.
+^ that is the granularity we get. Which may or may not be fine based on the customers’ requirements.Also it’s worth noting that any notion of Organization/Project tenancy in the Secret Store model does not exist by architecture (which is also fine because secrets are namespace-bound, and tenants are also namespace-bound).None of the flows refer to Organization/Project at all. They are consistently “pick a Supervisor namespace; secrets live there”.That’s consistent with what we discussed earlier: governance constructs don’t appear at runtime.The docs show a pattern like secret/data/&lt;namespace&gt;/&lt;secretName&gt; for retrieval.
+Secrets are stored in a “corresponding namespace” (meaning: per Supervisor namespace).
+VKS isolation is only at Supervisor namespace level (explicit).
+Within a namespace, all service accounts can read all secrets (explicit).
+So the tenancy story is not missing — it’s just coarse:
+Tenant isolation = Supervisor Namespace isolation (and nothing finer is guaranteed).
+A safe mapping consistent with the doc’s retrieval convention would look like:
+External: credentials/db/finance
+Internal: secret/data/&lt;supervisor-namespace&gt;/credentials/db/finance
+(or secret/data/&lt;supervisor-namespace&gt;/&lt;some-secret-name&gt; that contains those K/Vs)
+That avoids cross-tenant collisions because the Supervisor namespace becomes the first path segment.According to the docs, all tenants share the same unified internal secrets store (OpenBao).In the doc’s annotation model, you specify a secret “path” in the injector annotation. They show:
+vault.hashicorp.com/agent-inject-secret-...: "secret/data/demo/db-cred"
+Inject Secrets in to a vSphere …
+So for Pepsi, if you used the flattened name approach, you’d inject like:
+secret/data/pepsi/auth__finance__db__creds
+…and because the auth role is tied to the namespace (example role demo), Pepsi workloads would authenticate with role pepsi and read from the pepsi/* prefix. ✅ In this doc model, within a tenant’s Supervisor namespace, any Pepsi workload can access any Pepsi secret.
+❌ Restricting secrets to only pods in a specific Kubernetes namespace inside the tenant is not supported here (especially for VKS guest clusters).
+✅ OpenBao paths look like secret/data/&lt;supervisor-namespace&gt;/&lt;secretName&gt; (KV v2 style).
+✅ In shared OpenBao, prevent collisions by ensuring the first path segment is the tenant namespace (pepsi, cocacola, …).
+VCF Secret Store Service does have guardrails that prevent a Coca-Cola workload from mounting Pepsi secrets, as long as you stay within the supported model.But those guardrails are namespace-scoped, not “tenant-aware in the abstract”, and they rely on how identities and roles are provisioned, not on OpenBao magically inferring tenancy.The guardrails are not:
+“OpenBao automatically understands tenants”
+“Vault paths are globally protected by magic”
+They are:
+The Vault/OpenBao token that a workload receives is issued in the context of a specific Supervisor Namespace.
+That token is not shared across namespaces.
+So:
+A Coca-Cola workload never gets the same token as a Pepsi workload
+Tokens are not reusable across namespaces
+This is enforced by Supervisor, not by Kubernetes RBAC alone.The injector examples in the docs consistently show:
+a role name tied to the namespace (e.g. demo)
+secrets read from secret/data/&lt;namespace&gt;/...
+That implies (and matches how VMware typically wires these systems): Each Supervisor Namespace has a corresponding OpenBao role and policy.
+You don’t see the policy YAML in the docs, but the model only works if: role pepsi → policy allows secret/data/pepsi/*
+role cocacola → policy allows secret/data/cocacola/*
+Otherwise the examples would be unsafe.
+A pod can’t just arbitrarily say:
+vault.hashicorp.com/agent-inject-secret-foo: secret/data/pepsi/db
+from another namespace, because:
+the injector runs with Supervisor context
+the auth role used is bound to the namespace
+the token issued is constrained by that role
+So even if a Coca-Cola pod requests a Pepsi path, the read fails.
+That’s the critical point: request ≠ authorization.
+ref:
+“All service accounts have read access to all secrets of that namespace.”
+That sentence is not saying:
+“All namespaces can read all secrets.”
+It’s saying:
+“Within one Supervisor Namespace, we don’t give you finer-grained scoping.”
+If we ensure that:
+Pepsi secrets are materialized under secret/data/pepsi/...
+Coca-Cola secrets under secret/data/cocacola/...
+Then VCF Secret Store Service guardrails already align with that:
+Pepsi workloads authenticate as “Pepsi namespace”
+Pepsi role can only read secret/data/pepsi/*
+Coca-Cola role cannot read Pepsi paths
+So yes: If we respect the namespace-prefix contract, the rest of the consumption plumbing is already handled safely by VCF Secret Store Service.
+We are not punching a hole in the security model by doing the sync.The model breaks only if you bypass the intended trust boundaries, for example:
+A single ESO instance with a token that can write/read all tenant prefixes
+Manually creating secrets in the wrong namespace
+Reusing roles or tokens across namespaces
+Exposing OpenBao externally and letting workloads authenticate out-of-band
+Those are operator errors, not product gaps — but they’re exactly what auditors look for.VCF Secret Store Service enforces tenant isolation at the Supervisor Namespace boundary by issuing namespace-scoped identities and policies for secret access. As long as tenant secrets are materialized under their corresponding namespace paths, cross-tenant secret access is prevented by design. Fine-grained intra-namespace isolation is intentionally not provided.]]></description><link>secrets-federation-notes.html</link><guid isPermaLink="false">Secrets Federation Notes.md</guid><pubDate>Sun, 21 Dec 2025 16:55:03 GMT</pubDate></item><item><title><![CDATA[VCF Automation and VCF Operations]]></title><description><![CDATA[<img alt="vcf-operations.webp" src="assets/vcf-operations.webp" target="_self">VCF-O does not:
+Own tenancy boundaries
+Gate workload creation
+Enforce business approval flows
+Define org/project constructs
+Those remain in:
+VCF-A
+Supervisor
+Upstream automation layers
+VCF-O observes those constructs after the fact.
+Day 0 / Day 1 → VCF-A - Who can create? - What can be created? - Under what policies? Day 2 → VCF-O - Is it healthy? - Is it over/under-utilized? - Is it behaving strangely?
+VCF (the platform)
+├── VCF Automation (formerly Aria Automation)
+├── VCF Operations (formerly Aria Operations)
+├── Supervisor / vSphere
+└── Workloads
+Here is how things looks from each layer’s point of view:<br>Once a workload cluster is instantiated in a <a data-href="Supervisor Namespace" href="supervisor-namespace.html" class="internal-link" target="_self" rel="noopener nofollow">Supervisor Namespace</a>, it has no awareness of <a data-href="VCF Automation" href="vcf/main-componets/engine/vcf-a/vcf-automation.html" class="internal-link" target="_self" rel="noopener nofollow">VCF Automation</a> constructs such as Organization or Project—Those concepts exist only at the governance layer (VCF-A) and are not part of the runtime execution model (Supervisor).]]></description><link>vcf-automation-and-vcf-operations.html</link><guid isPermaLink="false">VCF Automation and VCF Operations.md</guid><pubDate>Sun, 21 Dec 2025 16:26:04 GMT</pubDate><enclosure url="assets/vcf-operations.webp" length="0" type="image/webp"/><content:encoded>&lt;figure&gt;&lt;img src="assets/vcf-operations.webp"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[TKG]]></title><description><![CDATA[TKG (Tanzu Kubernetes Grid) is VMware’s CNCF-conformant Kubernetes distribution, integrated deeply with <a data-href="vSphere" href="vcf/main-componets/engine/vsphere/vsphere.html" class="internal-link" target="_self" rel="noopener nofollow">vSphere</a>.TKG, in this context is: Upstream Kubernetes + VMware’s opinionated lifecycle, security, and infrastructure integration.
+Runs on vSphere
+Worker nodes are VMs
+<br>Created and managed via <a data-href="vSphere Supervisor" href="vcf/main-componets/engine/vsphere-supervisor/vsphere-supervisor.html" class="internal-link" target="_self" rel="noopener nofollow">vSphere Supervisor</a>
+Tightly integrated with: <br><a data-href="vSphere" href="vcf/main-componets/engine/vsphere/vsphere.html" class="internal-link" target="_self" rel="noopener nofollow">vSphere</a> networking (<a data-href="NSX" href="vcf/main-componets/engine/nsx/nsx.html" class="internal-link" target="_self" rel="noopener nofollow">NSX</a> / <a data-href="VDS" href="vcf/main-componets/engine/vsan/vds.html" class="internal-link" target="_self" rel="noopener nofollow">VDS</a>)
+<br>vSphere storage (<a data-href="vSAN" href="vcf/main-componets/engine/vsan/vsan.html" class="internal-link" target="_self" rel="noopener nofollow">vSAN</a>, <a data-href="CNS" href="vcf/main-componets/engine/vsan/cns.html" class="internal-link" target="_self" rel="noopener nofollow">CNS</a>)
+vSphere IAM / RBAC boundaries Inside the guest cluster:
+Kubernetes sees: Namespaces
+RBAC
+CRDs
+Workloads It does not see: Organizations
+Projects
+Approval flows
+Business tenancy Those live outside the cluster, enforced by:
+<br><a data-href="vSphere" href="vcf/main-componets/engine/vsphere/vsphere.html" class="internal-link" target="_self" rel="noopener nofollow">vSphere</a>
+<br><a data-href="vSphere Supervisor" href="vcf/main-componets/engine/vsphere-supervisor/vsphere-supervisor.html" class="internal-link" target="_self" rel="noopener nofollow">vSphere Supervisor</a>
+<br>Automation layers (i.e., <a data-href="VCF Automation" href="vcf/main-componets/engine/vcf-a/vcf-automation.html" class="internal-link" target="_self" rel="noopener nofollow">VCF Automation</a>)
+This is similar to saying “a Docker container does not know which Jira project paid for the VM it runs on”.vSphere / ESX
+└── Supervisor Cluster └── Supervisor Namespace └── TKG Workload Cluster (guest cluster) ├── Kubernetes API ├── Nodes = VMs └── Apps / Pods ]]></description><link>tkg/tkg.html</link><guid isPermaLink="false">TKG/TKG.md</guid><pubDate>Sun, 21 Dec 2025 16:13:25 GMT</pubDate></item><item><title><![CDATA[Guest Cluster]]></title><description><![CDATA[<a href=".?query=tag:tenancy" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#tenancy">#tenancy</a><br>Once a workload cluster (<a data-href="TKG" href="tkg/tkg.html" class="internal-link" target="_self" rel="noopener nofollow">TKG</a>) is bound to a <a data-href="Supervisor Namespace" href="supervisor-namespace.html" class="internal-link" target="_self" rel="noopener nofollow">Supervisor Namespace</a>:
+✅ The cluster knows which Supervisor Namespace it lives in
+❌ It has no intrinsic knowledge of: Organization
+Project
+Automation constructs
+Approval flows
+Business tenancy
+<br>^ all of these concepts stop at the **<a data-href="VCF Automation" href="vcf/main-componets/engine/vcf-a/vcf-automation.html" class="internal-link" target="_self" rel="noopener nofollow">VCF Automation</a> boundary. <br>When a workload cluster is bound to a Supervisor Namespace, we are talking about a TKG workload cluster created by the <a data-href="vSphere Supervisor" href="vcf/main-componets/engine/vsphere-supervisor/vsphere-supervisor.html" class="internal-link" target="_self" rel="noopener nofollow">vSphere Supervisor</a>.That implies:
+The cluster is created via Supervisor APIs
+<br>It is <a data-href="vSphere Namespaces" href=".html" class="internal-link" target="_self" rel="noopener nofollow">vSphere Namespaces</a>-scoped
+It is lifecycle-managed by vSphere
+It runs on ESX using VM-based worker nodes
+So, in this model:<br>
+Guest cluster == <a data-href="TKG" href="tkg/tkg.html" class="internal-link" target="_self" rel="noopener nofollow">TKG</a> workload cluster]]></description><link>tkg/guest-cluster.html</link><guid isPermaLink="false">TKG/Guest Cluster.md</guid><pubDate>Sun, 21 Dec 2025 16:07:10 GMT</pubDate></item><item><title><![CDATA[vMotion]]></title><link>vmotion.html</link><guid isPermaLink="false">vMotion.md</guid><pubDate>Sun, 21 Dec 2025 16:03:54 GMT</pubDate></item><item><title><![CDATA[Tenants in Supervisor]]></title><description><![CDATA[<a href=".?query=tag:tenancy" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#tenancy">#tenancy</a>
 In vSphere Supervisor a tenant is namespace-bound.
 There is no separate tenant object inside Kubernetes.
 <br>A <a data-href="Supervisor Namespace" href="supervisor-namespace.html" class="internal-link" target="_self" rel="noopener nofollow">Supervisor Namespace</a> is the tenant boundary at the vSphere-Kubernetes interface.
@@ -112,108 +711,7 @@ all align clearly.
 // will remove later.
 func test() { panic "byee!"
 }
-]]></description><link>vcf/main-componets/engine/vcf-o/vcf-operations.html</link><guid isPermaLink="false">VCF/Main Componets/engine/VCF-O/VCF Operations.md</guid><pubDate>Sun, 21 Dec 2025 14:20:31 GMT</pubDate></item><item><title><![CDATA[VCF-O]]></title><description><![CDATA[See <a data-href="VCF Operations" href="vcf/main-componets/engine/vcf-o/vcf-operations.html" class="internal-link" target="_self" rel="noopener nofollow">VCF Operations</a>.]]></description><link>vcf/main-componets/engine/vcf-o/vcf-o.html</link><guid isPermaLink="false">VCF/Main Componets/engine/VCF-O/VCF-O.md</guid><pubDate>Sun, 21 Dec 2025 14:17:38 GMT</pubDate></item><item><title><![CDATA[CNS]]></title><link>vcf/main-componets/engine/vsan/cns.html</link><guid isPermaLink="false">VCF/Main Componets/engine/vSAN/CNS.md</guid><pubDate>Sun, 21 Dec 2025 14:14:41 GMT</pubDate></item><item><title><![CDATA[VDS]]></title><link>vcf/main-componets/engine/vsan/vds.html</link><guid isPermaLink="false">VCF/Main Componets/engine/vSAN/VDS.md</guid><pubDate>Sun, 21 Dec 2025 14:14:38 GMT</pubDate></item><item><title><![CDATA[TKG]]></title><description><![CDATA[TKG (Tanzu Kubernetes Grid) is VMware’s CNCF-conformant Kubernetes distribution, integrated deeply with <a data-href="vSphere" href="vcf/main-componets/engine/vsphere/vsphere.html" class="internal-link" target="_self" rel="noopener nofollow">vSphere</a>.TKG, in this context is: Upstream Kubernetes + VMware’s opinionated lifecycle, security, and infrastructure integration.
-Runs on vSphere
-Worker nodes are VMs
-<br>Created and managed via <a data-href="vSphere Supervisor" href="vcf/main-componets/engine/vsphere-supervisor/vsphere-supervisor.html" class="internal-link" target="_self" rel="noopener nofollow">vSphere Supervisor</a>
-Tightly integrated with: <br><a data-href="vSphere" href="vcf/main-componets/engine/vsphere/vsphere.html" class="internal-link" target="_self" rel="noopener nofollow">vSphere</a> networking (<a data-href="NSX" href="vcf/main-componets/engine/nsx/nsx.html" class="internal-link" target="_self" rel="noopener nofollow">NSX</a> / <a data-href="VDS" href="vcf/main-componets/engine/vsan/vds.html" class="internal-link" target="_self" rel="noopener nofollow">VDS</a>)
-<br>vSphere storage (<a data-href="vSAN" href="vcf/main-componets/engine/vsan/vsan.html" class="internal-link" target="_self" rel="noopener nofollow">vSAN</a>, <a data-href="CNS" href="vcf/main-componets/engine/vsan/cns.html" class="internal-link" target="_self" rel="noopener nofollow">CNS</a>)
-vSphere IAM / RBAC boundaries ]]></description><link>tkg/tkg.html</link><guid isPermaLink="false">TKG/TKG.md</guid><pubDate>Sun, 21 Dec 2025 14:14:31 GMT</pubDate></item><item><title><![CDATA[Guest Cluster]]></title><description><![CDATA[<a href=".?query=tag:tenancy" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#tenancy">#tenancy</a><br>Once a workload cluster ([TKG]) is bound to a <a data-href="Supervisor Namespace" href="supervisor-namespace.html" class="internal-link" target="_self" rel="noopener nofollow">Supervisor Namespace</a>:
-✅ The cluster knows which Supervisor Namespace it lives in
-❌ It has no intrinsic knowledge of: Organization
-Project
-Automation constructs
-Approval flows
-Business tenancy
-<br>^ all of these concepts stop at the **<a data-href="VCF Automation" href="vcf/main-componets/engine/vcf-a/vcf-automation.html" class="internal-link" target="_self" rel="noopener nofollow">VCF Automation</a> boundary. <br>When a workload cluster is bound to a Supervisor Namespace, we are talking about a TKG workload cluster created by the <a data-href="vSphere Supervisor" href="vcf/main-componets/engine/vsphere-supervisor/vsphere-supervisor.html" class="internal-link" target="_self" rel="noopener nofollow">vSphere Supervisor</a>.That implies:
-The cluster is created via Supervisor APIs
-<br>It is <a data-href="vSphere Namespaces" href=".html" class="internal-link" target="_self" rel="noopener nofollow">vSphere Namespaces</a>-scoped
-It is lifecycle-managed by vSphere
-It runs on ESX using VM-based worker nodes
-So, in this model:<br>
-Guest cluster == <a data-href="TKG" href="tkg/tkg.html" class="internal-link" target="_self" rel="noopener nofollow">TKG</a> workload cluster]]></description><link>tkg/guest-cluster.html</link><guid isPermaLink="false">TKG/Guest Cluster.md</guid><pubDate>Sun, 21 Dec 2025 14:11:52 GMT</pubDate></item><item><title><![CDATA[vSphere Namespace]]></title><link>vcf/main-componets/engine/vsphere/vsphere-namespace.html</link><guid isPermaLink="false">VCF/Main Componets/engine/vSphere/vSphere Namespace.md</guid><pubDate>Sun, 21 Dec 2025 14:10:49 GMT</pubDate></item><item><title><![CDATA[Supervisor Namespace]]></title><description><![CDATA[These are not Kubernetes namespaces in the usual sense.
-They are:
-Resource-governed containers
-Backed by: vSphere Networking (<a data-href="NSX" href="vcf/main-componets/engine/nsx/nsx.html" class="internal-link" target="_self" rel="noopener nofollow">NSX</a>)
-<br>vSphere Storage (<a data-href="VSAN" href="vcf/main-componets/engine/vsan/vsan.html" class="internal-link" target="_self" rel="noopener nofollow">VSAN</a>)
-vSphere RBAC A tenant can have more than one Supervisor Namespace; however, those namespaces are not individual tenants.
-Tenancy is a business/trust concept. Supervisor Namespaces are execution slices that implement tenancy.
-Tenant: Coca-Cola
-├── ns-coke-prod
-├── ns-coke-stage
-└── ns-coke-dev Tenant: Coca-Cola
-├── ns-coke-us
-├── ns-coke-eu
-└── ns-coke-apac ## VCF Automation Representation Organization: Coca-Cola
-├── Project: Coke-Prod → ns-coke-prod
-├── Project: Coke-Stage → ns-coke-stage
-└── Project: Coke-Dev → ns-coke-dev ^ One organization, multiple projects,
-Each project maps to (ideally) one Supervisor Namespace.
-But this is also possible: Organization: Coca-Cola
-└── Project: Coke ├── ns-coke-dev ├── ns-coke-stage └── ns-coke-prod The only inverant is one supervisor namespace cannot belong
-to multiple projects. Namespaces are unique per supervisor cluster.
-Supervisor clusters are *isolation domains*, so global
-uniqueness enforcement would have been 1) artificial
-and 2) painful. Organization
-└── Project └── Supervisor Namespace(s)
-From vSphere's perspective, a Pod, VM, or VM-based Pod is just scheduled compute.Project is an automation construct.
-Defined by Automation Admin persona.
-Mapped to one or more Supervisor Namespaces.
-Invisible to vSphere / Kubernetes.
-Their purpose is to govern requests, not execution.
-<br>From the <a data-href="Guest Cluster" href="tkg/guest-cluster.html" class="internal-link" target="_self" rel="noopener nofollow">Guest Cluster</a>’s perspective, Organizations and Projects do not exist; similarly there is no concept of an organization or project inside the <a data-href="Supervisor Cluster" href=".html" class="internal-link" target="_self" rel="noopener nofollow">Supervisor Cluster</a> either.Supervisor namespaces intentionally mimic Kubernetes semantics:From the developer's laptop, they feel like ordinary Kubernetes namespaces.Here is where they differ though (mostly around ownership and LCM)in Supervisor namespaces, resource governance is outside Kubernetes.In Kubernetes:
-CPU/memory limits = ResourceQuota
-Storage = StorageClass + PVC
-Network = CNI rules
-In Supervisor:
-CPU/memory = vSphere resource pools
-Storage = datastore policies
-Network = NSX segments
-Limits are hard boundaries, not advisory
-So when you say:
-"This namespace gets 8 vCPU and 64 GB RAM"
-That's not a Kubernetes promise---that's vSphere enforcing physics.Security model is in vSphere, not in KubernetesKubernetes RBAC applies inside the box vSphere already drew.That’s why certain Kubernetes admin actions are silently blocked even when RBAC says “allowed”.From Kubernetes’ POV:
-It looks like a CNI plugin
-In reality:
-NSX owns: L2/L3 segments
-Firewall rules
-Load balancers Kubernetes asks politely. NSX decides.This matters for:
-NetworkPolicy
-Ingress behavior
-Multi-tenant isolation
-In vanilla K8s:
-PVC requests storage
-Cluster tries to satisfy it
-In Supervisor:
-PVC must map to pre-approved storage policies
-Datastore capabilities are enforced externally
-StorageClass ≈ view of vSphere policy, not a free-form construct.The goal of this abstraction is to:
-Let Kubernetes users feel at home
-Let infrastructure teams retain determinism
-Avoid “Kubernetes ate my datacenter” chaos
-So Supervisor namespaces are:
-Kubernetes-compatible interfaces to vSphere-owned sandboxes Supervisor namespaces intentionally impersonate Kubernetes namespaces
-Kubernetes sees them as native; operations are externally enforced
-vSphere owns: lifecycle
-resource limits
-security boundaries Kubernetes operates within those constraints
-]]></description><link>supervisor-namespace.html</link><guid isPermaLink="false">Supervisor Namespace.md</guid><pubDate>Sun, 21 Dec 2025 14:06:33 GMT</pubDate></item><item><title><![CDATA[Governance]]></title><description><![CDATA[Governance in VCF is the set of mechanisms that decide who is allowed to request which platform capabilities, under what constraints, with what approvals, and for how long — before anything is created.What Governance is not:Governance does not watch workloads.
-It decides whether they are allowed to exist in the first place.Governance (VCF Automation)
-├── Organizations
-├── Projects
-├── Blueprints
-├── Entitlements
-├── Approvals
-├── Quotas
-└── Leases Execution (vSphere / Supervisor)
-├── Namespaces
-├── Resource pools
-├── Networks
-└── Workloads
-Nothing in the execution layer knowns governance exists.
-Governance defines who may open the door.
-Execution decides what happens after they are inside the house.
-In other words, governance is “pre-creation” control, not runtime policing.<a data-href="Supervisor Namespace" href="supervisor-namespace.html" class="internal-link" target="_self" rel="noopener nofollow">Supervisor Namespace</a><br><a href=".?query=tag:tenancy" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#tenancy">#tenancy</a> ]]></description><link>vcf/governance.html</link><guid isPermaLink="false">VCF/Governance.md</guid><pubDate>Sun, 21 Dec 2025 13:24:41 GMT</pubDate></item><item><title><![CDATA[What Does VCF Do]]></title><description><![CDATA[
+]]></description><link>vcf/main-componets/engine/vcf-o/vcf-operations.html</link><guid isPermaLink="false">VCF/Main Componets/engine/VCF-O/VCF Operations.md</guid><pubDate>Sun, 21 Dec 2025 14:20:31 GMT</pubDate></item><item><title><![CDATA[VCF-O]]></title><description><![CDATA[See <a data-href="VCF Operations" href="vcf/main-componets/engine/vcf-o/vcf-operations.html" class="internal-link" target="_self" rel="noopener nofollow">VCF Operations</a>.]]></description><link>vcf/main-componets/engine/vcf-o/vcf-o.html</link><guid isPermaLink="false">VCF/Main Componets/engine/VCF-O/VCF-O.md</guid><pubDate>Sun, 21 Dec 2025 14:17:38 GMT</pubDate></item><item><title><![CDATA[CNS]]></title><link>vcf/main-componets/engine/vsan/cns.html</link><guid isPermaLink="false">VCF/Main Componets/engine/vSAN/CNS.md</guid><pubDate>Sun, 21 Dec 2025 14:14:41 GMT</pubDate></item><item><title><![CDATA[VDS]]></title><link>vcf/main-componets/engine/vsan/vds.html</link><guid isPermaLink="false">VCF/Main Componets/engine/vSAN/VDS.md</guid><pubDate>Sun, 21 Dec 2025 14:14:38 GMT</pubDate></item><item><title><![CDATA[vSphere Namespace]]></title><link>vcf/main-componets/engine/vsphere/vsphere-namespace.html</link><guid isPermaLink="false">VCF/Main Componets/engine/vSphere/vSphere Namespace.md</guid><pubDate>Sun, 21 Dec 2025 14:10:49 GMT</pubDate></item><item><title><![CDATA[What Does VCF Do]]></title><description><![CDATA[
 VCF is a full-stack Infrastructure as a Service (IaaS) platform that delivers software-defined compute, storage, networking, security, and management.
 Integrated automation enables a self-service platform to deploy VMs and containers for developer agility.
 Hardened platform offering built-in resilience, scaling, and clustering for non-stop operations.
@@ -304,125 +802,7 @@ Kubernetes ServiceAccount
 vSphere sees these as resource consumers, not objects with meaning.A <a data-href="VM Workload" href=".html" class="internal-link" target="_self" rel="noopener nofollow">VM Workload</a> is built entirely out of vSphere constructs.<br>
 A <a data-href="Pod Workload" href=".html" class="internal-link" target="_self" rel="noopener nofollow">Pod Workload</a> is built out of Kubernetes constructs, even though it ultimately consumes vSphere resources.## VM Workload VM ├─ vCPU ├─ vMemory ├─ VMDK ├─ Port Group └─ Resource Pool
 Pod ├─ Container ├─ CPU request/limit ├─ Memory request/limit ├─ ServiceAccount └─ Namespace
-]]></description><link>vsphere-construct.html</link><guid isPermaLink="false">vSphere construct.md</guid><pubDate>Sun, 21 Dec 2025 05:31:55 GMT</pubDate></item><item><title><![CDATA[VM Workload and Pod Workload]]></title><description><![CDATA[In VCF, a workload is:
-A unit of compute that consumes CPU, memory, storage, and networking, and is subject to lifecycle, policy, and governance.
-VCF doesn’t care what the workload is at a philosophical level. It cares about:
-How it is instantiated
-How it is isolated
-How it is scheduled
-How it is governed
-Which control plane owns it
-one machine per workloadA VM workload is a traditional virtual machine:
-Runs on ESXi
-Has its own guest OS
-Is managed by vCenter
-Uses <a data-href="vSphere construct" href="vsphere-construct.html" class="internal-link" target="_self" rel="noopener nofollow">vSphere construct</a>s directly vCenter Server is the authoritative control plane
-VCF Automation wraps vCenter, but does not replace it CPU / memory allocated per VM
-Strong isolation via hypervisor boundaries
-Overcommitment controlled at ESXi level Create VM
-Power on/off
-Snapshot Clone
-Patch guest OS
-Backup VM image VM policies
-Placement rules
-Affinity / anti-affinity
-HA / DRS
-Backup &amp; DR policies
-many disposable units forming a service.A pod workload is a Kubernetes Pod running on the vSphere Supervisor Cluster.A pod on the vSphere Supervisor Cluster is not a traditional Kubernetes pod.
-It is a vSphere Pod — Kubernetes-shaped, but vSphere-implemented.Key point:
-A pod workload is not a VM pretending to be a container. Supervisor pods are VMs implementing container semantics, not containers implemented as VMs. A Supervisor pod is a Kubernetes Pod whose execution unit is a micro-VM, where the VM boundary replaces the Linux container boundary. The VM is the isolation primitive
-The Pod is the semantic primitive
-The container image is payload, not a process model
-So the VM is not “pretending to be a container” —
-it is implementing the Pod abstraction using a VM instead of a process.
-Pod (Kubernetes API object) └─ Backed by └─ Ultra-lightweight VM └─ ESXi └─ Hardware
-It is:
-A Kubernetes-native unit
-Scheduled by Kubernetes
-Governed by Kubernetes APIs
-Backed by vSphere under the hood Kubernetes API (Supervisor cluster) is authoritative
-vCenter supplies infrastructure, not lifecycle semantics
-VCF Automation governs Kubernetes intent, not individual pods CPU / memory requested via Kubernetes requests &amp; limits
-Scheduler decides placement
-Isolation via: Namespaces
-RBAC
-Pod security
-(Optionally) VM-backed pod runtimes Declarative (YAML)
-Reconciliation-based
-Pods are ephemeral
-Restart ≠ failure
-Replacement is normal Namespace-level quotas
-Admission control
-Image policies
-Network policies VM workloads → legacy, stateful, pet-like systems
-Pod workloads → cloud-native, stateless, cattle-like systems
-VCF’s value is:
-Running both on the same physical infrastructure, with unified policy and automation, without forcing one model onto the other.
-Trying to manage pods like VMs breaks Kubernetes.
-Trying to manage VMs like pods breaks operational reality.VCF keeps them separate but coordinated.<br>A pod workload in VCF is a Kubernetes-native execution unit scheduled and governed by the <a data-href="vSphere Supervisor" href="vcf/main-componets/engine/vsphere-supervisor/vsphere-supervisor.html" class="internal-link" target="_self" rel="noopener nofollow">vSphere Supervisor</a> Kubernetes control plane, consuming vSphere resources indirectly through Kubernetes abstractions—unlike a VM workload, which is a hypervisor-managed, OS-bearing unit directly governed by vCenter.
-“Pod workload” ≠ “small VM”
-Pod workloads are Kubernetes-first, not vSphere-first
-VMs are stateful machines
-Pods are replaceable execution instances
-VCF supports both because enterprises need both
-]]></description><link>vm-workload-and-pod-workload.html</link><guid isPermaLink="false">VM Workload and Pod Workload.md</guid><pubDate>Sun, 21 Dec 2025 05:26:55 GMT</pubDate></item><item><title><![CDATA[vSphere Supervisor]]></title><description><![CDATA[The vSphere Supervisor lives as a set of Kubernetes control-plane VMs running on ESXi hosts, instantiated, wired, and governed by <a data-href="vCenter Server" href=".html" class="internal-link" target="_self" rel="noopener nofollow">vCenter Server</a>.<br>
-<img alt="supervisor-cluster-placement.webp" src="assets/supervisor-cluster-placement.webp" target="_self">
-Runs on: VMware ESXi
-Created and managed by: VMware vCenter Server
-Implemented as: Kubernetes control-plane VMs
-<br>Distributed across <a data-href="ESXi" href=".html" class="internal-link" target="_self" rel="noopener nofollow">ESXi</a> hosts
-<br>Backed by <a data-href="vSAN" href="vcf/main-componets/engine/vsan/vsan.html" class="internal-link" target="_self" rel="noopener nofollow">vSAN</a> / datastores
-<br>Networked via <a data-href="NSX" href="vcf/main-componets/engine/nsx/nsx.html" class="internal-link" target="_self" rel="noopener nofollow">NSX</a> (or <a data-href="VDS" href=".html" class="internal-link" target="_self" rel="noopener nofollow">VDS</a> in simpler setups) When you “enable Supervisor” in vCenter:
-vCenter:
-Creates a special-purpose Kubernetes cluster
-Instantiates its control plane as VMs
-Pins it tightly to: Cluster membership
-Networking
-Storage Treats it as part of the infrastructure, not a tenant workload
-So the Supervisor is:
-Not a workload cluster
-Not user-managed Kubernetes
-Not a vSphere product you install
-It is an infrastructure service owned by vCenter.Physical Hosts
-└─ ESXi └─ vCenter Server (control plane) └─ Supervisor Cluster (Kubernetes control plane VMs) ├─ Supervisor Namespaces ├─ vSphere Pods └─ Guest / Workload Clusters
-The vSphere Supervisor is a Kubernetes control plane deployed as system-managed VMs on ESXi, whose lifecycle is owned entirely by vCenter Server and whose purpose is to expose Kubernetes semantics directly on vSphere infrastructure.
-The vSphere Supervisor physically lives as vCenter-managed Kubernetes control-plane VMs running on ESXi hosts inside a vSphere cluster.
-<br>vSphere Supervisor is the foundation of VCF <a data-href="consumption" href=".html" class="internal-link" target="_self" rel="noopener nofollow">consumption</a> and can be enabled during workload domain creation or directly in vCenter.<br>
-<a href=".?query=tag:todo" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#todo">#todo</a> "consumption" is discussed in several meetings. It seems like standard nomenclature. Learn what it is.
-<br>
-<a href=".?query=tag:todo" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#todo">#todo</a> Is vSphere Supervisor a type of vSphere deployment. Follow-up: what really is vSphere?
-Is it part of VCF-A or VCF-O?
-It transforms vSphere clusters into modern application platforms by embedding a platform-level Kubernetes control plane directly into ESX hosts, exposing a unified declarative API surface. <br>This integration allows end users to provision and manage workloads, including VMs, containers via <a data-href="vSphere Pods" href=".html" class="internal-link" target="_self" rel="noopener nofollow">vSphere Pods</a>, full Kubernetes clusters through <a data-href="VKS" href=".html" class="internal-link" target="_self" rel="noopener nofollow">VKS</a>, <a data-href="OCI image registries" href=".html" class="internal-link" target="_self" rel="noopener nofollow">OCI image registries</a>, and data services through a consistent API interface.<br>
-<a href=".?query=tag:todo" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#todo">#todo</a> what kinds or registries, "bring your own", harbor, cloud? all?
-<br>
-<a href=".?query=tag:todo" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#todo">#todo</a> why embedding the control plane into ESX hosts is such a big thing? wasn't that possible before. Isn't an ESXi a "linux machine" at a high level anyway? What makes this so unique and innovative?
-<br>
-<a href=".?query=tag:todo" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#todo">#todo</a> is the "unified declarative API surface" k8s API, and custom resources? What kind(s) of Custom Resources?
-<br>
-<a href=".?query=tag:todo" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#todo">#todo</a> what "really" is a vSphere Pod? Enough with all the marketing language!
-<br><a data-href="vSphere Supervisor" href="vcf/main-componets/engine/vsphere-supervisor/vsphere-supervisor.html" class="internal-link" target="_self" rel="noopener nofollow">vSphere Supervisor</a> maintains enterprise-grade governance, security, and operational consistency through <a data-href="vCenter" href="vcf/main-componets/engine/vsphere/vcenter.html" class="internal-link" target="_self" rel="noopener nofollow">vCenter</a>,&nbsp;<a data-href="VCF Operations" href="vcf/main-componets/engine/vcf-o/vcf-operations.html" class="internal-link" target="_self" rel="noopener nofollow">VCF Operations</a>, and&nbsp;<a data-href="VCF Automation" href="vcf/main-componets/engine/vcf-a/vcf-automation.html" class="internal-link" target="_self" rel="noopener nofollow">VCF Automation</a>.<br>
-<a href=".?query=tag:todo" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#todo">#todo</a> is vSphere Supervisor a higher-level abstraction around the above; or is it a separate entity that communicates (i.e. supervises) those sub-entities?
-<br>vSphere Supervisor's <a data-href="vSphere Namespaces" href=".html" class="internal-link" target="_self" rel="noopener nofollow">vSphere Namespaces</a> provide the foundation for multi-tenancy, enabling GitOps-based workflows, and delivering cloud-like self-service in private data centers.<br>
-<a href=".?query=tag:todo" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#todo">#todo</a> so tenancy is namespace-bound?
-<br><a href=".?query=tag:tenancy" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#tenancy">#tenancy</a> <br>Use <a data-href="NSX Virtual Private Clouds" href=".html" class="internal-link" target="_self" rel="noopener nofollow">NSX Virtual Private Clouds</a> (VPC) workload networks. This configuration is a requirement for using&nbsp;<a data-href="VCF Automation" href="vcf/main-componets/engine/vcf-a/vcf-automation.html" class="internal-link" target="_self" rel="noopener nofollow">VCF Automation</a>
-<br>Determine if a <a data-href="Single-Zone Supervisor" href=".html" class="internal-link" target="_self" rel="noopener nofollow">Single-Zone Supervisor</a> or <a data-href="Multi-Zone Supervisor" href=".html" class="internal-link" target="_self" rel="noopener nofollow">Multi-Zone Supervisor</a> deployment is required: In VCF 9.0, a Supervisor deployed in a single-zone configuration cannot be converted to a multi-zone deployment after enablement. You must determine the target deployment model before initiating the Supervisor enablement process.
-<br>
-<a href=".?query=tag:todo" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#todo">#todo</a> what is single-zone versus multi-zone? Single-Zone Deployment: A Single-Zone Supervisor deployment uses a single vSphere cluster to host both workloads and Supervisor management components. <br>Additional <a data-href="vSphere Zone" href=".html" class="internal-link" target="_self" rel="noopener nofollow">vSphere Zone</a>s can be added after initial enablement. However, these zones are used exclusively for workload placement and do not host <a data-href="Supervisor control plane components" href=".html" class="internal-link" target="_self" rel="noopener nofollow">Supervisor control plane components</a>. <br>
-<a href=".?query=tag:todo" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#todo">#todo</a> what are Supervisor control plane components? <br>Multi-Zone Deployment: A Multi-Zone Supervisor deployment uses three <a data-href="vSphere cluster" href=".html" class="internal-link" target="_self" rel="noopener nofollow">vSphere cluster</a>s, placing each cluster into a <a data-href="vSphere Zone" href=".html" class="internal-link" target="_self" rel="noopener nofollow">vSphere Zone</a>. vSphere Zones are used by workloads and Supervisor management components to deliver high availability and expose each cluster as an independent, consumable availability zone. This configuration provides a resilient, HA-capable platform. Additional vSphere Zones can be added after initial enablement. However, these additional zones are available for workload consumption only, not for Supervisor control plane components. Single Host: Also a Single-Zone Supervisor with a single Control Plane VM deployed to a single ESX host, with vSphere HA disabled. While it shares the same characteristics as other single-zone deployments, in this configuration, any host failure results in downtime for the Supervisor Control Plane and potentially for associated workloads. <br>Easy Supervisor: This is a Single-Zone simplified deployment that uses workload networking on top of <a data-href="vSphere Distributed Switch" href=".html" class="internal-link" target="_self" rel="noopener nofollow">vSphere Distributed Switch</a>, designed as a fast and simple starting point for proof-of-concept environments and production deployments leveraging vSphere Distributed Switch. An Easy Supervisor deployment consists of: One Supervisor Control Plane VM
-A shared network for both workload and management traffic
-No load balancer <br>
-<a href=".?query=tag:todo" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#todo">#todo</a> does that imply that normally workload and management traffic is spilt? <br>It is <a data-href="vSphere" href="vcf/main-componets/engine/vsphere/vsphere.html" class="internal-link" target="_self" rel="noopener nofollow">vSphere</a> running in special Kubernetes-enabled mode.
-<br><a data-href="VCF Automation" href="vcf/main-componets/engine/vcf-a/vcf-automation.html" class="internal-link" target="_self" rel="noopener nofollow">VCF Automation</a> consumes what Supervisor exposes.
-<br><img alt="supervisor-conceptual.webp" src="assets/supervisor-conceptual.webp" target="_self">You can think of Supervisor as vSphere with Kubernetes fused into its control plane.<br><img alt="ks-ns.png" src="assets/ks-ns.png" target="_self"><br><img alt="supervisor-diagram.webp" src="supervisor-diagram.webp" target="_self"><br>When you enable Supervisor on a <a data-href="vSphere cluster" href=".html" class="internal-link" target="_self" rel="noopener nofollow">vSphere cluster</a>, you are activating a capability inside vSphere.
-<br>Supervisor runs inside <a data-href="ESXi" href=".html" class="internal-link" target="_self" rel="noopener nofollow">ESXi</a>.
-<br>Uses <a data-href="vCenter" href="vcf/main-componets/engine/vsphere/vcenter.html" class="internal-link" target="_self" rel="noopener nofollow">vCenter</a> as the <a data-href="control plane" href=".html" class="internal-link" target="_self" rel="noopener nofollow">control plane</a>.
-<br>Creates <a data-href="Supervisor Namespace" href="supervisor-namespace.html" class="internal-link" target="_self" rel="noopener nofollow">Supervisor Namespace</a>s.
-Exposes Kubernetes APIs, backed by native vSphere primitives.
-So conceptually, Supervisor is vSphere operating in "Kubernetes-native mode".<br><a data-href="Supervisor Namespace" href="supervisor-namespace.html" class="internal-link" target="_self" rel="noopener nofollow">Supervisor Namespace</a>s are not Kubernetes namespaces.If classic vSphere is "run VMs", Supervisor vSphere is "Run anything (VMs, Pods, services)" with the same primitives.
-<br>Supervisor runs on <a data-href="ESXi" href=".html" class="internal-link" target="_self" rel="noopener nofollow">ESXi</a>.
-It enables Kubernetes semantics backed by vSphere primitives.
-<br><a data-href="VCF Automation" href="vcf/main-componets/engine/vcf-a/vcf-automation.html" class="internal-link" target="_self" rel="noopener nofollow">VCF Automation</a> is optional and sits above Supervisor.
-<br><a data-href="Supervisor Namespace" href="supervisor-namespace.html" class="internal-link" target="_self" rel="noopener nofollow">Supervisor Namespace</a>s look like Kubernetes namespace on purpose.]]></description><link>vcf/main-componets/engine/vsphere-supervisor/vsphere-supervisor.html</link><guid isPermaLink="false">VCF/Main Componets/engine/vSphere Supervisor/vSphere Supervisor.md</guid><pubDate>Sun, 21 Dec 2025 05:24:55 GMT</pubDate><enclosure url="assets/supervisor-cluster-placement.webp" length="0" type="image/webp"/><content:encoded>&lt;figure&gt;&lt;img src="assets/supervisor-cluster-placement.webp"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[Governance]]></title><description><![CDATA[Governance in VCF is the set of mechanisms that decide who is allowed to request which platform capabilities, under what constraints, with what approvals, and for how long — before anything is created.What Governance is not:Governance does not watch workloads.
+]]></description><link>vsphere-construct.html</link><guid isPermaLink="false">vSphere construct.md</guid><pubDate>Sun, 21 Dec 2025 05:31:55 GMT</pubDate></item><item><title><![CDATA[Governance]]></title><description><![CDATA[Governance in VCF is the set of mechanisms that decide who is allowed to request which platform capabilities, under what constraints, with what approvals, and for how long — before anything is created.What Governance is not:Governance does not watch workloads.
 It decides whether they are allowed to exist in the first place.Governance (VCF Automation)
 ├── Organizations
 ├── Projects
@@ -490,14 +870,7 @@ Supervisor is that bet made concrete.
 vSphere = substrate
 Supervisor = Kubernetes-native personality of vSphere
 VCF Automation = enterprise automation layer on top
-<a data-href="vSphere Supervisor" href="vcf/main-componets/engine/vsphere-supervisor/vsphere-supervisor.html" class="internal-link" target="_self" rel="noopener nofollow">vSphere Supervisor</a>]]></description><link>why-does-supervisor-exist.html</link><guid isPermaLink="false">Why Does Supervisor Exist.md</guid><pubDate>Sun, 21 Dec 2025 00:08:11 GMT</pubDate></item><item><title><![CDATA[vSphere]]></title><description><![CDATA[At its core, it is a compute, storage, and network abstraction layer: A distributed operating system for data centers.It manages large collections of infrastructure, such as CPUs, storage, networking, GPUs, and DPUs as a seamless and dynamic operating environment, and also manages the complexity of a data center.&nbsp;
-It virtualizes physical infrastructure into managed CPU, storage, and networking resources.vSphere is a distributed system that provides the following;vSphere is a datacenter operating system.The two core components of VMware&nbsp;vSphere:
-<a data-href="ESX" href="vcf/main-componets/engine/vsphere/esx.html" class="internal-link" target="_self" rel="noopener nofollow">ESX</a>
-<br>and <a data-href="vCenter" href="vcf/main-componets/engine/vsphere/vcenter.html" class="internal-link" target="_self" rel="noopener nofollow">vCenter</a> <br><a data-href="High Availability" href=".html" class="internal-link" target="_self" rel="noopener nofollow">High Availability</a> with&nbsp;vSphere automatically restarts your VMs following physical machine failure.
-<br><a data-href="Fault Tolerance" href=".html" class="internal-link" target="_self" rel="noopener nofollow">Fault Tolerance</a> provides continuous availability of any application in the event of a hardware failure with no data loss or downtime. <br><a data-href="vMotion" href=".html" class="internal-link" target="_self" rel="noopener nofollow">vMotion</a> enables live migration of virtual machines with no disruption to users or loss of service, eliminating the need to schedule application downtime for planned server maintenance. Storage vMotion avoids downtime for planned storage maintenance. Identity federation with Microsoft Entra ID, ADFS and Okta.
-Virtual Machine Encryption: Data-at-rest encryption for virtual machine data and disks.
-<br><a data-href="vSphere Trust Authority" href=".html" class="internal-link" target="_self" rel="noopener nofollow">vSphere Trust Authority</a>: Remote attestation for sensitive workloads.
-]]></description><link>vcf/main-componets/engine/vsphere/vsphere.html</link><guid isPermaLink="false">VCF/Main Componets/engine/vSphere/vSphere.md</guid><pubDate>Sat, 20 Dec 2025 20:17:37 GMT</pubDate></item><item><title><![CDATA[Supervisor-VCF-A Relationshipt]]></title><description><![CDATA[┌────────────────────────────┐
+<a data-href="vSphere Supervisor" href="vcf/main-componets/engine/vsphere-supervisor/vsphere-supervisor.html" class="internal-link" target="_self" rel="noopener nofollow">vSphere Supervisor</a>]]></description><link>why-does-supervisor-exist.html</link><guid isPermaLink="false">Why Does Supervisor Exist.md</guid><pubDate>Sun, 21 Dec 2025 00:08:11 GMT</pubDate></item><item><title><![CDATA[Supervisor-VCF-A Relationshipt]]></title><description><![CDATA[┌────────────────────────────┐
 │ VCF Automation (vRA) │ ← lifecycle, blueprints, polic
 ├────────────────────────────┤
 │ vSphere Supervisor │ ← Kubernetes-native control plane
@@ -630,12 +1003,7 @@ Harbor container registries
 External DNS
 Certificates
 AI workloads
-<br>Additionally, application teams can also provision resources on a self-service basis from Catalogs which are backed by pre-configured <a data-href="workload template" href=".html" class="internal-link" target="_self" rel="noopener nofollow">workload template</a>s. These self-service options help developers focus on application development instead of managing the underlying infrastructure.]]></description><link>vcf/main-componets/engine/vcf-a/cloud-services.html</link><guid isPermaLink="false">VCF/Main Componets/engine/VCF-A/Cloud Services.md</guid><pubDate>Sat, 20 Dec 2025 16:52:00 GMT</pubDate></item><item><title><![CDATA[VCF Automation]]></title><description><![CDATA[enables IT teams and cloud service providers (<a data-href="CSP" href=".html" class="internal-link" target="_self" rel="noopener nofollow">CSP</a>s) to deliver a self-service private cloud for AI, Kubernetes, and VM-based applications. <br>The solution simplifies the process of provisioning and scaling a <a data-href="multi-tenant" href=".html" class="internal-link" target="_self" rel="noopener nofollow">multi-tenant</a> private cloud with out-of-the-box Infrastructure as a Service (<a data-href="IaaS" href=".html" class="internal-link" target="_self" rel="noopener nofollow">IaaS</a>) offerings, accelerating the time to market for applications while maintaining control using policy-based governance.<br><a href=".?query=tag:tenancy" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#tenancy">#tenancy</a> VCF Automation has the following capabilities:
-<br><a data-href="Cloud Services" href="vcf/main-componets/engine/vcf-a/cloud-services.html" class="internal-link" target="_self" rel="noopener nofollow">Cloud Services</a>: Provides a set of cloud services to meet the needs of application teams
-<br><a data-href="Provider Management" href="vcf/main-componets/engine/vcf-a/provider-management.html" class="internal-link" target="_self" rel="noopener nofollow">Provider Management</a>: Supports IT teams and cloud service providers to effectively manage, deliver, and scale cloud services across multiple vCenter and VCF instances.
-<br><a data-href="Organization Management" href="vcf/main-componets/engine/vcf-a/organization-management.html" class="internal-link" target="_self" rel="noopener nofollow">Organization Management</a>: Provides capabilities that enable the organization administrator of a Line of Business or a tenant to further organize and govern resources allocated to them among application teams.
-<br><a data-href="vSphere Supervisor" href="vcf/main-componets/engine/vsphere-supervisor/vsphere-supervisor.html" class="internal-link" target="_self" rel="noopener nofollow">vSphere Supervisor</a>: Provides the capability to run Kubernetes workloads directly on ESX hosts and to create upstream Kubernetes clusters within dedicated namespaces.( <a href=".?query=tag:todo" class="tag is-unresolved" target="_self" rel="noopener nofollow" data-href="#todo">#todo</a>: Further explanation needed )
-]]></description><link>vcf/main-componets/engine/vcf-a/vcf-automation.html</link><guid isPermaLink="false">VCF/Main Componets/engine/VCF-A/VCF Automation.md</guid><pubDate>Sat, 20 Dec 2025 04:41:54 GMT</pubDate></item><item><title><![CDATA[Security Management]]></title><description><![CDATA[The security management area of VCF Operations includes capabilities such as Security Operations, Event Auditing, and Compliance Checks.
+<br>Additionally, application teams can also provision resources on a self-service basis from Catalogs which are backed by pre-configured <a data-href="workload template" href=".html" class="internal-link" target="_self" rel="noopener nofollow">workload template</a>s. These self-service options help developers focus on application development instead of managing the underlying infrastructure.]]></description><link>vcf/main-componets/engine/vcf-a/cloud-services.html</link><guid isPermaLink="false">VCF/Main Componets/engine/VCF-A/Cloud Services.md</guid><pubDate>Sat, 20 Dec 2025 16:52:00 GMT</pubDate></item><item><title><![CDATA[Security Management]]></title><description><![CDATA[The security management area of VCF Operations includes capabilities such as Security Operations, Event Auditing, and Compliance Checks.
 Security Operations: The Security Operations dashboard is designed to provide a comprehensive view of your security posture in VCF.
 Events Auditing: Event auditing provides visibility into platform interaction changes across the VCF infrastructure and insights into suspicious access events and policy violations. Compliance: Ensure compliance for your VCF infrastructure and cloud environments against optimum configurations, maintaining a consistent configuration across SDDC components, reducing organizational and business risk.
 ]]></description><link>vcf/main-componets/engine/vcf-o/security-management.html</link><guid isPermaLink="false">VCF/Main Componets/engine/VCF-O/Security Management.md</guid><pubDate>Sat, 20 Dec 2025 04:28:09 GMT</pubDate></item><item><title><![CDATA[Workload Mobility]]></title><description><![CDATA[<a data-href="VCF Operations" href="vcf/main-componets/engine/vcf-o/vcf-operations.html" class="internal-link" target="_self" rel="noopener nofollow">VCF Operations</a> <a data-href="HCX" href=".html" class="internal-link" target="_self" rel="noopener nofollow">HCX</a> is a workload mobility platform for migration and interconnection of workloads within and across VCF <a data-href="private cloud" href=".html" class="internal-link" target="_self" rel="noopener nofollow">private cloud</a>s.You can perform secure and automated migrations without requiring changes to applications or network configurations. Important features include multiple migration types, such as live and bulk migration, as well as network extension, which preserves existing IP addresses and network topologies. Thus, you can place workloads based on business requirements. The platform minimizes downtime during migrations, improves scalability, and supports compliance and security throughout workload transitions.]]></description><link>vcf/main-componets/engine/vcf-o/workload-mobility.html</link><guid isPermaLink="false">VCF/Main Componets/engine/VCF-O/Workload Mobility.md</guid><pubDate>Sat, 20 Dec 2025 04:25:55 GMT</pubDate></item><item><title><![CDATA[Workload Placement]]></title><description><![CDATA[Is the <a data-href="vMotion" href=".html" class="internal-link" target="_self" rel="noopener nofollow">vMotion</a>, or is there something more?]]></description><link>vcf/main-componets/engine/vcf-o/workload-placement.html</link><guid isPermaLink="false">VCF/Main Componets/engine/VCF-O/Workload Placement.md</guid><pubDate>Sat, 20 Dec 2025 03:15:41 GMT</pubDate></item><item><title><![CDATA[FinOps and Capacity]]></title><description><![CDATA[Cost management helps you analyze your infrastructure expenses. In this way, you can identify areas that are most suitable to use capacity management for optimal utilization of your resources.You can use the FinOps or <a data-href="cost management" href="vcf/main-componets/engine/vcf-o/cost-management.html" class="internal-link" target="_self" rel="noopener nofollow">cost management</a> capabilities to monitor infrastructure-related costs and associated services or license expenses with greater precision.Capacity Management consists of 3 sets of capabilities: assess, optimize and plan.Capacity optimization helps you right-size or reclaim any underutilized or wasted resources.
