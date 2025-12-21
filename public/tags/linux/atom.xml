@@ -4,8 +4,147 @@
     <link rel="self" type="application/atom+xml" href="https://zerotohero.dev/tags/linux/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://zerotohero.dev"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2025-07-13T00:00:00+00:00</updated>
+    <updated>2025-12-21T00:00:00+00:00</updated>
     <id>https://zerotohero.dev/tags/linux/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Detecting Ethernet Cable Category</title>
+        <published>2025-12-21T00:00:00+00:00</published>
+        <updated>2025-12-21T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/inbox/diagnosing-ethernet-cable-with-iperf/"/>
+        <id>https://zerotohero.dev/inbox/diagnosing-ethernet-cable-with-iperf/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/inbox/diagnosing-ethernet-cable-with-iperf/">&lt;p&gt;This is a short case study with &lt;code&gt;iperf&lt;&#x2F;code&gt;, Windows, macOS, and &lt;code&gt;WSL&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-curious-case&quot;&gt;The Curious Case&lt;&#x2F;h2&gt;
+&lt;p&gt;Recently, I was testing my downstream network performance on my Windows
+and Mac machines, both of them connected to the same router.&lt;&#x2F;p&gt;
+&lt;p&gt;The problem was: I was getting ~700Mbps downlink on Windows, while MacOS
+saturated at &amp;gt;1Gbps.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“If I’m only getting ~700 Mbps, my Ethernet cable must be bad, no?”&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;My first guess was that the cable was bad. But the modem had two green LEDs
+on, on both ports.&lt;&#x2F;p&gt;
+&lt;p&gt;So, I started digging, as usual.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-initial-observation&quot;&gt;The Initial Observation&lt;&#x2F;h2&gt;
+&lt;p&gt;Two machines are connected to the same router, using what appears to be the
+same cabling:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Windows machine&lt;&#x2F;strong&gt;: ~700 Mbps downlink in speed tests&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;macOS machine&lt;&#x2F;strong&gt;: &amp;gt;1 Gbps under similar conditions&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Router LEDs&lt;&#x2F;strong&gt;: dual green lights on both ports (&lt;em&gt;indicating 1 Gbps link&lt;&#x2F;em&gt;)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;what-ethernet-leds-actually-tell&quot;&gt;What Ethernet LEDs Actually Tell&lt;&#x2F;h2&gt;
+&lt;p&gt;On most consumer and SMB routers&#x2F;switches:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Green (or dual green) LEDs&lt;&#x2F;strong&gt; means link negotiated at &lt;strong&gt;1 Gbps&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Amber, single green, or mixed colors typically means &lt;strong&gt;100 Mbps&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;And a 1 Gbps link negotiation means:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;All four twisted pairs are working&lt;&#x2F;li&gt;
+&lt;li&gt;The PHY is happy&lt;&#x2F;li&gt;
+&lt;li&gt;The cable meets the electrical requirements for &lt;strong&gt;1000BASE-T&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;If the cable were truly the bottleneck (&lt;em&gt;damaged, Cat5, missing pairs&lt;&#x2F;em&gt;),
+the link would should have fallend back to 100 Mbps, which it didn’t.&lt;&#x2F;p&gt;
+&lt;p&gt;700Mbps was a particularly odd number, not fitting anywhere.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;why-speed-tests-are-misleading&quot;&gt;Why Speed Tests Are Misleading&lt;&#x2F;h2&gt;
+&lt;p&gt;But, the issue was, I was conducting, browser-based speed tests.&lt;&#x2F;p&gt;
+&lt;p&gt;Browser-based speed tests are convenient, but they are noisy, for the
+following reasons:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Single TCP stream by default&lt;&#x2F;li&gt;
+&lt;li&gt;TLS overhead&lt;&#x2F;li&gt;
+&lt;li&gt;CDN path variability&lt;&#x2F;li&gt;
+&lt;li&gt;Antivirus &#x2F; packet inspection (&lt;em&gt;especially on Windows&lt;&#x2F;em&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;Browser networking limits (&lt;em&gt;especially on Windows&lt;&#x2F;em&gt;)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Different operating systems behave differently here:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;macOS tends to be aggressive with TCP window scaling and congestion control.&lt;&#x2F;li&gt;
+&lt;li&gt;while, Windows is often more conservative unless tuned.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;That difference alone can explain “&lt;em&gt;700 Mbps vs 1 Gbps&lt;&#x2F;em&gt;” without involving the
+cable at all.&lt;&#x2F;p&gt;
+&lt;p&gt;But I was curious, and I wanted a definitive answer.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;enter-iperf3&quot;&gt;Enter &lt;code&gt;iperf3&lt;&#x2F;code&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;To remove browser and application noise,I used &lt;code&gt;iperf3&lt;&#x2F;code&gt; from the command line.&lt;&#x2F;p&gt;
+&lt;p&gt;My setup:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;macOS runs &lt;code&gt;iperf3 -s&lt;&#x2F;code&gt; (&lt;em&gt;server&lt;&#x2F;em&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;Windows runs &lt;code&gt;iperf3&lt;&#x2F;code&gt; &lt;strong&gt;inside WSL2&lt;&#x2F;strong&gt; as the &lt;em&gt;client&lt;&#x2F;em&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Test uses &lt;strong&gt;4 parallel TCP streams&lt;&#x2F;strong&gt; (&lt;code&gt;-P 4&lt;&#x2F;code&gt;)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;WSL is good, and realistic enough for this test because it still uses
+&lt;strong&gt;Windows kernel and NIC drivers&lt;&#x2F;strong&gt; under the hood. But it bypasses browser,
+antivirus, and any userspace interference. That makes it ideal for isolating
+the problem.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-result&quot;&gt;The Result&lt;&#x2F;h2&gt;
+&lt;p&gt;Here’s the key output (&lt;em&gt;from WSL2&lt;&#x2F;em&gt;)&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;text&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-text &quot;&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;span&gt;[SUM] sender   1.01 Gbits&#x2F;sec
+&lt;&#x2F;span&gt;&lt;span&gt;[SUM] receiver 939 Mbits&#x2F;sec
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This is exactly what &lt;strong&gt;healthy Gigabit Ethernet&lt;&#x2F;strong&gt; looks like.&lt;&#x2F;p&gt;
+&lt;p&gt;But why ~939 Mbps and not a full 1000?&lt;&#x2F;p&gt;
+&lt;p&gt;That’s mostly due to the following factors:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ethernet framing&lt;&#x2F;li&gt;
+&lt;li&gt;TCP&#x2F;IP overhead&lt;&#x2F;li&gt;
+&lt;li&gt;ACK traffic&lt;&#x2F;li&gt;
+&lt;li&gt;Measurement window differences&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;In practice, &lt;strong&gt;~950 Mbps is the real ceiling&lt;&#x2F;strong&gt; for a 1Gbps Ethernet.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;my-cable-was-fine&quot;&gt;My Cable Was Fine&lt;&#x2F;h2&gt;
+&lt;p&gt;From this result alone, I was able to condlude that:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;The cable Windows uses supports &lt;strong&gt;1000BASE-T&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;All four pairs are functioning&lt;&#x2F;li&gt;
+&lt;li&gt;he router&#x2F;switch port is fine&lt;&#x2F;li&gt;
+&lt;li&gt;The NIC hardware is fine&lt;&#x2F;li&gt;
+&lt;li&gt;The Windows kernel and driver can sustain line rate&lt;&#x2F;li&gt;
+&lt;li&gt;There is no packet loss (0 retransmits)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;In other words:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The cable is &lt;strong&gt;not&lt;&#x2F;strong&gt; the bottleneck.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;At minimum, it behaves as &lt;strong&gt;Cat5e&lt;&#x2F;strong&gt;, it’s highly-likely &lt;strong&gt;Cat6&lt;&#x2F;strong&gt;. But
+performance-wise, there’s no practical way to distinguish them at 1 Gbps.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;so-why-did-windows-show-700-mbps-earlier&quot;&gt;So Why Did Windows Show ~700 Mbps Earlier?&lt;&#x2F;h2&gt;
+&lt;p&gt;Because that earlier test was almost certainly limited by
+&lt;strong&gt;measurement method&lt;&#x2F;strong&gt;, not physics.&lt;&#x2F;p&gt;
+&lt;p&gt;My best guess is this was due to:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Single TCP stream&lt;&#x2F;li&gt;
+&lt;li&gt;Browser limits&lt;&#x2F;li&gt;
+&lt;li&gt;TLS&#x2F;CDN behavior&lt;&#x2F;li&gt;
+&lt;li&gt;Antivirus or endpoint inspection&lt;&#x2F;li&gt;
+&lt;li&gt;Application-level throttling&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;So when I removed those variables, the link immediately saturated.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;In summary:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;You &lt;strong&gt;cannot reliably infer Ethernet cable category from a browser speed test&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;~700 Mbps does &lt;em&gt;not&lt;&#x2F;em&gt; imply Cat5 or a bad cable&lt;&#x2F;li&gt;
+&lt;li&gt;A negotiated &lt;strong&gt;1 Gbps link already proves cable adequacy&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;iperf3&lt;&#x2F;code&gt; with parallel streams is the right diagnostic tool&lt;&#x2F;li&gt;
+&lt;li&gt;macOS vs Windows speed differences are often TCP behavior, not hardware&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;If you ever wonder whether your cable is the issue, don’t guess; measure
+at the right layer.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>Snippet&#x2F;Draft: systemd-networkd-wait-online.service Waits Too Long During Ubuntu Startup</title>
         <published>2025-07-13T00:00:00+00:00</published>
