@@ -43,7 +43,7 @@
 <p>You can have ESXi without vCenter (<em>but it will be very limited</em>).</p>
 </li>
 </ul></div><div class="el-h2"><h2 data-heading="vCenter Server" dir="auto" class="heading" id="vCenter_Server_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></span>vCenter Server</h2></div><div class="el-ul"><ul class="has-list-bullet">
-<li data-line="0" dir="auto"><span class="list-bullet"></span>Connects many ESXi hosts.</li>
+<li data-line="0" dir="auto"><span class="list-bullet"></span>Connects many ESX hosts.</li>
 <li data-line="1" dir="auto"><span class="list-bullet"></span>Maintains inventory and state</li>
 <li data-line="2" dir="auto"><span class="list-bullet"></span>Enforces cluster-level logic.</li>
 <li data-line="3" dir="auto"><span class="list-bullet"></span><span class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></span>Orchestrates features that require coordination.
@@ -64,7 +64,7 @@
 <li data-line="6" dir="auto"><span class="list-bullet"></span>APIs (<em>REST, SOAP</em>)</li>
 </ul></div><div class="el-p"><p dir="auto"><span alt="What-is-VMware-vSphere-vSphere-Client.jpg" src="assets/what-is-vmware-vsphere-vsphere-client.jpg" class="internal-embed media-embed image-embed is-loaded" target="_self"><img alt="What-is-VMware-vSphere-vSphere-Client.jpg" src="assets/what-is-vmware-vsphere-vsphere-client.jpg" target="_self"></span></p></div><div class="el-p"><p dir="auto">There is exactly ONE UI name (“<a data-href="vSphere Client" href="vsphere-client.html" class="internal-link" target="_self" rel="noopener nofollow">vSphere Client</a>”), but it can connect to TWO different backends.</p></div><div class="el-ul"><ul class="has-list-bullet">
 <li data-line="0" dir="auto"><span class="list-bullet"></span>vSphere Server</li>
-<li data-line="1" dir="auto"><span class="list-bullet"></span>ESXi Hosts</li>
+<li data-line="1" dir="auto"><span class="list-bullet"></span>ESX Hosts</li>
 </ul></div><div class="el-pre"><pre class="language-text"><code data-line="0" class="language-text is-loaded">## Mode 1
 Browser
    ↓
@@ -105,10 +105,10 @@ Many ESXi hosts
 </tbody>
 </table></div><div class="el-h2"><h2 data-heading="vSphere Cluster" dir="auto" class="heading" id="vSphere_Cluster_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></span>vSphere Cluster</h2></div><div class="el-p"><p dir="auto">A <a data-href="vSphere Cluster" href=".html" class="internal-link" target="_self" rel="noopener nofollow">vSphere Cluster</a> is a <strong>logical grouping of ESXi hosts that vCenter treats as a single resource pool and failure domain</strong>.</p></div><div class="el-ul"><ul class="has-list-bullet">
 <li data-line="0" dir="auto"><span class="list-bullet"></span>It exists only in vCenter</li>
-<li data-line="1" dir="auto"><span class="list-bullet"></span>ESXi hosts do not know they are “<em>in a cluster</em>”.</li>
+<li data-line="1" dir="auto"><span class="list-bullet"></span>ESX hosts do not know they are “<em>in a cluster</em>”.</li>
 </ul></div><div class="el-p"><p dir="auto">When you create a <strong>cluster</strong> in vCenter Server, you are telling:<br>
 “*These ESXi hosts agree to be scheduled, balanced, and failed over together.”</p></div><div class="el-p"><p dir="auto">This enables cluster-level logic, such as</p></div><div class="el-ol"><ol>
-<li data-line="0" dir="auto"><span class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></span>DRS (Distributed Resource Scheduler):
+<li data-line="0" dir="auto"><span class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></span>DRS (<em>Distributed Resource Scheduler</em>):
 <ul class="has-list-bullet">
 <li data-line="1" dir="auto"><span class="list-bullet"></span><span class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></span>vCenter decides
 <ul class="has-list-bullet">
@@ -220,7 +220,7 @@ But architecturally:
 </tbody>
 </table></div><div class="el-h2"><h2 data-heading="Typical Deployment Topology" dir="auto" class="heading" id="Typical_Deployment_Topology_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></span>Typical Deployment Topology</h2></div><div class="el-pre"><pre class="language-text"><code data-line="0" class="language-text is-loaded">[ Physical Servers ]
         ↓
-     ESXi (many hosts)
+     ESX (many hosts)
         ↓
    vCenter Server
         ↓

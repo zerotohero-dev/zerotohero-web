@@ -17,7 +17,7 @@
 <li data-line="3" dir="auto"><span class="list-bullet"></span><strong>How it is governed</strong></li>
 <li data-line="4" dir="auto"><span class="list-bullet"></span><strong>Which control plane owns it</strong></li>
 </ul></div><div class="el-h2"><h2 data-heading="VM Workload" dir="auto" class="heading" id="VM_Workload_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></span>VM Workload</h2></div><div class="el-p"><p dir="auto"><strong>one machine per workload</strong></p></div><div class="el-p"><p dir="auto">A <strong>VM workload</strong> is a traditional virtual machine:</p></div><div class="el-ul"><ul class="has-list-bullet">
-<li data-line="0" dir="auto"><span class="list-bullet"></span>Runs on <strong>ESXi</strong></li>
+<li data-line="0" dir="auto"><span class="list-bullet"></span>Runs on <strong>ESX</strong></li>
 <li data-line="1" dir="auto"><span class="list-bullet"></span>Has its <strong>own guest OS</strong></li>
 <li data-line="2" dir="auto"><span class="list-bullet"></span>Is managed by <strong>vCenter</strong></li>
 <li data-line="3" dir="auto"><span class="list-bullet"></span>Uses <strong><a data-href="vSphere construct" href="vsphere-construct.html" class="internal-link" target="_self" rel="noopener nofollow">vSphere construct</a>s</strong> directly</li>
@@ -27,11 +27,11 @@
 </ul></div><div class="el-h3"><h3 data-heading="Resource model" dir="auto" class="heading" id="Resource_model_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></span>Resource model</h3></div><div class="el-ul"><ul class="has-list-bullet">
 <li data-line="0" dir="auto"><span class="list-bullet"></span>CPU / memory allocated <strong>per VM</strong></li>
 <li data-line="1" dir="auto"><span class="list-bullet"></span>Strong isolation via hypervisor boundaries</li>
-<li data-line="2" dir="auto"><span class="list-bullet"></span>Overcommitment controlled at ESXi level</li>
+<li data-line="2" dir="auto"><span class="list-bullet"></span>Overcommitment controlled at ESX level</li>
 </ul></div><div class="el-h3"><h3 data-heading="Lifecycle" dir="auto" class="heading" id="Lifecycle_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></span>Lifecycle</h3></div><div class="el-ul"><ul class="has-list-bullet">
 <li data-line="0" dir="auto"><span class="list-bullet"></span>Create VM</li>
 <li data-line="1" dir="auto"><span class="list-bullet"></span>Power on/off</li>
-<li data-line="2" dir="auto"><span class="list-bullet"></span>Snapshot  </li>
+<li data-line="2" dir="auto"><span class="list-bullet"></span>Snapshot</li>
 <li data-line="3" dir="auto"><span class="list-bullet"></span>Clone</li>
 <li data-line="4" dir="auto"><span class="list-bullet"></span>Patch guest OS</li>
 <li data-line="5" dir="auto"><span class="list-bullet"></span>Backup VM image</li>
@@ -57,7 +57,7 @@ it is <strong>implementing the Pod abstraction using a VM instead of a process</
 </ul></div><div class="el-pre"><pre><code data-line="0">Pod (Kubernetes API object)
  └─ Backed by
      └─ Ultra-lightweight VM
-         └─ ESXi
+         └─ ESX
              └─ Hardware
 </code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre></div><div class="el-p"><p dir="auto">It is:</p></div><div class="el-ul"><ul class="has-list-bullet">
 <li data-line="0" dir="auto"><span class="list-bullet"></span>A Kubernetes-native unit</li>
