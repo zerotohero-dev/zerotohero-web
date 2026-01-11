@@ -4,8 +4,417 @@
     <link rel="self" type="application/atom+xml" href="https://zerotohero.dev/tags/content-creation/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://zerotohero.dev"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2025-12-13T00:00:00+00:00</updated>
+    <updated>2026-01-09T00:00:00+00:00</updated>
     <id>https://zerotohero.dev/tags/content-creation/atom.xml</id>
+    <entry xml:lang="en">
+        <title>A Fresh Start: My New Streaming and Development Setup</title>
+        <published>2026-01-09T00:00:00+00:00</published>
+        <updated>2026-01-09T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/content-creation/new-setup-bom/"/>
+        <id>https://zerotohero.dev/content-creation/new-setup-bom/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/content-creation/new-setup-bom/">&lt;p&gt;Recently, my Mac Studio started acting weirdly, so I decided to wipe the
+hard drive clean and reinstall my system. This post details the tools
+and applications I installed to this new system.&lt;&#x2F;p&gt;
+&lt;p&gt;My goal for this new system is to keep it lean and minimal, so that it&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;starts up quickly,&lt;&#x2F;li&gt;
+&lt;li&gt;remains stable, and&lt;&#x2F;li&gt;
+&lt;li&gt;remains easy-to-maintain.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;With that in mind, let’s start with the foundation of any good setup: typography.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;core-system-essentials&quot;&gt;Core System Essentials&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;fonts&quot;&gt;Fonts&lt;&#x2F;h3&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2026&amp;#x2F;09&amp;#x2F;berkeley-mono.png&quot; alt=&quot;Berkeley Mono font.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Berkeley Mono font.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;I like to use a few monospace fonts depending on my mood and the use case,
+here are the ones I added to my system:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.monolisa.dev&#x2F;&quot;&gt;MonoLisa&lt;&#x2F;a&gt;: My go-to font for coding.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;usgraphics.com&#x2F;products&#x2F;berkeley-mono&quot;&gt;Berkeley Mono&lt;&#x2F;a&gt;: There is no
+other font that says “Unix” better than this one. That’s another favorite
+font of mine that I switch and use frequently.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;fsd.it&#x2F;shop&#x2F;fonts&#x2F;pragmatapro-variable&#x2F;&quot;&gt;Pragmata Pro&lt;&#x2F;a&gt;: This is
+more of an acquired taste: Not everyone’s cup of tea; but if you spend some
+time and get used to it, you’ll love it. It’s especially great when
+horizontal space is premium; like checking 20 logs at once.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.typography.com&#x2F;fonts&#x2F;operator&#x2F;overview&quot;&gt;Operator Mono&lt;&#x2F;a&gt;: Beautiful
+font, but (&lt;em&gt;to me&lt;&#x2F;em&gt;) a bit overhyped. Still, I like it and use it occasionally.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Beyond fonts, the way I manage windows and automate file operations forms the
+backbone of my daily workflow.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;window-manager&quot;&gt;Window Manager&lt;&#x2F;h3&gt;
+&lt;p&gt;I use &lt;a href=&quot;https:&#x2F;&#x2F;www.thelasso.app&#x2F;&quot;&gt;Lasso&lt;&#x2F;a&gt; for window management. Granted, it
+requires its own post too, I can say that it is one of the things you don’t
+know you needed until you start using it.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;file-automation&quot;&gt;File Automation&lt;&#x2F;h3&gt;
+&lt;p&gt;I use &lt;a href=&quot;https:&#x2F;&#x2F;www.noodlesoft.com&#x2F;&quot;&gt;Hazel&lt;&#x2F;a&gt; to automate file management.
+It’s yet another app that you don’t know how badly you need until you start
+using it.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;storage-and-backups&quot;&gt;Storage and Backups&lt;&#x2F;h2&gt;
+&lt;p&gt;With the core system essentials in place, let’s talk about something equally
+critical: keeping your data safe.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;nas-setup&quot;&gt;NAS Setup&lt;&#x2F;h3&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2026&amp;#x2F;09&amp;#x2F;synology-admin-ui.png&quot; alt=&quot;Synology Admin UI.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Synology Admin UI.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;I got a &lt;a href=&quot;https:&#x2F;&#x2F;www.synology.com&#x2F;en-us&quot;&gt;Synology DS1522+&lt;&#x2F;a&gt; and five
+&lt;a href=&quot;https:&#x2F;&#x2F;www.seagate.com&#x2F;products&#x2F;nas-drives&#x2F;ironwolf-hard-drive&#x2F;&quot;&gt;8TB Seagate IronWolf&lt;&#x2F;a&gt;
+hard drives. Using them together with &lt;a href=&quot;https:&#x2F;&#x2F;kb.synology.com&#x2F;en-us&#x2F;DSM&#x2F;tutorial&#x2F;What_is_Synology_Hybrid_RAID_SHR&quot;&gt;SHR-2 RAID&lt;&#x2F;a&gt;
+which gives me slightly more than 20TB of storage, while allowing failure of
+two drives without losing data.&lt;&#x2F;p&gt;
+&lt;p&gt;That gives me more than enough space to store my data, including stream VODs,
+virtual machine images, and any other stuff that can consume a lot of space.&lt;&#x2F;p&gt;
+&lt;p&gt;Though, while &lt;strong&gt;RAID&lt;&#x2F;strong&gt; is great and gives you redundancy, it’s not a
+replacement for &lt;strong&gt;backup&lt;&#x2F;strong&gt;. So I use, &lt;strong&gt;HyperBackup&lt;&#x2F;strong&gt; (&lt;em&gt;from within the Synology
+Admin UI&lt;&#x2F;em&gt;), to back up my important data to a &lt;a href=&quot;https:&#x2F;&#x2F;www.backblaze.com&#x2F;cloud-storage&quot;&gt;Backblaze B2&lt;&#x2F;a&gt;
+bucket.&lt;&#x2F;p&gt;
+&lt;p&gt;After scheduling the backups and verifying that they work, and also setting
+up &lt;strong&gt;email notifications&lt;&#x2F;strong&gt;, so that when a backup fails, or when a drive has
+a problem, or any other problem occurs in the system, I can confidently
+forget about backups once and for all: It will just work behind the scenes.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Synology&lt;&#x2F;strong&gt; is one of the best NAS solutions I’ve ever used. It deserves a
+post of its own; maybe I’ll write one in the future.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;streaming-and-media-production&quot;&gt;Streaming and Media Production&lt;&#x2F;h2&gt;
+&lt;p&gt;Now that we’ve covered the essentials and storage, let’s dive into what takes
+up most of my time: streaming and content creation.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;audio-hardware&quot;&gt;Audio Hardware&lt;&#x2F;h3&gt;
+&lt;p&gt;My streaming gear consists of:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.shure.com&#x2F;en-US&#x2F;products&#x2F;microphones&#x2F;sm7b?variant=SM7B&quot;&gt;Shure SM7B XLR Mic&lt;&#x2F;a&gt;
+(&lt;em&gt;MV7 users might disagree, but I do believe that “SM7B kicks the llama’s
+ass”&lt;&#x2F;em&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.cloudmicrophones.com&#x2F;product-page&#x2F;cloudlifter-cl-x&quot;&gt;CloudLifter CL-X&lt;&#x2F;a&gt;
+because &lt;strong&gt;SM 7B&lt;&#x2F;strong&gt; is gain-hungry.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;rme-audio.de&#x2F;babyface-pro-fs.html&quot;&gt;Babyface Pro FS&lt;&#x2F;a&gt; because it’s one
+of the best audio interfaces that pairs &lt;strong&gt;really well&lt;&#x2F;strong&gt; with &lt;strong&gt;SM 7B&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2026&amp;#x2F;09&amp;#x2F;totalmix.png&quot; alt=&quot;RME TotalMix.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;RME TotalMix.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;After installing the drivers for &lt;strong&gt;Babyface Pro FS&lt;&#x2F;strong&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;docs.rme-audio.com&#x2F;aoxd&#x2F;800-1c_totalmix&#x2F;&quot;&gt;&lt;strong&gt;RME TotalMix
+FX&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+(&lt;em&gt;the software interface for Babyface Pro FS&lt;&#x2F;em&gt;) comes pre-installed on my Mac.&lt;&#x2F;p&gt;
+&lt;p&gt;Along with &lt;strong&gt;RME TotalMix&lt;&#x2F;strong&gt;, I also installed
+&lt;a href=&quot;https:&#x2F;&#x2F;rme-audio.de&#x2F;digicheck-ng.html&quot;&gt;DigiCheck NG&lt;&#x2F;a&gt;, which is excellent
+for monitoring my vocals and overall stream output gain.&lt;&#x2F;p&gt;
+&lt;p&gt;Again, setting up &lt;strong&gt;TotalMix&lt;&#x2F;strong&gt;, and &lt;strong&gt;DigiCheck NG&lt;&#x2F;strong&gt; deserve its own post.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;camera-and-video&quot;&gt;Camera and Video&lt;&#x2F;h3&gt;
+&lt;p&gt;For camera, I use &lt;a href=&quot;https:&#x2F;&#x2F;www.obsbot.com&#x2F;obsbot-tiny-2-4k-webcam&quot;&gt;OBS Tiny 2&lt;&#x2F;a&gt;,
+I can confidently say that there is no better webcam for streaming. It can
+compete with beefier cameras like &lt;em&gt;Canon EOS&lt;&#x2F;em&gt; and &lt;em&gt;Nikon D850&lt;&#x2F;em&gt;. Honestly, I
+am still surprised a USB webcam can stream at 4K with crisp, crystal-clear
+video.&lt;&#x2F;p&gt;
+&lt;p&gt;After installing &lt;a href=&quot;https:&#x2F;&#x2F;www.obsbot.com&#x2F;download&quot;&gt;&lt;strong&gt;OBSBot Center&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; and its
+drivers, I’m good to go.&lt;&#x2F;p&gt;
+&lt;p&gt;One thing I did, though, was to &lt;strong&gt;disable&lt;&#x2F;strong&gt; any &lt;strong&gt;AI&lt;&#x2F;strong&gt; feature, because at times
+it can interpret my voice as a command, or my gesture to zoom and pan the
+camera. I don’t want that. I prefer to control the camera manually and want
+its focus to remain where I want it to be.&lt;&#x2F;p&gt;
+&lt;p&gt;One additional software I had to install in my particular case was
+&lt;a href=&quot;https:&#x2F;&#x2F;cameragraph.app&#x2F;&quot;&gt;CameraGraph&lt;&#x2F;a&gt; because for some reason the
+streaming software I use (&lt;em&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.wirecast.io&#x2F;en&#x2F;&quot;&gt;Wirecast&lt;&#x2F;a&gt;&lt;&#x2F;em&gt;) was not
+happy with the camera feed output, so I had to create a virtual camera feed
+from the webcam.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;streaming-software&quot;&gt;Streaming Software&lt;&#x2F;h3&gt;
+&lt;p&gt;For streaming, I use:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.wirecast.io&#x2F;en&#x2F;&quot;&gt;Wirecast&lt;&#x2F;a&gt; for streaming.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;obsproject.com&#x2F;&quot;&gt;OBS Studio&lt;&#x2F;a&gt; for recording.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;This way, I can send different audio background music tracks to the live
+stream and the recorded VODs. This is especially useful when I publish the VODs
+because I may get copyright strikes otherwise.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;audio-pipeline&quot;&gt;Audio Pipeline&lt;&#x2F;h3&gt;
+&lt;p&gt;For audio pipeline setup, along with &lt;strong&gt;TotalMix&lt;&#x2F;strong&gt;, I use
+&lt;a href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;audiohijack&#x2F;&quot;&gt;Audio Hijack&lt;&#x2F;a&gt; and
+&lt;a href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;loopback&#x2F;&quot;&gt;Loopback&lt;&#x2F;a&gt;. Again, these two require a
+dedicated post of their own. But here are some screenshots to give you an idea:&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2026&amp;#x2F;09&amp;#x2F;ah-001.png&quot; alt=&quot;Music streaming AudioHijack session.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Music streaming AudioHijack session.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2026&amp;#x2F;09&amp;#x2F;ah-001.png&quot; alt=&quot;Stream processing AudioHijack session.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Stream processing AudioHijack session.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;I also use &lt;a href=&quot;https:&#x2F;&#x2F;www.izotope.com&#x2F;en&#x2F;shop&#x2F;ozone-12-advanced&#x2F;&quot;&gt;Native Instruments Ozone
+Advanced&lt;&#x2F;a&gt; for real-time
+audio processing such as compression and equalization.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2026&amp;#x2F;09&amp;#x2F;ozone-compressor.png&quot; alt=&quot;Ozone Compressor in action.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Ozone Compressor in action.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h3 id=&quot;post-production&quot;&gt;Post-Production&lt;&#x2F;h3&gt;
+&lt;p&gt;For post-production and VOD creation I use &lt;a href=&quot;https:&#x2F;&#x2F;www.telestream.net&#x2F;screenflow&#x2F;overview.htm&quot;&gt;ScreenFlow&lt;&#x2F;a&gt;
+and &lt;a href=&quot;https:&#x2F;&#x2F;www.adobe.com&#x2F;products&#x2F;audition.html&quot;&gt;Adobe Audition&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;I also use &lt;a href=&quot;https:&#x2F;&#x2F;www.izotope.com&#x2F;en&#x2F;products&#x2F;rx.html&quot;&gt;Izotope RX&lt;&#x2F;a&gt;
+toolset (&lt;em&gt;from the same company as Ozone&lt;&#x2F;em&gt;) for various audio post-production
+work.&lt;&#x2F;p&gt;
+&lt;p&gt;Ah, &lt;a href=&quot;https:&#x2F;&#x2F;www.elgato.com&#x2F;us&#x2F;en&#x2F;p&#x2F;stream-deck&quot;&gt;Stream Deck&lt;&#x2F;a&gt;—no streaming
+setup is complete without it. Again, it requires its own post.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2026&amp;#x2F;09&amp;#x2F;streamdeck-001.png&quot; alt=&quot;Stream Deck.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Stream Deck.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2026&amp;#x2F;09&amp;#x2F;streamdeck-002.png&quot; alt=&quot;Stream Deck.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Stream Deck.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;That covers the streaming part for now, I guess.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;hardware-and-peripherals&quot;&gt;Hardware and Peripherals&lt;&#x2F;h2&gt;
+&lt;p&gt;Switching gears from software to hardware, let’s look at the physical tools
+that make daily work more comfortable and efficient.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;mouse-and-keyboard&quot;&gt;Mouse and Keyboard&lt;&#x2F;h3&gt;
+&lt;p&gt;I use a &lt;a href=&quot;https:&#x2F;&#x2F;www.logitech.com&#x2F;en-eu&#x2F;shop&#x2F;p&#x2F;mx-master-4&quot;&gt;Logi MX Master 4&lt;&#x2F;a&gt;
+for the mouse and cannot recommend it enough. Especially the &lt;strong&gt;action ring&lt;&#x2F;strong&gt;
+and the &lt;strong&gt;haptic feedback&lt;&#x2F;strong&gt;, and needless to say, the lightning-fast scrolling
+makes it a productivity booster.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2026&amp;#x2F;09&amp;#x2F;mx-action-ring.png&quot; alt=&quot;Logi MX Master 4 action ring.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Logi MX Master 4 action ring.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;For keyboard, I opted for a compact form-factor: a &lt;a href=&quot;https:&#x2F;&#x2F;nuphy.com&#x2F;collections&#x2F;keyboards&#x2F;products&#x2F;halo75-v2-qmk-via-wireless-custom-mechanical-keyboard&quot;&gt;NuPhy Halo 75
+V2&lt;&#x2F;a&gt;
+with &lt;strong&gt;Brown Max&lt;&#x2F;strong&gt; switches, which gives a good level of tactile feedback while
+still keeping it quieter than &lt;strong&gt;Cherry MX Blue&lt;&#x2F;strong&gt; or similar switches.&lt;&#x2F;p&gt;
+&lt;p&gt;The keyboard is programmable with &lt;a href=&quot;https:&#x2F;&#x2F;qmk.fm&#x2F;&quot;&gt;QMK&lt;&#x2F;a&gt;; maybe a dedicated
+post for that will come later on, too.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;productivity-and-daily-tools&quot;&gt;Productivity and Daily Tools&lt;&#x2F;h2&gt;
+&lt;p&gt;With hardware covered, let’s explore the software that helps me stay organized
+and productive throughout the day.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;visual-design-and-diagramming&quot;&gt;Visual Design and Diagramming&lt;&#x2F;h3&gt;
+&lt;p&gt;For graphic work, I use the following:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.sketch.com&#x2F;&quot;&gt;Sketch&lt;&#x2F;a&gt;—I still believe it’s better than Figma.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.edrawsoft.com&#x2F;ad&#x2F;edraw-max&#x2F;&quot;&gt;Wondershare Edraw Max&lt;&#x2F;a&gt; which is
+a great tool for technical diagrams.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;music&quot;&gt;Music&lt;&#x2F;h3&gt;
+&lt;p&gt;I have two apps that I use to listen to music:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;app.endel.io&#x2F;&quot;&gt;Endel&lt;&#x2F;a&gt;: I use &lt;strong&gt;Endel&lt;&#x2F;strong&gt; for both background music
+for my stream VODs (&lt;em&gt;to avoid copyright strike&lt;&#x2F;em&gt;) and also for listening to
+it while I’m working to calm my brain and focus.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.spotify.com&#x2F;us&#x2F;&quot;&gt;Spotify&lt;&#x2F;a&gt;: &lt;strong&gt;Spotify&lt;&#x2F;strong&gt; is my main music app.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;video-conferencing&quot;&gt;Video Conferencing&lt;&#x2F;h3&gt;
+&lt;p&gt;I use &lt;a href=&quot;https:&#x2F;&#x2F;zoom.us&#x2F;&quot;&gt;Zoom&lt;&#x2F;a&gt; for video conferencing. I also use &lt;strong&gt;Zoom&lt;&#x2F;strong&gt; as
+the video feed when I accept guests to my stream. I’ve found that it works
+more reliably than any other solution (&lt;em&gt;including Twitch’s “Guest Star”
+feature&lt;&#x2F;em&gt;) that I’ve tried.&lt;&#x2F;p&gt;
+&lt;p&gt;I don’t install any other video conferencing solution until I have to, but
+sometimes a peculiar friend might ask “&lt;em&gt;I use Jitsi, and Jitsi only; damn
+capitalism!&lt;&#x2F;em&gt;” and I may end up installing it.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;timezone-management&quot;&gt;Timezone Management&lt;&#x2F;h3&gt;
+&lt;p&gt;I work with several timezones from the Pacific Timezone, to London, to Italy,
+to India and Australia. I find &lt;a href=&quot;https:&#x2F;&#x2F;worldclock.pro&#x2F;mac&quot;&gt;World Clock Pro&lt;&#x2F;a&gt;
+a great tool for managing multiple timezones. It has a nice interface where
+you can drag a slider to see, for example, what 9pm in your timezone
+will look like in London and Tokyo. It helps me a lot when I need to
+plan meetings and other events.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2026&amp;#x2F;09&amp;#x2F;world-clock-pro.png&quot; alt=&quot;World Clock Pro.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;World Clock Pro.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h3 id=&quot;general-productivity&quot;&gt;General Productivity&lt;&#x2F;h3&gt;
+&lt;p&gt;While Spotlight is a great search tool, if you need more powerful search
+functionality over everything on your Mac, then
+&lt;a href=&quot;https:&#x2F;&#x2F;www.houdah.com&#x2F;houdahSpot&#x2F;&quot;&gt;HoudahSpot&lt;&#x2F;a&gt; is one of the best options
+that give you a lot of flexibility and customization options.&lt;&#x2F;p&gt;
+&lt;p&gt;To manage distractions and keep track of tasks, I use:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;stayinsession.com&#x2F;&quot;&gt;Sessions&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;and &lt;a href=&quot;https:&#x2F;&#x2F;www.inyourface.app&#x2F;&quot;&gt;InYourFace&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;For spelling, document editing, tone correction, and other editorial tasks
+I use &lt;a href=&quot;https:&#x2F;&#x2F;www.grammarly.com&#x2F;&quot;&gt;Grammarly (*rebranded as “SuperHuman”)&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;To annotate my desktop in meetings and streaming sessions, I use
+&lt;a href=&quot;https:&#x2F;&#x2F;presentify.app&#x2F;&quot;&gt;Presentify&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;As my main browser, I’m using &lt;a href=&quot;https:&#x2F;&#x2F;vivaldi.com&#x2F;&quot;&gt;Vivaldi&lt;&#x2F;a&gt;. It needs some
+exploration and getting-used-to, but especially, being able to group your
+browsing sessions into “&lt;em&gt;workspaces&lt;&#x2F;em&gt;” is a huge productivity booster.&lt;&#x2F;p&gt;
+&lt;p&gt;For file transfer needs, I use &lt;a href=&quot;https:&#x2F;&#x2F;panic.com&#x2F;transmit&#x2F;&quot;&gt;Transmit&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;system-maintenance&quot;&gt;System Maintenance&lt;&#x2F;h2&gt;
+&lt;p&gt;Keeping a system healthy requires some attention. Here are the tools that
+help me monitor and maintain my setup.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;command-line-tools&quot;&gt;Command Line Tools&lt;&#x2F;h3&gt;
+&lt;p&gt;I spend part of my day in the terminal, so having additional tools that make
+my life easier helps a lot. Here are some of the command line tools that I
+have installed to my system:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;brew.sh&#x2F;&quot;&gt;HomeBrew&lt;&#x2F;a&gt; is the first thing to install for any Mac user.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;cantino&#x2F;mcfly&quot;&gt;Mcfly&lt;&#x2F;a&gt; is a fuzzy search tool for the
+command-line. It’s not strictly necessary, but I like its user experience.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;starship.rs&#x2F;&quot;&gt;Starship&lt;&#x2F;a&gt; is a cross-shell prompt tool that is
+highly-customizable.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;XAMPPRocky&#x2F;tokei&quot;&gt;Tokei&lt;&#x2F;a&gt; is a code counter tool.
+I use it to see how many lines of code various parts of my projects contain.
+It’s useful to see things like how much code comment is in a project as
+opposed to actual code (&lt;em&gt;to me, the more commented a project, the better&lt;&#x2F;em&gt;).&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;bootandy&#x2F;dust&quot;&gt;Dust&lt;&#x2F;a&gt; is a disk usage analyzer tool.
+I typically use &lt;a href=&quot;https:&#x2F;&#x2F;daisydiskapp.com&#x2F;&quot;&gt;DaisyDisk&lt;&#x2F;a&gt; because it gives
+more options to handle the files, and it provides a better and more
+interactive visualization; however, sometimes being able to see the disk usage
+in a terminal is useful too.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;daisydiskapp.com&#x2F;&quot;&gt;Bat&lt;&#x2F;a&gt; is a &lt;strong&gt;galactically better&lt;&#x2F;strong&gt; version of &lt;code&gt;cat&lt;&#x2F;code&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;dalance&#x2F;procs&quot;&gt;Procs&lt;&#x2F;a&gt; is a process viewer tool. You
+can think of it as a modern replacement for &lt;code&gt;ps&lt;&#x2F;code&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;eza-community&#x2F;eza&quot;&gt;Eza&lt;&#x2F;a&gt; is a modern &lt;code&gt;ls&lt;&#x2F;code&gt; replacement.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;tw93&#x2F;Mole&quot;&gt;Mole&lt;&#x2F;a&gt; is a tool that keeps your Mac clean. It
+can purge unnecessary files, uninstall unwanted apps in a batch, analyze
+your Mac, and do various other optimizations. I &lt;strong&gt;strongly recommend&lt;&#x2F;strong&gt; it
+instead of using a bloated tool like &lt;em&gt;CleanMyMac&lt;&#x2F;em&gt; or &lt;em&gt;MacCleaner&lt;&#x2F;em&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;drive-health&quot;&gt;Drive Health&lt;&#x2F;h3&gt;
+&lt;p&gt;My &lt;a href=&quot;https:&#x2F;&#x2F;www.synology.com&#x2F;en-us&quot;&gt;NAS&lt;&#x2F;a&gt; can take care of its own health and
+notify me when there are failures or degradation. Yet that’s not true for
+my system disk and other external drives.&lt;&#x2F;p&gt;
+&lt;p&gt;To monitor these drives, I have &lt;a href=&quot;https:&#x2F;&#x2F;binaryfruit.com&#x2F;drivedx&quot;&gt;Drivedx&lt;&#x2F;a&gt;
+installed.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2026&amp;#x2F;09&amp;#x2F;drivedx.png&quot; alt=&quot;Drive DX.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;Drive DX.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;I also use &lt;a href=&quot;https:&#x2F;&#x2F;www.backblaze.com&#x2F;&quot;&gt;Backblaze&lt;&#x2F;a&gt; to back up my system disk
+and external drives to recover them in case of a hardware failure.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;network-monitoring&quot;&gt;Network Monitoring&lt;&#x2F;h3&gt;
+&lt;p&gt;Occasionally, I need to figure out what’s what in my local home network.
+Although that can be done with simple CLI commands, &lt;a href=&quot;https:&#x2F;&#x2F;apps.apple.com&#x2F;us&#x2F;app&#x2F;ip-scanner-ultra&#x2F;id404167677&quot;&gt;IP Scanner
+Ultra&lt;&#x2F;a&gt; gives
+a better and more intuitive overview of the network topology.&lt;&#x2F;p&gt;
+
+&lt;div class=&quot;z2h-image&quot;&gt;
+    &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2026&amp;#x2F;09&amp;#x2F;ip-scanner.png&quot; alt=&quot;IP Scanner Ultra.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+    &lt;p class=&quot;alt&quot; style=&quot;text-align: center; font-style: italic;
+      margin-top: -1.125em;
+      font-size: 1em;&quot;&gt;IP Scanner Ultra.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;security&quot;&gt;Security&lt;&#x2F;h2&gt;
+&lt;p&gt;Security is non-negotiable, especially when you have sensitive data and credentials
+scattered across multiple systems.&lt;&#x2F;p&gt;
+&lt;p&gt;I use &lt;a href=&quot;https:&#x2F;&#x2F;www.yubico.com&#x2F;&quot;&gt;Yubikey&lt;&#x2F;a&gt; as my hardware security key and
+primary authentication method whenever I can. So, one of the first things I
+install on my system is &lt;a href=&quot;https:&#x2F;&#x2F;www.yubico.com&#x2F;products&#x2F;services-software&#x2F;download&#x2F;yubikey-manager&#x2F;&quot;&gt;YubiKey
+Manager&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Additionally, I have &lt;a href=&quot;https:&#x2F;&#x2F;1password.com&#x2F;&quot;&gt;1Password&lt;&#x2F;a&gt; to manage my passwords,
+licenses, secrets, and other sensitive information.&lt;&#x2F;p&gt;
+&lt;p&gt;Sometimes, I need to transfer sensitive data over relatively insecure channels.
+For that, I use &lt;a href=&quot;https:&#x2F;&#x2F;apps.apple.com&#x2F;us&#x2F;app&#x2F;encrypto-secure-your-files&#x2F;id935235287?mt=12&quot;&gt;Encrypto&lt;&#x2F;a&gt;
+to encrypt them before sending over the wire.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;text-editing-and-note-taking&quot;&gt;Text Editing and Note-Taking&lt;&#x2F;h2&gt;
+&lt;p&gt;When it comes to writing, I have a few specialized tools for different purposes:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.sublimetext.com&#x2F;&quot;&gt;Sublime Text&lt;&#x2F;a&gt; for quickly taking notes
+and writing some lightweight code.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;monodraw.helftone.com&#x2F;&quot;&gt;Monodraw&lt;&#x2F;a&gt; for creating ASCII art diagrams.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;ulysses.app&#x2F;&quot;&gt;Ulysses&lt;&#x2F;a&gt; because it’s far more than just a Markdown
+editor.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;apps.apple.com&#x2F;us&#x2F;app&#x2F;tot&#x2F;id1491071483?mt=12&quot;&gt;Tot&lt;&#x2F;a&gt; for synchronizing
+notes across devices. This is another app that you don’t know how badly you
+need until you start using it.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Other heavy-duty editors and IDEs exist exclusively in my
+&lt;strong&gt;Development Machine&lt;&#x2F;strong&gt; (&lt;em&gt;see the next section&lt;&#x2F;em&gt;).&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;software-development&quot;&gt;Software Development&lt;&#x2F;h2&gt;
+&lt;p&gt;Now we get to the meat of my daily work: software development. I’ve made some
+deliberate choices here to keep my streaming machine stable.&lt;&#x2F;p&gt;
+&lt;p&gt;I do almost all my software development by remotely connecting to my
+Windows Intel NUC via &lt;a href=&quot;https:&#x2F;&#x2F;apps.apple.com&#x2F;us&#x2F;app&#x2F;windows-app&#x2F;id1295203466?mt=12&quot;&gt;Windows App&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;I choose to use a separate machine for development because development environments
+can become complex and unstable in time, and I’d rather keep my streaming
+setup stable. Additionally, keeping “&lt;em&gt;development&lt;&#x2F;em&gt;” focused on a separate machine
+allows me to focus: The machine is dedicated to development, and I don’t have
+anything else to distract me from it.&lt;&#x2F;p&gt;
+&lt;p&gt;Along with Windows, I also have &lt;a href=&quot;https:&#x2F;&#x2F;www.parallels.com&#x2F;products&#x2F;desktop&#x2F;pro&quot;&gt;Parallels
+Desktop&lt;&#x2F;a&gt; for running dedicated
+local Linux virtual machines, when &lt;em&gt;Windows Subsystem for Linux&lt;&#x2F;em&gt; doesn’t
+fit for the use case.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;windows-development-environment&quot;&gt;Windows Development Environment&lt;&#x2F;h3&gt;
+&lt;p&gt;Windows is my main development machine. Here are some of the tools I use on
+Windows:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learn.microsoft.com&#x2F;en-us&#x2F;windows&#x2F;wsl&#x2F;install&quot;&gt;Windows Subsystem for Linux&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learn.microsoft.com&#x2F;en-us&#x2F;windows&#x2F;terminal&#x2F;install&quot;&gt;Windows Terminal&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learn.microsoft.com&#x2F;en-us&#x2F;windows&#x2F;powertoys&#x2F;&quot;&gt;Microsoft PowerToys&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.jetbrains.com&#x2F;toolbox-app&#x2F;&quot;&gt;JetBrains Toolbox&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.jetbrains.com&#x2F;go&#x2F;&quot;&gt;GoLand&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.jetbrains.com&#x2F;webstorm&#x2F;&quot;&gt;WebStorm&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;ubuntu.com&#x2F;server&quot;&gt;Ubuntu (&lt;em&gt;WSL&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;obsidian.md&#x2F;&quot;&gt;Obsidian&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;standardnotes.com&#x2F;&quot;&gt;Standard Notes&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;That’s pretty much it for Windows too. I want to keep my development setup
+lean and stable as well.&lt;&#x2F;p&gt;
+&lt;p&gt;I also have &lt;a href=&quot;https:&#x2F;&#x2F;slack.com&#x2F;&quot;&gt;Slack&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;discord.com&quot;&gt;Discord&lt;&#x2F;a&gt;
+installed on Windows because I want to
+keep my Mac streaming setup stable, so I don’t want to introduce anything
+unnecessary to the system if I don’t have to.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;Setting up a new system is always a good opportunity to reflect on what you
+truly need versus what you’ve accumulated over time. By starting fresh, I was
+able to be more intentional about every tool I installed.&lt;&#x2F;p&gt;
+&lt;p&gt;The key takeaways from this setup are:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Separation of concerns&lt;&#x2F;strong&gt;: Keeping my streaming machine stable by offloading
+development work to a dedicated Windows machine has been a game-changer.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Automation first&lt;&#x2F;strong&gt;: Tools like &lt;em&gt;Hazel&lt;&#x2F;em&gt;, &lt;em&gt;HyperBackup&lt;&#x2F;em&gt;, and &lt;em&gt;Stream Deck&lt;&#x2F;em&gt;
+reduce manual work and let me focus on what matters.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Quality over quantity&lt;&#x2F;strong&gt;: Investing in good hardware (&lt;em&gt;SM7B, Babyface Pro FS,
+MX Master 4&lt;&#x2F;em&gt;) pays dividends in comfort and productivity.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;This list will inevitably evolve as my needs change, but for now, this is
+the foundation that keeps me productive and sane. If you’re setting up a new
+system, I hope this gives you some ideas to consider.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>New Audio Pipeline with BabyFace Pro FS</title>
         <published>2025-12-13T00:00:00+00:00</published>
@@ -1887,6 +2296,9 @@ viewers.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;content-creation&#x2F;new-setup-bom&#x2F;&quot;&gt;A Fresh Start: My New Streaming and Development Setup&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;content-creation&#x2F;new-stream-setup-with-babyface-pro-fs&#x2F;&quot;&gt;New Audio Pipeline with Babyface Pro FS&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
@@ -2026,6 +2438,9 @@ creating &lt;strong&gt;valuable&lt;&#x2F;strong&gt; and &lt;strong&gt;meaningful
 &lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;content-creation&#x2F;new-setup-bom&#x2F;&quot;&gt;A Fresh Start: My New Streaming and Development Setup&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;content-creation&#x2F;new-stream-setup-with-babyface-pro-fs&#x2F;&quot;&gt;New Audio Pipeline with Babyface Pro FS&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
@@ -2103,6 +2518,9 @@ allow our minds to focus on what matters.&lt;&#x2F;p&gt;
 &lt;hr &#x2F;&gt;
 &lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
 &lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;content-creation&#x2F;new-setup-bom&#x2F;&quot;&gt;A Fresh Start: My New Streaming and Development Setup&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;content-creation&#x2F;new-stream-setup-with-babyface-pro-fs&#x2F;&quot;&gt;New Audio Pipeline with Babyface Pro FS&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
@@ -2191,6 +2609,9 @@ positioning your project for more outstanding achievements.&lt;&#x2F;p&gt;
 &lt;hr &#x2F;&gt;
 &lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
 &lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;content-creation&#x2F;new-setup-bom&#x2F;&quot;&gt;A Fresh Start: My New Streaming and Development Setup&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;content-creation&#x2F;new-stream-setup-with-babyface-pro-fs&#x2F;&quot;&gt;New Audio Pipeline with Babyface Pro FS&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;

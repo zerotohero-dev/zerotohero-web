@@ -8,6 +8,8 @@
 # `-------'`------'`--' `--'
 
 
+- name: "A Fresh Start: My New Streaming and Development Setup"
+  url: "@/content-creation/new-setup-bom.md"
 - name: "New Audio Pipeline with Babyface Pro FS"
   url: "@/content-creation/new-stream-setup-with-babyface-pro-fs.md"
 - name: "A Frictionless Blog Workflow"
