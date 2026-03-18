@@ -4,8 +4,270 @@
     <link rel="self" type="application/atom+xml" href="https://zerotohero.dev/tags/top-of-mind/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://zerotohero.dev"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2024-05-21T00:00:00+00:00</updated>
+    <updated>2026-03-18T00:00:00+00:00</updated>
     <id>https://zerotohero.dev/tags/top-of-mind/atom.xml</id>
+    <entry xml:lang="en">
+        <title>The Bottleneck Moved. The Work Did Not.</title>
+        <published>2026-03-18T00:00:00+00:00</published>
+        <updated>2026-03-18T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/roadmap/what-the-junior-actually-needs/"/>
+        <id>https://zerotohero.dev/roadmap/what-the-junior-actually-needs/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/roadmap/what-the-junior-actually-needs/">&lt;h2 id=&quot;a-question-i-keep-getting&quot;&gt;A Question I Keep Getting&lt;&#x2F;h2&gt;
+&lt;p&gt;I receive some version of this message a few times a month:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;“Given where technology&#x2F;AI is today, what does a Junior Software Engineer
+actually need to bring to the table to be worth having on your team?”&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;I appreciate when the question is honest about what it’s really asking.&lt;&#x2F;p&gt;
+&lt;p&gt;Sometimes it is. And sometimes, &lt;strong&gt;there’s a hook in the water&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Either way, the question deserves a real answer because it’s a genuinely
+hard question for 2026, and most of the advice floating around is either
+catastrophizing or hollow.&lt;&#x2F;p&gt;
+&lt;p&gt;Let me give you the answer &lt;strong&gt;I actually believe&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;first-the-doom-is-not-wrong&quot;&gt;First: The Doom Is Not Wrong&lt;&#x2F;h2&gt;
+&lt;p&gt;I know people who have stopped writing code entirely.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Not&lt;&#x2F;strong&gt; because they got lazy or lost interest. &lt;strong&gt;But&lt;&#x2F;strong&gt; because agentic
+programming systems are now &lt;strong&gt;faster, cheaper, and more consistent&lt;&#x2F;strong&gt;
+than any individual programmer for a large class of tasks. These people are
+&lt;code&gt;50x&lt;&#x2F;code&gt;, &lt;code&gt;100x&lt;&#x2F;code&gt; more productive than they were before.&lt;&#x2F;p&gt;
+&lt;p&gt;They describe the shift the way you describe waking up with different eyes.&lt;&#x2F;p&gt;
+&lt;p&gt;I cannot underline this enough: &lt;strong&gt;This is real&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Here is what is &lt;strong&gt;also&lt;&#x2F;strong&gt; real: the creative energy didn’t go anywhere:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;The &lt;em&gt;tool&lt;&#x2F;em&gt; changed.&lt;&#x2F;li&gt;
+&lt;li&gt;The &lt;em&gt;desire to build things&lt;&#x2F;em&gt; didn’t.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;I have watched the same transition happen before: First with image manipulation,
+then with design, then with writing, now with code.&lt;&#x2F;p&gt;
+&lt;p&gt;The grief is the same each time: So is the recovery, for the people who actually
+make it through. What changes is &lt;strong&gt;not&lt;&#x2F;strong&gt; the value of building things:&lt;&#x2F;p&gt;
+&lt;p&gt;What changes is what “&lt;strong&gt;building&lt;&#x2F;strong&gt;” means.&lt;&#x2F;p&gt;
+&lt;p&gt;So when someone tells you programming is dead: &lt;strong&gt;don’t dismiss them&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;They are pointing at &lt;strong&gt;something real&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p&gt;The execution bottleneck has collapsed. What used to take a week
+now takes hours. What used to require three engineers now
+requires one with the right setup.&lt;&#x2F;p&gt;
+&lt;p&gt;That part of the job &lt;strong&gt;has&lt;&#x2F;strong&gt; been automated.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;but-here-is-what-the-doom-gets-wrong&quot;&gt;But Here Is What the Doom Gets Wrong&lt;&#x2F;h2&gt;
+&lt;p&gt;The doom crowd focuses on “&lt;em&gt;execution&lt;&#x2F;em&gt;” because execution was always the most
+visible part of the job. It was also, quietly, &lt;strong&gt;never&lt;&#x2F;strong&gt; the important part.&lt;&#x2F;p&gt;
+&lt;p&gt;I wrote about this years ago: &lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;roadmap&#x2F;&quot;&gt;&lt;strong&gt;Code is nothing&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Not in a defeatist way. In the most liberating way possible:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;What you create with your code is everything.&lt;&#x2F;em&gt;&lt;br &#x2F;&gt;
+&lt;em&gt;The way you share your knowledge is everything.&lt;&#x2F;em&gt;&lt;br &#x2F;&gt;
+&lt;em&gt;The value you add to the community is everything.&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;The code was always the &lt;em&gt;output&lt;&#x2F;em&gt; of the thinking.&lt;&#x2F;p&gt;
+&lt;p&gt;The &lt;strong&gt;thinking&lt;&#x2F;strong&gt; is what we actually hired you for.&lt;&#x2F;p&gt;
+&lt;p&gt;A junior who could write syntactically correct Java but couldn’t debug a
+production incident, couldn’t explain the trade-off between two architectural
+options, couldn’t read a codebase they hadn’t written: That junior was never
+particularly valuable to begin with. &lt;strong&gt;AI made that obvious&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;A junior who &lt;em&gt;could&lt;&#x2F;em&gt; do those things: That person’s leverage just
+&lt;strong&gt;multiplied&lt;&#x2F;strong&gt; by a factor that would have seemed science fiction
+five years ago.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;The bottleneck moved from execution to judgment&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;ever-heard-of-chickens-and-eggs&quot;&gt;Ever Heard of Chickens and Eggs?&lt;&#x2F;h2&gt;
+&lt;p&gt;But… what if you &lt;strong&gt;are&lt;&#x2F;strong&gt; the junior? You don’t have judgment yet? No?&lt;&#x2F;p&gt;
+&lt;p&gt;This is the actual hard question. The doom crowd doesn’t answer it because it
+complicates their narrative.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Judgment comes from getting your hands dirty&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;From shipping something and watching it fail.&lt;&#x2F;li&gt;
+&lt;li&gt;From reading codebases you didn’t write until your eyes hurt.&lt;&#x2F;li&gt;
+&lt;li&gt;From debugging an issue for three hours and finally understanding &lt;em&gt;why&lt;&#x2F;em&gt; the
+system behaves the way it does.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;AI can short-circuit all of that. And if you let it: if you go straight from
+“&lt;em&gt;I have a problem&lt;&#x2F;em&gt;” to “&lt;em&gt;accept AI’s solution&lt;&#x2F;em&gt;” without ever building the mental
+model; you become what I’ve seen described as a &lt;strong&gt;slop cannon&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p&gt;Producing an enormous volume that nobody, including you, can evaluate.&lt;&#x2F;p&gt;
+&lt;p&gt;The trap is seductive. The output &lt;em&gt;looks&lt;&#x2F;em&gt; correct. It often even &lt;em&gt;is&lt;&#x2F;em&gt; correct.&lt;&#x2F;p&gt;
+&lt;p&gt;But you have no basis for knowing whether it is, because you never did the
+work that builds &lt;strong&gt;taste&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;“&lt;strong&gt;AI makes skilled workers prolific. It makes unskilled workers pollutants.&lt;&#x2F;strong&gt;”&lt;&#x2F;p&gt;
+&lt;p&gt;That’s not my line, but I would have written something similar too.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;what-i-actually-want-from-a-junior-in-2026&quot;&gt;What I Actually Want from a Junior in 2026&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;strong&gt;I want someone who is deliberately building their own judgment&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Here is what that looks like in practice:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Read code until it’s boring&lt;&#x2F;strong&gt;: Not just tutorials. Real codebases. The ones
+that are ugly and overgrown and have six different naming conventions because
+six different developers touched them over six years. That’s where you learn to
+read a system, not just code.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Break things manually first, then let AI fix them&lt;&#x2F;strong&gt;: If you’re learning
+databases, write the SQL by hand before you ask an agent to generate it.
+If you don’t understand what it produced, you have no basis for trusting it.
+The mental model has to come first. AI is a multiplier, and a multiplier applied
+to zero is still zero.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Learn to switch resolution deliberately&lt;&#x2F;strong&gt;: Sometimes you need the satellite
+view: how does this system fit into the architecture? What problem does this
+codebase exist to solve? Sometimes you need the dewdrop view: exactly which line
+is allocating the memory that’s leaking? The skill that matters is knowing
+&lt;em&gt;which&lt;&#x2F;em&gt; level you’re at and &lt;em&gt;choosing&lt;&#x2F;em&gt; it, not drifting between them because the
+task handed it to you.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Own outcomes, not tasks&lt;&#x2F;strong&gt;: A task is “&lt;em&gt;implement the auth flow&lt;&#x2F;em&gt;”. An outcome is
+“&lt;em&gt;users can log in reliably and securely, and the team understands what we built
+and why&lt;&#x2F;em&gt;”. Junior engineers who optimize for tasks ship tickets. Engineers with
+real leverage &lt;strong&gt;optimize for outcomes&lt;&#x2F;strong&gt;. This shift is possible earlier than most
+people think, but it requires &lt;em&gt;thinking about it&lt;&#x2F;em&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Build the thing you care about&lt;&#x2F;strong&gt;: Not to put it on your resume. Because you
+care about it, and you want to see if you can: &lt;strong&gt;The motivation has to be intrinsic&lt;&#x2F;strong&gt;,
+because, the external reward structure for junior engineering is hostile right now
+and will remain so for the foreseeable future.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;If you are here because it’s a stable career path, I’m sorry, but this isn’t that anymore.&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;If you are here because you can’t imagine doing anything else, you’re in the right place.&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;the-networking-thing-since-we-re-being-honest&quot;&gt;The Networking Thing (Since We’re Being Honest)&lt;&#x2F;h2&gt;
+&lt;p&gt;Most of the people who ask me this question are also, somewhere in the message,
+asking me to refer them.&lt;&#x2F;p&gt;
+&lt;p&gt;I understand. I would probably do the same.&lt;&#x2F;p&gt;
+&lt;p&gt;But I’d encourage you to read what I wrote about that: &lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;the-dream-job&#x2F;&quot;&gt;&lt;strong&gt;Build Strong
+Connections to Land Your Dream Job&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;The short version: a cold referral request from someone I don’t know is worth
+nothing to me and costs me something. A warm referral from someone whose work I
+admire, whose judgment I’ve seen in action, whose name I’d put next to mine:
+That’s worth its weight in gold.&lt;&#x2F;p&gt;
+&lt;p&gt;The way to get that conversation is not to ask for it. It’s to be the kind of
+person who makes the people around them better. Online or in person. Through
+what you write, what you build, what you share, what you’re honest about when
+it doesn’t go well.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Ship things&lt;&#x2F;strong&gt;. Write about what you learned. &lt;strong&gt;Make it public&lt;&#x2F;strong&gt;.
+Help someone who is two steps behind where you are now.&lt;&#x2F;p&gt;
+&lt;p&gt;Do that consistently for a year, and you won’t need to ask for referrals:
+&lt;strong&gt;They will appear&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;the-timeless-parts&quot;&gt;The Timeless Parts&lt;&#x2F;h2&gt;
+&lt;p&gt;Here’s what I think doesn’t change:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Systems thinking scales&lt;&#x2F;strong&gt;: The ability to look at a complex system, understand
+how it fails, identify the root cause, and reason about trade-offs—this is as
+valuable as it has ever been, and AI cannot do it for you without your
+intellectual scaffolding.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Communication compounds&lt;&#x2F;strong&gt;: The ability to write clearly about technical
+topics, to explain a decision with its context and rationale, to make your work
+legible to others—this was always important and is now a primary differentiator.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Curiosity is the engine&lt;&#x2F;strong&gt;: Every good engineer I know is curious in a way they
+can’t really turn off. Not about everything: about &lt;em&gt;this&lt;&#x2F;em&gt; thing, whatever this
+thing is right now. If you don’t have that, the rest of this advice probably
+won’t help much.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;You are not your stack&lt;&#x2F;strong&gt;: The language you know, the framework you use, the
+toolchain you learned in your bootcamp—none of that is your identity or your
+moat. What is your moat is how you think, what you can figure out, and what you
+do with problems that nobody handed you a solution to.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;so-is-it-worth-starting&quot;&gt;So: Is It Worth Starting?&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;strong&gt;Absolutely and unequivocally yes&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;With full awareness of what you are signing up for.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;The floor has moved&lt;&#x2F;strong&gt;: The jobs that used to be entry-level—write CRUD apps,
+translate specs into code, fix bugs someone else diagnosed—many of those are
+gone or going. The field is smaller at the bottom than it was, and it’s not
+recovering to what it was.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;But the ceiling is higher than it has ever been&lt;&#x2F;strong&gt;: A single person with good
+judgment, good taste, and strong command of these tools can build things that
+would have required a team of ten five years ago. That’s not hyperbole. I’ve
+watched it happen.&lt;&#x2F;p&gt;
+&lt;p&gt;The question is whether you are going to be the person who does that, or whether
+you are going to spend the next few years being anxious about whether you are
+keeping up.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;You can’t do both&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;“All great fighting is the same, Eragon, even as all great warriors are the
+same. Past a certain point, it does not matter whether you wield a sword, a
+claw, a tooth, or a tail. It’s true, you must be capable with your weapon,
+but anyone with the time and inclination can acquire technical proficiency.
+To achieve greatness though, that requires artistry.”&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Christopher Paolini&lt;&#x2F;strong&gt; — &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;7664041-inheritance&quot;&gt;The Inheritance Cycle&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;The weapon changed. The artistry is still the job.&lt;&#x2F;p&gt;
+&lt;p&gt;May the source be with you 🦄.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;continue-reading&quot;&gt;Continue Reading&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Be the Next Version of Yourself&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;hack-the-system&#x2F;&quot;&gt;Who Else is Ready to Hack?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;chisel&#x2F;&quot;&gt;Grab Your Chisel and Start Pounding&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learn-fast-remember-more&#x2F;&quot;&gt;Unlock Your Brain’s Power: Learn Fast, Remember More&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;the-art-of-learning&#x2F;&quot;&gt;Master Your Mind: Unleash the Power of Learning&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;bedtime-reading&#x2F;&quot;&gt;Resources Every Developer Must Read: No Exceptions&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;knowing-javascript-is-not-good-enough&#x2F;&quot;&gt;Knowing JavaScript Is Not Good Enough&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learn-javascript-the-unconventional-way&#x2F;&quot;&gt;Learn JavaScript the Unconventional Way&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learn-haskell&#x2F;&quot;&gt;Want to Learn JavaScript? Learn Haskell First&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;glossary&#x2F;&quot;&gt;A Glossary of Mostly Developer-Related Things&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;git&#x2F;&quot;&gt;Git Comfortable&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;vim&#x2F;&quot;&gt;Master Your Vim-Fu&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;one-does-not-simply-terminal&#x2F;&quot;&gt;One Does Not Simply Terminal 👌&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;design-patterns&#x2F;&quot;&gt;Paint Me Like One of Your French Design Patterns&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;regexp&#x2F;&quot;&gt;Tame Your Regular Expressions&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;security&#x2F;&quot;&gt;Security Is Not Optional&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;you-need-testing&#x2F;&quot;&gt;You Need Testing&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;a-startup-founders-bedtime-reading-list&#x2F;&quot;&gt;A Startup Founder’s Bedtime Reading List&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;color-theory&#x2F;&quot;&gt;Orange Is the New Purple&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;ramp-up-in-user-experience-design&#x2F;&quot;&gt;Ramp Up in User Experience Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;typography&#x2F;&quot;&gt;Get Better at Typography&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;what-the-junior-actually-needs&#x2F;&quot;&gt;The Bottleneck Moved. The Work Did Not.&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>Be the Next Version of Yourself</title>
         <published>2024-05-21T00:00:00+00:00</published>
@@ -51,7 +313,7 @@ feed. I am not going to be humble here: This article it is the accumulation of
 years and years of experience. So, give it the &lt;strong&gt;time&lt;&#x2F;strong&gt; and &lt;strong&gt;concentration&lt;&#x2F;strong&gt; it
 deserves.&lt;&#x2F;p&gt;
 &lt;p&gt;While you are reading, you’ll
-find &lt;a href=&quot;https:&#x2F;&#x2F;www.cs.jhu.edu&#x2F;~jason&#x2F;advice&#x2F;how-to-read-a-paper.html&quot;&gt;links to other useful materials, such as this one&lt;&#x2F;a&gt;.
+find &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.cs.jhu.edu&#x2F;~jason&#x2F;advice&#x2F;how-to-read-a-paper.html&quot;&gt;links to other useful materials, such as this one&lt;&#x2F;a&gt;.
 &lt;strong&gt;Do not skip them&lt;&#x2F;strong&gt;: They are as important as the article itself.&lt;&#x2F;p&gt;
 &lt;p&gt;With that said, let us begin, shall we?&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;&#x2F;h2&gt;
@@ -65,11 +327,11 @@ developer who doesn’t know how to develop.&lt;&#x2F;em&gt;”&lt;&#x2F;p&gt;
 &lt;p&gt;I even got this one 😄:&lt;&#x2F;p&gt;
 &lt;p&gt;“&lt;em&gt;Help me Obi-Wan Kenobi; you’re my only hope.&lt;&#x2F;em&gt;”&lt;&#x2F;p&gt;
 &lt;p&gt;Since answering the same question over and over again is not the best use of
-the &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Opportunity_cost&quot;&gt;opportunity cost of my time&lt;&#x2F;a&gt;,
+the &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Opportunity_cost&quot;&gt;opportunity cost of my time&lt;&#x2F;a&gt;,
 I wanted to answer them here, once and for all.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;is-it-the-impostor-s-syndrome&quot;&gt;Is It the “Impostor’s Syndrome”?&lt;&#x2F;h2&gt;
 &lt;p&gt;Although there’s a hint
-of &lt;a href=&quot;https:&#x2F;&#x2F;www.fastcompany.com&#x2F;40421352&#x2F;the-five-types-of-impostor-syndrome-and-how-to-beat-them&quot;&gt;impostor’s syndrome&lt;&#x2F;a&gt;
+of &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.fastcompany.com&#x2F;40421352&#x2F;the-five-types-of-impostor-syndrome-and-how-to-beat-them&quot;&gt;impostor’s syndrome&lt;&#x2F;a&gt;
 in those questions, there also exists a &lt;strong&gt;deep concern&lt;&#x2F;strong&gt; that waits to be
 addressed.&lt;&#x2F;p&gt;
 &lt;p&gt;All of these questions translate to the following:&lt;&#x2F;p&gt;
@@ -102,7 +364,7 @@ don’t know: Ask them out.&lt;&#x2F;p&gt;
 &lt;p&gt;There are naïve questions, tedious questions, ill-phrased questions, questions
 put after inadequate self-criticism. However, every question is a cry to
 understand the world. There is no such thing as a dumb question.&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;strong&gt;Carl Sagan&lt;&#x2F;strong&gt;—&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;17349.The_Demon_Haunted_World&quot;&gt;The Demon-Haunted World: Science as a Candle in the
+&lt;p&gt;&lt;strong&gt;Carl Sagan&lt;&#x2F;strong&gt;—&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;17349.The_Demon_Haunted_World&quot;&gt;The Demon-Haunted World: Science as a Candle in the
 Dark&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;ul&gt;
@@ -111,9 +373,9 @@ Dark&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;li&gt;The more you ask, the better.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;While you are at
-it, &lt;a href=&quot;http:&#x2F;&#x2F;www.catb.org&#x2F;esr&#x2F;faqs&#x2F;smart-questions.html&quot;&gt;learn how to ask smart questions&lt;&#x2F;a&gt;
+it, &lt;a rel=&quot;external&quot; href=&quot;http:&#x2F;&#x2F;www.catb.org&#x2F;esr&#x2F;faqs&#x2F;smart-questions.html&quot;&gt;learn how to ask smart questions&lt;&#x2F;a&gt;
 and digest the fact
-that &lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;17349.The_Demon_Haunted_World&quot;&gt;there are no dumb questions&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+that &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;17349.The_Demon_Haunted_World&quot;&gt;there are no dumb questions&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;take-initiative&quot;&gt;Take Initiative&lt;&#x2F;h3&gt;
 &lt;p&gt;After asking as many questions as you &lt;strong&gt;possibly&lt;&#x2F;strong&gt; can, it is time to take the
 reins into your hand because after asking enough questions, you’ll eventually
@@ -136,10 +398,10 @@ colleagues don’t know how to solve either.&lt;&#x2F;p&gt;
 &lt;li&gt;And you’ll &lt;strong&gt;have to&lt;&#x2F;strong&gt; figure out (&lt;em&gt;as if your job depends on it—’cuz it
 does 😉&lt;&#x2F;em&gt;).&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;p&gt;Try to challenge yourself to &lt;a href=&quot;https:&#x2F;&#x2F;www.lifehack.org&#x2F;articles&#x2F;communication&#x2F;this-what-happens-when-you-move-out-your-comfort-zone.html&quot;&gt;&lt;strong&gt;move out of your comfort
+&lt;p&gt;Try to challenge yourself to &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.lifehack.org&#x2F;articles&#x2F;communication&#x2F;this-what-happens-when-you-move-out-your-comfort-zone.html&quot;&gt;&lt;strong&gt;move out of your comfort
 zone&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;Screw everything. Get your pieces together.
-&lt;a href=&quot;https:&#x2F;&#x2F;www.heysigmund.com&#x2F;why-what-you-focus-on-is-what-becomes-powerful-why-your-thoughts-and-feelings-matter&#x2F;&quot;&gt;&lt;strong&gt;Focus&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.heysigmund.com&#x2F;why-what-you-focus-on-is-what-becomes-powerful-why-your-thoughts-and-feelings-matter&#x2F;&quot;&gt;&lt;strong&gt;Focus&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
 and solve that problem.&lt;&#x2F;p&gt;
 &lt;p&gt;Rinse and repeat this process, and you’ll be a domain expert in no time 🤓!&lt;&#x2F;p&gt;
 &lt;p&gt;I’m not kidding. And it’s not &lt;strong&gt;that&lt;&#x2F;strong&gt; hard.&lt;&#x2F;p&gt;
@@ -155,16 +417,16 @@ yourself up, sharing your experience, asking others’ opinions takes you a long
 way.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;you-are-not-your-code&quot;&gt;You Are not Your Code&lt;&#x2F;h2&gt;
 &lt;p&gt;“&lt;em&gt;You&lt;&#x2F;em&gt;” and “&lt;em&gt;your code&lt;&#x2F;em&gt;” are
-&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Orthogonality&quot;&gt;&lt;strong&gt;orthogonal&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; to each other.&lt;&#x2F;p&gt;
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Orthogonality&quot;&gt;&lt;strong&gt;orthogonal&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; to each other.&lt;&#x2F;p&gt;
 &lt;p&gt;There is no shame in sharing your code.&lt;&#x2F;p&gt;
 &lt;p&gt;Share every semicolon you type on your IDE in
-&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;&quot;&gt;&lt;strong&gt;GitHub&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; (&lt;em&gt;or a similar open source code repository of your
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;&quot;&gt;&lt;strong&gt;GitHub&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; (&lt;em&gt;or a similar open source code repository of your
 choice&lt;&#x2F;em&gt;).&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;Whenever you discover something new: &lt;strong&gt;share it&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
 &lt;li&gt;Whenever you have a problem: &lt;strong&gt;yelp for help&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
-&lt;li&gt;Whenever you write code: &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;&quot;&gt;&lt;strong&gt;put it to GitHub&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; or
-&lt;a href=&quot;https:&#x2F;&#x2F;gist.github.com&#x2F;&quot;&gt;&lt;strong&gt;create a Gist&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;Whenever you write code: &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;&quot;&gt;&lt;strong&gt;put it to GitHub&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; or
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;gist.github.com&#x2F;&quot;&gt;&lt;strong&gt;create a Gist&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;code-is-nothing&quot;&gt;Code Is Nothing&lt;&#x2F;h2&gt;
 &lt;p&gt;Don’t be afraid to put the code you write out in the open.&lt;&#x2F;p&gt;
@@ -185,7 +447,7 @@ anyone with the time and inclination can acquire technical proficiency.&lt;&#x2F
 &lt;p&gt;To achieve greatness though, that requires &lt;strong&gt;artistry&lt;&#x2F;strong&gt;. That requires
 &lt;strong&gt;imagination&lt;&#x2F;strong&gt; and &lt;strong&gt;thoughtfulness&lt;&#x2F;strong&gt;, and it’s those qualities that the best
 warriors share, even if, on the surface, they appear entirely different.&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;strong&gt;Christopher Paolini&lt;&#x2F;strong&gt;—&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;7664041-inheritance&quot;&gt;The Inheritance Cycle&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Christopher Paolini&lt;&#x2F;strong&gt;—&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;7664041-inheritance&quot;&gt;The Inheritance Cycle&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;p&gt;Code, in itself, is &lt;strong&gt;nothing&lt;&#x2F;strong&gt;. It is just a &lt;em&gt;tool&lt;&#x2F;em&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;Code is just a tool: Sharing your code, and asking other’s feedback about your
@@ -193,12 +455,12 @@ code will improve you &lt;strong&gt;a lot&lt;&#x2F;strong&gt; as a developer.&lt
 &lt;p&gt;With that kept in mind, here are a few developer communities that you might want
 to join and share your code.&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;stackexchange.com&#x2F;sites&quot;&gt;Stack Exchange&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;&quot;&gt;Mozilla Developer Network (&lt;em&gt;MDN&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;fedsonslack.com&#x2F;&quot;&gt;FEDs on Slack&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;programming&quot;&gt;Reddit&#x2F;Programming&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;dev.to&#x2F;&quot;&gt;dev.to&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;hashnode.com&#x2F;explore&quot;&gt;Hashnode&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;stackexchange.com&#x2F;sites&quot;&gt;Stack Exchange&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;&quot;&gt;Mozilla Developer Network (&lt;em&gt;MDN&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;http:&#x2F;&#x2F;fedsonslack.com&#x2F;&quot;&gt;FEDs on Slack&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;programming&quot;&gt;Reddit&#x2F;Programming&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;dev.to&#x2F;&quot;&gt;dev.to&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;hashnode.com&#x2F;explore&quot;&gt;Hashnode&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;This List is Just a Starting Point&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
@@ -208,42 +470,42 @@ your favorite framework, or your favorite toolchain will reveal at least a dozen
 of quality developer groups that you can join in a heart beat.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;h3 id=&quot;stack-exchange&quot;&gt;Stack Exchange&lt;&#x2F;h3&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;stackexchange.com&#x2F;sites&quot;&gt;Stack Exchange&lt;&#x2F;a&gt; is an absolute must as a
+&lt;p&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;stackexchange.com&#x2F;sites&quot;&gt;Stack Exchange&lt;&#x2F;a&gt; is an absolute must as a
 programmer community site for anyone who is serious about &lt;strong&gt;development&lt;&#x2F;strong&gt; and *
 &lt;em&gt;programming&lt;&#x2F;em&gt;*.&lt;&#x2F;p&gt;
 &lt;p&gt;Don’t just read it. Be a part of it. Participate in its discussions. &lt;strong&gt;Add value
 to it&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;mozilla-developer-network&quot;&gt;Mozilla Developer Network&lt;&#x2F;h3&gt;
 &lt;p&gt;If you’re at all interested in the modern web and the technology stack around
-it &lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;&quot;&gt;Mozilla Developer Network (&lt;em&gt;MDN&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt; is
+it &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;&quot;&gt;Mozilla Developer Network (&lt;em&gt;MDN&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt; is
 the community to join.&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;strong&gt;MDN&lt;&#x2F;strong&gt; also provides a ton of information about all of Mozilla’s products and
 how to use them properly.&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;feds-on-slack&quot;&gt;FEDs on Slack&lt;&#x2F;h3&gt;
 &lt;p&gt;No, they are not the feds that you are thinking about 🙂.&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;a href=&quot;http:&#x2F;&#x2F;fedsonslack.com&#x2F;&quot;&gt;FEDS on Slack&lt;&#x2F;a&gt; is a helpful community for top-notch
+&lt;p&gt;&lt;a rel=&quot;external&quot; href=&quot;http:&#x2F;&#x2F;fedsonslack.com&#x2F;&quot;&gt;FEDS on Slack&lt;&#x2F;a&gt; is a helpful community for top-notch
 front-end developers.&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;a href=&quot;http:&#x2F;&#x2F;fedsonslack.com&#x2F;&quot;&gt;Join there&lt;&#x2F;a&gt;, and actively contribute to the
+&lt;p&gt;&lt;a rel=&quot;external&quot; href=&quot;http:&#x2F;&#x2F;fedsonslack.com&#x2F;&quot;&gt;Join there&lt;&#x2F;a&gt;, and actively contribute to the
 discussions.&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;reddit&quot;&gt;Reddit&lt;&#x2F;h3&gt;
 &lt;p&gt;There are also some subreddits such
-as &lt;a href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;programming&quot;&gt;&lt;code&gt;&#x2F;r&#x2F;programming&lt;&#x2F;code&gt;&lt;&#x2F;a&gt;
-and &lt;a href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;learnprogramming&quot;&gt;&lt;code&gt;&#x2F;r&#x2F;learnprogramming&lt;&#x2F;code&gt;&lt;&#x2F;a&gt; that you
+as &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;programming&quot;&gt;&lt;code&gt;&#x2F;r&#x2F;programming&lt;&#x2F;code&gt;&lt;&#x2F;a&gt;
+and &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;learnprogramming&quot;&gt;&lt;code&gt;&#x2F;r&#x2F;learnprogramming&lt;&#x2F;code&gt;&lt;&#x2F;a&gt; that you
 might want to follow.&lt;&#x2F;p&gt;
 &lt;p&gt;Though reddit is its own universe, don’t get lost in it 😉.&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;dev-to&quot;&gt;dev.to&lt;&#x2F;h3&gt;
 &lt;p&gt;This one is so obvious; it almost hurts that there are people who don’t know it:&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;dev.to&#x2F;&quot;&gt;&lt;strong&gt;dev.to&lt;&#x2F;strong&gt; is a &lt;strong&gt;capable&lt;&#x2F;strong&gt;, &lt;strong&gt;friendly&lt;&#x2F;strong&gt;, and &lt;strong&gt;vibrant&lt;&#x2F;strong&gt; community of
+&lt;p&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;dev.to&#x2F;&quot;&gt;&lt;strong&gt;dev.to&lt;&#x2F;strong&gt; is a &lt;strong&gt;capable&lt;&#x2F;strong&gt;, &lt;strong&gt;friendly&lt;&#x2F;strong&gt;, and &lt;strong&gt;vibrant&lt;&#x2F;strong&gt; community of
 coders&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;If you haven’t joined yet, what are you waiting for?&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;hashnode&quot;&gt;Hashnode&lt;&#x2F;h3&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;hashnode.com&#x2F;explore&quot;&gt;Hashnode&lt;&#x2F;a&gt; is the easiest way to start a developer
+&lt;p&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;hashnode.com&#x2F;explore&quot;&gt;Hashnode&lt;&#x2F;a&gt; is the easiest way to start a developer
 blog on your personal domain for free and &lt;strong&gt;connect&lt;&#x2F;strong&gt; with the readers through
 our global dev community. Like, dev.to, this community is pretty vibrant and
 helpful too.Read the Source, Luke&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Copy&lt;&#x2F;strong&gt; what others have done before you.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;blog.codinghorror.com&#x2F;learn-to-read-the-source-luke&#x2F;&quot;&gt;Read and &lt;strong&gt;understand&lt;&#x2F;strong&gt; the source code
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;blog.codinghorror.com&#x2F;learn-to-read-the-source-luke&#x2F;&quot;&gt;Read and &lt;strong&gt;understand&lt;&#x2F;strong&gt; the source code
 piece by piece&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;li&gt;And then, and only then, &lt;strong&gt;replicate&lt;&#x2F;strong&gt; it your own way.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
@@ -280,13 +542,13 @@ get at it.&lt;&#x2F;p&gt;
 &lt;p&gt;The more you read, the better you’ll get the hang of the &lt;strong&gt;logical constructs&lt;&#x2F;strong&gt;,
 the &lt;strong&gt;terminology&lt;&#x2F;strong&gt;, the &lt;strong&gt;concepts&lt;&#x2F;strong&gt;, and the overall &lt;strong&gt;program flow&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;In addition to all these, reading open source code &lt;strong&gt;teaches&lt;&#x2F;strong&gt; you how to
-write &lt;a href=&quot;http:&#x2F;&#x2F;wiki.c2.com&#x2F;?CodingConvention&quot;&gt;by using the conventions and idioms of the
+write &lt;a rel=&quot;external&quot; href=&quot;http:&#x2F;&#x2F;wiki.c2.com&#x2F;?CodingConvention&quot;&gt;by using the conventions and idioms of the
 language&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;add-value-to-the-community&quot;&gt;Add Value to The Community&lt;&#x2F;h2&gt;
 &lt;p&gt;As a follow-up to the above “&lt;em&gt;Share Your Knowledge with the Community&lt;&#x2F;em&gt;”
 guideline, &lt;strong&gt;the more you add value to the community, the more value you
 receive&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
-&lt;p&gt;The least you can do to add value is to &lt;a href=&quot;https:&#x2F;&#x2F;opensource.guide&#x2F;how-to-contribute&#x2F;&quot;&gt;contribute to the
+&lt;p&gt;The least you can do to add value is to &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;opensource.guide&#x2F;how-to-contribute&#x2F;&quot;&gt;contribute to the
 &lt;strong&gt;open source&lt;&#x2F;strong&gt; community&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;By adding value to the &lt;strong&gt;open source&lt;&#x2F;strong&gt; community you’ll…&lt;&#x2F;p&gt;
 &lt;ul&gt;
@@ -316,50 +578,50 @@ like solving problems.&lt;&#x2F;p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Hi, I am Chris. I coded 17 years JavaScript and wrote books and articles.
 Without looking things up
-and &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;code?ref_src=twsrc%5Etfw&quot;&gt;@code&lt;&#x2F;a&gt;
+and &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;code?ref_src=twsrc%5Etfw&quot;&gt;@code&lt;&#x2F;a&gt;
 autocomplete, It’d be lost.&lt;&#x2F;p&gt;
-&lt;p&gt;— Chris Heilmann (@codepo8) &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;codepo8&#x2F;status&#x2F;835986409890672640?ref_src=twsrc%5Etfw&quot;&gt;February 26, 2017&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;— Chris Heilmann (@codepo8) &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;codepo8&#x2F;status&#x2F;835986409890672640?ref_src=twsrc%5Etfw&quot;&gt;February 26, 2017&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Hi, I’m Michael. I’ve been writing JavaScript since 2001 and I still have to
 look up how to remove whitespace from a
-string. &lt;a href=&quot;https:&#x2F;&#x2F;t.co&#x2F;obYoCzKe3b&quot;&gt;https:&#x2F;&#x2F;t.co&#x2F;obYoCzKe3b&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;p&gt;— Michael Bleigh (@mbleigh) &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;mbleigh&#x2F;status&#x2F;835942125992759296?ref_src=twsrc%5Etfw&quot;&gt;February 26, 2017&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+string. &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;t.co&#x2F;obYoCzKe3b&quot;&gt;https:&#x2F;&#x2F;t.co&#x2F;obYoCzKe3b&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;— Michael Bleigh (@mbleigh) &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;mbleigh&#x2F;status&#x2F;835942125992759296?ref_src=twsrc%5Etfw&quot;&gt;February 26, 2017&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Hello, I’m Malte. In 6 years at Google I had to code 3 advanced algorithms.
-Looked them up on Wikipedia. &lt;a href=&quot;https:&#x2F;&#x2F;t.co&#x2F;BTH3I4TpTO&quot;&gt;https:&#x2F;&#x2F;t.co&#x2F;BTH3I4TpTO&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;p&gt;— Malte Ubl (@cramforce) &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;cramforce&#x2F;status&#x2F;835976913160056833?ref_src=twsrc%5Etfw&quot;&gt;February 26, 2017&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+Looked them up on Wikipedia. &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;t.co&#x2F;BTH3I4TpTO&quot;&gt;https:&#x2F;&#x2F;t.co&#x2F;BTH3I4TpTO&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;— Malte Ubl (@cramforce) &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;cramforce&#x2F;status&#x2F;835976913160056833?ref_src=twsrc%5Etfw&quot;&gt;February 26, 2017&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Hi I’m Dan, and I work on Polymer. The other day, I had to read the docs for
 how to use Polymer’s data
-binding. &lt;a href=&quot;https:&#x2F;&#x2F;t.co&#x2F;MarTrxsiKL&quot;&gt;https:&#x2F;&#x2F;t.co&#x2F;MarTrxsiKL&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;p&gt;— Dan Freedman (@danfreedman) &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;danfreedman&#x2F;status&#x2F;835978986505166849?ref_src=twsrc%5Etfw&quot;&gt;February 26, 2017&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+binding. &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;t.co&#x2F;MarTrxsiKL&quot;&gt;https:&#x2F;&#x2F;t.co&#x2F;MarTrxsiKL&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;— Dan Freedman (@danfreedman) &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;danfreedman&#x2F;status&#x2F;835978986505166849?ref_src=twsrc%5Etfw&quot;&gt;February 26, 2017&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Hi, my name is Sean. I maintain ORMs for a living but have to google the
 CREATE TABLE syntax every time I do it in
-SQL. &lt;a href=&quot;https:&#x2F;&#x2F;t.co&#x2F;TP8A2IKjjx&quot;&gt;https:&#x2F;&#x2F;t.co&#x2F;TP8A2IKjjx&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;p&gt;— Spooky Sage Griffin 🏳️‍⚧️🏳️‍🌈 (@sgrif) &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;sgrif&#x2F;status&#x2F;835929896794882048?ref_src=twsrc%5Etfw&quot;&gt;February 26, 2017&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+SQL. &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;t.co&#x2F;TP8A2IKjjx&quot;&gt;https:&#x2F;&#x2F;t.co&#x2F;TP8A2IKjjx&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;— Spooky Sage Griffin 🏳️‍⚧️🏳️‍🌈 (@sgrif) &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;sgrif&#x2F;status&#x2F;835929896794882048?ref_src=twsrc%5Etfw&quot;&gt;February 26, 2017&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Hi, my name is Sarah. I’ve been writing Rails code since 2006, and I still
 get `has_one` and `belongs_to`
-confused. &lt;a href=&quot;https:&#x2F;&#x2F;t.co&#x2F;NFA4uEmiSz&quot;&gt;https:&#x2F;&#x2F;t.co&#x2F;NFA4uEmiSz&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;p&gt;— Sarah Mei (@sarahmei) &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;sarahmei&#x2F;status&#x2F;835927143833985024?ref_src=twsrc%5Etfw&quot;&gt;February 26, 2017&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+confused. &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;t.co&#x2F;NFA4uEmiSz&quot;&gt;https:&#x2F;&#x2F;t.co&#x2F;NFA4uEmiSz&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;— Sarah Mei (@sarahmei) &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;sarahmei&#x2F;status&#x2F;835927143833985024?ref_src=twsrc%5Etfw&quot;&gt;February 26, 2017&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Hi, my name is Harper. I have programmed computers since the 90s and still
 have google to split a string. Or the correct args for
-ln. &lt;a href=&quot;https:&#x2F;&#x2F;t.co&#x2F;zV7WxrqHc8&quot;&gt;https:&#x2F;&#x2F;t.co&#x2F;zV7WxrqHc8&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;p&gt;— harper 🤯 (@harper) &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;harper&#x2F;status&#x2F;835979694264680448?ref_src=twsrc%5Etfw&quot;&gt;February 26, 2017&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+ln. &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;t.co&#x2F;zV7WxrqHc8&quot;&gt;https:&#x2F;&#x2F;t.co&#x2F;zV7WxrqHc8&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;— harper 🤯 (@harper) &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;harper&#x2F;status&#x2F;835979694264680448?ref_src=twsrc%5Etfw&quot;&gt;February 26, 2017&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Hi. My name is Erin. I’ve been writing JavaScript for 16 years and I still
 have to look up the function signature for
-Array.splice. &lt;a href=&quot;https:&#x2F;&#x2F;t.co&#x2F;OaxYz1K7Xx&quot;&gt;https:&#x2F;&#x2F;t.co&#x2F;OaxYz1K7Xx&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;p&gt;— she builds their fires (@ErinIshimoticha) &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;ErinIshimoticha&#x2F;status&#x2F;835981374309941249?ref_src=twsrc%5Etfw&quot;&gt;February 26, 2017&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+Array.splice. &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;t.co&#x2F;OaxYz1K7Xx&quot;&gt;https:&#x2F;&#x2F;t.co&#x2F;OaxYz1K7Xx&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;— she builds their fires (@ErinIshimoticha) &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;ErinIshimoticha&#x2F;status&#x2F;835981374309941249?ref_src=twsrc%5Etfw&quot;&gt;February 26, 2017&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;p&gt;Looking things up is &lt;strong&gt;not&lt;&#x2F;strong&gt; a shame.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;to-learn-learn-to-learn-first&quot;&gt;To Learn, “&lt;em&gt;Learn to Learn&lt;&#x2F;em&gt;” First&lt;&#x2F;h2&gt;
@@ -376,7 +638,7 @@ design patterns, or those interview questions and algorithmic puzzles.&lt;&#x2F;
 &lt;p&gt;&lt;strong&gt;Don’t Memorize What You Can Look Up&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
 There is no reason to memorize anything as long as you can look it up.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
-&lt;p&gt;On the other hand, &lt;a href=&quot;https:&#x2F;&#x2F;www.sciencedirect.com&#x2F;science&#x2F;article&#x2F;pii&#x2F;S0020737369800246&quot;&gt;your &lt;strong&gt;wetware&lt;&#x2F;strong&gt; is a Yoda-level-master at &lt;strong&gt;pattern
+&lt;p&gt;On the other hand, &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.sciencedirect.com&#x2F;science&#x2F;article&#x2F;pii&#x2F;S0020737369800246&quot;&gt;your &lt;strong&gt;wetware&lt;&#x2F;strong&gt; is a Yoda-level-master at &lt;strong&gt;pattern
 recognition&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;strong&gt;Expose&lt;&#x2F;strong&gt; your wetware to as many patterns and variations as you can, and let
 your subconscious do the rest of the job.&lt;&#x2F;p&gt;
@@ -387,7 +649,7 @@ have done before you:&lt;&#x2F;p&gt;
 &lt;p&gt;Imitate people you admire to be, to be like them.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;h2 id=&quot;you-learn-by-imitation&quot;&gt;You Learn by Imitation&lt;&#x2F;h2&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.jstor.org&#x2F;stable&#x2F;2762020&quot;&gt;You learn by imitation&lt;&#x2F;a&gt;: Learning
+&lt;p&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.jstor.org&#x2F;stable&#x2F;2762020&quot;&gt;You learn by imitation&lt;&#x2F;a&gt;: Learning
 software is no exception to that.&lt;&#x2F;p&gt;
 &lt;p&gt;Learning how to name variables, or how to create a folder structure, or how to
 couple different modules of your code together, how to document your code… is
@@ -435,7 +697,7 @@ source frameworks that you love: The transition will feel much easier then.&lt;&
 &lt;p&gt;After you get used to the codebase, it’ll start to feel familiar, and then can
 you find a chance to dig in further.&lt;&#x2F;p&gt;
 &lt;p&gt;When you feel you are familiar enough with the codebase,
-&lt;a href=&quot;https:&#x2F;&#x2F;help.github.com&#x2F;en&#x2F;github&#x2F;getting-started-with-github&#x2F;fork-a-repo&quot;&gt;&lt;strong&gt;fork&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;help.github.com&#x2F;en&#x2F;github&#x2F;getting-started-with-github&#x2F;fork-a-repo&quot;&gt;&lt;strong&gt;fork&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
 the project on your development environment, then &lt;strong&gt;build&lt;&#x2F;strong&gt; it, and then **debug
 ** it to &lt;strong&gt;understand&lt;&#x2F;strong&gt; how its different pieces of the code interact with each
 other.&lt;&#x2F;p&gt;
@@ -473,13 +735,13 @@ lie.&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Repetition&lt;&#x2F;strong&gt;,&lt;&#x2F;li&gt;
 &lt;li&gt;Routines,&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;blogsociology.wordpress.com&#x2F;tag&#x2F;habitualization&#x2F;&quot;&gt;Habitualization&lt;&#x2F;a&gt; *,&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;blogsociology.wordpress.com&#x2F;tag&#x2F;habitualization&#x2F;&quot;&gt;Habitualization&lt;&#x2F;a&gt; *,&lt;&#x2F;li&gt;
 &lt;li&gt;Dedication,&lt;&#x2F;li&gt;
 &lt;li&gt;A hell lot of perspiration,&lt;&#x2F;li&gt;
 &lt;li&gt;And &lt;strong&gt;repetition&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;blockquote&gt;
-&lt;p&gt;* “&lt;a href=&quot;https:&#x2F;&#x2F;blogsociology.wordpress.com&#x2F;tag&#x2F;habitualization&#x2F;&quot;&gt;Habitualization&lt;&#x2F;a&gt;”
+&lt;p&gt;* “&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;blogsociology.wordpress.com&#x2F;tag&#x2F;habitualization&#x2F;&quot;&gt;Habitualization&lt;&#x2F;a&gt;”
 is just a big fancy word for creating habits based on stimulation in your
 environment.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
@@ -496,7 +758,7 @@ for that.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;beat-the-out-of-the-impostor-in-you&quot;&gt;Beat the $#!% Out of the Impostor in You&lt;&#x2F;h2&gt;
 &lt;p&gt;From time to time, you may feel that you are lagging behind, or you don’t know
 as much as your colleagues—That is a well-documented psychological phenomenon
-called &lt;a href=&quot;https:&#x2F;&#x2F;www.fastcompany.com&#x2F;40421352&#x2F;the-five-types-of-impostor-syndrome-and-how-to-beat-them&quot;&gt;the impostor’s syndrome&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+called &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.fastcompany.com&#x2F;40421352&#x2F;the-five-types-of-impostor-syndrome-and-how-to-beat-them&quot;&gt;the impostor’s syndrome&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;You might get a feeling that you are just lucky to be in your place. You might
 feel that you don’t deserve your place.&lt;&#x2F;p&gt;
 &lt;p&gt;You know what? That’s complete and utter 🐴 💩.&lt;&#x2F;p&gt;
@@ -526,7 +788,7 @@ when you need to learn things—That’s okay.&lt;&#x2F;p&gt;
 &lt;p&gt;Also, even if you do have to, you don’t have to learn all of it… like… right
 now 😁—Cut yourself some slack. &lt;strong&gt;Give yourself the time you deserve&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;If you are still not sure how to act like
-that, &lt;a href=&quot;https:&#x2F;&#x2F;www.fastcompany.com&#x2F;40421352&#x2F;the-five-types-of-impostor-syndrome-and-how-to-beat-them&quot;&gt;this article gives a couple of tips and
+that, &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.fastcompany.com&#x2F;40421352&#x2F;the-five-types-of-impostor-syndrome-and-how-to-beat-them&quot;&gt;this article gives a couple of tips and
 tricks&lt;&#x2F;a&gt;
 on how to beat the impostor in you.&lt;&#x2F;p&gt;
 &lt;p&gt;After the fact that you are better than you think you are is set straight, we
@@ -626,7 +888,7 @@ pass a technical interview is a waste of time. This is a a subtle, yet
 importance difference.&lt;&#x2F;p&gt;
 &lt;p&gt;Don’t learn &lt;strong&gt;data structures&lt;&#x2F;strong&gt; and &lt;strong&gt;algorithms&lt;&#x2F;strong&gt; for the sake of studying for
 interviews. Learn them &lt;strong&gt;because&lt;&#x2F;strong&gt; it makes you a &lt;strong&gt;better&lt;&#x2F;strong&gt; programmer.&lt;&#x2F;p&gt;
-&lt;p&gt;Regardless, studying &lt;a href=&quot;https:&#x2F;&#x2F;projecteuler.net&#x2F;&quot;&gt;&lt;em&gt;competitive programming questions&lt;&#x2F;em&gt;&lt;&#x2F;a&gt;
+&lt;p&gt;Regardless, studying &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;projecteuler.net&#x2F;&quot;&gt;&lt;em&gt;competitive programming questions&lt;&#x2F;em&gt;&lt;&#x2F;a&gt;
 will help you in your programming interviews. There are even shortcuts (&lt;em&gt;like
 websites like leetcode&lt;&#x2F;em&gt;) that help you practice your algorithmic chops.&lt;&#x2F;p&gt;
 &lt;p&gt;Yet, that’s not the point. &lt;strong&gt;Do not take shortcuts&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
@@ -637,14 +899,14 @@ them.&lt;&#x2F;p&gt;
 &lt;p&gt;Learn what the &lt;strong&gt;liabilities&lt;&#x2F;strong&gt; of using specific data structures are.&lt;&#x2F;p&gt;
 &lt;p&gt;Here are two excellent (&lt;em&gt;and free&lt;&#x2F;em&gt;) resources to learn your algorithms:&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;cses.fi&#x2F;book&#x2F;index.html&quot;&gt;Competitive Programmer’s Handbook&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;teachyourselfcs.com&#x2F;&quot;&gt;Teach Yourself CS&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;cses.fi&#x2F;book&#x2F;index.html&quot;&gt;Competitive Programmer’s Handbook&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;teachyourselfcs.com&#x2F;&quot;&gt;Teach Yourself CS&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;Aside from them, I’d suggest reading these two books &lt;strong&gt;cover-to-cover&lt;&#x2F;strong&gt;, not
 skipping anything. Genuinely ingest everything in them:&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;425208.The_Algorithm_Design_Manual&quot;&gt;The Algorithm Design Manual—S. Skiena&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;108986.Introduction_to_Algorithms&quot;&gt;Introduction to Algorithms—Cormen, et., al.&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;425208.The_Algorithm_Design_Manual&quot;&gt;The Algorithm Design Manual—S. Skiena&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;108986.Introduction_to_Algorithms&quot;&gt;Introduction to Algorithms—Cormen, et., al.&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;There are other books too, and you can investigate them on your own. Though,
 these two books will cover all your algorithm bases.&lt;&#x2F;p&gt;
@@ -656,21 +918,21 @@ these two books will cover all your algorithm bases.&lt;&#x2F;p&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;That might sound “&lt;em&gt;too meta&lt;&#x2F;em&gt;”, so let me elaborate:&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;strong&gt;Learning to learn&lt;&#x2F;strong&gt; is easier said than done because to “&lt;em&gt;learn to learn&lt;&#x2F;em&gt;”,
-you have to &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Know_thyself&quot;&gt;&lt;strong&gt;know yourself&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+you have to &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Know_thyself&quot;&gt;&lt;strong&gt;know yourself&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
 first—you have to have an idea of what type of a learner you are: There is
 no “&lt;em&gt;one size fits all&lt;&#x2F;em&gt;” solution in learning.&lt;&#x2F;p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;“Every fighter has a different way of eating yogurt.”&lt;&#x2F;p&gt;
 &lt;p&gt;— Turkish proverb&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
-&lt;p&gt;Are you an &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Inductive_reasoning&quot;&gt;&lt;strong&gt;inductive learner&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+&lt;p&gt;Are you an &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Inductive_reasoning&quot;&gt;&lt;strong&gt;inductive learner&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
 who starts with the foundation and understands the bigger picture by
 connecting pieces together.&lt;&#x2F;p&gt;
-&lt;p&gt;Alternatively, are you a &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Deductive_reasoning&quot;&gt;&lt;strong&gt;deductive learner&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+&lt;p&gt;Alternatively, are you a &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Deductive_reasoning&quot;&gt;&lt;strong&gt;deductive learner&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
 who likes to see a working system as a whole, only to split it into is building
 blocks recursively, and understand each piece until there is nothing left to
 split apart.&lt;&#x2F;p&gt;
-&lt;p&gt;Are you a &lt;a href=&quot;https:&#x2F;&#x2F;www.thestudygurus.com&#x2F;visual-study-tips&#x2F;&quot;&gt;&lt;strong&gt;visual learner&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;?
+&lt;p&gt;Are you a &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.thestudygurus.com&#x2F;visual-study-tips&#x2F;&quot;&gt;&lt;strong&gt;visual learner&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;?
 Do you use flashcards? Do you want to draw things on a whiteboard? Do you want to
 look at things “&lt;em&gt;from a different perspective&lt;&#x2F;em&gt;” to “&lt;em&gt;get the hang of it&lt;&#x2F;em&gt;.” Do
 you understand things best when you have a “&lt;em&gt;clear picture&lt;&#x2F;em&gt;” in your mind?&lt;&#x2F;p&gt;
@@ -698,7 +960,7 @@ you’ll get.&lt;&#x2F;p&gt;
 &lt;p&gt;Take “&lt;em&gt;reading others’ code&lt;&#x2F;em&gt;” for example. Do you have a problem reading others’
 code? Then attack the problem right at its heart:&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Pick&lt;&#x2F;strong&gt; a few open source projects from &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;&quot;&gt;GitHub&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Pick&lt;&#x2F;strong&gt; a few open source projects from &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;&quot;&gt;GitHub&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;strong&gt;Read&lt;&#x2F;strong&gt; the code in there until your eyes bleed.&lt;&#x2F;li&gt;
 &lt;li&gt;Then &lt;strong&gt;read some more&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
@@ -784,10 +1046,13 @@ update itself automatically as I add more resources and articles later:&lt;&#x2F
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;typography&#x2F;&quot;&gt;Get Better at Typography&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;what-the-junior-actually-needs&#x2F;&quot;&gt;The Bottleneck Moved. The Work Did Not.&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
 &lt;p&gt;If you have been patient enough to read to the end of this article without
-skipping anything, &lt;a href=&quot;https:&#x2F;&#x2F;www.nngroup.com&#x2F;articles&#x2F;how-little-do-users-read&#x2F;&quot;&gt;you are better than 75% the world
+skipping anything, &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.nngroup.com&#x2F;articles&#x2F;how-little-do-users-read&#x2F;&quot;&gt;you are better than 75% the world
 already&lt;&#x2F;a&gt;.
 Congratulations.&lt;&#x2F;p&gt;
 &lt;p&gt;Learning is a never-ending journey. And learning is also a way to &lt;strong&gt;find
@@ -1177,7 +1442,7 @@ create another video that walks through the new login flow.&lt;&#x2F;p&gt;
         
         <content type="html" xml:base="https://zerotohero.dev/top-of-mind/catch-22/">&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;size&#x2F;w1200&#x2F;2024&#x2F;03&#x2F;catch22.png&quot; alt=&quot;Catch 22&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;there-is-no-way-out&quot;&gt;There Is No Way Out&lt;&#x2F;h2&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Catch-22&quot;&gt;Joseph Heller wrote the novel Catch 22&lt;&#x2F;a&gt;,
+&lt;p&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Catch-22&quot;&gt;Joseph Heller wrote the novel Catch 22&lt;&#x2F;a&gt;,
 first published in 1961. The term “&lt;strong&gt;&lt;em&gt;Catch 22&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;” is derived from a concept
 within the book that symbolizes a situation where there is no way to win or
 resolve due to conflicting rules or conditions.&lt;&#x2F;p&gt;
@@ -1191,7 +1456,7 @@ themselves stuck in a quandary.&lt;&#x2F;p&gt;
 &lt;p&gt;While “&lt;strong&gt;22&lt;&#x2F;strong&gt;” doesn’t hold any meaning, Heller likely chose it for its humorous
 sound. Initially named “&lt;em&gt;Catch 18&lt;&#x2F;em&gt;”, Heller altered it to “&lt;strong&gt;Catch 22&lt;&#x2F;strong&gt;” after
 discovering another book
-titled “&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Mila_18&quot;&gt;Mila 18&lt;&#x2F;a&gt;” had been published
+titled “&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Mila_18&quot;&gt;Mila 18&lt;&#x2F;a&gt;” had been published
 concurrently to avoid confusion.&lt;&#x2F;p&gt;
 &lt;p&gt;Since the book was released, the phrase “Catch 22” has become part of English,
 describing a situation in which one is stuck and can’t find a way out due to
@@ -1270,7 +1535,7 @@ conflicting rules or circumstances.&lt;&#x2F;p&gt;
         <content type="html" xml:base="https://zerotohero.dev/top-of-mind/dumb-quotes/">&lt;p&gt;&lt;img src=&quot;&#x2F;content&#x2F;images&#x2F;size&#x2F;w1200&#x2F;2024&#x2F;03&#x2F;typography-1.png&quot; alt=&quot;Embracing Simplicity: Why I’ve Given Up on Smart Quotes–and Other Typographic Niceties&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Before you begin, for the
-interested, &lt;a href=&quot;https:&#x2F;&#x2F;smartquotesforsmartpeople.com&#x2F;&quot;&gt;here’s a reference that explains what smart and dumb quotes are&lt;&#x2F;a&gt;:&lt;br &#x2F;&gt;
+interested, &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;smartquotesforsmartpeople.com&#x2F;&quot;&gt;here’s a reference that explains what smart and dumb quotes are&lt;&#x2F;a&gt;:&lt;br &#x2F;&gt;
 ““Smart quotes” are the ideal form of quotation marks and apostrophes, and are
 commonly curly or sloped. “Dumb quotes,” or straight quotes, are a vestigial
 constraint from typewriters when using one key for two different marks helped
@@ -1308,7 +1573,7 @@ display as &lt;code&gt;&quot;I enjoy typography...&quot;&lt;&#x2F;code&gt;.&lt;&
 &lt;&#x2F;ul&gt;
 &lt;p&gt;In short, &lt;strong&gt;using dumb typography everywhere is (&lt;em&gt;ironically&lt;&#x2F;em&gt;) a smart way&lt;&#x2F;strong&gt; for
 me to move forward.&lt;&#x2F;p&gt;
-&lt;p&gt;Furthermore, all the other AI-powered spell-checking tools (&lt;em&gt;yes,&lt;&#x2F;em&gt; &lt;a href=&quot;https:&#x2F;&#x2F;www.grammarly.com&#x2F;&quot;&gt;
+&lt;p&gt;Furthermore, all the other AI-powered spell-checking tools (&lt;em&gt;yes,&lt;&#x2F;em&gt; &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.grammarly.com&#x2F;&quot;&gt;
 &lt;em&gt;Grammarly&lt;&#x2F;em&gt;&lt;&#x2F;a&gt;&lt;em&gt;, I’m looking at you!&lt;&#x2F;em&gt;) default to dumb
 quotes no matter how hard I try to convince them otherwise: Each time I make a
 change in my text, rewriting with an AI-suggested clarification, I have to
@@ -1652,12 +1917,12 @@ through blogging&lt;&#x2F;em&gt;).&lt;&#x2F;p&gt;
 shared: If you want to monetize your content, it’s on your own terms; if you
 don’t, no external party can enforce it.&lt;&#x2F;p&gt;
 &lt;p&gt;That’s why I’m sharing my thoughts on this blog,
-using &lt;a href=&quot;https:&#x2F;&#x2F;ghost.org&#x2F;&quot;&gt;&lt;strong&gt;Ghost&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; as a platform. If you don’t prefer to
+using &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;ghost.org&#x2F;&quot;&gt;&lt;strong&gt;Ghost&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; as a platform. If you don’t prefer to
 use Ghost, there are many choices you can pick from. But please, pretty please,
 if you value your content, don’t post it to a place you don’t own.&lt;&#x2F;p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Update: 2025-05-21&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
-&lt;p&gt;I started using &lt;a href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;&quot;&gt;Zola&lt;&#x2F;a&gt; for this blog instead
+&lt;p&gt;I started using &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;&quot;&gt;Zola&lt;&#x2F;a&gt; for this blog instead
 of Ghost, but the main premise of owning your content remains the same.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;h2 id=&quot;why-i-use-ghost&quot;&gt;Why I Use Ghost?&lt;&#x2F;h2&gt;
@@ -1676,7 +1941,7 @@ middle.&lt;&#x2F;p&gt;
 &lt;p&gt;In today’s world, the ability to innovate, customize, and communicate freely is
 not a choice but a &lt;strong&gt;fundamental principle&lt;&#x2F;strong&gt; that should be honored.&lt;&#x2F;p&gt;
 &lt;p&gt;And, I don’t even have to host Ghost. Because I value my time, I
-use &lt;a href=&quot;https:&#x2F;&#x2F;ghost.org&#x2F;pricing&#x2F;&quot;&gt;Ghost’s managed solution&lt;&#x2F;a&gt;. This eases the
+use &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;ghost.org&#x2F;pricing&#x2F;&quot;&gt;Ghost’s managed solution&lt;&#x2F;a&gt;. This eases the
 responsibilities of server maintenance, updates, and security management. It’s a
 perfect option because I want to prioritize content creation to infrastructure
 management.&lt;&#x2F;p&gt;
@@ -1702,9 +1967,9 @@ professionally&lt;&#x2F;strong&gt;. It gives you the freedom to &lt;strong&gt;ex
 audience—a &lt;strong&gt;priceless&lt;&#x2F;strong&gt; experience.&lt;&#x2F;p&gt;
 &lt;p&gt;With tools and platforms tailored for creators, the barriers to getting started
 have never been lower. You don’t have to use Ghost; use
-something, &lt;a href=&quot;https:&#x2F;&#x2F;jekyllrb.com&#x2F;&quot;&gt;Jekyll&lt;&#x2F;a&gt;,
-&lt;a href=&quot;https:&#x2F;&#x2F;wordpress.org&#x2F;&quot;&gt;WordPress&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;www.drupal.org&#x2F;&quot;&gt;Drupal&lt;&#x2F;a&gt;,
-&lt;a href=&quot;https:&#x2F;&#x2F;www.gatsbyjs.com&#x2F;&quot;&gt;Gatsby&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;nextjs.org&#x2F;&quot;&gt;Next&lt;&#x2F;a&gt;…
+something, &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;jekyllrb.com&#x2F;&quot;&gt;Jekyll&lt;&#x2F;a&gt;,
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;wordpress.org&#x2F;&quot;&gt;WordPress&lt;&#x2F;a&gt;, &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.drupal.org&#x2F;&quot;&gt;Drupal&lt;&#x2F;a&gt;,
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.gatsbyjs.com&#x2F;&quot;&gt;Gatsby&lt;&#x2F;a&gt;, &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;nextjs.org&#x2F;&quot;&gt;Next&lt;&#x2F;a&gt;…
 Your options are countless. I’m sure you can find one that fits your unique
 needs.&lt;&#x2F;p&gt;
 &lt;p&gt;Owning your platform allows you to focus on what counts;
@@ -1758,8 +2023,8 @@ creating &lt;strong&gt;valuable&lt;&#x2F;strong&gt; and &lt;strong&gt;meaningful
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Update: 2024-05-21&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;p&gt;After publishing this article, I did yet another brand-new overhaul of
-design based on &lt;a href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;&quot;&gt;Zola&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
-&lt;p&gt;This also resulted in moving the blog from a managed &lt;a href=&quot;https:&#x2F;&#x2F;ghost.org&#x2F;&quot;&gt;Ghost&lt;&#x2F;a&gt;
+design based on &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;&quot;&gt;Zola&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;This also resulted in moving the blog from a managed &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;ghost.org&#x2F;&quot;&gt;Ghost&lt;&#x2F;a&gt;
 instance to a self-hosted static site, which brought &lt;strong&gt;a lot&lt;&#x2F;strong&gt; of changes.&lt;&#x2F;p&gt;
 &lt;p&gt;I am going to write a more detailed blog post about it soon. Stay tuned!&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
@@ -2013,13 +2278,13 @@ is critical to ensuring sensitive information’s security and integrity. While
 several solutions are available, the recent shift in HashiCorp’s licensing
 towards a Business Source License (BSL) has raised concerns and sparked
 discussions within the community.&lt;&#x2F;p&gt;
-&lt;p&gt;As the lead architect of &lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;&quot;&gt;&lt;strong&gt;VMware Secrets Manager&lt;&#x2F;strong&gt; (&lt;strong&gt;&lt;em&gt;VSecM&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;)&lt;&#x2F;a&gt;,
+&lt;p&gt;As the lead architect of &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;&quot;&gt;&lt;strong&gt;VMware Secrets Manager&lt;&#x2F;strong&gt; (&lt;strong&gt;&lt;em&gt;VSecM&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;)&lt;&#x2F;a&gt;,
 I’d like to take this opportunity to introduce our solution, which offers a robust,
 flexible, and &lt;strong&gt;permissive&lt;&#x2F;strong&gt; alternative to HashiCorp’s Vault.&lt;&#x2F;p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;⭐️ Star Us on GitHub ⭐️&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;p&gt;If you find value in our approach and want to help others discover this
-outstanding technology, &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;vmware-tanzu&#x2F;secrets-manager&quot;&gt;&lt;strong&gt;star our GitHub
+outstanding technology, &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;vmware-tanzu&#x2F;secrets-manager&quot;&gt;&lt;strong&gt;star our GitHub
 repository&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;. Your support helps
 increase visibility and encourages more collaboration and innovation within the
 community.&lt;&#x2F;p&gt;
@@ -2029,23 +2294,23 @@ community.&lt;&#x2F;p&gt;
 as a restrictive move. The BSL, unlike open-source licenses, imposes certain
 limitations and conditions that may not align with the needs and values of all
 organizations and developers.&lt;&#x2F;p&gt;
-&lt;p&gt;In contrast, &lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;&quot;&gt;&lt;strong&gt;VMware Secrets Manager&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; is licensed under
+&lt;p&gt;In contrast, &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;&quot;&gt;&lt;strong&gt;VMware Secrets Manager&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; is licensed under
 the BSD 2-Clause License, a permissive open-source license that encourages
 collaboration, innovation, and freedom of use.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;vmware-secrets-manager-a-closer-look&quot;&gt;VMware Secrets Manager: A Closer Look&lt;&#x2F;h2&gt;
 &lt;p&gt;&lt;strong&gt;VSecM&lt;&#x2F;strong&gt; is designed with modern developers and DevOps professionals in mind.
 Here’s why it stands out:&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Ease of Use&lt;&#x2F;strong&gt;: With a &lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;docs&#x2F;quickstart&#x2F;&quot;&gt;&lt;strong&gt;Quickstart Guide&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;,
-intuitive &lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;docs&#x2F;cli&#x2F;&quot;&gt;&lt;strong&gt;CLI&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, and developer-friendly
-&lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;docs&#x2F;sdk&#x2F;&quot;&gt;&lt;strong&gt;SDK&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, &lt;strong&gt;VSecM&lt;&#x2F;strong&gt; simplifies secrets management
+&lt;li&gt;&lt;strong&gt;Ease of Use&lt;&#x2F;strong&gt;: With a &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;docs&#x2F;quickstart&#x2F;&quot;&gt;&lt;strong&gt;Quickstart Guide&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;,
+intuitive &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;docs&#x2F;cli&#x2F;&quot;&gt;&lt;strong&gt;CLI&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, and developer-friendly
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;docs&#x2F;sdk&#x2F;&quot;&gt;&lt;strong&gt;SDK&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, &lt;strong&gt;VSecM&lt;&#x2F;strong&gt; simplifies secrets management
 without compromising security.&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;strong&gt;Kubernetes Is a First-Class Citizen&lt;&#x2F;strong&gt;: &lt;strong&gt;VSecM&lt;&#x2F;strong&gt; seamlessly integrates with
-Kubernetes, leveraging &lt;a href=&quot;https:&#x2F;&#x2F;spiffe.io&#x2F;docs&#x2F;latest&#x2F;spire-about&#x2F;&quot;&gt;&lt;strong&gt;SPIRE&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+Kubernetes, leveraging &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;spiffe.io&#x2F;docs&#x2F;latest&#x2F;spire-about&#x2F;&quot;&gt;&lt;strong&gt;SPIRE&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
 for authentication and offering flexible secret storage and transformation
 options.&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;strong&gt;Community Engagement&lt;&#x2F;strong&gt;: We believe in open collaboration and
-community-driven development. Our &lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;docs&#x2F;contributing&#x2F;&quot;&gt;&lt;strong&gt;Contributing Guide&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+community-driven development. Our &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;docs&#x2F;contributing&#x2F;&quot;&gt;&lt;strong&gt;Contributing Guide&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
 invites developers to get involved, ask questions, and contribute to the project.&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;strong&gt;Secure by Default&lt;&#x2F;strong&gt;: &lt;strong&gt;VSecM&lt;&#x2F;strong&gt; offers advanced security features, including
 encryption, manual master secret setting, and integration with various backing
@@ -2061,7 +2326,7 @@ flexible and secure solution for secrets management, &lt;strong&gt;VSecM&lt;&#x2
 welcoming and innovative platform.&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;this-is-just-the-beginning-a-vision-for-the-future&quot;&gt;This is Just the Beginning: A Vision for the Future&lt;&#x2F;h3&gt;
 &lt;p&gt;At &lt;strong&gt;VMware Secrets Manager&lt;&#x2F;strong&gt;, we believe in continuous innovation and growth.
-Our &lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;docs&#x2F;roadmap&quot;&gt;&lt;strong&gt;roadmap&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; is a testament to our
+Our &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;docs&#x2F;roadmap&quot;&gt;&lt;strong&gt;roadmap&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; is a testament to our
 commitment to delivering cutting-edge solutions that meet the evolving needs of
 the cloud-native community.&lt;&#x2F;p&gt;
 &lt;p&gt;Here’s a glimpse of what’s on the horizon:&lt;&#x2F;p&gt;
@@ -2084,12 +2349,12 @@ excited about the journey ahead and invite you to be a part of it.&lt;&#x2F;p&gt
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;⭐️ Star Us on GitHub ⭐️&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;p&gt;If you find value in our approach and want to help others discover this
-outstanding technology, &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;vmware-tanzu&#x2F;secrets-manager&quot;&gt;&lt;strong&gt;star our GitHub repository&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.
+outstanding technology, &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;vmware-tanzu&#x2F;secrets-manager&quot;&gt;&lt;strong&gt;star our GitHub repository&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.
 Your support helps increase visibility and encourages more collaboration and
 innovation within the community.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;h3 id=&quot;help-us-shape-the-future&quot;&gt;Help Us Shape the Future&lt;&#x2F;h3&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;&quot;&gt;&lt;strong&gt;Start your journey with VMware Secrets Manager today&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+&lt;p&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;&quot;&gt;&lt;strong&gt;Start your journey with VMware Secrets Manager today&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
 and unlock the potential of cloud-native secrets management.&lt;&#x2F;p&gt;
 &lt;hr &#x2F;&gt;
 &lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
@@ -2167,16 +2432,16 @@ and unlock the potential of cloud-native secrets management.&lt;&#x2F;p&gt;
 &lt;p&gt;I am thrilled to share an update with all of you. &lt;strong&gt;Aegis&lt;&#x2F;strong&gt; has transformed and
 landed into its new home! It is now entering a phase as **VMware Secrets Manager
 ** for Cloud-Native workloads!&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;vmware-tanzu&#x2F;secrets-manager&quot;&gt;Please learn more about our project in the repository
+&lt;p&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;vmware-tanzu&#x2F;secrets-manager&quot;&gt;Please learn more about our project in the repository
 following this link&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
-&lt;p&gt;Also, &lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;&quot;&gt;stay updated with us on our website at &lt;strong&gt;vsecm.com&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Also, &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;&quot;&gt;stay updated with us on our website at &lt;strong&gt;vsecm.com&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;coming-up-next&quot;&gt;Coming Up Next&lt;&#x2F;h2&gt;
 &lt;p&gt;This change represents more than just a new name. It symbolizes our unwavering
 dedication to pushing boundaries, fostering innovation, and delivering reliable
 solutions for your cloud-native workloads.&lt;&#x2F;p&gt;
 &lt;p&gt;As things settle down, we’re already busy planning our steps. You can keep track
 of our progress.&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;docs&#x2F;roadmap&#x2F;&quot;&gt;Follow our plans in our roadmap page&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;docs&#x2F;roadmap&#x2F;&quot;&gt;Follow our plans in our roadmap page&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;We aim to provide how the project will proceed as transparently as possible. Of
 course, our contribution cadence and frequency depend on the availability and
 commitment of our core contributors.&lt;&#x2F;p&gt;
@@ -2189,7 +2454,7 @@ Secrets Management solution.&lt;&#x2F;p&gt;
 community, as we move forward. Your contributions and feedback mean the world to
 us.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;who-else-wants-to-contribute&quot;&gt;Who Else Wants to Contribute?&lt;&#x2F;h2&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;docs&#x2F;community&#x2F;&quot;&gt;Feel free to reach out if you’re interested in contributing to &lt;strong&gt;VMware Secrets
+&lt;p&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;docs&#x2F;community&#x2F;&quot;&gt;Feel free to reach out if you’re interested in contributing to &lt;strong&gt;VMware Secrets
 Manager&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;Stay tuned for updates and developments as we continue on this journey.&lt;&#x2F;p&gt;
 &lt;p&gt;Thank you very much for your support!&lt;&#x2F;p&gt;
@@ -2796,39 +3061,39 @@ within a few minutes, if not seconds, as soon as your app is publicly available.
 hole.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;security-fundamentals&quot;&gt;Security Fundamentals&lt;&#x2F;h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;martinfowler.com&#x2F;articles&#x2F;web-security-basics.html&quot;&gt;Web Security Basics&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Web_application_security&quot;&gt;Web Application Security&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;martinfowler.com&#x2F;articles&#x2F;web-security-basics.html&quot;&gt;The Basics of Web Application Security&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;martinfowler.com&#x2F;articles&#x2F;web-security-basics.html&quot;&gt;Web Security Basics&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Web_application_security&quot;&gt;Web Application Security&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;martinfowler.com&#x2F;articles&#x2F;web-security-basics.html&quot;&gt;The Basics of Web Application Security&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;books-to-read&quot;&gt;Books To Read&lt;&#x2F;h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;48816583-container-security&quot;&gt;Container Security: Fundamental Technology Concepts That Protect Containerized Applications&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;11553604-the-tangled-web&quot;&gt;The Tangled Web: A Guide to Securing Web Applications&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;48816583-container-security&quot;&gt;Container Security: Fundamental Technology Concepts That Protect Containerized Applications&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;11553604-the-tangled-web&quot;&gt;The Tangled Web: A Guide to Securing Web Applications&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;authentication-schemes&quot;&gt;Authentication Schemes&lt;&#x2F;h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;HTTP&#x2F;Authentication&quot;&gt;HTTP Authentication&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.iana.org&#x2F;assignments&#x2F;http-authschemes&#x2F;http-authschemes.xhtml&quot;&gt;HTTP Security Auth Schemes&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Security_Assertion_Markup_Language&quot;&gt;SAML&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jwt.io&#x2F;introduction&#x2F;&quot;&gt;Introduction to JSON Web Tokens&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.digitalocean.com&#x2F;community&#x2F;tutorials&#x2F;an-introduction-to-oauth-2&quot;&gt;An Introduction to OAuth 2&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;openid.net&#x2F;connect&#x2F;&quot;&gt;OpenID Connect&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;swagger.io&#x2F;docs&#x2F;specification&#x2F;authentication&#x2F;&quot;&gt;Swagger Authentication&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;HTTP&#x2F;Authentication&quot;&gt;HTTP Authentication&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.iana.org&#x2F;assignments&#x2F;http-authschemes&#x2F;http-authschemes.xhtml&quot;&gt;HTTP Security Auth Schemes&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Security_Assertion_Markup_Language&quot;&gt;SAML&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;jwt.io&#x2F;introduction&#x2F;&quot;&gt;Introduction to JSON Web Tokens&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.digitalocean.com&#x2F;community&#x2F;tutorials&#x2F;an-introduction-to-oauth-2&quot;&gt;An Introduction to OAuth 2&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;openid.net&#x2F;connect&#x2F;&quot;&gt;OpenID Connect&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;swagger.io&#x2F;docs&#x2F;specification&#x2F;authentication&#x2F;&quot;&gt;Swagger Authentication&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;common-vulnerabilities&quot;&gt;Common Vulnerabilities&lt;&#x2F;h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;cwe.mitre.org&#x2F;&quot;&gt;CVE: Common Vulnerability Enumeration&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;cwe.mitre.org&#x2F;&quot;&gt;CWE: Common Weakness Enumeration&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;cwe.mitre.org&#x2F;&quot;&gt;CVE: Common Vulnerability Enumeration&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;cwe.mitre.org&#x2F;&quot;&gt;CWE: Common Weakness Enumeration&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;checklists-and-best-practices&quot;&gt;Checklists and Best Practices&lt;&#x2F;h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;eoftedal&#x2F;writings&#x2F;blob&#x2F;master&#x2F;published&#x2F;javascript-security-cheat-sheet.md&quot;&gt;Single Page Web Application Security Cheat Sheet&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;owasp.org&#x2F;www-project-top-ten&#x2F;&quot;&gt;OWASP Top Ten&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.owasp.org&#x2F;index.php&#x2F;Authentication_Cheat_Sheet&quot;&gt;OWASP Authentication Cheat Sheet&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.owasp.org&#x2F;index.php&#x2F;Session_Management_Cheat_Sheet&quot;&gt;OWASP Session Management Cheat Sheet&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;cheatsheetseries.owasp.org&#x2F;cheatsheets&#x2F;Authentication_Cheat_Sheet.html&quot;&gt;HTTP Authentication Cheat Sheet&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;cheatsheetseries.owasp.org&#x2F;cheatsheets&#x2F;Session_Management_Cheat_Sheet.html&quot;&gt;Session Management Cheat Sheet&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;blog.teamtreehouse.com&#x2F;how-to-create-bulletproof-sessions&quot;&gt;How to Create Bulletproof Sessions&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;eoftedal&#x2F;writings&#x2F;blob&#x2F;master&#x2F;published&#x2F;javascript-security-cheat-sheet.md&quot;&gt;Single Page Web Application Security Cheat Sheet&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;owasp.org&#x2F;www-project-top-ten&#x2F;&quot;&gt;OWASP Top Ten&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.owasp.org&#x2F;index.php&#x2F;Authentication_Cheat_Sheet&quot;&gt;OWASP Authentication Cheat Sheet&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.owasp.org&#x2F;index.php&#x2F;Session_Management_Cheat_Sheet&quot;&gt;OWASP Session Management Cheat Sheet&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;cheatsheetseries.owasp.org&#x2F;cheatsheets&#x2F;Authentication_Cheat_Sheet.html&quot;&gt;HTTP Authentication Cheat Sheet&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;cheatsheetseries.owasp.org&#x2F;cheatsheets&#x2F;Session_Management_Cheat_Sheet.html&quot;&gt;Session Management Cheat Sheet&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;http:&#x2F;&#x2F;blog.teamtreehouse.com&#x2F;how-to-create-bulletproof-sessions&quot;&gt;How to Create Bulletproof Sessions&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
 &lt;p&gt;&lt;strong&gt;Security&lt;&#x2F;strong&gt;, &lt;strong&gt;authentication&lt;&#x2F;strong&gt;, &lt;strong&gt;authorization&lt;&#x2F;strong&gt;, and &lt;strong&gt;identity federation&lt;&#x2F;strong&gt;
@@ -2906,6 +3171,9 @@ tools, resources, and techniques.&lt;&#x2F;p&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;typography&#x2F;&quot;&gt;Get Better at Typography&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;what-the-junior-actually-needs&#x2F;&quot;&gt;The Bottleneck Moved. The Work Did Not.&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 </content>
         
@@ -2977,7 +3245,7 @@ Clustering, Distributed system design…?&lt;&#x2F;p&gt;
 &lt;p&gt;☝️ The list can go on and on… No one on earth can assume to know the entire
 stack of things.&lt;&#x2F;p&gt;
 &lt;p&gt;If one considers
-understanding &lt;a href=&quot;https:&#x2F;&#x2F;blog.logrocket.com&#x2F;mern-stack-tutorial&#x2F;&quot;&gt;the MERN Stack&lt;&#x2F;a&gt; inside out as a sufficient prerequisite
+understanding &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;blog.logrocket.com&#x2F;mern-stack-tutorial&#x2F;&quot;&gt;the MERN Stack&lt;&#x2F;a&gt; inside out as a sufficient prerequisite
 to adding the term “full-stack engineer” to their résumé, they likely don’t
 know how much they don’t know yet.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;is-there-such-thing-as-a-half-stack-anyway&quot;&gt;Is There Such Thing as a “Half-Stack” Anyway?&lt;&#x2F;h2&gt;
@@ -3072,6 +3340,9 @@ horizon.&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;typography&#x2F;&quot;&gt;Get Better at Typography&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;what-the-junior-actually-needs&#x2F;&quot;&gt;The Bottleneck Moved. The Work Did Not.&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 </content>

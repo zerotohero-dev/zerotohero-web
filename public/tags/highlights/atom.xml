@@ -41,7 +41,7 @@ a while ago because keeping a stream alive without actually hosting the
 stream did not work well on Twitch. In addition, I was constantly using
 a lot of system resources and it was effecting the device’s life span.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
-&lt;p&gt;For starters, &lt;a href=&quot;https:&#x2F;&#x2F;twitch.tv&#x2F;VadidekiVolkan&quot;&gt;we now have a music station that streams cool music for
+&lt;p&gt;For starters, &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;twitch.tv&#x2F;VadidekiVolkan&quot;&gt;we now have a music station that streams cool music for
 you to get in the zone&lt;&#x2F;a&gt; non-stop 24&#x2F;7 😀.&lt;&#x2F;p&gt;
 
 &lt;div class=&quot;z2h-image&quot;&gt;
@@ -52,7 +52,7 @@ you to get in the zone&lt;&#x2F;a&gt; non-stop 24&#x2F;7 😀.&lt;&#x2F;p&gt;
 &lt;&#x2F;div&gt;
 &lt;p&gt;It even has a terminal aquarium 🐠 that you can watch all day—how nerd is that?
 🙂.&lt;&#x2F;p&gt;
-&lt;p&gt;Want to see it? &lt;a href=&quot;https:&#x2F;&#x2F;twitch.tv&#x2F;VadidekiVolkan&quot;&gt;Come join the fun and &lt;strong&gt;follow me&lt;&#x2F;strong&gt; on Twitch&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Want to see it? &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;twitch.tv&#x2F;VadidekiVolkan&quot;&gt;Come join the fun and &lt;strong&gt;follow me&lt;&#x2F;strong&gt; on Twitch&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;I listen to it instead of Spotify all day long. I have 1500+ (&lt;em&gt;and increasing&lt;&#x2F;em&gt;)
 tracks that I’ve curated and mixed personally. You’ll like it.&lt;&#x2F;p&gt;
 &lt;p&gt;Aside from displaying ASCII fishes all day long, I also do real-time coding and
@@ -66,7 +66,7 @@ designing them. Yet, before, I want to finalize and deploy a
 micro-services-driven app. I’d like that app to run in the cloud, on a *
 &lt;em&gt;Kubernetes&lt;&#x2F;em&gt;* cluster, as a MVP.&lt;&#x2F;p&gt;
 &lt;p&gt;So there’s &lt;strong&gt;a lot&lt;&#x2F;strong&gt; of progress; however, not all the progress is on this
-site. &lt;a href=&quot;https:&#x2F;&#x2F;twitch.tv&#x2F;VadidekiVolkan&quot;&gt;If you follow me on &lt;strong&gt;Twitch&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, you’ll witness the progress
+site. &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;twitch.tv&#x2F;VadidekiVolkan&quot;&gt;If you follow me on &lt;strong&gt;Twitch&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, you’ll witness the progress
 closely.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;random-thought-of-the-week&quot;&gt;Random Thought of the Week&lt;&#x2F;h2&gt;
 &lt;p&gt;Do you hold back in meetings? Are you unsure how to jump in and make yourself
@@ -237,14 +237,14 @@ overview of what has happened.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;radio-zero-to-hero-is-growing-metal&quot;&gt;Radio Zero to Hero is Growing 🤘&lt;&#x2F;h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Update 2024-05-27&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
-&lt;p&gt;Nowadays, I’m now using &lt;a href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;loopback&#x2F;&quot;&gt;&lt;strong&gt;Loopback&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; as the audio plugin &#x2F;
+&lt;p&gt;Nowadays, I’m now using &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;loopback&#x2F;&quot;&gt;&lt;strong&gt;Loopback&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; as the audio plugin &#x2F;
 virtual audio interface.&lt;&#x2F;p&gt;
 &lt;p&gt;It is much stable with a richer feature set. I’m happy with it.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
-&lt;p&gt;I did several optimizations for the &lt;a href=&quot;https:&#x2F;&#x2F;twitch.tv&#x2F;VadidekiVolkan&quot;&gt;&lt;strong&gt;Radio Zero to Hero&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+&lt;p&gt;I did several optimizations for the &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;twitch.tv&#x2F;VadidekiVolkan&quot;&gt;&lt;strong&gt;Radio Zero to Hero&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
 stream. Here are the essential highlights.&lt;&#x2F;p&gt;
-&lt;p&gt;I figured out that &lt;a href=&quot;https:&#x2F;&#x2F;www.telestream.net&#x2F;wirecast&#x2F;&quot;&gt;&lt;strong&gt;Wirecast&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; already has an audio plugin that
-can stream the system audio. It works &lt;strong&gt;much&lt;&#x2F;strong&gt; better than the &lt;a href=&quot;https:&#x2F;&#x2F;shinywhitebox.com&#x2F;&quot;&gt;&lt;strong&gt;Shiny White
+&lt;p&gt;I figured out that &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.telestream.net&#x2F;wirecast&#x2F;&quot;&gt;&lt;strong&gt;Wirecast&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; already has an audio plugin that
+can stream the system audio. It works &lt;strong&gt;much&lt;&#x2F;strong&gt; better than the &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;shinywhitebox.com&#x2F;&quot;&gt;&lt;strong&gt;Shiny White
 Box&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; audio capture plugin that I have. As a result, I don’t have audio
 quality problems anymore. I can stream music forever without restarting
 my machine (&lt;em&gt;which was not the case before&lt;&#x2F;em&gt;).&lt;&#x2F;p&gt;
@@ -267,7 +267,7 @@ I also figured out &lt;strong&gt;4500Kbps&lt;&#x2F;strong&gt; for &lt;em&gt;bitr
 &lt;p&gt;✨ 3565 (&lt;em&gt;and increasing&lt;&#x2F;em&gt;) tracks&lt;&#x2F;p&gt;
 &lt;p&gt;✨ totaling 187 hours 22 minutes and 56 seconds of&lt;&#x2F;p&gt;
 &lt;p&gt;✨ non-stop, 24&#x2F;7, beyond-this-world beats 🎶.&lt;&#x2F;p&gt;
-&lt;p&gt;Want to see how it looks? &lt;a href=&quot;https:&#x2F;&#x2F;twitch.tv&#x2F;VadidekiVolkan&quot;&gt;Come join the fun on Twitch&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Want to see how it looks? &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;twitch.tv&#x2F;VadidekiVolkan&quot;&gt;Come join the fun on Twitch&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;It’s my primary music source when I’m coding and developing right now (&lt;em&gt;sorry,
 Spotify, my old friend&lt;&#x2F;em&gt;).&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;what-s-on-the-horizon-woman-fried-egg&quot;&gt;What’s on the Horizon 👩‍🍳&lt;&#x2F;h2&gt;
@@ -335,10 +335,10 @@ Leave room for them to elaborate and think creatively.&lt;&#x2F;p&gt;
 &lt;p&gt;I typically don’t share these anywhere else.&lt;&#x2F;p&gt;
 &lt;p&gt;Exclusively hand-picked for you 👌. Enjoy.&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;Asgoret&#x2F;devopshelper_bot&quot;&gt;&lt;strong&gt;DevOps Helper Bot&lt;&#x2F;strong&gt; is used for helping in administration and
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;Asgoret&#x2F;devopshelper_bot&quot;&gt;&lt;strong&gt;DevOps Helper Bot&lt;&#x2F;strong&gt; is used for helping in administration and
 moderation DevOps groups in telegram&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;AnyStatus&#x2F;AnyStatus&quot;&gt;&lt;strong&gt;AnyStatus&lt;&#x2F;strong&gt; is a remote control for your CI&#x2F;CD Pipeline&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;derailed&#x2F;popeye&quot;&gt;&lt;strong&gt;Popeye&lt;&#x2F;strong&gt; is a Kubernetes cluster resource sanitizer&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;AnyStatus&#x2F;AnyStatus&quot;&gt;&lt;strong&gt;AnyStatus&lt;&#x2F;strong&gt; is a remote control for your CI&#x2F;CD Pipeline&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;derailed&#x2F;popeye&quot;&gt;&lt;strong&gt;Popeye&lt;&#x2F;strong&gt; is a Kubernetes cluster resource sanitizer&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
 &lt;p&gt;That’s all for this week. Next week, I’ll gather more unique content and
@@ -462,7 +462,7 @@ track, but I did many cool things in the meantime.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;all-your-ops-belong-to-us&quot;&gt;All Your Ops Belong to Us&lt;&#x2F;h2&gt;
 &lt;p&gt;&lt;strong&gt;This is a biggie&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;A couple of years ago, with a group of friends and colleagues, we jumped into a
-startup adventure called &lt;a href=&quot;https:&#x2F;&#x2F;ob2.ai&#x2F;&quot;&gt;&lt;strong&gt;OpsBeacon&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;. The main goal
+startup adventure called &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;ob2.ai&#x2F;&quot;&gt;&lt;strong&gt;OpsBeacon&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;. The main goal
 of &lt;strong&gt;OpsBeacon&lt;&#x2F;strong&gt; is to help the Ops and Support teams’ days turn a little bit
 brighter and help them &lt;strong&gt;#sleepmore&lt;&#x2F;strong&gt; at night.&lt;&#x2F;p&gt;
 
@@ -477,10 +477,10 @@ world. I worked with the brightest minds, the most practical thinkers, and the
 most creative problem solvers I’ve had an opportunity to work with.&lt;&#x2F;p&gt;
 &lt;p&gt;Anyhoo, life happened. Things get dragged along. And we decided to put the
 project on hold for a while.&lt;&#x2F;p&gt;
-&lt;p&gt;Well, good news. &lt;a href=&quot;https:&#x2F;&#x2F;ob2.ai&#x2F;&quot;&gt;&lt;strong&gt;OpsBeacon&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; is back, and it’s
+&lt;p&gt;Well, good news. &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;ob2.ai&#x2F;&quot;&gt;&lt;strong&gt;OpsBeacon&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; is back, and it’s
 moving full steam ahead.&lt;&#x2F;p&gt;
 &lt;p&gt;And I’m delighted to have the opportunity to lead and mentor the team again.&lt;&#x2F;p&gt;
-&lt;p&gt;Keep an eye on &lt;a href=&quot;https:&#x2F;&#x2F;ob2.ai&#x2F;&quot;&gt;&lt;strong&gt;OpBeacon&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;. You’ll hear more about
+&lt;p&gt;Keep an eye on &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;ob2.ai&#x2F;&quot;&gt;&lt;strong&gt;OpBeacon&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;. You’ll hear more about
 them from other industry experts and from me because they have the will,
 knowledge, skills, and decades of accumulated field experience to change the
 world. And they will do so.&lt;&#x2F;p&gt;
@@ -493,7 +493,7 @@ a while ago because keeping a stream alive without actually hosting the
 stream did not work well on Twitch. In addition, I was constantly using
 a lot of system resources and it was effecting the device’s life span.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
-&lt;p&gt;I’ve updated &lt;a href=&quot;https:&#x2F;&#x2F;twitch.tv&#x2F;VadidekiVolkan&quot;&gt;&lt;strong&gt;Radio ZeroToHero&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; to display
+&lt;p&gt;I’ve updated &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;twitch.tv&#x2F;VadidekiVolkan&quot;&gt;&lt;strong&gt;Radio ZeroToHero&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; to display
 AI-generated images based on the music that’s being played.&lt;&#x2F;p&gt;
 
 &lt;div class=&quot;z2h-image&quot;&gt;
@@ -502,11 +502,11 @@ AI-generated images based on the music that’s being played.&lt;&#x2F;p&gt;
       margin-top: -1.125em;
       font-size: 1em;&quot;&gt;Experience Synesthesia on Radio Zero to Hero&lt;&#x2F;p&gt;
 &lt;&#x2F;div&gt;
-&lt;p&gt;It’s a &lt;strong&gt;mesmerizing&lt;&#x2F;strong&gt; experience. &lt;a href=&quot;https:&#x2F;&#x2F;twitch.tv&#x2F;VadidekiVolkan&quot;&gt;Come check it out&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;It’s a &lt;strong&gt;mesmerizing&lt;&#x2F;strong&gt; experience. &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;twitch.tv&#x2F;VadidekiVolkan&quot;&gt;Come check it out&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Aside&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;p&gt;I also started a
-&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UCdpJG2a5xmDRcYjjQuFH8KQ&#x2F;videos&quot;&gt;YouTube channel called &lt;strong&gt;Synesthetic Arrangements&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UCdpJG2a5xmDRcYjjQuFH8KQ&#x2F;videos&quot;&gt;YouTube channel called &lt;strong&gt;Synesthetic Arrangements&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
 where I’m using the same visualization concept on &lt;strong&gt;piano&lt;&#x2F;strong&gt; pieces that I play.&lt;&#x2F;p&gt;
 &lt;p&gt;It’s so much fun combining art, technology, IA, and visualization. Plus, it
 motivates me sit on the bench and practice piano further. I’m liking it so far.&lt;&#x2F;p&gt;
@@ -545,7 +545,7 @@ the application.&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;help-opsbeacon-in-total-world-domination&quot;&gt;Help OpsBeacon in Total World Domination&lt;&#x2F;h3&gt;
 &lt;p&gt;Total world domination… in a good way. I’m sure it’ll be an fantastic journey.
 And I’m fully supporting the team.&lt;&#x2F;p&gt;
-&lt;p&gt;🤘 &lt;a href=&quot;https:&#x2F;&#x2F;ob2.ai&#x2F;&quot;&gt;&lt;strong&gt;Go Beacons&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; 🤘.&lt;&#x2F;p&gt;
+&lt;p&gt;🤘 &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;ob2.ai&#x2F;&quot;&gt;&lt;strong&gt;Go Beacons&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; 🤘.&lt;&#x2F;p&gt;
 &lt;p&gt;But yeah, these are my top three focuses in the short term.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;random-thought-of-the-week&quot;&gt;Random Thought of the Week&lt;&#x2F;h2&gt;
 &lt;h3 id=&quot;nine-to-five-i-don-t-think-so&quot;&gt;Nine-to-Five? I Don’t Think So&lt;&#x2F;h3&gt;
@@ -589,10 +589,10 @@ to understand and respect it.&lt;&#x2F;p&gt;
 &lt;p&gt;I typically don’t share these anywhere else.&lt;&#x2F;p&gt;
 &lt;p&gt;Exclusively hand-picked for you 👌. Enjoy.&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;smooth-doc.com&#x2F;&quot;&gt;&lt;strong&gt;SmoothDoc&lt;&#x2F;strong&gt; is a tool where you can create MDX-based awesome
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;smooth-doc.com&#x2F;&quot;&gt;&lt;strong&gt;SmoothDoc&lt;&#x2F;strong&gt; is a tool where you can create MDX-based awesome
 docs&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;nnngroup.com&#x2F;articles&#x2F;fighting-linkrot&#x2F;&quot;&gt;An oldie but still valid point of view: &lt;strong&gt;Fighting LinkRot&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;fluidtypography.com&#x2F;&quot;&gt;&lt;strong&gt;Fluid Typography&lt;&#x2F;strong&gt; is a technique to make the text scale based on the
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;nnngroup.com&#x2F;articles&#x2F;fighting-linkrot&#x2F;&quot;&gt;An oldie but still valid point of view: &lt;strong&gt;Fighting LinkRot&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;fluidtypography.com&#x2F;&quot;&gt;&lt;strong&gt;Fluid Typography&lt;&#x2F;strong&gt; is a technique to make the text scale based on the
 viewport size&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
@@ -728,7 +728,7 @@ been more extended than a week, which reflects the multitude of ongoing projects
 and commitments. However, the newsletter’s content will remain similar, as I’ll
 follow a similar theme.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;got-my-mac-burger&quot;&gt;Got My Mac Burger&lt;&#x2F;h2&gt;
-&lt;p&gt;As a Thanksgiving (&lt;em&gt;and a post-acquisition—see below&lt;&#x2F;em&gt;) present,&lt;a href=&quot;https:&#x2F;&#x2F;www.apple.com&#x2F;mac-studio&#x2F;&quot;&gt;&lt;strong&gt;I got a
+&lt;p&gt;As a Thanksgiving (&lt;em&gt;and a post-acquisition—see below&lt;&#x2F;em&gt;) present,&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.apple.com&#x2F;mac-studio&#x2F;&quot;&gt;&lt;strong&gt;I got a
 beefy Mac Studio&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 
 &lt;div class=&quot;z2h-image&quot;&gt;
@@ -752,14 +752,14 @@ SPIFFE already has its official community snyc-ups, and duplicating the
 effort didn’t make sense. We might revisit the idea in the future, but for now,
 it’s on hold.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
-&lt;p&gt;Along with&lt;a href=&quot;https:&#x2F;&#x2F;www.twitch.tv&#x2F;collections&#x2F;m1nN8r4LZxc-bw&quot;&gt;&lt;strong&gt;TalkSPIFFE&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;docs&#x2F;contributor-sync&#x2F;&quot;&gt;&lt;strong&gt;VMware Secrets Manager Contributor
+&lt;p&gt;Along with&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.twitch.tv&#x2F;collections&#x2F;m1nN8r4LZxc-bw&quot;&gt;&lt;strong&gt;TalkSPIFFE&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; and &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;docs&#x2F;contributor-sync&#x2F;&quot;&gt;&lt;strong&gt;VMware Secrets Manager Contributor
 Hours&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, I’ve also started hosting a new tech podcast,
-&lt;a href=&quot;https:&#x2F;&#x2F;vadidekigeyik.com&#x2F;&quot;&gt;&lt;strong&gt;Deer in the Valley (&lt;em&gt;Vadideki Geyik&lt;&#x2F;em&gt;)&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;vadidekigeyik.com&#x2F;&quot;&gt;&lt;strong&gt;Deer in the Valley (&lt;em&gt;Vadideki Geyik&lt;&#x2F;em&gt;)&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;em&gt;By this writing,&lt;strong&gt;Deer in the Valley&lt;&#x2F;strong&gt;is among Turkey’s&lt;strong&gt;top 10&lt;&#x2F;strong&gt;in
 the &lt;strong&gt;Technology&lt;&#x2F;strong&gt;category and&lt;strong&gt;top 16&lt;&#x2F;strong&gt;in Azerbaijan in the same category
 again. We are having&lt;strong&gt;so much fun&lt;&#x2F;strong&gt;while recording the sessions, also reflected
 in these stats.&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
-&lt;p&gt;With&lt;a href=&quot;https:&#x2F;&#x2F;vadidekigeyik.com&#x2F;team&quot;&gt;&lt;strong&gt;four folks from the Silly Cone Valley&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;,
+&lt;p&gt;With&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;vadidekigeyik.com&#x2F;team&quot;&gt;&lt;strong&gt;four folks from the Silly Cone Valley&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;,
 we started a podcast about our experiences before and after working there and our
 thoughts, ideas, and tips for those who want to follow a similar career path.
 It’s very well-received by the community.&lt;&#x2F;p&gt;
@@ -768,8 +768,8 @@ either use a simultaneous translation AI or maybe it’s time to learn a new
 language to expand your horizons—and get lost in translation a little.&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;strong&gt;I see the entire thing as therapy&lt;&#x2F;strong&gt;. We talk freely and candidly about the
 good, bad, and ugly of the Tech Valley, our lives, and everything in between.&lt;&#x2F;p&gt;
-&lt;p&gt;We do live talks on the&lt;a href=&quot;https:&#x2F;&#x2F;discord.gg&#x2F;kampus&quot;&gt;&lt;strong&gt;Kampus Discord&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; and simulcast it over
-&lt;a href=&quot;https:&#x2F;&#x2F;twitch.tv&#x2F;VadidekiVolkan&quot;&gt;&lt;strong&gt;Twitch&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;youtube.com&#x2F;@vadideki-geyik&quot;&gt;&lt;strong&gt;YouTube&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;. We typically livestream
+&lt;p&gt;We do live talks on the&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;discord.gg&#x2F;kampus&quot;&gt;&lt;strong&gt;Kampus Discord&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; and simulcast it over
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;twitch.tv&#x2F;VadidekiVolkan&quot;&gt;&lt;strong&gt;Twitch&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; and &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;youtube.com&#x2F;@vadideki-geyik&quot;&gt;&lt;strong&gt;YouTube&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;. We typically livestream
 the session &lt;strong&gt;every other Saturday at 10 am Pacific time&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;radio-geyik-deer-radio&quot;&gt;Radio Geyik 🦌 📻&lt;&#x2F;h2&gt;
 &lt;blockquote&gt;
@@ -779,19 +779,19 @@ station. I might revisit the idea in the future.&lt;&#x2F;p&gt;
 &lt;p&gt;The YouTube channel still continues to simultcast streams, though.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;p&gt;We simultcast the &lt;em&gt;Deer in the Valley&lt;&#x2F;em&gt; live shows on
-&lt;a href=&quot;https:&#x2F;&#x2F;twitch.tv&#x2F;VadidekiVolkan&quot;&gt;&lt;strong&gt;ZeroToHero Twitch&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;discord.gg&#x2F;kampus&quot;&gt;&lt;strong&gt;Kampus Discord&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, and
-&lt;a href=&quot;https:&#x2F;&#x2F;youtube.com&#x2F;@vadideki-geyik&quot;&gt;&lt;strong&gt;Deer in the Valley YouTube&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;twitch.tv&#x2F;VadidekiVolkan&quot;&gt;&lt;strong&gt;ZeroToHero Twitch&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;discord.gg&#x2F;kampus&quot;&gt;&lt;strong&gt;Kampus Discord&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, and
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;youtube.com&#x2F;@vadideki-geyik&quot;&gt;&lt;strong&gt;Deer in the Valley YouTube&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;In addition to all of the above, I’m experimenting with something new. Whenever
 the channel is idle, I stream otherworldly beats there. So, if you want
-something to listen to while getting stuff done,&lt;a href=&quot;https:&#x2F;&#x2F;youtube.com&#x2F;@vadideki-geyik&quot;&gt;&lt;strong&gt;head down to the Dear in the
+something to listen to while getting stuff done,&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;youtube.com&#x2F;@vadideki-geyik&quot;&gt;&lt;strong&gt;head down to the Dear in the
 Valley YouTube channel&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;npm-install-deers&quot;&gt;&lt;code&gt;npm install deers&lt;&#x2F;code&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;We also have an NPM package called&lt;a href=&quot;https:&#x2F;&#x2F;npmjs.com&#x2F;package&#x2F;deers&quot;&gt;&lt;strong&gt;deers&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;,
+&lt;p&gt;We also have an NPM package called&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;npmjs.com&#x2F;package&#x2F;deers&quot;&gt;&lt;strong&gt;deers&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;,
 which is a helper to provide random deer ASCII art images.&lt;&#x2F;p&gt;
-&lt;p&gt;It’s a fun little project; &lt;a href=&quot;https:&#x2F;&#x2F;npmjs.com&#x2F;package&#x2F;deers&quot;&gt;&lt;strong&gt;check it out&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;It’s a fun little project; &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;npmjs.com&#x2F;package&#x2F;deers&quot;&gt;&lt;strong&gt;check it out&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;Contributions are—as always—welcome.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;hey-what-is-this-kampus-thing-anyway&quot;&gt;Hey, What Is This “&lt;em&gt;Kampus&lt;&#x2F;em&gt;” Thing Anyway&lt;&#x2F;h2&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;discord.gg&#x2F;kampus&quot;&gt;&lt;strong&gt;Kampus is a Discord community&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; where anyone interested in learning
+&lt;p&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;discord.gg&#x2F;kampus&quot;&gt;&lt;strong&gt;Kampus is a Discord community&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; where anyone interested in learning
 about tech can join. The closest way to visualize it is to imagine an actual
 College Campus with lectures, student clubs, co-working sessions, libraries,
 etc.&lt;&#x2F;p&gt;
@@ -803,54 +803,54 @@ evolve and define itself.&lt;&#x2F;p&gt;
 become a better version of themselves.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;h2 id=&quot;hello-broadcom&quot;&gt;Hello Broadcom&lt;&#x2F;h2&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.reuters.com&#x2F;markets&#x2F;deals&#x2F;broadcom-closes-69-bln-vmware-deal-after-china-approval-2023-11-22&#x2F;&quot;&gt;&lt;strong&gt;Broadcom has acquired VMware&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; after dragging for around
+&lt;p&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.reuters.com&#x2F;markets&#x2F;deals&#x2F;broadcom-closes-69-bln-vmware-deal-after-china-approval-2023-11-22&#x2F;&quot;&gt;&lt;strong&gt;Broadcom has acquired VMware&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; after dragging for around
 one and a half years.&lt;&#x2F;p&gt;
 &lt;p&gt;That has been one and a half years of waiting in relative stress and anxiety.
 So, I’m&lt;strong&gt;glad&lt;&#x2F;strong&gt;that the deal has been sealed. This means I will be working at a
 new company, doing the same thing: doing epic innovations around Radio Access
-Networks, leveraging&lt;a href=&quot;https:&#x2F;&#x2F;www.o-ran.org&#x2F;&quot;&gt;&lt;strong&gt;O-RAN&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+Networks, leveraging&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.o-ran.org&#x2F;&quot;&gt;&lt;strong&gt;O-RAN&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;This was a**$69B**acquisition, one of the largest (&lt;em&gt;if not “the” largest&lt;&#x2F;em&gt;) of
 its kind. So, it will take some time for things to settle down. As things settle
 down, I’m sure I’ll have more to share in the next highlight. But overall, it’s
 pretty darn good news, and I’m confident things will be epic!&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;wait-how-about-vsecm&quot;&gt;Wait, How About VSecM?&lt;&#x2F;h2&gt;
 &lt;p&gt;One immediate question I’ve received from various channels is whether this
-merger will impact&lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;&quot;&gt;&lt;strong&gt;VMware Secrets Manager&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; in any way. As
+merger will impact&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;&quot;&gt;&lt;strong&gt;VMware Secrets Manager&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; in any way. As
 far as I can tell, there are no immediate changes in the project’s status and
 governance. We’ll continue to secure the cloud-native world one secret at a
-time. The&lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;&quot;&gt;&lt;strong&gt;VMware Secrets Manager&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; will remain open-source
-&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;vmware-tanzu&#x2F;secrets-manager&quot;&gt;under VMware’s GitHub organization&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+time. The&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;&quot;&gt;&lt;strong&gt;VMware Secrets Manager&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; will remain open-source
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;vmware-tanzu&#x2F;secrets-manager&quot;&gt;under VMware’s GitHub organization&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;That said, things are new. I will inform everyone in various channels, including
 VSecM Slack workspace, Twitter, and other communities if I receive any specific
 guidance related to&lt;strong&gt;VMware Secrets Manager&lt;&#x2F;strong&gt;. However, I don’t expect any
 significant changes. From the vantage point of VSecM, things will continue to
 be “&lt;em&gt;business as usual&lt;&#x2F;em&gt;.”&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;vmware-secrets-manager-is-growing&quot;&gt;VMware Secrets Manager Is Growing&lt;&#x2F;h2&gt;
-&lt;p&gt;On that topic, &lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;docs&#x2F;maintainers&#x2F;&quot;&gt;&lt;strong&gt;VSecM has a team of core maintainers right
+&lt;p&gt;On that topic, &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;docs&#x2F;maintainers&#x2F;&quot;&gt;&lt;strong&gt;VSecM has a team of core maintainers right
 now&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;. And we are getting external contributions, too.
-To contribute to the project, contact me or&lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;docs&#x2F;maintainers&#x2F;&quot;&gt;&lt;strong&gt;any of the core
+To contribute to the project, contact me or&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;docs&#x2F;maintainers&#x2F;&quot;&gt;&lt;strong&gt;any of the core
 contributors&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, and we’ll do our best to help you hit
 the ground running.&lt;&#x2F;p&gt;
-&lt;p&gt;To learn more about VSecM,&lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;&quot;&gt;&lt;strong&gt;check out its website&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;To learn more about VSecM,&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;&quot;&gt;&lt;strong&gt;check out its website&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;federating-secrets-across-clusters&quot;&gt;Federating Secrets Across Clusters&lt;&#x2F;h2&gt;
 &lt;p&gt;For the&lt;strong&gt;VMware Secrets Manager&lt;&#x2F;strong&gt;enthusiasts who have been following the
 project’s development for a while, I’ve experimented with cross-cluster
 federated secrets sharing using&lt;strong&gt;VSecM&lt;&#x2F;strong&gt;, which went well.&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;vimeo.com&#x2F;876814597&quot;&gt;&lt;strong&gt;I also created a quick demo&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
-and &lt;a href=&quot;https:&#x2F;&#x2F;vimeo.com&#x2F;878578526&quot;&gt;&lt;strong&gt;talked about it in SIG SPIRE&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;vimeo.com&#x2F;876814597&quot;&gt;&lt;strong&gt;I also created a quick demo&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+and &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;vimeo.com&#x2F;878578526&quot;&gt;&lt;strong&gt;talked about it in SIG SPIRE&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;In addition, I am working on a tutorial to show step-by-step how to establish
 cross-cluster secrets federation; I’ll share it in various channels when it’s
 done.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;moved-vmware-secrets-manager-s-build-server-to-linode&quot;&gt;Moved VMware Secrets Manager’s Build Server to Linode&lt;&#x2F;h2&gt;
 &lt;p&gt;Another&lt;strong&gt;VSecM&lt;&#x2F;strong&gt;news is since I don’t need anything specific to AWS for VSecM’s
-build needs, I moved it to&lt;a href=&quot;https:&#x2F;&#x2F;linode.com&#x2F;&quot;&gt;&lt;strong&gt;Linode&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;: fanatical support
+build needs, I moved it to&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;linode.com&#x2F;&quot;&gt;&lt;strong&gt;Linode&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;: fanatical support
 and excellent price&#x2F;performance ratio. I am delighted with them so far.&lt;&#x2F;p&gt;
 &lt;p&gt;Besides, you can get almost twice the performance from Linode with the same
 amount of money you shell out to AWS. And their tech support is top-notch; they
 have never let me down.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;vmware-secrets-manager-onboarding-session&quot;&gt;VMware Secrets Manager Onboarding Session&lt;&#x2F;h2&gt;
-&lt;p&gt;Within the context of&lt;a href=&quot;https:&#x2F;&#x2F;discord.gg&#x2F;kampus&quot;&gt;&lt;strong&gt;Kampus&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, I’ve also delivered a 3-hour
-onboarding session for&lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;&quot;&gt;&lt;strong&gt;VMware Secrets Manager&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; to a group of
+&lt;p&gt;Within the context of&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;discord.gg&#x2F;kampus&quot;&gt;&lt;strong&gt;Kampus&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, I’ve also delivered a 3-hour
+onboarding session for&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;&quot;&gt;&lt;strong&gt;VMware Secrets Manager&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; to a group of
 interested developers who want to contribute but don’t know where to start.&lt;&#x2F;p&gt;
 &lt;p&gt;The training was very well received.&lt;&#x2F;p&gt;
 &lt;ul&gt;
@@ -864,19 +864,19 @@ why we need such a thing,&lt;&#x2F;li&gt;
 session. Which motivates me to do more of the same.&lt;&#x2F;p&gt;
 &lt;p&gt;Next, I plan to do a follow-up session about setting up a&lt;strong&gt;VSecM&lt;&#x2F;strong&gt;development
 environment.&lt;&#x2F;p&gt;
-&lt;p&gt;I record these training sessions and share them&lt;a href=&quot;https:&#x2F;&#x2F;discord.gg&#x2F;kampus&quot;&gt;&lt;strong&gt;exclusively with the Kampus
-members&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;. So, to watch the videos, you’ll need to&lt;a href=&quot;https:&#x2F;&#x2F;discord.gg&#x2F;kampus&quot;&gt;&lt;strong&gt;join
+&lt;p&gt;I record these training sessions and share them&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;discord.gg&#x2F;kampus&quot;&gt;&lt;strong&gt;exclusively with the Kampus
+members&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;. So, to watch the videos, you’ll need to&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;discord.gg&#x2F;kampus&quot;&gt;&lt;strong&gt;join
 Kampus&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;zero-to-hero-live-streams-are-back&quot;&gt;Zero to Hero Live Streams are Back&lt;&#x2F;h2&gt;
-&lt;p&gt;Another piece of news is that I’ve started streaming on the&lt;a href=&quot;https:&#x2F;&#x2F;twitch.tv&#x2F;VadidekiVolkan&quot;&gt;&lt;strong&gt;Zero to Hero
+&lt;p&gt;Another piece of news is that I’ve started streaming on the&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;twitch.tv&#x2F;VadidekiVolkan&quot;&gt;&lt;strong&gt;Zero to Hero
 Twitch channel&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; more frequently.&lt;&#x2F;p&gt;
 &lt;p&gt;Whenever I work on something unrelated to my work at VMware that I can share
-with you folks,&lt;a href=&quot;https:&#x2F;&#x2F;twitch.tv&#x2F;VadidekiVolkan&quot;&gt;&lt;strong&gt;I stream it&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
-&lt;p&gt;As mentioned, I also simultcast the stream on&lt;a href=&quot;https:&#x2F;&#x2F;youtube.com&#x2F;@vadideki-geyik&quot;&gt;&lt;strong&gt;Deer in the Valley (Vadideki
-Geyik) YouTube Channel&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; and the&lt;a href=&quot;https:&#x2F;&#x2F;discord.gg&#x2F;kampus&quot;&gt;&lt;strong&gt;Ada Lovelace Stage on the
+with you folks,&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;twitch.tv&#x2F;VadidekiVolkan&quot;&gt;&lt;strong&gt;I stream it&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;As mentioned, I also simultcast the stream on&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;youtube.com&#x2F;@vadideki-geyik&quot;&gt;&lt;strong&gt;Deer in the Valley (Vadideki
+Geyik) YouTube Channel&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; and the&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;discord.gg&#x2F;kampus&quot;&gt;&lt;strong&gt;Ada Lovelace Stage on the
 Kampus Discord Server&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;opsbeacon-has-shown-much-progress&quot;&gt;OpsBeacon Has Shown Much Progress&lt;&#x2F;h2&gt;
-&lt;p&gt;Another project that has shown much progress is &lt;a href=&quot;https:&#x2F;&#x2F;ob2.ai&#x2F;&quot;&gt;&lt;strong&gt;OpsBeacon&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Another project that has shown much progress is &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;ob2.ai&#x2F;&quot;&gt;&lt;strong&gt;OpsBeacon&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;Although I don’t directly contribute to the code, I’m one of its advisors, so I
 constantly communicate with the team, exchanging ideas and discussing
 architecture. And they have done a tremendous job in the last couple of months.&lt;&#x2F;p&gt;
@@ -914,11 +914,11 @@ with you or pan out.&lt;&#x2F;p&gt;
 ultimately contributing to professional development.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;look-what-i-ve-found&quot;&gt;Look What I’ve Found&lt;&#x2F;h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;inspektor-gadget&#x2F;inspektor-gadget&quot;&gt;&lt;code&gt;inspektor-gadget&lt;&#x2F;code&gt; is an eBPF tool and systems inspection framework for
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;inspektor-gadget&#x2F;inspektor-gadget&quot;&gt;&lt;code&gt;inspektor-gadget&lt;&#x2F;code&gt; is an eBPF tool and systems inspection framework for
 Kubernetes, containers, and Linux hosts&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;kubeshark&#x2F;kubeshark&quot;&gt;&lt;code&gt;kubeshark&lt;&#x2F;code&gt; is an API traffic analyzer for Kubernetes providing real-time
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;kubeshark&#x2F;kubeshark&quot;&gt;&lt;code&gt;kubeshark&lt;&#x2F;code&gt; is an API traffic analyzer for Kubernetes providing real-time
 K8s protocol-level visibility&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;esm.sh&#x2F;&quot;&gt;&lt;code&gt;esm.sh&lt;&#x2F;code&gt; is a modern CDN that allows you to import es6 modules from a
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;esm.sh&#x2F;&quot;&gt;&lt;code&gt;esm.sh&lt;&#x2F;code&gt; is a modern CDN that allows you to import es6 modules from a
 URL&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
@@ -1096,16 +1096,16 @@ future.&lt;&#x2F;li&gt;
 &lt;p&gt;I typically don’t share these anywhere else.&lt;&#x2F;p&gt;
 &lt;p&gt;Exclusively hand-picked for you 👌. Enjoy.&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=jXi8h44cbQA&quot;&gt;Trisha Gee: Code Review Best Practices - SCLConf 2018&lt;&#x2F;a&gt;:
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=jXi8h44cbQA&quot;&gt;Trisha Gee: Code Review Best Practices - SCLConf 2018&lt;&#x2F;a&gt;:
 In this talk, Trisha will identify some best practices to follow. She’ll talk
 about what’s really important in a code review, and set out some guidelines to
 follow in order to maximize the value of the code review and minimize the
 pain.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;jendrikseipp&#x2F;vulture&quot;&gt;Vulture: Find Dead Python Code&lt;&#x2F;a&gt;:
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;jendrikseipp&#x2F;vulture&quot;&gt;Vulture: Find Dead Python Code&lt;&#x2F;a&gt;:
 Vulture finds unused code in Python programs. This is useful for cleaning up
 and finding errors in large code bases. If you run Vulture on both your
 library and test suite you can find untested code.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jamanetwork.com&#x2F;journals&#x2F;jama&#x2F;fullarticle&#x2F;2600471&quot;&gt;Mentee Missteps&lt;&#x2F;a&gt;:
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;jamanetwork.com&#x2F;journals&#x2F;jama&#x2F;fullarticle&#x2F;2600471&quot;&gt;Mentee Missteps&lt;&#x2F;a&gt;:
 Given the importance of the mentor-mentee relationship, it is imperative that
 mentees put their “&lt;em&gt;best foot forward&lt;&#x2F;em&gt;”. The article outlines what kind of
 “&lt;em&gt;behavior smells&lt;&#x2F;em&gt;” mentees might manifest that can make the mentor-mentee
@@ -1354,10 +1354,10 @@ time comes.&lt;&#x2F;p&gt;
 &lt;p&gt;I typically don’t share these anywhere else.&lt;&#x2F;p&gt;
 &lt;p&gt;Exclusively hand-picked for you 👌. Enjoy.&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.joshwcomeau.com&#x2F;animation&#x2F;3d-button&#x2F;&quot;&gt;Here’s a tutorial by &lt;strong&gt;Josh Comeau&lt;&#x2F;strong&gt; on building a magical
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.joshwcomeau.com&#x2F;animation&#x2F;3d-button&#x2F;&quot;&gt;Here’s a tutorial by &lt;strong&gt;Josh Comeau&lt;&#x2F;strong&gt; on building a magical
 3D button&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;vektra&#x2F;mockery&quot;&gt;&lt;strong&gt;Mockery&lt;&#x2F;strong&gt; is a mock code autogenerator for Go&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;plotly&#x2F;plotly.js&quot;&gt;&lt;strong&gt;Plotly&lt;&#x2F;strong&gt; is an awesome open-source JavaScript plotting and charting
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;vektra&#x2F;mockery&quot;&gt;&lt;strong&gt;Mockery&lt;&#x2F;strong&gt; is a mock code autogenerator for Go&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;plotly&#x2F;plotly.js&quot;&gt;&lt;strong&gt;Plotly&lt;&#x2F;strong&gt; is an awesome open-source JavaScript plotting and charting
 library&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
@@ -1487,7 +1487,7 @@ near-zero technology and full of nature. It was utterly recharging.&lt;&#x2F;p&g
 &lt;p&gt;The beautiful landscapes and friendly locals made for a truly remarkable
 experience.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;keep-your-secrets-secret-with-aegis&quot;&gt;Keep Your Secrets Secret With Aegis&lt;&#x2F;h2&gt;
-&lt;p&gt;I am excited to have released &lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;&quot;&gt;Aegis&lt;&#x2F;a&gt; this weekend.&lt;&#x2F;p&gt;
+&lt;p&gt;I am excited to have released &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;&quot;&gt;Aegis&lt;&#x2F;a&gt; this weekend.&lt;&#x2F;p&gt;
 
 &lt;div class=&quot;z2h-image&quot;&gt;
     &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2022&amp;#x2F;01&amp;#x2F;aegis-banner.png&quot; alt=&quot;Aegis: keep your secrets&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
@@ -1495,7 +1495,7 @@ experience.&lt;&#x2F;p&gt;
       margin-top: -1.125em;
       font-size: 1em;&quot;&gt;Aegis: keep your secrets&lt;&#x2F;p&gt;
 &lt;&#x2F;div&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;&quot;&gt;&lt;strong&gt;Aegis&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; is an open source &lt;strong&gt;Secrets Store&lt;&#x2F;strong&gt; that
+&lt;p&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;&quot;&gt;&lt;strong&gt;Aegis&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; is an open source &lt;strong&gt;Secrets Store&lt;&#x2F;strong&gt; that
 provides secrets to workloads securely at runtime without requiring a pod
 restart.&lt;&#x2F;p&gt;
 &lt;p&gt;Essential features that make &lt;strong&gt;Aegis&lt;&#x2F;strong&gt; unique are:&lt;&#x2F;p&gt;
@@ -1506,16 +1506,16 @@ restart.&lt;&#x2F;p&gt;
 &lt;li&gt;And overall, a &lt;strong&gt;delightful&lt;&#x2F;strong&gt; user experience.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;With &lt;strong&gt;Aegis&lt;&#x2F;strong&gt;, you can rest assured that your sensitive data is always **secure
-** and &lt;strong&gt;protected&lt;&#x2F;strong&gt;. &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;vmware-tanzu&#x2F;secrets-manager&quot;&gt;Check out &lt;strong&gt;Aegis&lt;&#x2F;strong&gt; on GitHub&lt;&#x2F;a&gt; for details.&lt;&#x2F;p&gt;
+** and &lt;strong&gt;protected&lt;&#x2F;strong&gt;. &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;vmware-tanzu&#x2F;secrets-manager&quot;&gt;Check out &lt;strong&gt;Aegis&lt;&#x2F;strong&gt; on GitHub&lt;&#x2F;a&gt; for details.&lt;&#x2F;p&gt;
 &lt;p&gt;With a caveat that &lt;strong&gt;Aegis&lt;&#x2F;strong&gt; is still a work in progress. I am improving its
 feature set; however, it is still technically an alpha product. Therefore, any
 part of it can change at any time. &lt;strong&gt;Use it at your own risk&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
-&lt;p&gt;But while there, &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;vmware-tanzu&#x2F;secrets-manager&quot;&gt;if you share your stars on GitHub&lt;&#x2F;a&gt;,
+&lt;p&gt;But while there, &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;vmware-tanzu&#x2F;secrets-manager&quot;&gt;if you share your stars on GitHub&lt;&#x2F;a&gt;,
 I’d be delighted ❤️.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;mastodon-anyone&quot;&gt;Mastodon Anyone?&lt;&#x2F;h2&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;tips&#x2F;mastodon-101&#x2F;&quot;&gt;I also put together a guide&lt;&#x2F;a&gt; for those looking to create and manage
 their Mastodon instances.&lt;&#x2F;p&gt;
-&lt;p&gt;I &lt;a href=&quot;https:&#x2F;&#x2F;hachyderm.io&#x2F;@volkan&quot;&gt;have been a part of Hachyderm Mastodon instance&lt;&#x2F;a&gt;
+&lt;p&gt;I &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;hachyderm.io&#x2F;@volkan&quot;&gt;have been a part of Hachyderm Mastodon instance&lt;&#x2F;a&gt;
 for a couple of months so far, and I can confidently say that it’s a breeze of
 fresh air after all the birdsite madness. I am &lt;strong&gt;never&lt;&#x2F;strong&gt; going back to Twitter!&lt;&#x2F;p&gt;
 &lt;p&gt;I also have created my own single-user Mastodon instance z2h
@@ -1542,10 +1542,10 @@ them head-on and putting in the hard work.&lt;&#x2F;p&gt;
 &lt;p&gt;I typically don’t share these anywhere else.&lt;&#x2F;p&gt;
 &lt;p&gt;Exclusively hand-picked for you 👌. Enjoy.&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;scholar.archive.org&#x2F;search?q=AI+ML&quot;&gt;A little known fact about the &lt;strong&gt;Internet Archive&lt;&#x2F;strong&gt; is, you can totally
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;scholar.archive.org&#x2F;search?q=AI+ML&quot;&gt;A little known fact about the &lt;strong&gt;Internet Archive&lt;&#x2F;strong&gt; is, you can totally
 search it for scholarly articles&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;Delta456&#x2F;box-cli-maker&quot;&gt;&lt;strong&gt;Box CLI Maker&lt;&#x2F;strong&gt; creates boxes for your CLI apps&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;retool.com&#x2F;&quot;&gt;So you want a tool to build internal tools really fast. Say no more fam,
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;Delta456&#x2F;box-cli-maker&quot;&gt;&lt;strong&gt;Box CLI Maker&lt;&#x2F;strong&gt; creates boxes for your CLI apps&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;retool.com&#x2F;&quot;&gt;So you want a tool to build internal tools really fast. Say no more fam,
 and meet &lt;strong&gt;ReTool&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
@@ -1680,7 +1680,7 @@ amusing to develop. I’ll share the code with you once the code is in a “&lt;
 state 😃.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;i-m-live-streaming-the-development-process&quot;&gt;I’m Live Streaming the Development Process&lt;&#x2F;h2&gt;
 &lt;p&gt;On the flip
-side, &lt;a href=&quot;https:&#x2F;&#x2F;twitch.tv&#x2F;VadidekiVolkan&quot;&gt;I’m streaming while coding the entire app&lt;&#x2F;a&gt;.
+side, &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;twitch.tv&#x2F;VadidekiVolkan&quot;&gt;I’m streaming while coding the entire app&lt;&#x2F;a&gt;.
 Follow the channel, and you’ll be notified as soon as I’m online.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;radio-zero-to-hero&quot;&gt;Radio Zero to Hero&lt;&#x2F;h2&gt;
 &lt;blockquote&gt;
@@ -1701,7 +1701,7 @@ totally fair game:&lt;&#x2F;p&gt;
       font-size: 1em;&quot;&gt;Unearthly Beats --- The music is on forever!&lt;&#x2F;p&gt;
 &lt;&#x2F;div&gt;
 &lt;p&gt;If you want to &lt;strong&gt;get in the zone&lt;&#x2F;strong&gt; while coding, designing, developing,
-hacking… &lt;a href=&quot;https:&#x2F;&#x2F;twitch.tv&#x2F;VadidekiVolkan&quot;&gt;Tune in to Radio Zero to Hero on Twitch&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+hacking… &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;twitch.tv&#x2F;VadidekiVolkan&quot;&gt;Tune in to Radio Zero to Hero on Twitch&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;As I said, it’s &lt;strong&gt;experimental&lt;&#x2F;strong&gt;, so I don’t know if I’ll continue it. Yet, as
 the time of this writing, I’ve been streaming music non-stop for the last 15
@@ -1743,9 +1743,9 @@ you.&lt;&#x2F;p&gt;
 &lt;p&gt;I typically don’t share these anywhere else.&lt;&#x2F;p&gt;
 &lt;p&gt;Exclusively hand-picked for you 👌. Enjoy.&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=27695975&quot;&gt;&lt;strong&gt;AWS Infinidash&lt;&#x2F;strong&gt;: Finally an AWS product that You’ll completely understand&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=3OsP9TiEGZE&quot;&gt;So meta, very turtle: A Deep Dive on Kubernetes Cluster API&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;mergeboard.com&#x2F;blog&#x2F;2-qemu-microvm-docker&quot;&gt;Execute Docker containers as QEMU micro VMs&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=27695975&quot;&gt;&lt;strong&gt;AWS Infinidash&lt;&#x2F;strong&gt;: Finally an AWS product that You’ll completely understand&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=3OsP9TiEGZE&quot;&gt;So meta, very turtle: A Deep Dive on Kubernetes Cluster API&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;mergeboard.com&#x2F;blog&#x2F;2-qemu-microvm-docker&quot;&gt;Execute Docker containers as QEMU micro VMs&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;hr &#x2F;&gt;
 &lt;h2 id=&quot;issues&quot;&gt;Issues&lt;&#x2F;h2&gt;
@@ -1867,10 +1867,10 @@ hey, one can always hope, right 🙂? 🌼&lt;&#x2F;p&gt;
 [&lt;strong&gt;SPIFFE Steering Committee&lt;&#x2F;strong&gt; (SSC)][ssc.&lt;&#x2F;p&gt;
 &lt;p&gt;What is the &lt;strong&gt;SSC&lt;&#x2F;strong&gt;, you ask? A team of dedicated volunteers drives the
 strategic direction and growth of all projects under the
-&lt;a href=&quot;https:&#x2F;&#x2F;spiffe.io&#x2F;&quot;&gt;&lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; umbrella. This committed group is the &lt;strong&gt;only&lt;&#x2F;strong&gt; authority
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;spiffe.io&#x2F;&quot;&gt;&lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; umbrella. This committed group is the &lt;strong&gt;only&lt;&#x2F;strong&gt; authority
 on everything &lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt;-related. If you’d like to learn more about the role
 and mission of the SSC, please check
-out &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;spiffe&#x2F;spiffe&#x2F;blob&#x2F;main&#x2F;ssc&#x2F;CHARTER.md&quot;&gt;the SSC Charter&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+out &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;spiffe&#x2F;spiffe&#x2F;blob&#x2F;main&#x2F;ssc&#x2F;CHARTER.md&quot;&gt;the SSC Charter&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;I won’t sugarcoat it: It is a significant workload and responsibility. Yet, I’m
 humbled and buzzing to participate in this remarkable initiative.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;a-practical-guide-to-kubernetes-rocket&quot;&gt;&lt;strong&gt;A Practical Guide to Kubernetes&lt;&#x2F;strong&gt; 🚀&lt;&#x2F;h2&gt;
@@ -1900,16 +1900,16 @@ it’s on hold.&lt;&#x2F;p&gt;
       margin-top: -1.125em;
       font-size: 1em;&quot;&gt;TalkSPIFFE: coming to a live stream near you&lt;&#x2F;p&gt;
 &lt;&#x2F;div&gt;
-&lt;p&gt;Another exciting news on the horizon: &lt;a href=&quot;https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;elinesterov&#x2F;&quot;&gt;&lt;strong&gt;Eli Nesterov&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; and I are in the
+&lt;p&gt;Another exciting news on the horizon: &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;elinesterov&#x2F;&quot;&gt;&lt;strong&gt;Eli Nesterov&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; and I are in the
 planning stages of a weekly half-hour (&lt;em&gt;or longer, as things unfold&lt;&#x2F;em&gt;) chat
-about &lt;a href=&quot;https:&#x2F;&#x2F;spiffe.io&#x2F;&quot;&gt;&lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt; and &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+about &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;spiffe.io&#x2F;&quot;&gt;&lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt; and &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;We’ll be addressing questions and comments from the community and generally
 nerding out over all things SPIFFE.&lt;&#x2F;p&gt;
 &lt;p&gt;We haven’t finalized the timing just yet, but stay tuned for a live stream
 coming your way soon!&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;keep-your-secrets-secret-with-aegis&quot;&gt;Keep Your Secrets “Secret” with &lt;strong&gt;Aegis&lt;&#x2F;strong&gt;&lt;&#x2F;h2&gt;
 &lt;p&gt;Over the past few months, I’ve been pouring my heart and soul into an
-extraordinary cloud-native project called &lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;&quot;&gt;&lt;strong&gt;Aegis&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, and
+extraordinary cloud-native project called &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;&quot;&gt;&lt;strong&gt;Aegis&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, and
 let me tell you—it’s nothing short of a game-changer. It has received *
 &lt;em&gt;tremendous&lt;&#x2F;em&gt;* community support so far; [check out the testimonials on
 &lt;strong&gt;Aegis&lt;&#x2F;strong&gt;’ home page][aegis-endorsements] if you don’t believe me.&lt;&#x2F;p&gt;
@@ -1925,7 +1925,7 @@ secrets to workloads whenever they are in need.&lt;&#x2F;p&gt;
 &lt;&#x2F;div&gt;
 &lt;&#x2F;a&gt;
 &lt;p&gt;But wait, there’s more! &lt;strong&gt;Aegis&lt;&#x2F;strong&gt; not only embraces Kubernetes security
-primitives but also wields the power of &lt;a href=&quot;https:&#x2F;&#x2F;spiffe.io&#x2F;&quot;&gt;&lt;strong&gt;SPIRE&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, along
+primitives but also wields the power of &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;spiffe.io&#x2F;&quot;&gt;&lt;strong&gt;SPIRE&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, along
 with robust, top-tier encryption. With these powerful allies at its side, it is
 a &lt;strong&gt;ground up re-imagination&lt;&#x2F;strong&gt; , solving the problem in a way that is congruent
 with the future of cloud computing.&lt;&#x2F;p&gt;
@@ -1938,11 +1938,11 @@ with the future of cloud computing.&lt;&#x2F;em&gt;”
 —&lt;strong&gt;Evan Gilman, Author of Zero Trust Networks (O’Reilly), SPIRE core
 maintainer&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
-&lt;p&gt;So, what are you waiting for? &lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;&quot;&gt;&lt;strong&gt;Dive headfirst into Aegis&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;. The water
+&lt;p&gt;So, what are you waiting for? &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;&quot;&gt;&lt;strong&gt;Dive headfirst into Aegis&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;. The water
 is chill, but you get used to it 🙂.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;screen-time-is-back-movie-camera&quot;&gt;Screen Time Is Back! 🎥&lt;&#x2F;h2&gt;
 &lt;p&gt;Here’s another delight for you:&lt;&#x2F;p&gt;
-&lt;p&gt;I’ve decided to breathe new life into my screencasts on &lt;a href=&quot;https:&#x2F;&#x2F;twitch.tv&#x2F;VadidekiVolkan&quot;&gt;&lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt;
+&lt;p&gt;I’ve decided to breathe new life into my screencasts on &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;twitch.tv&#x2F;VadidekiVolkan&quot;&gt;&lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt;
 Twitch channel&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;As with everything else in my wonderfully chaotic existence, the timing will
 vary. However, I promise to jump into it whenever I find a slice of time and an
@@ -1978,11 +1978,11 @@ to you, and to the other person.&lt;&#x2F;p&gt;
 &lt;p&gt;We are just human after all.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;look-what-i-ve-found&quot;&gt;Look What I’ve Found&lt;&#x2F;h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;railway.app&#x2F;&quot;&gt;&lt;strong&gt;Railway&lt;&#x2F;strong&gt; deploys your projects into the cloud; like a DevOps…ish
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;railway.app&#x2F;&quot;&gt;&lt;strong&gt;Railway&lt;&#x2F;strong&gt; deploys your projects into the cloud; like a DevOps…ish
 Heroku&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;foxrot-search.com&#x2F;&quot;&gt;If you are seeking for something more powerful than Mac OS’ spotlight
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;foxrot-search.com&#x2F;&quot;&gt;If you are seeking for something more powerful than Mac OS’ spotlight
 index then &lt;strong&gt;Foxtrot Search&lt;&#x2F;strong&gt; maybe what you are looking for&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?app=desktop&amp;amp;v=VGdNrewDw3M&quot;&gt;&lt;strong&gt;The Art of Personal Failure&lt;&#x2F;strong&gt; from by no one but the most snarkiest
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?app=desktop&amp;amp;v=VGdNrewDw3M&quot;&gt;&lt;strong&gt;The Art of Personal Failure&lt;&#x2F;strong&gt; from by no one but the most snarkiest
 person who yells into the cloud&lt;&#x2F;a&gt;]&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
@@ -2104,32 +2104,32 @@ resources.&lt;&#x2F;p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Update 2024-05-21&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;strong&gt;Aegis&lt;&#x2F;strong&gt; is now maintained by &lt;strong&gt;VMware Tanzu&lt;&#x2F;strong&gt; GitHub Organization
-with a new name: &lt;strong&gt;&lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;&quot;&gt;VMware Secrets Manager&lt;&#x2F;a&gt;&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+with a new name: &lt;strong&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;&quot;&gt;VMware Secrets Manager&lt;&#x2F;a&gt;&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;It is ready for production use, and as the time of this writing we
 are already using it in production clusters.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;p&gt;Welcome to the 25th issue of &lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt; Highlights.&lt;&#x2F;p&gt;
 &lt;p&gt;Several things have been going on, yet I think this week’s highlight was
-&lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;&quot;&gt;&lt;strong&gt;Aegis&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;. It has been very well received by people who
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;&quot;&gt;&lt;strong&gt;Aegis&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;. It has been very well received by people who
 are well-known in the Cloud Native security community, and I have a feeling it
 is growing to become a bit more than a side project, but we’ll see.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;aegis-keep-your-secrets-secret&quot;&gt;Aegis: Keep Your Secrets… Secret&lt;&#x2F;h2&gt;
 &lt;p&gt;As I said, last week was mainly about &lt;strong&gt;Aegis&lt;&#x2F;strong&gt;, but what is &lt;strong&gt;Aegis&lt;&#x2F;strong&gt;?&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;vmware-tanzu&#x2F;secrets-manager&quot;&gt;&lt;strong&gt;Aegis&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; is a Kubernetes-native, lightweight secrets management
+&lt;p&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;vmware-tanzu&#x2F;secrets-manager&quot;&gt;&lt;strong&gt;Aegis&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; is a Kubernetes-native, lightweight secrets management
 solution that keeps your secrets secret. And last week, I made significant
 progress with it.&lt;&#x2F;p&gt;
 &lt;p&gt;Some key highlights of the current version are:&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;Upgraded &lt;strong&gt;Aegis&lt;&#x2F;strong&gt; to the latest and greatest &lt;a href=&quot;https:&#x2F;&#x2F;spiffe.io&#x2F;&quot;&gt;&lt;strong&gt;SPIRE&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+&lt;li&gt;Upgraded &lt;strong&gt;Aegis&lt;&#x2F;strong&gt; to the latest and greatest &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;spiffe.io&#x2F;&quot;&gt;&lt;strong&gt;SPIRE&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
 version as the identity control plane. That gave a bunch of stability
 improvements and reduced memory usage significantly.&lt;&#x2F;li&gt;
 &lt;li&gt;A lot of documentation updates to make &lt;strong&gt;Aegis&lt;&#x2F;strong&gt; easier to use and deploy.&lt;&#x2F;li&gt;
 &lt;li&gt;Making everything configurable via environment variables.&lt;&#x2F;li&gt;
 &lt;li&gt;Added &lt;strong&gt;liveness&lt;&#x2F;strong&gt; and &lt;strong&gt;readiness&lt;&#x2F;strong&gt; probes to critical components for
 Kubernetes-native lifecycle management.&lt;&#x2F;li&gt;
-&lt;li&gt;Started using &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;GoogleContainerTools&#x2F;distroless&quot;&gt;&lt;strong&gt;distroless images&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+&lt;li&gt;Started using &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;GoogleContainerTools&#x2F;distroless&quot;&gt;&lt;strong&gt;distroless images&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
 for an additional layer of security.&lt;&#x2F;li&gt;
-&lt;li&gt;Using &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;spiffe&#x2F;spiffe-csi&quot;&gt;&lt;strong&gt;SPIFFE CSI driver&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; instead of
+&lt;li&gt;Using &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;spiffe&#x2F;spiffe-csi&quot;&gt;&lt;strong&gt;SPIFFE CSI driver&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; instead of
 volume mounts (&lt;em&gt;for security again&lt;&#x2F;em&gt;).&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;Although &lt;strong&gt;Aegis&lt;&#x2F;strong&gt; is still an alpha product and has yet to be battle-tested,
@@ -2169,10 +2169,10 @@ and help you get the promotion you deserve.&lt;&#x2F;p&gt;
 &lt;p&gt;I typically don’t share these anywhere else.&lt;&#x2F;p&gt;
 &lt;p&gt;Exclusively hand-picked for you 👌. Enjoy.&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;sampler.dev&#x2F;&quot;&gt;Sampler is a tool for shell commands execution, visualization and
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;sampler.dev&#x2F;&quot;&gt;Sampler is a tool for shell commands execution, visualization and
 alerting&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.airplane.dev&#x2F;&quot;&gt;Airplane is a developer infrastructure for internal tooling&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;0xax.gitbooks.io&#x2F;linux-insides&#x2F;content&#x2F;SysCall&#x2F;linux-syscall-4.htm&quot;&gt;In case you wonder how a unix kernel runs a program, here is a nice
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.airplane.dev&#x2F;&quot;&gt;Airplane is a developer infrastructure for internal tooling&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;0xax.gitbooks.io&#x2F;linux-insides&#x2F;content&#x2F;SysCall&#x2F;linux-syscall-4.htm&quot;&gt;In case you wonder how a unix kernel runs a program, here is a nice
 article about it&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
@@ -2292,7 +2292,7 @@ resources.&lt;&#x2F;p&gt;
 &lt;&#x2F;div&gt;
 &lt;p&gt;Welcome to the 22nd issue of &lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt; Highlights.&lt;&#x2F;p&gt;
 &lt;p&gt;For the last month, I have been vacationing with limited connectivity. Before
-that, I was deeply immersed in &lt;a href=&quot;https:&#x2F;&#x2F;www.o-ran.org&quot; title=&quot;O-RAN&quot;&gt;&lt;strong&gt;learning a new domain of expertise&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.
+that, I was deeply immersed in &lt;a rel=&quot;external&quot; title=&quot;O-RAN&quot; href=&quot;https:&#x2F;&#x2F;www.o-ran.org&quot;&gt;&lt;strong&gt;learning a new domain of expertise&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.
 So I hadn’t had the time to create new content here.&lt;&#x2F;p&gt;
 &lt;p&gt;Well, I’m still learning many things and ramping up at work; yet I’m not that
 overwhelmed anymore. So I’ll gradually get back on track here.&lt;&#x2F;p&gt;
@@ -2359,10 +2359,10 @@ networking thing.&lt;&#x2F;p&gt;
 &lt;p&gt;I typically don’t share these anywhere else.&lt;&#x2F;p&gt;
 &lt;p&gt;Exclusively hand-picked for you 👌. Enjoy.&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;EsperoTech&#x2F;yaade&quot;&gt;In case you want your on premises Postman, &lt;strong&gt;YAADE&lt;&#x2F;strong&gt; is a self-hosted, open
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;EsperoTech&#x2F;yaade&quot;&gt;In case you want your on premises Postman, &lt;strong&gt;YAADE&lt;&#x2F;strong&gt; is a self-hosted, open
 source, collaborative API development environment&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;zyedidia&#x2F;generic&quot;&gt;Here’s a collection of generic data structures written in &lt;strong&gt;Go&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;barthr&#x2F;redo&quot;&gt;With &lt;code&gt;redo&lt;&#x2F;code&gt; you can create reusable functions from your shell history in an
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;zyedidia&#x2F;generic&quot;&gt;Here’s a collection of generic data structures written in &lt;strong&gt;Go&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;barthr&#x2F;redo&quot;&gt;With &lt;code&gt;redo&lt;&#x2F;code&gt; you can create reusable functions from your shell history in an
 interactive way&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
@@ -2488,7 +2488,7 @@ and always liberating smoke. Everything is either mounting upwards to serve as
 fuel, or sinking downwards after having nourished the flame. It follows that
 the whole of reality is like an ever-flowing stream, and that nothing is ever
 at rest for a moment.
-— &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Heraclitus&quot;&gt;&lt;strong&gt;Heraclitus&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+— &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Heraclitus&quot;&gt;&lt;strong&gt;Heraclitus&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;p&gt;Yes, everything flows; everything changes and nothing is stationary.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;personal-news&quot;&gt;Personal… News?&lt;&#x2F;h2&gt;
@@ -2519,7 +2519,7 @@ I enjoyed every single moment of it.&lt;&#x2F;p&gt;
 journey.&lt;&#x2F;p&gt;
 &lt;p&gt;I’m moving to &lt;strong&gt;VMware&lt;&#x2F;strong&gt; as a &lt;strong&gt;Staff Engineer&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;In my new job, among many things, I’ll initially be responsible for
-&lt;a href=&quot;https:&#x2F;&#x2F;telco.vmware.com&#x2F;products&#x2F;telco-cloud-platform-ran.html&quot;&gt;&lt;strong&gt;5G Edge Non-Realtime Radio Access Network APIs, Cloud Architecture,
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;telco.vmware.com&#x2F;products&#x2F;telco-cloud-platform-ran.html&quot;&gt;&lt;strong&gt;5G Edge Non-Realtime Radio Access Network APIs, Cloud Architecture,
 and Orchestration&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;. I know, it’s a bit mouthful, yet it’s
 exciting. There are so many new things to learn.&lt;&#x2F;p&gt;
 &lt;blockquote&gt;
@@ -2544,7 +2544,7 @@ the service. Of course, I have all the source code, and I may repurpose it
 for other things later.&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;strong&gt;Twitch Stream&lt;&#x2F;strong&gt;: I will do screencasts every now and then, but I won’t tie
 them to a schedule. It will be more like whenever I feel like it.
-&lt;a href=&quot;https:&#x2F;&#x2F;twitch.tv&#x2F;vadidekivolkan.&quot;&gt;You can follow me on Twitch to get notified whenever I’m online&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;twitch.tv&#x2F;vadidekivolkan.&quot;&gt;You can follow me on Twitch to get notified whenever I’m online&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt;: I have to manage my time well, and my current job will be
 my primary focus. I will continue to create content. Yet the content will be
 more byte-size and practical rather than involved and instructional. So expect
@@ -2564,7 +2564,7 @@ entirely true. You don’t &lt;strong&gt;get&lt;&#x2F;strong&gt; lucky; you &lt;
 &lt;h3 id=&quot;serendipitous-networking&quot;&gt;Serendipitous Networking&lt;&#x2F;h3&gt;
 &lt;p&gt;I don’t know if there is a different name for it. What I mean by
 “&lt;em&gt;serendipitous networking&lt;&#x2F;em&gt;” is to connect with people just for the sake of
-connecting. You’ll be amazed how useful &lt;a href=&quot;https:&#x2F;&#x2F;techcrunch.com&#x2F;2016&#x2F;04&#x2F;26&#x2F;weak-ties-matter&#x2F;&quot;&gt;some of those weak ties you
+connecting. You’ll be amazed how useful &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;techcrunch.com&#x2F;2016&#x2F;04&#x2F;26&#x2F;weak-ties-matter&#x2F;&quot;&gt;some of those weak ties you
 created&lt;&#x2F;a&gt; will be to lift you up.&lt;&#x2F;p&gt;
 &lt;p&gt;Connect with people to get to know them, with no intention to leverage them as
 a career slingshot. Instead, merely connect with them to find common ground.
@@ -2587,11 +2587,11 @@ your control? And what part of it should you better let go with the flow?&lt;&#x
 &lt;p&gt;I typically don’t share these anywhere else.&lt;&#x2F;p&gt;
 &lt;p&gt;Exclusively hand-picked for you 👌. Enjoy.&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;stars.chromeexperiments.com&#x2F;&quot;&gt;Welcome to your &lt;strong&gt;stellar neighborhood&lt;&#x2F;strong&gt; (&lt;em&gt;best viewed with a Chromium
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;stars.chromeexperiments.com&#x2F;&quot;&gt;Welcome to your &lt;strong&gt;stellar neighborhood&lt;&#x2F;strong&gt; (&lt;em&gt;best viewed with a Chromium
 Browser&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;pipedream.com&#x2F;&quot;&gt;&lt;strong&gt;Pipedream&lt;&#x2F;strong&gt; helps you write less boilerplate code while connecting
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;pipedream.com&#x2F;&quot;&gt;&lt;strong&gt;Pipedream&lt;&#x2F;strong&gt; helps you write less boilerplate code while connecting
 APIs together&lt;&#x2F;a&gt;j.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;regex.help&#x2F;&quot;&gt;You have text examples, but you don’t know what &lt;strong&gt;RegExp&lt;&#x2F;strong&gt; to write
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;regex.help&#x2F;&quot;&gt;You have text examples, but you don’t know what &lt;strong&gt;RegExp&lt;&#x2F;strong&gt; to write
 that matches them all? Say no more fam—Leave the job
 to &lt;strong&gt;&lt;code&gt;grex&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
@@ -2720,11 +2720,11 @@ help operations and level-1 responders &lt;strong&gt;#sleepmore&lt;&#x2F;strong&
 pause the development of &lt;strong&gt;OpsBeacon&lt;&#x2F;strong&gt; for a while.&lt;&#x2F;p&gt;
 &lt;p&gt;Guess what? We are back on track, baby! There is a horde of things on our
 roadmap, and it will be a hell of a ride 🤘.&lt;&#x2F;p&gt;
-&lt;p&gt;That means you’ll hear me talking more about &lt;a href=&quot;https:&#x2F;&#x2F;ob2.ai&quot;&gt;&lt;strong&gt;OpsBeacon&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, and
-mentioning more &lt;strong&gt;OpsBeacon&lt;&#x2F;strong&gt; use cases &lt;a href=&quot;https:&#x2F;&#x2F;www.twitch.tv&#x2F;VadidekiVolkan&quot;&gt;in the &lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt; live
+&lt;p&gt;That means you’ll hear me talking more about &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;ob2.ai&quot;&gt;&lt;strong&gt;OpsBeacon&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, and
+mentioning more &lt;strong&gt;OpsBeacon&lt;&#x2F;strong&gt; use cases &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.twitch.tv&#x2F;VadidekiVolkan&quot;&gt;in the &lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt; live
 streams&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;life-is-better-at-the-slopes&quot;&gt;Life is Better at the Slopes&lt;&#x2F;h2&gt;
-&lt;p&gt;Last week, we were at &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Lake_Tahoe&quot;&gt;&lt;strong&gt;South Lake Tahoe&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;. The plan was to stay there
+&lt;p&gt;Last week, we were at &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Lake_Tahoe&quot;&gt;&lt;strong&gt;South Lake Tahoe&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;. The plan was to stay there
 for a few days; yet, we found ourselves in the middle of a snowstorm and had to
 extend our stay for a few more days.&lt;&#x2F;p&gt;
 
@@ -2758,18 +2758,18 @@ this case, it is “&lt;strong&gt;&lt;em&gt;watered ice&lt;&#x2F;em&gt;&lt;&#x2F
 &lt;&#x2F;div&gt;
 &lt;h2 id=&quot;bye-bye-eks-wave&quot;&gt;Bye Bye EKS 👋&lt;&#x2F;h2&gt;
 &lt;p&gt;I terminated the EKS cluster that I was experimenting with on other news.
-&lt;a href=&quot;https:&#x2F;&#x2F;www.twitch.tv&#x2F;videos&#x2F;1408100867&quot;&gt;You can watch the VOD about the entire process here on &lt;strong&gt;Twitch&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.twitch.tv&#x2F;videos&#x2F;1408100867&quot;&gt;You can watch the VOD about the entire process here on &lt;strong&gt;Twitch&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;But, why so? Because I only have a handful of microservices, and paying Amazon
 around $90 every month just for a Kubernetes control plane is not worth it.&lt;&#x2F;p&gt;
-&lt;p&gt;From this point on, I’ll go old school and use an &lt;a href=&quot;https:&#x2F;&#x2F;aws.amazon.com&#x2F;elasticloadbalancing&#x2F;&quot;&gt;&lt;strong&gt;Application Load
-Balancer&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; and some good old &lt;a href=&quot;https:&#x2F;&#x2F;aws.amazon.com&#x2F;ec2&#x2F;&quot;&gt;&lt;strong&gt;EC2&lt;&#x2F;strong&gt; instances&lt;&#x2F;a&gt; fronted by
-&lt;a href=&quot;https:&#x2F;&#x2F;www.nginx.com&#x2F;&quot;&gt;&lt;strong&gt;NGINX&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; reverse proxies and tie everything together with scripts.
+&lt;p&gt;From this point on, I’ll go old school and use an &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;aws.amazon.com&#x2F;elasticloadbalancing&#x2F;&quot;&gt;&lt;strong&gt;Application Load
+Balancer&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; and some good old &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;aws.amazon.com&#x2F;ec2&#x2F;&quot;&gt;&lt;strong&gt;EC2&lt;&#x2F;strong&gt; instances&lt;&#x2F;a&gt; fronted by
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.nginx.com&#x2F;&quot;&gt;&lt;strong&gt;NGINX&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; reverse proxies and tie everything together with scripts.
 It will be a “&lt;em&gt;poor man’s orchestration solution&lt;&#x2F;em&gt;” that won’t tear a hole in
 your pocket if you will. And I’ll, of course, write and
-&lt;a href=&quot;https:&#x2F;&#x2F;www.twitch.tv&#x2F;VadidekiVolkan&quot;&gt;live stream about it&lt;&#x2F;a&gt; on the go.&lt;&#x2F;p&gt;
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.twitch.tv&#x2F;VadidekiVolkan&quot;&gt;live stream about it&lt;&#x2F;a&gt; on the go.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;more-live-streams-are-coming-up&quot;&gt;More Live Streams Are Coming Up&lt;&#x2F;h2&gt;
 &lt;p&gt;I upgraded my streaming setup, and I plan to do regular streams, mostly at night
-Pacific time. &lt;a href=&quot;https:&#x2F;&#x2F;www.twitch.tv&#x2F;VadidekiVolkan&quot;&gt;Follow me on Twitch and get notified whenever
+Pacific time. &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.twitch.tv&#x2F;VadidekiVolkan&quot;&gt;Follow me on Twitch and get notified whenever
 I’m online&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;zero-to-hero-changes&quot;&gt;Zero to Hero Changes&lt;&#x2F;h2&gt;
 &lt;p&gt;I’ve updated the navigation a little on the Zero to Hero front, highlighting
@@ -2787,7 +2787,7 @@ essential parts that could have been harder to search otherwise.&lt;&#x2F;p&gt;
 version of yourself.&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;highlights&#x2F;&quot;&gt;&lt;strong&gt;Z2H Highlights&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; is an ordered list of these weekly updates
 that you are reading right now.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.twitch.tv&#x2F;VadidekiVolkan&quot;&gt;&lt;strong&gt;Live Streams&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; take you directly to &lt;strong&gt;Twitch&lt;&#x2F;strong&gt;, where I’ll be more
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.twitch.tv&#x2F;VadidekiVolkan&quot;&gt;&lt;strong&gt;Live Streams&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; take you directly to &lt;strong&gt;Twitch&lt;&#x2F;strong&gt;, where I’ll be more
 active, mostly around nighttime pacific time. Join me, and let’s &lt;strong&gt;break
 production&lt;&#x2F;strong&gt; together.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
@@ -2837,9 +2837,9 @@ to a significant shift in your perspective.&lt;&#x2F;p&gt;
 &lt;p&gt;I typically don’t share these anywhere else.&lt;&#x2F;p&gt;
 &lt;p&gt;Exclusively hand-picked for you 👌. Enjoy.&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;charmbracelet&#x2F;soft-serve&quot;&gt;&lt;strong&gt;&lt;code&gt;soft-serve&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt; is a tiny self-hostable Git server&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;superhighfives.com&#x2F;pika&quot;&gt;&lt;strong&gt;Pika&lt;&#x2F;strong&gt; is an open source color picker app for Mac OS&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;trunk.io&#x2F;products&#x2F;check&quot;&gt;&lt;strong&gt;&lt;code&gt;trunk&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt; is a static analyzer to make your code better, faster,
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;charmbracelet&#x2F;soft-serve&quot;&gt;&lt;strong&gt;&lt;code&gt;soft-serve&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt; is a tiny self-hostable Git server&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;superhighfives.com&#x2F;pika&quot;&gt;&lt;strong&gt;Pika&lt;&#x2F;strong&gt; is an open source color picker app for Mac OS&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;trunk.io&#x2F;products&#x2F;check&quot;&gt;&lt;strong&gt;&lt;code&gt;trunk&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt; is a static analyzer to make your code better, faster,
 stronger&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
@@ -2987,9 +2987,9 @@ competitive programming questions and learning resources there.&lt;&#x2F;p&gt;
 &lt;p&gt;Here are the slides and an the source code of &lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;spire&#x2F;spire-rocks&#x2F;&quot;&gt;my recent GopherCon talk on
 &lt;strong&gt;Cloud Native Identity Federation&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;assets.zerotohero.dev&#x2F;gophercon-tr-dec-2021&#x2F;SPIRE-gophercon-TR-Dec-2021.pdf&quot;&gt;GopherCon TR, Dec 2021 (“&lt;em&gt;Friends Don’t Let Friends Hard-Code Their
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;assets.zerotohero.dev&#x2F;gophercon-tr-dec-2021&#x2F;SPIRE-gophercon-TR-Dec-2021.pdf&quot;&gt;GopherCon TR, Dec 2021 (“&lt;em&gt;Friends Don’t Let Friends Hard-Code Their
 Secrets&lt;&#x2F;em&gt;”) Slides&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;assets.zerotohero.dev&#x2F;gophercon-tr-dec-2021&#x2F;SPIRE-gophercon-TR-Dec-2021-src.zip&quot;&gt;GopherCon TR, Dec 2021 (“&lt;em&gt;Friends Don’t Let Friends Hard-Code Their
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;assets.zerotohero.dev&#x2F;gophercon-tr-dec-2021&#x2F;SPIRE-gophercon-TR-Dec-2021-src.zip&quot;&gt;GopherCon TR, Dec 2021 (“&lt;em&gt;Friends Don’t Let Friends Hard-Code Their
 Secrets&lt;&#x2F;em&gt;”) Source Code&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;Here is a video recording of the demo I made there too:&lt;&#x2F;p&gt;
@@ -3047,10 +3047,10 @@ consequentially an act of kindness.&lt;&#x2F;p&gt;
 &lt;p&gt;I typically don’t share these anywhere else.&lt;&#x2F;p&gt;
 &lt;p&gt;Exclusively hand-picked for you 👌. Enjoy.&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.svggobbler.com&#x2F;&quot;&gt;&lt;strong&gt;SVG Globber&lt;&#x2F;strong&gt; helps you download icons, logos and vectors SVG from any
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.svggobbler.com&#x2F;&quot;&gt;&lt;strong&gt;SVG Globber&lt;&#x2F;strong&gt; helps you download icons, logos and vectors SVG from any
 site&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;gra.dient.art&#x2F;&quot;&gt;&lt;strong&gt;Gradient Art&lt;&#x2F;strong&gt; is an Advanced CSS Gradient Editor&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;tkellogg&#x2F;dura&quot;&gt;&lt;strong&gt;Dura&lt;&#x2F;strong&gt; is a background process that watches your Git repositories and
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;gra.dient.art&#x2F;&quot;&gt;&lt;strong&gt;Gradient Art&lt;&#x2F;strong&gt; is an Advanced CSS Gradient Editor&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;tkellogg&#x2F;dura&quot;&gt;&lt;strong&gt;Dura&lt;&#x2F;strong&gt; is a background process that watches your Git repositories and
 commits your uncommitted changes without impacting &lt;code&gt;HEAD&lt;&#x2F;code&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
@@ -3256,10 +3256,10 @@ up fully refreshed, ready to tackle whatever the next day will throw at you.&lt;
 &lt;p&gt;I typically don’t share these anywhere else.&lt;&#x2F;p&gt;
 &lt;p&gt;Exclusively hand-picked for you 👌. Enjoy.&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.supremo.co.uk&#x2F;designers-eye&#x2F;&quot;&gt;Do you have a designer’s eye? Let’s see&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;micro-editor.github.io&#x2F;&quot;&gt;Tired of &lt;code&gt;vim&lt;&#x2F;code&gt;? &lt;strong&gt;micro&lt;&#x2F;strong&gt; is a modern and intuitive terminal-based
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.supremo.co.uk&#x2F;designers-eye&#x2F;&quot;&gt;Do you have a designer’s eye? Let’s see&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;micro-editor.github.io&#x2F;&quot;&gt;Tired of &lt;code&gt;vim&lt;&#x2F;code&gt;? &lt;strong&gt;micro&lt;&#x2F;strong&gt; is a modern and intuitive terminal-based
 editor&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;openbase.com&#x2F;&quot;&gt;&lt;strong&gt;Openbase&lt;&#x2F;strong&gt; helps you choose the right open-source package for your
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;openbase.com&#x2F;&quot;&gt;&lt;strong&gt;Openbase&lt;&#x2F;strong&gt; helps you choose the right open-source package for your
 task&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
@@ -3408,15 +3408,15 @@ source code and find many relevant links and articles to dive further.&lt;&#x2F;
 &lt;h2 id=&quot;distributed-systems-are-grinches&quot;&gt;Distributed Systems Are Grinches&lt;&#x2F;h2&gt;
 &lt;p&gt;Well, I thought of something else instead of a “&lt;em&gt;grinch&lt;&#x2F;em&gt;”, but I’m so very
 polite, and I’m not going to say that thing.&lt;&#x2F;p&gt;
-&lt;p&gt;This is from &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;evan2645&quot;&gt;Evan Gilman&lt;&#x2F;a&gt; on &lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt; Slack
+&lt;p&gt;This is from &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;evan2645&quot;&gt;Evan Gilman&lt;&#x2F;a&gt; on &lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt; Slack
 Channel. Evan is also the author
-of &lt;a href=&quot;https:&#x2F;&#x2F;goodreads.com&#x2F;book&#x2F;show&#x2F;31805610-zero-trust-networks&quot;&gt;Zero Trust Networks&lt;&#x2F;a&gt;.
+of &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;goodreads.com&#x2F;book&#x2F;show&#x2F;31805610-zero-trust-networks&quot;&gt;Zero Trust Networks&lt;&#x2F;a&gt;.
 So, when he talks about &lt;strong&gt;Distributed Systems&lt;&#x2F;strong&gt;, you can assume he knows what
 he’s talking about (&lt;em&gt;content edited for brevity and clarity&lt;&#x2F;em&gt;):&lt;&#x2F;p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Here are a few things that come to mind when you want to use a remote database
 such as Google Cloud Spanner as the backing store of a distributed system that
-requires &lt;strong&gt;strong consistency&lt;&#x2F;strong&gt; (&lt;em&gt;such as &lt;a href=&quot;https:&#x2F;&#x2F;spiffe.io&#x2F;docs&#x2F;latest&#x2F;spire-about&#x2F;&quot;&gt;SPIRE&lt;&#x2F;a&gt;&lt;&#x2F;em&gt;):&lt;&#x2F;p&gt;
+requires &lt;strong&gt;strong consistency&lt;&#x2F;strong&gt; (&lt;em&gt;such as &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;spiffe.io&#x2F;docs&#x2F;latest&#x2F;spire-about&#x2F;&quot;&gt;SPIRE&lt;&#x2F;a&gt;&lt;&#x2F;em&gt;):&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;strong&gt;Performance&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;p&gt;Tight consistency will always require some number of round trips with some
 quorum of nodes to commit changes and move forward. And, there will always be an
@@ -3445,7 +3445,7 @@ router,&lt;br &#x2F;&gt;
 over when these things happen.&lt;&#x2F;p&gt;
 &lt;p&gt;And many times, bugs are uncovered because nobody ever tried it before.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
-&lt;p&gt;For the record, &lt;a href=&quot;https:&#x2F;&#x2F;ars-technica.com&#x2F;information-technology&#x2F;2015&#x2F;05&#x2F;the-discovery-of-apache-zookeepers-poison-packet&#x2F;&quot;&gt;here is an article that Evan wrote about exactly one of
+&lt;p&gt;For the record, &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;ars-technica.com&#x2F;information-technology&#x2F;2015&#x2F;05&#x2F;the-discovery-of-apache-zookeepers-poison-packet&#x2F;&quot;&gt;here is an article that Evan wrote about exactly one of
 these cases&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;Why did I share it? Because I didn’t want it to be lost in Slack archives. And
 dear Slack: &lt;strong&gt;show some ❤️ to open source communities&lt;&#x2F;strong&gt;. Not many of them have
@@ -3488,11 +3488,11 @@ next opportunity.&lt;&#x2F;p&gt;
 &lt;p&gt;I typically don’t share these anywhere else.&lt;&#x2F;p&gt;
 &lt;p&gt;Exclusively hand-picked for you 👌. Enjoy.&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.prisma.io&#x2F;&quot;&gt;&lt;strong&gt;Prisma&lt;&#x2F;strong&gt; is an “all batteries included” &lt;strong&gt;ORM&lt;&#x2F;strong&gt; for &lt;strong&gt;Node.js&lt;&#x2F;strong&gt; and
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.prisma.io&#x2F;&quot;&gt;&lt;strong&gt;Prisma&lt;&#x2F;strong&gt; is an “all batteries included” &lt;strong&gt;ORM&lt;&#x2F;strong&gt; for &lt;strong&gt;Node.js&lt;&#x2F;strong&gt; and
 &lt;strong&gt;TypeScript&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;pressly&#x2F;goose&quot;&gt;&lt;strong&gt;Goose&lt;&#x2F;strong&gt; is a Database migration tool to migrate your databases.
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;pressly&#x2F;goose&quot;&gt;&lt;strong&gt;Goose&lt;&#x2F;strong&gt; is a Database migration tool to migrate your databases.
 Goose—get it?&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;numpad.io&#x2F;&quot;&gt;Have you ever wanted to embed a calculator inside a text editor?
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;numpad.io&#x2F;&quot;&gt;Have you ever wanted to embed a calculator inside a text editor?
 Me neither. But &lt;strong&gt;NumPad&lt;&#x2F;strong&gt; has&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
@@ -3680,10 +3680,10 @@ that you might want to avoid.&lt;&#x2F;p&gt;
 &lt;p&gt;I typically don’t share these anywhere else.&lt;&#x2F;p&gt;
 &lt;p&gt;Exclusively hand-picked for you 👌. Enjoy.&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;landrop.app&#x2F;&quot;&gt;&lt;strong&gt;LANDrop&lt;&#x2F;strong&gt; is an application that you can drop and share any file on you
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;landrop.app&#x2F;&quot;&gt;&lt;strong&gt;LANDrop&lt;&#x2F;strong&gt; is an application that you can drop and share any file on you
 LAN, no need to use Instant Messaging anymore&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;bilibili&#x2F;flv.js&quot;&gt;&lt;strong&gt;flv.js&lt;&#x2F;strong&gt; is an HTML5 FLV Player&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;hyper.is&#x2F;&quot;&gt;&lt;strong&gt;Hyper&lt;&#x2F;strong&gt; is an HTML-based. highly customizable terminal emulator that hit
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;bilibili&#x2F;flv.js&quot;&gt;&lt;strong&gt;flv.js&lt;&#x2F;strong&gt; is an HTML5 FLV Player&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;hyper.is&#x2F;&quot;&gt;&lt;strong&gt;Hyper&lt;&#x2F;strong&gt; is an HTML-based. highly customizable terminal emulator that hit
 v3.1.4 recently&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
@@ -3844,14 +3844,14 @@ for the larger community to benefit.&lt;&#x2F;p&gt;
       margin-top: -1.125em;
       font-size: 1em;&quot;&gt;SPIRE Tutorial Audio Recording&lt;&#x2F;p&gt;
 &lt;&#x2F;div&gt;
-&lt;p&gt;I have &lt;strong&gt;18 minutes&lt;&#x2F;strong&gt; of screencast where I deploy a &lt;a href=&quot;https:&#x2F;&#x2F;spiffe.io&#x2F;docs&#x2F;latest&#x2F;spire-about&#x2F;spire-concepts&#x2F;&quot;&gt;&lt;strong&gt;SPIRE&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; server on
+&lt;p&gt;I have &lt;strong&gt;18 minutes&lt;&#x2F;strong&gt; of screencast where I deploy a &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;spiffe.io&#x2F;docs&#x2F;latest&#x2F;spire-about&#x2F;spire-concepts&#x2F;&quot;&gt;&lt;strong&gt;SPIRE&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; server on
 an &lt;strong&gt;AWS EKS&lt;&#x2F;strong&gt; cluster and then fetch &lt;strong&gt;x.509&lt;&#x2F;strong&gt; SVID’s from a workload. If it does
 not mean much to you, I promise it’ll make sense after watching the video.&lt;&#x2F;p&gt;
 &lt;p&gt;The content is almost ready. It just has some post-production and annotation
 work to do before it’ll be ready for your viewing pleasure.&lt;&#x2F;p&gt;
 &lt;p&gt;Along with the video, there will be an accompanying article that has been tech
-reviewed by not one but two &lt;a href=&quot;https:&#x2F;&#x2F;spiffe.io&#x2F;docs&#x2F;latest&#x2F;spire-about&#x2F;spire-concepts&#x2F;&quot;&gt;&lt;strong&gt;SPIRE&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; core contributors:
-&lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;d_feldman&quot;&gt;&lt;strong&gt;Daniel Feldman&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;evan2645&quot;&gt;&lt;strong&gt;Evan Gilman&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+reviewed by not one but two &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;spiffe.io&#x2F;docs&#x2F;latest&#x2F;spire-about&#x2F;spire-concepts&#x2F;&quot;&gt;&lt;strong&gt;SPIRE&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; core contributors:
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;d_feldman&quot;&gt;&lt;strong&gt;Daniel Feldman&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; and &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;evan2645&quot;&gt;&lt;strong&gt;Evan Gilman&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;So it’ll be &lt;strong&gt;awesome&lt;&#x2F;strong&gt;. Wait for it.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;random-thought-of-the-week&quot;&gt;Random Thought of the Week&lt;&#x2F;h2&gt;
 &lt;p&gt;Are you making a big career decision?&lt;&#x2F;p&gt;
@@ -3882,10 +3882,10 @@ you’ll better understand how to proceed.&lt;&#x2F;p&gt;
 &lt;p&gt;I typically don’t share these anywhere else.&lt;&#x2F;p&gt;
 &lt;p&gt;Exclusively hand-picked for you 👌. Enjoy.&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;skruv.io&#x2F;&quot;&gt;&lt;strong&gt;skruv&lt;&#x2F;strong&gt; is no-dependency, no-build, small JS framework&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;nodeshift.dev&#x2F;opossum&#x2F;&quot;&gt;&lt;strong&gt;Opossum&lt;&#x2F;strong&gt; is a Node.js circuit breaker that executes asynchronous
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;skruv.io&#x2F;&quot;&gt;&lt;strong&gt;skruv&lt;&#x2F;strong&gt; is no-dependency, no-build, small JS framework&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;nodeshift.dev&#x2F;opossum&#x2F;&quot;&gt;&lt;strong&gt;Opossum&lt;&#x2F;strong&gt; is a Node.js circuit breaker that executes asynchronous
 functions and monitors their execution status&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;sindresorhus&#x2F;globby&quot;&gt;&lt;strong&gt;globby&lt;&#x2F;strong&gt; is a user-friendly glob matcher&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;sindresorhus&#x2F;globby&quot;&gt;&lt;strong&gt;globby&lt;&#x2F;strong&gt; is a user-friendly glob matcher&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
 &lt;p&gt;That’s all for this week. Next week, I’ll gather more unique content and
@@ -4029,7 +4029,7 @@ quality over quantity.&lt;&#x2F;p&gt;
 &lt;p&gt;Of course, things may change along the way, and I may update the diagram, and I
 wanted to share it while it was fresh in my mind.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;synesthesia-anyone&quot;&gt;Synesthesia Anyone?&lt;&#x2F;h2&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UCdpJG2a5xmDRcYjjQuFH8KQ&quot;&gt;I’ve created a YouTube channel where I combine my &lt;strong&gt;piano&lt;&#x2F;strong&gt;
+&lt;p&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UCdpJG2a5xmDRcYjjQuFH8KQ&quot;&gt;I’ve created a YouTube channel where I combine my &lt;strong&gt;piano&lt;&#x2F;strong&gt;
 interpretations with AI-generated OpenGL
 &lt;strong&gt;visualization&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;I have four music pieces already. I’ll add more in time. That’s also a good
@@ -4042,7 +4042,7 @@ motivation factor for me to put my heiney on that bench and study piano. Win-win
       margin-top: -1.125em;
       font-size: 1em;&quot;&gt;Synestetic Experiences&lt;&#x2F;p&gt;
 &lt;&#x2F;div&gt;
-&lt;p&gt;It’s a &lt;strong&gt;mesmerizing&lt;&#x2F;strong&gt; experience. &lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UCdpJG2a5xmDRcYjjQuFH8KQ&quot;&gt;&lt;strong&gt;Come check it out&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;It’s a &lt;strong&gt;mesmerizing&lt;&#x2F;strong&gt; experience. &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UCdpJG2a5xmDRcYjjQuFH8KQ&quot;&gt;&lt;strong&gt;Come check it out&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;random-thought-of-the-week&quot;&gt;Random Thought of the Week&lt;&#x2F;h2&gt;
 &lt;p&gt;When your team is diverse, figuring out where everyone is coming from can be
 difficult.&lt;&#x2F;p&gt;
@@ -4070,11 +4070,11 @@ smoother, and things will get done faster.&lt;&#x2F;p&gt;
 &lt;p&gt;I typically don’t share these anywhere else.&lt;&#x2F;p&gt;
 &lt;p&gt;Exclusively hand-picked for you 👌. Enjoy.&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;grailbio&#x2F;reflow&quot;&gt;&lt;strong&gt;Reflow&lt;&#x2F;strong&gt; is A language and runtime for distributed, incremental data
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;grailbio&#x2F;reflow&quot;&gt;&lt;strong&gt;Reflow&lt;&#x2F;strong&gt; is A language and runtime for distributed, incremental data
 processing in the cloud&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;buraksezer&#x2F;connpool&quot;&gt;&lt;strong&gt;connpool&lt;&#x2F;strong&gt; is a Connection pool for &lt;strong&gt;Go&lt;&#x2F;strong&gt;’s &lt;code&gt;net.Conn&lt;&#x2F;code&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;buraksezer&#x2F;connpool&quot;&gt;&lt;strong&gt;connpool&lt;&#x2F;strong&gt; is a Connection pool for &lt;strong&gt;Go&lt;&#x2F;strong&gt;’s &lt;code&gt;net.Conn&lt;&#x2F;code&gt;
 interface&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;changelog.com&#x2F;posts&#x2F;you-might-as-well-timestamp-it&quot;&gt;Have you considered using &lt;strong&gt;timestamp&lt;&#x2F;strong&gt;s instead of &lt;strong&gt;boolean&lt;&#x2F;strong&gt;s&lt;&#x2F;a&gt;?.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;changelog.com&#x2F;posts&#x2F;you-might-as-well-timestamp-it&quot;&gt;Have you considered using &lt;strong&gt;timestamp&lt;&#x2F;strong&gt;s instead of &lt;strong&gt;boolean&lt;&#x2F;strong&gt;s&lt;&#x2F;a&gt;?.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
 &lt;p&gt;That’s all for this week. Next week, I’ll gather more unique content and
@@ -4198,26 +4198,25 @@ resources.&lt;&#x2F;p&gt;
 get a list of pods and deployments. Also, the critical services
 like &lt;code&gt;idm&lt;&#x2F;code&gt;, &lt;code&gt;mailer&lt;&#x2F;code&gt;, &lt;code&gt;crypto&lt;&#x2F;code&gt; are &lt;strong&gt;mostly&lt;&#x2F;strong&gt; complete.&lt;&#x2F;p&gt;
 &lt;p&gt;Here’s what I see when I query the cluster:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;$ kubectl get deployment
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;NAME        READY   UP-TO-DATE   AVAILABLE   AGE
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;crypto      1&#x2F;1     1            1           3d
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;idm         1&#x2F;1     1            1           3d21h
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;mailer      1&#x2F;1     1            1           4d2h
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;questions   1&#x2F;1     1            1           4d2h
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;store       1&#x2F;1     1            1           4d2h
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;$ kubectl get po
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;NAME                         READY   STATUS      RESTARTS   AGE
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;crypto-84f64dc7bf-qnj8l      1&#x2F;1     Running     0          3d
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;idm-844969c6dd-pzmks         1&#x2F;1     Running     0          3d21h
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;mailer-67fcf8b5dc-zc8lp      1&#x2F;1     Running     0          4d2h
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;questions-7f5ccd5b84-2tmdp   1&#x2F;1     Running     0          4d2h
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;store-5f8b66f949-tsc42       1&#x2F;1     Running     0          4d2h
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;$  kubectl get ingress
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;NAME       CLASS    HOSTS              ADDRESS 
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cerberus   &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;none&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;   api.fizzbuzz.pro   k8s-...amazonaws.com 80   10d
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #EBDBB2; background-color: #1D2021;&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt; kubectl get deployment&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;NAME&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;        READY   UP-TO-DATE   AVAILABLE   AGE&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;crypto&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;      1&#x2F;1&lt;&#x2F;span&gt;&lt;span style=&quot;color: #D3869B;&quot;&gt;     1            1&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;           3d&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;idm&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;         1&#x2F;1&lt;&#x2F;span&gt;&lt;span style=&quot;color: #D3869B;&quot;&gt;     1            1&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;           3d21h&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;mailer&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;      1&#x2F;1&lt;&#x2F;span&gt;&lt;span style=&quot;color: #D3869B;&quot;&gt;     1            1&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;           4d2h&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;questions&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;   1&#x2F;1&lt;&#x2F;span&gt;&lt;span style=&quot;color: #D3869B;&quot;&gt;     1            1&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;           4d2h&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;store&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;       1&#x2F;1&lt;&#x2F;span&gt;&lt;span style=&quot;color: #D3869B;&quot;&gt;     1            1&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;           4d2h&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt; kubectl get po&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;NAME&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;                         READY   STATUS      RESTARTS   AGE&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;crypto-84f64dc7bf-qnj8l&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;      1&#x2F;1     Running&lt;&#x2F;span&gt;&lt;span style=&quot;color: #D3869B;&quot;&gt;     0&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;          3d&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;idm-844969c6dd-pzmks&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;         1&#x2F;1     Running&lt;&#x2F;span&gt;&lt;span style=&quot;color: #D3869B;&quot;&gt;     0&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;          3d21h&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;mailer-67fcf8b5dc-zc8lp&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;      1&#x2F;1     Running&lt;&#x2F;span&gt;&lt;span style=&quot;color: #D3869B;&quot;&gt;     0&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;          4d2h&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;questions-7f5ccd5b84-2tmdp&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;   1&#x2F;1     Running&lt;&#x2F;span&gt;&lt;span style=&quot;color: #D3869B;&quot;&gt;     0&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;          4d2h&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;store-5f8b66f949-tsc42&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;       1&#x2F;1     Running&lt;&#x2F;span&gt;&lt;span style=&quot;color: #D3869B;&quot;&gt;     0&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;          4d2h&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;  kubectl get ingress&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;NAME&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;       CLASS    HOSTS              ADDRESS&lt;&#x2F;span&gt;&lt;span&gt; &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;cerberus&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8EC07C;&quot;&gt;   &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;non&lt;&#x2F;span&gt;&lt;span&gt;e&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8EC07C;&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;   api.fizzbuzz.pro   k8s-...amazonaws.com&lt;&#x2F;span&gt;&lt;span style=&quot;color: #D3869B;&quot;&gt; 80&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;   10d&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;So nothing has been broken for days! Everything is healthy as a horse. Progress!&lt;&#x2F;p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;I’ll be writing more articles and creating more videos about how these
@@ -4242,7 +4241,7 @@ provide you with additional &lt;em&gt;bedtime reading material&lt;&#x2F;em&gt; t
 &lt;p&gt;The above video talks about deploying to &lt;strong&gt;Kubernetes,&lt;&#x2F;strong&gt; but how do we create a
 &lt;strong&gt;Kubernetes&lt;&#x2F;strong&gt; cluster in the first place.&lt;&#x2F;p&gt;
 &lt;p&gt;There are many ways but
-&lt;a href=&quot;https:&#x2F;&#x2F;eksctl.io&#x2F;&quot;&gt;eksctl&lt;&#x2F;a&gt; is the preferred way.
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;eksctl.io&#x2F;&quot;&gt;eksctl&lt;&#x2F;a&gt; is the preferred way.
 As always, there’s more than mere instructions; I discuss the pros and cons of
 things, and there are further reference material for the interested to do a
 deeper dive.&lt;&#x2F;p&gt;
@@ -4296,10 +4295,10 @@ reaching out for help.&lt;&#x2F;p&gt;
 &lt;p&gt;I typically don’t share these anywhere else.&lt;&#x2F;p&gt;
 &lt;p&gt;Exclusively hand-picked for you 👌. Enjoy.&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;middyjs&#x2F;middy&quot;&gt;&lt;strong&gt;Middy&lt;&#x2F;strong&gt; is the stylish Node.js middleware engine for AWS Lambda&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.blog&#x2F;2021-03-18-how-we-found-and-fixed-a-rare-race-condition-in-our-session-handling&#x2F;&quot;&gt;Here’s how &lt;strong&gt;GitHub&lt;&#x2F;strong&gt; found and fixed a rare race condition in their
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;middyjs&#x2F;middy&quot;&gt;&lt;strong&gt;Middy&lt;&#x2F;strong&gt; is the stylish Node.js middleware engine for AWS Lambda&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.blog&#x2F;2021-03-18-how-we-found-and-fixed-a-rare-race-condition-in-our-session-handling&#x2F;&quot;&gt;Here’s how &lt;strong&gt;GitHub&lt;&#x2F;strong&gt; found and fixed a rare race condition in their
 session handling&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;nesslabs.com&#x2F;power-of-simplicity-complexity-bias&quot;&gt;&lt;strong&gt;Flash News&lt;&#x2F;strong&gt;: You can manage your complexity bias by… keeping things
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;nesslabs.com&#x2F;power-of-simplicity-complexity-bias&quot;&gt;&lt;strong&gt;Flash News&lt;&#x2F;strong&gt;: You can manage your complexity bias by… keeping things
 simple, who knew&lt;&#x2F;a&gt;!&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
@@ -4422,15 +4421,15 @@ It consumed more time that I anticipated. Can I say I’m a &lt;strong&gt;JavaSp
 developer now 😀 (&lt;em&gt;instead of “JavaScript”—get it, get it?&lt;&#x2F;em&gt;)—okay, lousy dad
 pun. But still, I had to shift my schedule to adapt to tackling with that beast,
 which consumed &lt;strong&gt;a lot&lt;&#x2F;strong&gt; of my time and energy.&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;strong&gt;The good part&lt;&#x2F;strong&gt;: I learned a heck lot of &lt;a href=&quot;https:&#x2F;&#x2F;spring.io&#x2F;projects&#x2F;spring-cloud&quot;&gt;&lt;strong&gt;&lt;em&gt;Spring Cloud&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
-and &lt;a href=&quot;https:&#x2F;&#x2F;spring.io&#x2F;projects&#x2F;spring-securit&quot;&gt;&lt;strong&gt;&lt;em&gt;Spring Security&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; internals,
+&lt;p&gt;&lt;strong&gt;The good part&lt;&#x2F;strong&gt;: I learned a heck lot of &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;spring.io&#x2F;projects&#x2F;spring-cloud&quot;&gt;&lt;strong&gt;&lt;em&gt;Spring Cloud&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+and &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;spring.io&#x2F;projects&#x2F;spring-securit&quot;&gt;&lt;strong&gt;&lt;em&gt;Spring Security&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; internals,
 more than I’d like to know, actually. My verdict is: Although Java has moved a
-long way since &lt;em&gt;J2EE&lt;&#x2F;em&gt;, and with the &lt;a href=&quot;https:&#x2F;&#x2F;spring.io&#x2F;&quot;&gt;&lt;strong&gt;Spring Framework&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;**,
+long way since &lt;em&gt;J2EE&lt;&#x2F;em&gt;, and with the &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;spring.io&#x2F;&quot;&gt;&lt;strong&gt;Spring Framework&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;**,
 **it’s on the right path; yet I still do think it is &lt;strong&gt;heavy&lt;&#x2F;strong&gt; and &lt;strong&gt;verbose&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;spring.io&#x2F;&quot;&gt;&lt;strong&gt;The Spring Framework&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; is still worth learning &lt;strong&gt;&lt;em&gt;if&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;
+&lt;p&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;spring.io&#x2F;&quot;&gt;&lt;strong&gt;The Spring Framework&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; is still worth learning &lt;strong&gt;&lt;em&gt;if&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;
 you want to shoot flies using rocket launchers 😜—kidding, or &lt;strong&gt;maybe not&lt;&#x2F;strong&gt;.
-Anyhoo, &lt;a href=&quot;https:&#x2F;&#x2F;spring.io&#x2F;&quot;&gt;try it yourself&lt;&#x2F;a&gt; and tell me how your learning
+Anyhoo, &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;spring.io&#x2F;&quot;&gt;try it yourself&lt;&#x2F;a&gt; and tell me how your learning
 experience went.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;h2 id=&quot;what-s-new-on-zero-to-hero-woman-fried-egg&quot;&gt;What’s New on &lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt; 👩‍🍳&lt;&#x2F;h2&gt;
@@ -4450,7 +4449,7 @@ mostly be streaming at nights (&lt;em&gt;pacific time&lt;&#x2F;em&gt;)—stay tu
 &lt;p&gt;I stream every couple of days; however, it also depends on my energy levels,
 and the programs that I might have with family and friends.&lt;&#x2F;p&gt;
 &lt;p&gt;The best way to get notified as soon as I’m online is
-to &lt;a href=&quot;https:&#x2F;&#x2F;twitch.tv&#x2F;VadidekiVolkan&quot; title=&quot;Follow me on Twitch.&quot;&gt;hop on the channel and follow me on &lt;strong&gt;Twitch&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+to &lt;a rel=&quot;external&quot; title=&quot;Follow me on Twitch.&quot; href=&quot;https:&#x2F;&#x2F;twitch.tv&#x2F;VadidekiVolkan&quot;&gt;hop on the channel and follow me on &lt;strong&gt;Twitch&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;p&gt;Other than the live streams, there’s not much visible progress, but many cool
 things are brewing behind-the-scenes—stay tuned.&lt;&#x2F;p&gt;
@@ -4509,9 +4508,9 @@ track and achieve your goals and clarifies your intentions.&lt;&#x2F;p&gt;
 &lt;p&gt;I typically don’t share these anywhere else.&lt;&#x2F;p&gt;
 &lt;p&gt;Exclusively hand-picked for you 👌. Enjoy.&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;wasmer.io&#x2F;&quot;&gt;Run any code on any client with &lt;strong&gt;WebAssembly&lt;&#x2F;strong&gt; and &lt;strong&gt;Wasmer&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;0.30000000000000004.com&quot;&gt;&lt;strong&gt;IEEE754&lt;&#x2F;strong&gt; anyone&lt;&#x2F;a&gt;?&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;alpinejs&#x2F;alpine&quot;&gt;Fed up from the React&#x2F;Vue&#x2F;Angular madness?—&lt;strong&gt;Alpine&lt;&#x2F;strong&gt; is a rugged, minimal
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;wasmer.io&#x2F;&quot;&gt;Run any code on any client with &lt;strong&gt;WebAssembly&lt;&#x2F;strong&gt; and &lt;strong&gt;Wasmer&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;0.30000000000000004.com&quot;&gt;&lt;strong&gt;IEEE754&lt;&#x2F;strong&gt; anyone&lt;&#x2F;a&gt;?&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;alpinejs&#x2F;alpine&quot;&gt;Fed up from the React&#x2F;Vue&#x2F;Angular madness?—&lt;strong&gt;Alpine&lt;&#x2F;strong&gt; is a rugged, minimal
 framework for composing &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt; behavior in your markup&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;hr &#x2F;&gt;
@@ -4631,7 +4630,7 @@ articles to read for you folks. And still, I have a ton to talk about, so here
 we go.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;what-s-new-on-zero-to-hero-woman-fried-egg&quot;&gt;What’s New on &lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt; 👩‍🍳&lt;&#x2F;h2&gt;
 &lt;p&gt;This week, I was primarily focused
-on &lt;a href=&quot;https:&#x2F;&#x2F;www.twitch.tv&#x2F;VadidekiVolkan&quot;&gt;restarting the Zero to Hero live streams&lt;&#x2F;a&gt; and creating the initial
+on &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.twitch.tv&#x2F;VadidekiVolkan&quot;&gt;restarting the Zero to Hero live streams&lt;&#x2F;a&gt; and creating the initial
 API architecture of &lt;strong&gt;FizzBuzz Pro&lt;&#x2F;strong&gt;. Thus, there are no new articles so far.
 And there’s a lot in the pipeline. For instance, I want to create a
 &lt;strong&gt;learning roadmap&lt;&#x2F;strong&gt; for the interested, which will be about how you can keep
@@ -4642,7 +4641,7 @@ like, though.&lt;&#x2F;p&gt;
 &lt;p&gt;So, stay tuned. Lots of quality content is on its way.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;zero-to-hero-on-twitch&quot;&gt;&lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt; on Twitch&lt;&#x2F;h2&gt;
 &lt;p&gt;I started sharing my development environment, live coding, and chatting with
-whoever bumps into &lt;a href=&quot;https:&#x2F;&#x2F;www.twitch.tv&#x2F;VadidekiVolkan&quot;&gt;&lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt; Twitch Channel&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+whoever bumps into &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.twitch.tv&#x2F;VadidekiVolkan&quot;&gt;&lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt; Twitch Channel&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;Nowadays, I’m mostly coding &lt;strong&gt;Go&lt;&#x2F;strong&gt;; yet I’ll be all over the stack, from
 containers to Kubernetes, to UI&#x2F;UX design.&lt;&#x2F;p&gt;
 &lt;blockquote&gt;
@@ -4651,7 +4650,7 @@ mostly be streaming at nights (&lt;em&gt;pacific time&lt;&#x2F;em&gt;)—stay tu
 &lt;p&gt;I stream every couple of days; however, it also depends on my energy levels,
 and the programs that I might have with family and friends.&lt;&#x2F;p&gt;
 &lt;p&gt;The best way to get notified as soon as I’m online is
-to &lt;a href=&quot;https:&#x2F;&#x2F;www.twitch.tv&#x2F;VadidekiVolkan&quot;&gt;hop on the channel and follow me on &lt;strong&gt;Twitch&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+to &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.twitch.tv&#x2F;VadidekiVolkan&quot;&gt;hop on the channel and follow me on &lt;strong&gt;Twitch&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;h2 id=&quot;random-thought-of-the-week&quot;&gt;Random Thought of the Week&lt;&#x2F;h2&gt;
 &lt;p&gt;I know you are working hard, and &lt;strong&gt;deserve&lt;&#x2F;strong&gt; that promotion, or the salary hike,
@@ -4707,9 +4706,9 @@ when the time comes.&lt;&#x2F;p&gt;
 &lt;p&gt;I typically don’t share these anywhere else.&lt;&#x2F;p&gt;
 &lt;p&gt;Exclusively hand-picked for you 👌. Enjoy.&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;opensearch.org&#x2F;&quot;&gt;&lt;strong&gt;Open Search&lt;&#x2F;strong&gt; is an open-source alternative to ElasticSearch and Kibana&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;istio.io&#x2F;latest&#x2F;blog&#x2F;2021&#x2F;external-locality-failover&#x2F;&quot;&gt;Here’s how you can use &lt;strong&gt;Istio&lt;&#x2F;strong&gt; for failover for external services&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;futurewei-cloud&#x2F;alcor&quot;&gt;&lt;strong&gt;Alcor&lt;&#x2F;strong&gt; is a hyperscale cloud native SDN platform&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;opensearch.org&#x2F;&quot;&gt;&lt;strong&gt;Open Search&lt;&#x2F;strong&gt; is an open-source alternative to ElasticSearch and Kibana&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;istio.io&#x2F;latest&#x2F;blog&#x2F;2021&#x2F;external-locality-failover&#x2F;&quot;&gt;Here’s how you can use &lt;strong&gt;Istio&lt;&#x2F;strong&gt; for failover for external services&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;futurewei-cloud&#x2F;alcor&quot;&gt;&lt;strong&gt;Alcor&lt;&#x2F;strong&gt; is a hyperscale cloud native SDN platform&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;hr &#x2F;&gt;
 &lt;h2 id=&quot;issues&quot;&gt;Issues&lt;&#x2F;h2&gt;
@@ -4870,10 +4869,10 @@ increases. Don’t make it even harder.&lt;&#x2F;p&gt;
 &lt;p&gt;I typically don’t share these anywhere else.&lt;&#x2F;p&gt;
 &lt;p&gt;Exclusively hand-picked for you 👌. Enjoy.&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;dpritchett&#x2F;aws-budget-limiter&quot;&gt;&lt;strong&gt;AWS Budget Limiter&lt;&#x2F;strong&gt; is Terraform script for capping monthly AWS
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;dpritchett&#x2F;aws-budget-limiter&quot;&gt;&lt;strong&gt;AWS Budget Limiter&lt;&#x2F;strong&gt; is Terraform script for capping monthly AWS
 spend&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;extrawurst&#x2F;gitui&quot;&gt;&lt;strong&gt;GitUI&lt;&#x2F;strong&gt; provides the comfort of a Git UI right in your terminal&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;blog.codinghorror.com&#x2F;whats-worse-than-crashing&#x2F;&quot;&gt;An oldie but goldie for your bedtime reading: &lt;strong&gt;What’s Worse Than
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;extrawurst&#x2F;gitui&quot;&gt;&lt;strong&gt;GitUI&lt;&#x2F;strong&gt; provides the comfort of a Git UI right in your terminal&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;blog.codinghorror.com&#x2F;whats-worse-than-crashing&#x2F;&quot;&gt;An oldie but goldie for your bedtime reading: &lt;strong&gt;What’s Worse Than
 Crashing?&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
@@ -5033,7 +5032,7 @@ you can exploit.&lt;&#x2F;p&gt;
 in technical interviews. That’s the current &lt;strong&gt;norm&lt;&#x2F;strong&gt;, rather than the exception.&lt;&#x2F;p&gt;
 &lt;p&gt;While I still don’t understand the efficacy of asking algorithmic puzzles in
 choosing the best candidate (&lt;em&gt;here’s a [short 3min video][puzzles-mins]
-and a &lt;a href=&quot;https:&#x2F;&#x2F;vimeo.com&#x2F;556452479&#x2F;94cdf5a8f1&quot;&gt;longer 30min “uncut” version of it&lt;&#x2F;a&gt; that I’m ranting about
+and a &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;vimeo.com&#x2F;556452479&#x2F;94cdf5a8f1&quot;&gt;longer 30min “uncut” version of it&lt;&#x2F;a&gt; that I’m ranting about
 the subject matter, in case you are interested&lt;&#x2F;em&gt;), apparently the rest of the
 industry does not think like me. From startups to big corporations, everyone is
 drinking the same kool-aid.&lt;&#x2F;p&gt;
@@ -5110,9 +5109,9 @@ pleasure in the upcoming weeks.&lt;&#x2F;p&gt;
 &lt;p&gt;Exclusively hand-picked for you 👌. Enjoy.&lt;&#x2F;p&gt;
 &lt;p&gt;Let’s do a &lt;strong&gt;Kubernetes&lt;&#x2F;strong&gt; roundup this time:&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;cast.ai&#x2F;blog&#x2F;aws-eks-vs-ecs-vs-fargate-where-to-manage-your-kubernetes&#x2F;&quot;&gt;Žilvinas Urbonas writes about AWS EKS vs. ECS vs. Fargate: Where to manage your Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;medium.com&#x2F;the-phi&#x2F;understanding-the-kubeconfig-3ef43e8716d&quot;&gt;Samarth Deyagond on understanding the .kubeconfig&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;karmab&#x2F;kcli&quot;&gt;&lt;code&gt;kcli&lt;&#x2F;code&gt; is a m anagement tool for libvirt&#x2F;aws&#x2F;gcp&#x2F;kubevirt&#x2F;openstack&#x2F;ovirt&#x2F;vsphere&#x2F;packet&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;cast.ai&#x2F;blog&#x2F;aws-eks-vs-ecs-vs-fargate-where-to-manage-your-kubernetes&#x2F;&quot;&gt;Žilvinas Urbonas writes about AWS EKS vs. ECS vs. Fargate: Where to manage your Kubernetes&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;medium.com&#x2F;the-phi&#x2F;understanding-the-kubeconfig-3ef43e8716d&quot;&gt;Samarth Deyagond on understanding the .kubeconfig&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;karmab&#x2F;kcli&quot;&gt;&lt;code&gt;kcli&lt;&#x2F;code&gt; is a m anagement tool for libvirt&#x2F;aws&#x2F;gcp&#x2F;kubevirt&#x2F;openstack&#x2F;ovirt&#x2F;vsphere&#x2F;packet&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
 &lt;p&gt;That’s all for this week. Next week, I’ll gather more unique content and
@@ -5236,7 +5235,7 @@ functional and visual updates.&lt;&#x2F;p&gt;
 &lt;p&gt;Ah, I’ve &lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;about&#x2F;&quot;&gt;updated the about page too&lt;&#x2F;a&gt;. The
 page describes what &lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt; is and where it is heading towards. You can
 also
-find &lt;a href=&quot;https:&#x2F;&#x2F;vimeo.com&#x2F;v0lkan&#x2F;zero-to-hero&quot;&gt;a video of me talking about it&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+find &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;vimeo.com&#x2F;v0lkan&#x2F;zero-to-hero&quot;&gt;a video of me talking about it&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;There is a new &lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;&quot;&gt;&lt;strong&gt;Tutorials&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; section where I’ll write and talk
 about actual production projects that real people use. It will &lt;strong&gt;not&lt;&#x2F;strong&gt; be a
 sandbox “&lt;em&gt;restaurant rating React app&lt;&#x2F;em&gt;” or a yet “’nother” &lt;em&gt;to-do list&lt;&#x2F;em&gt;“ clone.
@@ -5262,8 +5261,8 @@ act as a leader in some way, shape, or form to succeed in today’s multi-facete
 work culture.&lt;&#x2F;p&gt;
 &lt;p&gt;To be a good leader, you’d need to &lt;strong&gt;know how you lead&lt;&#x2F;strong&gt;; and to understand how
 you lead, you’d need to &lt;strong&gt;self-reflect&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
-&lt;p&gt;It might sound coming from the mouth of &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Pythia&quot;&gt;the oracle of
-Delphi&lt;&#x2F;a&gt; (&lt;em&gt;and &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Know_thyself&quot;&gt;it
+&lt;p&gt;It might sound coming from the mouth of &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Pythia&quot;&gt;the oracle of
+Delphi&lt;&#x2F;a&gt; (&lt;em&gt;and &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Know_thyself&quot;&gt;it
 actually is&lt;&#x2F;a&gt;&lt;&#x2F;em&gt;) and a bit
 wishy-washy, but knowing how you lead starts with &lt;strong&gt;knowing yourself&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;So how do you know yourself? Well, that’s obviously personal, but there are
@@ -5325,13 +5324,13 @@ naturally.&lt;&#x2F;p&gt;
 &lt;p&gt;I typically don’t share these anywhere else.&lt;&#x2F;p&gt;
 &lt;p&gt;Exclusively hand-picked for you 👌. Enjoy.&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;simplenetes-io&#x2F;simplenetes&quot;&gt;&lt;strong&gt;Simplenetes&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; is a simple
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;simplenetes-io&#x2F;simplenetes&quot;&gt;&lt;strong&gt;Simplenetes&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; is a simple
 and opinionated alternative to Kubernetes, especially useful for small (&lt;em&gt;&amp;lt;20
 nodes&lt;&#x2F;em&gt;) clusters. The project is still in beta, yet it looks promising.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;velero.io&#x2F;&quot;&gt;&lt;strong&gt;Velero&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; is an open-source tool to safely back up and
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;velero.io&#x2F;&quot;&gt;&lt;strong&gt;Velero&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; is an open-source tool to safely back up and
 restore, perform disaster recovery, and migrate Kubernetes cluster resources
 and persistent volumes.&lt;&#x2F;li&gt;
-&lt;li&gt;In &lt;a href=&quot;https:&#x2F;&#x2F;medium.com&#x2F;draftkings-engineering&#x2F;making-strides-toward-serverless-eb959d75d029&quot;&gt;**Making Strides Toward Serverless
+&lt;li&gt;In &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;medium.com&#x2F;draftkings-engineering&#x2F;making-strides-toward-serverless-eb959d75d029&quot;&gt;**Making Strides Toward Serverless
 **&lt;&#x2F;a&gt;,
 Matt is writing about the “&lt;em&gt;serverless&lt;&#x2F;em&gt;” deployment model, the &lt;em&gt;integration
 points&lt;&#x2F;em&gt; to your &lt;strong&gt;serverless&lt;&#x2F;strong&gt; architecture, &lt;strong&gt;serverless&lt;&#x2F;strong&gt; functions, and
@@ -5501,11 +5500,11 @@ and learning experience. So things will get even better.&lt;&#x2F;p&gt;
 &lt;p&gt;I typically don’t share these anywhere else.&lt;&#x2F;p&gt;
 &lt;p&gt;Exclusively hand-picked for you 👌. Enjoy.&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;iconic.app&#x2F;&quot;&gt;iconic.app&lt;&#x2F;a&gt;: Free, high-quality icons for your next project, from
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;iconic.app&#x2F;&quot;&gt;iconic.app&lt;&#x2F;a&gt;: Free, high-quality icons for your next project, from
 arrows to buildings, to devices.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;redketchup.io&#x2F;&quot;&gt;RedKetchup&lt;&#x2F;a&gt;: Free online tools to work on images, videos, and
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;redketchup.io&#x2F;&quot;&gt;RedKetchup&lt;&#x2F;a&gt;: Free online tools to work on images, videos, and
 icons.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;vimond&#x2F;replay&quot;&gt;Replay&lt;&#x2F;a&gt;: A React video player facilitating adaptive stream playback
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;vimond&#x2F;replay&quot;&gt;Replay&lt;&#x2F;a&gt;: A React video player facilitating adaptive stream playback
 with custom UI and a React-friendly API.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;
@@ -5635,8 +5634,8 @@ like.&lt;&#x2F;p&gt;
 login, registration, signup flow.&lt;&#x2F;p&gt;
 &lt;p&gt;Once they are done, I’ll create a &lt;strong&gt;Stripe integration&lt;&#x2F;strong&gt; to enable
 subscriptions.&lt;&#x2F;p&gt;
-&lt;p&gt;As always, &lt;a href=&quot;https:&#x2F;&#x2F;twitch.tv&#x2F;VadidekiVolkan&quot;&gt;I’ll be live-streaming the progress on &lt;strong&gt;Twitch&lt;&#x2F;strong&gt; as much as
-I can&lt;&#x2F;a&gt;, so &lt;a href=&quot;https:&#x2F;&#x2F;twitch.tv&#x2F;VadidekiVolkan&quot;&gt;&lt;strong&gt;follow me on Twitch&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; to get notified as soon as
+&lt;p&gt;As always, &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;twitch.tv&#x2F;VadidekiVolkan&quot;&gt;I’ll be live-streaming the progress on &lt;strong&gt;Twitch&lt;&#x2F;strong&gt; as much as
+I can&lt;&#x2F;a&gt;, so &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;twitch.tv&#x2F;VadidekiVolkan&quot;&gt;&lt;strong&gt;follow me on Twitch&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; to get notified as soon as
 I start working on real-life production challenges.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;random-thought-of-the-week&quot;&gt;Random Thought of the Week&lt;&#x2F;h2&gt;
 &lt;p&gt;Everyone has a list of things that they want to get better at. But the problem
@@ -5665,10 +5664,10 @@ Any progress is worth celebrating.&lt;&#x2F;p&gt;
 &lt;p&gt;I typically don’t share these anywhere else.&lt;&#x2F;p&gt;
 &lt;p&gt;Exclusively hand-picked for you 👌. Enjoy.&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;josephprichard.github.io&#x2F;Pathfinder&#x2F;&quot;&gt;&lt;strong&gt;PathFinder&lt;&#x2F;strong&gt; is a nice app to visualize path-finding algorithms&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;fengyuanchen.github.io&#x2F;viewerjs&#x2F;&quot;&gt;&lt;strong&gt;Viewer.js&lt;&#x2F;strong&gt; is &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt; image viewer with a hell lot of
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;josephprichard.github.io&#x2F;Pathfinder&#x2F;&quot;&gt;&lt;strong&gt;PathFinder&lt;&#x2F;strong&gt; is a nice app to visualize path-finding algorithms&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;fengyuanchen.github.io&#x2F;viewerjs&#x2F;&quot;&gt;&lt;strong&gt;Viewer.js&lt;&#x2F;strong&gt; is &lt;strong&gt;JavaScript&lt;&#x2F;strong&gt; image viewer with a hell lot of
 functionality baked in&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;purecss.io&#x2F;&quot;&gt;&lt;strong&gt;Pure.css&lt;&#x2F;strong&gt; is a robust, minimalist CSS framework that hit 2.0
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;purecss.io&#x2F;&quot;&gt;&lt;strong&gt;Pure.css&lt;&#x2F;strong&gt; is a robust, minimalist CSS framework that hit 2.0
 recently&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;thanks-a-lot-heart&quot;&gt;Thanks a Lot ❤️&lt;&#x2F;h2&gt;

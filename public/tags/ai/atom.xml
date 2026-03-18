@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Zero to Hero - ai</title>
+    <link rel="self" type="application/atom+xml" href="https://zerotohero.dev/tags/ai/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://zerotohero.dev"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2026-03-18T00:00:00+00:00</updated>
+    <id>https://zerotohero.dev/tags/ai/atom.xml</id>
+    <entry xml:lang="en">
+        <title>The Bottleneck Moved. The Work Did Not.</title>
+        <published>2026-03-18T00:00:00+00:00</published>
+        <updated>2026-03-18T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/roadmap/what-the-junior-actually-needs/"/>
+        <id>https://zerotohero.dev/roadmap/what-the-junior-actually-needs/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/roadmap/what-the-junior-actually-needs/">&lt;h2 id=&quot;a-question-i-keep-getting&quot;&gt;A Question I Keep Getting&lt;&#x2F;h2&gt;
+&lt;p&gt;I receive some version of this message a few times a month:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;“Given where technology&#x2F;AI is today, what does a Junior Software Engineer
+actually need to bring to the table to be worth having on your team?”&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;I appreciate when the question is honest about what it’s really asking.&lt;&#x2F;p&gt;
+&lt;p&gt;Sometimes it is. And sometimes, &lt;strong&gt;there’s a hook in the water&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Either way, the question deserves a real answer because it’s a genuinely
+hard question for 2026, and most of the advice floating around is either
+catastrophizing or hollow.&lt;&#x2F;p&gt;
+&lt;p&gt;Let me give you the answer &lt;strong&gt;I actually believe&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;first-the-doom-is-not-wrong&quot;&gt;First: The Doom Is Not Wrong&lt;&#x2F;h2&gt;
+&lt;p&gt;I know people who have stopped writing code entirely.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Not&lt;&#x2F;strong&gt; because they got lazy or lost interest. &lt;strong&gt;But&lt;&#x2F;strong&gt; because agentic
+programming systems are now &lt;strong&gt;faster, cheaper, and more consistent&lt;&#x2F;strong&gt;
+than any individual programmer for a large class of tasks. These people are
+&lt;code&gt;50x&lt;&#x2F;code&gt;, &lt;code&gt;100x&lt;&#x2F;code&gt; more productive than they were before.&lt;&#x2F;p&gt;
+&lt;p&gt;They describe the shift the way you describe waking up with different eyes.&lt;&#x2F;p&gt;
+&lt;p&gt;I cannot underline this enough: &lt;strong&gt;This is real&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Here is what is &lt;strong&gt;also&lt;&#x2F;strong&gt; real: the creative energy didn’t go anywhere:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;The &lt;em&gt;tool&lt;&#x2F;em&gt; changed.&lt;&#x2F;li&gt;
+&lt;li&gt;The &lt;em&gt;desire to build things&lt;&#x2F;em&gt; didn’t.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;I have watched the same transition happen before: First with image manipulation,
+then with design, then with writing, now with code.&lt;&#x2F;p&gt;
+&lt;p&gt;The grief is the same each time: So is the recovery, for the people who actually
+make it through. What changes is &lt;strong&gt;not&lt;&#x2F;strong&gt; the value of building things:&lt;&#x2F;p&gt;
+&lt;p&gt;What changes is what “&lt;strong&gt;building&lt;&#x2F;strong&gt;” means.&lt;&#x2F;p&gt;
+&lt;p&gt;So when someone tells you programming is dead: &lt;strong&gt;don’t dismiss them&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;They are pointing at &lt;strong&gt;something real&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p&gt;The execution bottleneck has collapsed. What used to take a week
+now takes hours. What used to require three engineers now
+requires one with the right setup.&lt;&#x2F;p&gt;
+&lt;p&gt;That part of the job &lt;strong&gt;has&lt;&#x2F;strong&gt; been automated.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;but-here-is-what-the-doom-gets-wrong&quot;&gt;But Here Is What the Doom Gets Wrong&lt;&#x2F;h2&gt;
+&lt;p&gt;The doom crowd focuses on “&lt;em&gt;execution&lt;&#x2F;em&gt;” because execution was always the most
+visible part of the job. It was also, quietly, &lt;strong&gt;never&lt;&#x2F;strong&gt; the important part.&lt;&#x2F;p&gt;
+&lt;p&gt;I wrote about this years ago: &lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;roadmap&#x2F;&quot;&gt;&lt;strong&gt;Code is nothing&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Not in a defeatist way. In the most liberating way possible:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;What you create with your code is everything.&lt;&#x2F;em&gt;&lt;br &#x2F;&gt;
+&lt;em&gt;The way you share your knowledge is everything.&lt;&#x2F;em&gt;&lt;br &#x2F;&gt;
+&lt;em&gt;The value you add to the community is everything.&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;The code was always the &lt;em&gt;output&lt;&#x2F;em&gt; of the thinking.&lt;&#x2F;p&gt;
+&lt;p&gt;The &lt;strong&gt;thinking&lt;&#x2F;strong&gt; is what we actually hired you for.&lt;&#x2F;p&gt;
+&lt;p&gt;A junior who could write syntactically correct Java but couldn’t debug a
+production incident, couldn’t explain the trade-off between two architectural
+options, couldn’t read a codebase they hadn’t written: That junior was never
+particularly valuable to begin with. &lt;strong&gt;AI made that obvious&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;A junior who &lt;em&gt;could&lt;&#x2F;em&gt; do those things: That person’s leverage just
+&lt;strong&gt;multiplied&lt;&#x2F;strong&gt; by a factor that would have seemed science fiction
+five years ago.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;The bottleneck moved from execution to judgment&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;ever-heard-of-chickens-and-eggs&quot;&gt;Ever Heard of Chickens and Eggs?&lt;&#x2F;h2&gt;
+&lt;p&gt;But… what if you &lt;strong&gt;are&lt;&#x2F;strong&gt; the junior? You don’t have judgment yet? No?&lt;&#x2F;p&gt;
+&lt;p&gt;This is the actual hard question. The doom crowd doesn’t answer it because it
+complicates their narrative.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Judgment comes from getting your hands dirty&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;From shipping something and watching it fail.&lt;&#x2F;li&gt;
+&lt;li&gt;From reading codebases you didn’t write until your eyes hurt.&lt;&#x2F;li&gt;
+&lt;li&gt;From debugging an issue for three hours and finally understanding &lt;em&gt;why&lt;&#x2F;em&gt; the
+system behaves the way it does.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;AI can short-circuit all of that. And if you let it: if you go straight from
+“&lt;em&gt;I have a problem&lt;&#x2F;em&gt;” to “&lt;em&gt;accept AI’s solution&lt;&#x2F;em&gt;” without ever building the mental
+model; you become what I’ve seen described as a &lt;strong&gt;slop cannon&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p&gt;Producing an enormous volume that nobody, including you, can evaluate.&lt;&#x2F;p&gt;
+&lt;p&gt;The trap is seductive. The output &lt;em&gt;looks&lt;&#x2F;em&gt; correct. It often even &lt;em&gt;is&lt;&#x2F;em&gt; correct.&lt;&#x2F;p&gt;
+&lt;p&gt;But you have no basis for knowing whether it is, because you never did the
+work that builds &lt;strong&gt;taste&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;“&lt;strong&gt;AI makes skilled workers prolific. It makes unskilled workers pollutants.&lt;&#x2F;strong&gt;”&lt;&#x2F;p&gt;
+&lt;p&gt;That’s not my line, but I would have written something similar too.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;what-i-actually-want-from-a-junior-in-2026&quot;&gt;What I Actually Want from a Junior in 2026&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;strong&gt;I want someone who is deliberately building their own judgment&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Here is what that looks like in practice:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Read code until it’s boring&lt;&#x2F;strong&gt;: Not just tutorials. Real codebases. The ones
+that are ugly and overgrown and have six different naming conventions because
+six different developers touched them over six years. That’s where you learn to
+read a system, not just code.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Break things manually first, then let AI fix them&lt;&#x2F;strong&gt;: If you’re learning
+databases, write the SQL by hand before you ask an agent to generate it.
+If you don’t understand what it produced, you have no basis for trusting it.
+The mental model has to come first. AI is a multiplier, and a multiplier applied
+to zero is still zero.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Learn to switch resolution deliberately&lt;&#x2F;strong&gt;: Sometimes you need the satellite
+view: how does this system fit into the architecture? What problem does this
+codebase exist to solve? Sometimes you need the dewdrop view: exactly which line
+is allocating the memory that’s leaking? The skill that matters is knowing
+&lt;em&gt;which&lt;&#x2F;em&gt; level you’re at and &lt;em&gt;choosing&lt;&#x2F;em&gt; it, not drifting between them because the
+task handed it to you.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Own outcomes, not tasks&lt;&#x2F;strong&gt;: A task is “&lt;em&gt;implement the auth flow&lt;&#x2F;em&gt;”. An outcome is
+“&lt;em&gt;users can log in reliably and securely, and the team understands what we built
+and why&lt;&#x2F;em&gt;”. Junior engineers who optimize for tasks ship tickets. Engineers with
+real leverage &lt;strong&gt;optimize for outcomes&lt;&#x2F;strong&gt;. This shift is possible earlier than most
+people think, but it requires &lt;em&gt;thinking about it&lt;&#x2F;em&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Build the thing you care about&lt;&#x2F;strong&gt;: Not to put it on your resume. Because you
+care about it, and you want to see if you can: &lt;strong&gt;The motivation has to be intrinsic&lt;&#x2F;strong&gt;,
+because, the external reward structure for junior engineering is hostile right now
+and will remain so for the foreseeable future.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;If you are here because it’s a stable career path, I’m sorry, but this isn’t that anymore.&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;If you are here because you can’t imagine doing anything else, you’re in the right place.&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;the-networking-thing-since-we-re-being-honest&quot;&gt;The Networking Thing (Since We’re Being Honest)&lt;&#x2F;h2&gt;
+&lt;p&gt;Most of the people who ask me this question are also, somewhere in the message,
+asking me to refer them.&lt;&#x2F;p&gt;
+&lt;p&gt;I understand. I would probably do the same.&lt;&#x2F;p&gt;
+&lt;p&gt;But I’d encourage you to read what I wrote about that: &lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;top-of-mind&#x2F;the-dream-job&#x2F;&quot;&gt;&lt;strong&gt;Build Strong
+Connections to Land Your Dream Job&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;The short version: a cold referral request from someone I don’t know is worth
+nothing to me and costs me something. A warm referral from someone whose work I
+admire, whose judgment I’ve seen in action, whose name I’d put next to mine:
+That’s worth its weight in gold.&lt;&#x2F;p&gt;
+&lt;p&gt;The way to get that conversation is not to ask for it. It’s to be the kind of
+person who makes the people around them better. Online or in person. Through
+what you write, what you build, what you share, what you’re honest about when
+it doesn’t go well.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Ship things&lt;&#x2F;strong&gt;. Write about what you learned. &lt;strong&gt;Make it public&lt;&#x2F;strong&gt;.
+Help someone who is two steps behind where you are now.&lt;&#x2F;p&gt;
+&lt;p&gt;Do that consistently for a year, and you won’t need to ask for referrals:
+&lt;strong&gt;They will appear&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;the-timeless-parts&quot;&gt;The Timeless Parts&lt;&#x2F;h2&gt;
+&lt;p&gt;Here’s what I think doesn’t change:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Systems thinking scales&lt;&#x2F;strong&gt;: The ability to look at a complex system, understand
+how it fails, identify the root cause, and reason about trade-offs—this is as
+valuable as it has ever been, and AI cannot do it for you without your
+intellectual scaffolding.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Communication compounds&lt;&#x2F;strong&gt;: The ability to write clearly about technical
+topics, to explain a decision with its context and rationale, to make your work
+legible to others—this was always important and is now a primary differentiator.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Curiosity is the engine&lt;&#x2F;strong&gt;: Every good engineer I know is curious in a way they
+can’t really turn off. Not about everything: about &lt;em&gt;this&lt;&#x2F;em&gt; thing, whatever this
+thing is right now. If you don’t have that, the rest of this advice probably
+won’t help much.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;You are not your stack&lt;&#x2F;strong&gt;: The language you know, the framework you use, the
+toolchain you learned in your bootcamp—none of that is your identity or your
+moat. What is your moat is how you think, what you can figure out, and what you
+do with problems that nobody handed you a solution to.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;so-is-it-worth-starting&quot;&gt;So: Is It Worth Starting?&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;strong&gt;Absolutely and unequivocally yes&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;With full awareness of what you are signing up for.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;The floor has moved&lt;&#x2F;strong&gt;: The jobs that used to be entry-level—write CRUD apps,
+translate specs into code, fix bugs someone else diagnosed—many of those are
+gone or going. The field is smaller at the bottom than it was, and it’s not
+recovering to what it was.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;But the ceiling is higher than it has ever been&lt;&#x2F;strong&gt;: A single person with good
+judgment, good taste, and strong command of these tools can build things that
+would have required a team of ten five years ago. That’s not hyperbole. I’ve
+watched it happen.&lt;&#x2F;p&gt;
+&lt;p&gt;The question is whether you are going to be the person who does that, or whether
+you are going to spend the next few years being anxious about whether you are
+keeping up.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;You can’t do both&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;“All great fighting is the same, Eragon, even as all great warriors are the
+same. Past a certain point, it does not matter whether you wield a sword, a
+claw, a tooth, or a tail. It’s true, you must be capable with your weapon,
+but anyone with the time and inclination can acquire technical proficiency.
+To achieve greatness though, that requires artistry.”&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Christopher Paolini&lt;&#x2F;strong&gt; — &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;7664041-inheritance&quot;&gt;The Inheritance Cycle&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;The weapon changed. The artistry is still the job.&lt;&#x2F;p&gt;
+&lt;p&gt;May the source be with you 🦄.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;h2 id=&quot;continue-reading&quot;&gt;Continue Reading&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▶ Be the Next Version of Yourself&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;hack-the-system&#x2F;&quot;&gt;Who Else is Ready to Hack?&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;chisel&#x2F;&quot;&gt;Grab Your Chisel and Start Pounding&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learn-fast-remember-more&#x2F;&quot;&gt;Unlock Your Brain’s Power: Learn Fast, Remember More&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;the-art-of-learning&#x2F;&quot;&gt;Master Your Mind: Unleash the Power of Learning&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;bedtime-reading&#x2F;&quot;&gt;Resources Every Developer Must Read: No Exceptions&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;knowing-javascript-is-not-good-enough&#x2F;&quot;&gt;Knowing JavaScript Is Not Good Enough&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learn-javascript-the-unconventional-way&#x2F;&quot;&gt;Learn JavaScript the Unconventional Way&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;learn-haskell&#x2F;&quot;&gt;Want to Learn JavaScript? Learn Haskell First&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;glossary&#x2F;&quot;&gt;A Glossary of Mostly Developer-Related Things&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;git&#x2F;&quot;&gt;Git Comfortable&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;vim&#x2F;&quot;&gt;Master Your Vim-Fu&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;one-does-not-simply-terminal&#x2F;&quot;&gt;One Does Not Simply Terminal 👌&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;design-patterns&#x2F;&quot;&gt;Paint Me Like One of Your French Design Patterns&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;regexp&#x2F;&quot;&gt;Tame Your Regular Expressions&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;security&#x2F;&quot;&gt;Security Is Not Optional&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;you-need-testing&#x2F;&quot;&gt;You Need Testing&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;a-startup-founders-bedtime-reading-list&#x2F;&quot;&gt;A Startup Founder’s Bedtime Reading List&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;color-theory&#x2F;&quot;&gt;Orange Is the New Purple&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;ramp-up-in-user-experience-design&#x2F;&quot;&gt;Ramp Up in User Experience Design&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;typography&#x2F;&quot;&gt;Get Better at Typography&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;zerotohero.dev&#x2F;roadmap&#x2F;what-the-junior-actually-needs&#x2F;&quot;&gt;The Bottleneck Moved. The Work Did Not.&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+</feed>

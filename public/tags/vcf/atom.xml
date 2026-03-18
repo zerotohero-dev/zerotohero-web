@@ -250,14 +250,10 @@
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Main Start Page&lt;&#x2F;p&gt;
-&lt;pre style=&quot;background-color:#282828;color:#fdf4c1aa;&quot;&gt;&lt;code&gt;&lt;span&gt;https:&#x2F;&#x2F;vcsa.zerotohero.dev:443
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;&#x2F;li&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #EBDBB2; background-color: #1D2021;&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;https:&#x2F;&#x2F;vcsa.zerotohero.dev:443&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;vSphere Client Direct Access&lt;&#x2F;p&gt;
-&lt;pre style=&quot;background-color:#282828;color:#fdf4c1aa;&quot;&gt;&lt;code&gt;&lt;span&gt;https:&#x2F;&#x2F;vcsa.zerotohero.dev&#x2F;ui
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;&#x2F;li&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #EBDBB2; background-color: #1D2021;&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;https:&#x2F;&#x2F;vcsa.zerotohero.dev&#x2F;ui&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ol&gt;
 &lt;h2 id=&quot;important-notes&quot;&gt;Important Notes&lt;&#x2F;h2&gt;
 &lt;h3 id=&quot;installation-time&quot;&gt;Installation Time&lt;&#x2F;h3&gt;
@@ -784,16 +780,12 @@
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Verify DNS resolution for target ESXi host:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;nslookup esxi-4.zerotohero.dev
-&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Should resolve to 192.168.1.104
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;&#x2F;li&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #EBDBB2; background-color: #1D2021;&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;nslookup&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt; esxi-4.zerotohero.dev&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #928374;font-style: italic;&quot;&gt;# Should resolve to 192.168.1.104&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;
 &lt;p&gt;Verify DNS resolution for vCSA FQDN:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;nslookup vcsa.zerotohero.dev
-&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Should resolve to 192.168.1.111
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;&#x2F;li&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #EBDBB2; background-color: #1D2021;&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;nslookup&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt; vcsa.zerotohero.dev&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #928374;font-style: italic;&quot;&gt;# Should resolve to 192.168.1.111&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ol&gt;
 &lt;h2 id=&quot;installation-process&quot;&gt;Installation Process&lt;&#x2F;h2&gt;
 &lt;h3 id=&quot;1-launch-installer&quot;&gt;1. Launch Installer&lt;&#x2F;h3&gt;
@@ -1150,9 +1142,7 @@
 &lt;h4 id=&quot;2-configuring-smb-backup&quot;&gt;2. Configuring SMB Backup&lt;&#x2F;h4&gt;
 &lt;h5 id=&quot;setting-up-smb-share-windows-server&quot;&gt;Setting up SMB Share (Windows Server)&lt;&#x2F;h5&gt;
 &lt;ol&gt;
-&lt;li&gt;Create backup directory&lt;pre style=&quot;background-color:#282828;color:#fdf4c1aa;&quot;&gt;&lt;code&gt;&lt;span&gt;C:\VCSA_backups
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;&#x2F;li&gt;
+&lt;li&gt;Create backup directory&lt;pre class=&quot;giallo&quot; style=&quot;color: #EBDBB2; background-color: #1D2021;&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;C:\VCSA_backups&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;Configure sharing:
 &lt;ul&gt;
 &lt;li&gt;Right-click folder → Properties → Sharing&lt;&#x2F;li&gt;
@@ -1164,9 +1154,7 @@
 &lt;h5 id=&quot;configuring-backup-in-vami&quot;&gt;Configuring Backup in VAMI&lt;&#x2F;h5&gt;
 &lt;ol&gt;
 &lt;li&gt;Select “Backup Now” for manual backup&lt;&#x2F;li&gt;
-&lt;li&gt;Enter backup location:&lt;pre style=&quot;background-color:#282828;color:#fdf4c1aa;&quot;&gt;&lt;code&gt;&lt;span&gt;smb:&#x2F;&#x2F;192.168.1.100&#x2F;VCSA_backups
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;&#x2F;li&gt;
+&lt;li&gt;Enter backup location:&lt;pre class=&quot;giallo&quot; style=&quot;color: #EBDBB2; background-color: #1D2021;&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;smb:&#x2F;&#x2F;192.168.1.100&#x2F;VCSA_backups&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;Provide credentials:
 &lt;ul&gt;
 &lt;li&gt;Username: administrator (use service account in production)&lt;&#x2F;li&gt;
@@ -1192,9 +1180,7 @@
 &lt;h3 id=&quot;backup-verification&quot;&gt;Backup Verification&lt;&#x2F;h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Check backup destination&lt;&#x2F;li&gt;
-&lt;li&gt;Verify backup files:&lt;pre style=&quot;background-color:#282828;color:#fdf4c1aa;&quot;&gt;&lt;code&gt;&lt;span&gt;[share]&#x2F;vcenter&#x2F;[vcsa_fqdn]&#x2F;[timestamp]
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;&#x2F;li&gt;
+&lt;li&gt;Verify backup files:&lt;pre class=&quot;giallo&quot; style=&quot;color: #EBDBB2; background-color: #1D2021;&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;[share]&#x2F;vcenter&#x2F;[vcsa_fqdn]&#x2F;[timestamp]&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;license-management-via-vsphere-client&quot;&gt;License Management via vSphere Client&lt;&#x2F;h2&gt;
 &lt;h3 id=&quot;accessing-license-management&quot;&gt;Accessing License Management&lt;&#x2F;h3&gt;
@@ -2892,18 +2878,17 @@
 &lt;&#x2F;ol&gt;
 &lt;h2 id=&quot;network-traffic-flow&quot;&gt;Network Traffic Flow&lt;&#x2F;h2&gt;
 &lt;p&gt;The logical flow of network traffic follows this path:&lt;&#x2F;p&gt;
-&lt;pre style=&quot;background-color:#282828;color:#fdf4c1aa;&quot;&gt;&lt;code&gt;&lt;span&gt;Management Computer (192.168.1.151)
-&lt;&#x2F;span&gt;&lt;span&gt;    ↕
-&lt;&#x2F;span&gt;&lt;span&gt;Physical Network Switch
-&lt;&#x2F;span&gt;&lt;span&gt;    ↕
-&lt;&#x2F;span&gt;&lt;span&gt;ESXi Host Physical NIC (vmnic0)
-&lt;&#x2F;span&gt;&lt;span&gt;    ↕
-&lt;&#x2F;span&gt;&lt;span&gt;Virtual Switch (vSwitch0)
-&lt;&#x2F;span&gt;&lt;span&gt;    ↕
-&lt;&#x2F;span&gt;&lt;span&gt;VMkernel Port (vmk0 - 192.168.1.102)
-&lt;&#x2F;span&gt;&lt;span&gt;    ↕
-&lt;&#x2F;span&gt;&lt;span&gt;ESXi Host Management Interface
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #EBDBB2; background-color: #1D2021;&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Management Computer (192.168.1.151)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    ↕&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Physical Network Switch&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    ↕&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;ESXi Host Physical NIC (vmnic0)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    ↕&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Virtual Switch (vSwitch0)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    ↕&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;VMkernel Port (vmk0 - 192.168.1.102)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    ↕&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;ESXi Host Management Interface&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;This configuration enables:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;Management access to the ESXi host&lt;&#x2F;li&gt;
@@ -3051,13 +3036,11 @@
 &lt;&#x2F;ol&gt;
 &lt;h3 id=&quot;from-management-computer&quot;&gt;From Management Computer&lt;&#x2F;h3&gt;
 &lt;p&gt;Verify DNS configuration using nslookup:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;nslookup esxi-2.zerotohero.dev
-&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Should return 192.168.1.102
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;nslookup 192.168.1.102
-&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Should return esxi-2.zerotohero.dev
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;important-dns-considerations&quot;&gt;Important DNS Considerations&lt;&#x2F;h2&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #EBDBB2; background-color: #1D2021;&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;nslookup&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt; esxi-2.zerotohero.dev&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #928374;font-style: italic;&quot;&gt;# Should return 192.168.1.102&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;nslookup&lt;&#x2F;span&gt;&lt;span style=&quot;color: #D3869B;&quot;&gt; 192.168.1.102&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #928374;font-style: italic;&quot;&gt;# Should return esxi-2.zerotohero.dev&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h2 id=&quot;important-dns-considerations&quot;&gt;Important DNS Considerations&lt;&#x2F;h2&gt;
 &lt;p&gt;Proper DNS configuration is crucial for:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;Overall system functionality&lt;&#x2F;li&gt;
@@ -3337,10 +3320,9 @@
 &lt;&#x2F;ol&gt;
 &lt;h2 id=&quot;verifying-ssh-access&quot;&gt;Verifying SSH Access&lt;&#x2F;h2&gt;
 &lt;p&gt;Test SSH connection using a terminal emulator:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;ssh root@192.168.1.102
-&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# or
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;ssh root@esxi-2.zerotohero.dev
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #EBDBB2; background-color: #1D2021;&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;ssh&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt; root@192.168.1.102&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #928374;font-style: italic;&quot;&gt;# or&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;ssh&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt; root@esxi-2.zerotohero.dev&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;First-time connection will require:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;Accepting the host key&lt;&#x2F;li&gt;
@@ -3445,13 +3427,13 @@ is critical to ensuring sensitive information’s security and integrity. While
 several solutions are available, the recent shift in HashiCorp’s licensing
 towards a Business Source License (BSL) has raised concerns and sparked
 discussions within the community.&lt;&#x2F;p&gt;
-&lt;p&gt;As the lead architect of &lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;&quot;&gt;&lt;strong&gt;VMware Secrets Manager&lt;&#x2F;strong&gt; (&lt;strong&gt;&lt;em&gt;VSecM&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;)&lt;&#x2F;a&gt;,
+&lt;p&gt;As the lead architect of &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;&quot;&gt;&lt;strong&gt;VMware Secrets Manager&lt;&#x2F;strong&gt; (&lt;strong&gt;&lt;em&gt;VSecM&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;)&lt;&#x2F;a&gt;,
 I’d like to take this opportunity to introduce our solution, which offers a robust,
 flexible, and &lt;strong&gt;permissive&lt;&#x2F;strong&gt; alternative to HashiCorp’s Vault.&lt;&#x2F;p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;⭐️ Star Us on GitHub ⭐️&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;p&gt;If you find value in our approach and want to help others discover this
-outstanding technology, &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;vmware-tanzu&#x2F;secrets-manager&quot;&gt;&lt;strong&gt;star our GitHub
+outstanding technology, &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;vmware-tanzu&#x2F;secrets-manager&quot;&gt;&lt;strong&gt;star our GitHub
 repository&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;. Your support helps
 increase visibility and encourages more collaboration and innovation within the
 community.&lt;&#x2F;p&gt;
@@ -3461,23 +3443,23 @@ community.&lt;&#x2F;p&gt;
 as a restrictive move. The BSL, unlike open-source licenses, imposes certain
 limitations and conditions that may not align with the needs and values of all
 organizations and developers.&lt;&#x2F;p&gt;
-&lt;p&gt;In contrast, &lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;&quot;&gt;&lt;strong&gt;VMware Secrets Manager&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; is licensed under
+&lt;p&gt;In contrast, &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;&quot;&gt;&lt;strong&gt;VMware Secrets Manager&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; is licensed under
 the BSD 2-Clause License, a permissive open-source license that encourages
 collaboration, innovation, and freedom of use.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;vmware-secrets-manager-a-closer-look&quot;&gt;VMware Secrets Manager: A Closer Look&lt;&#x2F;h2&gt;
 &lt;p&gt;&lt;strong&gt;VSecM&lt;&#x2F;strong&gt; is designed with modern developers and DevOps professionals in mind.
 Here’s why it stands out:&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Ease of Use&lt;&#x2F;strong&gt;: With a &lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;docs&#x2F;quickstart&#x2F;&quot;&gt;&lt;strong&gt;Quickstart Guide&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;,
-intuitive &lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;docs&#x2F;cli&#x2F;&quot;&gt;&lt;strong&gt;CLI&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, and developer-friendly
-&lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;docs&#x2F;sdk&#x2F;&quot;&gt;&lt;strong&gt;SDK&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, &lt;strong&gt;VSecM&lt;&#x2F;strong&gt; simplifies secrets management
+&lt;li&gt;&lt;strong&gt;Ease of Use&lt;&#x2F;strong&gt;: With a &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;docs&#x2F;quickstart&#x2F;&quot;&gt;&lt;strong&gt;Quickstart Guide&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;,
+intuitive &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;docs&#x2F;cli&#x2F;&quot;&gt;&lt;strong&gt;CLI&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, and developer-friendly
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;docs&#x2F;sdk&#x2F;&quot;&gt;&lt;strong&gt;SDK&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, &lt;strong&gt;VSecM&lt;&#x2F;strong&gt; simplifies secrets management
 without compromising security.&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;strong&gt;Kubernetes Is a First-Class Citizen&lt;&#x2F;strong&gt;: &lt;strong&gt;VSecM&lt;&#x2F;strong&gt; seamlessly integrates with
-Kubernetes, leveraging &lt;a href=&quot;https:&#x2F;&#x2F;spiffe.io&#x2F;docs&#x2F;latest&#x2F;spire-about&#x2F;&quot;&gt;&lt;strong&gt;SPIRE&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+Kubernetes, leveraging &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;spiffe.io&#x2F;docs&#x2F;latest&#x2F;spire-about&#x2F;&quot;&gt;&lt;strong&gt;SPIRE&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
 for authentication and offering flexible secret storage and transformation
 options.&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;strong&gt;Community Engagement&lt;&#x2F;strong&gt;: We believe in open collaboration and
-community-driven development. Our &lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;docs&#x2F;contributing&#x2F;&quot;&gt;&lt;strong&gt;Contributing Guide&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+community-driven development. Our &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;docs&#x2F;contributing&#x2F;&quot;&gt;&lt;strong&gt;Contributing Guide&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
 invites developers to get involved, ask questions, and contribute to the project.&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;strong&gt;Secure by Default&lt;&#x2F;strong&gt;: &lt;strong&gt;VSecM&lt;&#x2F;strong&gt; offers advanced security features, including
 encryption, manual master secret setting, and integration with various backing
@@ -3493,7 +3475,7 @@ flexible and secure solution for secrets management, &lt;strong&gt;VSecM&lt;&#x2
 welcoming and innovative platform.&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;this-is-just-the-beginning-a-vision-for-the-future&quot;&gt;This is Just the Beginning: A Vision for the Future&lt;&#x2F;h3&gt;
 &lt;p&gt;At &lt;strong&gt;VMware Secrets Manager&lt;&#x2F;strong&gt;, we believe in continuous innovation and growth.
-Our &lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;docs&#x2F;roadmap&quot;&gt;&lt;strong&gt;roadmap&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; is a testament to our
+Our &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;docs&#x2F;roadmap&quot;&gt;&lt;strong&gt;roadmap&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; is a testament to our
 commitment to delivering cutting-edge solutions that meet the evolving needs of
 the cloud-native community.&lt;&#x2F;p&gt;
 &lt;p&gt;Here’s a glimpse of what’s on the horizon:&lt;&#x2F;p&gt;
@@ -3516,12 +3498,12 @@ excited about the journey ahead and invite you to be a part of it.&lt;&#x2F;p&gt
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;⭐️ Star Us on GitHub ⭐️&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;p&gt;If you find value in our approach and want to help others discover this
-outstanding technology, &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;vmware-tanzu&#x2F;secrets-manager&quot;&gt;&lt;strong&gt;star our GitHub repository&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.
+outstanding technology, &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;vmware-tanzu&#x2F;secrets-manager&quot;&gt;&lt;strong&gt;star our GitHub repository&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.
 Your support helps increase visibility and encourages more collaboration and
 innovation within the community.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;h3 id=&quot;help-us-shape-the-future&quot;&gt;Help Us Shape the Future&lt;&#x2F;h3&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;&quot;&gt;&lt;strong&gt;Start your journey with VMware Secrets Manager today&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+&lt;p&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;&quot;&gt;&lt;strong&gt;Start your journey with VMware Secrets Manager today&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
 and unlock the potential of cloud-native secrets management.&lt;&#x2F;p&gt;
 &lt;hr &#x2F;&gt;
 &lt;h2 id=&quot;section-contents&quot;&gt;Section Contents&lt;&#x2F;h2&gt;
@@ -3599,16 +3581,16 @@ and unlock the potential of cloud-native secrets management.&lt;&#x2F;p&gt;
 &lt;p&gt;I am thrilled to share an update with all of you. &lt;strong&gt;Aegis&lt;&#x2F;strong&gt; has transformed and
 landed into its new home! It is now entering a phase as **VMware Secrets Manager
 ** for Cloud-Native workloads!&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;vmware-tanzu&#x2F;secrets-manager&quot;&gt;Please learn more about our project in the repository
+&lt;p&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;vmware-tanzu&#x2F;secrets-manager&quot;&gt;Please learn more about our project in the repository
 following this link&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
-&lt;p&gt;Also, &lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;&quot;&gt;stay updated with us on our website at &lt;strong&gt;vsecm.com&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Also, &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;&quot;&gt;stay updated with us on our website at &lt;strong&gt;vsecm.com&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;coming-up-next&quot;&gt;Coming Up Next&lt;&#x2F;h2&gt;
 &lt;p&gt;This change represents more than just a new name. It symbolizes our unwavering
 dedication to pushing boundaries, fostering innovation, and delivering reliable
 solutions for your cloud-native workloads.&lt;&#x2F;p&gt;
 &lt;p&gt;As things settle down, we’re already busy planning our steps. You can keep track
 of our progress.&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;docs&#x2F;roadmap&#x2F;&quot;&gt;Follow our plans in our roadmap page&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;docs&#x2F;roadmap&#x2F;&quot;&gt;Follow our plans in our roadmap page&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;We aim to provide how the project will proceed as transparently as possible. Of
 course, our contribution cadence and frequency depend on the availability and
 commitment of our core contributors.&lt;&#x2F;p&gt;
@@ -3621,7 +3603,7 @@ Secrets Management solution.&lt;&#x2F;p&gt;
 community, as we move forward. Your contributions and feedback mean the world to
 us.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;who-else-wants-to-contribute&quot;&gt;Who Else Wants to Contribute?&lt;&#x2F;h2&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;docs&#x2F;community&#x2F;&quot;&gt;Feel free to reach out if you’re interested in contributing to &lt;strong&gt;VMware Secrets
+&lt;p&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;vsecm.com&#x2F;docs&#x2F;community&#x2F;&quot;&gt;Feel free to reach out if you’re interested in contributing to &lt;strong&gt;VMware Secrets
 Manager&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;Stay tuned for updates and developments as we continue on this journey.&lt;&#x2F;p&gt;
 &lt;p&gt;Thank you very much for your support!&lt;&#x2F;p&gt;

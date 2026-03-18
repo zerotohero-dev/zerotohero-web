@@ -44,25 +44,25 @@ and applications I installed to this new system.&lt;&#x2F;p&gt;
 &lt;p&gt;I like to use a few monospace fonts depending on my mood and the use case,
 here are the ones I added to my system:&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.monolisa.dev&#x2F;&quot;&gt;MonoLisa&lt;&#x2F;a&gt;: My go-to font for coding.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;usgraphics.com&#x2F;products&#x2F;berkeley-mono&quot;&gt;Berkeley Mono&lt;&#x2F;a&gt;: There is no
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.monolisa.dev&#x2F;&quot;&gt;MonoLisa&lt;&#x2F;a&gt;: My go-to font for coding.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;usgraphics.com&#x2F;products&#x2F;berkeley-mono&quot;&gt;Berkeley Mono&lt;&#x2F;a&gt;: There is no
 other font that says “Unix” better than this one. That’s another favorite
 font of mine that I switch and use frequently.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;fsd.it&#x2F;shop&#x2F;fonts&#x2F;pragmatapro-variable&#x2F;&quot;&gt;Pragmata Pro&lt;&#x2F;a&gt;: This is
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;fsd.it&#x2F;shop&#x2F;fonts&#x2F;pragmatapro-variable&#x2F;&quot;&gt;Pragmata Pro&lt;&#x2F;a&gt;: This is
 more of an acquired taste: Not everyone’s cup of tea; but if you spend some
 time and get used to it, you’ll love it. It’s especially great when
 horizontal space is premium; like checking 20 logs at once.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.typography.com&#x2F;fonts&#x2F;operator&#x2F;overview&quot;&gt;Operator Mono&lt;&#x2F;a&gt;: Beautiful
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.typography.com&#x2F;fonts&#x2F;operator&#x2F;overview&quot;&gt;Operator Mono&lt;&#x2F;a&gt;: Beautiful
 font, but (&lt;em&gt;to me&lt;&#x2F;em&gt;) a bit overhyped. Still, I like it and use it occasionally.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;Beyond fonts, the way I manage windows and automate file operations forms the
 backbone of my daily workflow.&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;window-manager&quot;&gt;Window Manager&lt;&#x2F;h3&gt;
-&lt;p&gt;I use &lt;a href=&quot;https:&#x2F;&#x2F;www.thelasso.app&#x2F;&quot;&gt;Lasso&lt;&#x2F;a&gt; for window management. Granted, it
+&lt;p&gt;I use &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.thelasso.app&#x2F;&quot;&gt;Lasso&lt;&#x2F;a&gt; for window management. Granted, it
 requires its own post too, I can say that it is one of the things you don’t
 know you needed until you start using it.&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;file-automation&quot;&gt;File Automation&lt;&#x2F;h3&gt;
-&lt;p&gt;I use &lt;a href=&quot;https:&#x2F;&#x2F;www.noodlesoft.com&#x2F;&quot;&gt;Hazel&lt;&#x2F;a&gt; to automate file management.
+&lt;p&gt;I use &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.noodlesoft.com&#x2F;&quot;&gt;Hazel&lt;&#x2F;a&gt; to automate file management.
 It’s yet another app that you don’t know how badly you need until you start
 using it.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;storage-and-backups&quot;&gt;Storage and Backups&lt;&#x2F;h2&gt;
@@ -76,16 +76,16 @@ critical: keeping your data safe.&lt;&#x2F;p&gt;
       margin-top: -1.125em;
       font-size: 1em;&quot;&gt;Synology Admin UI.&lt;&#x2F;p&gt;
 &lt;&#x2F;div&gt;
-&lt;p&gt;I got a &lt;a href=&quot;https:&#x2F;&#x2F;www.synology.com&#x2F;en-us&quot;&gt;Synology DS1522+&lt;&#x2F;a&gt; and five
-&lt;a href=&quot;https:&#x2F;&#x2F;www.seagate.com&#x2F;products&#x2F;nas-drives&#x2F;ironwolf-hard-drive&#x2F;&quot;&gt;8TB Seagate IronWolf&lt;&#x2F;a&gt;
-hard drives. Using them together with &lt;a href=&quot;https:&#x2F;&#x2F;kb.synology.com&#x2F;en-us&#x2F;DSM&#x2F;tutorial&#x2F;What_is_Synology_Hybrid_RAID_SHR&quot;&gt;SHR-2 RAID&lt;&#x2F;a&gt;
+&lt;p&gt;I got a &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.synology.com&#x2F;en-us&quot;&gt;Synology DS1522+&lt;&#x2F;a&gt; and five
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.seagate.com&#x2F;products&#x2F;nas-drives&#x2F;ironwolf-hard-drive&#x2F;&quot;&gt;8TB Seagate IronWolf&lt;&#x2F;a&gt;
+hard drives. Using them together with &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;kb.synology.com&#x2F;en-us&#x2F;DSM&#x2F;tutorial&#x2F;What_is_Synology_Hybrid_RAID_SHR&quot;&gt;SHR-2 RAID&lt;&#x2F;a&gt;
 which gives me slightly more than 20TB of storage, while allowing failure of
 two drives without losing data.&lt;&#x2F;p&gt;
 &lt;p&gt;That gives me more than enough space to store my data, including stream VODs,
 virtual machine images, and any other stuff that can consume a lot of space.&lt;&#x2F;p&gt;
 &lt;p&gt;Though, while &lt;strong&gt;RAID&lt;&#x2F;strong&gt; is great and gives you redundancy, it’s not a
 replacement for &lt;strong&gt;backup&lt;&#x2F;strong&gt;. So I use, &lt;strong&gt;HyperBackup&lt;&#x2F;strong&gt; (&lt;em&gt;from within the Synology
-Admin UI&lt;&#x2F;em&gt;), to back up my important data to a &lt;a href=&quot;https:&#x2F;&#x2F;www.backblaze.com&#x2F;cloud-storage&quot;&gt;Backblaze B2&lt;&#x2F;a&gt;
+Admin UI&lt;&#x2F;em&gt;), to back up my important data to a &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.backblaze.com&#x2F;cloud-storage&quot;&gt;Backblaze B2&lt;&#x2F;a&gt;
 bucket.&lt;&#x2F;p&gt;
 &lt;p&gt;After scheduling the backups and verifying that they work, and also setting
 up &lt;strong&gt;email notifications&lt;&#x2F;strong&gt;, so that when a backup fails, or when a drive has
@@ -99,12 +99,12 @@ up most of my time: streaming and content creation.&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;audio-hardware&quot;&gt;Audio Hardware&lt;&#x2F;h3&gt;
 &lt;p&gt;My streaming gear consists of:&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.shure.com&#x2F;en-US&#x2F;products&#x2F;microphones&#x2F;sm7b?variant=SM7B&quot;&gt;Shure SM7B XLR Mic&lt;&#x2F;a&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.shure.com&#x2F;en-US&#x2F;products&#x2F;microphones&#x2F;sm7b?variant=SM7B&quot;&gt;Shure SM7B XLR Mic&lt;&#x2F;a&gt;
 (&lt;em&gt;MV7 users might disagree, but I do believe that “SM7B kicks the llama’s
 ass”&lt;&#x2F;em&gt;)&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.cloudmicrophones.com&#x2F;product-page&#x2F;cloudlifter-cl-x&quot;&gt;CloudLifter CL-X&lt;&#x2F;a&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.cloudmicrophones.com&#x2F;product-page&#x2F;cloudlifter-cl-x&quot;&gt;CloudLifter CL-X&lt;&#x2F;a&gt;
 because &lt;strong&gt;SM 7B&lt;&#x2F;strong&gt; is gain-hungry.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;rme-audio.de&#x2F;babyface-pro-fs.html&quot;&gt;Babyface Pro FS&lt;&#x2F;a&gt; because it’s one
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;rme-audio.de&#x2F;babyface-pro-fs.html&quot;&gt;Babyface Pro FS&lt;&#x2F;a&gt; because it’s one
 of the best audio interfaces that pairs &lt;strong&gt;really well&lt;&#x2F;strong&gt; with &lt;strong&gt;SM 7B&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 
@@ -114,43 +114,43 @@ of the best audio interfaces that pairs &lt;strong&gt;really well&lt;&#x2F;stron
       margin-top: -1.125em;
       font-size: 1em;&quot;&gt;RME TotalMix.&lt;&#x2F;p&gt;
 &lt;&#x2F;div&gt;
-&lt;p&gt;After installing the drivers for &lt;strong&gt;Babyface Pro FS&lt;&#x2F;strong&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;docs.rme-audio.com&#x2F;aoxd&#x2F;800-1c_totalmix&#x2F;&quot;&gt;&lt;strong&gt;RME TotalMix
+&lt;p&gt;After installing the drivers for &lt;strong&gt;Babyface Pro FS&lt;&#x2F;strong&gt;, &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;docs.rme-audio.com&#x2F;aoxd&#x2F;800-1c_totalmix&#x2F;&quot;&gt;&lt;strong&gt;RME TotalMix
 FX&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
 (&lt;em&gt;the software interface for Babyface Pro FS&lt;&#x2F;em&gt;) comes pre-installed on my Mac.&lt;&#x2F;p&gt;
 &lt;p&gt;Along with &lt;strong&gt;RME TotalMix&lt;&#x2F;strong&gt;, I also installed
-&lt;a href=&quot;https:&#x2F;&#x2F;rme-audio.de&#x2F;digicheck-ng.html&quot;&gt;DigiCheck NG&lt;&#x2F;a&gt;, which is excellent
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;rme-audio.de&#x2F;digicheck-ng.html&quot;&gt;DigiCheck NG&lt;&#x2F;a&gt;, which is excellent
 for monitoring my vocals and overall stream output gain.&lt;&#x2F;p&gt;
 &lt;p&gt;Again, setting up &lt;strong&gt;TotalMix&lt;&#x2F;strong&gt;, and &lt;strong&gt;DigiCheck NG&lt;&#x2F;strong&gt; deserve its own post.&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;camera-and-video&quot;&gt;Camera and Video&lt;&#x2F;h3&gt;
-&lt;p&gt;For camera, I use &lt;a href=&quot;https:&#x2F;&#x2F;www.obsbot.com&#x2F;obsbot-tiny-2-4k-webcam&quot;&gt;OBS Tiny 2&lt;&#x2F;a&gt;,
+&lt;p&gt;For camera, I use &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.obsbot.com&#x2F;obsbot-tiny-2-4k-webcam&quot;&gt;OBS Tiny 2&lt;&#x2F;a&gt;,
 I can confidently say that there is no better webcam for streaming. It can
 compete with beefier cameras like &lt;em&gt;Canon EOS&lt;&#x2F;em&gt; and &lt;em&gt;Nikon D850&lt;&#x2F;em&gt;. Honestly, I
 am still surprised a USB webcam can stream at 4K with crisp, crystal-clear
 video.&lt;&#x2F;p&gt;
-&lt;p&gt;After installing &lt;a href=&quot;https:&#x2F;&#x2F;www.obsbot.com&#x2F;download&quot;&gt;&lt;strong&gt;OBSBot Center&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; and its
+&lt;p&gt;After installing &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.obsbot.com&#x2F;download&quot;&gt;&lt;strong&gt;OBSBot Center&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; and its
 drivers, I’m good to go.&lt;&#x2F;p&gt;
 &lt;p&gt;One thing I did, though, was to &lt;strong&gt;disable&lt;&#x2F;strong&gt; any &lt;strong&gt;AI&lt;&#x2F;strong&gt; feature, because at times
 it can interpret my voice as a command, or my gesture to zoom and pan the
 camera. I don’t want that. I prefer to control the camera manually and want
 its focus to remain where I want it to be.&lt;&#x2F;p&gt;
 &lt;p&gt;One additional software I had to install in my particular case was
-&lt;a href=&quot;https:&#x2F;&#x2F;cameragraph.app&#x2F;&quot;&gt;CameraGraph&lt;&#x2F;a&gt; because for some reason the
-streaming software I use (&lt;em&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.wirecast.io&#x2F;en&#x2F;&quot;&gt;Wirecast&lt;&#x2F;a&gt;&lt;&#x2F;em&gt;) was not
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;cameragraph.app&#x2F;&quot;&gt;CameraGraph&lt;&#x2F;a&gt; because for some reason the
+streaming software I use (&lt;em&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.wirecast.io&#x2F;en&#x2F;&quot;&gt;Wirecast&lt;&#x2F;a&gt;&lt;&#x2F;em&gt;) was not
 happy with the camera feed output, so I had to create a virtual camera feed
 from the webcam.&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;streaming-software&quot;&gt;Streaming Software&lt;&#x2F;h3&gt;
 &lt;p&gt;For streaming, I use:&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.wirecast.io&#x2F;en&#x2F;&quot;&gt;Wirecast&lt;&#x2F;a&gt; for streaming.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;obsproject.com&#x2F;&quot;&gt;OBS Studio&lt;&#x2F;a&gt; for recording.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.wirecast.io&#x2F;en&#x2F;&quot;&gt;Wirecast&lt;&#x2F;a&gt; for streaming.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;obsproject.com&#x2F;&quot;&gt;OBS Studio&lt;&#x2F;a&gt; for recording.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;This way, I can send different audio background music tracks to the live
 stream and the recorded VODs. This is especially useful when I publish the VODs
 because I may get copyright strikes otherwise.&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;audio-pipeline&quot;&gt;Audio Pipeline&lt;&#x2F;h3&gt;
 &lt;p&gt;For audio pipeline setup, along with &lt;strong&gt;TotalMix&lt;&#x2F;strong&gt;, I use
-&lt;a href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;audiohijack&#x2F;&quot;&gt;Audio Hijack&lt;&#x2F;a&gt; and
-&lt;a href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;loopback&#x2F;&quot;&gt;Loopback&lt;&#x2F;a&gt;. Again, these two require a
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;audiohijack&#x2F;&quot;&gt;Audio Hijack&lt;&#x2F;a&gt; and
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;loopback&#x2F;&quot;&gt;Loopback&lt;&#x2F;a&gt;. Again, these two require a
 dedicated post of their own. But here are some screenshots to give you an idea:&lt;&#x2F;p&gt;
 
 &lt;div class=&quot;z2h-image&quot;&gt;
@@ -166,7 +166,7 @@ dedicated post of their own. But here are some screenshots to give you an idea:&
       margin-top: -1.125em;
       font-size: 1em;&quot;&gt;Stream processing AudioHijack session.&lt;&#x2F;p&gt;
 &lt;&#x2F;div&gt;
-&lt;p&gt;I also use &lt;a href=&quot;https:&#x2F;&#x2F;www.izotope.com&#x2F;en&#x2F;shop&#x2F;ozone-12-advanced&#x2F;&quot;&gt;Native Instruments Ozone
+&lt;p&gt;I also use &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.izotope.com&#x2F;en&#x2F;shop&#x2F;ozone-12-advanced&#x2F;&quot;&gt;Native Instruments Ozone
 Advanced&lt;&#x2F;a&gt; for real-time
 audio processing such as compression and equalization.&lt;&#x2F;p&gt;
 
@@ -177,12 +177,12 @@ audio processing such as compression and equalization.&lt;&#x2F;p&gt;
       font-size: 1em;&quot;&gt;Ozone Compressor in action.&lt;&#x2F;p&gt;
 &lt;&#x2F;div&gt;
 &lt;h3 id=&quot;post-production&quot;&gt;Post-Production&lt;&#x2F;h3&gt;
-&lt;p&gt;For post-production and VOD creation I use &lt;a href=&quot;https:&#x2F;&#x2F;www.telestream.net&#x2F;screenflow&#x2F;overview.htm&quot;&gt;ScreenFlow&lt;&#x2F;a&gt;
-and &lt;a href=&quot;https:&#x2F;&#x2F;www.adobe.com&#x2F;products&#x2F;audition.html&quot;&gt;Adobe Audition&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
-&lt;p&gt;I also use &lt;a href=&quot;https:&#x2F;&#x2F;www.izotope.com&#x2F;en&#x2F;products&#x2F;rx.html&quot;&gt;Izotope RX&lt;&#x2F;a&gt;
+&lt;p&gt;For post-production and VOD creation I use &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.telestream.net&#x2F;screenflow&#x2F;overview.htm&quot;&gt;ScreenFlow&lt;&#x2F;a&gt;
+and &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.adobe.com&#x2F;products&#x2F;audition.html&quot;&gt;Adobe Audition&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;I also use &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.izotope.com&#x2F;en&#x2F;products&#x2F;rx.html&quot;&gt;Izotope RX&lt;&#x2F;a&gt;
 toolset (&lt;em&gt;from the same company as Ozone&lt;&#x2F;em&gt;) for various audio post-production
 work.&lt;&#x2F;p&gt;
-&lt;p&gt;Ah, &lt;a href=&quot;https:&#x2F;&#x2F;www.elgato.com&#x2F;us&#x2F;en&#x2F;p&#x2F;stream-deck&quot;&gt;Stream Deck&lt;&#x2F;a&gt;—no streaming
+&lt;p&gt;Ah, &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.elgato.com&#x2F;us&#x2F;en&#x2F;p&#x2F;stream-deck&quot;&gt;Stream Deck&lt;&#x2F;a&gt;—no streaming
 setup is complete without it. Again, it requires its own post.&lt;&#x2F;p&gt;
 
 &lt;div class=&quot;z2h-image&quot;&gt;
@@ -203,7 +203,7 @@ setup is complete without it. Again, it requires its own post.&lt;&#x2F;p&gt;
 &lt;p&gt;Switching gears from software to hardware, let’s look at the physical tools
 that make daily work more comfortable and efficient.&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;mouse-and-keyboard&quot;&gt;Mouse and Keyboard&lt;&#x2F;h3&gt;
-&lt;p&gt;I use a &lt;a href=&quot;https:&#x2F;&#x2F;www.logitech.com&#x2F;en-eu&#x2F;shop&#x2F;p&#x2F;mx-master-4&quot;&gt;Logi MX Master 4&lt;&#x2F;a&gt;
+&lt;p&gt;I use a &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.logitech.com&#x2F;en-eu&#x2F;shop&#x2F;p&#x2F;mx-master-4&quot;&gt;Logi MX Master 4&lt;&#x2F;a&gt;
 for the mouse and cannot recommend it enough. Especially the &lt;strong&gt;action ring&lt;&#x2F;strong&gt;
 and the &lt;strong&gt;haptic feedback&lt;&#x2F;strong&gt;, and needless to say, the lightning-fast scrolling
 makes it a productivity booster.&lt;&#x2F;p&gt;
@@ -214,11 +214,11 @@ makes it a productivity booster.&lt;&#x2F;p&gt;
       margin-top: -1.125em;
       font-size: 1em;&quot;&gt;Logi MX Master 4 action ring.&lt;&#x2F;p&gt;
 &lt;&#x2F;div&gt;
-&lt;p&gt;For keyboard, I opted for a compact form-factor: a &lt;a href=&quot;https:&#x2F;&#x2F;nuphy.com&#x2F;collections&#x2F;keyboards&#x2F;products&#x2F;halo75-v2-qmk-via-wireless-custom-mechanical-keyboard&quot;&gt;NuPhy Halo 75
+&lt;p&gt;For keyboard, I opted for a compact form-factor: a &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;nuphy.com&#x2F;collections&#x2F;keyboards&#x2F;products&#x2F;halo75-v2-qmk-via-wireless-custom-mechanical-keyboard&quot;&gt;NuPhy Halo 75
 V2&lt;&#x2F;a&gt;
 with &lt;strong&gt;Brown Max&lt;&#x2F;strong&gt; switches, which gives a good level of tactile feedback while
 still keeping it quieter than &lt;strong&gt;Cherry MX Blue&lt;&#x2F;strong&gt; or similar switches.&lt;&#x2F;p&gt;
-&lt;p&gt;The keyboard is programmable with &lt;a href=&quot;https:&#x2F;&#x2F;qmk.fm&#x2F;&quot;&gt;QMK&lt;&#x2F;a&gt;; maybe a dedicated
+&lt;p&gt;The keyboard is programmable with &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;qmk.fm&#x2F;&quot;&gt;QMK&lt;&#x2F;a&gt;; maybe a dedicated
 post for that will come later on, too.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;productivity-and-daily-tools&quot;&gt;Productivity and Daily Tools&lt;&#x2F;h2&gt;
 &lt;p&gt;With hardware covered, let’s explore the software that helps me stay organized
@@ -226,20 +226,20 @@ and productive throughout the day.&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;visual-design-and-diagramming&quot;&gt;Visual Design and Diagramming&lt;&#x2F;h3&gt;
 &lt;p&gt;For graphic work, I use the following:&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.sketch.com&#x2F;&quot;&gt;Sketch&lt;&#x2F;a&gt;—I still believe it’s better than Figma.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.edrawsoft.com&#x2F;ad&#x2F;edraw-max&#x2F;&quot;&gt;Wondershare Edraw Max&lt;&#x2F;a&gt; which is
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.sketch.com&#x2F;&quot;&gt;Sketch&lt;&#x2F;a&gt;—I still believe it’s better than Figma.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.edrawsoft.com&#x2F;ad&#x2F;edraw-max&#x2F;&quot;&gt;Wondershare Edraw Max&lt;&#x2F;a&gt; which is
 a great tool for technical diagrams.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h3 id=&quot;music&quot;&gt;Music&lt;&#x2F;h3&gt;
 &lt;p&gt;I have two apps that I use to listen to music:&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;app.endel.io&#x2F;&quot;&gt;Endel&lt;&#x2F;a&gt;: I use &lt;strong&gt;Endel&lt;&#x2F;strong&gt; for both background music
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;app.endel.io&#x2F;&quot;&gt;Endel&lt;&#x2F;a&gt;: I use &lt;strong&gt;Endel&lt;&#x2F;strong&gt; for both background music
 for my stream VODs (&lt;em&gt;to avoid copyright strike&lt;&#x2F;em&gt;) and also for listening to
 it while I’m working to calm my brain and focus.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.spotify.com&#x2F;us&#x2F;&quot;&gt;Spotify&lt;&#x2F;a&gt;: &lt;strong&gt;Spotify&lt;&#x2F;strong&gt; is my main music app.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.spotify.com&#x2F;us&#x2F;&quot;&gt;Spotify&lt;&#x2F;a&gt;: &lt;strong&gt;Spotify&lt;&#x2F;strong&gt; is my main music app.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h3 id=&quot;video-conferencing&quot;&gt;Video Conferencing&lt;&#x2F;h3&gt;
-&lt;p&gt;I use &lt;a href=&quot;https:&#x2F;&#x2F;zoom.us&#x2F;&quot;&gt;Zoom&lt;&#x2F;a&gt; for video conferencing. I also use &lt;strong&gt;Zoom&lt;&#x2F;strong&gt; as
+&lt;p&gt;I use &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;zoom.us&#x2F;&quot;&gt;Zoom&lt;&#x2F;a&gt; for video conferencing. I also use &lt;strong&gt;Zoom&lt;&#x2F;strong&gt; as
 the video feed when I accept guests to my stream. I’ve found that it works
 more reliably than any other solution (&lt;em&gt;including Twitch’s “Guest Star”
 feature&lt;&#x2F;em&gt;) that I’ve tried.&lt;&#x2F;p&gt;
@@ -248,7 +248,7 @@ sometimes a peculiar friend might ask “&lt;em&gt;I use Jitsi, and Jitsi only; 
 capitalism!&lt;&#x2F;em&gt;” and I may end up installing it.&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;timezone-management&quot;&gt;Timezone Management&lt;&#x2F;h3&gt;
 &lt;p&gt;I work with several timezones from the Pacific Timezone, to London, to Italy,
-to India and Australia. I find &lt;a href=&quot;https:&#x2F;&#x2F;worldclock.pro&#x2F;mac&quot;&gt;World Clock Pro&lt;&#x2F;a&gt;
+to India and Australia. I find &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;worldclock.pro&#x2F;mac&quot;&gt;World Clock Pro&lt;&#x2F;a&gt;
 a great tool for managing multiple timezones. It has a nice interface where
 you can drag a slider to see, for example, what 9pm in your timezone
 will look like in London and Tokyo. It helps me a lot when I need to
@@ -263,21 +263,21 @@ plan meetings and other events.&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;general-productivity&quot;&gt;General Productivity&lt;&#x2F;h3&gt;
 &lt;p&gt;While Spotlight is a great search tool, if you need more powerful search
 functionality over everything on your Mac, then
-&lt;a href=&quot;https:&#x2F;&#x2F;www.houdah.com&#x2F;houdahSpot&#x2F;&quot;&gt;HoudahSpot&lt;&#x2F;a&gt; is one of the best options
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.houdah.com&#x2F;houdahSpot&#x2F;&quot;&gt;HoudahSpot&lt;&#x2F;a&gt; is one of the best options
 that give you a lot of flexibility and customization options.&lt;&#x2F;p&gt;
 &lt;p&gt;To manage distractions and keep track of tasks, I use:&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;stayinsession.com&#x2F;&quot;&gt;Sessions&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;and &lt;a href=&quot;https:&#x2F;&#x2F;www.inyourface.app&#x2F;&quot;&gt;InYourFace&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;stayinsession.com&#x2F;&quot;&gt;Sessions&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;and &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.inyourface.app&#x2F;&quot;&gt;InYourFace&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;For spelling, document editing, tone correction, and other editorial tasks
-I use &lt;a href=&quot;https:&#x2F;&#x2F;www.grammarly.com&#x2F;&quot;&gt;Grammarly (*rebranded as “SuperHuman”)&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+I use &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.grammarly.com&#x2F;&quot;&gt;Grammarly (*rebranded as “SuperHuman”)&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;To annotate my desktop in meetings and streaming sessions, I use
-&lt;a href=&quot;https:&#x2F;&#x2F;presentify.app&#x2F;&quot;&gt;Presentify&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
-&lt;p&gt;As my main browser, I’m using &lt;a href=&quot;https:&#x2F;&#x2F;vivaldi.com&#x2F;&quot;&gt;Vivaldi&lt;&#x2F;a&gt;. It needs some
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;presentify.app&#x2F;&quot;&gt;Presentify&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;As my main browser, I’m using &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;vivaldi.com&#x2F;&quot;&gt;Vivaldi&lt;&#x2F;a&gt;. It needs some
 exploration and getting-used-to, but especially, being able to group your
 browsing sessions into “&lt;em&gt;workspaces&lt;&#x2F;em&gt;” is a huge productivity booster.&lt;&#x2F;p&gt;
-&lt;p&gt;For file transfer needs, I use &lt;a href=&quot;https:&#x2F;&#x2F;panic.com&#x2F;transmit&#x2F;&quot;&gt;Transmit&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;For file transfer needs, I use &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;panic.com&#x2F;transmit&#x2F;&quot;&gt;Transmit&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;system-maintenance&quot;&gt;System Maintenance&lt;&#x2F;h2&gt;
 &lt;p&gt;Keeping a system healthy requires some attention. Here are the tools that
 help me monitor and maintain my setup.&lt;&#x2F;p&gt;
@@ -286,34 +286,34 @@ help me monitor and maintain my setup.&lt;&#x2F;p&gt;
 my life easier helps a lot. Here are some of the command line tools that I
 have installed to my system:&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;brew.sh&#x2F;&quot;&gt;HomeBrew&lt;&#x2F;a&gt; is the first thing to install for any Mac user.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;cantino&#x2F;mcfly&quot;&gt;Mcfly&lt;&#x2F;a&gt; is a fuzzy search tool for the
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;brew.sh&#x2F;&quot;&gt;HomeBrew&lt;&#x2F;a&gt; is the first thing to install for any Mac user.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;cantino&#x2F;mcfly&quot;&gt;Mcfly&lt;&#x2F;a&gt; is a fuzzy search tool for the
 command-line. It’s not strictly necessary, but I like its user experience.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;starship.rs&#x2F;&quot;&gt;Starship&lt;&#x2F;a&gt; is a cross-shell prompt tool that is
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;starship.rs&#x2F;&quot;&gt;Starship&lt;&#x2F;a&gt; is a cross-shell prompt tool that is
 highly-customizable.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;XAMPPRocky&#x2F;tokei&quot;&gt;Tokei&lt;&#x2F;a&gt; is a code counter tool.
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;XAMPPRocky&#x2F;tokei&quot;&gt;Tokei&lt;&#x2F;a&gt; is a code counter tool.
 I use it to see how many lines of code various parts of my projects contain.
 It’s useful to see things like how much code comment is in a project as
 opposed to actual code (&lt;em&gt;to me, the more commented a project, the better&lt;&#x2F;em&gt;).&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;bootandy&#x2F;dust&quot;&gt;Dust&lt;&#x2F;a&gt; is a disk usage analyzer tool.
-I typically use &lt;a href=&quot;https:&#x2F;&#x2F;daisydiskapp.com&#x2F;&quot;&gt;DaisyDisk&lt;&#x2F;a&gt; because it gives
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;bootandy&#x2F;dust&quot;&gt;Dust&lt;&#x2F;a&gt; is a disk usage analyzer tool.
+I typically use &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;daisydiskapp.com&#x2F;&quot;&gt;DaisyDisk&lt;&#x2F;a&gt; because it gives
 more options to handle the files, and it provides a better and more
 interactive visualization; however, sometimes being able to see the disk usage
 in a terminal is useful too.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;daisydiskapp.com&#x2F;&quot;&gt;Bat&lt;&#x2F;a&gt; is a &lt;strong&gt;galactically better&lt;&#x2F;strong&gt; version of &lt;code&gt;cat&lt;&#x2F;code&gt;.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;dalance&#x2F;procs&quot;&gt;Procs&lt;&#x2F;a&gt; is a process viewer tool. You
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;daisydiskapp.com&#x2F;&quot;&gt;Bat&lt;&#x2F;a&gt; is a &lt;strong&gt;galactically better&lt;&#x2F;strong&gt; version of &lt;code&gt;cat&lt;&#x2F;code&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;dalance&#x2F;procs&quot;&gt;Procs&lt;&#x2F;a&gt; is a process viewer tool. You
 can think of it as a modern replacement for &lt;code&gt;ps&lt;&#x2F;code&gt;.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;eza-community&#x2F;eza&quot;&gt;Eza&lt;&#x2F;a&gt; is a modern &lt;code&gt;ls&lt;&#x2F;code&gt; replacement.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;tw93&#x2F;Mole&quot;&gt;Mole&lt;&#x2F;a&gt; is a tool that keeps your Mac clean. It
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;eza-community&#x2F;eza&quot;&gt;Eza&lt;&#x2F;a&gt; is a modern &lt;code&gt;ls&lt;&#x2F;code&gt; replacement.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;tw93&#x2F;Mole&quot;&gt;Mole&lt;&#x2F;a&gt; is a tool that keeps your Mac clean. It
 can purge unnecessary files, uninstall unwanted apps in a batch, analyze
 your Mac, and do various other optimizations. I &lt;strong&gt;strongly recommend&lt;&#x2F;strong&gt; it
 instead of using a bloated tool like &lt;em&gt;CleanMyMac&lt;&#x2F;em&gt; or &lt;em&gt;MacCleaner&lt;&#x2F;em&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h3 id=&quot;drive-health&quot;&gt;Drive Health&lt;&#x2F;h3&gt;
-&lt;p&gt;My &lt;a href=&quot;https:&#x2F;&#x2F;www.synology.com&#x2F;en-us&quot;&gt;NAS&lt;&#x2F;a&gt; can take care of its own health and
+&lt;p&gt;My &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.synology.com&#x2F;en-us&quot;&gt;NAS&lt;&#x2F;a&gt; can take care of its own health and
 notify me when there are failures or degradation. Yet that’s not true for
 my system disk and other external drives.&lt;&#x2F;p&gt;
-&lt;p&gt;To monitor these drives, I have &lt;a href=&quot;https:&#x2F;&#x2F;binaryfruit.com&#x2F;drivedx&quot;&gt;Drivedx&lt;&#x2F;a&gt;
+&lt;p&gt;To monitor these drives, I have &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;binaryfruit.com&#x2F;drivedx&quot;&gt;Drivedx&lt;&#x2F;a&gt;
 installed.&lt;&#x2F;p&gt;
 
 &lt;div class=&quot;z2h-image&quot;&gt;
@@ -322,11 +322,11 @@ installed.&lt;&#x2F;p&gt;
       margin-top: -1.125em;
       font-size: 1em;&quot;&gt;Drive DX.&lt;&#x2F;p&gt;
 &lt;&#x2F;div&gt;
-&lt;p&gt;I also use &lt;a href=&quot;https:&#x2F;&#x2F;www.backblaze.com&#x2F;&quot;&gt;Backblaze&lt;&#x2F;a&gt; to back up my system disk
+&lt;p&gt;I also use &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.backblaze.com&#x2F;&quot;&gt;Backblaze&lt;&#x2F;a&gt; to back up my system disk
 and external drives to recover them in case of a hardware failure.&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;network-monitoring&quot;&gt;Network Monitoring&lt;&#x2F;h3&gt;
 &lt;p&gt;Occasionally, I need to figure out what’s what in my local home network.
-Although that can be done with simple CLI commands, &lt;a href=&quot;https:&#x2F;&#x2F;apps.apple.com&#x2F;us&#x2F;app&#x2F;ip-scanner-ultra&#x2F;id404167677&quot;&gt;IP Scanner
+Although that can be done with simple CLI commands, &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;apps.apple.com&#x2F;us&#x2F;app&#x2F;ip-scanner-ultra&#x2F;id404167677&quot;&gt;IP Scanner
 Ultra&lt;&#x2F;a&gt; gives
 a better and more intuitive overview of the network topology.&lt;&#x2F;p&gt;
 
@@ -339,24 +339,24 @@ a better and more intuitive overview of the network topology.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;security&quot;&gt;Security&lt;&#x2F;h2&gt;
 &lt;p&gt;Security is non-negotiable, especially when you have sensitive data and credentials
 scattered across multiple systems.&lt;&#x2F;p&gt;
-&lt;p&gt;I use &lt;a href=&quot;https:&#x2F;&#x2F;www.yubico.com&#x2F;&quot;&gt;Yubikey&lt;&#x2F;a&gt; as my hardware security key and
+&lt;p&gt;I use &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.yubico.com&#x2F;&quot;&gt;Yubikey&lt;&#x2F;a&gt; as my hardware security key and
 primary authentication method whenever I can. So, one of the first things I
-install on my system is &lt;a href=&quot;https:&#x2F;&#x2F;www.yubico.com&#x2F;products&#x2F;services-software&#x2F;download&#x2F;yubikey-manager&#x2F;&quot;&gt;YubiKey
+install on my system is &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.yubico.com&#x2F;products&#x2F;services-software&#x2F;download&#x2F;yubikey-manager&#x2F;&quot;&gt;YubiKey
 Manager&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
-&lt;p&gt;Additionally, I have &lt;a href=&quot;https:&#x2F;&#x2F;1password.com&#x2F;&quot;&gt;1Password&lt;&#x2F;a&gt; to manage my passwords,
+&lt;p&gt;Additionally, I have &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;1password.com&#x2F;&quot;&gt;1Password&lt;&#x2F;a&gt; to manage my passwords,
 licenses, secrets, and other sensitive information.&lt;&#x2F;p&gt;
 &lt;p&gt;Sometimes, I need to transfer sensitive data over relatively insecure channels.
-For that, I use &lt;a href=&quot;https:&#x2F;&#x2F;apps.apple.com&#x2F;us&#x2F;app&#x2F;encrypto-secure-your-files&#x2F;id935235287?mt=12&quot;&gt;Encrypto&lt;&#x2F;a&gt;
+For that, I use &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;apps.apple.com&#x2F;us&#x2F;app&#x2F;encrypto-secure-your-files&#x2F;id935235287?mt=12&quot;&gt;Encrypto&lt;&#x2F;a&gt;
 to encrypt them before sending over the wire.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;text-editing-and-note-taking&quot;&gt;Text Editing and Note-Taking&lt;&#x2F;h2&gt;
 &lt;p&gt;When it comes to writing, I have a few specialized tools for different purposes:&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.sublimetext.com&#x2F;&quot;&gt;Sublime Text&lt;&#x2F;a&gt; for quickly taking notes
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.sublimetext.com&#x2F;&quot;&gt;Sublime Text&lt;&#x2F;a&gt; for quickly taking notes
 and writing some lightweight code.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;monodraw.helftone.com&#x2F;&quot;&gt;Monodraw&lt;&#x2F;a&gt; for creating ASCII art diagrams.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;ulysses.app&#x2F;&quot;&gt;Ulysses&lt;&#x2F;a&gt; because it’s far more than just a Markdown
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;monodraw.helftone.com&#x2F;&quot;&gt;Monodraw&lt;&#x2F;a&gt; for creating ASCII art diagrams.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;ulysses.app&#x2F;&quot;&gt;Ulysses&lt;&#x2F;a&gt; because it’s far more than just a Markdown
 editor.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;apps.apple.com&#x2F;us&#x2F;app&#x2F;tot&#x2F;id1491071483?mt=12&quot;&gt;Tot&lt;&#x2F;a&gt; for synchronizing
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;apps.apple.com&#x2F;us&#x2F;app&#x2F;tot&#x2F;id1491071483?mt=12&quot;&gt;Tot&lt;&#x2F;a&gt; for synchronizing
 notes across devices. This is another app that you don’t know how badly you
 need until you start using it.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
@@ -366,13 +366,13 @@ need until you start using it.&lt;&#x2F;li&gt;
 &lt;p&gt;Now we get to the meat of my daily work: software development. I’ve made some
 deliberate choices here to keep my streaming machine stable.&lt;&#x2F;p&gt;
 &lt;p&gt;I do almost all my software development by remotely connecting to my
-Windows Intel NUC via &lt;a href=&quot;https:&#x2F;&#x2F;apps.apple.com&#x2F;us&#x2F;app&#x2F;windows-app&#x2F;id1295203466?mt=12&quot;&gt;Windows App&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+Windows Intel NUC via &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;apps.apple.com&#x2F;us&#x2F;app&#x2F;windows-app&#x2F;id1295203466?mt=12&quot;&gt;Windows App&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;I choose to use a separate machine for development because development environments
 can become complex and unstable in time, and I’d rather keep my streaming
 setup stable. Additionally, keeping “&lt;em&gt;development&lt;&#x2F;em&gt;” focused on a separate machine
 allows me to focus: The machine is dedicated to development, and I don’t have
 anything else to distract me from it.&lt;&#x2F;p&gt;
-&lt;p&gt;Along with Windows, I also have &lt;a href=&quot;https:&#x2F;&#x2F;www.parallels.com&#x2F;products&#x2F;desktop&#x2F;pro&quot;&gt;Parallels
+&lt;p&gt;Along with Windows, I also have &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.parallels.com&#x2F;products&#x2F;desktop&#x2F;pro&quot;&gt;Parallels
 Desktop&lt;&#x2F;a&gt; for running dedicated
 local Linux virtual machines, when &lt;em&gt;Windows Subsystem for Linux&lt;&#x2F;em&gt; doesn’t
 fit for the use case.&lt;&#x2F;p&gt;
@@ -380,19 +380,19 @@ fit for the use case.&lt;&#x2F;p&gt;
 &lt;p&gt;Windows is my main development machine. Here are some of the tools I use on
 Windows:&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learn.microsoft.com&#x2F;en-us&#x2F;windows&#x2F;wsl&#x2F;install&quot;&gt;Windows Subsystem for Linux&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learn.microsoft.com&#x2F;en-us&#x2F;windows&#x2F;terminal&#x2F;install&quot;&gt;Windows Terminal&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learn.microsoft.com&#x2F;en-us&#x2F;windows&#x2F;powertoys&#x2F;&quot;&gt;Microsoft PowerToys&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.jetbrains.com&#x2F;toolbox-app&#x2F;&quot;&gt;JetBrains Toolbox&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.jetbrains.com&#x2F;go&#x2F;&quot;&gt;GoLand&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.jetbrains.com&#x2F;webstorm&#x2F;&quot;&gt;WebStorm&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;ubuntu.com&#x2F;server&quot;&gt;Ubuntu (&lt;em&gt;WSL&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;obsidian.md&#x2F;&quot;&gt;Obsidian&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;standardnotes.com&#x2F;&quot;&gt;Standard Notes&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;learn.microsoft.com&#x2F;en-us&#x2F;windows&#x2F;wsl&#x2F;install&quot;&gt;Windows Subsystem for Linux&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;learn.microsoft.com&#x2F;en-us&#x2F;windows&#x2F;terminal&#x2F;install&quot;&gt;Windows Terminal&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;learn.microsoft.com&#x2F;en-us&#x2F;windows&#x2F;powertoys&#x2F;&quot;&gt;Microsoft PowerToys&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.jetbrains.com&#x2F;toolbox-app&#x2F;&quot;&gt;JetBrains Toolbox&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.jetbrains.com&#x2F;go&#x2F;&quot;&gt;GoLand&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.jetbrains.com&#x2F;webstorm&#x2F;&quot;&gt;WebStorm&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;ubuntu.com&#x2F;server&quot;&gt;Ubuntu (&lt;em&gt;WSL&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;obsidian.md&#x2F;&quot;&gt;Obsidian&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;standardnotes.com&#x2F;&quot;&gt;Standard Notes&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;That’s pretty much it for Windows too. I want to keep my development setup
 lean and stable as well.&lt;&#x2F;p&gt;
-&lt;p&gt;I also have &lt;a href=&quot;https:&#x2F;&#x2F;slack.com&#x2F;&quot;&gt;Slack&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;discord.com&quot;&gt;Discord&lt;&#x2F;a&gt;
+&lt;p&gt;I also have &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;slack.com&#x2F;&quot;&gt;Slack&lt;&#x2F;a&gt; and &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;discord.com&quot;&gt;Discord&lt;&#x2F;a&gt;
 installed on Windows because I want to
 keep my Mac streaming setup stable, so I don’t want to introduce anything
 unnecessary to the system if I don’t have to.&lt;&#x2F;p&gt;
@@ -446,16 +446,16 @@ scenarios&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;Now, let’s break down the hardware foundations that make this setup possible.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;new-audio-interface-new-setup&quot;&gt;New Audio Interface, New Setup&lt;&#x2F;h2&gt;
-&lt;p&gt;I recently bought a shiny &lt;a href=&quot;https:&#x2F;&#x2F;rme-audio.de&#x2F;babyface-pro-fs.html&quot; title=&quot;Babyface Pro FS&quot;&gt;&lt;strong&gt;Babyface Pro FS&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; audio interface.&lt;&#x2F;p&gt;
+&lt;p&gt;I recently bought a shiny &lt;a rel=&quot;external&quot; title=&quot;Babyface Pro FS&quot; href=&quot;https:&#x2F;&#x2F;rme-audio.de&#x2F;babyface-pro-fs.html&quot;&gt;&lt;strong&gt;Babyface Pro FS&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; audio interface.&lt;&#x2F;p&gt;
 &lt;p&gt;With &lt;strong&gt;24 channels, 6 hardware outputs, 6 hardware inputs, and 6 software
 playback virtual inputs&lt;&#x2F;strong&gt;, it is a powerhouse. Yes, it has “&lt;strong&gt;some&lt;&#x2F;strong&gt;”(&lt;strong&gt;?!&lt;&#x2F;strong&gt;)
 &lt;em&gt;“learning curve”&lt;&#x2F;em&gt;, but when you get the hang of it, it provides endless
 possibilities.&lt;&#x2F;p&gt;
 &lt;p&gt;But most importantly, it has a &lt;strong&gt;very clean&lt;&#x2F;strong&gt; output with an almost zero noise
 floor (&lt;em&gt;around -50 dB&lt;&#x2F;em&gt;). That is much better than comparatively lower-end
-amplifiers like &lt;a href=&quot;https:&#x2F;&#x2F;us.focusrite.com&#x2F;products&#x2F;scarlett-solo&quot; title=&quot;Scarlett Solo&quot;&gt;Focusrite Scarlett Solo&lt;&#x2F;a&gt; or &lt;a href=&quot;https:&#x2F;&#x2F;www.uaudio.com&#x2F;products&#x2F;volt-2-usb&quot; title=&quot;Universal Audio: Volt 2&quot;&gt;Volt 2&lt;&#x2F;a&gt;.
+amplifiers like &lt;a rel=&quot;external&quot; title=&quot;Scarlett Solo&quot; href=&quot;https:&#x2F;&#x2F;us.focusrite.com&#x2F;products&#x2F;scarlett-solo&quot;&gt;Focusrite Scarlett Solo&lt;&#x2F;a&gt; or &lt;a rel=&quot;external&quot; title=&quot;Universal Audio: Volt 2&quot; href=&quot;https:&#x2F;&#x2F;www.uaudio.com&#x2F;products&#x2F;volt-2-usb&quot;&gt;Volt 2&lt;&#x2F;a&gt;.
 This is especially important for my setup because I have a very-gain-hungry
-microphone: &lt;a href=&quot;https:&#x2F;&#x2F;www.shure.com&#x2F;en-US&#x2F;products&#x2F;microphones&#x2F;sm7b?variant=SM7B&quot; title=&quot;Shure SM7B Vocal Microphone&quot;&gt;&lt;strong&gt;Shure SM7B&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;. With &lt;strong&gt;Shure&lt;&#x2F;strong&gt; hungry hippo, even the
+microphone: &lt;a rel=&quot;external&quot; title=&quot;Shure SM7B Vocal Microphone&quot; href=&quot;https:&#x2F;&#x2F;www.shure.com&#x2F;en-US&#x2F;products&#x2F;microphones&#x2F;sm7b?variant=SM7B&quot;&gt;&lt;strong&gt;Shure SM7B&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;. With &lt;strong&gt;Shure&lt;&#x2F;strong&gt; hungry hippo, even the
 smallest noise floor gets elevated when I increase the audio interface’s input
 gain by 40–50 dB.&lt;&#x2F;p&gt;
 &lt;p&gt;Moreover, the added noise becomes even more pronounced when you apply voice
@@ -469,11 +469,11 @@ so I don’t have to “&lt;em&gt;eat the microphone&lt;&#x2F;em&gt;” while de
 complicated codebase on live stream.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;This article describes how I established these goals, and provides an overview
-of &lt;a href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;audiohijack&#x2F;&quot; title=&quot;Audio Hijack&quot;&gt;&lt;strong&gt;Audio Hijack&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;’s and &lt;strong&gt;Babyface&lt;&#x2F;strong&gt;’s interfaces.&lt;&#x2F;p&gt;
+of &lt;a rel=&quot;external&quot; title=&quot;Audio Hijack&quot; href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;audiohijack&#x2F;&quot;&gt;&lt;strong&gt;Audio Hijack&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;’s and &lt;strong&gt;Babyface&lt;&#x2F;strong&gt;’s interfaces.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;lift-input-gain-with-cloudlifter&quot;&gt;Lift Input Gain with Cloudlifter.&lt;&#x2F;h2&gt;
 &lt;p&gt;To increase the gain of the input signal a little bit more, so that I can
 minimize software-based audio post-processing, I also have a
-&lt;a href=&quot;https:&#x2F;&#x2F;www.cloudmicrophones.com&#x2F;cloudlifter-cl-x&quot; title=&quot;Cloudlifter CL-X&quot;&gt;&lt;strong&gt;CloudLifter X&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; in my audio pipeline.&lt;&#x2F;p&gt;
+&lt;a rel=&quot;external&quot; title=&quot;Cloudlifter CL-X&quot; href=&quot;https:&#x2F;&#x2F;www.cloudmicrophones.com&#x2F;cloudlifter-cl-x&quot;&gt;&lt;strong&gt;CloudLifter X&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; in my audio pipeline.&lt;&#x2F;p&gt;
 
 &lt;div class=&quot;z2h-image&quot;&gt;
     &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2025&amp;#x2F;12&amp;#x2F;cloud-lifter.jpg&quot; alt=&quot;Cloudlifter X.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
@@ -482,26 +482,25 @@ minimize software-based audio post-processing, I also have a
       font-size: 1em;&quot;&gt;Cloudlifter X.&lt;&#x2F;p&gt;
 &lt;&#x2F;div&gt;
 &lt;p&gt;Here is how my audio input components are connected:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;txt&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-txt &quot;&gt;&lt;code class=&quot;language-txt&quot; data-lang=&quot;txt&quot;&gt;&lt;span&gt;┌────────────────────┐
-&lt;&#x2F;span&gt;&lt;span&gt;│ Mac Studio (USB-C) │
-&lt;&#x2F;span&gt;&lt;span&gt;└────────────────────┘
-&lt;&#x2F;span&gt;&lt;span&gt;           │          
-&lt;&#x2F;span&gt;&lt;span&gt;           ▼          
-&lt;&#x2F;span&gt;&lt;span&gt;┌────────────────────┐
-&lt;&#x2F;span&gt;&lt;span&gt;│  BabyFace Pro FS   │
-&lt;&#x2F;span&gt;&lt;span&gt;│  AN 1&#x2F;2 (XLR in)   │
-&lt;&#x2F;span&gt;&lt;span&gt;└────────────────────┘
-&lt;&#x2F;span&gt;&lt;span&gt;           │          
-&lt;&#x2F;span&gt;&lt;span&gt;           ▼          
-&lt;&#x2F;span&gt;&lt;span&gt;┌────────────────────┐
-&lt;&#x2F;span&gt;&lt;span&gt;│   CloudLifter X    │
-&lt;&#x2F;span&gt;&lt;span&gt;└────────────────────┘
-&lt;&#x2F;span&gt;&lt;span&gt;           │          
-&lt;&#x2F;span&gt;&lt;span&gt;           ▼          
-&lt;&#x2F;span&gt;&lt;span&gt;┌────────────────────┐
-&lt;&#x2F;span&gt;&lt;span&gt;│  SHURE SM7B (mic)  │
-&lt;&#x2F;span&gt;&lt;span&gt;└────────────────────┘
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #EBDBB2; background-color: #1D2021;&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;┌────────────────────┐&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│ Mac Studio (USB-C) │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;└────────────────────┘&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;           │          &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;           ▼          &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;┌────────────────────┐&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│  BabyFace Pro FS   │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│  AN 1&#x2F;2 (XLR in)   │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;└────────────────────┘&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;           │          &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;           ▼          &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;┌────────────────────┐&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│   CloudLifter X    │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;└────────────────────┘&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;           │          &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;           ▼          &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;┌────────────────────┐&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│  SHURE SM7B (mic)  │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;└────────────────────┘&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;With the physical connections in place, the next step is to configure the
 software to get the most out of this hardware.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;less-processing-better-quality&quot;&gt;Less Processing, Better Quality&lt;&#x2F;h2&gt;
@@ -525,7 +524,7 @@ those real-world challenges.&lt;&#x2F;p&gt;
 &lt;strong&gt;shared Zoom session&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;When I stream, I may stream to multiple places in parallel using
-&lt;a href=&quot;https:&#x2F;&#x2F;restream.io&quot; title=&quot;Restram.io&quot;&gt;Restream.io&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;a rel=&quot;external&quot; title=&quot;Restram.io&quot; href=&quot;https:&#x2F;&#x2F;restream.io&quot;&gt;Restream.io&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;Streaming Spotify on Twitch is fine, as long as you don’t publish the live
 stream as a VOD and just play non-DRM-free music during the live stream;
 however, streaming the same content to YouTube is problematic, since YouTube
@@ -533,7 +532,7 @@ does not allow copyrighted content even during the live streams.&lt;&#x2F;p&gt;
 &lt;p&gt;That added some complexity to the setup, because I’ll have to send DRM-free
 music to YouTube and other platforms, while sending really cool music that
 the audience likes to Twitch.&lt;&#x2F;p&gt;
-&lt;p&gt;For DRM-free music, I use &lt;a href=&quot;https:&#x2F;&#x2F;endel.io&quot; title=&quot;Endel: Focus, relax, and sleep&quot;&gt;&lt;strong&gt;Endel&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, which generates calming
+&lt;p&gt;For DRM-free music, I use &lt;a rel=&quot;external&quot; title=&quot;Endel: Focus, relax, and sleep&quot; href=&quot;https:&#x2F;&#x2F;endel.io&quot;&gt;&lt;strong&gt;Endel&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, which generates calming
 AI-generated background sounds; it is totally copyright-free.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;to-duck-or-not-to-duck&quot;&gt;To Duck or not to Duck&lt;&#x2F;h2&gt;
 &lt;p&gt;Another thing that I needed to configure is the background music’s
@@ -545,10 +544,10 @@ while I can continue my focused work.&lt;&#x2F;p&gt;
 I personally don’t like them because they distort the beginning of the speech,
 cutting off my initial words every once in a while. They can also activate
 unnecessarily to other noise sources in the room, disrupting the stream.&lt;&#x2F;p&gt;
-&lt;p&gt;Thankfully, I have &lt;a href=&quot;https:&#x2F;&#x2F;www.elgato.com&#x2F;us&#x2F;en&#x2F;p&#x2F;stream-deck-xl&quot; title=&quot;Elgato Stream Deck XL&quot;&gt;&lt;strong&gt;Stream Deck&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; to change these levels
+&lt;p&gt;Thankfully, I have &lt;a rel=&quot;external&quot; title=&quot;Elgato Stream Deck XL&quot; href=&quot;https:&#x2F;&#x2F;www.elgato.com&#x2F;us&#x2F;en&#x2F;p&#x2F;stream-deck-xl&quot;&gt;&lt;strong&gt;Stream Deck&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; to change these levels
 instantly by simply pressing a button.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;audio-hijack-configuration&quot;&gt;Audio Hijack Configuration&lt;&#x2F;h2&gt;
-&lt;p&gt;Let’s continue with &lt;a href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;audiohijack&#x2F;&quot; title=&quot;Audio Hijack&quot;&gt;&lt;strong&gt;Audio Hijack&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; configuration.&lt;&#x2F;p&gt;
+&lt;p&gt;Let’s continue with &lt;a rel=&quot;external&quot; title=&quot;Audio Hijack&quot; href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;audiohijack&#x2F;&quot;&gt;&lt;strong&gt;Audio Hijack&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; configuration.&lt;&#x2F;p&gt;
 &lt;p&gt;Overall, I have four audio input sources:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;My microphone&lt;&#x2F;li&gt;
@@ -575,8 +574,8 @@ session, too. So… &lt;strong&gt;automation ftw!&lt;&#x2F;strong&gt;, but we’
 &lt;li&gt;The &lt;strong&gt;Endel&lt;&#x2F;strong&gt; audio is split into two with different gain levels, then mixed
 with my microphone audio after some post-processing. The resultant audio is
 fed into “&lt;strong&gt;Endel Loopback&lt;&#x2F;strong&gt;”, which becomes the audio source for
-&lt;a href=&quot;https:&#x2F;&#x2F;obsproject.com&quot; title=&quot;OBS Studio&quot;&gt;&lt;strong&gt;OBS Studio&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;. OBS Studio directly mirrors my main streaming app
-&lt;a href=&quot;https:&#x2F;&#x2F;www.wirecast.io&#x2F;en&#x2F;&quot; title=&quot;Wirecast&quot;&gt;&lt;strong&gt;Wirecast&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, but it uses &lt;strong&gt;DRM-free&lt;&#x2F;strong&gt; background music from
+&lt;a rel=&quot;external&quot; title=&quot;OBS Studio&quot; href=&quot;https:&#x2F;&#x2F;obsproject.com&quot;&gt;&lt;strong&gt;OBS Studio&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;. OBS Studio directly mirrors my main streaming app
+&lt;a rel=&quot;external&quot; title=&quot;Wirecast&quot; href=&quot;https:&#x2F;&#x2F;www.wirecast.io&#x2F;en&#x2F;&quot;&gt;&lt;strong&gt;Wirecast&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, but it uses &lt;strong&gt;DRM-free&lt;&#x2F;strong&gt; background music from
 &lt;strong&gt;Endel&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
 &lt;li&gt;Similarly, &lt;strong&gt;Spotify music&lt;&#x2F;strong&gt; is split into two with different gain levels and
 fed into Babyface Pro FS’s software playback (&lt;em&gt;PB 11&#x2F;12&lt;&#x2F;em&gt;) input, which
@@ -584,10 +583,10 @@ corresponds to &lt;em&gt;ADAT 7&#x2F;8&lt;&#x2F;em&gt; software input.&lt;&#x2F;
 &lt;li&gt;&lt;strong&gt;Zoom audio&lt;&#x2F;strong&gt; is also split-fed into both &lt;strong&gt;Endel Loopback&lt;&#x2F;strong&gt;, and &lt;strong&gt;Babyface
 Pro FS&lt;&#x2F;strong&gt; software input channel. &lt;strong&gt;OBS Studio&lt;&#x2F;strong&gt; uses &lt;strong&gt;Endel Loopback&lt;&#x2F;strong&gt; as the
 background audio source, whereas &lt;strong&gt;Babyface Pro FS&lt;&#x2F;strong&gt; software audio input is
-“&lt;em&gt;looped back&lt;&#x2F;em&gt;” through hardware to &lt;a href=&quot;https:&#x2F;&#x2F;www.wirecast.io&#x2F;en&#x2F;&quot; title=&quot;Wirecast&quot;&gt;&lt;strong&gt;Wirecast&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+“&lt;em&gt;looped back&lt;&#x2F;em&gt;” through hardware to &lt;a rel=&quot;external&quot; title=&quot;Wirecast&quot; href=&quot;https:&#x2F;&#x2F;www.wirecast.io&#x2F;en&#x2F;&quot;&gt;&lt;strong&gt;Wirecast&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;&lt;strong&gt;Endel Loopback&lt;&#x2F;strong&gt; is the &lt;strong&gt;only&lt;&#x2F;strong&gt; software loopback interface I have had to
-create. It is targeted for &lt;a href=&quot;https:&#x2F;&#x2F;obsproject.com&quot; title=&quot;OBS Studio&quot;&gt;&lt;strong&gt;OBS Studio&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;’s audio ingestion. This is not
+create. It is targeted for &lt;a rel=&quot;external&quot; title=&quot;OBS Studio&quot; href=&quot;https:&#x2F;&#x2F;obsproject.com&quot;&gt;&lt;strong&gt;OBS Studio&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;’s audio ingestion. This is not
 because of Babyface’s limitations, but because OBS Studio does not properly
 recognize Babyface’s output channels.&lt;&#x2F;p&gt;
 &lt;p&gt;In this case, &lt;strong&gt;Endel Loopback&lt;&#x2F;strong&gt; is just a pass-through virtual interface that
@@ -600,7 +599,7 @@ does nothing other than act as a bridge.&lt;&#x2F;p&gt;
       margin-top: -1.125em;
       font-size: 1em;&quot;&gt;OBS Studio audio configuration.&lt;&#x2F;p&gt;
 &lt;&#x2F;div&gt;
-&lt;p&gt;And here is the &lt;a href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;loopback&#x2F;&quot; title=&quot;Loopback&quot;&gt;&lt;strong&gt;Loopback&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; “&lt;em&gt;Endel Loopback&lt;&#x2F;em&gt;” interface:&lt;&#x2F;p&gt;
+&lt;p&gt;And here is the &lt;a rel=&quot;external&quot; title=&quot;Loopback&quot; href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;loopback&#x2F;&quot;&gt;&lt;strong&gt;Loopback&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; “&lt;em&gt;Endel Loopback&lt;&#x2F;em&gt;” interface:&lt;&#x2F;p&gt;
 
 &lt;div class=&quot;z2h-image&quot;&gt;
     &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2025&amp;#x2F;12&amp;#x2F;endel-loopback.png&quot; alt=&quot;&amp;#x27;Endel Loopback&amp;#x27; Loopback interface.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
@@ -608,7 +607,7 @@ does nothing other than act as a bridge.&lt;&#x2F;p&gt;
       margin-top: -1.125em;
       font-size: 1em;&quot;&gt;&amp;#x27;Endel Loopback&amp;#x27; Loopback interface.&lt;&#x2F;p&gt;
 &lt;&#x2F;div&gt;
-&lt;p&gt;For the &lt;a href=&quot;https:&#x2F;&#x2F;www.wirecast.io&#x2F;en&#x2F;&quot; title=&quot;Wirecast&quot;&gt;&lt;strong&gt;Wirecast&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; input, here is how the audio input in
+&lt;p&gt;For the &lt;a rel=&quot;external&quot; title=&quot;Wirecast&quot; href=&quot;https:&#x2F;&#x2F;www.wirecast.io&#x2F;en&#x2F;&quot;&gt;&lt;strong&gt;Wirecast&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; input, here is how the audio input in
 &lt;strong&gt;Wirecast&lt;&#x2F;strong&gt; is configured: It is listening to the channels &lt;strong&gt;11&#x2F;12&lt;&#x2F;strong&gt;, which
 correspond to the &lt;strong&gt;ADAT 7&#x2F;8&lt;&#x2F;strong&gt; software input Loopback in &lt;strong&gt;Babyface&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
 
@@ -638,7 +637,7 @@ again, correspond to channels 11&#x2F;12 in Wirecast’s mapping&lt;&#x2F;em&gt;
       font-size: 1em;&quot;&gt;Audio Hijack information flow.&lt;&#x2F;p&gt;
 &lt;&#x2F;div&gt;
 &lt;h2 id=&quot;mixer-setup&quot;&gt;Mixer Setup&lt;&#x2F;h2&gt;
-&lt;p&gt;Then, in the mixer &lt;a href=&quot;https:&#x2F;&#x2F;rme-audio.de&#x2F;totalmix-fx.html&quot; title=&quot;TotalMix FX&quot;&gt;&lt;strong&gt;RME TotalMix FX&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, which comes prepackaged
+&lt;p&gt;Then, in the mixer &lt;a rel=&quot;external&quot; title=&quot;TotalMix FX&quot; href=&quot;https:&#x2F;&#x2F;rme-audio.de&#x2F;totalmix-fx.html&quot;&gt;&lt;strong&gt;RME TotalMix FX&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, which comes prepackaged
 with &lt;strong&gt;Babyface Pro FS&lt;&#x2F;strong&gt; audio drivers, I create a loopback interface from
 &lt;strong&gt;ADAT 7&#x2F;8&lt;&#x2F;strong&gt; software input channel to &lt;strong&gt;ADAT 7&#x2F;8&lt;&#x2F;strong&gt; output:&lt;&#x2F;p&gt;
 
@@ -695,7 +694,7 @@ isn’t it?&lt;&#x2F;p&gt;
 &lt;p&gt;I redirect whatever I want to hear in the background to channels &lt;strong&gt;9&#x2F;10&lt;&#x2F;strong&gt; of
 &lt;strong&gt;Babyface&lt;&#x2F;strong&gt;, which correspond to the ADAT 5&#x2F;6 software input interface.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;audio-input-pipeline-cleanup&quot;&gt;Audio Input Pipeline Cleanup&lt;&#x2F;h2&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.shure.com&#x2F;en-US&#x2F;products&#x2F;microphones&#x2F;sm7b?variant=SM7B&quot; title=&quot;Shure SM7B Vocal Microphone&quot;&gt;&lt;strong&gt;Shure SM7B&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; is a studio-grade microphone, and it requires
+&lt;p&gt;&lt;a rel=&quot;external&quot; title=&quot;Shure SM7B Vocal Microphone&quot; href=&quot;https:&#x2F;&#x2F;www.shure.com&#x2F;en-US&#x2F;products&#x2F;microphones&#x2F;sm7b?variant=SM7B&quot;&gt;&lt;strong&gt;Shure SM7B&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; is a studio-grade microphone, and it requires
 (&lt;strong&gt;ahem&lt;&#x2F;strong&gt;—“demands”) you to speak very close to it (&lt;em&gt;less than a handspan
 distance from your mouth to the mic&lt;&#x2F;em&gt;). However, that’s not always practical
 during a live coding session. Regardless, &lt;strong&gt;SM7B&lt;&#x2F;strong&gt; is &lt;strong&gt;very&lt;&#x2F;strong&gt; gain-hungry.&lt;&#x2F;p&gt;
@@ -739,7 +738,7 @@ tough to manipulate with precision.&lt;&#x2F;p&gt;
       font-size: 1em;&quot;&gt;RME Totalmix snapshots.&lt;&#x2F;p&gt;
 &lt;&#x2F;div&gt;
 &lt;h2 id=&quot;remove-that-hiss-our-preciousss&quot;&gt;Remove that “&lt;em&gt;Hiss&lt;&#x2F;em&gt;”, Our Preciousss&lt;&#x2F;h2&gt;
-&lt;p&gt;Next, get rid of the noise floor. For that, In &lt;a href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;audiohijack&#x2F;&quot; title=&quot;Audio Hijack&quot;&gt;&lt;strong&gt;Audio Hijack&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;,
+&lt;p&gt;Next, get rid of the noise floor. For that, In &lt;a rel=&quot;external&quot; title=&quot;Audio Hijack&quot; href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;audiohijack&#x2F;&quot;&gt;&lt;strong&gt;Audio Hijack&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;,
 I added a&lt;strong&gt;Speech Denoise&lt;&#x2F;strong&gt; plugin immediately after the input, which worked
 beautifully:&lt;&#x2F;p&gt;
 
@@ -753,7 +752,7 @@ beautifully:&lt;&#x2F;p&gt;
 processing&lt;&#x2F;strong&gt; to preserve some CPU cycles. The microphone input is
 already mono, so there is no need to process two channels.&lt;&#x2F;p&gt;
 &lt;p&gt;Immediately after the speech denoise, I added a very light compression using the
-&lt;a href=&quot;https:&#x2F;&#x2F;www.izotope.com&#x2F;en&#x2F;products&#x2F;ozone&quot; title=&quot;Ozone&quot;&gt;&lt;strong&gt;Ozone Advanced&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; toolkit with the following parameters:&lt;&#x2F;p&gt;
+&lt;a rel=&quot;external&quot; title=&quot;Ozone&quot; href=&quot;https:&#x2F;&#x2F;www.izotope.com&#x2F;en&#x2F;products&#x2F;ozone&quot;&gt;&lt;strong&gt;Ozone Advanced&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; toolkit with the following parameters:&lt;&#x2F;p&gt;
 
 &lt;div class=&quot;z2h-image&quot;&gt;
     &lt;p class=&quot;img&quot;&gt;&lt;img src=&quot;&amp;#x2F;images&amp;#x2F;2025&amp;#x2F;12&amp;#x2F;ozone-compressor.png&quot; alt=&quot;Audio compression.&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
@@ -812,76 +811,74 @@ consisting of two input switches.&lt;&#x2F;p&gt;
 best part of it: They are programmable.&lt;&#x2F;p&gt;
 &lt;p&gt;For example, here is a script that lowers the background music and elevates my
 vocals, using the &lt;code&gt;duck()&lt;&#x2F;code&gt; function I defined:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;javascript&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-javascript &quot;&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span&gt;(() &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;=&amp;gt; &lt;&#x2F;span&gt;&lt;span&gt;{
-&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;const &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;sessionName &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Stream Session&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;;
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;const &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;modeSwitches  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span&gt;[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Endel Mode&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Spotify Mode&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;];
-&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;const &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;routeSwitches &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span&gt;[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Endel Route&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Spotify Route&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;];
-&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;const &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;voxSwitches &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span&gt;[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Mic Mode&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Guest Mode&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;]
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;const &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;s &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;app.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;sessionWithName&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;sessionName&lt;&#x2F;span&gt;&lt;span&gt;); 
-&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;s&lt;&#x2F;span&gt;&lt;span&gt;) {
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;console&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;error&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Session not found: &amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;+ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;sessionName&lt;&#x2F;span&gt;&lt;span&gt;);
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return&lt;&#x2F;span&gt;&lt;span&gt;;
-&lt;&#x2F;span&gt;&lt;span&gt;  }
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;function &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;switchToA&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;name&lt;&#x2F;span&gt;&lt;span&gt;) {
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;const &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;b &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;s.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;blockWithName&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;name&lt;&#x2F;span&gt;&lt;span&gt;);
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;b&lt;&#x2F;span&gt;&lt;span&gt;) {
-&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;console&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;error&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;No block named &amp;#39;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;+ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;name &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;+ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;&amp;#39;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;);
-&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return&lt;&#x2F;span&gt;&lt;span&gt;;
-&lt;&#x2F;span&gt;&lt;span&gt;    }
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;b&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;type &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!== &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;InputSwitchBlock&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;) {
-&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;console&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;error&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;&amp;#39;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;+ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;name &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;+ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;&amp;#39; is not a switch block &amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;+ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;b&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;type&lt;&#x2F;span&gt;&lt;span&gt;);
-&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return&lt;&#x2F;span&gt;&lt;span&gt;;
-&lt;&#x2F;span&gt;&lt;span&gt;    }
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;b.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;switchToA&lt;&#x2F;span&gt;&lt;span&gt;();  
-&lt;&#x2F;span&gt;&lt;span&gt;  }
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;function &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;switchToB&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;name&lt;&#x2F;span&gt;&lt;span&gt;) {
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;const &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;b &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;s.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;blockWithName&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;name&lt;&#x2F;span&gt;&lt;span&gt;);
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;b&lt;&#x2F;span&gt;&lt;span&gt;) {
-&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;console&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;error&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;No block named &amp;#39;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;+ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;name &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;+ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;&amp;#39;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;);
-&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return&lt;&#x2F;span&gt;&lt;span&gt;;
-&lt;&#x2F;span&gt;&lt;span&gt;    }
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;b&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;type &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;!== &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;InputSwitchBlock&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;) {
-&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;console&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;error&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;&amp;#39;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;+ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;name &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;+ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;&amp;#39; is not a switch block &amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;+ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;b&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;type&lt;&#x2F;span&gt;&lt;span&gt;);
-&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;return&lt;&#x2F;span&gt;&lt;span&gt;;
-&lt;&#x2F;span&gt;&lt;span&gt;    }
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;b.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;switchToB&lt;&#x2F;span&gt;&lt;span&gt;();
-&lt;&#x2F;span&gt;&lt;span&gt;  }
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;function &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;justMusic&lt;&#x2F;span&gt;&lt;span&gt;() {
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;modeSwitches.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;forEach&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;switchToA&lt;&#x2F;span&gt;&lt;span&gt;);
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;routeSwitches.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;forEach&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;switchToA&lt;&#x2F;span&gt;&lt;span&gt;);
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;voxSwitches.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;forEach&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;switchToB&lt;&#x2F;span&gt;&lt;span&gt;);
-&lt;&#x2F;span&gt;&lt;span&gt;  }
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;function &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;duck&lt;&#x2F;span&gt;&lt;span&gt;() {
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;modeSwitches.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;forEach&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;switchToB&lt;&#x2F;span&gt;&lt;span&gt;);
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;routeSwitches.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;forEach&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;switchToA&lt;&#x2F;span&gt;&lt;span&gt;);
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;voxSwitches.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;forEach&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;switchToA&lt;&#x2F;span&gt;&lt;span&gt;);  
-&lt;&#x2F;span&gt;&lt;span&gt;  } 
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;function &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;muteMyself&lt;&#x2F;span&gt;&lt;span&gt;() {
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;switchToB&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Mic Mode&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;);
-&lt;&#x2F;span&gt;&lt;span&gt;  }
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;function &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;unmuteMyself&lt;&#x2F;span&gt;&lt;span&gt;() {
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;switchToA&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Mic Mode&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;);
-&lt;&#x2F;span&gt;&lt;span&gt;  }
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;function &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;muteGuests&lt;&#x2F;span&gt;&lt;span&gt;() {
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;switchToB&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Guest Mode&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;);
-&lt;&#x2F;span&gt;&lt;span&gt;  }
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;duck&lt;&#x2F;span&gt;&lt;span&gt;();
-&lt;&#x2F;span&gt;&lt;span&gt;})();
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;stream-deck-vox-controls&quot;&gt;Stream Deck Vox Controls&lt;&#x2F;h2&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #EBDBB2; background-color: #1D2021;&quot;&gt;&lt;code data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;()&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FE8019;&quot;&gt; =&amp;gt;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt; {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FE8019;&quot;&gt;  const&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt; sessionName&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8EC07C;&quot;&gt; =&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt; &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;Stream Session&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FE8019;&quot;&gt;  const&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt; modeSwitches&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8EC07C;&quot;&gt;  =&lt;&#x2F;span&gt;&lt;span&gt; [&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;Endel Mode&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;, &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;Spotify Mode&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;]&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FE8019;&quot;&gt;  const&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt; routeSwitches&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8EC07C;&quot;&gt; =&lt;&#x2F;span&gt;&lt;span&gt; [&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;Endel Route&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;, &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;Spotify Route&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;]&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FE8019;&quot;&gt;  const&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt; voxSwitches&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8EC07C;&quot;&gt; =&lt;&#x2F;span&gt;&lt;span&gt; [&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;Mic Mode&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;, &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;Guest Mode&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;]&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FE8019;&quot;&gt;  const&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt; s&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8EC07C;&quot;&gt; =&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt; app&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;sessionWithName&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;sessionName&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;;&lt;&#x2F;span&gt;&lt;span&gt; &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FB4934;&quot;&gt;  if&lt;&#x2F;span&gt;&lt;span&gt; (&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FB4934;&quot;&gt;!&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;s&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt; {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;    console&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;error&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;Session not found: &lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8EC07C;&quot;&gt; +&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt; sessionName&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FB4934;&quot;&gt;    return&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;  }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FE8019;&quot;&gt;  function&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt; switchToA&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;name&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;) {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FE8019;&quot;&gt;    const&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt; b&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8EC07C;&quot;&gt; =&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt; s&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;blockWithName&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;name&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FB4934;&quot;&gt;    if&lt;&#x2F;span&gt;&lt;span&gt; (&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FB4934;&quot;&gt;!&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;b&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt; {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;      console&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;error&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;No block named &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8EC07C;&quot;&gt; +&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt; name&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8EC07C;&quot;&gt; +&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt; &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FB4934;&quot;&gt;      return&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;    }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FB4934;&quot;&gt;    if&lt;&#x2F;span&gt;&lt;span&gt; (&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;b&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;type&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8EC07C;&quot;&gt; !==&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt; &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;InputSwitchBlock&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt; {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;      console&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;error&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8EC07C;&quot;&gt; +&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt; name&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8EC07C;&quot;&gt; +&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt; &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;&amp;#39; is not a switch block &lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8EC07C;&quot;&gt; +&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt; b&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;type&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FB4934;&quot;&gt;      return&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;    }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;    b&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;switchToA&lt;&#x2F;span&gt;&lt;span&gt;()&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;;&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;  }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FE8019;&quot;&gt;  function&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt; switchToB&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;name&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;) {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FE8019;&quot;&gt;    const&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt; b&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8EC07C;&quot;&gt; =&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt; s&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;blockWithName&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;name&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FB4934;&quot;&gt;    if&lt;&#x2F;span&gt;&lt;span&gt; (&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FB4934;&quot;&gt;!&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;b&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt; {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;      console&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;error&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;No block named &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8EC07C;&quot;&gt; +&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt; name&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8EC07C;&quot;&gt; +&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt; &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FB4934;&quot;&gt;      return&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;    }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FB4934;&quot;&gt;    if&lt;&#x2F;span&gt;&lt;span&gt; (&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;b&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;type&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8EC07C;&quot;&gt; !==&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt; &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;InputSwitchBlock&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt; {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;      console&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;error&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8EC07C;&quot;&gt; +&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt; name&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8EC07C;&quot;&gt; +&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt; &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;&amp;#39; is not a switch block &lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8EC07C;&quot;&gt; +&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt; b&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;type&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FB4934;&quot;&gt;      return&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;    }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;    b&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;switchToB&lt;&#x2F;span&gt;&lt;span&gt;()&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;  }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FE8019;&quot;&gt;  function&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt; justMusic&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;() {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;    modeSwitches&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;forEach&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;switchToA&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;    routeSwitches&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;forEach&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;switchToA&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;    voxSwitches&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;forEach&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;switchToB&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;  }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FE8019;&quot;&gt;  function&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt; duck&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;() {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;    modeSwitches&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;forEach&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;switchToB&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;    routeSwitches&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;forEach&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;switchToA&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;    voxSwitches&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;forEach&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;switchToA&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;;&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;  }&lt;&#x2F;span&gt;&lt;span&gt; &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FE8019;&quot;&gt;  function&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt; muteMyself&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;() {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;    switchToB&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;Mic Mode&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;  }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FE8019;&quot;&gt;  function&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt; unmuteMyself&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;() {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;    switchToA&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;Mic Mode&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;  }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FE8019;&quot;&gt;  function&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt; muteGuests&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;() {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;    switchToB&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;Guest Mode&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;  }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;  duck&lt;&#x2F;span&gt;&lt;span&gt;()&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;}&lt;&#x2F;span&gt;&lt;span&gt;)()&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h2 id=&quot;stream-deck-vox-controls&quot;&gt;Stream Deck Vox Controls&lt;&#x2F;h2&gt;
 &lt;p&gt;When you save this file with the &lt;code&gt;.ahcommand&lt;&#x2F;code&gt; extension, then you can define
-these transitions in &lt;a href=&quot;https:&#x2F;&#x2F;www.elgato.com&#x2F;us&#x2F;en&#x2F;p&#x2F;stream-deck-xl&quot; title=&quot;Elgato Stream Deck XL&quot;&gt;&lt;strong&gt;Stream Deck&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; too, and switch to one
+these transitions in &lt;a rel=&quot;external&quot; title=&quot;Elgato Stream Deck XL&quot; href=&quot;https:&#x2F;&#x2F;www.elgato.com&#x2F;us&#x2F;en&#x2F;p&#x2F;stream-deck-xl&quot;&gt;&lt;strong&gt;Stream Deck&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; too, and switch to one
 another with the push of a button:&lt;&#x2F;p&gt;
 
 &lt;div class=&quot;z2h-image&quot;&gt;
@@ -904,7 +901,7 @@ everything in real time and catch issues before they reach the audience.&lt;&#x2
 &lt;h2 id=&quot;audio-monitoring&quot;&gt;Audio Monitoring&lt;&#x2F;h2&gt;
 &lt;p&gt;None of these would matter if my vocal output is too low or too high and
 I don’t notice it immediately during a live stream. For this, I use
-&lt;a href=&quot;https:&#x2F;&#x2F;rme-audio.de&#x2F;digicheck-ng.html&quot; title=&quot;Digicheck NG&quot;&gt;&lt;strong&gt;DigiCheck NG&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;a rel=&quot;external&quot; title=&quot;Digicheck NG&quot; href=&quot;https:&#x2F;&#x2F;rme-audio.de&#x2F;digicheck-ng.html&quot;&gt;&lt;strong&gt;DigiCheck NG&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;In the image below:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;The top horizontal monitor is the actual stream mix.&lt;&#x2F;li&gt;
@@ -914,9 +911,9 @@ around -20dB RMS as best as I can&lt;&#x2F;em&gt;)&lt;&#x2F;li&gt;
 &lt;li&gt;The smaller horizontal monitor in the top-right shows all output channels on
 the &lt;strong&gt;Babyface&lt;&#x2F;strong&gt;, so if I inadvertently enable something I don’t need, I will
 see it immediately.&lt;&#x2F;li&gt;
-&lt;li&gt;The bottom half is &lt;a href=&quot;https:&#x2F;&#x2F;www.wirecast.io&#x2F;en&#x2F;&quot; title=&quot;Wirecast&quot;&gt;&lt;strong&gt;Wirecast&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, which I &lt;strong&gt;don’t&lt;&#x2F;strong&gt; touch at all
+&lt;li&gt;The bottom half is &lt;a rel=&quot;external&quot; title=&quot;Wirecast&quot; href=&quot;https:&#x2F;&#x2F;www.wirecast.io&#x2F;en&#x2F;&quot;&gt;&lt;strong&gt;Wirecast&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, which I &lt;strong&gt;don’t&lt;&#x2F;strong&gt; touch at all
 because I manage the entire stream screen transitions using
-&lt;a href=&quot;https:&#x2F;&#x2F;www.elgato.com&#x2F;us&#x2F;en&#x2F;p&#x2F;stream-deck-xl&quot; title=&quot;Elgato Stream Deck XL&quot;&gt;&lt;strong&gt;Stream Deck&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, so it merely acts as an unobtrusive visual
+&lt;a rel=&quot;external&quot; title=&quot;Elgato Stream Deck XL&quot; href=&quot;https:&#x2F;&#x2F;www.elgato.com&#x2F;us&#x2F;en&#x2F;p&#x2F;stream-deck-xl&quot;&gt;&lt;strong&gt;Stream Deck&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, so it merely acts as an unobtrusive visual
 monitor of the live stream session.&lt;&#x2F;li&gt;
 &lt;li&gt;To the right of the screen are &lt;strong&gt;YouTube&lt;&#x2F;strong&gt; and &lt;strong&gt;Twitch&lt;&#x2F;strong&gt; chats.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
@@ -932,20 +929,19 @@ my main monitor.&lt;&#x2F;p&gt;
 &lt;&#x2F;div&gt;
 &lt;h2 id=&quot;different-monitors-have-different-outcomes&quot;&gt;Different Monitors Have Different Outcomes&lt;&#x2F;h2&gt;
 &lt;p&gt;Here is my stream signal path and where I put various RMS meters:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;text&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-text &quot;&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;span&gt;Mic
-&lt;&#x2F;span&gt;&lt;span&gt; → Babyface ADC
-&lt;&#x2F;span&gt;&lt;span&gt;   → TotalMix (input domain)
-&lt;&#x2F;span&gt;&lt;span&gt;     → Audio Hijack
-&lt;&#x2F;span&gt;&lt;span&gt;       → AH Meter #1 (post-ADC, pre-processing)
-&lt;&#x2F;span&gt;&lt;span&gt;         → Processing chain (EQ &#x2F; Comp &#x2F; Limiter)
-&lt;&#x2F;span&gt;&lt;span&gt;           → AH Meter #2 (post-processing)
-&lt;&#x2F;span&gt;&lt;span&gt;             → AH Output
-&lt;&#x2F;span&gt;&lt;span&gt;               → Babyface Loopback: ADAT 7&#x2F;8
-&lt;&#x2F;span&gt;&lt;span&gt;                 → Wirecast input
-&lt;&#x2F;span&gt;&lt;span&gt;                   → Wirecast meter
-&lt;&#x2F;span&gt;&lt;span&gt;                     → Encoder &#x2F; Stream
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #EBDBB2; background-color: #1D2021;&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Mic&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt; → Babyface ADC&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;   → TotalMix (input domain)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;     → Audio Hijack&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;       → AH Meter #1 (post-ADC, pre-processing)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;         → Processing chain (EQ &#x2F; Comp &#x2F; Limiter)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;           → AH Meter #2 (post-processing)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;             → AH Output&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;               → Babyface Loopback: ADAT 7&#x2F;8&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;                 → Wirecast input&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;                   → Wirecast meter&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;                     → Encoder &#x2F; Stream&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;&lt;strong&gt;ADAT 7&#x2F;8&lt;&#x2F;strong&gt; is my Stream master bus. That means:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;Anything before &lt;strong&gt;AH Meter #2&lt;&#x2F;strong&gt; is not yet final&lt;&#x2F;li&gt;
@@ -987,27 +983,27 @@ get natural at this in time.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;tools-and-technologies-mentioned&quot;&gt;Tools and Technologies Mentioned&lt;&#x2F;h2&gt;
 &lt;h3 id=&quot;services&quot;&gt;Services&lt;&#x2F;h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;restream.io&quot; title=&quot;Restram.io&quot;&gt;Restram.io&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;endel.io&quot; title=&quot;Endel: Focus, relax, and sleep&quot;&gt;Endel&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; title=&quot;Restram.io&quot; href=&quot;https:&#x2F;&#x2F;restream.io&quot;&gt;Restram.io&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; title=&quot;Endel: Focus, relax, and sleep&quot; href=&quot;https:&#x2F;&#x2F;endel.io&quot;&gt;Endel&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h3 id=&quot;hardware-and-devices&quot;&gt;Hardware and Devices&lt;&#x2F;h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;rme-audio.de&#x2F;babyface-pro-fs.html&quot; title=&quot;Babyface Pro FS&quot;&gt;Babyface Pro FS&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;us.focusrite.com&#x2F;products&#x2F;scarlett-solo&quot; title=&quot;Scarlett Solo&quot;&gt;Scarlett Solo&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.uaudio.com&#x2F;products&#x2F;volt-2-usb&quot; title=&quot;Universal Audio: Volt 2&quot;&gt;Universal Audio: Volt 2&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.cloudmicrophones.com&#x2F;cloudlifter-cl-x&quot; title=&quot;Cloudlifter CL-X&quot;&gt;Cloudlifter CL-X&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.shure.com&#x2F;en-US&#x2F;products&#x2F;microphones&#x2F;sm7b?variant=SM7B&quot; title=&quot;Shure SM7B Vocal Microphone&quot;&gt;Shure SM7B Vocal Microphone&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.elgato.com&#x2F;us&#x2F;en&#x2F;p&#x2F;stream-deck-xl&quot; title=&quot;Elgato Stream Deck XL&quot;&gt;Elgato Stream Deck XL&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; title=&quot;Babyface Pro FS&quot; href=&quot;https:&#x2F;&#x2F;rme-audio.de&#x2F;babyface-pro-fs.html&quot;&gt;Babyface Pro FS&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; title=&quot;Scarlett Solo&quot; href=&quot;https:&#x2F;&#x2F;us.focusrite.com&#x2F;products&#x2F;scarlett-solo&quot;&gt;Scarlett Solo&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; title=&quot;Universal Audio: Volt 2&quot; href=&quot;https:&#x2F;&#x2F;www.uaudio.com&#x2F;products&#x2F;volt-2-usb&quot;&gt;Universal Audio: Volt 2&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; title=&quot;Cloudlifter CL-X&quot; href=&quot;https:&#x2F;&#x2F;www.cloudmicrophones.com&#x2F;cloudlifter-cl-x&quot;&gt;Cloudlifter CL-X&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; title=&quot;Shure SM7B Vocal Microphone&quot; href=&quot;https:&#x2F;&#x2F;www.shure.com&#x2F;en-US&#x2F;products&#x2F;microphones&#x2F;sm7b?variant=SM7B&quot;&gt;Shure SM7B Vocal Microphone&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; title=&quot;Elgato Stream Deck XL&quot; href=&quot;https:&#x2F;&#x2F;www.elgato.com&#x2F;us&#x2F;en&#x2F;p&#x2F;stream-deck-xl&quot;&gt;Elgato Stream Deck XL&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h3 id=&quot;apps&quot;&gt;Apps&lt;&#x2F;h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;rme-audio.de&#x2F;totalmix-fx.html&quot; title=&quot;TotalMix FX&quot;&gt;TotalMix FX&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;rme-audio.de&#x2F;digicheck-ng.html&quot; title=&quot;Digicheck NG&quot;&gt;DigiCheck NG&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.izotope.com&#x2F;en&#x2F;products&#x2F;ozone&quot; title=&quot;Ozone&quot;&gt;Ozone&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;audiohijack&#x2F;&quot; title=&quot;Audio Hijack&quot;&gt;Audio Hijack&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;loopback&#x2F;&quot; title=&quot;Loopback&quot;&gt;Loopback&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.wirecast.io&#x2F;en&#x2F;&quot; title=&quot;Wirecast&quot;&gt;Wirecast&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;obsproject.com&quot; title=&quot;OBS Studio&quot;&gt;OBS Studio&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; title=&quot;TotalMix FX&quot; href=&quot;https:&#x2F;&#x2F;rme-audio.de&#x2F;totalmix-fx.html&quot;&gt;TotalMix FX&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; title=&quot;Digicheck NG&quot; href=&quot;https:&#x2F;&#x2F;rme-audio.de&#x2F;digicheck-ng.html&quot;&gt;DigiCheck NG&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; title=&quot;Ozone&quot; href=&quot;https:&#x2F;&#x2F;www.izotope.com&#x2F;en&#x2F;products&#x2F;ozone&quot;&gt;Ozone&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; title=&quot;Audio Hijack&quot; href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;audiohijack&#x2F;&quot;&gt;Audio Hijack&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; title=&quot;Loopback&quot; href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;loopback&#x2F;&quot;&gt;Loopback&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; title=&quot;Wirecast&quot; href=&quot;https:&#x2F;&#x2F;www.wirecast.io&#x2F;en&#x2F;&quot;&gt;Wirecast&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; title=&quot;OBS Studio&quot; href=&quot;https:&#x2F;&#x2F;obsproject.com&quot;&gt;OBS Studio&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
 &lt;p&gt;With this new setup, it’s really straightforward to switch between audio
@@ -1047,7 +1043,7 @@ rewarding journey, and the flexibility I’ve gained makes it all worthwhile.&lt
       font-size: 1em;&quot;&gt;Less Friction. More productivity&lt;&#x2F;p&gt;
 &lt;&#x2F;div&gt;
 &lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;&#x2F;h2&gt;
-&lt;p&gt;If you’re running a static blog with &lt;a href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;&quot;&gt;Zola&lt;&#x2F;a&gt;, you know
+&lt;p&gt;If you’re running a static blog with &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;&quot;&gt;Zola&lt;&#x2F;a&gt;, you know
 the drill: create a markdown file, add the frontmatter, remember the correct
 TOML format, generate a slug from the title, put it in the proper directory,
 commit, build, and push.&lt;&#x2F;p&gt;
@@ -1076,10 +1072,9 @@ always skip writing altogether.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;let-s-hack-this&quot;&gt;Let’s Hack This&lt;&#x2F;h2&gt;
 &lt;p&gt;So, I created a simple &lt;code&gt;Makefile&lt;&#x2F;code&gt; with a shell script that handles everything
 interactively. Now the workflow is:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;make new    &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Create a new post
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;make serve  &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Preview locally
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;make deploy &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Build and push to production
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #EBDBB2; background-color: #1D2021;&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;make&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt; new&lt;&#x2F;span&gt;&lt;span style=&quot;color: #928374;font-style: italic;&quot;&gt;    # Create a new post&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;make&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt; serve&lt;&#x2F;span&gt;&lt;span style=&quot;color: #928374;font-style: italic;&quot;&gt;  # Preview locally&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;make&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt; deploy&lt;&#x2F;span&gt;&lt;span style=&quot;color: #928374;font-style: italic;&quot;&gt; # Build and push to production&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;That’s it. Three commands for the entire workflow.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;creating-new-posts&quot;&gt;Creating New Posts&lt;&#x2F;h2&gt;
 &lt;p&gt;The &lt;code&gt;make new&lt;&#x2F;code&gt; command runs an interactive script that:&lt;&#x2F;p&gt;
@@ -1090,25 +1085,24 @@ interactively. Now the workflow is:&lt;&#x2F;p&gt;
 &lt;li&gt;&lt;strong&gt;Generates everything&lt;&#x2F;strong&gt;: Slug, frontmatter, file structure&lt;&#x2F;li&gt;
 &lt;&#x2F;ol&gt;
 &lt;p&gt;Here’s what the interaction looks like for this very blog post:&lt;&#x2F;p&gt;
-&lt;pre style=&quot;background-color:#282828;color:#fdf4c1aa;&quot;&gt;&lt;code&gt;&lt;span&gt;$ make new
-&lt;&#x2F;span&gt;&lt;span&gt;Creating a new blog post...
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;Title: A Frictionless Blog Workflow
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;Available categories:
-&lt;&#x2F;span&gt;&lt;span&gt;  1) top-of-mind    - Random thoughts and musings (brain dump)
-&lt;&#x2F;span&gt;&lt;span&gt;  2) inbox          - General content (default)
-&lt;&#x2F;span&gt;&lt;span&gt;  3) highlights     - Leadership and non-technical aspects
-&lt;&#x2F;span&gt;&lt;span&gt;  4) tips           - Useful tips, tricks, and code snippets
-&lt;&#x2F;span&gt;&lt;span&gt;  5) roadmap        - Career guidance, resources, life lessons
-&lt;&#x2F;span&gt;&lt;span&gt;  6) zero-to-prod   - Production-ready system tutorials
-&lt;&#x2F;span&gt;&lt;span&gt;  7) spire          - SPIFFE and SPIRE articles
-&lt;&#x2F;span&gt;&lt;span&gt;Choose category (1-7) [default: 2]: 4
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;Tags (comma-separated): blogging, workflow, content-creation
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;Created: &#x2F;Users&#x2F;volkan&#x2F;&amp;lt;truncated...&amp;gt;&#x2F;a-frictionless-blog-workflow.md
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #EBDBB2; background-color: #1D2021;&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;$ make new&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Creating a new blog post...&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Title: A Frictionless Blog Workflow&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Available categories:&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  1) top-of-mind    - Random thoughts and musings (brain dump)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  2) inbox          - General content (default)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  3) highlights     - Leadership and non-technical aspects&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  4) tips           - Useful tips, tricks, and code snippets&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  5) roadmap        - Career guidance, resources, life lessons&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  6) zero-to-prod   - Production-ready system tutorials&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  7) spire          - SPIFFE and SPIRE articles&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Choose category (1-7) [default: 2]: 4&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Tags (comma-separated): blogging, workflow, content-creation&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Created: &#x2F;Users&#x2F;volkan&#x2F;&amp;lt;truncated...&amp;gt;&#x2F;a-frictionless-blog-workflow.md&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;The script automatically:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;Converts the title to a URL-friendly slug (&lt;code&gt;a-frictionless-blog-workflow&lt;&#x2F;code&gt;)&lt;&#x2F;li&gt;
@@ -1119,29 +1113,26 @@ interactively. Now the workflow is:&lt;&#x2F;p&gt;
 &lt;li&gt;Outputs an absolute path that I can click to open&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;Here is a list of all &lt;code&gt;make&lt;&#x2F;code&gt; targets so far:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;makefile&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-makefile &quot;&gt;&lt;code class=&quot;language-makefile&quot; data-lang=&quot;makefile&quot;&gt;&lt;span&gt;make help           &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Show all available commands
-&lt;&#x2F;span&gt;&lt;span&gt;make new            &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Create a new blog post interactively
-&lt;&#x2F;span&gt;&lt;span&gt;make build          &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Build the site with Zola
-&lt;&#x2F;span&gt;&lt;span&gt;make serve          &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Start local dev server
-&lt;&#x2F;span&gt;&lt;span&gt;make deploy         &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Build and push to production
-&lt;&#x2F;span&gt;&lt;span&gt;make clean          &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Remove build artifacts
-&lt;&#x2F;span&gt;&lt;span&gt;make tags           &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# List all tags with frequency
-&lt;&#x2F;span&gt;&lt;span&gt;make merge-tags     &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Merge&#x2F;rename tags
-&lt;&#x2F;span&gt;&lt;span&gt;make normalize-tags &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Remove duplicate tags
-&lt;&#x2F;span&gt;&lt;span&gt;make assign-tags    &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Assign tags interactively
-&lt;&#x2F;span&gt;&lt;span&gt;make apply-tags     &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Apply tags from a file
-&lt;&#x2F;span&gt;&lt;span&gt;make find-no-images &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Find posts without images
-&lt;&#x2F;span&gt;&lt;span&gt;make move-to-tips   &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Move posts between sections
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h3 id=&quot;publish&quot;&gt;Publish&lt;&#x2F;h3&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #EBDBB2; background-color: #1D2021;&quot;&gt;&lt;code data-lang=&quot;make&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;make help           &lt;&#x2F;span&gt;&lt;span style=&quot;color: #928374;font-style: italic;&quot;&gt;# Show all available commands&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;make new            &lt;&#x2F;span&gt;&lt;span style=&quot;color: #928374;font-style: italic;&quot;&gt;# Create a new blog post interactively&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;make build          &lt;&#x2F;span&gt;&lt;span style=&quot;color: #928374;font-style: italic;&quot;&gt;# Build the site with Zola&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;make serve          &lt;&#x2F;span&gt;&lt;span style=&quot;color: #928374;font-style: italic;&quot;&gt;# Start local dev server&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;make deploy         &lt;&#x2F;span&gt;&lt;span style=&quot;color: #928374;font-style: italic;&quot;&gt;# Build and push to production&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;make clean          &lt;&#x2F;span&gt;&lt;span style=&quot;color: #928374;font-style: italic;&quot;&gt;# Remove build artifacts&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;make tags           &lt;&#x2F;span&gt;&lt;span style=&quot;color: #928374;font-style: italic;&quot;&gt;# List all tags with frequency&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;make merge-tags     &lt;&#x2F;span&gt;&lt;span style=&quot;color: #928374;font-style: italic;&quot;&gt;# Merge&#x2F;rename tags&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;make normalize-tags &lt;&#x2F;span&gt;&lt;span style=&quot;color: #928374;font-style: italic;&quot;&gt;# Remove duplicate tags&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;make assign-tags    &lt;&#x2F;span&gt;&lt;span style=&quot;color: #928374;font-style: italic;&quot;&gt;# Assign tags interactively&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;make apply-tags     &lt;&#x2F;span&gt;&lt;span style=&quot;color: #928374;font-style: italic;&quot;&gt;# Apply tags from a file&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;make find-no-images &lt;&#x2F;span&gt;&lt;span style=&quot;color: #928374;font-style: italic;&quot;&gt;# Find posts without images&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;make move-to-tips   &lt;&#x2F;span&gt;&lt;span style=&quot;color: #928374;font-style: italic;&quot;&gt;# Move posts between sections&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h3 id=&quot;publish&quot;&gt;Publish&lt;&#x2F;h3&gt;
 &lt;p&gt;I just do a &lt;code&gt;make deploy&lt;&#x2F;code&gt;… and done.&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;$ make deploy
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Building site...
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Build complete! Output in .&#x2F;public&#x2F;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Deploying to production...
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Commit message: Add frictionless workflow post
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Deployed successfully!
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #EBDBB2; background-color: #1D2021;&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt; make deploy&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;Building&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt; site...&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;Build&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt; complete! Output in .&#x2F;public&#x2F;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;Deploying&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt; to production...&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;Commit&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt; message: Add frictionless workflow post&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;Deployed&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt; successfully!&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;It builds with &lt;code&gt;zola&lt;&#x2F;code&gt;, prompts for a commit message, and pushes everything
 in one command.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;tag-management-taming-the-chaos&quot;&gt;Tag Management: Taming the Chaos&lt;&#x2F;h2&gt;
@@ -1157,33 +1148,27 @@ in one command.&lt;&#x2F;p&gt;
 &lt;p&gt;I created a set of scripts in the &lt;code&gt;.&#x2F;hack&#x2F;&lt;&#x2F;code&gt; directory to solve this:&lt;&#x2F;p&gt;
 &lt;h4 id=&quot;analyzing-tags-make-tags&quot;&gt;Analyzing Tags (&lt;code&gt;make tags&lt;&#x2F;code&gt;)&lt;&#x2F;h4&gt;
 &lt;p&gt;First, I needed to see what I was dealing with:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;$ make tags
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #EBDBB2; background-color: #1D2021;&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt; make tags&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;This lists all tags with their usage frequency, sorted by popularity. It helped me
 identify duplicates and rarely-used tags that should be merged.&lt;&#x2F;p&gt;
 &lt;h4 id=&quot;merging-tags-make-merge-tags&quot;&gt;Merging Tags (&lt;code&gt;make merge-tags&lt;&#x2F;code&gt;)&lt;&#x2F;h4&gt;
 &lt;p&gt;Once I identified tags to consolidate, I created a &lt;code&gt;tag-mappings.txt&lt;&#x2F;code&gt; file:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;text&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-text &quot;&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;span&gt;# Merge similar tags
-&lt;&#x2F;span&gt;&lt;span&gt;golang -&amp;gt; go
-&lt;&#x2F;span&gt;&lt;span&gt;k8s -&amp;gt; kubernetes
-&lt;&#x2F;span&gt;&lt;span&gt;tips-and-tricks -&amp;gt; tips
-&lt;&#x2F;span&gt;&lt;span&gt;best-practices -&amp;gt; tips
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #EBDBB2; background-color: #1D2021;&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;# Merge similar tags&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;golang -&amp;gt; go&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;k8s -&amp;gt; kubernetes&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;tips-and-tricks -&amp;gt; tips&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;best-practices -&amp;gt; tips&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;Then ran:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;$ make merge-tags DRY_RUN=1  &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Preview changes
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;$ make merge-tags             &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Apply changes
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #EBDBB2; background-color: #1D2021;&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt; make merge-tags DRY_RUN=&lt;&#x2F;span&gt;&lt;span style=&quot;color: #D3869B;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span style=&quot;color: #928374;font-style: italic;&quot;&gt;  # Preview changes&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt; make merge-tags&lt;&#x2F;span&gt;&lt;span style=&quot;color: #928374;font-style: italic;&quot;&gt;             # Apply changes&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;This automatically renamed tags across all posts, consolidating my tag taxonomy.&lt;&#x2F;p&gt;
 &lt;h4 id=&quot;removing-duplicates-make-normalize-tags&quot;&gt;Removing Duplicates (&lt;code&gt;make normalize-tags&lt;&#x2F;code&gt;)&lt;&#x2F;h4&gt;
 &lt;p&gt;Some posts had the same tag listed multiple times. The normalize script cleans
 this up:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;$ make normalize-tags DRY_RUN=1  &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Preview
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;$ make normalize-tags             &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Fix duplicates
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h4 id=&quot;bulk-tag-assignment-make-assign-tags-and-make-apply-tags&quot;&gt;Bulk Tag Assignment (&lt;code&gt;make assign-tags&lt;&#x2F;code&gt; and &lt;code&gt;make apply-tags&lt;&#x2F;code&gt;)&lt;&#x2F;h4&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #EBDBB2; background-color: #1D2021;&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt; make normalize-tags DRY_RUN=&lt;&#x2F;span&gt;&lt;span style=&quot;color: #D3869B;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span style=&quot;color: #928374;font-style: italic;&quot;&gt;  # Preview&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt; make normalize-tags&lt;&#x2F;span&gt;&lt;span style=&quot;color: #928374;font-style: italic;&quot;&gt;             # Fix duplicates&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h4 id=&quot;bulk-tag-assignment-make-assign-tags-and-make-apply-tags&quot;&gt;Bulk Tag Assignment (&lt;code&gt;make assign-tags&lt;&#x2F;code&gt; and &lt;code&gt;make apply-tags&lt;&#x2F;code&gt;)&lt;&#x2F;h4&gt;
 &lt;p&gt;For adding tags to multiple posts at once:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;$ make assign-tags TAG=architecture FILE=tag-files&#x2F;architecture.txt
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #EBDBB2; background-color: #1D2021;&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt; make assign-tags TAG=architecture FILE=tag-files&#x2F;architecture.txt&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;This was crucial when I realized 20+ posts about system design were missing the
 &lt;code&gt;architecture&lt;&#x2F;code&gt; tag.&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;chaos-into-order&quot;&gt;Chaos into Order&lt;&#x2F;h3&gt;
@@ -1199,53 +1184,48 @@ systematic process. Now:&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;finding-posts-without-images&quot;&gt;Finding Posts Without Images&lt;&#x2F;h3&gt;
 &lt;p&gt;Blog posts without header images look incomplete. I created a script to find
 them:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;$ make find-no-images
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #EBDBB2; background-color: #1D2021;&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt; make find-no-images&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;This scans all markdown files and lists posts missing the header image syntax,
 making it easy to go back and add visuals.&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;moving-posts-between-sections&quot;&gt;Moving Posts Between Sections&lt;&#x2F;h3&gt;
 &lt;p&gt;As &lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt; evolved, I realized some posts belonged in different
 categories. The &lt;code&gt;move-to-tips.sh&lt;&#x2F;code&gt; script (now &lt;code&gt;make move-to-tips&lt;&#x2F;code&gt;) handles this:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;$ make move-to-tips
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Post slug: frictionless-blog-workflow
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Moving from inbox to tips...
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Done!
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #EBDBB2; background-color: #1D2021;&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt; make move-to-tips&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;Post&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt; slug: frictionless-blog-workflow&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;Moving&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt; from inbox to tips...&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;Done!&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;It moves the file, updates internal links, and preserves all metadata.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;the-implementation&quot;&gt;The Implementation&lt;&#x2F;h2&gt;
 &lt;p&gt;Here is the &lt;code&gt;new-post.sh&lt;&#x2F;code&gt; that handles all the logic:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;#!&#x2F;bin&#x2F;bash
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Interactive prompts
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;read &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;-p &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Title: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt; title
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;read &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;-p &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Choose category (1-7) [default: 2]: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt; category_num
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;read &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;-p &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Tags (comma-separated): &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt; tags
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Generate slug from title
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;slug&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;$(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;title&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;tr &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;[:upper:]&amp;#39; &amp;#39;[:lower:]&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;\
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;       &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;s&#x2F;[^a-z0-9]&#x2F;-&#x2F;g&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;\
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;       &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;s&#x2F;--*&#x2F;-&#x2F;g&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;\
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;       &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;s&#x2F;^-&#x2F;&#x2F;&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;s&#x2F;-$&#x2F;&#x2F;&amp;#39;)
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Create file with proper frontmatter
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cat &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;filename&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;&amp;lt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;EOF
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;+++
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;title = &amp;quot;$title&amp;quot;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;date = &amp;quot;$(date +%Y-%m-%d)&amp;quot;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;[taxonomies]
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;tags = [$tag_list]
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;+++
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;## Introduction
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;Write your blog post here...
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;EOF
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #EBDBB2; background-color: #1D2021;&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #928374;font-style: italic;&quot;&gt;#!&#x2F;bin&#x2F;bash&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #928374;font-style: italic;&quot;&gt;# Interactive prompts&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FE8019;&quot;&gt;read&lt;&#x2F;span&gt;&lt;span style=&quot;color: #D3869B;&quot;&gt; -p&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt; &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;Title: &lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt; title&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FE8019;&quot;&gt;read&lt;&#x2F;span&gt;&lt;span style=&quot;color: #D3869B;&quot;&gt; -p&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt; &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;Choose category (1-7) [default: 2]: &lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt; category_num&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FE8019;&quot;&gt;read&lt;&#x2F;span&gt;&lt;span style=&quot;color: #D3869B;&quot;&gt; -p&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt; &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;Tags (comma-separated): &lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt; tags&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #928374;font-style: italic;&quot;&gt;# Generate slug from title&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;slug&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8EC07C;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;$(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FE8019;&quot;&gt;echo&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt; &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;$title&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8EC07C;&quot;&gt; |&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt; tr&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt; &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;[:upper:]&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;#39; &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;[:lower:]&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8EC07C;&quot;&gt; |&lt;&#x2F;span&gt;&lt;span style=&quot;color: #D3869B;&quot;&gt; \&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;       sed&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt; &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;s&#x2F;[^a-z0-9]&#x2F;-&#x2F;g&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8EC07C;&quot;&gt; |&lt;&#x2F;span&gt;&lt;span style=&quot;color: #D3869B;&quot;&gt; \&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;       sed&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt; &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;s&#x2F;--*&#x2F;-&#x2F;g&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8EC07C;&quot;&gt; |&lt;&#x2F;span&gt;&lt;span style=&quot;color: #D3869B;&quot;&gt; \&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;       sed&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt; &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;s&#x2F;^-&#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8EC07C;&quot;&gt; |&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt; sed&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt; &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;s&#x2F;-$&#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;#39;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #928374;font-style: italic;&quot;&gt;# Create file with proper frontmatter&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;cat&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8EC07C;&quot;&gt; &amp;gt;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt; &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;$filename&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8EC07C;&quot;&gt; &amp;lt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;EOF&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;+++&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;title = &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;$title&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;date = &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;$(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;date&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt; +%Y-%m-%d&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;[taxonomies]&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;tags = [&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;$tag_list&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;]&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;+++&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;## Introduction&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;Write your blog post here...&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;EOF&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;The &lt;code&gt;Makefile&lt;&#x2F;code&gt; just delegates to the script:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;makefile&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-makefile &quot;&gt;&lt;code class=&quot;language-makefile&quot; data-lang=&quot;makefile&quot;&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;new&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;## Create a new blog post interactively
-&lt;&#x2F;span&gt;&lt;span&gt;	&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;@&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;.&#x2F;new-post.sh
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;benefits&quot;&gt;Benefits&lt;&#x2F;h2&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #EBDBB2; background-color: #1D2021;&quot;&gt;&lt;code data-lang=&quot;make&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #B8BB26;font-weight: bold;&quot;&gt;new&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #928374;font-style: italic;&quot;&gt; ## Create a new blog post interactively&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FB4934;&quot;&gt;	@&lt;&#x2F;span&gt;&lt;span&gt;.&#x2F;new-post.sh&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h2 id=&quot;benefits&quot;&gt;Benefits&lt;&#x2F;h2&gt;
 &lt;p&gt;Well, yes, it’s not rocket surgery, but anything that minimizes friction is
 a step towards better user experience. And that helps a lot, especially when
 the user is busy as a bumblebee.&lt;&#x2F;p&gt;
@@ -1261,9 +1241,9 @@ the user is busy as a bumblebee.&lt;&#x2F;p&gt;
 &lt;p&gt;And I think that’s the whole point.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;bonus-grammarly-desktop-app&quot;&gt;Bonus: Grammarly Desktop App&lt;&#x2F;h2&gt;
 &lt;p&gt;This is &lt;strong&gt;not&lt;&#x2F;strong&gt; a promotional section: I am adding it because I regularly use
-and love &lt;a href=&quot;https:&#x2F;&#x2F;grammarly.com&quot; title=&quot;Grammarly&quot;&gt;Grammarly&lt;&#x2F;a&gt;, and in this particular case, it helps in my
+and love &lt;a rel=&quot;external&quot; title=&quot;Grammarly&quot; href=&quot;https:&#x2F;&#x2F;grammarly.com&quot;&gt;Grammarly&lt;&#x2F;a&gt;, and in this particular case, it helps in my
 workflow too.&lt;&#x2F;p&gt;
-&lt;p&gt;When I install the &lt;a href=&quot;https:&#x2F;&#x2F;www.grammarly.com&#x2F;desktop&quot; title=&quot;Grammarly for your Desktop&quot;&gt;&lt;strong&gt;Grammarly Desktop App&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, I get
+&lt;p&gt;When I install the &lt;a rel=&quot;external&quot; title=&quot;Grammarly for your Desktop&quot; href=&quot;https:&#x2F;&#x2F;www.grammarly.com&#x2F;desktop&quot;&gt;&lt;strong&gt;Grammarly Desktop App&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, I get
 instant feedback on the grammar, tone, and complexity of what I’m writing.
 Which means, I can fix my errors on the go, instead of having a separate
 “&lt;em&gt;spelling and grammar check&lt;&#x2F;em&gt;” round. That also saves time. Since it’s a
@@ -1282,7 +1262,7 @@ blog post.&lt;&#x2F;p&gt;
 &lt;p&gt;As I improve these scripts over time, the latest versions will always be
 available in this blog’s repository:&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;zerotohero-dev&#x2F;zerotohero-web&quot;&gt;&lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt; on GitHub&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;zerotohero-dev&#x2F;zerotohero-web&quot;&gt;&lt;strong&gt;Zero to Hero&lt;&#x2F;strong&gt; on GitHub&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;All workflow scripts are now organized in the &lt;code&gt;.&#x2F;hack&#x2F;&lt;&#x2F;code&gt; directory:&lt;&#x2F;p&gt;
 &lt;ul&gt;
@@ -1299,9 +1279,9 @@ available in this blog’s repository:&lt;&#x2F;p&gt;
 utilities. Feel free to adapt them to your own workflow.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;links-and-further-reference&quot;&gt;Links and Further Reference&lt;&#x2F;h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;&quot;&gt;Zola Static Site Generator&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.gnu.org&#x2F;software&#x2F;make&#x2F;manual&#x2F;make.html&quot;&gt;GNU Make Manual&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;grammarly.com&#x2F;&quot;&gt;Grammarly&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;&quot;&gt;Zola Static Site Generator&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.gnu.org&#x2F;software&#x2F;make&#x2F;manual&#x2F;make.html&quot;&gt;GNU Make Manual&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;grammarly.com&#x2F;&quot;&gt;Grammarly&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 </content>
         
@@ -1335,7 +1315,7 @@ utilities. Feel free to adapt them to your own workflow.&lt;&#x2F;p&gt;
 technology dance. Each puzzle must harmonize to ensure a seamless, interactive,
 high-quality viewer experience.&lt;&#x2F;p&gt;
 &lt;p&gt;The complexity increases even more when we decide to share not just our faces or
-voices but our desktops too. This is the path we have chosen in &lt;a href=&quot;https:&#x2F;&#x2F;www.twitch.tv&#x2F;VadidekiVolkan&#x2F;schedule&quot;&gt;our ongoing
+voices but our desktops too. This is the path we have chosen in &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.twitch.tv&#x2F;VadidekiVolkan&#x2F;schedule&quot;&gt;our ongoing
 &lt;strong&gt;TalkSPIFFE&lt;&#x2F;strong&gt; series&lt;&#x2F;a&gt;: The live
 office hours we dedicate to the &lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt; and &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt; community.&lt;&#x2F;p&gt;
 &lt;p&gt;This article provides a comprehensive guide for designing an intricate
@@ -1353,10 +1333,10 @@ experiences.&lt;&#x2F;p&gt;
 &lt;&#x2F;div&gt;
 &lt;h2 id=&quot;talkspiffe-is-that-something-new-can-i-eat-it&quot;&gt;TalkSPIFFE? Is That Something New? Can I Eat It?&lt;&#x2F;h2&gt;
 &lt;p&gt;Before I continue, it’s a perfect moment to delve deeper into what
-&lt;a href=&quot;https:&#x2F;&#x2F;twitch.tv&#x2F;VadidekiVolkan&quot;&gt;&lt;strong&gt;TalkSPIFFE&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; truly is.&lt;&#x2F;p&gt;
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;twitch.tv&#x2F;VadidekiVolkan&quot;&gt;&lt;strong&gt;TalkSPIFFE&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; truly is.&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;strong&gt;TalkSPIFFE&lt;&#x2F;strong&gt; is more than just a live stream; it’s a platform designed to
 demystify and elucidate the intricacies of the
-&lt;a href=&quot;https:&#x2F;&#x2F;spiffe.io&#x2F;&quot;&gt;&lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; (&lt;em&gt;Secure Production Identity Framework for
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;spiffe.io&#x2F;&quot;&gt;&lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; (&lt;em&gt;Secure Production Identity Framework for
 Everyone&lt;&#x2F;em&gt;) technology. It’s an opportunity for &lt;strong&gt;SPIFFE&#x2F;SPIRE&lt;&#x2F;strong&gt; enthusiasts,
 professionals, and those who want to learn more about &lt;strong&gt;SPIFFE&lt;&#x2F;strong&gt; and &lt;strong&gt;SPIRE&lt;&#x2F;strong&gt;
 to come together and engage in enlightening discussions, learn from each other,
@@ -1378,14 +1358,14 @@ platform for learning, sharing, and collaborative growth in &lt;strong&gt;SPIFFE
 &lt;p&gt;Since my streaming setup is far from ordinary, I wanted to give you an inside
 look into the process.&lt;&#x2F;p&gt;
 &lt;p&gt;In this article, I’ll share how we’ve used applications like
-&lt;a href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;audiohijack&#x2F;&quot;&gt;&lt;strong&gt;Audio Hijack&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;,
-&lt;a href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;loopback&#x2F;&quot;&gt;&lt;strong&gt;Loopback&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;,
-&lt;a href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;airfoil&#x2F;mac&#x2F;&quot;&gt;&lt;strong&gt;Airfoil Satellite&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;,
-&lt;a href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;farrago&#x2F;&quot;&gt;&lt;strong&gt;Farrago&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;,
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;audiohijack&#x2F;&quot;&gt;&lt;strong&gt;Audio Hijack&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;,
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;loopback&#x2F;&quot;&gt;&lt;strong&gt;Loopback&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;,
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;airfoil&#x2F;mac&#x2F;&quot;&gt;&lt;strong&gt;Airfoil Satellite&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;,
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;farrago&#x2F;&quot;&gt;&lt;strong&gt;Farrago&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;,
 &lt;strong&gt;&lt;em&gt;Zoom&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;, &lt;strong&gt;&lt;em&gt;Discord&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;,
-&lt;a href=&quot;https:&#x2F;&#x2F;help.twitch.tv&#x2F;s&#x2F;article&#x2F;guest-star?language=en_US&quot;&gt;Twitch’s Guest Star feature&lt;&#x2F;a&gt;,
-&lt;a href=&quot;https:&#x2F;&#x2F;obsproject.com&#x2F;&quot;&gt;&lt;strong&gt;Open Broadcaster Software (&lt;em&gt;OBS&lt;&#x2F;em&gt;)&lt;&#x2F;strong&gt;,&lt;&#x2F;a&gt; and
-&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;waydabber&#x2F;BetterDisplay&quot;&gt;&lt;strong&gt;BetterDisplay&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; to create a
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;help.twitch.tv&#x2F;s&#x2F;article&#x2F;guest-star?language=en_US&quot;&gt;Twitch’s Guest Star feature&lt;&#x2F;a&gt;,
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;obsproject.com&#x2F;&quot;&gt;&lt;strong&gt;Open Broadcaster Software (&lt;em&gt;OBS&lt;&#x2F;em&gt;)&lt;&#x2F;strong&gt;,&lt;&#x2F;a&gt; and
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;waydabber&#x2F;BetterDisplay&quot;&gt;&lt;strong&gt;BetterDisplay&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; to create a
 compelling and interactive live streaming experience.&lt;&#x2F;p&gt;
 &lt;p&gt;Each platform plays a vital role, from integrating our desktops through Zoom and
 routing our audio via a Discord voice channel to broadcasting our video feed on
@@ -1393,7 +1373,7 @@ Twitch. The added twist of background music takes the viewer experience to
 another level, immersing them in our conversational and instructional narrative.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;twitch-s-guest-star-feature-is-a-life-saver&quot;&gt;Twitch’s Guest Star Feature is a Life Saver&lt;&#x2F;h2&gt;
 &lt;p&gt;Navigating the turbulent waters of streaming a guest’s audio and video on a live
-stream can be challenging. This is where &lt;a href=&quot;https:&#x2F;&#x2F;help.twitch.tv&#x2F;s&#x2F;article&#x2F;guest-star&quot;&gt;Twitch’s innovative “&lt;strong&gt;Guest Star&lt;&#x2F;strong&gt;” feature&lt;&#x2F;a&gt;
+stream can be challenging. This is where &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;help.twitch.tv&#x2F;s&#x2F;article&#x2F;guest-star&quot;&gt;Twitch’s innovative “&lt;strong&gt;Guest Star&lt;&#x2F;strong&gt;” feature&lt;&#x2F;a&gt;
 shines.&lt;&#x2F;p&gt;
 &lt;p&gt;The &lt;strong&gt;Guest Star&lt;&#x2F;strong&gt; tool lets you establish “guest slot” browser sources you can
 deftly arrange in your broadcasting software. With ease, you can swiftly add or
@@ -1421,8 +1401,8 @@ counting backward&lt;&#x2F;em&gt;).&lt;&#x2F;p&gt;
       margin-top: -1.125em;
       font-size: 1em;&quot;&gt;The &amp;#x27;waiting room&amp;#x27; and the countdown timer.&lt;&#x2F;p&gt;
 &lt;&#x2F;div&gt;
-&lt;p&gt;During that time, I invite &lt;a href=&quot;https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;elinesterov&#x2F;&quot;&gt;&lt;strong&gt;Eli&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;,
-&lt;strong&gt;TalkSPIFFE&lt;&#x2F;strong&gt;’s cohost, as a “&lt;a href=&quot;https:&#x2F;&#x2F;help.twitch.tv&#x2F;s&#x2F;article&#x2F;guest-star?language=en_US&quot;&gt;&lt;em&gt;guest star&lt;&#x2F;em&gt;&lt;&#x2F;a&gt;”
+&lt;p&gt;During that time, I invite &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;elinesterov&#x2F;&quot;&gt;&lt;strong&gt;Eli&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;,
+&lt;strong&gt;TalkSPIFFE&lt;&#x2F;strong&gt;’s cohost, as a “&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;help.twitch.tv&#x2F;s&#x2F;article&#x2F;guest-star?language=en_US&quot;&gt;&lt;em&gt;guest star&lt;&#x2F;em&gt;&lt;&#x2F;a&gt;”
 to a virtual backstage. That’s how I can use his camera feed on the stream.&lt;&#x2F;p&gt;
 &lt;p&gt;In addition, I initiate a Discord voice chat session from which we air Eli’s
 voice feed.&lt;&#x2F;p&gt;
@@ -1439,9 +1419,9 @@ update them manually.&lt;&#x2F;p&gt;
       margin-top: -1.125em;
       font-size: 1em;&quot;&gt;OBS&amp;#x27;s Studio mode. Left: Upcoming scene; right: the scene streaming live.&lt;&#x2F;p&gt;
 &lt;&#x2F;div&gt;
-&lt;p&gt;I use &lt;a href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;audiohijack&#x2F;&quot;&gt;&lt;strong&gt;Audio Hijack&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; for chaining,
+&lt;p&gt;I use &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;audiohijack&#x2F;&quot;&gt;&lt;strong&gt;Audio Hijack&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; for chaining,
 filtering, and mixing various audio streams. And I use
-&lt;a href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;loopback&#x2F;&quot;&gt;&lt;strong&gt;Loopback&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; to create virtual audio interfaces that I
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;loopback&#x2F;&quot;&gt;&lt;strong&gt;Loopback&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; to create virtual audio interfaces that I
 can set as audio input sources for Zoom and Discord. As you’ll see shortly, the
 loopback interfaces I make in Audio Hijack will find their respective places
 as “&lt;em&gt;sinks&lt;&#x2F;em&gt;” in Audio Hijack.&lt;&#x2F;p&gt;
@@ -1490,7 +1470,7 @@ for me to toggle between two different volume levels and send the virtual output
 devices named “&lt;strong&gt;Stream Background Pass&lt;&#x2F;strong&gt;” and “&lt;strong&gt;Zoom Mic PassThru&lt;&#x2F;strong&gt;,”
 respectively.&lt;&#x2F;p&gt;
 &lt;p&gt;These virtual devices are loopback audio interfaces that I created using
-&lt;a href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;loopback&#x2F;&quot;&gt;&lt;strong&gt;Loopback&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;loopback&#x2F;&quot;&gt;&lt;strong&gt;Loopback&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Stream Background Pass&lt;&#x2F;strong&gt; is used by OBS as a background music source for the
 stream,&lt;&#x2F;li&gt;
@@ -1538,10 +1518,10 @@ enabled and switch between them using the A&#x2F;B switch:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;ELI AUDIO IN&lt;&#x2F;strong&gt; (&lt;em&gt;Discord&lt;&#x2F;em&gt;) is a Discord voice chat that Eli and I will use.
 I take Eli’s audio from that source to push it into
-&lt;a href=&quot;https:&#x2F;&#x2F;obsproject.com&#x2F;&quot;&gt;OBS (&lt;em&gt;Open Broadcast Software&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt; as a stream source.
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;obsproject.com&#x2F;&quot;&gt;OBS (&lt;em&gt;Open Broadcast Software&lt;&#x2F;em&gt;)&lt;&#x2F;a&gt; as a stream source.
 While at that, I’ll also clone it and send it to my headphones through a separate channel.&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;strong&gt;GUEST STAR&lt;&#x2F;strong&gt; (&lt;em&gt;Chrome&lt;&#x2F;em&gt;) is where
-Eli’s &lt;a href=&quot;https:&#x2F;&#x2F;help.twitch.tv&#x2F;s&#x2F;article&#x2F;guest-star?language=en_US&quot;&gt;Twitch Guest Star&lt;&#x2F;a&gt;
+Eli’s &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;help.twitch.tv&#x2F;s&#x2F;article&#x2F;guest-star?language=en_US&quot;&gt;Twitch Guest Star&lt;&#x2F;a&gt;
 browser source is. I keep it as a backup source in case Discord’s audio fails.
 Though I’ve had minor glitches while testing it as an audio source, I’m
 reluctant to use it. For now, it’s just a backup for emergencies.&lt;&#x2F;li&gt;
@@ -1554,7 +1534,7 @@ reluctant to use it. For now, it’s just a backup for emergencies.&lt;&#x2F;li&
       font-size: 1em;&quot;&gt;Mixing the vocals.&lt;&#x2F;p&gt;
 &lt;&#x2F;div&gt;
 &lt;p&gt;The orange lines above pass through my microphone
-(&lt;a href=&quot;https:&#x2F;&#x2F;www.shure.com&#x2F;en-US&#x2F;products&#x2F;microphones&#x2F;sm7b&quot;&gt;&lt;strong&gt;&lt;em&gt;Shure SM7B&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;),
+(&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.shure.com&#x2F;en-US&#x2F;products&#x2F;microphones&#x2F;sm7b&quot;&gt;&lt;strong&gt;&lt;em&gt;Shure SM7B&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;),
 a general-purpose noise filter, a vocal-specialized noise filter, and an
 equalizer before it reaches an A&#x2F;B switch, respectively.&lt;&#x2F;p&gt;
 &lt;p&gt;I use the A&#x2F;B switch to quickly prevent my voice from being sent to the stream.
@@ -1609,7 +1589,7 @@ is a virtual audio device.&lt;&#x2F;p&gt;
       margin-top: -1.125em;
       font-size: 1em;&quot;&gt;Onwards to the virtual audio device.&lt;&#x2F;p&gt;
 &lt;&#x2F;div&gt;
-&lt;p&gt;I created “&lt;strong&gt;&lt;em&gt;SPIFFE Loopback Audio&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;” using &lt;a href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;loopback&#x2F;&quot;&gt;&lt;strong&gt;Loopback&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;;
+&lt;p&gt;I created “&lt;strong&gt;&lt;em&gt;SPIFFE Loopback Audio&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;” using &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;loopback&#x2F;&quot;&gt;&lt;strong&gt;Loopback&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;;
 I use it in OBS as an audio source to send to the stream.&lt;&#x2F;p&gt;
 
 &lt;div class=&quot;z2h-image&quot;&gt;
@@ -1686,9 +1666,9 @@ them on the same machine as the live stream could potentially degrade the
 stream’s quality, leading to lower bitrates, missing frames, and a sub-optimal
 viewing experience.&lt;&#x2F;p&gt;
 &lt;p&gt;To set this dual-machine configuration up, firstly, I connected the HDMI output
-of my demo machine to an &lt;a href=&quot;https:&#x2F;&#x2F;www.elgato.com&#x2F;us&#x2F;en&#x2F;p&#x2F;cam-link-4khttps:&#x2F;&#x2F;www.elgato.com&#x2F;us&#x2F;en&#x2F;p&#x2F;cam-link-4k&quot;&gt;&lt;strong&gt;Elgato Camlink 4K&lt;&#x2F;strong&gt; capture card&lt;&#x2F;a&gt;,
+of my demo machine to an &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.elgato.com&#x2F;us&#x2F;en&#x2F;p&#x2F;cam-link-4khttps:&#x2F;&#x2F;www.elgato.com&#x2F;us&#x2F;en&#x2F;p&#x2F;cam-link-4k&quot;&gt;&lt;strong&gt;Elgato Camlink 4K&lt;&#x2F;strong&gt; capture card&lt;&#x2F;a&gt;,
 which is plugged into my streaming machine. I created a 1080p virtual display on
-my demo machine to share the required content using &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;waydabber&#x2F;BetterDisplay&quot;&gt;&lt;strong&gt;BetterDisplay&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+my demo machine to share the required content using &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;waydabber&#x2F;BetterDisplay&quot;&gt;&lt;strong&gt;BetterDisplay&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;After connecting it to the streaming machine, too, &lt;strong&gt;Camlink 4K&lt;&#x2F;strong&gt; identifies
 itself as an additional display on my demo machine.&lt;&#x2F;p&gt;
 &lt;p&gt;I mirrored the virtual monitor onto the Camlink 4K to have a separate view that
@@ -1702,7 +1682,7 @@ have to tilt my unnecessarily on the live stream.&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;2023&#x2F;06&#x2F;Screenshot-2023-06-15-at-2.58.34-PM.png&quot; alt=&quot;&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;2023&#x2F;06&#x2F;Screenshot-2023-06-15-at-2.59.56-PM.png&quot; alt=&quot;&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;p&gt;The feed from the &lt;strong&gt;Camlink 4K&lt;&#x2F;strong&gt; is then directed into
-&lt;a href=&quot;https:&#x2F;&#x2F;obsproject.com&#x2F;&quot;&gt;&lt;strong&gt;OBS&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; on my streaming machine. You can check the
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;obsproject.com&#x2F;&quot;&gt;&lt;strong&gt;OBS&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; on my streaming machine. You can check the
 “Physical Setup” section for additional details on how things connect at the
 physical layer.&lt;&#x2F;p&gt;
 &lt;p&gt;Once things are set up this way, the demo machine shoulders the burden of
@@ -1723,7 +1703,7 @@ both machines.&lt;&#x2F;p&gt;
 &lt;p&gt;There can be tricky moments when I need to move my mouse pointer into the
 virtual monitor – a task that’s impossible when you are remotely connected. To
 circumnavigate this, I use a
-&lt;a href=&quot;https:&#x2F;&#x2F;www.logitech.com&#x2F;en-us&#x2F;mx&#x2F;master-series.html&quot;&gt;&lt;strong&gt;Logi MX Master Wireless Mouse&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;,
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.logitech.com&#x2F;en-us&#x2F;mx&#x2F;master-series.html&quot;&gt;&lt;strong&gt;Logi MX Master Wireless Mouse&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;,
 which can be connected to up to three machines.&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;strong&gt;Logi MX Master&lt;&#x2F;strong&gt;’s ability to instantly switch from one machine to another
 allows me to directly control the cursor on the streaming machine when required.
@@ -1742,7 +1722,7 @@ them only because I am using a green screen. Otherwise, I could very well use my
 camera feed as is.&lt;&#x2F;p&gt;
 &lt;p&gt;I’ll also stream Eli’s camera feed as is without any modification.&lt;&#x2F;p&gt;
 &lt;p&gt;Besides, I have a pretty good camera
-(&lt;a href=&quot;https:&#x2F;&#x2F;shop.panasonic.com&#x2F;cameras-and-camcorders&#x2F;camcorders&#x2F;consumer-camcorders&#x2F;hc-v180k&quot;&gt;&lt;strong&gt;&lt;em&gt;Panasonic HC-V180K&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;)
+(&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;shop.panasonic.com&#x2F;cameras-and-camcorders&#x2F;camcorders&#x2F;consumer-camcorders&#x2F;hc-v180k&quot;&gt;&lt;strong&gt;&lt;em&gt;Panasonic HC-V180K&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;)
 that makes my life much easier.&lt;&#x2F;p&gt;
 &lt;p&gt;I just applied some alpha filter and color correction to my camera.&lt;&#x2F;p&gt;
 &lt;p&gt;Here is the end result:&lt;&#x2F;p&gt;
@@ -1771,7 +1751,7 @@ filters, respectively:&lt;&#x2F;p&gt;
 &lt;&#x2F;div&gt;
 &lt;h2 id=&quot;screen-annotations&quot;&gt;Screen Annotations&lt;&#x2F;h2&gt;
 &lt;p&gt;You remember the orange arrows in the “&lt;em&gt;Audio Device Chain&lt;&#x2F;em&gt;” section? I made
-them using &lt;a href=&quot;https:&#x2F;&#x2F;presentify.compzets.com&#x2F;&quot;&gt;&lt;strong&gt;Presentify&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+them using &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;presentify.compzets.com&#x2F;&quot;&gt;&lt;strong&gt;Presentify&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;The benefit of &lt;strong&gt;Presentify&lt;&#x2F;strong&gt; is it’s not only for annotating static images like
 this. You can use Presentify for online classes, video presentations, or
 tutorials by letting you annotate your screen and highlight your cursor, even
@@ -1895,7 +1875,7 @@ in itself. Here’s its source layout.&lt;&#x2F;p&gt;
       font-size: 1em;&quot;&gt;Dummy capture device.&lt;&#x2F;p&gt;
 &lt;&#x2F;div&gt;
 &lt;p&gt;The naming suggests that the view reflects a dummy 1080p virtual monitor
-(&lt;em&gt;created using &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;waydabber&#x2F;BetterDisplay#readme&quot;&gt;&lt;strong&gt;&lt;em&gt;BetterDisplay&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;em&gt;),
+(&lt;em&gt;created using &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;waydabber&#x2F;BetterDisplay#readme&quot;&gt;&lt;strong&gt;&lt;em&gt;BetterDisplay&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;em&gt;),
 which a real 1080p Asus monitor mirrors.&lt;&#x2F;p&gt;
 &lt;p&gt;A virtual display is helpful; I can mirror one of my main displays to it and
 have it as a small overview on my large central display, like a rear-view mirror
@@ -1915,7 +1895,7 @@ spare monitor to stream things gives &lt;strong&gt;a lot&lt;&#x2F;strong&gt; of 
       font-size: 1em;&quot;&gt;Display capture.&lt;&#x2F;p&gt;
 &lt;&#x2F;div&gt;
 &lt;p&gt;I also have a third 1080p monitor that I also pair with a dummy monitor
-and &lt;a href=&quot;https:&#x2F;&#x2F;www.elgato.com&#x2F;us&#x2F;en&#x2F;p&#x2F;cam-link-4k&quot;&gt;Elgato Cam Link 4k&lt;&#x2F;a&gt; so that I
+and &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.elgato.com&#x2F;us&#x2F;en&#x2F;p&#x2F;cam-link-4k&quot;&gt;Elgato Cam Link 4k&lt;&#x2F;a&gt; so that I
 can share my demo machine’s desktop with ease:&lt;&#x2F;p&gt;
 
 &lt;div class=&quot;z2h-image&quot;&gt;
@@ -1972,10 +1952,10 @@ of our camera feeds will be there in the live stream.&lt;&#x2F;p&gt;
       margin-top: -1.125em;
       font-size: 1em;&quot;&gt;Twitch guest slot sub-scene.&lt;&#x2F;p&gt;
 &lt;&#x2F;div&gt;
-&lt;p&gt;It has a teal frame and a browser source from &lt;a href=&quot;https:&#x2F;&#x2F;help.twitch.tv&#x2F;s&#x2F;article&#x2F;guest-star&quot;&gt;Twitch Guest Star&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;It has a teal frame and a browser source from &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;help.twitch.tv&#x2F;s&#x2F;article&#x2F;guest-star&quot;&gt;Twitch Guest Star&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;the-big-red-clock&quot;&gt;The Big Red Clock&lt;&#x2F;h2&gt;
 &lt;p&gt;Yes, the clock is green to fit the overall theme, but the application’s name
-is &lt;a href=&quot;http:&#x2F;&#x2F;www.bigredclock.com&#x2F;&quot;&gt;&lt;strong&gt;The Big Red Clock&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, and it does its job
+is &lt;a rel=&quot;external&quot; href=&quot;http:&#x2F;&#x2F;www.bigredclock.com&#x2F;&quot;&gt;&lt;strong&gt;The Big Red Clock&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, and it does its job
 amazingly well. It’s an app I use as a countdown timer before the show starts or
 whenever we need a break.&lt;&#x2F;p&gt;
 
@@ -2067,10 +2047,10 @@ lighting on me and on the curtain without creating solid shadows. When
 possible, bouncing light off of surfaces is always a better option than
 directly pointing it to the subjects (&lt;em&gt;the “subject” being me sitting on the
 chair in this case&lt;&#x2F;em&gt;).&lt;&#x2F;li&gt;
-&lt;li&gt;There’s a warm fill light below, and &lt;a href=&quot;https:&#x2F;&#x2F;www.ikea.com&#x2F;us&#x2F;en&#x2F;p&#x2F;isjakt-led-floor-uplighter-reading-lamp-dimmable-nickel-plated-70459716&#x2F;&quot;&gt;you can get the fixture (&lt;strong&gt;&lt;em&gt;ISJAKT led
+&lt;li&gt;There’s a warm fill light below, and &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.ikea.com&#x2F;us&#x2F;en&#x2F;p&#x2F;isjakt-led-floor-uplighter-reading-lamp-dimmable-nickel-plated-70459716&#x2F;&quot;&gt;you can get the fixture (&lt;strong&gt;&lt;em&gt;ISJAKT led
 floor uplighter&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;) from
 Ikea&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
-&lt;li&gt;There are two &lt;a href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;gp&#x2F;product&#x2F;B07T8FBZC2&quot;&gt;&lt;strong&gt;Neewer Key Lights&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; in front of me. They are
+&lt;li&gt;There are two &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;gp&#x2F;product&#x2F;B07T8FBZC2&quot;&gt;&lt;strong&gt;Neewer Key Lights&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; in front of me. They are
 dirt cheap and are as effective as their expensive counterparts. But of
 course, you get what you pay for: there are no remote controls, you cannot
 change the color of the LEDs mid-stream, and you need to adjust its levels
@@ -2078,7 +2058,7 @@ manually by pressing the buttons. But other than that, the lights’ quality,
 spread, and intensity are excellent. And nothing can compete with its
 price-over-performance ratio.&lt;&#x2F;li&gt;
 &lt;li&gt;There’s a camera directly focused on me at an angle from above. It’s my
-faithful &lt;a href=&quot;https:&#x2F;&#x2F;shop.panasonic.com&#x2F;cameras-and-camcorders&#x2F;camcorders&#x2F;consumer-camcorders&#x2F;hc-v180k&quot;&gt;&lt;strong&gt;&lt;em&gt;Panasonic HC-V180K&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+faithful &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;shop.panasonic.com&#x2F;cameras-and-camcorders&#x2F;camcorders&#x2F;consumer-camcorders&#x2F;hc-v180k&quot;&gt;&lt;strong&gt;&lt;em&gt;Panasonic HC-V180K&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
 &lt;li&gt;I have one sizeable curved monitor as my main stage and two 1080p monitors to
 display my guest’s screen and my demo machine’s desktop, respectively.&lt;&#x2F;li&gt;
 &lt;li&gt;The large monitor is connected to my demo machine, and I established a remote
@@ -2099,15 +2079,15 @@ hardware that I use:&lt;&#x2F;p&gt;
 &lt;&#x2F;div&gt;
 &lt;p&gt;The demo machine and the camera are connected to the streaming machine as video
 input sources through capture cards. I use
-&lt;a href=&quot;https:&#x2F;&#x2F;help.elgato.com&#x2F;hc&#x2F;en-us&#x2F;articles&#x2F;360034170131-Elgato-Game-Capture-HD60-S-Technical-Specifications&quot;&gt;&lt;strong&gt;Elgato HD60S+&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
-and &lt;a href=&quot;https:&#x2F;&#x2F;www.elgato.com&#x2F;us&#x2F;en&#x2F;p&#x2F;cam-link-4k&quot;&gt;&lt;strong&gt;Elgato Cam Link 4K&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; for
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;help.elgato.com&#x2F;hc&#x2F;en-us&#x2F;articles&#x2F;360034170131-Elgato-Game-Capture-HD60-S-Technical-Specifications&quot;&gt;&lt;strong&gt;Elgato HD60S+&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+and &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.elgato.com&#x2F;us&#x2F;en&#x2F;p&#x2F;cam-link-4k&quot;&gt;&lt;strong&gt;Elgato Cam Link 4K&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; for
 capture cards.&lt;&#x2F;p&gt;
 &lt;p&gt;I like &lt;strong&gt;Cam Link 4K&lt;&#x2F;strong&gt; for its small form factor, but &lt;strong&gt;HD60S+&lt;&#x2F;strong&gt; offers a
 pass-through HDMI output, which can sometimes be helpful.&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;store.focusrite.com&#x2F;en-gb&#x2F;product&#x2F;scarlett-solo-3rd-gen&#x2F;MOSC0024DM~MOSC0024DM&quot;&gt;&lt;strong&gt;Focusrite Scarlett Solo&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
-is my amplifier choice, and &lt;a href=&quot;https:&#x2F;&#x2F;www.shure.com&#x2F;en-US&#x2F;products&#x2F;microphones&#x2F;sm7b?variant=SM7B&quot;&gt;&lt;strong&gt;Shure SM7B&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+&lt;p&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;store.focusrite.com&#x2F;en-gb&#x2F;product&#x2F;scarlett-solo-3rd-gen&#x2F;MOSC0024DM~MOSC0024DM&quot;&gt;&lt;strong&gt;Focusrite Scarlett Solo&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+is my amplifier choice, and &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.shure.com&#x2F;en-US&#x2F;products&#x2F;microphones&#x2F;sm7b?variant=SM7B&quot;&gt;&lt;strong&gt;Shure SM7B&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
 is a microphone I cannot live without.&lt;&#x2F;p&gt;
-&lt;p&gt;There’s also &lt;a href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;Cloud-Microphones-CL-1-Cloudlifter-1-channel&#x2F;dp&#x2F;B004MQSV04&quot;&gt;&lt;strong&gt;CloudLifter&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+&lt;p&gt;There’s also &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;Cloud-Microphones-CL-1-Cloudlifter-1-channel&#x2F;dp&#x2F;B004MQSV04&quot;&gt;&lt;strong&gt;CloudLifter&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
 as a signal booster. I use it to boost the gain of the audio signal, clean it,
 and improve the overall signal-to-noise ratio.&lt;&#x2F;p&gt;
 &lt;p&gt;But why do I need that gain boost? Because while &lt;strong&gt;Shure SM7B&lt;&#x2F;strong&gt; is known for its
@@ -2116,13 +2096,13 @@ output level compared to many other microphones. This means that it requires
 more gain from the preamp in the audio interface or mixer to produce a strong,
 clean signal.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;camera-and-lighting-setup&quot;&gt;Camera and Lighting Setup&lt;&#x2F;h2&gt;
-&lt;p&gt;I use a &lt;a href=&quot;https:&#x2F;&#x2F;shop.panasonic.com&#x2F;cameras-and-camcorders&#x2F;camcorders&#x2F;consumer-camcorders&#x2F;hc-v180k&quot;&gt;&lt;strong&gt;Panasonic HC-V180K&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
+&lt;p&gt;I use a &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;shop.panasonic.com&#x2F;cameras-and-camcorders&#x2F;camcorders&#x2F;consumer-camcorders&#x2F;hc-v180k&quot;&gt;&lt;strong&gt;Panasonic HC-V180K&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;
 camcorder to stream myself. It’s known for its superior performance under good
 lighting and has never failed me once so far. The Panasonic HC-V180K feeds
 directly into the Elgato HD60S+ capture card, ensuring a crystal-clear,
 high-definition video feed.&lt;&#x2F;p&gt;
 &lt;p&gt;Lighting is essential to any high-quality video setup, and ours is no exception.
-My &lt;a href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;gp&#x2F;product&#x2F;B07T8FBZC2&quot;&gt;&lt;strong&gt;Neewer Key Lights&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;,
+My &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;gp&#x2F;product&#x2F;B07T8FBZC2&quot;&gt;&lt;strong&gt;Neewer Key Lights&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;,
 positioned strategically behind the camera as you see below:&lt;&#x2F;p&gt;
 
 &lt;div class=&quot;z2h-image&quot;&gt;
@@ -2192,7 +2172,7 @@ professionalism and versatility.&lt;&#x2F;p&gt;
       font-size: 1em;&quot;&gt;The green screen.&lt;&#x2F;p&gt;
 &lt;&#x2F;div&gt;
 &lt;p&gt;For your needs, any green screen would do. I use
-&lt;a href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;Instahibit-Retractable-Backdrop-Chromakey-Mountable&#x2F;dp&#x2F;B087V2DHTW&quot;&gt;&lt;strong&gt;Instahibit Retractable Green Screen
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;Instahibit-Retractable-Backdrop-Chromakey-Mountable&#x2F;dp&#x2F;B087V2DHTW&quot;&gt;&lt;strong&gt;Instahibit Retractable Green Screen
 Backdrop&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;smoothing-the-acoustics&quot;&gt;Smoothing the Acoustics&lt;&#x2F;h2&gt;
 &lt;p&gt;Sound in the rooms gets bouncy, especially when that room is not a professional
@@ -2204,7 +2184,7 @@ sound environment. Muffling the sounds bouncing off the walls significantly
 reduces any potential echo or reverb. This results in a clearer and more
 professional-sounding audio output for our stream.&lt;&#x2F;p&gt;
 &lt;p&gt;Playing the right sound effects at the right moment during the stream is also a
-lot of fun. For that, I use &lt;a href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;farrago&#x2F;&quot;&gt;&lt;strong&gt;Farrago&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;,
+lot of fun. For that, I use &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;rogueamoeba.com&#x2F;farrago&#x2F;&quot;&gt;&lt;strong&gt;Farrago&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;,
 which, to me, is the best rapid soundboard ever: Robust, easy to use, and
 integrates with almost everything, including your midi keyboard.&lt;&#x2F;p&gt;
 
@@ -2376,12 +2356,12 @@ through blogging&lt;&#x2F;em&gt;).&lt;&#x2F;p&gt;
 shared: If you want to monetize your content, it’s on your own terms; if you
 don’t, no external party can enforce it.&lt;&#x2F;p&gt;
 &lt;p&gt;That’s why I’m sharing my thoughts on this blog,
-using &lt;a href=&quot;https:&#x2F;&#x2F;ghost.org&#x2F;&quot;&gt;&lt;strong&gt;Ghost&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; as a platform. If you don’t prefer to
+using &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;ghost.org&#x2F;&quot;&gt;&lt;strong&gt;Ghost&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; as a platform. If you don’t prefer to
 use Ghost, there are many choices you can pick from. But please, pretty please,
 if you value your content, don’t post it to a place you don’t own.&lt;&#x2F;p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Update: 2025-05-21&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
-&lt;p&gt;I started using &lt;a href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;&quot;&gt;Zola&lt;&#x2F;a&gt; for this blog instead
+&lt;p&gt;I started using &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;&quot;&gt;Zola&lt;&#x2F;a&gt; for this blog instead
 of Ghost, but the main premise of owning your content remains the same.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;h2 id=&quot;why-i-use-ghost&quot;&gt;Why I Use Ghost?&lt;&#x2F;h2&gt;
@@ -2400,7 +2380,7 @@ middle.&lt;&#x2F;p&gt;
 &lt;p&gt;In today’s world, the ability to innovate, customize, and communicate freely is
 not a choice but a &lt;strong&gt;fundamental principle&lt;&#x2F;strong&gt; that should be honored.&lt;&#x2F;p&gt;
 &lt;p&gt;And, I don’t even have to host Ghost. Because I value my time, I
-use &lt;a href=&quot;https:&#x2F;&#x2F;ghost.org&#x2F;pricing&#x2F;&quot;&gt;Ghost’s managed solution&lt;&#x2F;a&gt;. This eases the
+use &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;ghost.org&#x2F;pricing&#x2F;&quot;&gt;Ghost’s managed solution&lt;&#x2F;a&gt;. This eases the
 responsibilities of server maintenance, updates, and security management. It’s a
 perfect option because I want to prioritize content creation to infrastructure
 management.&lt;&#x2F;p&gt;
@@ -2426,9 +2406,9 @@ professionally&lt;&#x2F;strong&gt;. It gives you the freedom to &lt;strong&gt;ex
 audience—a &lt;strong&gt;priceless&lt;&#x2F;strong&gt; experience.&lt;&#x2F;p&gt;
 &lt;p&gt;With tools and platforms tailored for creators, the barriers to getting started
 have never been lower. You don’t have to use Ghost; use
-something, &lt;a href=&quot;https:&#x2F;&#x2F;jekyllrb.com&#x2F;&quot;&gt;Jekyll&lt;&#x2F;a&gt;,
-&lt;a href=&quot;https:&#x2F;&#x2F;wordpress.org&#x2F;&quot;&gt;WordPress&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;www.drupal.org&#x2F;&quot;&gt;Drupal&lt;&#x2F;a&gt;,
-&lt;a href=&quot;https:&#x2F;&#x2F;www.gatsbyjs.com&#x2F;&quot;&gt;Gatsby&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;nextjs.org&#x2F;&quot;&gt;Next&lt;&#x2F;a&gt;…
+something, &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;jekyllrb.com&#x2F;&quot;&gt;Jekyll&lt;&#x2F;a&gt;,
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;wordpress.org&#x2F;&quot;&gt;WordPress&lt;&#x2F;a&gt;, &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.drupal.org&#x2F;&quot;&gt;Drupal&lt;&#x2F;a&gt;,
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.gatsbyjs.com&#x2F;&quot;&gt;Gatsby&lt;&#x2F;a&gt;, &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;nextjs.org&#x2F;&quot;&gt;Next&lt;&#x2F;a&gt;…
 Your options are countless. I’m sure you can find one that fits your unique
 needs.&lt;&#x2F;p&gt;
 &lt;p&gt;Owning your platform allows you to focus on what counts;

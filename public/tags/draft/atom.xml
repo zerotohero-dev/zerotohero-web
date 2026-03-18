@@ -26,142 +26,131 @@
 or setting up a new development environment, or just trying to look something
 up, along with some snippets that I use frequently.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;build-essentials&quot;&gt;Build Essentials&lt;&#x2F;h2&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;sudo apt update
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;sudo apt upgrade
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;sudo apt install build-essential
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;zshrc&quot;&gt;&lt;code&gt;~&#x2F;.zshrc&lt;&#x2F;code&gt;&lt;&#x2F;h2&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;export &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;ZSH&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;HOME&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&#x2F;.oh-my-zsh&amp;quot;
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;ZSH_THEME&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;powerlevel10k&#x2F;powerlevel10k&amp;quot;
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;source &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;$ZSH&#x2F;oh-my-zsh.sh
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;export &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;MANPATH&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;&#x2F;usr&#x2F;local&#x2F;man:$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;MANPATH&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;export &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;PATH&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;PATH&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;:&#x2F;usr&#x2F;local&#x2F;go&#x2F;bin&amp;quot;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;export &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;GPG_TTY&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;$(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;tty&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;)
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;export &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;WORKSPACE&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;HOME&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&#x2F;WORKSPACE&amp;quot;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;export &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;PATH&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;PATH&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;:$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;WORKSPACE&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&#x2F;spire&#x2F;bin&amp;quot;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;export &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;PATH&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;PATH&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;:$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;WORKSPACE&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&#x2F;spike&amp;quot;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;export &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;PATH&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;PATH&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;:$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;HOME&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&#x2F;.local&#x2F;bin&amp;quot;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;source &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;WORKSPACE&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&#x2F;spike&#x2F;hack&#x2F;lib&#x2F;env.sh&amp;quot;
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;distro-information&quot;&gt;Distro Information&lt;&#x2F;h2&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;cat &#x2F;etc&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;release
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;# Or:
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;lsb_release -a
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#928374;&quot;&gt;## Or:
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;export &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;ARCH&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;$(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;case &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;$(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;uname -m&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;in &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;x86_64&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;\
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;-n amd64 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;;; aarch64&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;-n arm64 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;;; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;\
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;-n $(uname -m) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;;; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;esac&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;)
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;export &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;OS&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;$(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;uname &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;awk &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;#39;{print tolower($0)}&amp;#39;)
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;npm-and-node&quot;&gt;NPM and Node&lt;&#x2F;h2&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #EBDBB2; background-color: #1D2021;&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;sudo&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt; apt update&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;sudo&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt; apt upgrade&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;sudo&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt; apt install build-essential&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h2 id=&quot;zshrc&quot;&gt;&lt;code&gt;~&#x2F;.zshrc&lt;&#x2F;code&gt;&lt;&#x2F;h2&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #EBDBB2; background-color: #1D2021;&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FE8019;&quot;&gt;export&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt; ZSH&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8EC07C;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;$HOME&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;&#x2F;.oh-my-zsh&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;ZSH_THEME&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8EC07C;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;powerlevel10k&#x2F;powerlevel10k&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FE8019;&quot;&gt;source&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt; $ZSH&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;&#x2F;oh-my-zsh.sh&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FE8019;&quot;&gt;export&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt; MANPATH&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8EC07C;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;&#x2F;usr&#x2F;local&#x2F;man:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;$MANPATH&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FE8019;&quot;&gt;export&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt; PATH&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8EC07C;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;$PATH&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;:&#x2F;usr&#x2F;local&#x2F;go&#x2F;bin&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FE8019;&quot;&gt;export&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt; GPG_TTY&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8EC07C;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;$(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;tty&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FE8019;&quot;&gt;export&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt; WORKSPACE&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8EC07C;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;$HOME&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;&#x2F;WORKSPACE&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FE8019;&quot;&gt;export&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt; PATH&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8EC07C;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;$PATH&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;$WORKSPACE&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;&#x2F;spire&#x2F;bin&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FE8019;&quot;&gt;export&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt; PATH&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8EC07C;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;$PATH&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;$WORKSPACE&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;&#x2F;spike&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FE8019;&quot;&gt;export&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt; PATH&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8EC07C;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;$PATH&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;$HOME&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;&#x2F;.local&#x2F;bin&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FE8019;&quot;&gt;source&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt; &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;$WORKSPACE&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;&#x2F;spike&#x2F;hack&#x2F;lib&#x2F;env.sh&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h2 id=&quot;distro-information&quot;&gt;Distro Information&lt;&#x2F;h2&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #EBDBB2; background-color: #1D2021;&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;cat&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt; &#x2F;etc&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;release&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #928374;font-style: italic;&quot;&gt;# Or:&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;lsb_release&lt;&#x2F;span&gt;&lt;span style=&quot;color: #D3869B;&quot;&gt; -a&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #928374;font-style: italic;&quot;&gt;## Or:&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FE8019;&quot;&gt;export&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt; ARCH&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8EC07C;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;$(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FB4934;&quot;&gt;case&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt; $(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;uname&lt;&#x2F;span&gt;&lt;span style=&quot;color: #D3869B;&quot;&gt; -m&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FB4934;&quot;&gt; in&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FE8019;&quot;&gt; x86_64&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8EC07C;&quot;&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #D3869B;&quot;&gt; \&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FE8019;&quot;&gt;  echo&lt;&#x2F;span&gt;&lt;span style=&quot;color: #D3869B;&quot;&gt; -n&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt; amd64&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt; ;;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FE8019;&quot;&gt; aarch64&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8EC07C;&quot;&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FE8019;&quot;&gt; echo&lt;&#x2F;span&gt;&lt;span style=&quot;color: #D3869B;&quot;&gt; -n&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt; arm64&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt; ;;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8EC07C;&quot;&gt; *)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #D3869B;&quot;&gt; \&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FE8019;&quot;&gt;  echo&lt;&#x2F;span&gt;&lt;span style=&quot;color: #D3869B;&quot;&gt; -n&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt; $(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;uname&lt;&#x2F;span&gt;&lt;span style=&quot;color: #D3869B;&quot;&gt; -m&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;) ;;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FB4934;&quot;&gt; esac&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FE8019;&quot;&gt;export&lt;&#x2F;span&gt;&lt;span style=&quot;color: #83A598;&quot;&gt; OS&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8EC07C;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;$(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;uname&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8EC07C;&quot;&gt; |&lt;&#x2F;span&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt; awk&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt; &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt;{print tolower($0)}&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A89984;&quot;&gt;&amp;#39;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h2 id=&quot;npm-and-node&quot;&gt;NPM and Node&lt;&#x2F;h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;nodejs.org&quot;&gt;Node.js&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;nodejs.org&quot;&gt;Node.js&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;claude-code&quot;&gt;Claude Code&lt;&#x2F;h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;claude.com&#x2F;product&#x2F;claude-code&quot;&gt;Claude Code&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;claude.com&#x2F;product&#x2F;claude-code&quot;&gt;Claude Code&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;grammarly&quot;&gt;Grammarly&lt;&#x2F;h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.grammarly.com&#x2F;&quot;&gt;Grammarly&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.grammarly.com&#x2F;&quot;&gt;Grammarly&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;github&quot;&gt;GitHub&lt;&#x2F;h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.github.com&#x2F;en&#x2F;authentication&#x2F;connecting-to-github-with-ssh&#x2F;generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent&quot;&gt;Generating a new SSH Key&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.github.com&#x2F;en&#x2F;authentication&#x2F;connecting-to-github-with-ssh&#x2F;adding-a-new-ssh-key-to-your-github-account&quot;&gt;Adding a new SSH Key to Your GitHub Account&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.github.com&#x2F;en&#x2F;authentication&#x2F;managing-commit-signature-verification&#x2F;generating-a-new-gpg-key&quot;&gt;Generating a new GPG Key&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.github.com&#x2F;en&#x2F;authentication&#x2F;managing-commit-signature-verification&#x2F;adding-a-gpg-key-to-your-github-account&quot;&gt;Adding a GPG Key to Your GitHub Account&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;docs.github.com&#x2F;en&#x2F;authentication&#x2F;connecting-to-github-with-ssh&#x2F;generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent&quot;&gt;Generating a new SSH Key&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;docs.github.com&#x2F;en&#x2F;authentication&#x2F;connecting-to-github-with-ssh&#x2F;adding-a-new-ssh-key-to-your-github-account&quot;&gt;Adding a new SSH Key to Your GitHub Account&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;docs.github.com&#x2F;en&#x2F;authentication&#x2F;managing-commit-signature-verification&#x2F;generating-a-new-gpg-key&quot;&gt;Generating a new GPG Key&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;docs.github.com&#x2F;en&#x2F;authentication&#x2F;managing-commit-signature-verification&#x2F;adding-a-gpg-key-to-your-github-account&quot;&gt;Adding a GPG Key to Your GitHub Account&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;docker&quot;&gt;Docker&lt;&#x2F;h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.docker.com&#x2F;engine&#x2F;install&#x2F;ubuntu&#x2F;&quot;&gt;Installing Docker Engine to Ubuntu&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.docker.com&#x2F;engine&#x2F;install&#x2F;linux-postinstall&#x2F;&quot;&gt;Linux Post-Installation Steps for Docker&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;docs.docker.com&#x2F;engine&#x2F;install&#x2F;ubuntu&#x2F;&quot;&gt;Installing Docker Engine to Ubuntu&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;docs.docker.com&#x2F;engine&#x2F;install&#x2F;linux-postinstall&#x2F;&quot;&gt;Linux Post-Installation Steps for Docker&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;windows-subsystem-for-linux&quot;&gt;Windows Subsystem for Linux&lt;&#x2F;h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learn.microsoft.com&#x2F;en-us&#x2F;windows&#x2F;wsl&#x2F;install&quot;&gt;Installing WSL&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;learn.microsoft.com&#x2F;en-us&#x2F;windows&#x2F;wsl&#x2F;install&quot;&gt;Installing WSL&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;minikube&quot;&gt;Minikube&lt;&#x2F;h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;minikube.sigs.k8s.io&#x2F;docs&#x2F;start&#x2F;&quot;&gt;Installing Minikube&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;minikube.sigs.k8s.io&#x2F;docs&#x2F;start&#x2F;&quot;&gt;Installing Minikube&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;copying-ssh-keys-to-remote-hosts&quot;&gt;Copying SSH Keys to Remote Hosts&lt;&#x2F;h2&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;ssh-copy-id -i ~&#x2F;.ssh&#x2F;id_rsa.pub user@host
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;zsh-and-powerlevel10k&quot;&gt;zsh and PowerLevel10k&lt;&#x2F;h2&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;sudo apt update
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;sudo apt install zsh
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;chsh -s &#x2F;usr&#x2F;bin&#x2F;zsh
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #EBDBB2; background-color: #1D2021;&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;ssh-copy-id&lt;&#x2F;span&gt;&lt;span style=&quot;color: #D3869B;&quot;&gt; -i&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt; ~&#x2F;.ssh&#x2F;id_rsa.pub user@host&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h2 id=&quot;zsh-and-powerlevel10k&quot;&gt;zsh and PowerLevel10k&lt;&#x2F;h2&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #EBDBB2; background-color: #1D2021;&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;sudo&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt; apt update&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;sudo&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt; apt install zsh&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #FABD2F;&quot;&gt;chsh&lt;&#x2F;span&gt;&lt;span style=&quot;color: #D3869B;&quot;&gt; -s&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B8BB26;&quot;&gt; &#x2F;usr&#x2F;bin&#x2F;zsh&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;ohmyz.sh&#x2F;&quot;&gt;Oh My ZSH&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;romkatv&#x2F;powerlevel10k&quot;&gt;Powerlevel10k&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;ohmyz.sh&#x2F;&quot;&gt;Oh My ZSH&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;romkatv&#x2F;powerlevel10k&quot;&gt;Powerlevel10k&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;jetbrains&quot;&gt;JetBrains&lt;&#x2F;h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.jetbrains.com&#x2F;toolbox-app&#x2F;&quot;&gt;JetBrains Toolbox&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.jetbrains.com&#x2F;toolbox-app&#x2F;&quot;&gt;JetBrains Toolbox&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;fonts&quot;&gt;Fonts&lt;&#x2F;h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.monolisa.dev&#x2F;&quot;&gt;MonoLisa&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;fsd.it&#x2F;shop&#x2F;fonts&#x2F;pragmatapro&#x2F;&quot;&gt;PragmataPro Mono&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;usgraphics.com&#x2F;products&#x2F;berkeley-mono&quot;&gt;Berkeley Mono&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.typography.com&#x2F;fonts&#x2F;operator&#x2F;styles&#x2F;operatormonoscreensmart&quot;&gt;Operator Mono&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.monolisa.dev&#x2F;&quot;&gt;MonoLisa&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;fsd.it&#x2F;shop&#x2F;fonts&#x2F;pragmatapro&#x2F;&quot;&gt;PragmataPro Mono&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;usgraphics.com&#x2F;products&#x2F;berkeley-mono&quot;&gt;Berkeley Mono&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.typography.com&#x2F;fonts&#x2F;operator&#x2F;styles&#x2F;operatormonoscreensmart&quot;&gt;Operator Mono&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;themes&quot;&gt;Themes&lt;&#x2F;h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;plugins.jetbrains.com&#x2F;plugin&#x2F;26472-gerry-themes-pro-lifetime-&quot;&gt;Gerry Themes&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;draculatheme.com&#x2F;pro&quot;&gt;Dracula Pro&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;monokai.pro&#x2F;&quot;&gt;Monokai Pro&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;plugins.jetbrains.com&#x2F;plugin&#x2F;26472-gerry-themes-pro-lifetime-&quot;&gt;Gerry Themes&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;draculatheme.com&#x2F;pro&quot;&gt;Dracula Pro&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;monokai.pro&#x2F;&quot;&gt;Monokai Pro&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;vim-setup&quot;&gt;Vim Setup&lt;&#x2F;h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;preservim&#x2F;nerdtree&quot;&gt;NerdTree&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;morhetz&#x2F;gruvbox&quot;&gt;Gruvbox Theme&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;vim-airline&#x2F;vim-airline&quot;&gt;Vim Airline&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;preservim&#x2F;nerdtree&quot;&gt;NerdTree&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;morhetz&#x2F;gruvbox&quot;&gt;Gruvbox Theme&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;vim-airline&#x2F;vim-airline&quot;&gt;Vim Airline&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h3 id=&quot;vimrc&quot;&gt;&lt;code&gt;.vimrc&lt;&#x2F;code&gt;&lt;&#x2F;h3&gt;
-&lt;pre data-lang=&quot;text&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-text &quot;&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;span&gt;set nocompatible
-&lt;&#x2F;span&gt;&lt;span&gt;filetype off
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;syntax enable
-&lt;&#x2F;span&gt;&lt;span&gt;colorscheme darcula
-&lt;&#x2F;span&gt;&lt;span&gt;set nu
-&lt;&#x2F;span&gt;&lt;span&gt;set rnu
-&lt;&#x2F;span&gt;&lt;span&gt;set cursorline
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;# Right Margin
-&lt;&#x2F;span&gt;&lt;span&gt;set colorcolumn=80
-&lt;&#x2F;span&gt;&lt;span&gt;highlight colorcolumn guibg=#444444
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;# Tab Settings
-&lt;&#x2F;span&gt;&lt;span&gt;set tabstop=2
-&lt;&#x2F;span&gt;&lt;span&gt;set shiftwidth=2
-&lt;&#x2F;span&gt;&lt;span&gt;set softtabstop=2
-&lt;&#x2F;span&gt;&lt;span&gt;set smarttab
-&lt;&#x2F;span&gt;&lt;span&gt;set expandtab
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;# Remove Scrollbars
-&lt;&#x2F;span&gt;&lt;span&gt;set guioptions-=r
-&lt;&#x2F;span&gt;&lt;span&gt;set guioptions-=R
-&lt;&#x2F;span&gt;&lt;span&gt;set guioptions-=L
-&lt;&#x2F;span&gt;&lt;span&gt;set guioptions-=l
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;set laststatus=2
-&lt;&#x2F;span&gt;&lt;span&gt;set hlsearch
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;# IndentGuidesEnable
-&lt;&#x2F;span&gt;&lt;span&gt;autocmd! GUIEnter * set vb t_vb=
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;windows&quot;&gt;Windows&lt;&#x2F;h2&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #EBDBB2; background-color: #1D2021;&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;set nocompatible&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;filetype off&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;syntax enable&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;colorscheme darcula&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;set nu&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;set rnu&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;set cursorline&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;# Right Margin&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;set colorcolumn=80&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;highlight colorcolumn guibg=#444444&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;# Tab Settings&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;set tabstop=2&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;set shiftwidth=2&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;set softtabstop=2&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;set smarttab&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;set expandtab&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;# Remove Scrollbars&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;set guioptions-=r&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;set guioptions-=R&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;set guioptions-=L&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;set guioptions-=l&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;set laststatus=2&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;set hlsearch&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;# IndentGuidesEnable&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;autocmd! GUIEnter * set vb t_vb=&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h2 id=&quot;windows&quot;&gt;Windows&lt;&#x2F;h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learn.microsoft.com&#x2F;en-us&#x2F;windows&#x2F;terminal&#x2F;install&quot;&gt;Windows Terminal&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learn.microsoft.com&#x2F;en-us&#x2F;windows&#x2F;powertoys&#x2F;&quot;&gt;Power Toys&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;learn.microsoft.com&#x2F;en-us&#x2F;windows&#x2F;terminal&#x2F;install&quot;&gt;Windows Terminal&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;learn.microsoft.com&#x2F;en-us&#x2F;windows&#x2F;powertoys&#x2F;&quot;&gt;Power Toys&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;windows-shortcuts&quot;&gt;Windows Shortcuts&lt;&#x2F;h2&gt;
 &lt;ul&gt;
@@ -198,69 +187,67 @@ up, along with some snippets that I use frequently.&lt;&#x2F;p&gt;
         <id>https://zerotohero.dev/inbox/code-and-documentation-audit-promt-for-claude-code/</id>
         
         <content type="html" xml:base="https://zerotohero.dev/inbox/code-and-documentation-audit-promt-for-claude-code/">&lt;p&gt;Here is the prompt that I used to verify that the code and documentation of
-&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;spiffe&#x2F;spike&quot;&gt;&lt;strong&gt;SPIKE&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; and
-&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;spiffe&#x2F;spike-sdk-go&quot;&gt;&lt;strong&gt;SPIKE Go SDK&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; is aligned.&lt;&#x2F;p&gt;
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;spiffe&#x2F;spike&quot;&gt;&lt;strong&gt;SPIKE&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; and
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;spiffe&#x2F;spike-sdk-go&quot;&gt;&lt;strong&gt;SPIKE Go SDK&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt; is aligned.&lt;&#x2F;p&gt;
 &lt;p&gt;Later down the line, I am planning to streamline this process even further.&lt;&#x2F;p&gt;
 &lt;p&gt;But I still think, you need a human in the loop, as some of the documentation
 may turn out to be misplaced or inaccurate.&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;text&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-text &quot;&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&lt;span&gt; I need a comprehensive audit of Go documentation vs implementation across the 
-&lt;&#x2F;span&gt;&lt;span&gt; codebase.
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;Scope: &#x2F;home&#x2F;volkan&#x2F;WORKSPACE&#x2F;spike-sdk-go
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;For each exported function, check:
-&lt;&#x2F;span&gt;&lt;span&gt;1. Return type mismatches (e.g., doc says &amp;quot;error&amp;quot; but returns 
-&lt;&#x2F;span&gt;&lt;span&gt;   &amp;quot;*sdkErrors.SDKError&amp;quot;)
-&lt;&#x2F;span&gt;&lt;span&gt;2. Parameter type mismatches (e.g., doc says &amp;quot;string&amp;quot; but uses custom type)
-&lt;&#x2F;span&gt;&lt;span&gt;3. Missing godoc comments
-&lt;&#x2F;span&gt;&lt;span&gt;4. Outdated behavior descriptions
-&lt;&#x2F;span&gt;&lt;span&gt;5. Missing parameter documentation
-&lt;&#x2F;span&gt;&lt;span&gt;6. Missing return value documentation
-&lt;&#x2F;span&gt;&lt;span&gt;7. Inconsistent example code
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;Focus on:
-&lt;&#x2F;span&gt;&lt;span&gt;- All packages under api&#x2F;
-&lt;&#x2F;span&gt;&lt;span&gt;- crypto&#x2F; package
-&lt;&#x2F;span&gt;&lt;span&gt;- kv&#x2F; package
-&lt;&#x2F;span&gt;&lt;span&gt;- log&#x2F; package
-&lt;&#x2F;span&gt;&lt;span&gt;- retry&#x2F; package
-&lt;&#x2F;span&gt;&lt;span&gt;- security&#x2F; package
-&lt;&#x2F;span&gt;&lt;span&gt;- strings&#x2F; package
-&lt;&#x2F;span&gt;&lt;span&gt;- system&#x2F; package
-&lt;&#x2F;span&gt;&lt;span&gt;- validation&#x2F; package
-&lt;&#x2F;span&gt;&lt;span&gt;- net&#x2F; package
-&lt;&#x2F;span&gt;&lt;span&gt;- errors&#x2F; package
-&lt;&#x2F;span&gt;&lt;span&gt;- spiffe&#x2F; package
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;Return:
-&lt;&#x2F;span&gt;&lt;span&gt;- A structured markdown report grouped by issue type
-&lt;&#x2F;span&gt;&lt;span&gt;- File paths with line numbers
-&lt;&#x2F;span&gt;&lt;span&gt;- Current vs expected documentation
-&lt;&#x2F;span&gt;&lt;span&gt;- Severity rating (critical&#x2F;moderate&#x2F;minor)
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;Do NOT make any changes - only analyze and report.
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;Based on this report, we will create a phased plan and incrementally fix things.
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;Alternative: Iterative Approach
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;If you want changes made incrementally:
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;Audit and FIX documentation issues in these files:
-&lt;&#x2F;span&gt;&lt;span&gt;- &#x2F;home&#x2F;volkan&#x2F;WORKSPACE&#x2F;spike-sdk-go&#x2F;api&#x2F;internal&#x2F;impl&#x2F;secret&#x2F;*.go
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;Check and fix:
-&lt;&#x2F;span&gt;&lt;span&gt;1. Return types: Update &amp;quot;error&amp;quot; to &amp;quot;*sdkErrors.SDKError&amp;quot; where applicable
-&lt;&#x2F;span&gt;&lt;span&gt;2. Add missing godoc for exported functions
-&lt;&#x2F;span&gt;&lt;span&gt;3. Ensure parameter types match function signatures
-&lt;&#x2F;span&gt;&lt;span&gt;4. Verify return value lists are complete
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;After each file, report:
-&lt;&#x2F;span&gt;&lt;span&gt;- What was found
-&lt;&#x2F;span&gt;&lt;span&gt;- What was fixed
-&lt;&#x2F;span&gt;&lt;span&gt;- Line numbers changed
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-</content>
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #EBDBB2; background-color: #1D2021;&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt; I need a comprehensive audit of Go documentation vs implementation across the &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt; codebase.&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Scope: &#x2F;home&#x2F;volkan&#x2F;WORKSPACE&#x2F;spike-sdk-go&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;For each exported function, check:&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;1. Return type mismatches (e.g., doc says &amp;quot;error&amp;quot; but returns &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;   &amp;quot;*sdkErrors.SDKError&amp;quot;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;2. Parameter type mismatches (e.g., doc says &amp;quot;string&amp;quot; but uses custom type)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;3. Missing godoc comments&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;4. Outdated behavior descriptions&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;5. Missing parameter documentation&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;6. Missing return value documentation&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;7. Inconsistent example code&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Focus on:&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;- All packages under api&#x2F;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;- crypto&#x2F; package&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;- kv&#x2F; package&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;- log&#x2F; package&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;- retry&#x2F; package&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;- security&#x2F; package&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;- strings&#x2F; package&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;- system&#x2F; package&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;- validation&#x2F; package&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;- net&#x2F; package&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;- errors&#x2F; package&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;- spiffe&#x2F; package&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Return:&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;- A structured markdown report grouped by issue type&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;- File paths with line numbers&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;- Current vs expected documentation&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;- Severity rating (critical&#x2F;moderate&#x2F;minor)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Do NOT make any changes - only analyze and report.&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Based on this report, we will create a phased plan and incrementally fix things.&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Alternative: Iterative Approach&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;If you want changes made incrementally:&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Audit and FIX documentation issues in these files:&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;- &#x2F;home&#x2F;volkan&#x2F;WORKSPACE&#x2F;spike-sdk-go&#x2F;api&#x2F;internal&#x2F;impl&#x2F;secret&#x2F;*.go&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Check and fix:&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;1. Return types: Update &amp;quot;error&amp;quot; to &amp;quot;*sdkErrors.SDKError&amp;quot; where applicable&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;2. Add missing godoc for exported functions&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;3. Ensure parameter types match function signatures&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;4. Verify return value lists are complete&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;After each file, report:&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;- What was found&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;- What was fixed&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;- Line numbers changed&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;</content>
         
     </entry>
 </feed>
