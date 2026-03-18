@@ -207,13 +207,13 @@ Do that consistently for a year, and you won't need to ask for referrals:
 Here's what I think doesn't change:
 
 **Systems thinking scales**: The ability to look at a complex system, understand
-how it fails, identify the root cause, and reason about trade-offs—this is as
+how it fails, identify the root cause, and reason about trade-offs: this is as
 valuable as it has ever been, and AI cannot do it for you without your
 intellectual scaffolding.
 
 **Communication compounds**: The ability to write clearly about technical
 topics, to explain a decision with its context and rationale, to make your work
-legible to others—this was always important and is now a primary differentiator.
+legible to others: this was always important and is now a primary differentiator.
 
 **Curiosity is the engine**: Every good engineer I know is curious in a way they
 can't really turn off. Not about everything: about *this* thing, whatever this
@@ -221,7 +221,7 @@ thing is right now. If you don't have that, the rest of this advice probably
 won't help much.
 
 **You are not your stack**: The language you know, the framework you use, the
-toolchain you learned in your bootcamp—none of that is your identity or your
+toolchain you learned in your bootcamp: none of that is your identity or your
 moat. What is your moat is how you think, what you can figure out, and what you
 do with problems that nobody handed you a solution to.
 
@@ -233,8 +233,8 @@ do with problems that nobody handed you a solution to.
 
 With full awareness of what you are signing up for.
 
-**The floor has moved**: The jobs that used to be entry-level—write CRUD apps,
-translate specs into code, fix bugs someone else diagnosed—many of those are
+**The floor has moved**: The jobs that used to be entry-level (*write CRUD apps,
+translate specs into code, fix bugs someone else diagnosed*); many of those are
 gone or going. The field is smaller at the bottom than it was, and it's not
 recovering to what it was.
 
@@ -257,7 +257,7 @@ keeping up.
 > but anyone with the time and inclination can acquire technical proficiency.
 > To achieve greatness though, that requires artistry."*
 >
-> **Christopher Paolini** — [The Inheritance Cycle](https://www.goodreads.com/book/show/7664041-inheritance)
+> **Christopher Paolini** -- [The Inheritance Cycle](https://www.goodreads.com/book/show/7664041-inheritance)
 
 The weapon changed. The artistry is still the job.
 
