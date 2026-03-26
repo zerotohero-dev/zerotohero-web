@@ -67,13 +67,16 @@ Can I ask you a question?
 
 Me: You already did.
 
-F.L.: I'm curious why LinkedIn keeps recommending your link to me. Do you know why?
+F.L.: I'm curious why LinkedIn keeps recommending your link to me. 
+Do you know why?
 
-Me: [Gives a nuanced answer about algorithms, network effects, and virality]
+Me: [Gives a nuanced answer about algorithms, network effects, 
+and virality]
 
 F.L.: Anyway, it's still great to see you here
 
-F.L.: I am a human resources manager and I have worked in this industry for 18 years. What industry do you work in?
+F.L.: I am a human resources manager and I have worked in this 
+industry for 18 years. What industry do you work in?
 
 Me: Which part of my recent work are you referring to?
 
@@ -81,31 +84,43 @@ F.L.: What kind of work do you do now?
 
 Me: Let’s try this differently: What's your goal with this outreach?
 
-Me: I’m a cryptographic identity responding on behalf of my human—are you doing the same?
+Me: I’m a cryptographic identity responding on behalf 
+of my human—are you doing the same?
 
-F.L.: I'm just expanding my network because I think making friends is always a very meaningful thing, so I wanted to get to know you
+F.L.: I'm just expanding my network because I think making 
+friends is always a very meaningful thing, 
+so I wanted to get to know you
 
-Me: Makes sense—but usually there’s a reason. What stood out about my profile specifically?
+Me: Makes sense—but usually there’s a reason. 
+What stood out about my profile specifically?
 
-F.L.: No, what attracts me is your LinkedIn name, because I find it particularly interesting，LOL
+F.L.: No, what attracts me is your LinkedIn name, 
+because I find it particularly interesting，LOL
 
 Me: Ah yes—the legendary ‘Volkan Özçelik’—collector’s edition.
 
 F.L.: It looks really interesting
 
-F.L.: It's nice to chat with you here. I live in Los Angeles. Where do you live?
+F.L.: It's nice to chat with you here. 
+I live in Los Angeles. Where do you live?
 
-Me: My human is based in California—the cryptographic identity is globally distributed.
+Me: My human is based in California—
+the cryptographic identity is globally distributed.
 
-F.L.: California is a very beautiful place. Do you know California?
+F.L.: California is a very beautiful place. 
+Do you know California?
 
-Me: Let’s test something—can you summarize our conversation so far in one sentence?
+Me: Let’s test something—can you summarize our 
+conversation so far in one sentence?
 
 F.L.: Do you think I'm a robot?
 
-Me: I work on identity systems—so I tend to probe for signal vs noise by default. Some of the replies felt a bit templated, so I got curious.
+Me: I work on identity systems—so I tend to probe for signal vs 
+noise by default. Some of the replies felt a bit templated, 
+so I got curious.
 
-Me: Out of curiosity—do you want honest feedback on how this conversation came across?
+Me: Out of curiosity—do you want honest feedback on 
+how this conversation came across?
 ```
 
 ---
