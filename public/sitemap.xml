@@ -493,6 +493,10 @@
         <lastmod>2024-11-27</lastmod>
     </url>
     <url>
+        <loc>https://zerotohero.dev/inbox/the-linkedin-bot-that-tried-to-pass-the-turing-test-and-failed-spectacularly/</loc>
+        <lastmod>2026-03-26</lastmod>
+    </url>
+    <url>
         <loc>https://zerotohero.dev/inbox/this-is-the-inbox/</loc>
         <lastmod>2024-11-24</lastmod>
     </url>
@@ -769,6 +773,9 @@
         <loc>https://zerotohero.dev/tags/linux/</loc>
     </url>
     <url>
+        <loc>https://zerotohero.dev/tags/llm/</loc>
+    </url>
+    <url>
         <loc>https://zerotohero.dev/tags/networking/</loc>
     </url>
     <url>
@@ -788,6 +795,9 @@
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/shell-scripting/</loc>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/tags/social-engineering/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/spiffe/</loc>
@@ -818,6 +828,9 @@
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/volkan-uses/</loc>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/tags/zero-trust/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tips/</loc>

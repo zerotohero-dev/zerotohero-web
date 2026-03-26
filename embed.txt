@@ -1,0 +1,7 @@
+video embed:
+
+<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.restream.io/?token=63982df68ec64d39972710d3ea2784ad" allow="autoplay" allowfullscreen frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>
+
+chat embed:
+
+https://chat.restream.io/embed?token=297f337a-e492-4fcd-b198-48f1c8bb09bc
