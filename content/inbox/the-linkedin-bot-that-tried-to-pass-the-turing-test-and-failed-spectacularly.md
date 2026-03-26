@@ -339,6 +339,7 @@ My observations:
 Humans pause when confused; this didn't.
 
 And ain't no HR manager have time for this much chitchat.
+
 ---
 
 ## Language Artifacts
