@@ -182,7 +182,8 @@ This is **synthetic intent**.
 ### 3. The Credential Drop
 
 ```
-I am a human resources manager and I have worked in this industry for 18 years.
+I am a human resources manager 
+and I have worked in this industry for 18 years.
 ```
 
 This is classic **overcompensation**.
