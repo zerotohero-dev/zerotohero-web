@@ -14,7 +14,7 @@ date = "2026-05-10"
 tags = ["language", "documentation", "ai", "llm"]
 +++
 
-> *Rules provide system-level instructions to Agent*.
+> *Rules provide system-level instructions to Agent*.<br />
 > ---[Cursor docs, "Rules"](https://cursor.com/docs/rules)
 
 I keep getting stuck on that sentence. Not because of the missing article
