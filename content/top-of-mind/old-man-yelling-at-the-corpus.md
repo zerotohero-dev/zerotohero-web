@@ -181,7 +181,7 @@ You can feel the wax dummy.
 I do understand that language is a living, breathing, evolving entity.
 
 But "*this*" (*whatever this is*) is not language evolving:
-It is language being compressed and compromized.
+It is language being compressed and compromised.
 
 I know how this sounds:
 
