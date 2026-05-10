@@ -183,9 +183,9 @@ I do understand that language is a living, breathing, evolving entity.
 But "*this*" (*whatever this is*) is not language evolving:
 It is language being compressed and compromised.
 
-I know how this sounds:
+I know how this sounds: **Old man yells at the corpus.**
 
-*Old man yells at the corpus.* 
+Yes:
 
 * Languages drift. 
 * Articles get shed. 
