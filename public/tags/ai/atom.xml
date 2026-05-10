@@ -4,8 +4,241 @@
     <link rel="self" type="application/atom+xml" href="https://zerotohero.dev/tags/ai/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://zerotohero.dev"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2026-03-26T00:00:00+00:00</updated>
+    <updated>2026-05-10T00:00:00+00:00</updated>
     <id>https://zerotohero.dev/tags/ai/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Old Man Yelling at the Corpus</title>
+        <published>2026-05-10T00:00:00+00:00</published>
+        <updated>2026-05-10T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Volkan Özçelik
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://zerotohero.dev/top-of-mind/old-man-yelling-at-the-corpus/"/>
+        <id>https://zerotohero.dev/top-of-mind/old-man-yelling-at-the-corpus/</id>
+        
+        <content type="html" xml:base="https://zerotohero.dev/top-of-mind/old-man-yelling-at-the-corpus/">&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Rules provide system-level instructions to Agent and Inline Edit.&lt;&#x2F;em&gt;
+— &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;cursor.com&#x2F;docs&#x2F;rules&quot;&gt;Cursor docs, “Rules”&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;I keep getting stuck on that sentence. Not because of the missing article
+(though, &lt;em&gt;yes&lt;&#x2F;em&gt;, &lt;strong&gt;to “the” Agent&lt;&#x2F;strong&gt; is what &lt;strong&gt;English&lt;&#x2F;strong&gt; wants here), but
+because of what the missing article tells us about the prose underneath:&lt;&#x2F;p&gt;
+&lt;p&gt;The whole document reads like a config schema that someone half-translated
+into English and then shipped.&lt;&#x2F;p&gt;
+&lt;p&gt;Cursor is influential enough that…&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;its documentation will be read at scale,&lt;&#x2F;li&gt;
+&lt;li&gt;copied into prompts,&lt;&#x2F;li&gt;
+&lt;li&gt;embedded into internal docs,&lt;&#x2F;li&gt;
+&lt;li&gt;and eventually scraped back into the next training corpus.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Whatever conventions ship from there &lt;strong&gt;propagate&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;So when I land on a sentence like that one, I am not really annoyed at Cursor.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;I am noticing a pattern&lt;&#x2F;strong&gt;. And, I’m nothing if I’m not good at pattern
+recognition.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-schema-text-reflex&quot;&gt;The Schema-text Reflex&lt;&#x2F;h2&gt;
+&lt;p&gt;The sentence reads like a function signature:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #EBDBB2; background-color: #1D2021;&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Rules -&amp;gt; provide(system_level_instructions, Agent)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;That is &lt;em&gt;fine&lt;&#x2F;em&gt; for an internal model of an API.
+It is &lt;strong&gt;blasphemy&lt;&#x2F;strong&gt; for English.&lt;&#x2F;p&gt;
+&lt;p&gt;English needs the connective tissue:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Rules provide system-level instructions to the Agent.&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Or, if “&lt;em&gt;Agent&lt;&#x2F;em&gt;” is not a named product persona but a generic role:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Rules provide system-level instructions to an agent.&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Or, more natural:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Rules define the system-level instructions that guide the Agent’s behavior.&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Three different propositions,&lt;&#x2F;li&gt;
+&lt;li&gt;none of them equivalent,&lt;&#x2F;li&gt;
+&lt;li&gt;all cheaper to &lt;strong&gt;read&lt;&#x2F;strong&gt; than the bare-bones original.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;The articles are &lt;strong&gt;NOT&lt;&#x2F;strong&gt; decoration.&lt;&#x2F;p&gt;
+&lt;p&gt;They are saying:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;this&lt;&#x2F;strong&gt; Agent (&lt;em&gt;you know, the one we both already know about, the one the
+rest of this  document is –in fact– about&lt;&#x2F;em&gt;)&lt;&#x2F;p&gt;
+&lt;p&gt;Drop the article and Agent floats between a proper noun, type identifier, and
+abstract role.&lt;&#x2F;p&gt;
+&lt;p&gt;The reader has to disambiguate at every reference. That’s &lt;strong&gt;costly&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-model-of-the-world&quot;&gt;The Model of the World&lt;&#x2F;h2&gt;
+&lt;p&gt;Sharper version of the same point. Compare the three:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;“&lt;em&gt;Configure policy for runtime.&lt;&#x2F;em&gt;”&lt;&#x2F;li&gt;
+&lt;li&gt;“&lt;em&gt;Configure the policy for the runtime.&lt;&#x2F;em&gt;”&lt;&#x2F;li&gt;
+&lt;li&gt;“&lt;em&gt;Configure a policy that applies at runtime.&lt;&#x2F;em&gt;”&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Same content words: Three different propositions.&lt;&#x2F;p&gt;
+&lt;p&gt;The first sounds like a CLI flag description.&lt;&#x2F;p&gt;
+&lt;p&gt;The second presupposes specific known entities (&lt;em&gt;the&lt;&#x2F;em&gt; policy,
+&lt;em&gt;the&lt;&#x2F;em&gt; runtime) that both reader and writer have in mind.&lt;&#x2F;p&gt;
+&lt;p&gt;The third describes a kind of action with a &lt;strong&gt;scope condition&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Whatever you say about token efficiency or prose density, those three sentences
+are &lt;strong&gt;not interchangeable&lt;&#x2F;strong&gt;, and the words doing the discriminating are
+&lt;strong&gt;exactly&lt;&#x2F;strong&gt; the ones the compression instinct wants to delete.&lt;&#x2F;p&gt;
+&lt;p&gt;In linguistics, function words (&lt;em&gt;articles, prepositions, auxiliaries,
+determiners&lt;&#x2F;em&gt;) are the &lt;strong&gt;operators&lt;&#x2F;strong&gt; in a sentence.
+Whereas, content words are the &lt;strong&gt;operands&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;In &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;pubmed.ncbi.nlm.nih.gov&#x2F;31199471&#x2F;&quot;&gt;“&lt;em&gt;agrammatic aphasia&lt;&#x2F;em&gt;”&lt;&#x2F;a&gt;, the damage is often not that the speaker
+has no nouns. It is that the grammar-binding machinery (articles,
+auxiliaries, prepositions, inflection…) is impaired.&lt;&#x2F;p&gt;
+&lt;p&gt;The &lt;strong&gt;connective tissue&lt;&#x2F;strong&gt; is not ornamental; it is &lt;strong&gt;structural&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;So when I read “&lt;em&gt;Rules provide system-level instructions to Agent&lt;&#x2F;em&gt;”, I am not
+reading a sentence that has been gently streamlined: I am reading a sentence
+whose model-of-the-world has been &lt;strong&gt;partially evacuated&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;The missing words are where the model of the world lives.&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;block-language-escapes-its-register&quot;&gt;Block Language Escapes Its Register&lt;&#x2F;h2&gt;
+&lt;p&gt;There is a name for this register.&lt;&#x2F;p&gt;
+&lt;p&gt;Linguists describe it under various labels;
+&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.davidcrystal.com&#x2F;Files&#x2F;BooksAndArticles&#x2F;-4887.pdf&quot;&gt;David Crystal’s dictionary&lt;&#x2F;a&gt; gives
+one canonical version: &lt;strong&gt;block language&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p&gt;The compressed form of telegrams, headlines, recipes, road signs, captions:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Man bites dog.&lt;&#x2F;li&gt;
+&lt;li&gt;Add flour to bowl.&lt;&#x2F;li&gt;
+&lt;li&gt;Do not enter.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Block language was always a &lt;em&gt;register&lt;&#x2F;em&gt;: a deliberately reduced form for a
+constrained channel:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Column inches.&lt;&#x2F;li&gt;
+&lt;li&gt;Signboard real estate.&lt;&#x2F;li&gt;
+&lt;li&gt;Telegraph cost-per-word.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;The &lt;strong&gt;constraint&lt;&#x2F;strong&gt; was the whole point.&lt;&#x2F;p&gt;
+&lt;p&gt;Nobody wrote contracts that way. Nobody wrote novels that way.&lt;&#x2F;p&gt;
+&lt;p&gt;You &lt;strong&gt;did not&lt;&#x2F;strong&gt; get block language in a tutorial, because the tutorial channel
+was not constrained.&lt;&#x2F;p&gt;
+&lt;p&gt;What is happening now is that block language has &lt;strong&gt;escaped its register&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;The constraint that produced it is gone:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;context windows are vast,&lt;&#x2F;li&gt;
+&lt;li&gt;models output thousands of tokens at trivial cost&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;strong&gt;BUT&lt;&#x2F;strong&gt; the &lt;strong&gt;style&lt;&#x2F;strong&gt; persists, because it scored well during &lt;strong&gt;training&lt;&#x2F;strong&gt; on a
+corpus where headline-ese and prose both appeared and the &lt;strong&gt;loss function&lt;&#x2F;strong&gt;
+could not tell them apart.&lt;&#x2F;p&gt;
+&lt;p&gt;So we get block language in places where it does not belong:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;README files.&lt;&#x2F;li&gt;
+&lt;li&gt;API docs.&lt;&#x2F;li&gt;
+&lt;li&gt;Tutorials.&lt;&#x2F;li&gt;
+&lt;li&gt;Internal memos.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;That’s documentation written in the register of a road sign.&lt;&#x2F;p&gt;
+&lt;p&gt;The result is what I keep mentally calling &lt;strong&gt;product-doc pidgin&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p&gt;Weirdly efficient, &lt;strong&gt;spiritually dead&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;em&gt;Users can configure rules to improve agent behavior across workflows.&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;You can feel the wax dummy.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;There is no person in there&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;that-s-devolution&quot;&gt;That’s Devolution&lt;&#x2F;h2&gt;
+&lt;p&gt;I do understand that language is a living, breathing, evolving entity.&lt;&#x2F;p&gt;
+&lt;p&gt;But “&lt;em&gt;this&lt;&#x2F;em&gt;” (&lt;em&gt;whatever this is&lt;&#x2F;em&gt;) is not language evolving:
+It is language being compressed and compromized.&lt;&#x2F;p&gt;
+&lt;p&gt;I know how this sounds:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;em&gt;Old man yells at the corpus.&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Languages drift.&lt;&#x2F;li&gt;
+&lt;li&gt;Articles get shed.&lt;&#x2F;li&gt;
+&lt;li&gt;Prepositions wander off.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;English itself dropped enough Old English inflection to embarrass a modern
+German.&lt;&#x2F;p&gt;
+&lt;p&gt;Who am I to defend “to &lt;strong&gt;the&lt;&#x2F;strong&gt; Agent”?&lt;&#x2F;p&gt;
+&lt;p&gt;But… not like this.&lt;&#x2F;p&gt;
+&lt;p&gt;The thing is: drift is fine.&lt;&#x2F;p&gt;
+&lt;p&gt;Drift is what living languages do.&lt;&#x2F;p&gt;
+&lt;p&gt;Drift is humans selecting, &lt;strong&gt;over time&lt;&#x2F;strong&gt;, for what communicates well, what
+feels right in the mouth, what signals belonging to a tribe.&lt;&#x2F;p&gt;
+&lt;p&gt;There is a &lt;strong&gt;body&lt;&#x2F;strong&gt; in that loop:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;a mouth,&lt;&#x2F;li&gt;
+&lt;li&gt;an ear,&lt;&#x2F;li&gt;
+&lt;li&gt;a tribe,&lt;&#x2F;li&gt;
+&lt;li&gt;a risk,&lt;&#x2F;li&gt;
+&lt;li&gt;a joke,&lt;&#x2F;li&gt;
+&lt;li&gt;a need…&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Even something as algorithmically warped as TikTok-speak
+(&lt;em&gt;“unalive,” “the algorithm doesn’t want me to say this”&lt;&#x2F;em&gt;) is at
+least human-driven attention compression.&lt;&#x2F;p&gt;
+&lt;p&gt;There is a person at the keyboard, optimizing for a goal a person has.&lt;&#x2F;p&gt;
+&lt;p&gt;What is happening to product documentation is &lt;strong&gt;not&lt;&#x2F;strong&gt; that.&lt;&#x2F;p&gt;
+&lt;p&gt;It is &lt;strong&gt;corpus-mediated flattening&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;The selection pressure is not “&lt;em&gt;did this communicate&lt;&#x2F;em&gt;”, but “&lt;em&gt;did this
+score well under a fluency model&lt;&#x2F;em&gt;”.&lt;&#x2F;p&gt;
+&lt;p&gt;The output gets reified into a (quote) “&lt;em&gt;professional documentation style&lt;&#x2F;em&gt;”
+that humans then imitate back, often via the same models.&lt;&#x2F;p&gt;
+&lt;p&gt;The loop is &lt;strong&gt;recursive&lt;&#x2F;strong&gt;, and there is &lt;strong&gt;no body&lt;&#x2F;strong&gt; in it.&lt;&#x2F;p&gt;
+&lt;p&gt;The optimization target, and the reward function converge onto:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;plausibility,&lt;&#x2F;li&gt;
+&lt;li&gt;brevity,&lt;&#x2F;li&gt;
+&lt;li&gt;and pattern survival.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;I’m sorry, and &lt;strong&gt;this is not communication&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Heck, this is not even “&lt;em&gt;prose&lt;&#x2F;em&gt;”.&lt;&#x2F;p&gt;
+&lt;p&gt;I would not be writing this if the volume were small.&lt;&#x2F;p&gt;
+&lt;p&gt;The volume is large and growing.&lt;&#x2F;p&gt;
+&lt;p&gt;The default register of professional technical writing is shifting
+under our feet, and the shift is being driven by a process that does not
+actually care about prose.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;not-prescriptivism&quot;&gt;Not Prescriptivism&lt;&#x2F;h2&gt;
+&lt;p&gt;The honest counter is that prescriptivism has a bad track record.&lt;&#x2F;p&gt;
+&lt;p&gt;“&lt;em&gt;Good prose&lt;&#x2F;em&gt;” complaints calcify into class signaling and gatekeeping.&lt;&#x2F;p&gt;
+&lt;p&gt;Style guides get used as cudgels against people who code well but write
+functionally, against non-native speakers, against anyone whose English does
+not match the editor’s.&lt;&#x2F;p&gt;
+&lt;p&gt;I am sympathetic to all of that. I—myself—am a non-native English speaker.&lt;&#x2F;p&gt;
+&lt;p&gt;I am “&lt;em&gt;way more expressive, and way more intelligent&lt;&#x2F;em&gt;” in Turkish, than I am
+in English.&lt;&#x2F;p&gt;
+&lt;p&gt;So, this definitely is not that.&lt;&#x2F;p&gt;
+&lt;p&gt;I am not policing dialect or accent or non-native phrasing.&lt;&#x2F;p&gt;
+&lt;p&gt;What I am saying is that a global-scale, self-reinforcing, non-human, inhumane,
+optimization process is &lt;strong&gt;flattening&lt;&#x2F;strong&gt; a feature of the language that does
+critical semantic work.&lt;&#x2F;p&gt;
+&lt;p&gt;The people best positioned to notice (*editors, technical writers, attentive
+readers—neurodivergents, too) are the people whose noticing has been least
+incentivized for the last decade:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Editors got &lt;strong&gt;optimized out&lt;&#x2F;strong&gt; (hint: “&lt;em&gt;laid off&lt;&#x2F;em&gt;”) of most documentation
+pipelines.&lt;&#x2F;li&gt;
+&lt;li&gt;Technical writers got reframed as a &lt;em&gt;cost center&lt;&#x2F;em&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;Readers walk away from bad docs vaguely unsatisfied and blame themselves
+for not getting it.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;tilting-at-giants&quot;&gt;Tilting at Giants&lt;&#x2F;h2&gt;
+&lt;p&gt;I thought for a second “&lt;em&gt;am I the Don Quixote here?!&lt;&#x2F;em&gt;”&lt;&#x2F;p&gt;
+&lt;p&gt;Yet, the “&lt;em&gt;Don Quixote&lt;&#x2F;em&gt;” frame is tempting, albeit wrong.&lt;&#x2F;p&gt;
+&lt;p&gt;Quixote was tilting at windmills he believed were giants.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;This is the inverse&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p&gt;Tilting at giants that everyone insists are windmills.&lt;&#x2F;p&gt;
+&lt;p&gt;The damage is real; what makes it hard to defend against is exactly that
+each instance is small, and the aggregate is invisible to the
+optimization process producing it.&lt;&#x2F;p&gt;
+&lt;p&gt;No single sentence is a tragedy: &lt;strong&gt;The trajectory is&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;So: &lt;em&gt;“Rules provide system-level instructions to Agent”&lt;&#x2F;em&gt; is not a typo.&lt;&#x2F;p&gt;
+&lt;p&gt;It is a &lt;strong&gt;genre marker&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;The genre is &lt;strong&gt;prose written by a system that does not know it is
+writing prose&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;The fix is not just “&lt;em&gt;add the article&lt;&#x2F;em&gt;”: It is to &lt;strong&gt;remember&lt;&#x2F;strong&gt;
+that the article was doing the work, and that the work was &lt;strong&gt;real&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;I would like product documentation, especially documentation that millions of
+developers read, to &lt;strong&gt;remember&lt;&#x2F;strong&gt; that too.&lt;&#x2F;p&gt;
+&lt;p&gt;If not clear, I’m looking at you Cursor!&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>The LinkedIn Bot That Tried to Pass the Turing Test (and Failed Spectacularly)</title>
         <published>2026-03-26T00:00:00+00:00</published>

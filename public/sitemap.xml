@@ -740,6 +740,9 @@
         <loc>https://zerotohero.dev/tags/development/</loc>
     </url>
     <url>
+        <loc>https://zerotohero.dev/tags/documentation/</loc>
+    </url>
+    <url>
         <loc>https://zerotohero.dev/tags/draft/</loc>
     </url>
     <url>
@@ -768,6 +771,9 @@
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/kubernetes/</loc>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/tags/language/</loc>
     </url>
     <url>
         <loc>https://zerotohero.dev/tags/linux/</loc>
@@ -889,6 +895,10 @@
     <url>
         <loc>https://zerotohero.dev/top-of-mind/new-z2h-design/</loc>
         <lastmod>2024-03-04</lastmod>
+    </url>
+    <url>
+        <loc>https://zerotohero.dev/top-of-mind/old-man-yelling-at-the-corpus/</loc>
+        <lastmod>2026-05-10</lastmod>
     </url>
     <url>
         <loc>https://zerotohero.dev/top-of-mind/perception-pivot/</loc>
