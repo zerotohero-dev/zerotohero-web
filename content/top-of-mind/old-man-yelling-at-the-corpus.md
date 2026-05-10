@@ -275,7 +275,7 @@ critical semantic work.
 
 
 The people best positioned to notice (*editors, technical writers, attentive 
-readers---neurodivergents, too) are the people whose noticing has been least 
+readers---neurodivergents, too*) are the people whose noticing has been least 
 incentivized for the last decade: 
 
 * Editors got **optimized out** (hint: "*laid off*") of most documentation 
