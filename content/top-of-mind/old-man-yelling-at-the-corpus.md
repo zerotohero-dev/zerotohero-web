@@ -14,8 +14,8 @@ date = "2026-05-10"
 tags = ["language", "documentation", "ai", "llm"]
 +++
 
-> *Rules provide system-level instructions to Agent and Inline Edit.*
-> — [Cursor docs, "Rules"](https://cursor.com/docs/rules)
+> *Rules provide system-level instructions to Agent*.
+> ---[Cursor docs, "Rules"](https://cursor.com/docs/rules)
 
 I keep getting stuck on that sentence. Not because of the missing article
 (though, *yes*, **to "the" Agent** is what **English** wants here), but 
